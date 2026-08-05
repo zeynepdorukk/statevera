@@ -663,6 +663,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
     findBrokenCharacters, type ArticleFields, type ExplainerFields } from "../lib/editor/document";
   import { markdownToHtml, htmlToMarkdown, canvasText, countWords, readingMinutes,
     setAssetBase, CALLOUTS, type CalloutName } from "../lib/editor/richtext";
+  import { site } from "../site";
 
   const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
   setAssetBase(import.meta.env.BASE_URL);
@@ -670,7 +671,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
   // Titles and dates come from the published site, not from this deployment's own
   // build, so a piece published a minute ago is named properly in the list even
   // if the desk itself has not been rebuilt since.
-  const LIVE_INDEX = new URL(`${BASE}/search-index.json`, import.meta.env.SITE ?? location.origin).href;
+  const LIVE_INDEX = `${site.siteUrl}/search-index.json`;
 
   const K_DRAFT = "sv-draft:";
 

@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /editor
-
-Sitemap: https://zeynepdorukk.github.io/statevera/sitemap-index.xml

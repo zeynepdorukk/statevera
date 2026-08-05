@@ -1,4 +1,4 @@
-# Cloudflare only. The desk deployment exists for /editor; anyone who lands on
-# its front door is sent to the piece of it that is meant to be used.
+# Netlify only. The desk deployment exists for /editor; anyone who lands on its
+# front door is sent to the piece of it that is meant to be used.
 # GitHub Pages ignores this file.
-/                 /statevera/editor    302
+/     /editor     302

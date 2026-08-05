@@ -6,7 +6,10 @@ import tailwindcss from "@tailwindcss/vite";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 
-const BASE = "/statevera";
+// GitHub Pages serves the repository under /statevera/. Netlify serves the desk
+// from the root, so the base has to follow the host or every link and asset on
+// the desk points at a path that does not exist there.
+const BASE = process.env.NETLIFY ? "" : "/statevera";
 
 /**
  * Reads one key out of the project's .env.
