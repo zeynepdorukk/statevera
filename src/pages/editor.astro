@@ -655,7 +655,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
 </style>
 
 <script>
-  import { MODEL, type AiConfig, type LayoutSuggestion,
+  import { type AiConfig, type LayoutSuggestion,
     completeInline, transform, suggestLayout, suggestMeta } from "../lib/editor/ai";
   import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile,
     type FileEntry } from "../lib/editor/desk";
@@ -698,6 +698,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
     user: "",
     assistant: false,
     canPublish: false,
+    model: "",
     ai: {} as AiConfig,
     stories: [] as Story[],
     images: [] as string[],
@@ -753,6 +754,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
         state.user = session.user;
         state.assistant = session.assistant;
         state.canPublish = session.canPublish;
+        state.model = session.model;
         await openStories();
       } catch (error) {
         signInView((error as Error).message);
@@ -826,7 +828,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
           <span class="ed-legend" style="margin:0">Statevera</span>
         </div>
         <div class="ed-bar-right">
-          <span class="ed-bar-meta">${aiReady() ? `${esc(MODEL)} ready` : "assistant off"}</span>
+          <span class="ed-bar-meta">${aiReady() ? `${esc(state.model)} ready` : "assistant off"}</span>
           <button type="button" class="ed-btn ed-btn-quiet" data-out>Sign out</button>
           <button type="button" class="ed-btn" data-new="explainer">New explainer</button>
           <button type="button" class="ed-btn ed-btn-primary" data-new="article">New story</button>
@@ -1021,7 +1023,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
               <span class="d">Off keeps it as a private draft.</span></span>
           </label>
 
-          ${aiReady() ? '<button type="button" class="ed-btn" style="width:100%;justify-content:center;margin-top:1rem" data-fill>Ask ' + esc(MODEL) + ' to fill this in</button>' : ""}
+          ${aiReady() ? '<button type="button" class="ed-btn" style="width:100%;justify-content:center;margin-top:1rem" data-fill>Ask ' + esc(state.model) + ' to fill this in</button>' : ""}
           <p class="ed-note" data-fill-note style="margin-top:.5rem"></p>
 
           <div class="ed-field" style="margin-top:1.2rem">
@@ -1749,7 +1751,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
         { name: "Review the layout", run: reviewLayout },
       ];
       menuEl.innerHTML =
-        `<p class="ed-menu-head">${esc(MODEL)}</p>` +
+        `<p class="ed-menu-head">${esc(state.model)}</p>` +
         actions.map((a, i) => `<button type="button" data-ai="${i}"><span class="name">${esc(a.name)}</span></button>`).join("");
       menuEl.classList.add("is-open");
       menuEl.style.top = `${window.scrollY + anchor.bottom + 6}px`;
@@ -2089,6 +2091,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
     state.user = session.user;
     state.assistant = session.assistant;
     state.canPublish = session.canPublish;
+    state.model = session.model;
     await openStories();
   } else {
     signInView();

@@ -5,12 +5,10 @@
 // the desk's own /api/ai, which is the only place that holds the
 // key and which refuses anyone without a signed-in session.
 //
+// The model is chosen on the server too, so the browser never
+// needs to know or care which one is in use.
 // This module owns the prompts; the transport is one function.
-// One provider, one model, no choices to make while writing.
 // ============================================================
-
-/** The only model the desk uses. The server pins the same name. */
-export const MODEL = "gpt-5.6-LUNA";
 
 /** Kept as a type so the call sites read the same; there is nothing in it. */
 export type AiConfig = Record<string, never>;

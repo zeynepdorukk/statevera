@@ -16,6 +16,7 @@ export interface DeskEnv {
   EDITOR_PASSWORD?: string;
   SESSION_SECRET?: string;
   OPENAI_KEY?: string;
+  OPENAI_MODEL?: string;
   GITHUB_TOKEN?: string;
   GITHUB_REPO?: string;
 }
@@ -24,7 +25,10 @@ const DEFAULT_USER = "zeynepdoruk";
 const DEFAULT_REPO = "zeynepdorukk/statevera";
 const COOKIE = "sv_session";
 const SESSION_MS = 12 * 60 * 60 * 1000;
-const MODEL = "gpt-5.6-LUNA";
+
+/** Set OPENAI_MODEL to whatever the key can actually reach; /api/models lists it. */
+const DEFAULT_MODEL = "gpt-4o-mini";
+const modelOf = (env: DeskEnv): string => env.OPENAI_MODEL?.trim() || DEFAULT_MODEL;
 
 /** A signed-in session may only touch the two content folders. */
 const WRITEABLE = /^src\/content\/(articles|explainers)\/[a-z0-9][a-z0-9-]*\.mdx$/;
@@ -201,7 +205,7 @@ interface AskBody {
  */
 async function askOpenAI(env: DeskEnv, body: AskBody, signal?: AbortSignal): Promise<string> {
   const payload: Record<string, unknown> = {
-    model: MODEL,
+    model: modelOf(env),
     messages: [
       { role: "system", content: body.system ?? "" },
       { role: "user", content: body.prompt ?? "" },
@@ -271,7 +275,7 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
       user: user ?? "",
       assistant: Boolean(env.OPENAI_KEY),
       canPublish: Boolean(env.GITHUB_TOKEN),
-      model: MODEL,
+      model: modelOf(env),
     });
   }
 
@@ -292,7 +296,7 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
         user: expectedUser,
         assistant: Boolean(env.OPENAI_KEY),
         canPublish: Boolean(env.GITHUB_TOKEN),
-        model: MODEL,
+        model: modelOf(env),
       },
       { headers: { "set-cookie": sessionCookie(await issueSession(expectedUser, env), SESSION_MS / 1000) } }
     );
@@ -352,6 +356,19 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
         }),
       });
       return json({ sha: result.content?.sha ?? "" });
+    }
+
+    if (route === "models" && request.method === "GET") {
+      if (!env.OPENAI_KEY) return fail(503, "No assistant key on the server.");
+      const response = await fetch("https://api.openai.com/v1/models", {
+        headers: { authorization: `Bearer ${env.OPENAI_KEY}` },
+      });
+      if (!response.ok) return fail(502, readOpenAiError(await response.text()));
+      const listed = (await response.json()) as { data?: { id: string }[] };
+      return json({
+        using: modelOf(env),
+        available: (listed.data ?? []).map((m) => m.id).sort(),
+      });
     }
 
     if (route === "ai" && request.method === "POST") {
