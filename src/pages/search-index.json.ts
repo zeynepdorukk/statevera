@@ -1,4 +1,4 @@
-import { getAllArticles, getAllBriefings, getAllExplainers } from "../utils/collection";
+import { getAllArticles, getAllBriefings, getAllExplainers, root } from "../utils/collection";
 
 export async function GET() {
   const [articles, briefings, explainers] = await Promise.all([
@@ -10,7 +10,7 @@ export async function GET() {
   const index = [
     ...articles.map((a) => ({
       title: a.data.title,
-      url: `/articles/${a.id.replace(/\.mdx?$/, "")}`,
+      url: root(`/articles/${a.id.replace(/\.mdx?$/, "")}`),
       category: a.data.category,
       region: a.data.region,
       country: a.data.country,
@@ -21,7 +21,7 @@ export async function GET() {
     })),
     ...explainers.map((e) => ({
       title: e.data.title,
-      url: `/explainers/${e.id.replace(/\.mdx?$/, "")}`,
+      url: root(`/explainers/${e.id.replace(/\.mdx?$/, "")}`),
       category: "Explainers",
       region: "Global",
       country: [] as string[],
@@ -32,7 +32,7 @@ export async function GET() {
     })),
     ...briefings.map((b) => ({
       title: b.body.trim().slice(0, 80),
-      url: "/briefings",
+      url: root("/briefings"),
       category: b.data.category,
       region: b.data.region,
       country: [] as string[],

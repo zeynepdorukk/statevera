@@ -1,5 +1,5 @@
 ---
-import { heroImageOf, formatDate, readingTime, type Article } from "../utils/collection";
+import { heroImageOf, formatDate, readingTime, root, type Article } from "../utils/collection";
 import { creditFor } from "../data/imageCredits";
 import { sampleContentNote } from "../site";
 
@@ -18,7 +18,7 @@ const {
   showDek = true,
 } = Astro.props;
 const { data, body } = article;
-const href = `/articles/${article.id.replace(/\.mdx?$/, "")}`;
+const href = root(`/articles/${article.id.replace(/\.mdx?$/, "")}`);
 const credit = creditFor(data.heroImage);
 const rt = readingTime(article);
 const formatted = formatDate(data.date, { day: "numeric", month: "short", year: "numeric" });

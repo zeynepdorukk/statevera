@@ -1,5 +1,5 @@
 ---
-import { getBriefingsByRegion, getByRegion, formatTime, formatDate, type Briefing, type Article } from "../utils/collection";
+import { getBriefingsByRegion, getByRegion, formatTime, formatDate, root, type Briefing, type Article } from "../utils/collection";
 import { regions } from "../site";
 import SectionHeader from "./SectionHeader.astro";
 
@@ -28,7 +28,7 @@ async function itemsFor(regionName: string): Promise<RegionItem[]> {
       text: a.data.title,
       time: a.data.date,
       kind: "article" as const,
-      href: `/articles/${a.id.replace(/\.mdx?$/, "")}`,
+      href: root(`/articles/${a.id.replace(/\.mdx?$/, "")}`),
     })),
   ];
   return items.sort((a, b) => b.time.getTime() - a.time.getTime()).slice(0, 4);
@@ -55,7 +55,7 @@ const hotspots: Record<string, { x: number; y: number }> = {
     <div class="order-2 lg:order-1">
       <div class="relative border border-line bg-paper-tint p-2">
         <img
-          src="/images/articles/world-map-1600.png"
+          src={root("/images/articles/world-map-1600.png")}
           alt="Stylised map of the world with regions highlighted"
           width="1600"
           height="810"
@@ -64,7 +64,7 @@ const hotspots: Record<string, { x: number; y: number }> = {
         />
         {regionKeys.map((k) => (
           <a
-            href={regions[k].url}
+            href={root(regions[k].url)}
             aria-label={regions[k].name}
             class="group absolute -translate-x-1/2 -translate-y-1/2"
             style={`left:${hotspots[k].x}%; top:${hotspots[k].y}%;`}
@@ -95,7 +95,7 @@ const hotspots: Record<string, { x: number; y: number }> = {
               {regions[k].name}
             </h3>
             <a
-              href={regions[k].url}
+              href={root(regions[k].url)}
               class="font-sans text-[0.68rem] font-semibold tracking-[0.1em] text-muted uppercase transition-colors duration-200 hover:text-accent"
             >
               Desk →

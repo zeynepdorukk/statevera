@@ -1,5 +1,5 @@
 ---
-import { getLatestArticles, getBreakingArticles, formatTime, readingTime } from "../utils/collection";
+import { getLatestArticles, getBreakingArticles, formatTime, readingTime, root } from "../utils/collection";
 import { formatDate } from "../utils/collection";
 import HeadlineItem from "./HeadlineItem.astro";
 
@@ -19,7 +19,7 @@ const breakingTitles = breaking.map((b) => b.data.title);
     ))}
   </div>
   <p class="mt-3">
-    <a href="/latest" class="kicker-ink transition-colors duration-200 hover:text-accent">
+    <a href={root("/latest")} class="kicker-ink transition-colors duration-200 hover:text-accent">
       All latest →
     </a>
   </p>

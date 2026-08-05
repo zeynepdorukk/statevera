@@ -7,9 +7,12 @@ export type Explainer = CollectionEntry<"explainers">;
 
 export const imageFile = (image: string) => `/images/articles/${image}`;
 
+export const root = (p: string): string =>
+  p.startsWith("http") ? p : import.meta.env.BASE_URL.replace(/\/$/, "") + p;
+
 export function heroImageOf(heroImage: string): string {
-  if (heroImage.startsWith("/")) return heroImage;
-  return imageFile(heroImage);
+  if (heroImage.startsWith("/")) return root(heroImage);
+  return root(imageFile(heroImage));
 }
 
 export function readingTimeOf(body: string, override?: number): number {

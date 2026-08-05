@@ -1,5 +1,6 @@
 ---
 import { site, nav, categories, regions } from "../site";
+import { root } from "../utils/collection";
 import Masthead from "./Masthead.astro";
 ---
 
@@ -25,18 +26,18 @@ import Masthead from "./Masthead.astro";
           <ul class="space-y-2">
             {nav.primary.slice(0, 7).map((item) => (
               <li>
-                <a href={item.url} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+                <a href={root(item.url)} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
                   {item.label}
                 </a>
               </li>
             ))}
             <li>
-              <a href="/explainers" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+              <a href={root("/explainers")} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
                 Explainers
               </a>
             </li>
             <li>
-              <a href="/briefings" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+              <a href={root("/briefings")} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
                 Briefings
               </a>
             </li>
@@ -48,7 +49,7 @@ import Masthead from "./Masthead.astro";
           <ul class="space-y-2">
             {Object.values(regions).map((r) => (
               <li>
-                <a href={r.url} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+                <a href={root(r.url)} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
                   {r.name}
                 </a>
               </li>
@@ -59,11 +60,11 @@ import Masthead from "./Masthead.astro";
         <nav aria-label="Publication">
           <p class="kicker-ink mb-3">Publication</p>
           <ul class="space-y-2">
-            <li><a href="/about" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">About</a></li>
-            <li><a href="/about#principles" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Editorial Principles</a></li>
-            <li><a href="/about#sourcing" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Sources &amp; Attribution</a></li>
-            <li><a href="/about#corrections" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Corrections</a></li>
-            <li><a href="/about#contact" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Contact</a></li>
+            <li><a href={root("/about")} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">About</a></li>
+            <li><a href={root("/about#principles")} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Editorial Principles</a></li>
+            <li><a href={root("/about#sourcing")} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Sources &amp; Attribution</a></li>
+            <li><a href={root("/about#corrections")} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Corrections</a></li>
+            <li><a href={root("/about#contact")} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Contact</a></li>
           </ul>
         </nav>
 
@@ -81,12 +82,12 @@ import Masthead from "./Masthead.astro";
               </a>
             </li>
             <li>
-              <a href={site.socialLinks.rss} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+              <a href={root(site.socialLinks.rss)} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
                 RSS Feed
               </a>
             </li>
             <li>
-              <a href="/about" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+              <a href={root("/about")} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
                 Newsletter
               </a>
             </li>

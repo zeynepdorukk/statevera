@@ -1,5 +1,5 @@
 ---
-import { getByCategory, heroImageOf, formatDate, readingTime, type Article } from "../utils/collection";
+import { getByCategory, heroImageOf, formatDate, readingTime, root, type Article } from "../utils/collection";
 import SectionHeader from "./SectionHeader.astro";
 
 interface Props {
@@ -14,7 +14,7 @@ const { number, title, category, url, layout = "split" } = Astro.props;
 const stories = await getByCategory(category, 5);
 if (stories.length === 0) return null;
 const [lead, ...rest] = stories;
-const leadHref = `/articles/${lead.id.replace(/\.mdx?$/, "")}`;
+const leadHref = root(`/articles/${lead.id.replace(/\.mdx?$/, "")}`);
 const rt = readingTime(lead);
 ---
 
@@ -38,7 +38,7 @@ const rt = readingTime(lead);
           <li class="border-b border-line py-3.5 first:pt-3.5 last:border-b-0 last:pb-0">
             <p class="kicker">{formatDate(a.data.date, { day: "numeric", month: "short" })}</p>
             <h3 class="mt-1 font-serif text-[1.02rem] font-medium leading-snug">
-              <a href={`/articles/${a.id.replace(/\.mdx?$/, "")}`} class="editorial-link">{a.data.title}</a>
+              <a href={root(`/articles/${a.id.replace(/\.mdx?$/, "")}`)} class="editorial-link">{a.data.title}</a>
             </h3>
           </li>
         ))}
@@ -64,7 +64,7 @@ const rt = readingTime(lead);
         {rest.slice(0, 4).map((a) => (
           <li class="border-b border-line py-3.5 first:pt-3.5 last:border-b-0 last:pb-0">
             <h3 class="font-serif text-[1.02rem] font-medium leading-snug">
-              <a href={`/articles/${a.id.replace(/\.mdx?$/, "")}`} class="editorial-link">{a.data.title}</a>
+              <a href={root(`/articles/${a.id.replace(/\.mdx?$/, "")}`)} class="editorial-link">{a.data.title}</a>
             </h3>
             <p class="meta mt-1">{a.data.region} · {formatDate(a.data.date, { day: "numeric", month: "short" })}</p>
           </li>
@@ -77,11 +77,11 @@ const rt = readingTime(lead);
     <div class="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
       {[lead, ...rest].map((a) => (
         <article class="group">
-          <a href={`/articles/${a.id.replace(/\.mdx?$/, "")}`} class="img-zoom block overflow-hidden border border-line/60 bg-paper-soft" tabindex="-1" aria-hidden="true">
+          <a href={root(`/articles/${a.id.replace(/\.mdx?$/, "")}`)} class="img-zoom block overflow-hidden border border-line/60 bg-paper-soft" tabindex="-1" aria-hidden="true">
             <img src={heroImageOf(a.data.heroImage)} alt="" width="1600" height="1000" loading="lazy" class="aspect-[16/9] w-full object-cover" />
           </a>
           <h3 class="t-headline-xs mt-3">
-            <a href={`/articles/${a.id.replace(/\.mdx?$/, "")}`} class="editorial-link">{a.data.title}</a>
+            <a href={root(`/articles/${a.id.replace(/\.mdx?$/, "")}`)} class="editorial-link">{a.data.title}</a>
           </h3>
           <p class="meta mt-1.5">{a.data.region} · {formatDate(a.data.date, { day: "numeric", month: "short" })} · {readingTime(a)} min read</p>
         </article>

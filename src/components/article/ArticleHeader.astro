@@ -1,6 +1,6 @@
 ---
 import { site } from "../../site";
-import { heroImageOf, formatDate, readingTime, type Article } from "../../utils/collection";
+import { heroImageOf, formatDate, readingTime, root, type Article } from "../../utils/collection";
 import { creditFor } from "../../data/imageCredits";
 
 interface Props {
@@ -16,11 +16,11 @@ const rt = readingTime(article);
 <header class="mx-auto max-w-[880px] px-4 pt-8 md:px-8 md:pt-12">
   <nav aria-label="Breadcrumb" class="mb-5">
     <ol class="flex items-center gap-2 font-sans text-[0.72rem] font-semibold tracking-[0.1em] uppercase">
-      <li><a href={`/${data.category.toLowerCase()}`} class="kicker transition-colors duration-200 hover:text-ink">{data.category}</a></li>
+      <li><a href={root(`/${data.category.toLowerCase()}`)} class="kicker transition-colors duration-200 hover:text-ink">{data.category}</a></li>
       <li aria-hidden="true" class="text-muted">/</li>
       <li>
         <a
-          href={`/regions/${data.region.toLowerCase().replace(/ /g, "-").replace(/[^a-z-]/g, "")}`}
+          href={root(`/regions/${data.region.toLowerCase().replace(/ /g, "-").replace(/[^a-z-]/g, "")}`)}
           class="kicker-ink transition-colors duration-200 hover:text-accent"
         >
           {data.region}
@@ -37,7 +37,7 @@ const rt = readingTime(article);
   <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 border-y border-line py-3.5">
     <div class="flex items-center gap-3">
       <img
-        src={site.authorPhoto}
+        src={root(site.authorPhoto)}
         alt=""
         width="400"
         height="400"

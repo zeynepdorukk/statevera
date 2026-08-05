@@ -1,6 +1,6 @@
 ---
 import type { Article } from "../utils/collection";
-import { formatTime, formatDate, readingTime } from "../utils/collection";
+import { formatTime, formatDate, readingTime, root } from "../utils/collection";
 
 interface Props {
   article: Article;
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { article, showTime = false } = Astro.props;
-const href = `/articles/${article.id.replace(/\.mdx?$/, "")}`;
+const href = root(`/articles/${article.id.replace(/\.mdx?$/, "")}`);
 const rt = readingTime(article);
 ---
 

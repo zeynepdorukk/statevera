@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://statevera.example.com/sitemap-index.xml
+Sitemap: https://zeynepdorukk.github.io/statevera/sitemap-index.xml

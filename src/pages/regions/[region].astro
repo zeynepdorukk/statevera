@@ -1,7 +1,7 @@
 ﻿---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { regions } from "../../site";
-import { getByRegionSlug, getLatestBriefings, heroImageOf, formatDate, formatTime, readingTime } from "../../utils/collection";
+import { getByRegionSlug, getLatestBriefings, heroImageOf, formatDate, formatTime, readingTime, root } from "../../utils/collection";
 import StoryCard from "../../components/StoryCard.astro";
 import HeadlineItem from "../../components/HeadlineItem.astro";
 
@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 
 const { region } = Astro.params;
 const meta = regions[region as keyof typeof regions];
-if (!meta) return Astro.redirect("/404");
+if (!meta) return Astro.redirect(root("/404"));
 
 const [articles, briefings] = await Promise.all([
   getByRegionSlug(region ?? "", 8),
@@ -19,7 +19,7 @@ const [articles, briefings] = await Promise.all([
 ]);
 const [lead, ...rest] = articles;
 const regionBriefings = briefings.filter((b) => b.data.region === meta.name);
-const leadHref = lead ? `/articles/${lead.id.replace(/\.mdx?$/, "")}` : "";
+const leadHref = lead ? root(`/articles/${lead.id.replace(/\.mdx?$/, "")}`) : "";
 ---
 
 <BaseLayout
@@ -105,7 +105,7 @@ const leadHref = lead ? `/articles/${lead.id.replace(/\.mdx?$/, "")}` : "";
               </li>
             )}
           </ul>
-          <p class="mt-3"><a href="/briefings" class="kicker-ink transition-colors duration-200 hover:text-accent">All briefings â†’</a></p>
+          <p class="mt-3"><a href={root("/briefings")} class="kicker-ink transition-colors duration-200 hover:text-accent">All briefings â†’</a></p>
         </div>
 
         <div>
@@ -118,7 +118,7 @@ const leadHref = lead ? `/articles/${lead.id.replace(/\.mdx?$/, "")}` : "";
               .filter(([k]) => k !== region)
               .map(([k, r]) => (
                 <li>
-                  <a href={r.url} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft">
+                  <a href={root(r.url)} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft">
                     {r.name}
                   </a>
                 </li>

@@ -1,5 +1,5 @@
 ---
-import { getBriefingsByRegion, getByRegion, type Article, type Briefing } from "../utils/collection";
+import { getBriefingsByRegion, getByRegion, root, type Article, type Briefing } from "../utils/collection";
 import { regions } from "../site";
 import SectionHeader from "./SectionHeader.astro";
 
@@ -37,7 +37,7 @@ async function itemsFor(regionName: string): Promise<Item[]> {
       title: a.data.title,
       time: a.data.date,
       kind: "article" as const,
-      href: `/articles/${a.id.replace(/\.mdx?$/, "")}`,
+      href: root(`/articles/${a.id.replace(/\.mdx?$/, "")}`),
     })),
   ];
   return merged.sort((a, b) => b.time.getTime() - a.time.getTime()).slice(0, 4);
@@ -98,7 +98,7 @@ const ids = tabs.map((t) => `region-${t.key}`);
             ))}
           </ul>
           <p class="mt-3">
-            <a href={regions[t.key].url} class="kicker-ink transition-colors duration-200 hover:text-accent">
+            <a href={root(regions[t.key].url)} class="kicker-ink transition-colors duration-200 hover:text-accent">
               Full {t.name} coverage →
             </a>
           </p>

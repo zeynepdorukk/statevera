@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { site } from "../site";
+import { root } from "../utils/collection";
 import Header from "../components/Header.astro";
 import BreakingBar from "../components/BreakingBar.astro";
 import Footer from "../components/Footer.astro";
@@ -36,8 +37,8 @@ const {
   jsonLd = [],
 } = Astro.props;
 
-const url = new URL(path, site.siteUrl);
-const absoluteImage = new URL(image, site.siteUrl).toString();
+const url = new URL(root(path), site.siteUrl);
+const absoluteImage = new URL(root(image), site.siteUrl).toString();
 const fullTitle = path === "/" ? site.publicationName : `${title} — ${site.publicationName}`;
 const ogType = type === "article" ? "article" : "website";
 
@@ -53,7 +54,7 @@ const webJsonLd = {
     name: site.publicationName,
     logo: {
       "@type": "ImageObject",
-      url: new URL("/images/branding/logo-512.png", site.siteUrl).toString(),
+      url: new URL(root("/images/branding/logo-512.png"), site.siteUrl).toString(),
     },
   },
 };
@@ -70,13 +71,13 @@ const webJsonLd = {
     <link rel="canonical" href={url.toString()} />
     {noindex && <meta name="robots" content="noindex" />}
 
-    <link rel="icon" type="image/svg+xml" href="/images/branding/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="64x64" href="/images/branding/favicon-64.png" />
-    <link rel="icon" href="/images/branding/favicon.ico" sizes="16x16 32x32 48x48" />
-    <link rel="apple-touch-icon" href="/images/branding/apple-touch-icon.png" />
-    <link rel="alternate" type="application/rss+xml" title={`${site.publicationName} RSS`} href="/rss.xml" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/svg+xml" href={root("/images/branding/favicon.svg")} />
+    <link rel="icon" type="image/png" sizes="32x32" href={root("/images/branding/favicon-32.png")} />
+    <link rel="icon" type="image/png" sizes="64x64" href={root("/images/branding/favicon-64.png")} />
+    <link rel="icon" href={root("/images/branding/favicon.ico")} sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" href={root("/images/branding/apple-touch-icon.png")} />
+    <link rel="alternate" type="application/rss+xml" title={`${site.publicationName} RSS`} href={root("/rss.xml")} />
+    <link rel="sitemap" href={root("/sitemap-index.xml")} />
 
     <meta property="og:site_name" content={site.publicationName} />
     <meta property="og:title" content={fullTitle} />

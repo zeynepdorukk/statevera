@@ -1,6 +1,6 @@
 ---
 import { site } from "../site";
-import { getEditorsPick, formatDate } from "../utils/collection";
+import { getEditorsPick, formatDate, root } from "../utils/collection";
 
 const editorsPick = await getEditorsPick();
 ---
@@ -9,7 +9,7 @@ const editorsPick = await getEditorsPick();
   <div class="flex flex-col gap-5 sm:flex-row sm:gap-7">
     <div class="shrink-0">
       <img
-        src={site.authorPhoto}
+        src={root(site.authorPhoto)}
         alt={`Portrait of ${site.authorName}`}
         width="400"
         height="400"
@@ -26,7 +26,7 @@ const editorsPick = await getEditorsPick();
         <p class="mt-3 max-w-2xl font-serif text-[0.95rem] leading-relaxed text-ink">
           <span class="kicker-ink">Editor's pick — </span>
           <a
-            href={`/articles/${editorsPick.id.replace(/\.mdx?$/, "")}`}
+            href={root(`/articles/${editorsPick.id.replace(/\.mdx?$/, "")}`)}
             class="editorial-link font-semibold"
           >
             {editorsPick.data.title}

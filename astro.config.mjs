@@ -6,7 +6,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://statevera.example.com",
+  site: "https://zeynepdorukk.github.io",
+  base: "/statevera/",
   output: "static",
   integrations: [mdx(), sitemap()],
   vite: {

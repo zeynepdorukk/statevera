@@ -31,7 +31,7 @@ export const site = {
   },
 
   // Technical ------------------------------------------------
-  siteUrl: "https://statevera.example.com",
+  siteUrl: "https://zeynepdorukk.github.io/statevera",
   defaultOgImage: "/images/branding/og-image.jpg",
   locale: "en",
   language: "en-US",

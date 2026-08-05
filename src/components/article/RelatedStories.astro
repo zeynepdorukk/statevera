@@ -1,5 +1,5 @@
 ---
-import { getRelated, heroImageOf, formatDate, readingTime, type Article } from "../../utils/collection";
+import { getRelated, heroImageOf, formatDate, readingTime, root, type Article } from "../../utils/collection";
 import { creditFor } from "../../data/imageCredits";
 
 interface Props {
@@ -18,7 +18,7 @@ if (!related.length) return null;
   </div>
   <div class="grid gap-x-8 gap-y-6 sm:grid-cols-3">
     {related.map((a) => {
-      const href = `/articles/${a.id.replace(/\.mdx?$/, "")}`;
+      const href = root(`/articles/${a.id.replace(/\.mdx?$/, "")}`);
       return (
         <article class="group">
           <a

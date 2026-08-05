@@ -1,5 +1,6 @@
 ---
 import { site } from "../../site";
+import { root } from "../../utils/collection";
 
 interface Props {
   sources: { name: string; url: string }[];
@@ -33,6 +34,6 @@ if (!sources.length) return null;
   <p class="mt-3 font-sans text-[0.72rem] leading-relaxed text-muted">
     External links open in a new tab and leave {site.publicationNameDisplay}. Attribution follows
     the publication's {""}
-    <a href="/about#sourcing" class="link-accent">sourcing policy</a>.
+    <a href={root("/about#sourcing")} class="link-accent">sourcing policy</a>.
   </p>
 </aside>

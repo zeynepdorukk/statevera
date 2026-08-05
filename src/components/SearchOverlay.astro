@@ -139,7 +139,7 @@ import { site } from "../site";
     overlay.classList.remove("hidden");
     document.body.style.overflow = "hidden";
     if (!loaded) {
-      fetch("/search-index.json")
+      fetch(import.meta.env.BASE_URL + "search-index.json")
         .then((r) => r.json())
         .then((data) => {
           index = data;

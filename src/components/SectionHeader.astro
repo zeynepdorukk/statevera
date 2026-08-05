@@ -1,5 +1,6 @@
 ---
 import { site } from "../site";
+import { root } from "../utils/collection";
 
 interface Props {
   number?: string;
@@ -17,7 +18,7 @@ const { number, title, link, linkLabel = "View all" } = Astro.props;
   <span class="rule" aria-hidden="true"></span>
   {link && (
     <a
-      href={link}
+      href={root(link)}
       class="shrink-0 font-sans text-[0.72rem] font-semibold tracking-[0.1em] text-accent uppercase transition-colors duration-200 hover:text-ink"
     >
       {linkLabel} →

@@ -1,10 +1,10 @@
 ---
-import { getFeaturedArticle, heroImageOf, formatDate, readingTime } from "../utils/collection";
+import { getFeaturedArticle, heroImageOf, formatDate, readingTime, root } from "../utils/collection";
 import { creditFor } from "../data/imageCredits";
 
 const lead = await getFeaturedArticle();
 if (!lead) return null;
-const href = `/articles/${lead.id.replace(/\.mdx?$/, "")}`;
+const href = root(`/articles/${lead.id.replace(/\.mdx?$/, "")}`);
 const rt = readingTime(lead);
 const credit = creditFor(lead.data.heroImage);
 ---

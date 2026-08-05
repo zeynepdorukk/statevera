@@ -1,11 +1,11 @@
 ---
-import { getLatestArticles, heroImageOf, formatDate, readingTime } from "../utils/collection";
+import { getLatestArticles, heroImageOf, formatDate, readingTime, root } from "../utils/collection";
 import SectionHeader from "./SectionHeader.astro";
 import { creditFor } from "../data/imageCredits";
 
 const all = await getLatestArticles(5);
 const [first, ...rest] = all;
-const firstHref = `/articles/${first.id.replace(/\.mdx?$/, "")}`;
+const firstHref = root(`/articles/${first.id.replace(/\.mdx?$/, "")}`);
 const rt = readingTime(first);
 ---
 
@@ -47,7 +47,7 @@ const rt = readingTime(first);
     <!-- Four smaller stories -->
     <div class="flex flex-col justify-between">
       {rest.map((a) => {
-        const href = `/articles/${a.id.replace(/\.mdx?$/, "")}`;
+        const href = root(`/articles/${a.id.replace(/\.mdx?$/, "")}`);
         return (
           <article class="group border-b border-line py-4 first:pt-0 last:border-b-0 lg:py-3.5">
             <div class="flex gap-5">

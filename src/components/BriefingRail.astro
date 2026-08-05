@@ -1,5 +1,5 @@
 ---
-import { getAllBriefings, formatTime } from "../utils/collection";
+import { getAllBriefings, formatTime, root } from "../utils/collection";
 
 const briefings = await getAllBriefings();
 const byImportance = [...briefings].sort((a, b) => {
@@ -38,7 +38,7 @@ const shown = byImportance.slice(0, 6);
   ))}
 
   <p class="mt-3">
-    <a href="/briefings" class="kicker-ink transition-colors duration-200 hover:text-accent">
+    <a href={root("/briefings")} class="kicker-ink transition-colors duration-200 hover:text-accent">
       All briefings →
     </a>
   </p>

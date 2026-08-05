@@ -2,7 +2,7 @@
 import { render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { site } from "../../site";
-import { getArticleBySlug, getLatestArticles, heroImageOf, readingTime } from "../../utils/collection";
+import { getArticleBySlug, getLatestArticles, heroImageOf, readingTime, root } from "../../utils/collection";
 import ArticleHeader from "../../components/article/ArticleHeader.astro";
 import ArticleSources from "../../components/article/ArticleSources.astro";
 import ArticleShare from "../../components/article/ArticleShare.astro";
@@ -23,13 +23,13 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const article = await getArticleBySlug(slug ?? "");
-if (!article) return Astro.redirect("/404");
+if (!article) return Astro.redirect(root("/404"));
 
 const { Content } = await render(article);
 
 const { data, body } = article;
 const rt = readingTime(article);
-const href = `/articles/${article.id.replace(/\.mdx?$/, "")}`;
+const href = root(`/articles/${article.id.replace(/\.mdx?$/, "")}`);
 const latest = await getLatestArticles(5);
 const related = latest.filter((a) => a.id !== article.id).slice(0, 4);
 
@@ -45,7 +45,7 @@ const jsonLd = [
     publisher: {
       "@type": "Organization",
       name: site.publicationName,
-      logo: { "@type": "ImageObject", url: new URL("/images/branding/favicon-64.png", site.siteUrl).toString() },
+      logo: { "@type": "ImageObject", url: new URL(root("/images/branding/logo-512.png"), site.siteUrl).toString() },
     },
     image: [new URL(heroImageOf(data.heroImage), site.siteUrl).toString()],
     articleSection: data.category,
@@ -123,7 +123,7 @@ const jsonLd = [
           ))}
         </div>
         <p class="mt-4">
-          <a href="/latest" class="kicker-ink transition-colors duration-200 hover:text-accent">
+          <a href={root("/latest")} class="kicker-ink transition-colors duration-200 hover:text-accent">
             All latest →
           </a>
         </p>

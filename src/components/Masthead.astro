@@ -1,5 +1,6 @@
 ---
 import { site } from "../site";
+import { root } from "../utils/collection";
 
 interface Props {
   compact?: boolean;
@@ -10,7 +11,7 @@ const { compact = false, tagline = true } = Astro.props;
 ---
 
 <a
-  href="/"
+  href={root("/")}
   class:list={[
     "group inline-block select-none no-underline",
     compact ? "" : "text-center",
@@ -25,7 +26,7 @@ const { compact = false, tagline = true } = Astro.props;
     style="font-size: clamp(1.35rem, 3.4vw, 1.85rem)"
   >
     <img
-      src="/images/branding/logo-mark.svg"
+      src={root("/images/branding/logo-mark.svg")}
       alt=""
       width="44"
       height="44"
@@ -37,7 +38,7 @@ const { compact = false, tagline = true } = Astro.props;
       aria-hidden="true"
     />
     <img
-      src="/images/branding/logo-mark-light.svg"
+      src={root("/images/branding/logo-mark-light.svg")}
       alt=""
       width="44"
       height="44"

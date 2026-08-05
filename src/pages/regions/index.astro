@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { regions } from "../../site";
-import { getByRegionSlug, getLatestBriefings, formatTime } from "../../utils/collection";
+import { getByRegionSlug, getLatestBriefings, formatTime, root } from "../../utils/collection";
 
 const rows = await Promise.all(
   Object.values(regions).map(async (r) => {
@@ -33,9 +33,9 @@ const rows = await Promise.all(
         <section class="border border-line bg-paper-soft p-6 transition-colors duration-200 hover:border-line-strong" aria-label={region.name}>
           <div class="flex items-baseline justify-between">
             <h2 class="t-headline-sm">
-              <a href={region.url} class="editorial-link">{region.name}</a>
+              <a href={root(region.url)} class="editorial-link">{region.name}</a>
             </h2>
-            <a href={region.url} class="kicker transition-colors duration-200 hover:text-ink">Desk →</a>
+            <a href={root(region.url)} class="kicker transition-colors duration-200 hover:text-ink">Desk →</a>
           </div>
           <p class="mt-2 font-serif text-[0.92rem] leading-relaxed text-muted">{region.description}</p>
 
@@ -44,7 +44,7 @@ const rows = await Promise.all(
               <li class="border-b border-line py-2.5 last:border-b-0">
                 <p class="kicker">{a.data.category}</p>
                 <h3 class="mt-0.5 font-serif text-[1rem] font-medium leading-snug">
-                  <a href={`/articles/${a.id.replace(/\.mdx?$/, "")}`} class="editorial-link">
+                  <a href={root(`/articles/${a.id.replace(/\.mdx?$/, "")}`)} class="editorial-link">
                     {a.data.title}
                   </a>
                 </h3>

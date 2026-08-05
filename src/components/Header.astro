@@ -1,5 +1,6 @@
 ---
 import { nav, site } from "../site";
+import { root } from "../utils/collection";
 import Masthead from "./Masthead.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 
@@ -39,13 +40,13 @@ const isActive = (url: string) =>
         <kbd class="hidden rounded-sm border border-line px-1 py-px font-sans text-[0.6rem] font-medium text-muted sm:inline">/</kbd>
       </button>
       <a
-        href="/about"
+        href={root("/about")}
         class="hidden p-1 font-sans text-[0.72rem] font-semibold tracking-[0.08em] text-ink-soft uppercase transition-colors duration-200 hover:text-accent sm:inline-block"
       >
         About
       </a>
       <a
-        href="/briefings"
+        href={root("/briefings")}
         class="hidden p-1 font-sans text-[0.72rem] font-semibold tracking-[0.08em] text-ink-soft uppercase transition-colors duration-200 hover:text-accent md:inline-block"
       >
         Briefings
@@ -65,7 +66,7 @@ const isActive = (url: string) =>
         {nav.primary.map((item) => (
           <li>
             <a
-              href={item.url}
+              href={root(item.url)}
               aria-current={isActive(item.url) ? "page" : undefined}
               class:list={[
                 "relative block whitespace-nowrap px-3 py-2.5 font-sans text-[0.74rem] font-semibold tracking-[0.06em] uppercase transition-colors duration-200 first:pl-0 last:pr-0 hover:text-accent",
@@ -106,7 +107,7 @@ const isActive = (url: string) =>
       {nav.primary.map((item) => (
         <li>
           <a
-            href={item.url}
+            href={root(item.url)}
             class:list={[
               "flex items-center justify-between border-b border-line py-3 font-serif text-xl font-medium text-ink last:border-0",
               isActive(item.url) ? "text-accent" : "",
@@ -118,7 +119,7 @@ const isActive = (url: string) =>
         </li>
       ))}
       <li class="pt-3">
-        <a href="/about" class="meta">About the publication</a>
+        <a href={root("/about")} class="meta">About the publication</a>
       </li>
     </ul>
   </div>
