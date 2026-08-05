@@ -222,23 +222,31 @@ So the two halves are hosted separately:
 | | Where | What it holds |
 | --- | --- | --- |
 | The publication | GitHub Pages | static pages, free and unlimited |
-| The desk | Cloudflare Pages | `/editor` and `/api/*`, and every secret |
+| The desk | Netlify | `/editor` and `/api/*`, and every secret |
 
-Cloudflare was chosen because the editor and its API sit on the **same origin**
-there, which is what allows a first-party `HttpOnly` cookie. Static requests are
-free and unlimited; the free plan allows 100,000 function requests a day, and a
-writer working all day uses a few hundred.
+The desk needs a host that runs code **on the same origin** as the editor, which
+is what allows a first-party `HttpOnly` cookie.
+
+Cloudflare Pages was the first choice and the code for it is still here
+(`functions/api/[[path]].ts`), but `*.pages.dev` and `*.workers.dev` are
+unreachable from Turkish networks — measured, alongside `*.vercel.app`,
+`*.netlify.app`, `*.deno.dev` and `*.onrender.com`, which are all fine. Since
+the writer is in Turkey, the desk runs on Netlify
+(`netlify/functions/desk.mts`). Both files are eight lines and call the same
+handler, so either host can be used; Cloudflare becomes viable again the day a
+custom domain is attached.
 
 The public site is untouched by any of this. It has no login, no API and no
 JavaScript that knows the desk exists.
 
 #### Setting up the desk
 
-1. Create a free Cloudflare account and a **Pages** project connected to this
-   repository. Build command `npm run build`, output directory `dist`.
-2. Add the variables in the table above under **Settings → Environment
-   variables**, as **encrypted** values. They are write-only once saved.
-3. Deploy. The desk answers at `<project>.pages.dev`, and its front door
+1. Create a free Netlify account and a site connected to this repository.
+   `netlify.toml` already sets the build command, the publish directory, the
+   functions directory and the Node version.
+2. Add the variables in the table above under **Site configuration →
+   Environment variables**. Mark them **Contains secret values**.
+3. Deploy. The desk answers at `<site>.netlify.app`, and its front door
    redirects to `/statevera/editor`.
 
 Locally, copy `.env.example` to `.env` and run `npm run dev`; the same handler
@@ -249,6 +257,7 @@ will open and render stories, and only refuse to publish.
 **`npm run check` scans `dist/` for credential shapes** (OpenAI, Anthropic,
 GitHub, Google) and fails the build if it finds one. It reports the file and the
 kind of token, never the value. This runs in CI before every deploy.
+
 
 
 ---
@@ -294,7 +303,8 @@ publish.
 ```
 functions/
 └── api/[[path]].ts         # Cloudflare entry point; one line, calls the router
-
+netlify/
+└── functions/desk.mts     # Netlify entry point; the same router
 scripts/
 ├── wire-sources.mjs        # feed registry + classification vocabulary
 ├── fetch-wire.mjs          # the aggregation pipeline
