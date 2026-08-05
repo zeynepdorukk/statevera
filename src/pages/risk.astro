@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { root } from "../utils/collection";
+
+const RISK_URL = "https://zeynepdorukk.github.io/Glorisk/";
+---
+
+<BaseLayout
+  title="Geopolitical Risk Analysis"
+  description="Interactive geopolitical risk analysis — Glorisk: country risk scoring, shock scenarios and strategic exposure, embedded on Statevera."
+  path="/risk"
+>
+  <div class="mx-auto max-w-[1400px] px-4 pt-8 md:px-8 md:pt-10">
+    <header class="border-b-2 border-ink pb-5">
+      <h1 class="t-headline-lg">Geopolitical Risk Analysis</h1>
+      <p class="mt-1 font-sans text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-accent">
+        Glorisk — interactive risk tool
+      </p>
+      <p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-ink-soft">
+        An interactive tool for assessing geopolitical risk: country risk scores, shock scenarios
+        and strategic exposure, developed by the Statevera editor. Use it to stress-test
+        assumptions behind the reporting on this site.
+      </p>
+    </header>
+
+    <div class="py-8">
+      <div class="relative border border-line bg-paper-soft">
+        <iframe
+          src={RISK_URL}
+          title="Glorisk — Geopolitical Risk Analysis"
+          class="block h-[78vh] min-h-[560px] w-full border-0 bg-white"
+          loading="eager"
+          allow="fullscreen"
+        ></iframe>
+        <div class="flex items-center justify-between gap-3 border-t border-line px-4 py-2.5">
+          <p class="meta">
+            Glorisk · <a href={RISK_URL} target="_blank" rel="noopener" class="link-accent">open in a new tab</a>
+          </p>
+          <p class="meta hidden sm:block">Updated from the Glorisk project repository</p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <div class="border border-line bg-paper-soft p-5">
+          <p class="kicker">What it is</p>
+          <p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
+            Glorisk scores and visualises geopolitical risk across countries and regions, combining
+            conflict, sanctions, energy and financial exposure into a single assessment.
+          </p>
+        </div>
+        <div class="border border-line bg-paper-soft p-5">
+          <p class="kicker">How to use it</p>
+          <p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
+            Filter by region, compare risk categories, and explore scenario shocks. The tool is
+            interactive — hover, click and toggle to build your own view.
+          </p>
+        </div>
+        <div class="border border-line bg-paper-soft p-5">
+          <p class="kicker">Related</p>
+          <p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
+            Risk analysis connects to the <a href={root("/news/geopolitics")} class="link-accent">Geopolitics</a> and
+            <a href={root("/news/security")} class="link-accent"> Security</a> sections of Statevera.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

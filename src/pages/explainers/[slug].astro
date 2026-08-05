@@ -39,7 +39,7 @@ const jsonLd = [
     description: data.description,
     datePublished: data.date.toISOString(),
     ...(data.updated ? { dateModified: data.updated.toISOString() } : {}),
-    author: { "@type": "Person", name: "The Statevera Desk" },
+    author: { "@type": "Person", name: site.authorName },
     publisher: {
       "@type": "Organization",
       name: site.publicationName,
@@ -75,7 +75,7 @@ const jsonLd = [
     </p>
 
     <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 border-y border-line py-3.5">
-      <p class="font-sans text-[0.8rem] font-semibold text-ink">The Dispatch Reference Desk</p>
+      <p class="font-sans text-[0.8rem] font-semibold text-ink">By {site.authorName} · Statevera Reference</p>
       <time class="meta" datetime={data.date.toISOString()}>
         Published {formatDate(data.date)}
       </time>

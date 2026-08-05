@@ -1,4 +1,4 @@
-﻿---
+---
 timestamp: 2026-08-05T10:35
 location: "Beijing"
 category: "Economy"

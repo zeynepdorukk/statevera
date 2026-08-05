@@ -64,7 +64,7 @@ const isActive = (url: string) =>
     <div class="mx-auto flex max-w-[1400px] items-center justify-between px-4 md:px-8">
       <ul class="no-scrollbar flex items-center gap-0 overflow-x-auto">
         {nav.primary.map((item) => (
-          <li>
+          <li class="group relative" data-nav-item>
             <a
               href={root(item.url)}
               aria-current={isActive(item.url) ? "page" : undefined}
@@ -76,7 +76,31 @@ const isActive = (url: string) =>
               ]}
             >
               {item.label}
+              {item.subs && (
+                <svg class="ml-1 inline-block align-baseline opacity-50" width="9" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                  <path d="m1 1 4 4 4-4" />
+                </svg>
+              )}
             </a>
+            {item.subs && (
+              <div class="invisible absolute left-0 top-full z-50 w-max min-w-[200px] border border-line bg-paper opacity-0 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.35)] transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <ul class="py-2">
+                  {item.subs.map((s) => (
+                    <li>
+                      <a
+                        href={root(s.url)}
+                        class:list={[
+                          "block px-4 py-2 font-sans text-[0.72rem] font-semibold tracking-[0.08em] uppercase transition-colors duration-150 hover:bg-paper-soft hover:text-accent",
+                          isActive(s.url) ? "text-accent" : "text-ink-soft",
+                        ]}
+                      >
+                        {s.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </li>
         ))}
       </ul>
@@ -116,10 +140,31 @@ const isActive = (url: string) =>
             {item.label}
             <span class="font-sans text-[0.65rem] tracking-[0.2em] text-muted uppercase">→</span>
           </a>
+          {item.subs && (
+            <ul class="border-b border-line pb-2 pl-4">
+              {item.subs.map((s) => (
+                <li>
+                  <a
+                    href={root(s.url)}
+                    class:list={[
+                      "flex items-center justify-between border-b border-line/60 py-2.5 font-serif text-[1.05rem] text-ink-soft last:border-0",
+                      isActive(s.url) ? "text-accent" : "",
+                    ]}
+                  >
+                    {s.label}
+                    <span class="font-sans text-[0.6rem] tracking-[0.2em] text-muted uppercase">→</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
       ))}
       <li class="pt-3">
         <a href={root("/about")} class="meta">About the publication</a>
+      </li>
+      <li class="pt-1">
+        <a href={root("/editor")} class="meta">Editor</a>
       </li>
     </ul>
   </div>

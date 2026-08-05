@@ -1,0 +1,726 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const EDITOR_PASSWORD_HASH =
+  "ab6e9c72f635e31ba0aceea151f27e9d2dba668e0bfd521828ed7bb78f784be9";
+const GITHUB_API = "https://api.github.com/repos/zeynepdorukk/statevera";
+const GITHUB_BRANCH = "master";
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<BaseLayout
+  title="Editor — Statevera"
+  description="Statevera editorial workspace."
+  path="/editor"
+>
+  <meta name="robots" content="noindex, nofollow" />
+  <div class="mx-auto max-w-[1100px] px-4 pt-8 md:px-8 md:pt-10">
+    <header class="border-b-2 border-ink pb-5">
+      <h1 class="t-headline-lg">Editor Workspace</h1>
+      <p class="mt-1 font-sans text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-accent">
+        Zeynep Doruk · sole editor &amp; writer
+      </p>
+      <p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-ink-soft">
+        Create and correct articles, explainers and their metadata. Changes are committed to the
+        repository and the site rebuilds automatically.
+      </p>
+    </header>
+
+    <div class="py-8" data-editor-root>
+      <div class="flex justify-center py-16" data-editor-loading>
+        <p class="meta">Loading editor…</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script type="module">
+  const EDITOR_PASSWORD_HASH = "ab6e9c72f635e31ba0aceea151f27e9d2dba668e0bfd521828ed7bb78f784be9";
+  const GITHUB_API = "https://api.github.com/repos/zeynepdorukk/statevera";
+  const GITHUB_BRANCH = "master";
+  const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+  const TOKEN_KEY = "statevera-editor-token";
+  const AUTH_KEY = "statevera-editor-auth";
+
+  const root = document.querySelector("[data-editor-root]");
+  const loading = document.querySelector("[data-editor-loading]");
+
+  const CATEGORIES = ["Politics", "Geopolitics", "Economy", "Culture", "Security", "Diplomacy", "Theory", "Opinion"];
+  const REGIONS = ["Europe", "Middle East", "Americas", "Asia-Pacific", "Africa", "Eurasia", "Turkey", "Global"];
+  const TYPES = ["news", "analysis", "opinion", "explainer", "briefing"];
+
+  const state = {
+    token: localStorage.getItem(TOKEN_KEY) || "",
+    items: [] as { title: string; url: string; category: string; region: string; kind: string }[],
+    images: [] as string[],
+  };
+
+  const esc = (s: string) =>
+    String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+  async function sha256Hex(text: string): Promise<string> {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+    return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+  }
+
+  function b64EncodeUtf8(str: string): string {
+    const bytes = new TextEncoder().encode(str);
+    let bin = "";
+    for (let i = 0; i < bytes.length; i += 0x8000) {
+      bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+    }
+    return btoa(bin);
+  }
+
+  function b64DecodeUtf8(b64: string): string {
+    const bin = atob(b64);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return new TextDecoder().decode(bytes);
+  }
+
+  async function ghFetch(path: string, opts: RequestInit = {}) {
+    const headers: Record<string, string> = { Accept: "application/vnd.github+json", ...(opts.headers as Record<string, string>) };
+    if (state.token) headers.Authorization = `Bearer ${state.token}`;
+    const res = await fetch(GITHUB_API + path, { ...opts, headers });
+    const text = await res.text();
+    let json: unknown = null;
+    try { json = text ? JSON.parse(text) : null; } catch { /* keep null */ }
+    if (!res.ok) {
+      const msg = (json as { message?: string })?.message ?? res.status;
+      throw new Error(`GitHub API ${res.status}: ${msg}`);
+    }
+    return json;
+  }
+
+  function splitFrontmatter(raw: string): { fm: string; body: string } {
+    const m = raw.match(/^---\s*\n([\s\S]*?)\n---\s*\n?/);
+    return m ? { fm: m[1], body: raw.slice(m[0].length) } : { fm: "", body: raw };
+  }
+
+  function readField(fm: string, key: string): string {
+    const m = fm.match(new RegExp(`^${key}:\\s*(.+)$`, "m"));
+    return m ? m[1].trim().replace(/^["']|["']$/g, "") : "";
+  }
+
+  function yamlStr(v: string): string {
+    return `"${String(v ?? "").replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
+  }
+
+  function yamlArr(v: string): string {
+    const items = v.split(",").map((s) => s.trim()).filter(Boolean);
+    return items.length ? `[${items.map(yamlStr).join(", ")}]` : "[]";
+  }
+
+  function buildArticleFile(f: Record<string, string>, body: string): string {
+    const fm = [
+      "---",
+      `title: ${yamlStr(f.title)}`,
+      `description: ${yamlStr(f.description)}`,
+      `date: ${f.date}`,
+      ...(f.updated ? [`updated: ${f.updated}`] : []),
+      `author: "Zeynep Doruk"`,
+      `category: ${yamlStr(f.category)}`,
+      `region: ${yamlStr(f.region)}`,
+      `country: ${yamlArr(f.country)}`,
+      `tags: ${yamlArr(f.tags)}`,
+      `type: ${f.type}`,
+      `featured: ${f.featured === "on"}`,
+      `breaking: ${f.breaking === "on"}`,
+      `editorsPick: ${f.editorsPick === "on"}`,
+      `heroImage: ${yamlStr(f.heroImage)}`,
+      `heroImageAlt: ${yamlStr(f.heroImageAlt)}`,
+      ...(f.imageCredit ? [`imageCredit: ${yamlStr(f.imageCredit)}`] : []),
+      ...(f.sources
+        ? [
+            "sources:",
+            ...f.sources
+              .split("\n")
+              .map((l) => l.trim())
+              .filter(Boolean)
+              .map((l) => {
+                const i = l.indexOf("|");
+                return i > -1
+                  ? `  - name: ${yamlStr(l.slice(0, i).trim())}\n    url: ${yamlStr(l.slice(i + 1).trim())}`
+                  : `  - name: ${yamlStr(l)}\n    url: ""`;
+              }),
+          ]
+        : []),
+      "---",
+      "",
+    ].join("\n");
+    return fm + body.trim() + "\n";
+  }
+
+  function buildExplainerFile(f: Record<string, string>, body: string): string {
+    const fm = [
+      "---",
+      `title: ${yamlStr(f.title)}`,
+      `description: ${yamlStr(f.description)}`,
+      `date: ${f.date}`,
+      ...(f.updated ? [`updated: ${f.updated}`] : []),
+      `tags: ${yamlArr(f.tags)}`,
+      `heroImage: ${yamlStr(f.heroImage)}`,
+      `heroImageAlt: ${yamlStr(f.heroImageAlt)}`,
+      ...(f.imageCredit ? [`imageCredit: ${yamlStr(f.imageCredit)}`] : []),
+      "---",
+      "",
+    ].join("\n");
+    return fm + body.trim() + "\n";
+  }
+
+  function renderMarkdown(src: string): string {
+    const lines = src.replace(/\r\n/g, "\n").split("\n");
+    const out: string[] = [];
+    let list = false;
+    const closeList = () => { if (list) { out.push("</ul>"); list = false; } };
+    for (const line of lines) {
+      const l = line.trim();
+      if (l.startsWith("### ")) { closeList(); out.push(`<h4>${esc(l.slice(4))}</h4>`); }
+      else if (l.startsWith("## ")) { closeList(); out.push(`<h3>${esc(l.slice(3))}</h3>`); }
+      else if (l.startsWith("# ")) { closeList(); out.push(`<h2>${esc(l.slice(2))}</h2>`); }
+      else if (l.startsWith("- ") || l.startsWith("* ")) {
+        if (!list) { list = true; out.push("<ul>"); }
+        out.push(`<li>${inline(l.slice(2))}</li>`);
+      }
+      else if (l === "---") { closeList(); out.push("<hr/>"); }
+      else if (l === "") { closeList(); }
+      else { closeList(); out.push(`<p>${inline(l)}</p>`); }
+    }
+    closeList();
+    return out.join("\n");
+  }
+
+  function inline(s: string): string {
+    let t = esc(s);
+    t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
+    t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    return t;
+  }
+
+  const view = (html: string) => {
+    loading!.style.display = "none";
+    root!.innerHTML = html;
+  };
+
+  // ------------------------------------------------------------
+  // Views
+  // ------------------------------------------------------------
+
+  function loginView(message = "") {
+    view(`
+      <div class="mx-auto max-w-[420px] py-10">
+        <div class="border border-line bg-paper-soft p-6">
+          <h2 class="t-headline-sm">Editor sign-in</h2>
+          <p class="meta mt-1">Restricted to the editor and invited writers.</p>
+          ${message ? `<p class="mt-3 font-sans text-[0.85rem] font-semibold text-red-600" data-ed-err>${esc(message)}</p>` : ""}
+          <form data-ed-login class="mt-5 space-y-4">
+            <div>
+              <label class="ed-label" for="ed-password">Password</label>
+              <input id="ed-password" type="password" required class="ed-input" placeholder="••••••••" autocomplete="current-password" />
+            </div>
+            <div>
+              <label class="ed-label" for="ed-token">GitHub token <span class="ed-hint">(optional — fine-grained PAT with Contents: Read &amp; Write on the statevera repo)</span></label>
+              <input id="ed-token" type="password" class="ed-input" placeholder="github_pat_…" autocomplete="off" value="${esc(state.token)}" />
+            </div>
+            <button type="submit" class="ed-btn">Sign in</button>
+          </form>
+          <p class="mt-4 font-sans text-[0.72rem] leading-relaxed text-muted">
+            The token is stored only in this browser (localStorage) and is used solely to read and
+            commit article files. Without a token, content can be loaded but not saved.
+          </p>
+        </div>
+      </div>
+    `);
+    root!.querySelector("[data-ed-login]")!.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const pw = (root!.querySelector("#ed-password") as HTMLInputElement).value;
+      const tk = (root!.querySelector("#ed-token") as HTMLInputElement).value.trim();
+      const hash = await sha256Hex(pw);
+      if (hash !== EDITOR_PASSWORD_HASH) {
+        loginView("Incorrect password.");
+        return;
+      }
+      state.token = tk;
+      if (tk) localStorage.setItem(TOKEN_KEY, tk);
+      sessionStorage.setItem(AUTH_KEY, "1");
+      await loadIndex();
+    });
+  }
+
+  async function loadImages(): Promise<string[]> {
+    try {
+      const files = (await ghFetch("/contents/public/images/articles")) as { name: string }[];
+      return files.filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f.name)).map((f) => `/images/articles/${f.name}`);
+    } catch {
+      return [];
+    }
+  }
+
+  async function loadIndex() {
+    loading!.style.display = "block";
+    root!.innerHTML = "";
+    try {
+      const [idxRes, images] = await Promise.all([
+        fetch(BASE + "/search-index.json"),
+        loadImages(),
+      ]);
+      const idx = (await idxRes.json()) as { title: string; url: string; category: string; region: string; kind: string }[];
+      state.items = idx.filter((i) => i.url.includes("/articles/") || i.url.includes("/explainers/"));
+      state.images = images.length ? images : ["/images/articles/beijing.jpg"];
+      listView();
+    } catch (err) {
+      listView(null, String((err as Error).message));
+    }
+  }
+
+  function listView(message: string | null = null, error = "") {
+    const articles = state.items.filter((i) => i.url.includes("/articles/"));
+    const explainers = state.items.filter((i) => i.url.includes("/explainers/"));
+    const row = (i: { title: string; url: string; category: string; region: string }) => `
+      <li class="flex items-center gap-3 border-b border-line py-3">
+        <div class="min-w-0 flex-1">
+          <p class="truncate font-serif text-[1.02rem] leading-snug text-ink">${esc(i.title)}</p>
+          <p class="meta mt-0.5">${esc(i.category)} · ${esc(i.region)} · ${esc(i.url.split("/").pop() || "")}</p>
+        </div>
+        <button type="button" data-ed-edit="${esc(i.url)}" class="ed-btn ed-btn-sm">Edit</button>
+      </li>`;
+    view(`
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-line pb-4">
+        <div>
+          <h2 class="t-headline-sm">Articles &amp; explainers</h2>
+          <p class="meta mt-1">${state.items.length} pieces on the site · save commits to the repository and triggers a rebuild (~2 min).</p>
+        </div>
+        <div class="flex gap-2">
+          <button type="button" data-ed-new="article" class="ed-btn">New article</button>
+          <button type="button" data-ed-new="explainer" class="ed-btn">New explainer</button>
+        </div>
+      </div>
+      ${message ? `<p class="mt-4 border border-line bg-paper-soft px-4 py-3 font-sans text-[0.85rem] text-ink-soft" data-ed-msg>${message}</p>` : ""}
+      ${error ? `<p class="mt-4 border border-red-300 bg-red-50 px-4 py-3 font-sans text-[0.85rem] text-red-700" data-ed-msg>${esc(error)}</p>` : ""}
+      <div class="grid gap-8 pt-6 lg:grid-cols-2">
+        <div>
+          <div class="section-head"><h2 class="title">Articles</h2><span class="rule" aria-hidden="true"></span></div>
+          <ul class="border-t border-line">${articles.length ? articles.map(row).join("") : '<li class="py-4 font-serif text-[0.95rem] text-muted">No articles yet.</li>'}</ul>
+        </div>
+        <div>
+          <div class="section-head"><h2 class="title">Explainers</h2><span class="rule" aria-hidden="true"></span></div>
+          <ul class="border-t border-line">${explainers.length ? explainers.map(row).join("") : '<li class="py-4 font-serif text-[0.95rem] text-muted">No explainers yet.</li>'}</ul>
+        </div>
+      </div>
+      <div class="mt-8 flex gap-2">
+        <button type="button" data-ed-signout class="ed-btn ed-btn-ghost">Sign out</button>
+        ${state.token ? "" : `<button type="button" data-ed-settings class="ed-btn ed-btn-ghost">Add GitHub token</button>`}
+      </div>
+    `);
+    root!.querySelectorAll("[data-ed-edit]").forEach((b) =>
+      b.addEventListener("click", () => editView((b as HTMLButtonElement).dataset.edEdit!))
+    );
+    root!.querySelectorAll("[data-ed-new]").forEach((b) =>
+      b.addEventListener("click", () => newView((b as HTMLButtonElement).dataset.edNew!))
+    );
+    root!.querySelector("[data-ed-signout]")!.addEventListener("click", () => {
+      sessionStorage.removeItem(AUTH_KEY);
+      loginView();
+    });
+    const settingsBtn = root!.querySelector("[data-ed-settings]");
+    settingsBtn?.addEventListener("click", () => {
+      const tk = prompt("GitHub fine-grained PAT (Contents: Read & Write on statevera):", state.token);
+      if (tk !== null) {
+        state.token = tk.trim();
+        if (state.token) localStorage.setItem(TOKEN_KEY, state.token);
+        else localStorage.removeItem(TOKEN_KEY);
+        listView("Token updated.");
+      }
+    });
+  }
+
+  function message(text: string) {
+    const el = root!.querySelector("[data-ed-msg]");
+    if (el) el.textContent = text;
+    else listView(text);
+  }
+
+  function slugify(s: string): string {
+    return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
+  }
+
+  function newView(kind: "article" | "explainer") {
+    view(`
+      <a href="#" data-ed-back class="kicker-ink transition-colors duration-200 hover:text-accent">← Back to list</a>
+      <div class="mt-4 max-w-[560px] border border-line bg-paper-soft p-6">
+        <h2 class="t-headline-sm">New ${kind}</h2>
+        <form data-ed-newform class="mt-5 space-y-4">
+          <div>
+            <label class="ed-label" for="ed-slug">Slug (file name — auto-suggested)</label>
+            <input id="ed-slug" type="text" required class="ed-input" placeholder="e.g. realism-in-foreign-policy" />
+          </div>
+          <div>
+            <label class="ed-label" for="ed-ntitle">Title</label>
+            <input id="ed-ntitle" type="text" required class="ed-input" placeholder="Article title" />
+          </div>
+          <button type="submit" class="ed-btn">Create ${kind}</button>
+        </form>
+      </div>
+    `);
+    const slugInput = root!.querySelector("#ed-slug") as HTMLInputElement;
+    const titleInput = root!.querySelector("#ed-ntitle") as HTMLInputElement;
+    titleInput.addEventListener("input", () => {
+      if (slugInput.value === "" || slugInput.value === slugify(titleInput.value)) {
+        slugInput.value = slugify(titleInput.value);
+      }
+    });
+    root!.querySelector("[data-ed-back]")!.addEventListener("click", (e) => { e.preventDefault(); loadIndex(); });
+    root!.querySelector("[data-ed-newform]")!.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const slug = slugify(slugInput.value);
+      const title = titleInput.value.trim();
+      if (!slug) { message("A slug is required."); return; }
+      if (!state.token) { message("A GitHub token is required to create files."); return; }
+      try {
+        const filePath = kind === "article"
+          ? `src/content/articles/${slug}.mdx`
+          : `src/content/explainers/${slug}.mdx`;
+        await ghFetch(`/contents/${filePath}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json", "User-Agent": "statevera-editor" },
+          body: JSON.stringify({
+            message: `Create ${kind} "${title}" (via editor)`,
+            branch: GITHUB_BRANCH,
+            content: b64EncodeUtf8(buildArticleFile(
+              { title, description: "", date: new Date().toISOString().slice(0, 10), category: "Politics", region: "Global", tags: "", country: "", type: "news", heroImage: state.images[0], heroImageAlt: "", imageCredit: "", sources: "" },
+              ""
+            )),
+          }),
+        });
+        listView(`Created ${kind} "${title}". It now appears in the list — open it and finish the article.`);
+      } catch (err) {
+        message(`Create failed: ${(err as Error).message}`);
+      }
+    });
+  }
+
+  async function editView(url: string) {
+    const slug = decodeURIComponent(url.split("/").pop() || "");
+    const kind = url.includes("/explainers/") ? "explainer" : "article";
+    view(`
+      <a href="#" data-ed-back class="kicker-ink transition-colors duration-200 hover:text-accent">← Back to list</a>
+      <div class="mt-4 flex items-center justify-between gap-3">
+        <div class="min-w-0">
+          <h2 class="t-headline-sm">${kind === "article" ? "Article" : "Explainer"}: <span class="text-accent">${esc(slug)}</span></h2>
+          <p class="meta mt-1">Loading content…</p>
+        </div>
+      </div>
+    `);
+    root!.querySelector("[data-ed-back]")!.addEventListener("click", (e) => { e.preventDefault(); loadIndex(); });
+    try {
+      const dir = kind === "article" ? "articles" : "explainers";
+      const ext = kind === "article" ? "mdx" : "mdx";
+      const meta = (await ghFetch(`/contents/src/content/${dir}/${slug}.${ext}`)) as { content: string; sha: string };
+      const raw = b64DecodeUtf8(meta.content);
+      const { fm, body } = splitFrontmatter(raw);
+      const f = {
+        title: readField(fm, "title"),
+        description: readField(fm, "description"),
+        date: readField(fm, "date").slice(0, 10),
+        updated: readField(fm, "updated").slice(0, 10),
+        category: readField(fm, "category"),
+        region: readField(fm, "region"),
+        type: readField(fm, "type"),
+        tags: readField(fm, "tags").replace(/^\[|\]$/g, "").replace(/"/g, "").split(",").map((s) => s.trim()).join(", "),
+        country: readField(fm, "country").replace(/^\[|\]$/g, "").replace(/"/g, "").split(",").map((s) => s.trim()).join(", "),
+        featured: readField(fm, "featured"),
+        breaking: readField(fm, "breaking"),
+        editorsPick: readField(fm, "editorsPick"),
+        heroImage: readField(fm, "heroImage"),
+        heroImageAlt: readField(fm, "heroImageAlt"),
+        imageCredit: readField(fm, "imageCredit"),
+        sources: fm.includes("sources:")
+          ? fm.split("sources:")[1].split("\n").map((l) => l.trim()).filter((l) => l.startsWith("-")).map((l) => l.replace(/^-\s*/, "")).join("\n").replace(/\n/g, "\n").split("\n").map((l) => {
+              const name = l.match(/name:\s*"([^"]*)"/)?.[1] ?? "";
+              const srcUrl = l.match(/url:\s*"([^"]*)"/)?.[1] ?? "";
+              return name + (srcUrl ? ` | ${srcUrl}` : "");
+            }).join("\n")
+          : "",
+      };
+      formView(kind, slug, meta.sha, f, body);
+    } catch (err) {
+      message(`Load failed: ${(err as Error).message}`);
+      listView();
+    }
+  }
+
+  function formView(
+    kind: "article" | "explainer",
+    slug: string,
+    sha: string,
+    f: Record<string, string>,
+    body: string
+  ) {
+    const opt = (list: string[], val: string) =>
+      list.map((o) => `<option value="${esc(o)}" ${o === val ? "selected" : ""}>${esc(o)}</option>`).join("");
+    const imgOpts = state.images
+      .map((i) => `<option value="${esc(i)}" ${i === f.heroImage ? "selected" : ""}>${esc(i.split("/").pop())}</option>`)
+      .join("");
+    const check = (key: string) => (f[key] === "true" ? "checked" : "");
+    view(`
+      <a href="#" data-ed-back class="kicker-ink transition-colors duration-200 hover:text-accent">← Back to list</a>
+      <div class="mt-4 border border-line bg-paper-soft p-5">
+        <form data-ed-form class="grid gap-5 lg:grid-cols-2">
+          <div class="space-y-4 lg:col-span-2">
+            <div>
+              <label class="ed-label" for="f-title">Title</label>
+              <input id="f-title" class="ed-input" value="${esc(f.title)}" />
+            </div>
+            <div>
+              <label class="ed-label" for="f-desc">Description (dek / summary)</label>
+              <textarea id="f-desc" rows="3" class="ed-input">${esc(f.description)}</textarea>
+            </div>
+          </div>
+          ${kind === "article" ? `
+          <div class="space-y-4">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="ed-label" for="f-date">Published</label>
+                <input id="f-date" type="date" class="ed-input" value="${esc(f.date)}" />
+              </div>
+              <div>
+                <label class="ed-label" for="f-updated">Updated <span class="ed-hint">(optional)</span></label>
+                <input id="f-updated" type="date" class="ed-input" value="${esc(f.updated)}" />
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="ed-label" for="f-category">Category</label>
+                <select id="f-category" class="ed-input">${opt(CATEGORIES, f.category)}</select>
+              </div>
+              <div>
+                <label class="ed-label" for="f-region">Region</label>
+                <select id="f-region" class="ed-input">${opt(REGIONS, f.region)}</select>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="ed-label" for="f-type">Type</label>
+                <select id="f-type" class="ed-input">${opt(TYPES, f.type)}</select>
+              </div>
+              <div>
+                <label class="ed-label" for="f-tags">Tags (comma separated)</label>
+                <input id="f-tags" class="ed-input" value="${esc(f.tags)}" />
+              </div>
+            </div>
+            <div>
+              <label class="ed-label" for="f-country">Countries (comma separated)</label>
+              <input id="f-country" class="ed-input" value="${esc(f.country)}" />
+            </div>
+            <div class="flex flex-wrap gap-4">
+              <label class="ed-check"><input id="f-featured" type="checkbox" ${check("featured")} /> Featured</label>
+              <label class="ed-check"><input id="f-breaking" type="checkbox" ${check("breaking")} /> Breaking</label>
+              <label class="ed-check"><input id="f-pick" type="checkbox" ${check("editorsPick")} /> Editor's pick</label>
+            </div>
+          </div>` : `
+          <div class="space-y-4">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="ed-label" for="f-date">Published</label>
+                <input id="f-date" type="date" class="ed-input" value="${esc(f.date)}" />
+              </div>
+              <div>
+                <label class="ed-label" for="f-tags">Tags (comma separated)</label>
+                <input id="f-tags" class="ed-input" value="${esc(f.tags)}" />
+              </div>
+            </div>
+          </div>`}
+          <div class="space-y-4">
+            <div>
+              <label class="ed-label" for="f-hero">Hero image</label>
+              <select id="f-hero" class="ed-input">${imgOpts}<option value="">Custom…</option></select>
+              <input id="f-hero-custom" class="ed-input mt-2 hidden" placeholder="/images/articles/your-file.jpg" value="${esc(f.heroImage)}" />
+            </div>
+            <div>
+              <label class="ed-label" for="f-alt">Hero image alt text</label>
+              <input id="f-alt" class="ed-input" value="${esc(f.heroImageAlt)}" />
+            </div>
+            <div>
+              <label class="ed-label" for="f-credit">Image credit <span class="ed-hint">(optional)</span></label>
+              <input id="f-credit" class="ed-input" value="${esc(f.imageCredit)}" />
+            </div>
+            ${kind === "article" ? `
+            <div>
+              <label class="ed-label" for="f-sources">Sources <span class="ed-hint">(one per line: Name | url)</span></label>
+              <textarea id="f-sources" rows="4" class="ed-input">${esc(f.sources)}</textarea>
+            </div>` : ""}
+          </div>
+          <div class="lg:col-span-2">
+            <div class="flex items-center justify-between">
+              <label class="ed-label" for="f-body">Body (Markdown)</label>
+              <label class="ed-check"><input id="f-preview-toggle" type="checkbox" checked /> Live preview</label>
+            </div>
+            <div class="grid gap-4 lg:grid-cols-2">
+              <textarea id="f-body" rows="26" class="ed-input font-mono text-[0.82rem]">${esc(body)}</textarea>
+              <div id="f-preview" class="article-body ed-preview overflow-y-auto border border-line bg-paper-soft p-5"></div>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-3 lg:col-span-2">
+            <button type="submit" class="ed-btn" data-ed-save>Save &amp; publish</button>
+            <a href="${esc(BASE + "/articles/" + slug)}" target="_blank" rel="noopener" class="ed-btn ed-btn-ghost" data-ed-view>View on site</a>
+            <span class="meta" data-ed-status></span>
+          </div>
+        </form>
+      </div>
+    `);
+
+    const heroSelect = root!.querySelector("#f-hero") as HTMLSelectElement;
+    const heroCustom = root!.querySelector("#f-hero-custom") as HTMLInputElement;
+    const syncHero = () => {
+      if (heroSelect.value === "") { heroCustom.classList.remove("hidden"); heroCustom.focus(); }
+      else heroCustom.classList.add("hidden");
+    };
+    heroSelect.addEventListener("change", () => { if (heroSelect.value) heroCustom.value = heroSelect.value; syncHero(); });
+    if (heroSelect.value === "") syncHero();
+
+    const bodyEl = root!.querySelector("#f-body") as HTMLTextAreaElement;
+    const previewEl = root!.querySelector("#f-preview") as HTMLElement;
+    const previewToggle = root!.querySelector("#f-preview-toggle") as HTMLInputElement;
+    const renderPreview = () => { if (previewToggle.checked) previewEl.innerHTML = renderMarkdown(bodyEl.value); };
+    bodyEl.addEventListener("input", renderPreview);
+    previewToggle.addEventListener("change", renderPreview);
+    renderPreview();
+
+    root!.querySelector("[data-ed-back]")!.addEventListener("click", (e) => { e.preventDefault(); loadIndex(); });
+    root!.querySelector("[data-ed-form]")!.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!state.token) { message("A GitHub token is required to save."); return; }
+      const g = (id: string) => (root!.querySelector(id) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement).value;
+      const fields: Record<string, string> = {
+        title: g("#f-title"),
+        description: g("#f-desc"),
+        date: g("#f-date"),
+        updated: g("#f-updated"),
+        category: g("#f-category"),
+        region: g("#f-region"),
+        type: g("#f-type"),
+        tags: g("#f-tags"),
+        country: g("#f-country"),
+        featured: (root!.querySelector("#f-featured") as HTMLInputElement)?.checked ? "on" : "",
+        breaking: (root!.querySelector("#f-breaking") as HTMLInputElement)?.checked ? "on" : "",
+        editorsPick: (root!.querySelector("#f-pick") as HTMLInputElement)?.checked ? "on" : "",
+        heroImage: heroCustom.classList.contains("hidden") ? heroSelect.value : heroCustom.value.trim(),
+        heroImageAlt: g("#f-alt"),
+        imageCredit: g("#f-credit"),
+        sources: g("#f-sources"),
+        tags: g("#f-tags"),
+      };
+      const fileContent = kind === "article"
+        ? buildArticleFile(fields, bodyEl.value)
+        : buildExplainerFile(fields, bodyEl.value);
+      const statusEl = root!.querySelector("[data-ed-status]") as HTMLElement;
+      statusEl.textContent = "Saving…";
+      try {
+        const dir = kind === "article" ? "articles" : "explainers";
+        await ghFetch(`/contents/src/content/${dir}/${slug}.mdx`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json", "User-Agent": "statevera-editor" },
+          body: JSON.stringify({
+            message: `Edit ${kind} "${fields.title}" (via editor)`,
+            branch: GITHUB_BRANCH,
+            content: b64EncodeUtf8(fileContent),
+            sha,
+          }),
+        });
+        statusEl.textContent = "Saved. Site rebuilds automatically (~2 min).";
+      } catch (err) {
+        statusEl.textContent = `Save failed: ${(err as Error).message}`;
+      }
+    });
+  }
+
+  // ------------------------------------------------------------
+  // Boot
+  // ------------------------------------------------------------
+
+  if (sessionStorage.getItem(AUTH_KEY)) {
+    await loadIndex();
+  } else {
+    loginView();
+  }
+</script>
+
+<style is:global>
+  .ed-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 0.35rem;
+  }
+  .ed-hint {
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--muted);
+  }
+  .ed-input {
+    width: 100%;
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+    color: var(--ink);
+    padding: 0.55rem 0.7rem;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    border-radius: 0;
+    outline: none;
+  }
+  .ed-input:focus {
+    border-color: var(--accent);
+  }
+  .ed-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.55rem 1rem;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+  }
+  .ed-btn:hover {
+    opacity: 0.85;
+  }
+  .ed-btn-sm {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.68rem;
+    white-space: nowrap;
+  }
+  .ed-btn-ghost {
+    background: transparent;
+    color: var(--ink-soft);
+    border-color: var(--line-strong);
+  }
+  .ed-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    cursor: pointer;
+  }
+  .ed-preview {
+    min-height: 480px;
+  }
+  .dark .ed-input {
+    color-scheme: dark;
+  }
+</style>

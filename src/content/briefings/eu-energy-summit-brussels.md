@@ -1,7 +1,7 @@
-﻿---
+---
 timestamp: 2026-08-05T12:46
 location: "Brussels"
-category: "World"
+category: "Politics"
 region: "Europe"
 importance: "high"
 ---

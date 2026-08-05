@@ -36,12 +36,37 @@ rebuilds automatically in dev.
 Key frontmatter fields:
 
 - `date` — publication date (ISO). Use `updated` for revisions.
-- `category` — `Geopolitics | Security | Diplomacy | Economy | Analysis | Opinion`.
+- `category` — `Politics | Geopolitics | Economy | Culture | Security | Diplomacy | Theory | Opinion`.
 - `region` — `Europe | Middle East | Americas | Asia-Pacific | Africa | Eurasia | Turkey | Global`.
 - `type` — `news | analysis | opinion | explainer`.
 - `sample: true` — marks demo content; shows a "Demo content" note on the page.
 - `heroImage` — `/images/articles/<file>.jpg` (place the image in `public/images/articles/`).
 - `sources` — list of `{ name, url }` displayed at the end of the article.
+
+## Editorial workspace (`/editor`)
+
+The site includes a password-protected, client-side editor at `/editor` for the sole
+editor & writer (Zeynep Doruk). It can:
+
+- list all articles and explainers,
+- load any piece from the repository and edit title, description, date, category,
+  region, tags, hero image, sources and body (Markdown, with live preview),
+- create new articles/explainers,
+- commit changes back to GitHub (push to `master` triggers the Pages rebuild).
+
+### Access
+
+- **Password** (default): `statevera2026`.
+  Change it by replacing `EDITOR_PASSWORD_HASH` in `src/pages/editor.astro` with the
+  SHA-256 hex of a new password, e.g. `node -e "console.log(require('crypto').createHash('sha256').update('newpassword').digest('hex'))"`.
+- **GitHub token** (required for saving): create a fine-grained personal access token
+  with **Contents: Read and Write** scoped to the `zeynepdorukk/statevera` repository
+  (https://github.com/settings/personal-access-tokens/new) and enter it on the sign-in
+  screen. It is stored only in the browser (localStorage) and never sent anywhere
+  except GitHub's API.
+- This is a static-site gate, not a hard security boundary — anyone who can read the
+  page source can read the hash. It keeps casual visitors out; the GitHub token is
+  the real control for who can write.
 
 ## Architecture
 
@@ -58,11 +83,17 @@ src/
 │   └── article/           # ArticleHeader, ArticleSources, ArticleShare, RelatedStories
 └── pages/
     ├── index.astro                    # Homepage (lead grid, Top Stories, World Today…)
-    ├── [section].astro                # /latest, /world, /geopolitics, /analysis, …
+    ├── [section].astro                # /latest, /explainers (+ legacy redirects)
+    ├── news.astro                     # News hub
+    ├── news/[section].astro           # /news/politics, /news/geopolitics, … category pages
+    ├── concepts.astro                 # Concepts hub (Theory + Explainers)
+    ├── concepts/theory.astro          # Academic theory section
+    ├── risk.astro                     # Geopolitical Risk Analysis (Glorisk embedded)
+    ├── editor.astro                   # Password-protected editorial workspace (noindex)
     ├── articles/[slug].astro
     ├── explainers/[slug].astro
-    ├── regions/index.astro            # Regions desk index
-    ├── regions/[region].astro         # Region desks (7 regions)
+    ├── regions/index.astro            # Regions index
+    ├── regions/[region].astro         # Region pages (7 regions)
     ├── briefings.astro                # Dated briefing stream
     ├── about.astro
     ├── 404.astro
@@ -73,8 +104,8 @@ src/
 ## Customization
 
 - **Brand** — edit `src/site.ts` (publication name, tagline, author, nav, social URLs).
-  The production domain is `https://statevera.example.com` in `astro.config.mjs`
-  and `public/robots.txt`; update before going live.
+  The production domain is `https://zeynepdorukk.github.io/statevera` in `astro.config.mjs`
+  and `public/robots.txt`.
 - **Design tokens** — `src/styles/global.css` `@theme`: paper/ink/accent colors,
   font stacks, section numbering, article body typography. Dark mode flips CSS
   variables under `.dark`.

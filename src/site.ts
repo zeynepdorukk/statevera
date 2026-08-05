@@ -15,12 +15,12 @@ export const site = {
   publicationType: "Independent international affairs publication",
 
   // Author / editor ------------------------------------------
-  authorName: "Daniel Marchetti",
-  authorHandle: "D. Marchetti",
-  authorRole: "Editor",
-  authorPhoto: "/images/authors/marchetti.jpg",
+  authorName: "Zeynep Doruk",
+  authorHandle: "Z. Doruk",
+  authorRole: "Editor & Writer",
+  authorPhoto: "/images/authors/zeynep-doruk.svg",
   authorBio:
-    "Daniel Marchetti is the editor of Statevera. He has covered international security, diplomacy and political economy for more than a decade, reporting from Brussels, Ankara, Washington and the Gulf. His work focuses on the intersection of strategy, economics and statecraft.",
+    "Zeynep Doruk is the editor and sole writer of Statevera. She covers international security, diplomacy and political economy, with reporting interests spanning Europe, the Middle East and the Eastern Mediterranean. Her work focuses on the intersection of strategy, economics and statecraft.",
 
   // Links ----------------------------------------------------
   socialLinks: {
@@ -40,27 +40,57 @@ export const site = {
 export const nav = {
   primary: [
     { label: "Latest", url: "/latest" },
-    { label: "World", url: "/world" },
-    { label: "Geopolitics", url: "/geopolitics" },
-    { label: "Security", url: "/security" },
-    { label: "Diplomacy", url: "/diplomacy" },
-    { label: "Economy", url: "/economy" },
+    {
+      label: "News",
+      url: "/news",
+      subs: [
+        { label: "Politics", url: "/news/politics" },
+        { label: "Geopolitics", url: "/news/geopolitics" },
+        { label: "Economy", url: "/news/economy" },
+        { label: "Culture", url: "/news/culture" },
+        { label: "Security", url: "/news/security" },
+        { label: "Diplomacy", url: "/news/diplomacy" },
+        { label: "Opinion", url: "/news/opinion" },
+      ],
+    },
+    {
+      label: "Concepts",
+      url: "/concepts",
+      subs: [
+        { label: "Theory", url: "/concepts/theory" },
+        { label: "Explainers", url: "/explainers" },
+      ],
+    },
+    { label: "Risk Analysis", url: "/risk" },
     { label: "Regions", url: "/regions" },
-    { label: "Analysis", url: "/analysis" },
-    { label: "Opinion", url: "/opinion" },
+    { label: "Briefings", url: "/briefings" },
+    { label: "About", url: "/about" },
   ],
 } as const;
 
 export type CategorySlug =
   | "latest"
-  | "world"
+  | "news"
+  | "politics"
   | "geopolitics"
+  | "economy"
+  | "culture"
   | "security"
   | "diplomacy"
-  | "economy"
-  | "analysis"
+  | "theory"
   | "opinion"
   | "explainers";
+
+// Categories that live under the "News" hub
+export const newsSections = [
+  "politics",
+  "geopolitics",
+  "economy",
+  "culture",
+  "security",
+  "diplomacy",
+  "opinion",
+] as const;
 
 export const categories: Record<
   CategorySlug,
@@ -73,54 +103,68 @@ export const categories: Record<
       "The full recent stream — analysis, news, explainers and briefings — in reverse chronological order.",
     url: "/latest",
   },
-  world: {
-    name: "World",
+  news: {
+    name: "News",
     tagline: "The international system, day by day",
     description:
-      "Latest developments across regions and institutions — from the G20 to the Security Council, from trade corridors to summit rooms.",
-    url: "/world",
+      "Reporting on the politics, security, diplomacy, economics and culture of international relations — from summit rooms to chokepoints, from elections to sanctions.",
+    url: "/news",
+  },
+  politics: {
+    name: "Politics",
+    tagline: "Power, elections and the politics of states",
+    description:
+      "How domestic politics and statecraft shape the international system — elections, coalitions, institutions and the decisions of governments.",
+    url: "/news/politics",
   },
   geopolitics: {
     name: "Geopolitics",
     tagline: "Power, geography and the contest for influence",
     description:
       "How shifting alliances, strategic geography and great-power competition are reshaping the international order.",
-    url: "/geopolitics",
-  },
-  security: {
-    name: "Security",
-    tagline: "Deterrence, defence and strategic risk",
-    description:
-      "NATO, nuclear posture, arms control, regional conflicts and the military balance — reported and analysed.",
-    url: "/security",
-  },
-  diplomacy: {
-    name: "Diplomacy",
-    tagline: "The quiet machinery of statecraft",
-    description:
-      "Negotiations, summits, back channels and the institutions that manage — and fail to manage — interstate relations.",
-    url: "/diplomacy",
+    url: "/news/geopolitics",
   },
   economy: {
     name: "Economy",
     tagline: "Political economy and the economics of power",
     description:
       "Sanctions, trade, energy, supply chains and the global financial system as instruments of politics.",
-    url: "/economy",
+    url: "/news/economy",
   },
-  analysis: {
-    name: "Analysis",
-    tagline: "Long-form reading on the forces shaping the world",
+  culture: {
+    name: "Culture",
+    tagline: "Ideas, identity and soft power",
     description:
-      "In-depth analysis pieces from the editor's desk: structured arguments, clear stakes, full sourcing.",
-    url: "/analysis",
+      "How culture, language, media and public memory shape foreign policy and international relations.",
+    url: "/news/culture",
+  },
+  security: {
+    name: "Security",
+    tagline: "Deterrence, defence and strategic risk",
+    description:
+      "NATO, nuclear posture, arms control, regional conflicts and the military balance — reported and analysed.",
+    url: "/news/security",
+  },
+  diplomacy: {
+    name: "Diplomacy",
+    tagline: "The quiet machinery of statecraft",
+    description:
+      "Negotiations, summits, back channels and the institutions that manage — and fail to manage — interstate relations.",
+    url: "/news/diplomacy",
+  },
+  theory: {
+    name: "Theory",
+    tagline: "The concepts that explain the system",
+    description:
+      "Academic summaries and theoretical essays on international relations and economics — realism, liberalism, constructivism, balance of power, game theory, trade theory and more.",
+    url: "/concepts/theory",
   },
   opinion: {
     name: "Opinion",
     tagline: "Arguments, signed",
     description:
       "Explicitly argued pieces on the decisions facing governments, alliances and the international system.",
-    url: "/opinion",
+    url: "/news/opinion",
   },
   explainers: {
     name: "Explainers",

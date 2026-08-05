@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getByCategory, getAllExplainers, formatDate, readingTime, root } from "../utils/collection";
+import StoryCard from "../components/StoryCard.astro";
+
+const meta = {
+  name: "Concepts",
+  tagline: "The ideas behind the headlines",
+};
+
+const [theoryArticles, explainers] = await Promise.all([
+  getByCategory("Theory"),
+  getAllExplainers(),
+]);
+const theoryHref = root("/concepts/theory");
+---
+
+<BaseLayout
+  title={meta.name}
+  description="Academic summaries and theoretical essays on international relations and economics — the concepts and theories that explain the international system."
+  path="/concepts"
+>
+  <div class="mx-auto max-w-[1400px] px-4 pt-8 md:px-8 md:pt-10">
+    <header class="border-b-2 border-ink pb-5">
+      <h1 class="t-headline-lg">{meta.name}</h1>
+      <p class="mt-1 font-sans text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-accent">{meta.tagline}</p>
+      <p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-ink-soft">
+        Conceptual and theoretical writing on international relations and economics: academic
+        summaries, theory explainers and reference guides to the ideas that run the world.
+      </p>
+    </header>
+
+    <div class="py-8">
+      <div class="section-head">
+        <h2 class="title">Theory</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <a href={theoryHref} class="kicker-ink ml-auto transition-colors duration-200 hover:text-accent">All theory →</a>
+      </div>
+      {theoryArticles.length > 0 ? (
+        <div class="grid gap-x-8 gap-y-8 border-t border-line pt-6 sm:grid-cols-2 lg:grid-cols-3">
+          {theoryArticles.map((a) => (
+            <StoryCard article={a} />
+          ))}
+        </div>
+      ) : (
+        <p class="border border-line bg-paper-soft p-6 font-serif text-[1rem] text-muted">
+          No theory essays yet. Academic summaries on international relations and economics theory
+          are in preparation — including realism, liberalism, constructivism, balance of power and
+          trade theory.
+        </p>
+      )}
+
+      <div class="section-head mt-12">
+        <h2 class="title">Reference &amp; Explainers</h2>
+        <span class="rule" aria-hidden="true"></span>
+      </div>
+      <div class="grid gap-x-8 gap-y-8 border-t border-line pt-6 sm:grid-cols-2 lg:grid-cols-3">
+        {explainers.map((e) => {
+          const href = root(`/explainers/${e.id.replace(/\.mdx?$/, "")}`);
+          return (
+            <article class="group border border-line bg-paper-soft p-5 transition-colors duration-200 hover:border-line-strong">
+              <p class="kicker">Reference</p>
+              <h2 class="t-headline-xs mt-2">
+                <a href={href} class="editorial-link">{e.data.title}</a>
+              </h2>
+              <p class="mt-2 line-clamp-2 font-sans text-[0.82rem] leading-relaxed text-muted">
+                {e.data.description}
+              </p>
+              <p class="meta mt-3">{formatDate(e.data.date)} · {readingTime(e)} min read</p>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+</BaseLayout>
