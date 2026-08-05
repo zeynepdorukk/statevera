@@ -30,7 +30,7 @@ function readProjectEnv(name) {
 }
 
 /**
- * Runs the desk's API locally, using the same handler that Cloudflare runs in
+ * Runs the desk's API locally, using the same handler that Netlify runs in
  * production, so there is only one implementation to keep honest.
  *
  * `apply: "serve"` means this plugin does not exist during a build. Secrets are
