@@ -24,7 +24,7 @@ import Masthead from "./Masthead.astro";
         <nav aria-label="Sections">
           <p class="kicker-ink mb-3">Sections</p>
           <ul class="space-y-2">
-            {nav.primary.slice(0, 7).map((item) => (
+            {nav.primary.map((item) => (
               <li>
                 <a href={root(item.url)} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
                   {item.label}
@@ -34,11 +34,6 @@ import Masthead from "./Masthead.astro";
             <li>
               <a href={root("/explainers")} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
                 Explainers
-              </a>
-            </li>
-            <li>
-              <a href={root("/briefings")} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
-                Briefings
               </a>
             </li>
           </ul>

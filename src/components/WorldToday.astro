@@ -66,7 +66,7 @@ const hotspots: Record<string, { x: number; y: number }> = {
           <a
             href={root(regions[k].url)}
             aria-label={regions[k].name}
-            class="group absolute -translate-x-1/2 -translate-y-1/2"
+            class="group absolute -translate-x-1/2 -translate-y-1/2 rounded-full p-2"
             style={`left:${hotspots[k].x}%; top:${hotspots[k].y}%;`}
           >
             <span

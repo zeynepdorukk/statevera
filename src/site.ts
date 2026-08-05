@@ -39,7 +39,6 @@ export const site = {
 
 export const nav = {
   primary: [
-    { label: "Latest", url: "/latest" },
     {
       label: "News",
       url: "/news",

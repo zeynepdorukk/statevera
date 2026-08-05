@@ -22,7 +22,7 @@ const isActive = (url: string) =>
 
 <header class="header-shell" id="site-header">
   <!-- Top meta row -->
-  <div class="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-4 pt-2 pb-1 md:px-8">
+  <div class="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-4 pt-2 pb-2.5 md:px-8">
     <p class="meta hidden lg:block" aria-hidden="true">{today}</p>
     <p class="meta hidden md:block lg:hidden" aria-hidden="true">{site.authorRole} of {site.publicationNameDisplay}</p>
 
@@ -30,7 +30,7 @@ const isActive = (url: string) =>
       <button
         type="button"
         data-open-search
-        class="inline-flex cursor-pointer items-center gap-2 border-none bg-transparent p-1 font-sans text-[0.72rem] font-semibold tracking-[0.08em] text-ink-soft uppercase transition-colors duration-200 hover:text-accent"
+        class="inline-flex cursor-pointer items-center gap-2 border-none bg-transparent p-2.5 font-sans text-[0.72rem] font-semibold tracking-[0.08em] text-ink-soft uppercase transition-colors duration-200 hover:text-accent"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <circle cx="11" cy="11" r="7" />
@@ -41,13 +41,13 @@ const isActive = (url: string) =>
       </button>
       <a
         href={root("/about")}
-        class="hidden p-1 font-sans text-[0.72rem] font-semibold tracking-[0.08em] text-ink-soft uppercase transition-colors duration-200 hover:text-accent sm:inline-block"
+        class="hidden p-2.5 font-sans text-[0.72rem] font-semibold tracking-[0.08em] text-ink-soft uppercase transition-colors duration-200 hover:text-accent sm:inline-block"
       >
         About
       </a>
       <a
         href={root("/briefings")}
-        class="hidden p-1 font-sans text-[0.72rem] font-semibold tracking-[0.08em] text-ink-soft uppercase transition-colors duration-200 hover:text-accent md:inline-block"
+        class="hidden p-2.5 font-sans text-[0.72rem] font-semibold tracking-[0.08em] text-ink-soft uppercase transition-colors duration-200 hover:text-accent md:inline-block"
       >
         Briefings
       </a>
@@ -55,23 +55,23 @@ const isActive = (url: string) =>
   </div>
 
   <!-- Masthead -->
-  <div class="mx-auto max-w-[1400px] px-4 pt-1 pb-3 md:px-8 md:pt-2" data-masthead>
+  <div class="mx-auto max-w-[1400px] px-4 pt-2 pb-4 md:px-8 md:pt-2.5" data-masthead>
     <Masthead />
   </div>
 
   <!-- Navigation -->
   <nav aria-label="Primary" class="border-y border-line">
     <div class="mx-auto flex max-w-[1400px] items-center justify-between px-4 md:px-8">
-      <ul class="no-scrollbar flex items-center gap-0 overflow-x-auto">
+      <ul class="hidden items-center gap-1.5 overflow-visible lg:flex">
         {nav.primary.map((item) => (
           <li class="group relative" data-nav-item>
             <a
               href={root(item.url)}
               aria-current={isActive(item.url) ? "page" : undefined}
               class:list={[
-                "relative block whitespace-nowrap px-3 py-2.5 font-sans text-[0.74rem] font-semibold tracking-[0.06em] uppercase transition-colors duration-200 first:pl-0 last:pr-0 hover:text-accent",
+                "relative block whitespace-nowrap px-3.5 py-3 font-sans text-[0.74rem] font-semibold tracking-[0.06em] uppercase transition-colors duration-200 first:pl-0 last:pr-0 hover:text-accent",
                 isActive(item.url)
-                  ? "text-ink after:absolute after:inset-x-3 after:bottom-0 after:h-[2px] after:bg-accent first:after:inset-x-0"
+                  ? "text-ink after:absolute after:inset-x-3.5 after:bottom-0 after:h-[2px] after:bg-accent first:after:inset-x-0"
                   : "text-ink-soft",
               ]}
             >
@@ -83,7 +83,7 @@ const isActive = (url: string) =>
               )}
             </a>
             {item.subs && (
-              <div class="invisible absolute left-0 top-full z-50 w-max min-w-[200px] border border-line bg-paper opacity-0 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.35)] transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div class="invisible absolute left-0 top-full z-50 w-max min-w-[220px] border border-line border-t-2 border-t-accent bg-paper opacity-0 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.35)] transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                 <ul class="py-2">
                   {item.subs.map((s) => (
                     <li>
@@ -183,7 +183,7 @@ const isActive = (url: string) =>
     compacted = shouldCompact;
     header?.classList.toggle("is-compact", compacted);
     if (masthead) {
-      (masthead as HTMLElement).style.paddingBlock = compacted ? "0.35rem" : "0.5rem";
+      (masthead as HTMLElement).style.paddingBlock = compacted ? "0.3rem" : "0.5rem";
     }
   };
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -210,5 +210,10 @@ const isActive = (url: string) =>
   }
   .header-shell.is-compact [data-masthead] .tagline-hide {
     display: none;
+  }
+  .header-shell.is-compact [data-masthead] .logo-mark-light,
+  .header-shell.is-compact [data-masthead] .logo-mark-dark {
+    height: 1.4em;
+    width: 1.4em;
   }
 </style>
