@@ -477,6 +477,9 @@ import EditorLayout from "../layouts/EditorLayout.astro";
     color: var(--tone);
     font-weight: 700;
   }
+  .ed-float[data-scope="line"] .block-only {
+    display: none;
+  }
   .ed-pick img {
     width: 3.5rem;
     height: 2.6rem;
@@ -991,7 +994,11 @@ import EditorLayout from "../layouts/EditorLayout.astro";
     /** New pieces have no path yet, so their local draft needs its own key. */
     const draftKey = () => K_DRAFT + (path || `new:${kind}`);
 
-    const heroSrc = (p: string) => (p ? (p.startsWith("http") ? p : BASE + p) : "");
+    // The content stores a bare filename, exactly as heroImageOf expects. Storing
+    // anything else means the select never matches and Publish wipes the picture.
+    const inArticles = (name: string) =>
+      name.startsWith("http") || name.startsWith("/") ? name : `/images/articles/${name}`;
+    const heroSrc = (p: string) => (p ? (p.startsWith("http") ? p : BASE + inArticles(p)) : "");
 
     view(`
       <div class="ed-bar">
@@ -1001,7 +1008,6 @@ import EditorLayout from "../layouts/EditorLayout.astro";
         </div>
         <div class="ed-bar-right">
           <span class="ed-bar-meta" data-count></span>
-          ${aiReady() ? '<button type="button" class="ed-btn" data-assist>Assist</button>' : ""}
           <button type="button" class="ed-btn ed-btn-primary" data-publish>Publish</button>
         </div>
       </div>
@@ -1026,18 +1032,17 @@ import EditorLayout from "../layouts/EditorLayout.astro";
 
       <button type="button" class="ed-add" data-add title="Insert (or type /)">+</button>
 
-      <div class="ed-float" data-float>
+      <div class="ed-float" data-float data-scope="body">
         <button type="button" data-cmd="bold" title="Bold  Ctrl+B"><strong>B</strong></button>
         <button type="button" data-cmd="italic" title="Italic  Ctrl+I"><em>I</em></button>
         <button type="button" data-cmd="link" title="Link  Ctrl+K">Link</button>
-        <span class="sep"></span>
-        <button type="button" data-cmd="h2" title="Heading">H2</button>
-        <button type="button" data-cmd="h3" title="Sub-heading">H3</button>
-        <button type="button" data-cmd="quote" title="Quote">&ldquo;</button>
+        <span class="sep block-only"></span>
+        <button type="button" class="block-only" data-cmd="h2" title="Heading">H2</button>
+        <button type="button" class="block-only" data-cmd="h3" title="Sub-heading">H3</button>
+        <button type="button" class="block-only" data-cmd="quote" title="Quote">&ldquo;</button>
         <span class="sep"></span>
         <button type="button" data-cmd="clear" title="Plain text">Clear</button>
-        <span class="sep"></span>
-        <button type="button" class="ed-float-ai" data-cmd="ask" title="Tell the assistant what to do  Ctrl+J">Ask</button>
+        ${aiReady() ? '<span class="sep"></span><button type="button" class="ed-float-ai" data-cmd="ask" title="Tell the assistant what to do  Ctrl+J">Ask</button>' : ""}
       </div>
 
       <div class="ed-float" data-linkbar>
@@ -1071,7 +1076,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
             <label class="ed-legend">Lead image</label>
             <select class="ed-select" data-hero>
               <option value="">None</option>
-              ${state.images.map((i) => `<option value="${esc(i)}" ${i === f.heroImage ? "selected" : ""}>${esc(i.split("/").pop())}</option>`).join("")}
+              ${state.images.map((i) => `<option value="${esc(i)}" ${i === f.heroImage ? "selected" : ""}>${esc(i)}</option>`).join("")}
             </select>
           </div>
           <div class="ed-field">
@@ -1484,7 +1489,12 @@ import EditorLayout from "../layouts/EditorLayout.astro";
         return;
       }
       const range = sel.getRangeAt(0);
-      if (!bodyEl.contains(range.commonAncestorContainer)) return;
+      const node = range.commonAncestorContainer;
+      const inBody = bodyEl.contains(node);
+      // The headline and standfirst can be rewritten too, but they are single
+      // lines: headings, quotes and lists do not apply to them.
+      if (!inBody && !titleEl.contains(node) && !standEl.contains(node)) return;
+      floatEl.dataset.scope = inBody ? "body" : "line";
       savedRange = range.cloneRange();
       showFloat(floatEl, range.getBoundingClientRect());
       syncFloatState();
@@ -1579,6 +1589,16 @@ import EditorLayout from "../layouts/EditorLayout.astro";
       menuBlock = null;
     }
 
+    /** Dismisses a popup on the next click outside it, and only that once. */
+    function dismissOnClickAway(close: () => void) {
+      const away = (event: MouseEvent) => {
+        if (menuEl.contains(event.target as Node)) return;
+        document.removeEventListener("mousedown", away, true);
+        close();
+      };
+      window.setTimeout(() => document.addEventListener("mousedown", away, true), 0);
+    }
+
     function chooseMenu(index: number) {
       const item = menuFiltered[index];
       if (!item || !menuBlock) return closeMenu();
@@ -1590,7 +1610,9 @@ import EditorLayout from "../layouts/EditorLayout.astro";
     }
 
     document.addEventListener("keydown", (event) => {
-      if (!menuEl.classList.contains("is-open")) return;
+      // Only the slash menu drives itself from the keyboard; the ask box and the
+      // pickers share this element and must keep their own keystrokes.
+      if (!menuBlock || !menuEl.classList.contains("is-open")) return;
       if (event.key === "ArrowDown" || event.key === "ArrowUp") {
         event.preventDefault();
         menuIndex = Math.min(Math.max(menuIndex + (event.key === "ArrowDown" ? 1 : -1), 0), menuFiltered.length - 1);
@@ -1700,20 +1722,20 @@ import EditorLayout from "../layouts/EditorLayout.astro";
       const index = await chooseFrom(
         "Choose an image",
         state.images.map(
-          (src) =>
-            `<img src="${esc(BASE + src)}" alt="" loading="lazy" /><span class="name">${esc(src.split("/").pop() ?? "")}</span>`
+          (name) =>
+            `<img src="${esc(BASE + inArticles(name))}" alt="" loading="lazy" /><span class="name">${esc(name)}</span>`
         ),
         block.getBoundingClientRect(),
         "20rem"
       );
-      const src = state.images[index];
-      if (!src) return;
+      const name = state.images[index];
+      if (!name) return;
       const figure = document.createElement("figure");
       figure.className = "ed-figure";
       figure.dataset.image = "";
       figure.setAttribute("contenteditable", "false");
       figure.innerHTML =
-        `<img src="${esc(BASE + src)}" data-src="${esc(src)}" alt="" />` +
+        `<img src="${esc(BASE + inArticles(name))}" data-src="${esc(inArticles(name))}" alt="" />` +
         `<figcaption contenteditable="true" data-placeholder="Caption"></figcaption>`;
       insertBlock(block, figure);
       placeCaret(figure.querySelector("figcaption") as HTMLElement);
@@ -1778,8 +1800,6 @@ import EditorLayout from "../layouts/EditorLayout.astro";
     }
 
     const scheduleSuggestion = debounce(() => requestSuggestion(false), 1400);
-
-    maybe<HTMLButtonElement>("[data-assist]")?.addEventListener("click", () => openAsk());
 
     /**
      * Select some words, say what you want done to them, and it is done. The
@@ -1913,6 +1933,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
       menuEl.classList.add("is-open");
       menuEl.style.top = `${window.scrollY + 70}px`;
       menuEl.style.left = `${Math.max(12, window.innerWidth - 420)}px`;
+      dismissOnClickAway(() => { menuEl.classList.remove("is-open"); menuEl.style.width = ""; });
 
       menuEl.querySelectorAll<HTMLButtonElement>("[data-note]").forEach((button) =>
         button.addEventListener("click", () => {
@@ -1937,9 +1958,8 @@ import EditorLayout from "../layouts/EditorLayout.astro";
     }
 
     document.addEventListener("mousedown", (event) => {
-      if (!menuEl.contains(event.target as Node) && !((event.target as HTMLElement).dataset?.assist !== undefined)) {
-        if (menuEl.classList.contains("is-open") && !menuBlock) menuEl.classList.remove("is-open");
-      }
+      if (!menuBlock) return;
+      if (!menuEl.contains(event.target as Node)) closeMenu();
     });
 
     // ==========================================================
@@ -1966,7 +1986,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
       const src = heroSelect.value;
       if (src) {
         coverEl.classList.add("has-image");
-        coverEl.innerHTML = `<img src="${esc(BASE + src)}" alt="" /><button type="button" class="ed-btn ed-cover-swap" data-cover-swap>Change</button>`;
+        coverEl.innerHTML = `<img src="${esc(heroSrc(src))}" alt="" /><button type="button" class="ed-btn ed-cover-swap" data-cover-swap>Change</button>`;
       } else {
         coverEl.classList.remove("has-image");
         coverEl.innerHTML = '<span class="ed-cover-hint">+ Lead image</span>';

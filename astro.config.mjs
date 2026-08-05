@@ -103,6 +103,28 @@ const deskDevPlugin = {
 };
 
 
+/**
+ * Markdown images are written as `/images/articles/x.jpg`, the path the file
+ * actually has in the repository. Astro leaves those alone, so under a base path
+ * they would 404. This puts the base back on the way out.
+ *
+ * @returns {(tree: any) => void}
+ */
+function rehypeBaseImages() {
+  return (tree) => {
+    const walk = (/** @type {any} */ node) => {
+      if (node.tagName === "img") {
+        const src = node.properties?.src;
+        if (typeof src === "string" && src.startsWith("/") && !src.startsWith(`${BASE}/`)) {
+          node.properties.src = BASE + src;
+        }
+      }
+      for (const child of node.children ?? []) walk(child);
+    };
+    walk(tree);
+  };
+}
+
 // The site was reorganised around three pillars; these keep the addresses that
 // were published under the old structure working. Astro prefixes the base path
 // onto redirect sources but not onto targets, so the targets carry it here.
@@ -142,6 +164,7 @@ export default defineConfig({
   output: "static",
   trailingSlash: "ignore",
   redirects: legacyRedirects,
+  markdown: { rehypePlugins: [rehypeBaseImages] },
   integrations: [mdx(), sitemap({ filter: (page) => !page.includes("/editor") })],
   vite: {
     plugins: [tailwindcss(), deskDevPlugin],

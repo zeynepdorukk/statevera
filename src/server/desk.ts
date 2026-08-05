@@ -355,7 +355,7 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
         explainers: slim(explainers.filter((f) => /\.mdx?$/.test(f.name))),
         images: images
           .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f.name))
-          .map((f) => `/images/articles/${f.name}`),
+          .map((f) => f.name),
       });
     }
 
