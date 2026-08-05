@@ -1,52 +1,70 @@
-import { getAllArticles, getAllBriefings, getAllExplainers, root } from "../utils/collection";
+import { wireItems } from "../data/wire";
+import {
+  getAllArticles,
+  getAllExplainers,
+  articleHref,
+  explainerHref,
+} from "../utils/collection";
+
+interface SearchItem {
+  title: string;
+  url: string;
+  kind: string;
+  pillar: "wire" | "journal";
+  category: string;
+  region: string;
+  description: string;
+  source: string;
+  date: string;
+  external: boolean;
+}
 
 export async function GET() {
-  const [articles, briefings, explainers] = await Promise.all([
-    getAllArticles(),
-    getAllBriefings(),
-    getAllExplainers(),
-  ]);
+  const [articles, explainers] = await Promise.all([getAllArticles(), getAllExplainers()]);
 
-  const index = [
+  const index: SearchItem[] = [
     ...articles.map((a) => ({
       title: a.data.title,
-      url: root(`/articles/${a.id.replace(/\.mdx?$/, "")}`),
+      url: articleHref(a),
+      kind: a.data.type === "opinion" ? "Opinion" : "Analysis",
+      pillar: "journal" as const,
       category: a.data.category,
       region: a.data.region,
-      country: a.data.country,
-      tags: a.data.tags,
       description: a.data.description,
+      source: "Statevera",
       date: a.data.date.toISOString(),
-      kind: a.data.type,
+      external: false,
     })),
     ...explainers.map((e) => ({
       title: e.data.title,
-      url: root(`/explainers/${e.id.replace(/\.mdx?$/, "")}`),
+      url: explainerHref(e),
+      kind: "Explainer",
+      pillar: "journal" as const,
       category: "Explainers",
       region: "Global",
-      country: [] as string[],
-      tags: e.data.tags,
       description: e.data.description,
+      source: "Statevera",
       date: e.data.date.toISOString(),
-      kind: "explainer",
+      external: false,
     })),
-    ...briefings.map((b) => ({
-      title: b.body.trim().slice(0, 80),
-      url: root("/briefings"),
-      category: b.data.category,
-      region: b.data.region,
-      country: [] as string[],
-      tags: [],
-      description: b.body.trim(),
-      date: b.data.timestamp.toISOString(),
-      kind: "briefing",
+    ...wireItems.map((w) => ({
+      title: w.title,
+      url: w.url,
+      kind: "Wire",
+      pillar: "wire" as const,
+      category: w.category,
+      region: w.region,
+      description: w.summary,
+      source: w.publisher,
+      date: w.publishedAt,
+      external: true,
     })),
   ];
 
   return new Response(JSON.stringify(index), {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "Cache-Control": "public, max-age=3600",
+      "Cache-Control": "public, max-age=1800",
     },
   });
 }

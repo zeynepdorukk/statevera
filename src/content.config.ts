@@ -1,6 +1,41 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
+const CATEGORIES = [
+  "Politics",
+  "Geopolitics",
+  "Economy",
+  "Culture",
+  "Security",
+  "Diplomacy",
+  "Theory",
+  "Opinion",
+] as const;
+
+const REGIONS = [
+  "Europe",
+  "Middle East",
+  "Americas",
+  "Asia-Pacific",
+  "Africa",
+  "Eurasia",
+  "Turkey",
+  "Global",
+] as const;
+
+const media = {
+  heroImage: z.string(),
+  heroImageAlt: z.string(),
+  imageCredit: z.string().optional(),
+  imageFocus: z.string().optional(),
+};
+
+const sources = z
+  .array(z.object({ name: z.string(), url: z.string() }))
+  .optional()
+  .default([]);
+
+/** Signed analysis and essays written for Statevera. */
 const articles = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "./src/content/articles" }),
   schema: z.object({
@@ -9,77 +44,22 @@ const articles = defineCollection({
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
     author: z.string().default("Zeynep Doruk"),
-    category: z.enum([
-      "Politics",
-      "Geopolitics",
-      "Economy",
-      "Culture",
-      "Security",
-      "Diplomacy",
-      "Theory",
-      "Opinion",
-    ]),
-    region: z.enum([
-      "Europe",
-      "Middle East",
-      "Americas",
-      "Asia-Pacific",
-      "Africa",
-      "Eurasia",
-      "Turkey",
-      "Global",
-    ]),
+    category: z.enum(CATEGORIES),
+    region: z.enum(REGIONS),
     country: z.array(z.string()).optional().default([]),
     tags: z.array(z.string()).optional().default([]),
-    type: z
-      .enum(["news", "analysis", "opinion", "explainer", "briefing"])
-      .default("news"),
+    type: z.enum(["news", "analysis", "opinion", "explainer"]).default("analysis"),
     featured: z.boolean().optional().default(false),
-    breaking: z.boolean().optional().default(false),
     editorsPick: z.boolean().optional().default(false),
-    sample: z.boolean().optional().default(false),
-    heroImage: z.string(),
-    heroImageAlt: z.string(),
-    imageCredit: z.string().optional(),
-    imageFocus: z.string().optional(),
+    /** Unpublished work in progress: kept out of every index and feed. */
+    draft: z.boolean().optional().default(false),
     readingTime: z.number().optional(),
-    sources: z
-      .array(z.object({ name: z.string(), url: z.string() }))
-      .optional()
-      .default([]),
+    sources,
+    ...media,
   }),
 });
 
-const briefings = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/briefings" }),
-  schema: z.object({
-    timestamp: z.coerce.date(),
-    location: z.string(),
-    category: z.enum([
-      "Politics",
-      "Geopolitics",
-      "Economy",
-      "Culture",
-      "Security",
-      "Diplomacy",
-      "Theory",
-      "Opinion",
-    ]),
-    region: z.enum([
-      "Europe",
-      "Middle East",
-      "Americas",
-      "Asia-Pacific",
-      "Africa",
-      "Eurasia",
-      "Turkey",
-      "Global",
-    ]),
-    importance: z.enum(["high", "medium", "low"]).default("medium"),
-    headline: z.string().optional(),
-  }),
-});
-
+/** Evergreen reference entries. */
 const explainers = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "./src/content/explainers" }),
   schema: z.object({
@@ -88,16 +68,11 @@ const explainers = defineCollection({
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
     tags: z.array(z.string()).optional().default([]),
-    heroImage: z.string(),
-    heroImageAlt: z.string(),
-    imageCredit: z.string().optional(),
-    imageFocus: z.string().optional(),
+    draft: z.boolean().optional().default(false),
     readingTime: z.number().optional(),
-    sources: z
-      .array(z.object({ name: z.string(), url: z.string() }))
-      .optional()
-      .default([]),
+    sources,
+    ...media,
   }),
 });
 
-export const collections = { articles, briefings, explainers };
+export const collections = { articles, explainers };

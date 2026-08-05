@@ -1,13 +1,11 @@
 import rss from "@astrojs/rss";
 import type { APIRoute } from "astro";
 import { site } from "../site";
-import { getAllArticles, getAllExplainers, heroImageOf } from "../utils/collection";
+import { getAllArticles, getAllExplainers, heroImageOf, slugOf } from "../utils/collection";
 
+/** The feed carries Statevera's own writing only — the wire belongs to its publishers. */
 export const GET: APIRoute = async (context) => {
-  const [articles, explainers] = await Promise.all([
-    getAllArticles(),
-    getAllExplainers(),
-  ]);
+  const [articles, explainers] = await Promise.all([getAllArticles(), getAllExplainers()]);
 
   const items = [
     ...articles.map((a) => ({
@@ -15,7 +13,7 @@ export const GET: APIRoute = async (context) => {
       description: a.data.description,
       pubDate: a.data.date,
       ...(a.data.updated ? { updatedDate: a.data.updated } : {}),
-      link: `/articles/${a.id.replace(/\.mdx?$/, "")}`,
+      link: `/articles/${slugOf(a)}`,
       categories: [...a.data.tags, a.data.region, a.data.category],
       customData: [
         `<dc:creator><![CDATA[${a.data.author}]]></dc:creator>`,
@@ -27,15 +25,18 @@ export const GET: APIRoute = async (context) => {
       description: e.data.description,
       pubDate: e.data.date,
       ...(e.data.updated ? { updatedDate: e.data.updated } : {}),
-      link: `/explainers/${e.id.replace(/\.mdx?$/, "")}`,
+      link: `/explainers/${slugOf(e)}`,
       categories: [...e.data.tags, "Explainers"],
-      customData: `<media:content url="${new URL(heroImageOf(e.data.heroImage), site.siteUrl)}" medium="image"/>`,
+      customData: [
+        `<dc:creator><![CDATA[${site.authorName}]]></dc:creator>`,
+        `<media:content url="${new URL(heroImageOf(e.data.heroImage), site.siteUrl)}" medium="image"/>`,
+      ].join(""),
     })),
   ].sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 
   return rss({
-    title: `${site.publicationName} — RSS`,
-    description: site.publicationTagline,
+    title: `${site.publicationName} — The Journal`,
+    description: "Signed analysis, essays and explainers from Statevera.",
     site: context.site ?? site.siteUrl,
     items,
     xmlns: {
@@ -45,6 +46,7 @@ export const GET: APIRoute = async (context) => {
     },
     customData: [
       `<language>${site.locale}</language>`,
+      `<copyright>© ${new Date().getFullYear()} ${site.publicationNameDisplay}</copyright>`,
       `<atom:link href="${new URL("/rss.xml", site.siteUrl)}" rel="self" type="application/rss+xml"/>`,
     ].join(""),
   });

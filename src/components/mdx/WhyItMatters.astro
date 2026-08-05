@@ -1,4 +1,11 @@
-<aside class="callout" aria-label="Why it matters">
-  <span class="callout-label">Why It Matters</span>
-  <div class="article-body !mb-0"><slot /></div>
+---
+interface Props {
+  label?: string;
+}
+const { label = "Why it matters" } = Astro.props;
+---
+
+<aside class="callout" aria-label={label}>
+  <span class="callout-label">{label}</span>
+  <div><slot /></div>
 </aside>

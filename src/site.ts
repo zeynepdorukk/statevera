@@ -1,8 +1,9 @@
 // ============================================================
 // PUBLICATION CONFIGURATION
 // ------------------------------------------------------------
-// The publication's entire identity is defined here.
-// To rebrand the site, edit this file and public/images/branding.
+// Statevera is organised around three pillars, each with its own
+// colour from the masthead: the Wire (red), the Journal (gold)
+// and Risk (ink). Everything the site knows about itself is here.
 // ============================================================
 
 export const site = {
@@ -11,8 +12,9 @@ export const site = {
   publicationNameDisplay: "Statevera",
   publicationTagline: "Politics, power and the forces shaping the international system.",
   publicationDescription:
-    "Independent analysis of global politics, security and economics.",
+    "International affairs: a live wire of world reporting, signed analysis by Zeynep Doruk, and interactive geopolitical risk.",
   publicationType: "Independent international affairs publication",
+  founded: "2026",
 
   // Author / editor ------------------------------------------
   authorName: "Zeynep Doruk",
@@ -37,142 +39,186 @@ export const site = {
   language: "en-US",
 } as const;
 
-export const nav = {
+// ------------------------------------------------------------
+// The three pillars
+// ------------------------------------------------------------
+
+export type PillarId = "wire" | "journal" | "risk";
+
+export interface Pillar {
+  id: PillarId;
+  name: string;
+  url: string;
+  tagline: string;
+  description: string;
+  /** CSS custom-property suffix: --pillar-wire, --pillar-journal, --pillar-risk */
+  tone: PillarId;
+}
+
+export const pillars: Record<PillarId, Pillar> = {
+  wire: {
+    id: "wire",
+    name: "The Wire",
+    url: "/wire",
+    tagline: "World reporting, as it lands",
+    description:
+      "International affairs reporting gathered from established newsrooms and institutions. Headlines, summaries and attribution only — every item opens at the publisher.",
+    tone: "wire",
+  },
+  journal: {
+    id: "journal",
+    name: "The Journal",
+    url: "/journal",
+    tagline: "Signed analysis and reference",
+    description:
+      "Original analysis, essays and evergreen explainers written for Statevera by Zeynep Doruk.",
+    tone: "journal",
+  },
+  risk: {
+    id: "risk",
+    name: "Risk",
+    url: "/risk",
+    tagline: "Geopolitical risk, scored",
+    description:
+      "Glorisk: an interactive tool for country risk scoring, shock scenarios and strategic exposure, built by the editor.",
+    tone: "risk",
+  },
+};
+
+export const pillarList: Pillar[] = [pillars.wire, pillars.journal, pillars.risk];
+
+// ------------------------------------------------------------
+// Navigation
+// ------------------------------------------------------------
+
+export type NavItem = {
+  label: string;
+  url: string;
+  tone?: PillarId;
+  subs?: { label: string; url: string }[];
+};
+
+export const nav: { primary: NavItem[] } = {
   primary: [
     {
-      label: "News",
-      url: "/news",
+      label: "The Wire",
+      url: "/wire",
+      tone: "wire",
       subs: [
-        { label: "Politics", url: "/news/politics" },
-        { label: "Geopolitics", url: "/news/geopolitics" },
-        { label: "Economy", url: "/news/economy" },
-        { label: "Culture", url: "/news/culture" },
-        { label: "Security", url: "/news/security" },
-        { label: "Diplomacy", url: "/news/diplomacy" },
-        { label: "Opinion", url: "/news/opinion" },
+        { label: "All reporting", url: "/wire" },
+        { label: "Security", url: "/wire/security" },
+        { label: "Diplomacy", url: "/wire/diplomacy" },
+        { label: "Economy", url: "/wire/economy" },
+        { label: "Geopolitics", url: "/wire/geopolitics" },
+        { label: "Politics", url: "/wire/politics" },
       ],
     },
     {
-      label: "Concepts",
-      url: "/concepts",
+      label: "The Journal",
+      url: "/journal",
+      tone: "journal",
       subs: [
-        { label: "Theory", url: "/concepts/theory" },
+        { label: "Analysis & essays", url: "/journal" },
+        { label: "Theory", url: "/journal/theory" },
         { label: "Explainers", url: "/explainers" },
       ],
     },
-    { label: "Risk Analysis", url: "/risk" },
+    { label: "Risk", url: "/risk", tone: "risk" },
     { label: "Regions", url: "/regions" },
-    { label: "Briefings", url: "/briefings" },
     { label: "About", url: "/about" },
   ],
-} as const;
+};
 
-export type CategorySlug =
-  | "latest"
-  | "news"
-  | "politics"
-  | "geopolitics"
-  | "economy"
-  | "culture"
+// ------------------------------------------------------------
+// Desks (categories)
+// ------------------------------------------------------------
+
+export type DeskSlug =
   | "security"
   | "diplomacy"
-  | "theory"
-  | "opinion"
-  | "explainers";
+  | "economy"
+  | "geopolitics"
+  | "politics"
+  | "culture";
 
-// Categories that live under the "News" hub
-export const newsSections = [
-  "politics",
-  "geopolitics",
-  "economy",
-  "culture",
-  "security",
-  "diplomacy",
-  "opinion",
-] as const;
+export interface Desk {
+  slug: DeskSlug;
+  /** Matches the `category` value used by both the wire and the journal. */
+  name: string;
+  tagline: string;
+  description: string;
+}
 
-export const categories: Record<
-  CategorySlug,
-  { name: string; tagline: string; description: string; url: string }
-> = {
-  latest: {
-    name: "Latest",
-    tagline: "Everything, as it happens",
+export const desks: Record<DeskSlug, Desk> = {
+  security: {
+    slug: "security",
+    name: "Security",
+    tagline: "Deterrence, defence and strategic risk",
     description:
-      "The full recent stream — analysis, news, explainers and briefings — in reverse chronological order.",
-    url: "/latest",
+      "Alliances, nuclear posture, arms control, regional conflict and the military balance.",
   },
-  news: {
-    name: "News",
-    tagline: "The international system, day by day",
+  diplomacy: {
+    slug: "diplomacy",
+    name: "Diplomacy",
+    tagline: "The quiet machinery of statecraft",
     description:
-      "Reporting on the politics, security, diplomacy, economics and culture of international relations — from summit rooms to chokepoints, from elections to sanctions.",
-    url: "/news",
-  },
-  politics: {
-    name: "Politics",
-    tagline: "Power, elections and the politics of states",
-    description:
-      "How domestic politics and statecraft shape the international system — elections, coalitions, institutions and the decisions of governments.",
-    url: "/news/politics",
-  },
-  geopolitics: {
-    name: "Geopolitics",
-    tagline: "Power, geography and the contest for influence",
-    description:
-      "How shifting alliances, strategic geography and great-power competition are reshaping the international order.",
-    url: "/news/geopolitics",
+      "Negotiations, summits, back channels and the institutions that manage interstate relations.",
   },
   economy: {
+    slug: "economy",
     name: "Economy",
     tagline: "Political economy and the economics of power",
     description:
       "Sanctions, trade, energy, supply chains and the global financial system as instruments of politics.",
-    url: "/news/economy",
+  },
+  geopolitics: {
+    slug: "geopolitics",
+    name: "Geopolitics",
+    tagline: "Power, geography and the contest for influence",
+    description:
+      "Shifting alliances, strategic geography and great-power competition.",
+  },
+  politics: {
+    slug: "politics",
+    name: "Politics",
+    tagline: "Power, elections and the politics of states",
+    description:
+      "How domestic politics and statecraft shape the international system.",
   },
   culture: {
+    slug: "culture",
     name: "Culture",
     tagline: "Ideas, identity and soft power",
     description:
-      "How culture, language, media and public memory shape foreign policy and international relations.",
-    url: "/news/culture",
+      "How culture, language, media and public memory shape foreign policy.",
   },
-  security: {
-    name: "Security",
-    tagline: "Deterrence, defence and strategic risk",
-    description:
-      "NATO, nuclear posture, arms control, regional conflicts and the military balance — reported and analysed.",
-    url: "/news/security",
-  },
-  diplomacy: {
-    name: "Diplomacy",
-    tagline: "The quiet machinery of statecraft",
-    description:
-      "Negotiations, summits, back channels and the institutions that manage — and fail to manage — interstate relations.",
-    url: "/news/diplomacy",
-  },
+};
+
+export const deskList: Desk[] = Object.values(desks);
+
+/** Categories the journal uses that are not wire desks. */
+export const journalSections = {
   theory: {
+    slug: "theory",
     name: "Theory",
     tagline: "The concepts that explain the system",
     description:
-      "Academic summaries and theoretical essays on international relations and economics — realism, liberalism, constructivism, balance of power, game theory, trade theory and more.",
-    url: "/concepts/theory",
-  },
-  opinion: {
-    name: "Opinion",
-    tagline: "Arguments, signed",
-    description:
-      "Explicitly argued pieces on the decisions facing governments, alliances and the international system.",
-    url: "/news/opinion",
+      "Academic summaries and theoretical essays on international relations and economics.",
+    url: "/journal/theory",
   },
   explainers: {
+    slug: "explainers",
     name: "Explainers",
     tagline: "The ideas that run the world, explained",
     description:
       "Evergreen guides to the concepts, institutions and chokepoints of international relations.",
     url: "/explainers",
   },
-};
+} as const;
+
+// ------------------------------------------------------------
+// Regions
+// ------------------------------------------------------------
 
 export type RegionSlug =
   | "europe"
@@ -181,7 +227,8 @@ export type RegionSlug =
   | "asia-pacific"
   | "africa"
   | "eurasia"
-  | "turkey";
+  | "turkey"
+  | "global";
 
 export const regions: Record<
   RegionSlug,
@@ -197,8 +244,7 @@ export const regions: Record<
   "middle-east": {
     name: "Middle East",
     short: "Middle East",
-    description:
-      "Politics, security, diplomacy and economics across the Middle East.",
+    description: "Politics, security, diplomacy and economics across the Middle East.",
     url: "/regions/middle-east",
   },
   americas: {
@@ -218,8 +264,7 @@ export const regions: Record<
   africa: {
     name: "Africa",
     short: "Africa",
-    description:
-      "The continent's rising role in energy, diplomacy and global supply chains.",
+    description: "The continent's rising role in energy, diplomacy and global supply chains.",
     url: "/regions/africa",
   },
   eurasia: {
@@ -236,9 +281,14 @@ export const regions: Record<
       "Ankara's foreign policy between NATO, Moscow, the Gulf and the Eastern Mediterranean.",
     url: "/regions/turkey",
   },
+  global: {
+    name: "Global",
+    short: "Global",
+    description: "Stories that belong to the international system as a whole.",
+    url: "/regions/global",
+  },
 };
 
-// Region slug used in article frontmatter must map to the config
 export const regionName = (slug: string): string =>
   (regions as Record<string, { name: string }>)[slug]?.name ?? slug;
 
@@ -247,5 +297,8 @@ export const regionSlugOf = (name: string): string => {
   return entry ? entry[0] : name.toLowerCase().replace(/ /g, "-");
 };
 
-export const sampleContentNote =
-  "This is demonstration content for the editorial prototype. Article titles and details are fictional and should be replaced with real reporting.";
+/** Category name -> desk slug, for linking wire and journal items to a desk. */
+export const deskSlugOf = (category: string): DeskSlug | null => {
+  const entry = deskList.find((d) => d.name === category);
+  return entry ? entry.slug : null;
+};

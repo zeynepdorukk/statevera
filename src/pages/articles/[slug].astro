@@ -1,56 +1,67 @@
 ---
 import { render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { site } from "../../site";
-import { getArticleBySlug, getLatestArticles, heroImageOf, readingTime, root } from "../../utils/collection";
+import { site, regionSlugOf } from "../../site";
+import {
+  getAllArticles,
+  getArticleBySlug,
+  heroImageOf,
+  root,
+  slugOf,
+  articleHref,
+} from "../../utils/collection";
+import { byRegion } from "../../data/wire";
 import ArticleHeader from "../../components/article/ArticleHeader.astro";
 import ArticleSources from "../../components/article/ArticleSources.astro";
 import ArticleShare from "../../components/article/ArticleShare.astro";
 import RelatedStories from "../../components/article/RelatedStories.astro";
-import HeadlineItem from "../../components/HeadlineItem.astro";
+import WireCard from "../../components/WireCard.astro";
+import SectionHead from "../../components/SectionHead.astro";
 import KeyTakeaways from "../../components/mdx/KeyTakeaways.astro";
 import WhyItMatters from "../../components/mdx/WhyItMatters.astro";
 import TheBigPicture from "../../components/mdx/TheBigPicture.astro";
 import AnalysisSection from "../../components/mdx/AnalysisSection.astro";
 
 export async function getStaticPaths() {
-  const { getCollection } = await import("astro:content");
-  const articles = await getCollection("articles");
-  return articles.map((a) => ({
-    params: { slug: a.id.replace(/\.mdx?$/, "") },
-  }));
+  const articles = await getAllArticles();
+  return articles.map((entry) => ({ params: { slug: slugOf(entry) }, props: { entry } }));
 }
 
-const { slug } = Astro.params;
-const article = await getArticleBySlug(slug ?? "");
+const { entry } = Astro.props;
+const article = entry ?? (await getArticleBySlug(Astro.params.slug ?? ""));
 if (!article) return Astro.redirect(root("/404"));
 
 const { Content } = await render(article);
+const { data } = article;
+const href = articleHref(article);
+const canonical = new URL(href, site.siteUrl).toString();
+const regionSlug = regionSlugOf(data.region);
 
-const { data, body } = article;
-const rt = readingTime(article);
-const href = root(`/articles/${article.id.replace(/\.mdx?$/, "")}`);
-const latest = await getLatestArticles(5);
-const related = latest.filter((a) => a.id !== article.id).slice(0, 4);
+// Live reporting from the same region, as context alongside the analysis.
+const wireContext = byRegion(data.region, 5);
 
 const jsonLd = [
   {
     "@context": "https://schema.org",
-    "@type": "NewsArticle",
+    "@type": data.type === "opinion" ? "OpinionNewsArticle" : "AnalysisNewsArticle",
     headline: data.title,
     description: data.description,
     datePublished: data.date.toISOString(),
     ...(data.updated ? { dateModified: data.updated.toISOString() } : {}),
-    author: { "@type": "Person", name: data.author },
+    author: { "@type": "Person", name: data.author, url: new URL(root("/about"), site.siteUrl).toString() },
     publisher: {
       "@type": "Organization",
       name: site.publicationName,
-      logo: { "@type": "ImageObject", url: new URL(root("/images/branding/logo-512.png"), site.siteUrl).toString() },
+      logo: {
+        "@type": "ImageObject",
+        url: new URL(root("/images/branding/logo-512.png"), site.siteUrl).toString(),
+      },
     },
     image: [new URL(heroImageOf(data.heroImage), site.siteUrl).toString()],
     articleSection: data.category,
     keywords: [...data.tags, data.region, ...data.country].join(", "),
-    mainEntityOfPage: new URL(href, site.siteUrl).toString(),
+    isAccessibleForFree: true,
+    mainEntityOfPage: canonical,
   },
 ];
 ---
@@ -60,7 +71,9 @@ const jsonLd = [
   description={data.description}
   image={heroImageOf(data.heroImage)}
   type="article"
+  tone="journal"
   path={href}
+  noindex={data.draft}
   jsonLd={jsonLd}
   article={{
     publishedTime: data.date.toISOString(),
@@ -72,66 +85,66 @@ const jsonLd = [
 >
   <ArticleHeader article={article} />
 
-  <div class="mx-auto flex max-w-[1400px] gap-10 px-4 md:px-8">
-    <!-- Left share rail (desktop) -->
-    <div class="hidden shrink-0 pt-10 xl:block xl:w-12">
-      <div class="sticky top-28">
-        <ArticleShare title={data.title} url={new URL(href, site.siteUrl).toString()} />
+  <div class="shell flex max-w-[1400px] gap-10" data-tone="journal">
+    <!-- Share rail -->
+    <div class="hidden shrink-0 pt-10 xl:block xl:w-12 no-print">
+      <div class="sticky top-32">
+        <ArticleShare title={data.title} url={canonical} />
       </div>
     </div>
 
-    <!-- Article body -->
     <article class="min-w-0 flex-1 py-8 md:py-10">
-      <div class="mx-auto max-w-[700px]">
+      <div class="mx-auto max-w-[720px]">
         <div class="article-body">
-          <Content
-            components={{
-              KeyTakeaways,
-              WhyItMatters,
-              TheBigPicture,
-              AnalysisSection,
-            }}
-          />
+          <Content components={{ KeyTakeaways, WhyItMatters, TheBigPicture, AnalysisSection }} />
         </div>
 
         <ArticleSources sources={data.sources} />
 
-        <!-- Mobile share -->
-        <div class="mt-6 xl:hidden">
-          <ArticleShare title={data.title} url={new URL(href, site.siteUrl).toString()} />
+        {data.tags.length > 0 && (
+          <div class="mt-8 flex flex-wrap items-center gap-2">
+            <span class="kicker-ink">Filed under</span>
+            {data.tags.map((tag) => (
+              <span class="border border-line px-2 py-0.5 font-sans text-[0.72rem] text-ink-soft">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div class="mt-6 xl:hidden no-print">
+          <ArticleShare title={data.title} url={canonical} layout="row" />
         </div>
 
-        <p class="mt-8 border-t border-line pt-4 font-sans text-[0.72rem] leading-relaxed text-muted">
-          By {data.author} · {site.publicationNameDisplay}. {data.region} desk.{" "}
-          {data.country.length > 0 && `Focus: ${data.country.join(", ")}.`} Follow the discussion
-          on <a href={site.socialLinks.x} class="link-accent" rel="noopener">X</a> and{" "}
-          <a href={site.socialLinks.linkedin} class="link-accent" rel="noopener">LinkedIn</a>.
+        <p class="mt-8 border-t border-line pt-4 font-sans text-[0.74rem] leading-relaxed text-muted">
+          By {data.author} &middot; {site.publicationNameDisplay}.
+          <a href={root(`/regions/${regionSlug}`)} class="link-tone">{data.region}</a> desk.
+          {data.country.length > 0 && ` Focus: ${data.country.join(", ")}.`}
         </p>
       </div>
     </article>
 
-    <!-- Right rail (desktop) -->
-    <aside class="hidden w-72 shrink-0 pt-10 lg:block">
-      <div class="sticky top-28 border-l border-line pl-8">
-        <div class="section-head">
-          <h2 class="title">News</h2>
-          <span class="rule" aria-hidden="true"></span>
-        </div>
-        <div class="divide-y divide-line border-t border-line">
-          {related.map((a) => (
-            <HeadlineItem article={a} />
-          ))}
-        </div>
-        <p class="mt-4">
-          <a href={root("/latest")} class="kicker-ink transition-colors duration-200 hover:text-accent">
-            All news →
-          </a>
+    <!-- Wire rail -->
+    <aside class="hidden w-72 shrink-0 pt-10 lg:block no-print" aria-label="Related reporting">
+      <div class="sticky top-32 border-l border-line pl-8" data-tone="wire">
+        <SectionHead title={`${data.region} wire`} tone="wire" href={`/regions/${regionSlug}`} moreLabel="Region" />
+        {wireContext.length > 0 ? (
+          <div class="rule-list">
+            {wireContext.map((item) => (
+              <WireCard item={item} variant="text" />
+            ))}
+          </div>
+        ) : (
+          <p class="meta">No live reporting from this region right now.</p>
+        )}
+        <p class="mt-5 border-t border-line pt-3">
+          <a href={root("/wire")} class="kicker-ink hover:text-tone">The full wire &rarr;</a>
         </p>
       </div>
     </aside>
   </div>
 
-  <div class="mx-auto max-w-[1400px] px-4 pb-4 md:px-8">
-    <RelatedStories article={article} />
+  <div class="shell pb-4">
+    <RelatedStories article={article} count={3} />
   </div>
 </BaseLayout>

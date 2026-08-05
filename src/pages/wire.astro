@@ -1,0 +1,141 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { pillars, deskList, regions, regionSlugOf } from "../site";
+import { wireItems, wireGeneratedAt, wirePublishers, leadStories, activeRegions } from "../data/wire";
+import { root, formatDate, formatTime } from "../utils/collection";
+import WireCard from "../components/WireCard.astro";
+import SectionHead from "../components/SectionHead.astro";
+
+const leads = leadStories(3);
+const leadIds = new Set(leads.map((i) => i.id));
+const stream = wireItems.filter((i) => !leadIds.has(i.id));
+
+const deskCounts = deskList
+  .map((desk) => ({ desk, count: wireItems.filter((i) => i.category === desk.name).length }))
+  .filter((d) => d.count > 0);
+
+const regionCounts = activeRegions();
+const updated = `${formatDate(wireGeneratedAt)} ${formatTime(wireGeneratedAt)} UTC`;
+---
+
+<BaseLayout
+  title={pillars.wire.name}
+  description={pillars.wire.description}
+  path="/wire"
+  tone="wire"
+>
+  <div class="shell pt-7 md:pt-9" data-tone="wire">
+    <header class="border-b-2 border-ink pb-5">
+      <p class="kicker flex items-center gap-2">
+        <span class="live-dot inline-block" aria-hidden="true"></span>
+        The Wire
+      </p>
+      <h1 class="t-lead mt-1.5">{pillars.wire.tagline}</h1>
+      <p class="mt-3 max-w-3xl font-serif text-[1.06rem] leading-relaxed text-ink-soft">
+        {pillars.wire.description}
+      </p>
+      <p class="meta mt-3">
+        {wireItems.length} stories &middot; {wirePublishers.length} newsrooms &middot; updated {updated}
+      </p>
+    </header>
+
+    <!-- Desk filter -->
+    <nav aria-label="Desks" class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
+      <span class="desk-pill is-on">All</span>
+      {deskCounts.map(({ desk, count }) => (
+        <a href={root(`/wire/${desk.slug}`)} class="desk-pill">
+          {desk.name}<span class="ml-1.5 text-muted tabular">{count}</span>
+        </a>
+      ))}
+    </nav>
+
+    <!-- Leads -->
+    <section class="grid gap-x-8 gap-y-8 py-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,4fr)]" aria-label="Leading stories">
+      {leads[0] && <WireCard item={leads[0]} variant="lead" priority headingLevel="h2" />}
+      <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-1 lg:border-l lg:border-line lg:pl-8">
+        {leads.slice(1).map((item) => (
+          <WireCard item={item} variant="feature" />
+        ))}
+      </div>
+    </section>
+
+    <!-- Full stream -->
+    <section class="grid gap-x-8 gap-y-10 border-t-2 border-ink pt-7 pb-6 lg:grid-cols-[minmax(0,7.2fr)_minmax(0,2.8fr)]" aria-label="All reporting">
+      <div>
+        <SectionHead title="Every story" tone="wire" />
+        <div class="grid gap-x-7 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
+          {stream.slice(0, 45).map((item, i) => (
+            <WireCard item={item} variant={item.image && i < 12 ? "feature" : "compact"} showDek={i < 12} />
+          ))}
+        </div>
+      </div>
+
+      <aside class="lg:border-l lg:border-line lg:pl-8" aria-label="Wire index">
+        <SectionHead title="By region" tone="wire" href="/regions" moreLabel="Regions" />
+        <ul class="rule-list">
+          {regionCounts.map(({ region, count }) => {
+            const slug = regionSlugOf(region);
+            return (
+              <li class="flex items-baseline justify-between gap-3">
+                {slug in regions ? (
+                  <a href={root(`/regions/${slug}`)} class="editorial-link font-sans text-[0.86rem] font-medium text-ink">
+                    {region}
+                  </a>
+                ) : (
+                  <span class="font-sans text-[0.86rem] text-ink">{region}</span>
+                )}
+                <span class="meta tabular">{count}</span>
+              </li>
+            );
+          })}
+        </ul>
+
+        <div class="mt-8 border border-line bg-paper-soft p-5">
+          <p class="kicker-ink">How the wire works</p>
+          <p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
+            Statevera reads the public feeds of {wirePublishers.length} newsrooms and
+            institutions, keeps what belongs to international affairs, and sorts it by
+            desk and region. Headlines and short summaries only — every story opens at
+            the publisher.
+          </p>
+          <p class="mt-3 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
+            For original work, see
+            <a href={root("/journal")} class="link-tone">The Journal</a>.
+          </p>
+        </div>
+
+        <div class="mt-6">
+          <p class="kicker-ink mb-2">Sources</p>
+          <ul class="flex flex-wrap gap-x-3 gap-y-1">
+            {wirePublishers.map((publisher) => (
+              <li class="font-sans text-[0.76rem] text-muted">{publisher}</li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .desk-pill {
+    font-family: var(--font-sans);
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.35rem 0.75rem;
+    border: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .desk-pill:hover {
+    color: var(--tone);
+    border-color: var(--line);
+  }
+  .desk-pill.is-on {
+    color: var(--ink);
+    border-color: var(--line-strong);
+    background: var(--paper-soft);
+  }
+</style>

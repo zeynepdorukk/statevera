@@ -1,9 +1,9 @@
 ---
 import "../styles/global.css";
-import { site } from "../site";
+import { site, type PillarId } from "../site";
 import { root } from "../utils/collection";
 import Header from "../components/Header.astro";
-import BreakingBar from "../components/BreakingBar.astro";
+import WireTicker from "../components/WireTicker.astro";
 import Footer from "../components/Footer.astro";
 import SearchOverlay from "../components/SearchOverlay.astro";
 
@@ -12,6 +12,7 @@ interface Props {
   description?: string;
   image?: string;
   type?: "website" | "article";
+  tone?: PillarId;
   article?: {
     publishedTime?: string;
     modifiedTime?: string;
@@ -20,7 +21,7 @@ interface Props {
     section?: string;
   };
   noindex?: boolean;
-  hideBreaking?: boolean;
+  hideTicker?: boolean;
   path?: string;
   jsonLd?: Record<string, unknown>[];
 }
@@ -30,9 +31,10 @@ const {
   description = site.publicationDescription,
   image = site.defaultOgImage,
   type = "website",
+  tone,
   article,
   noindex = false,
-  hideBreaking = false,
+  hideTicker = false,
   path = "/",
   jsonLd = [],
 } = Astro.props;
@@ -40,7 +42,6 @@ const {
 const url = new URL(root(path), site.siteUrl);
 const absoluteImage = new URL(root(image), site.siteUrl).toString();
 const fullTitle = path === "/" ? site.publicationName : `${title} — ${site.publicationName}`;
-const ogType = type === "article" ? "article" : "website";
 
 const webJsonLd = {
   "@context": "https://schema.org",
@@ -49,9 +50,11 @@ const webJsonLd = {
   alternateName: site.publicationNameDisplay,
   description: site.publicationDescription,
   url: site.siteUrl,
+  inLanguage: site.language,
   publisher: {
     "@type": "Organization",
     name: site.publicationName,
+    foundingDate: site.founded,
     logo: {
       "@type": "ImageObject",
       url: new URL(root("/images/branding/logo-512.png"), site.siteUrl).toString(),
@@ -61,15 +64,19 @@ const webJsonLd = {
 ---
 
 <!doctype html>
-<html lang={site.language} class="dark-scrollbar">
+<html lang={site.language} class="dark-scrollbar" data-tone={tone}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="light dark" />
     <link rel="canonical" href={url.toString()} />
-    {noindex && <meta name="robots" content="noindex" />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+    <link rel="preconnect" href="https://i.guim.co.uk" crossorigin />
+    <link rel="preconnect" href="https://ichef.bbci.co.uk" crossorigin />
 
     <link rel="icon" type="image/svg+xml" href={root("/images/branding/favicon.svg")} />
     <link rel="icon" type="image/png" sizes="32x32" href={root("/images/branding/favicon-32.png")} />
@@ -82,7 +89,7 @@ const webJsonLd = {
     <meta property="og:site_name" content={site.publicationName} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content={ogType} />
+    <meta property="og:type" content={type === "article" ? "article" : "website"} />
     <meta property="og:url" content={url.toString()} />
     <meta property="og:image" content={absoluteImage} />
     <meta property="og:image:width" content="1200" />
@@ -97,15 +104,9 @@ const webJsonLd = {
     {article && (
       <>
         <meta property="article:published_time" content={article.publishedTime} />
-        {article.modifiedTime && (
-          <meta property="article:modified_time" content={article.modifiedTime} />
-        )}
-        {article.authors?.map((a) => (
-          <meta property="article:author" content={a} />
-        ))}
-        {article.tags?.map((t) => (
-          <meta property="article:tag" content={t} />
-        ))}
+        {article.modifiedTime && <meta property="article:modified_time" content={article.modifiedTime} />}
+        {article.authors?.map((a) => <meta property="article:author" content={a} />)}
+        {article.tags?.map((t) => <meta property="article:tag" content={t} />)}
         {article.section && <meta property="article:section" content={article.section} />}
       </>
     )}
@@ -130,7 +131,7 @@ const webJsonLd = {
   </head>
   <body class="min-h-screen">
     <a href="#main-content" class="skip-link">Skip to content</a>
-    {!hideBreaking && <BreakingBar />}
+    {!hideTicker && <WireTicker />}
     <Header currentPath={path} />
     <main id="main-content" class="flex-1">
       <slot />
@@ -139,12 +140,3 @@ const webJsonLd = {
     <SearchOverlay />
   </body>
 </html>
-
-<style is:global>
-  .dark-scrollbar {
-    color-scheme: light;
-  }
-  .dark-scrollbar.dark {
-    color-scheme: dark;
-  }
-</style>

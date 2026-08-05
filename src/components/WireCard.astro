@@ -1,0 +1,200 @@
+---
+import type { WireItem } from "../data/wire";
+import { wireDate, relativeTime, canLead } from "../data/wire";
+import { deskSlugOf, regionSlugOf, regions } from "../site";
+import { root } from "../utils/collection";
+
+interface Props {
+  item: WireItem;
+  /**
+   * lead    — full-bleed picture with an overlaid headline
+   * feature — picture above a headline and dek
+   * compact — small picture beside a headline
+   * text    — headline and dek, no picture
+   */
+  variant?: "lead" | "feature" | "compact" | "text";
+  showDek?: boolean;
+  priority?: boolean;
+  headingLevel?: "h2" | "h3";
+}
+
+const {
+  item,
+  variant: requested = "feature",
+  showDek = true,
+  priority = false,
+  headingLevel: Heading = "h3",
+} = Astro.props;
+
+// A thumbnail-sized feed picture cannot carry a headline; degrade rather than stretch it.
+const variant =
+  (requested === "lead" || requested === "feature") && !canLead(item)
+    ? item.image
+      ? "compact"
+      : "text"
+    : requested;
+
+const stamp = wireDate(item);
+const ago = relativeTime(stamp);
+const deskSlug = deskSlugOf(item.category);
+const regionSlug = regionSlugOf(item.region);
+const regionKnown = regionSlug in regions;
+const loading = priority ? "eager" : "lazy";
+---
+
+{variant === "lead" && (
+  <article class="group" data-tone="wire">
+    <a href={item.url} target="_blank" rel="noopener noreferrer nofollow" class="block">
+      <div class="hero-overlay img-zoom relative block border border-line/70">
+        {item.image ? (
+          <img
+            src={item.image}
+            alt=""
+            width="1200"
+            height="750"
+            loading={loading}
+            fetchpriority={priority ? "high" : undefined}
+            decoding="async"
+            referrerpolicy="no-referrer"
+            class="img-frame aspect-[4/3] sm:aspect-[16/9] lg:aspect-[3/2]"
+          />
+        ) : (
+          <div class="aspect-[3/2] w-full bg-paper-soft"></div>
+        )}
+        <div class="absolute inset-x-0 bottom-0 z-10 p-4 text-white sm:p-6 lg:p-7">
+          <p class="mb-2 flex items-center gap-2 font-sans text-[0.66rem] font-bold tracking-[0.15em] uppercase">
+            <span class="live-dot inline-block" aria-hidden="true"></span>
+            <span class="text-white/95">{item.category}</span>
+            <span class="text-white/45" aria-hidden="true">/</span>
+            <span class="text-white/70">{item.region}</span>
+          </p>
+          <Heading class="t-lead text-white">
+            <span>{item.title}</span>
+          </Heading>
+          {showDek && item.summary && (
+            <p class="mt-2.5 hidden max-w-2xl font-serif text-[1.02rem] leading-relaxed text-white/85 sm:block">
+              {item.summary}
+            </p>
+          )}
+          <p class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 font-sans text-[0.7rem] text-white/75">
+            <span class="font-bold tracking-[0.08em] uppercase text-white/90">{item.publisher}</span>
+            <span aria-hidden="true">&middot;</span>
+            <time datetime={stamp.toISOString()}>{ago}</time>
+            <span class="outbound" aria-hidden="true"></span>
+            <span class="sr-only">(opens at the publisher)</span>
+          </p>
+        </div>
+      </div>
+    </a>
+  </article>
+)}
+
+{variant === "feature" && (
+  <article class="group flex flex-col" data-tone="wire">
+    {item.image && (
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        tabindex="-1"
+        aria-hidden="true"
+        class="img-zoom mb-3 block border border-line/70"
+      >
+        <img
+          src={item.image}
+          alt=""
+          width="800"
+          height="500"
+          loading={loading}
+          decoding="async"
+          referrerpolicy="no-referrer"
+          class="img-frame aspect-[16/10]"
+        />
+      </a>
+    )}
+    <p class="kicker">{item.category}</p>
+    <Heading class="t-headline-sm mt-1.5">
+      <a href={item.url} target="_blank" rel="noopener noreferrer nofollow" class="editorial-link">
+        {item.title}
+      </a>
+    </Heading>
+    {showDek && item.summary && (
+      <p class="mt-2 line-clamp-3 font-serif text-[0.97rem] leading-relaxed text-ink-soft">
+        {item.summary}
+      </p>
+    )}
+    <p class="meta mt-2.5 flex flex-wrap items-center gap-x-2 gap-y-1">
+      <span class="source-chip">{item.publisher}</span>
+      <span aria-hidden="true">&middot;</span>
+      <time datetime={stamp.toISOString()}>{ago}</time>
+      {regionKnown && (
+        <>
+          <span aria-hidden="true">&middot;</span>
+          <a href={root(`/regions/${regionSlug}`)} class="link-tone">{item.region}</a>
+        </>
+      )}
+    </p>
+  </article>
+)}
+
+{variant === "compact" && (
+  <article class="group flex gap-3" data-tone="wire">
+    <div class="min-w-0 flex-1">
+      <Heading class="t-headline-xs">
+        <a href={item.url} target="_blank" rel="noopener noreferrer nofollow" class="editorial-link">
+          {item.title}
+        </a>
+      </Heading>
+      <p class="meta mt-1.5 flex flex-wrap items-center gap-x-2">
+        <span class="source-chip">{item.publisher}</span>
+        <span aria-hidden="true">&middot;</span>
+        <time datetime={stamp.toISOString()}>{ago}</time>
+      </p>
+    </div>
+    {item.image && (
+      <a
+        href={item.url}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        tabindex="-1"
+        aria-hidden="true"
+        class="img-zoom h-[4.2rem] w-[5.6rem] shrink-0 border border-line/70"
+      >
+        <img
+          src={item.image}
+          alt=""
+          width="224"
+          height="168"
+          loading="lazy"
+          decoding="async"
+          referrerpolicy="no-referrer"
+          class="img-frame h-full w-full"
+        />
+      </a>
+    )}
+  </article>
+)}
+
+{variant === "text" && (
+  <article class="group" data-tone="wire">
+    <div class="flex items-baseline gap-2.5">
+      <time class="stamp shrink-0" datetime={stamp.toISOString()}>{ago}</time>
+      <div class="min-w-0">
+        <Heading class="t-headline-xs">
+          <a href={item.url} target="_blank" rel="noopener noreferrer nofollow" class="editorial-link">
+            {item.title}
+          </a>
+        </Heading>
+        <p class="meta mt-1 flex flex-wrap items-center gap-x-2">
+          <span class="source-chip">{item.publisher}</span>
+          {deskSlug && (
+            <>
+              <span aria-hidden="true">&middot;</span>
+              <a href={root(`/wire/${deskSlug}`)} class="link-tone">{item.category}</a>
+            </>
+          )}
+        </p>
+      </div>
+    </div>
+  </article>
+)}

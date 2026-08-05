@@ -1,52 +1,25 @@
 ---
-import { getRelated, heroImageOf, formatDate, readingTime, root, type Article } from "../../utils/collection";
-import { creditFor } from "../../data/imageCredits";
+import type { Article } from "../../utils/collection";
+import { getRelated } from "../../utils/collection";
+import JournalCard from "../JournalCard.astro";
+import SectionHead from "../SectionHead.astro";
 
 interface Props {
   article: Article;
+  count?: number;
 }
 
-const { article } = Astro.props;
-const related = await getRelated(article, 3);
-if (!related.length) return null;
+const { article, count = 3 } = Astro.props;
+const related = await getRelated(article, count);
 ---
 
-<aside class="border-t border-line-strong pt-6" aria-label="Related stories">
-  <div class="section-head">
-    <h2 class="title">Related</h2>
-    <span class="rule" aria-hidden="true"></span>
-  </div>
-  <div class="grid gap-x-8 gap-y-6 sm:grid-cols-3">
-    {related.map((a) => {
-      const href = root(`/articles/${a.id.replace(/\.mdx?$/, "")}`);
-      return (
-        <article class="group">
-          <a
-            href={href}
-            class="img-zoom block overflow-hidden border border-line/60 bg-paper-soft"
-            tabindex="-1"
-            aria-hidden="true"
-          >
-            <img
-              src={heroImageOf(a.data.heroImage)}
-              alt=""
-              width="1600"
-              height="1000"
-              loading="lazy"
-              class="aspect-[16/10] w-full object-cover"
-            />
-          </a>
-          <p class="kicker mt-3">{a.data.category}</p>
-          <h3 class="t-headline-xs mt-1.5">
-            <a href={href} class="editorial-link">
-              {a.data.title}
-            </a>
-          </h3>
-          <p class="meta mt-1.5">
-            {formatDate(a.data.date, { day: "numeric", month: "short" })} · {readingTime(a)} min read
-          </p>
-        </article>
-      );
-    })}
-  </div>
-</aside>
+{related.length > 0 && (
+  <section class="mt-12 pb-4" aria-label="More from the journal" data-tone="journal">
+    <SectionHead title="More from the Journal" tone="journal" href="/journal" moreLabel="All analysis" />
+    <div class="grid gap-x-7 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+      {related.map((entry) => (
+        <JournalCard item={{ kind: "article", entry }} variant="feature" />
+      ))}
+    </div>
+  </section>
+)}

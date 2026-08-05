@@ -2,72 +2,88 @@
 interface Props {
   title: string;
   url: string;
+  layout?: "rail" | "row";
 }
 
-const { title, url } = Astro.props;
-const encoded = encodeURIComponent(url);
+const { title, url, layout = "rail" } = Astro.props;
+const encodedUrl = encodeURIComponent(url);
 const encodedTitle = encodeURIComponent(title);
+
+const links = [
+  {
+    label: "Share on X",
+    short: "X",
+    href: `https://x.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
+    path: "M18.9 2H22l-7 8 8.2 12H16l-5-7.3L5.2 22H2l7.5-8.6L1.6 2h7.3l4.6 6.7L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20Z",
+  },
+  {
+    label: "Share on LinkedIn",
+    short: "in",
+    href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+    path: "M6.9 8.5v11H3.4v-11h3.5ZM5.2 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm4.3 5.5h3.3v1.5a3.7 3.7 0 0 1 3.3-1.8c2.4 0 4.2 1.6 4.2 4.9v6.4h-3.5v-5.8c0-1.5-.6-2.4-1.9-2.4-1.1 0-1.7.7-2 1.4v6.8H9.5v-11Z",
+  },
+  {
+    label: "Share by email",
+    short: "@",
+    href: `mailto:?subject=${encodedTitle}&body=${encodedUrl}`,
+    path: "M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1.6 2L12 12.3 19.4 7H4.6Z",
+  },
+];
 ---
 
-<div class="flex items-center gap-1" data-share>
-  <span class="kicker-ink mr-1 hidden xl:block" style="writing-mode: vertical-rl;">Share</span>
-  <a
-    href={`https://twitter.com/intent/tweet?url=${encoded}&text=${encodedTitle}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Share on X (Twitter)"
-    class="group flex h-9 w-9 items-center justify-center border border-line text-ink-soft transition-colors duration-200 hover:border-accent hover:text-accent"
-  >
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.9 7.9L23.3 22h-6.4l-5-6.5L6.2 22H3l7.4-8.5L1.5 2H8l4.5 5.9L18.9 2Zm-1.1 18h1.7L7.4 3.7H5.5L17.8 20Z" /></svg>
-  </a>
-  <a
-    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encoded}`}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Share on LinkedIn"
-    class="group flex h-9 w-9 items-center justify-center border border-line text-ink-soft transition-colors duration-200 hover:border-accent hover:text-accent"
-  >
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.4h-3.5v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.6H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1ZM7.1 20.4H3.6V9h3.5v11.4Z" /></svg>
-  </a>
+<div
+  class:list={[
+    "flex items-center gap-2",
+    layout === "rail" ? "flex-col" : "flex-row flex-wrap",
+  ]}
+>
+  <p class:list={["kicker-ink", layout === "rail" ? "mb-1 [writing-mode:vertical-rl] rotate-180" : "mr-1"]}>
+    Share
+  </p>
+  {links.map((link) => (
+    <a
+      href={link.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={link.label}
+      title={link.label}
+      class="inline-flex h-9 w-9 items-center justify-center border border-line text-ink-soft transition-colors duration-150 hover:border-tone hover:text-tone"
+    >
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d={link.path}></path>
+      </svg>
+    </a>
+  ))}
   <button
     type="button"
-    data-copy-share
-    aria-label="Copy link to article"
-    class="flex h-9 w-9 cursor-pointer items-center justify-center border border-line text-ink-soft transition-colors duration-200 hover:border-accent hover:text-accent"
+    data-copy-link
+    data-url={url}
+    aria-label="Copy link"
+    title="Copy link"
+    class="inline-flex h-9 w-9 cursor-pointer items-center justify-center border border-line bg-transparent text-ink-soft transition-colors duration-150 hover:border-tone hover:text-tone"
   >
-    <svg data-copy-icon width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7" /><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7" /></svg>
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+      <path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1.7 1.7"></path>
+      <path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1.7-1.7"></path>
+    </svg>
   </button>
-  <button
-    type="button"
-    data-native-share
-    aria-label="Share via device"
-    class="hidden h-9 w-9 cursor-pointer items-center justify-center border border-line text-ink-soft transition-colors duration-200 hover:border-accent hover:text-accent md:flex"
-  >
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4" /></svg>
-  </button>
+  <span data-copy-status role="status" class="meta hidden">Copied</span>
 </div>
 
 <script>
-  const url = { shareUrl: `{url}?utm_source=share&utm_medium=web` };
-  const title = { title: `{title}` };
-  const root = document.querySelector<HTMLElement>("[data-share]");
-  const copyBtn = root?.querySelector<HTMLButtonElement>("[data-copy-share]");
-  const nativeBtn = root?.querySelector<HTMLButtonElement>("[data-native-share]");
-
-  copyBtn?.addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(url.shareUrl);
-      const original = copyBtn.innerHTML;
-      copyBtn.innerHTML = '<span class="font-sans text-[0.6rem] font-bold text-accent">COPIED</span>';
-      setTimeout(() => (copyBtn.innerHTML = original), 1600);
-    } catch (e) {}
-  });
-
-  nativeBtn?.addEventListener("click", async () => {
-    if (navigator.share) {
+  document.querySelectorAll<HTMLButtonElement>("[data-copy-link]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const url = button.dataset.url ?? window.location.href;
+      const status = button.parentElement?.querySelector<HTMLElement>("[data-copy-status]");
       try {
-        await navigator.share({ title: title.title, url: url.shareUrl });
-      } catch (e) {}
-    }
+        await navigator.clipboard.writeText(url);
+        if (status) {
+          status.classList.remove("hidden");
+          setTimeout(() => status.classList.add("hidden"), 1800);
+        }
+      } catch {
+        window.prompt("Copy this link", url);
+      }
+    });
   });
 </script>

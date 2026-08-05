@@ -1,0 +1,47 @@
+---
+import { latest, wireGeneratedAt, wireItems } from "../data/wire";
+import { formatTime } from "../utils/collection";
+import { root } from "../utils/collection";
+
+const items = latest(14);
+// The track is duplicated so the marquee can loop seamlessly at -50%.
+const track = [...items, ...items];
+const updated = formatTime(wireGeneratedAt);
+---
+
+{items.length > 0 && (
+  <div class="wire-bar no-print" data-tone="wire">
+    <div class="shell flex items-center gap-4 py-0">
+      <a
+        href={root("/wire")}
+        class="flex shrink-0 items-center gap-2 py-2 font-sans text-[0.66rem] font-bold tracking-[0.16em] uppercase text-paper transition-opacity hover:opacity-75"
+      >
+        <span class="live-dot" aria-hidden="true"></span>
+        The Wire
+      </a>
+      <span class="hidden h-3.5 w-px shrink-0 bg-paper/25 sm:block" aria-hidden="true"></span>
+      <div class="ticker-viewport relative min-w-0 flex-1 overflow-hidden py-2">
+        <div class="ticker-track" style={`width: max-content`}>
+          {track.map((item, i) => (
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              aria-hidden={i >= items.length ? "true" : undefined}
+              tabindex={i >= items.length ? -1 : undefined}
+              class="flex shrink-0 items-center gap-2 font-sans text-[0.775rem] whitespace-nowrap text-paper/85 transition-colors hover:text-paper"
+            >
+              <span class="font-bold tracking-[0.08em] text-[0.64rem] uppercase text-paper/55">
+                {item.publisher}
+              </span>
+              <span>{item.title}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+      <p class="hidden shrink-0 py-2 font-sans text-[0.66rem] tracking-[0.06em] text-paper/50 lg:block tabular">
+        {wireItems.length} stories &middot; {updated} UTC
+      </p>
+    </div>
+  </div>
+)}

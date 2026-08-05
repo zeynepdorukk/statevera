@@ -1,0 +1,47 @@
+name: Refresh the wire
+
+# The site is static, so the wire is a snapshot. This job retakes it several
+# times a day and commits the result, which in turn triggers the Pages deploy.
+
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wire
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Fetch the wire
+        run: node scripts/fetch-wire.mjs
+
+      - name: Verify the snapshot
+        run: node scripts/check-content.mjs
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet -- src/data/wire.json; then
+            echo "No new stories."
+            exit 0
+          fi
+          git config user.name "statevera-wire[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          COUNT=$(node -e "console.log(require('./src/data/wire.json').items.length)")
+          git add src/data/wire.json
+          git commit -m "Wire: refresh snapshot (${COUNT} stories)"
+          git push

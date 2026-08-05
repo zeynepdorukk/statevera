@@ -1,0 +1,140 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { desks, deskList, regions, regionSlugOf, type DeskSlug } from "../../site";
+import { byCategory, wireItems, activeRegions } from "../../data/wire";
+import { getByCategory, root } from "../../utils/collection";
+import WireCard from "../../components/WireCard.astro";
+import JournalCard from "../../components/JournalCard.astro";
+import SectionHead from "../../components/SectionHead.astro";
+
+export async function getStaticPaths() {
+  return deskList.map((desk) => ({ params: { desk: desk.slug } }));
+}
+
+const deskSlug = Astro.params.desk as DeskSlug;
+const desk = desks[deskSlug];
+
+const items = byCategory(desk.name);
+const [lead, ...rest] = items;
+const journalOnDesk = await getByCategory(desk.name, 3);
+
+const regionCounts = activeRegions()
+  .map(({ region }) => ({
+    region,
+    count: items.filter((i) => i.region === region).length,
+  }))
+  .filter((r) => r.count > 0);
+
+const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
+---
+
+<BaseLayout
+  title={`${desk.name} — The Wire`}
+  description={desk.description}
+  path={`/wire/${desk.slug}`}
+  tone="wire"
+>
+  <div class="shell pt-7 md:pt-9" data-tone="wire">
+    <header class="border-b-2 border-ink pb-5">
+      <nav aria-label="Breadcrumb" class="mb-3">
+        <ol class="flex items-center gap-2 font-sans text-[0.68rem] font-bold tracking-[0.12em] uppercase">
+          <li><a href={root("/wire")} class="text-muted transition-colors hover:text-tone">The Wire</a></li>
+          <li aria-hidden="true" class="text-line-strong">/</li>
+          <li class="text-tone">{desk.name}</li>
+        </ol>
+      </nav>
+      <h1 class="t-lead">{desk.name}</h1>
+      <p class="mt-1.5 font-sans text-[0.72rem] font-bold tracking-[0.16em] uppercase text-tone">
+        {desk.tagline}
+      </p>
+      <p class="mt-3 max-w-3xl font-serif text-[1.06rem] leading-relaxed text-ink-soft">
+        {desk.description}
+      </p>
+      <p class="meta mt-3">{items.length} stories on the wire</p>
+    </header>
+
+    <nav aria-label="Other desks" class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
+      <a href={root("/wire")} class="desk-pill">All</a>
+      <span class="desk-pill is-on">{desk.name}</span>
+      {otherDesks.map((other) => (
+        <a href={root(`/wire/${other.slug}`)} class="desk-pill">{other.name}</a>
+      ))}
+    </nav>
+
+    {items.length === 0 ? (
+      <p class="py-14 text-center font-serif text-[1.05rem] text-muted">
+        Nothing on this desk in the current wire window.
+        <a href={root("/wire")} class="link-tone">See everything &rarr;</a>
+      </p>
+    ) : (
+      <section class="grid gap-x-8 gap-y-10 py-8 lg:grid-cols-[minmax(0,7.2fr)_minmax(0,2.8fr)]">
+        <div>
+          {lead && <WireCard item={lead} variant="lead" priority headingLevel="h2" />}
+          <div class="mt-8 grid gap-x-7 gap-y-8 border-t border-line pt-7 sm:grid-cols-2 xl:grid-cols-3">
+            {rest.map((item, i) => (
+              <WireCard item={item} variant={item.image && i < 9 ? "feature" : "compact"} showDek={i < 9} />
+            ))}
+          </div>
+        </div>
+
+        <aside class="lg:border-l lg:border-line lg:pl-8">
+          {journalOnDesk.length > 0 && (
+            <div class="mb-9" data-tone="journal">
+              <SectionHead title="In the Journal" tone="journal" href="/journal" moreLabel="Archive" />
+              <div class="rule-list">
+                {journalOnDesk.map((entry) => (
+                  <JournalCard item={{ kind: "article", entry }} variant="text" />
+                ))}
+              </div>
+            </div>
+          )}
+
+          <SectionHead title="By region" tone="wire" href="/regions" moreLabel="Regions" />
+          <ul class="rule-list">
+            {regionCounts.map(({ region, count }) => {
+              const slug = regionSlugOf(region);
+              return (
+                <li class="flex items-baseline justify-between gap-3">
+                  {slug in regions ? (
+                    <a href={root(`/regions/${slug}`)} class="editorial-link font-sans text-[0.86rem] font-medium text-ink">
+                      {region}
+                    </a>
+                  ) : (
+                    <span class="font-sans text-[0.86rem] text-ink">{region}</span>
+                  )}
+                  <span class="meta tabular">{count}</span>
+                </li>
+              );
+            })}
+          </ul>
+          <p class="meta mt-6 border-t border-line pt-3">
+            {desk.name} accounts for {items.length} of {wireItems.length} stories currently on the wire.
+          </p>
+        </aside>
+      </section>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .desk-pill {
+    font-family: var(--font-sans);
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.35rem 0.75rem;
+    border: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .desk-pill:hover {
+    color: var(--tone);
+    border-color: var(--line);
+  }
+  .desk-pill.is-on {
+    color: var(--ink);
+    border-color: var(--line-strong);
+    background: var(--paper-soft);
+  }
+</style>

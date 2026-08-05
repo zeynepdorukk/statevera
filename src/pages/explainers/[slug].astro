@@ -2,34 +2,42 @@
 import { render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { site } from "../../site";
-import { getExplainerBySlug, heroImageOf, readingTime, getAllExplainers, root } from "../../utils/collection";
+import {
+  getAllExplainers,
+  getExplainerBySlug,
+  explainerHref,
+  formatDate,
+  heroImageOf,
+  readingTime,
+  root,
+  slugOf,
+} from "../../utils/collection";
 import { creditFor } from "../../data/imageCredits";
+import ArticleSources from "../../components/article/ArticleSources.astro";
+import ArticleShare from "../../components/article/ArticleShare.astro";
+import JournalCard from "../../components/JournalCard.astro";
+import SectionHead from "../../components/SectionHead.astro";
 import KeyTakeaways from "../../components/mdx/KeyTakeaways.astro";
 import WhyItMatters from "../../components/mdx/WhyItMatters.astro";
 import TheBigPicture from "../../components/mdx/TheBigPicture.astro";
 import AnalysisSection from "../../components/mdx/AnalysisSection.astro";
-import { formatDate } from "../../utils/collection";
 
 export async function getStaticPaths() {
-  const { getCollection } = await import("astro:content");
-  const explainers = await getCollection("explainers");
-  return explainers.map((e) => ({
-    params: { slug: e.id.replace(/\.mdx?$/, "") },
-  }));
+  const explainers = await getAllExplainers();
+  return explainers.map((entry) => ({ params: { slug: slugOf(entry) }, props: { entry } }));
 }
 
-const { slug } = Astro.params;
-const explainer = await getExplainerBySlug(slug ?? "");
+const { entry } = Astro.props;
+const explainer = entry ?? (await getExplainerBySlug(Astro.params.slug ?? ""));
 if (!explainer) return Astro.redirect(root("/404"));
 
 const { Content } = await render(explainer);
-
 const { data } = explainer;
-const rt = readingTime(explainer);
-const href = root(`/explainers/${explainer.id.replace(/\.mdx?$/, "")}`);
+const href = explainerHref(explainer);
+const canonical = new URL(href, site.siteUrl).toString();
+const minutes = readingTime(explainer);
 const credit = creditFor(data.heroImage);
-const all = await getAllExplainers();
-const others = all.filter((e) => e.id !== explainer.id).slice(0, 3);
+const others = (await getAllExplainers()).filter((e) => e.id !== explainer.id).slice(0, 3);
 
 const jsonLd = [
   {
@@ -43,11 +51,15 @@ const jsonLd = [
     publisher: {
       "@type": "Organization",
       name: site.publicationName,
-      logo: { "@type": "ImageObject", url: new URL(root("/images/branding/logo-512.png"), site.siteUrl).toString() },
+      logo: {
+        "@type": "ImageObject",
+        url: new URL(root("/images/branding/logo-512.png"), site.siteUrl).toString(),
+      },
     },
     image: [new URL(heroImageOf(data.heroImage), site.siteUrl).toString()],
     articleSection: "Explainers",
-    mainEntityOfPage: new URL(href, site.siteUrl).toString(),
+    isAccessibleForFree: true,
+    mainEntityOfPage: canonical,
   },
 ];
 ---
@@ -57,34 +69,37 @@ const jsonLd = [
   description={data.description}
   image={heroImageOf(data.heroImage)}
   type="article"
+  tone="journal"
   path={href}
+  noindex={data.draft}
   jsonLd={jsonLd}
 >
-  <article class="mx-auto max-w-[880px] px-4 pt-8 md:px-8 md:pt-12">
+  <article class="shell max-w-[900px] pt-8 md:pt-12" data-tone="journal">
     <nav aria-label="Breadcrumb" class="mb-5">
-      <ol class="flex items-center gap-2 font-sans text-[0.72rem] font-semibold tracking-[0.1em] uppercase">
-        <li><a href={root("/explainers")} class="kicker transition-colors duration-200 hover:text-ink">Explainers</a></li>
-        <li aria-hidden="true" class="text-muted">/</li>
-        <li class="kicker-ink">Reference</li>
+      <ol class="flex items-center gap-2 font-sans text-[0.68rem] font-bold tracking-[0.12em] uppercase">
+        <li><a href={root("/journal")} class="text-muted transition-colors hover:text-tone">The Journal</a></li>
+        <li aria-hidden="true" class="text-line-strong">/</li>
+        <li><a href={root("/explainers")} class="text-tone">Explainers</a></li>
       </ol>
     </nav>
 
+    {data.draft && (
+      <p class="mb-4 inline-flex items-center gap-2 border border-line-strong bg-paper-soft px-2.5 py-1 font-sans text-[0.64rem] font-bold tracking-[0.14em] uppercase text-muted">
+        Draft — not published
+      </p>
+    )}
+
     <h1 class="t-display">{data.title}</h1>
-    <p class="mt-4 max-w-[46rem] font-serif text-[1.2rem] leading-relaxed text-ink-soft">
+    <p class="mt-4 max-w-[46rem] font-serif text-[1.22rem] leading-relaxed text-ink-soft">
       {data.description}
     </p>
 
     <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 border-y border-line py-3.5">
-      <p class="font-sans text-[0.8rem] font-semibold text-ink">By {site.authorName} · Statevera Reference</p>
-      <time class="meta" datetime={data.date.toISOString()}>
-        Published {formatDate(data.date)}
-      </time>
-      <span class="meta">{rt} min read</span>
-      {data.sample && (
-        <span class="ml-auto inline-flex items-center gap-1.5 border border-line-strong px-2 py-1 font-sans text-[0.62rem] font-bold tracking-[0.14em] uppercase text-muted">
-          Demo content
-        </span>
-      )}
+      <p class="font-sans text-[0.8rem] font-semibold text-ink">By {site.authorName}</p>
+      <time class="meta" datetime={data.date.toISOString()}>{formatDate(data.date)}</time>
+      {data.updated && <span class="meta">Updated {formatDate(data.updated)}</span>}
+      <span class="meta">{minutes} min read</span>
+      <span class="kicker ml-auto">Reference</span>
     </div>
 
     <figure class="mt-7">
@@ -94,60 +109,44 @@ const jsonLd = [
         width="1600"
         height="1000"
         fetchpriority="high"
-        class="w-full border border-line/60 object-cover"
+        decoding="async"
+        class="img-frame border border-line/70"
       />
-      {credit && (
-        <figcaption class="mt-1.5 border-b border-line pb-2.5 font-sans text-[0.72rem] text-muted">
-          {credit.label}. {credit.credit}, {credit.license}.
+      {(credit || data.imageCredit) && (
+        <figcaption class="mt-1.5 border-b border-line pb-2.5 font-sans text-[0.73rem] text-muted">
+          {credit ? `${credit.label}. ${credit.credit}, ${credit.license}.` : data.imageCredit}
         </figcaption>
       )}
     </figure>
 
-    <div class="article-body mt-8 pb-10">
-      <Content
-        components={{
-          KeyTakeaways,
-          WhyItMatters,
-          TheBigPicture,
-          AnalysisSection,
-        }}
-      />
+    <div class="article-body mt-8">
+      <Content components={{ KeyTakeaways, WhyItMatters, TheBigPicture, AnalysisSection }} />
     </div>
 
-    {data.sources.length > 0 && (
-      <aside class="border-t border-line-strong pb-10 pt-5" aria-label="Sources">
-        <p class="kicker-ink mb-3">Sources &amp; Attribution</p>
-        <ul class="columns-1 gap-8 sm:columns-2">
-          {data.sources.map((s) => (
-            <li class="mb-2 break-inside-avoid">
-              <a href={s.url} target="_blank" rel="noopener noreferrer" class="link-accent">
-                {s.name} <span aria-hidden="true">↗</span>
-              </a>
-              <span class="sr-only">(opens an external site)</span>
-            </li>
-          ))}
-        </ul>
-      </aside>
+    <ArticleSources sources={data.sources} />
+
+    {data.tags.length > 0 && (
+      <div class="mt-8 flex flex-wrap items-center gap-2">
+        <span class="kicker-ink">Filed under</span>
+        {data.tags.map((tag) => (
+          <span class="border border-line px-2 py-0.5 font-sans text-[0.72rem] text-ink-soft">{tag}</span>
+        ))}
+      </div>
     )}
 
-    <aside class="border-t border-line-strong pb-16 pt-6" aria-label="More explainers">
-      <div class="section-head">
-        <h2 class="title">More Explainers</h2>
-        <span class="rule" aria-hidden="true"></span>
-      </div>
-      <ul class="grid gap-x-8 gap-y-5 md:grid-cols-3">
-        {others.map((e) => (
-          <li>
-            <p class="kicker">Reference</p>
-            <h2 class="t-headline-xs mt-1">
-              <a href={root(`/explainers/${e.id.replace(/\.mdx?$/, "")}`)} class="editorial-link">
-                {e.data.title}
-              </a>
-            </h2>
-            <p class="meta mt-1.5">{readingTime(e)} min read</p>
-          </li>
-        ))}
-      </ul>
-    </aside>
+    <div class="mt-6 no-print">
+      <ArticleShare title={data.title} url={canonical} layout="row" />
+    </div>
+
+    {others.length > 0 && (
+      <section class="mt-12 pb-6" aria-label="More explainers">
+        <SectionHead title="More explainers" tone="journal" href="/explainers" moreLabel="All" />
+        <div class="grid gap-x-8 gap-y-8 sm:grid-cols-3">
+          {others.map((other) => (
+            <JournalCard item={{ kind: "explainer", entry: other }} variant="text" />
+          ))}
+        </div>
+      </section>
+    )}
   </article>
 </BaseLayout>

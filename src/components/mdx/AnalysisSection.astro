@@ -1,12 +1,11 @@
 ---
 interface Props {
-  title: string;
+  label?: string;
 }
-
-const { title } = Astro.props;
+const { label = "Analysis" } = Astro.props;
 ---
 
-<section class="analysis-section" aria-label={title}>
-  <h2>{title}</h2>
-  <div class="article-body !mb-0"><slot /></div>
-</section>
+<aside class="callout" aria-label={label}>
+  <span class="callout-label">{label}</span>
+  <div><slot /></div>
+</aside>

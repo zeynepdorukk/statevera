@@ -1,0 +1,25 @@
+---
+import { root } from "../utils/collection";
+import type { PillarId } from "../site";
+
+interface Props {
+  title: string;
+  tone?: PillarId;
+  href?: string;
+  moreLabel?: string;
+  class?: string;
+}
+
+const { title, tone, href, moreLabel = "See all", class: className = "" } = Astro.props;
+---
+
+<div class:list={["section-head", className]} data-tone={tone}>
+  <span class="tick" aria-hidden="true"></span>
+  <h2 class="title">{title}</h2>
+  <span class="rule" aria-hidden="true"></span>
+  {href && (
+    <a href={root(href)} class="more">
+      {moreLabel} <span aria-hidden="true">&rarr;</span>
+    </a>
+  )}
+</div>

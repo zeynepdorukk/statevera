@@ -1,68 +1,93 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { pillars } from "../site";
 import { root } from "../utils/collection";
+import { byCategory } from "../data/wire";
+import WireCard from "../components/WireCard.astro";
+import SectionHead from "../components/SectionHead.astro";
 
 const RISK_URL = "https://zeynepdorukk.github.io/Glorisk/";
+const geopolitics = byCategory("Geopolitics", 4);
+const security = byCategory("Security", 4);
 ---
 
 <BaseLayout
   title="Geopolitical Risk Analysis"
-  description="Interactive geopolitical risk analysis — Glorisk: country risk scoring, shock scenarios and strategic exposure, embedded on Statevera."
+  description={pillars.risk.description}
   path="/risk"
+  tone="risk"
 >
-  <div class="mx-auto max-w-[1400px] px-4 pt-8 md:px-8 md:pt-10">
+  <div class="shell pt-7 md:pt-9" data-tone="risk">
     <header class="border-b-2 border-ink pb-5">
-      <h1 class="t-headline-lg">Geopolitical Risk Analysis</h1>
-      <p class="mt-1 font-sans text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-accent">
-        Glorisk — interactive risk tool
-      </p>
-      <p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-ink-soft">
-        An interactive tool for assessing geopolitical risk: country risk scores, shock scenarios
-        and strategic exposure, developed by the Statevera editor. Use it to stress-test
-        assumptions behind the reporting on this site.
+      <p class="kicker-ink">Risk</p>
+      <h1 class="t-lead mt-1.5">Geopolitical Risk Analysis</h1>
+      <p class="mt-3 max-w-3xl font-serif text-[1.06rem] leading-relaxed text-ink-soft">
+        {pillars.risk.description} Use it to stress-test the assumptions behind the
+        reporting on <a href={root("/wire")} class="link-accent">the Wire</a> and the
+        arguments in <a href={root("/journal")} class="link-accent">the Journal</a>.
       </p>
     </header>
 
     <div class="py-8">
-      <div class="relative border border-line bg-paper-soft">
+      <div class="relative border border-line-strong bg-paper-soft">
         <iframe
           src={RISK_URL}
-          title="Glorisk — Geopolitical Risk Analysis"
+          title="Glorisk — interactive geopolitical risk analysis"
           class="block h-[78vh] min-h-[560px] w-full border-0 bg-white"
           loading="eager"
           allow="fullscreen"
+          referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-        <div class="flex items-center justify-between gap-3 border-t border-line px-4 py-2.5">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-t border-line px-4 py-2.5">
           <p class="meta">
-            Glorisk · <a href={RISK_URL} target="_blank" rel="noopener" class="link-accent">open in a new tab</a>
+            Glorisk &middot;
+            <a href={RISK_URL} target="_blank" rel="noopener" class="link-accent">
+              open in a new tab<span class="outbound" aria-hidden="true"></span>
+            </a>
           </p>
-          <p class="meta hidden sm:block">Updated from the Glorisk project repository</p>
+          <p class="meta hidden sm:block">Built and maintained by the Statevera editor</p>
         </div>
       </div>
 
-      <div class="mt-6 grid gap-6 md:grid-cols-3">
-        <div class="border border-line bg-paper-soft p-5">
-          <p class="kicker">What it is</p>
-          <p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
-            Glorisk scores and visualises geopolitical risk across countries and regions, combining
-            conflict, sanctions, energy and financial exposure into a single assessment.
+      <div class="mt-7 grid gap-7 md:grid-cols-3">
+        <div class="border-t-2 border-ink pt-3.5">
+          <p class="kicker-ink">What it is</p>
+          <p class="mt-2 font-serif text-[0.97rem] leading-relaxed text-ink-soft">
+            Glorisk scores and visualises geopolitical risk across countries and regions,
+            combining conflict, sanctions, energy and financial exposure into a single
+            assessment.
           </p>
         </div>
-        <div class="border border-line bg-paper-soft p-5">
-          <p class="kicker">How to use it</p>
-          <p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
-            Filter by region, compare risk categories, and explore scenario shocks. The tool is
-            interactive — hover, click and toggle to build your own view.
+        <div class="border-t-2 border-ink pt-3.5">
+          <p class="kicker-ink">How to use it</p>
+          <p class="mt-2 font-serif text-[0.97rem] leading-relaxed text-ink-soft">
+            Filter by region, compare risk categories and explore scenario shocks. The tool
+            is interactive — hover, click and toggle to build your own view.
           </p>
         </div>
-        <div class="border border-line bg-paper-soft p-5">
-          <p class="kicker">Related</p>
-          <p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
-            Risk analysis connects to the <a href={root("/news/geopolitics")} class="link-accent">Geopolitics</a> and
-            <a href={root("/news/security")} class="link-accent"> Security</a> sections of Statevera.
+        <div class="border-t-2 border-ink pt-3.5">
+          <p class="kicker-ink">Reading it well</p>
+          <p class="mt-2 font-serif text-[0.97rem] leading-relaxed text-ink-soft">
+            A score is a hypothesis, not a forecast. Check it against what the wire is
+            actually reporting from the same region before you act on it.
           </p>
         </div>
       </div>
     </div>
+
+    <section class="grid gap-x-8 gap-y-9 border-t-2 border-ink pt-7 pb-6 md:grid-cols-2" aria-label="Related reporting" data-tone="wire">
+      <div>
+        <SectionHead title="Geopolitics on the wire" tone="wire" href="/wire/geopolitics" moreLabel="Desk" />
+        <div class="rule-list">
+          {geopolitics.map((item) => <WireCard item={item} variant="text" />)}
+        </div>
+      </div>
+      <div>
+        <SectionHead title="Security on the wire" tone="wire" href="/wire/security" moreLabel="Desk" />
+        <div class="rule-list">
+          {security.map((item) => <WireCard item={item} variant="text" />)}
+        </div>
+      </div>
+    </section>
   </div>
 </BaseLayout>

@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { pillars, site, journalSections, deskList } from "../site";
+import {
+  getAllArticles,
+  getAllExplainers,
+  getFeaturedArticle,
+  getJournalStream,
+  root,
+} from "../utils/collection";
+import JournalCard from "../components/JournalCard.astro";
+import SectionHead from "../components/SectionHead.astro";
+
+const articles = await getAllArticles();
+const explainers = await getAllExplainers();
+const featured = await getFeaturedArticle();
+const stream = await getJournalStream();
+
+const rest = stream.filter((item) => item.entry.id !== featured?.id);
+const opinion = articles.filter((a) => a.data.type === "opinion");
+const theory = articles.filter((a) => a.data.category === "Theory");
+
+const deskCounts = deskList
+  .map((desk) => ({ desk, count: articles.filter((a) => a.data.category === desk.name).length }))
+  .filter((d) => d.count > 0);
+---
+
+<BaseLayout
+  title={pillars.journal.name}
+  description={pillars.journal.description}
+  path="/journal"
+  tone="journal"
+>
+  <div class="shell pt-7 md:pt-9" data-tone="journal">
+    <header class="border-b-2 border-ink pb-5">
+      <p class="kicker">The Journal</p>
+      <h1 class="t-lead mt-1.5">{pillars.journal.tagline}</h1>
+      <p class="mt-3 max-w-3xl font-serif text-[1.06rem] leading-relaxed text-ink-soft">
+        {pillars.journal.description} Every piece here is reported, argued and signed —
+        as distinct from
+        <a href={root("/wire")} class="link-tone">the Wire</a>, which gathers other
+        newsrooms' reporting.
+      </p>
+      <p class="meta mt-3">
+        {articles.length} articles &middot; {explainers.length} explainers &middot; by
+        <a href={root("/about")} class="link-tone">{site.authorName}</a>
+      </p>
+    </header>
+
+    {stream.length === 0 ? (
+      <p class="py-16 text-center font-serif text-[1.05rem] text-muted">
+        Nothing published yet.
+      </p>
+    ) : (
+      <>
+        <!-- Featured -->
+        <section class="grid gap-x-9 gap-y-9 py-9 lg:grid-cols-[minmax(0,6fr)_minmax(0,4fr)]" aria-label="Featured">
+          {featured && <JournalCard item={{ kind: "article", entry: featured }} variant="lead" priority headingLevel="h2" />}
+          <div class="lg:border-l lg:border-line lg:pl-8">
+            <SectionHead title="Latest" tone="journal" />
+            <div class="rule-list">
+              {rest.slice(0, 6).map((item) =>
+                item.kind === "article" ? (
+                  <JournalCard item={{ kind: "article", entry: item.entry }} variant="text" />
+                ) : (
+                  <JournalCard item={{ kind: "explainer", entry: item.entry }} variant="text" />
+                )
+              )}
+            </div>
+          </div>
+        </section>
+
+        <!-- Archive -->
+        <section class="border-t-2 border-ink pt-7" aria-label="Archive">
+          <SectionHead title="Archive" tone="journal" />
+          <div class="grid gap-x-8 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+            {rest.map((item) =>
+              item.kind === "article" ? (
+                <JournalCard item={{ kind: "article", entry: item.entry }} variant="feature" />
+              ) : (
+                <JournalCard item={{ kind: "explainer", entry: item.entry }} variant="feature" />
+              )
+            )}
+          </div>
+        </section>
+
+        <!-- Index -->
+        <section class="mt-14 grid gap-8 border-t border-line pt-8 pb-6 sm:grid-cols-2 lg:grid-cols-4" aria-label="Journal index">
+          <div>
+            <p class="kicker mb-2.5">By desk</p>
+            <ul class="space-y-1.5">
+              {deskCounts.map(({ desk, count }) => (
+                <li class="flex items-baseline justify-between gap-3">
+                  <span class="font-sans text-[0.84rem] text-ink-soft">{desk.name}</span>
+                  <span class="meta tabular">{count}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p class="kicker mb-2.5">{journalSections.theory.name}</p>
+            <p class="font-serif text-[0.93rem] leading-relaxed text-ink-soft">
+              {journalSections.theory.description}
+            </p>
+            <a href={root(journalSections.theory.url)} class="kicker-ink mt-2.5 inline-block hover:text-tone">
+              {theory.length} essays &rarr;
+            </a>
+          </div>
+
+          <div>
+            <p class="kicker mb-2.5">{journalSections.explainers.name}</p>
+            <p class="font-serif text-[0.93rem] leading-relaxed text-ink-soft">
+              {journalSections.explainers.description}
+            </p>
+            <a href={root(journalSections.explainers.url)} class="kicker-ink mt-2.5 inline-block hover:text-tone">
+              {explainers.length} explainers &rarr;
+            </a>
+          </div>
+
+          <div>
+            <p class="kicker mb-2.5">Opinion</p>
+            <p class="font-serif text-[0.93rem] leading-relaxed text-ink-soft">
+              Explicitly argued pieces on the decisions facing governments and alliances.
+            </p>
+            <p class="meta mt-2.5">{opinion.length} pieces</p>
+          </div>
+        </section>
+      </>
+    )}
+  </div>
+</BaseLayout>

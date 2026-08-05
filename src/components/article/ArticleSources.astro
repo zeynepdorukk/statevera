@@ -1,39 +1,29 @@
 ---
-import { site } from "../../site";
-import { root } from "../../utils/collection";
-
 interface Props {
   sources: { name: string; url: string }[];
+  label?: string;
 }
 
-const { sources } = Astro.props;
-if (!sources.length) return null;
+const { sources, label = "Sources & further reading" } = Astro.props;
 ---
 
-<aside class="mt-10 border-t border-line-strong pt-5" aria-label="Sources">
-  <p class="kicker-ink mb-3">Sources &amp; Attribution</p>
-  <ul class="columns-1 gap-8 sm:columns-2">
-    {sources.map((s) => (
-      <li class="mb-2 break-inside-avoid">
-        <a
-          href={s.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group inline-flex max-w-full items-center gap-2 font-sans text-[0.85rem] font-medium text-ink-soft"
-        >
-          <span class="editorial-link">{s.name}</span>
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="shrink-0 transition-colors duration-200 group-hover:stroke-accent">
-            <path d="M7 17 17 7M8 7h9v9" />
-          </svg>
-        </a>
-        <span class="sr-only">(opens an external site)</span>
-        <p class="mt-0.5 font-sans text-[0.68rem] text-muted">{new URL(s.url).hostname}</p>
-      </li>
-    ))}
-  </ul>
-  <p class="mt-3 font-sans text-[0.72rem] leading-relaxed text-muted">
-    External links open in a new tab and leave {site.publicationNameDisplay}. Attribution follows
-    the publication's {""}
-    <a href={root("/about#sourcing")} class="link-accent">sourcing policy</a>.
-  </p>
-</aside>
+{sources.length > 0 && (
+  <aside class="mt-10 border-t-2 border-ink pt-5" aria-label={label}>
+    <p class="kicker-ink mb-3">{label}</p>
+    <ul class="columns-1 gap-8 sm:columns-2">
+      {sources.map((source) => (
+        <li class="mb-2 break-inside-avoid">
+          <a
+            href={source.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-tone font-sans text-[0.86rem]"
+          >
+            {source.name}<span class="outbound" aria-hidden="true"></span>
+          </a>
+          <span class="sr-only">(opens an external site)</span>
+        </li>
+      ))}
+    </ul>
+  </aside>
+)}

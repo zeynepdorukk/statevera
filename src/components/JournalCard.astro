@@ -1,0 +1,135 @@
+---
+import type { Article, Explainer } from "../utils/collection";
+import { articleHref, explainerHref, formatDate, heroImageOf, readingTime } from "../utils/collection";
+
+type Entry =
+  | { kind: "article"; entry: Article }
+  | { kind: "explainer"; entry: Explainer };
+
+interface Props {
+  item: Entry;
+  variant?: "lead" | "feature" | "compact" | "text";
+  showDek?: boolean;
+  priority?: boolean;
+  headingLevel?: "h2" | "h3";
+}
+
+const { item, variant = "feature", showDek = true, priority = false, headingLevel: Heading = "h3" } =
+  Astro.props;
+
+const data = item.entry.data;
+const href = item.kind === "article" ? articleHref(item.entry as Article) : explainerHref(item.entry as Explainer);
+const kicker =
+  item.kind === "explainer" ? "Explainer" : (item.entry as Article).data.type === "opinion" ? "Opinion" : (item.entry as Article).data.category;
+const minutes = readingTime(item.entry);
+const loading = priority ? "eager" : "lazy";
+const isDraft = data.draft;
+---
+
+{variant === "lead" && (
+  <article class="group" data-tone="journal">
+    <a href={href} class="img-zoom mb-4 block border border-line/70">
+      <img
+        src={heroImageOf(data.heroImage)}
+        alt={data.heroImageAlt}
+        width="1200"
+        height="750"
+        loading={loading}
+        fetchpriority={priority ? "high" : undefined}
+        decoding="async"
+        class="img-frame aspect-[16/9]"
+      />
+    </a>
+    <p class="kicker flex items-center gap-2">
+      <span>{kicker}</span>
+      {isDraft && <span class="text-muted">&middot; Draft</span>}
+    </p>
+    <Heading class="t-headline mt-2">
+      <a href={href} class="editorial-link">{data.title}</a>
+    </Heading>
+    {showDek && (
+      <p class="t-dek mt-3 max-w-2xl">{data.description}</p>
+    )}
+    <p class="meta mt-3 flex flex-wrap items-center gap-x-2">
+      <span class="meta-strong">Zeynep Doruk</span>
+      <span aria-hidden="true">&middot;</span>
+      <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time>
+      <span aria-hidden="true">&middot;</span>
+      <span>{minutes} min read</span>
+    </p>
+  </article>
+)}
+
+{variant === "feature" && (
+  <article class="group flex flex-col" data-tone="journal">
+    <a href={href} tabindex="-1" aria-hidden="true" class="img-zoom mb-3 block border border-line/70">
+      <img
+        src={heroImageOf(data.heroImage)}
+        alt=""
+        width="800"
+        height="500"
+        loading={loading}
+        decoding="async"
+        class="img-frame aspect-[16/10]"
+      />
+    </a>
+    <p class="kicker">{kicker}</p>
+    <Heading class="t-headline-sm mt-1.5">
+      <a href={href} class="editorial-link">{data.title}</a>
+    </Heading>
+    {showDek && (
+      <p class="mt-2 line-clamp-3 font-serif text-[0.97rem] leading-relaxed text-ink-soft">
+        {data.description}
+      </p>
+    )}
+    <p class="meta mt-2.5 flex flex-wrap items-center gap-x-2">
+      <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" })}</time>
+      <span aria-hidden="true">&middot;</span>
+      <span>{minutes} min</span>
+    </p>
+  </article>
+)}
+
+{variant === "compact" && (
+  <article class="group flex gap-3" data-tone="journal">
+    <div class="min-w-0 flex-1">
+      <p class="kicker">{kicker}</p>
+      <Heading class="t-headline-xs mt-1">
+        <a href={href} class="editorial-link">{data.title}</a>
+      </Heading>
+      <p class="meta mt-1.5">
+        <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" })}</time>
+        <span aria-hidden="true"> &middot; </span>{minutes} min
+      </p>
+    </div>
+    <a href={href} tabindex="-1" aria-hidden="true" class="img-zoom h-[4.2rem] w-[5.6rem] shrink-0 border border-line/70">
+      <img
+        src={heroImageOf(data.heroImage)}
+        alt=""
+        width="224"
+        height="168"
+        loading="lazy"
+        decoding="async"
+        class="img-frame h-full w-full"
+      />
+    </a>
+  </article>
+)}
+
+{variant === "text" && (
+  <article class="group" data-tone="journal">
+    <p class="kicker">{kicker}</p>
+    <Heading class="t-headline-xs mt-1">
+      <a href={href} class="editorial-link">{data.title}</a>
+    </Heading>
+    {showDek && (
+      <p class="mt-1.5 line-clamp-2 font-sans text-[0.82rem] leading-relaxed text-muted">
+        {data.description}
+      </p>
+    )}
+    <p class="meta mt-1.5">
+      <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" })}</time>
+      <span aria-hidden="true"> &middot; </span>{minutes} min
+    </p>
+  </article>
+)}

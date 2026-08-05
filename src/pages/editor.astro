@@ -1,726 +1,2139 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-
-const EDITOR_PASSWORD_HASH =
-  "ab6e9c72f635e31ba0aceea151f27e9d2dba668e0bfd521828ed7bb78f784be9";
-const GITHUB_API = "https://api.github.com/repos/zeynepdorukk/statevera";
-const GITHUB_BRANCH = "master";
-const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+import EditorLayout from "../layouts/EditorLayout.astro";
 ---
 
-<BaseLayout
-  title="Editor — Statevera"
-  description="Statevera editorial workspace."
-  path="/editor"
->
-  <meta name="robots" content="noindex, nofollow" />
-  <div class="mx-auto max-w-[1100px] px-4 pt-8 md:px-8 md:pt-10">
-    <header class="border-b-2 border-ink pb-5">
-      <h1 class="t-headline-lg">Editor Workspace</h1>
-      <p class="mt-1 font-sans text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-accent">
-        Zeynep Doruk · sole editor &amp; writer
-      </p>
-      <p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-ink-soft">
-        Create and correct articles, explainers and their metadata. Changes are committed to the
-        repository and the site rebuilds automatically.
-      </p>
-    </header>
-
-    <div class="py-8" data-editor-root>
-      <div class="flex justify-center py-16" data-editor-loading>
-        <p class="meta">Loading editor…</p>
-      </div>
-    </div>
+<EditorLayout title="Desk">
+  <div data-editor-root>
+    <p class="ed-boot">Opening the desk…</p>
   </div>
-</BaseLayout>
-
-<script type="module">
-  const EDITOR_PASSWORD_HASH = "ab6e9c72f635e31ba0aceea151f27e9d2dba668e0bfd521828ed7bb78f784be9";
-  const GITHUB_API = "https://api.github.com/repos/zeynepdorukk/statevera";
-  const GITHUB_BRANCH = "master";
-  const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
-  const TOKEN_KEY = "statevera-editor-token";
-  const AUTH_KEY = "statevera-editor-auth";
-
-  const root = document.querySelector("[data-editor-root]");
-  const loading = document.querySelector("[data-editor-loading]");
-
-  const CATEGORIES = ["Politics", "Geopolitics", "Economy", "Culture", "Security", "Diplomacy", "Theory", "Opinion"];
-  const REGIONS = ["Europe", "Middle East", "Americas", "Asia-Pacific", "Africa", "Eurasia", "Turkey", "Global"];
-  const TYPES = ["news", "analysis", "opinion", "explainer", "briefing"];
-
-  const state = {
-    token: localStorage.getItem(TOKEN_KEY) || "",
-    items: [] as { title: string; url: string; category: string; region: string; kind: string }[],
-    images: [] as string[],
-  };
-
-  const esc = (s: string) =>
-    String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-
-  async function sha256Hex(text: string): Promise<string> {
-    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
-    return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
-  }
-
-  function b64EncodeUtf8(str: string): string {
-    const bytes = new TextEncoder().encode(str);
-    let bin = "";
-    for (let i = 0; i < bytes.length; i += 0x8000) {
-      bin += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
-    }
-    return btoa(bin);
-  }
-
-  function b64DecodeUtf8(b64: string): string {
-    const bin = atob(b64);
-    const bytes = new Uint8Array(bin.length);
-    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
-    return new TextDecoder().decode(bytes);
-  }
-
-  async function ghFetch(path: string, opts: RequestInit = {}) {
-    const headers: Record<string, string> = { Accept: "application/vnd.github+json", ...(opts.headers as Record<string, string>) };
-    if (state.token) headers.Authorization = `Bearer ${state.token}`;
-    const res = await fetch(GITHUB_API + path, { ...opts, headers });
-    const text = await res.text();
-    let json: unknown = null;
-    try { json = text ? JSON.parse(text) : null; } catch { /* keep null */ }
-    if (!res.ok) {
-      const msg = (json as { message?: string })?.message ?? res.status;
-      throw new Error(`GitHub API ${res.status}: ${msg}`);
-    }
-    return json;
-  }
-
-  function splitFrontmatter(raw: string): { fm: string; body: string } {
-    const m = raw.match(/^---\s*\n([\s\S]*?)\n---\s*\n?/);
-    return m ? { fm: m[1], body: raw.slice(m[0].length) } : { fm: "", body: raw };
-  }
-
-  function readField(fm: string, key: string): string {
-    const m = fm.match(new RegExp(`^${key}:\\s*(.+)$`, "m"));
-    return m ? m[1].trim().replace(/^["']|["']$/g, "") : "";
-  }
-
-  function yamlStr(v: string): string {
-    return `"${String(v ?? "").replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
-  }
-
-  function yamlArr(v: string): string {
-    const items = v.split(",").map((s) => s.trim()).filter(Boolean);
-    return items.length ? `[${items.map(yamlStr).join(", ")}]` : "[]";
-  }
-
-  function buildArticleFile(f: Record<string, string>, body: string): string {
-    const fm = [
-      "---",
-      `title: ${yamlStr(f.title)}`,
-      `description: ${yamlStr(f.description)}`,
-      `date: ${f.date}`,
-      ...(f.updated ? [`updated: ${f.updated}`] : []),
-      `author: "Zeynep Doruk"`,
-      `category: ${yamlStr(f.category)}`,
-      `region: ${yamlStr(f.region)}`,
-      `country: ${yamlArr(f.country)}`,
-      `tags: ${yamlArr(f.tags)}`,
-      `type: ${f.type}`,
-      `featured: ${f.featured === "on"}`,
-      `breaking: ${f.breaking === "on"}`,
-      `editorsPick: ${f.editorsPick === "on"}`,
-      `heroImage: ${yamlStr(f.heroImage)}`,
-      `heroImageAlt: ${yamlStr(f.heroImageAlt)}`,
-      ...(f.imageCredit ? [`imageCredit: ${yamlStr(f.imageCredit)}`] : []),
-      ...(f.sources
-        ? [
-            "sources:",
-            ...f.sources
-              .split("\n")
-              .map((l) => l.trim())
-              .filter(Boolean)
-              .map((l) => {
-                const i = l.indexOf("|");
-                return i > -1
-                  ? `  - name: ${yamlStr(l.slice(0, i).trim())}\n    url: ${yamlStr(l.slice(i + 1).trim())}`
-                  : `  - name: ${yamlStr(l)}\n    url: ""`;
-              }),
-          ]
-        : []),
-      "---",
-      "",
-    ].join("\n");
-    return fm + body.trim() + "\n";
-  }
-
-  function buildExplainerFile(f: Record<string, string>, body: string): string {
-    const fm = [
-      "---",
-      `title: ${yamlStr(f.title)}`,
-      `description: ${yamlStr(f.description)}`,
-      `date: ${f.date}`,
-      ...(f.updated ? [`updated: ${f.updated}`] : []),
-      `tags: ${yamlArr(f.tags)}`,
-      `heroImage: ${yamlStr(f.heroImage)}`,
-      `heroImageAlt: ${yamlStr(f.heroImageAlt)}`,
-      ...(f.imageCredit ? [`imageCredit: ${yamlStr(f.imageCredit)}`] : []),
-      "---",
-      "",
-    ].join("\n");
-    return fm + body.trim() + "\n";
-  }
-
-  function renderMarkdown(src: string): string {
-    const lines = src.replace(/\r\n/g, "\n").split("\n");
-    const out: string[] = [];
-    let list = false;
-    const closeList = () => { if (list) { out.push("</ul>"); list = false; } };
-    for (const line of lines) {
-      const l = line.trim();
-      if (l.startsWith("### ")) { closeList(); out.push(`<h4>${esc(l.slice(4))}</h4>`); }
-      else if (l.startsWith("## ")) { closeList(); out.push(`<h3>${esc(l.slice(3))}</h3>`); }
-      else if (l.startsWith("# ")) { closeList(); out.push(`<h2>${esc(l.slice(2))}</h2>`); }
-      else if (l.startsWith("- ") || l.startsWith("* ")) {
-        if (!list) { list = true; out.push("<ul>"); }
-        out.push(`<li>${inline(l.slice(2))}</li>`);
-      }
-      else if (l === "---") { closeList(); out.push("<hr/>"); }
-      else if (l === "") { closeList(); }
-      else { closeList(); out.push(`<p>${inline(l)}</p>`); }
-    }
-    closeList();
-    return out.join("\n");
-  }
-
-  function inline(s: string): string {
-    let t = esc(s);
-    t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-    t = t.replace(/\*([^*]+)\*/g, "<em>$1</em>");
-    t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
-    t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-    return t;
-  }
-
-  const view = (html: string) => {
-    loading!.style.display = "none";
-    root!.innerHTML = html;
-  };
-
-  // ------------------------------------------------------------
-  // Views
-  // ------------------------------------------------------------
-
-  function loginView(message = "") {
-    view(`
-      <div class="mx-auto max-w-[420px] py-10">
-        <div class="border border-line bg-paper-soft p-6">
-          <h2 class="t-headline-sm">Editor sign-in</h2>
-          <p class="meta mt-1">Restricted to the editor and invited writers.</p>
-          ${message ? `<p class="mt-3 font-sans text-[0.85rem] font-semibold text-red-600" data-ed-err>${esc(message)}</p>` : ""}
-          <form data-ed-login class="mt-5 space-y-4">
-            <div>
-              <label class="ed-label" for="ed-password">Password</label>
-              <input id="ed-password" type="password" required class="ed-input" placeholder="••••••••" autocomplete="current-password" />
-            </div>
-            <div>
-              <label class="ed-label" for="ed-token">GitHub token <span class="ed-hint">(optional — fine-grained PAT with Contents: Read &amp; Write on the statevera repo)</span></label>
-              <input id="ed-token" type="password" class="ed-input" placeholder="github_pat_…" autocomplete="off" value="${esc(state.token)}" />
-            </div>
-            <button type="submit" class="ed-btn">Sign in</button>
-          </form>
-          <p class="mt-4 font-sans text-[0.72rem] leading-relaxed text-muted">
-            The token is stored only in this browser (localStorage) and is used solely to read and
-            commit article files. Without a token, content can be loaded but not saved.
-          </p>
-        </div>
-      </div>
-    `);
-    root!.querySelector("[data-ed-login]")!.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const pw = (root!.querySelector("#ed-password") as HTMLInputElement).value;
-      const tk = (root!.querySelector("#ed-token") as HTMLInputElement).value.trim();
-      const hash = await sha256Hex(pw);
-      if (hash !== EDITOR_PASSWORD_HASH) {
-        loginView("Incorrect password.");
-        return;
-      }
-      state.token = tk;
-      if (tk) localStorage.setItem(TOKEN_KEY, tk);
-      sessionStorage.setItem(AUTH_KEY, "1");
-      await loadIndex();
-    });
-  }
-
-  async function loadImages(): Promise<string[]> {
-    try {
-      const files = (await ghFetch("/contents/public/images/articles")) as { name: string }[];
-      return files.filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f.name)).map((f) => `/images/articles/${f.name}`);
-    } catch {
-      return [];
-    }
-  }
-
-  async function loadIndex() {
-    loading!.style.display = "block";
-    root!.innerHTML = "";
-    try {
-      const [idxRes, images] = await Promise.all([
-        fetch(BASE + "/search-index.json"),
-        loadImages(),
-      ]);
-      const idx = (await idxRes.json()) as { title: string; url: string; category: string; region: string; kind: string }[];
-      state.items = idx.filter((i) => i.url.includes("/articles/") || i.url.includes("/explainers/"));
-      state.images = images.length ? images : ["/images/articles/beijing.jpg"];
-      listView();
-    } catch (err) {
-      listView(null, String((err as Error).message));
-    }
-  }
-
-  function listView(message: string | null = null, error = "") {
-    const articles = state.items.filter((i) => i.url.includes("/articles/"));
-    const explainers = state.items.filter((i) => i.url.includes("/explainers/"));
-    const row = (i: { title: string; url: string; category: string; region: string }) => `
-      <li class="flex items-center gap-3 border-b border-line py-3">
-        <div class="min-w-0 flex-1">
-          <p class="truncate font-serif text-[1.02rem] leading-snug text-ink">${esc(i.title)}</p>
-          <p class="meta mt-0.5">${esc(i.category)} · ${esc(i.region)} · ${esc(i.url.split("/").pop() || "")}</p>
-        </div>
-        <button type="button" data-ed-edit="${esc(i.url)}" class="ed-btn ed-btn-sm">Edit</button>
-      </li>`;
-    view(`
-      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-line pb-4">
-        <div>
-          <h2 class="t-headline-sm">Articles &amp; explainers</h2>
-          <p class="meta mt-1">${state.items.length} pieces on the site · save commits to the repository and triggers a rebuild (~2 min).</p>
-        </div>
-        <div class="flex gap-2">
-          <button type="button" data-ed-new="article" class="ed-btn">New article</button>
-          <button type="button" data-ed-new="explainer" class="ed-btn">New explainer</button>
-        </div>
-      </div>
-      ${message ? `<p class="mt-4 border border-line bg-paper-soft px-4 py-3 font-sans text-[0.85rem] text-ink-soft" data-ed-msg>${message}</p>` : ""}
-      ${error ? `<p class="mt-4 border border-red-300 bg-red-50 px-4 py-3 font-sans text-[0.85rem] text-red-700" data-ed-msg>${esc(error)}</p>` : ""}
-      <div class="grid gap-8 pt-6 lg:grid-cols-2">
-        <div>
-          <div class="section-head"><h2 class="title">Articles</h2><span class="rule" aria-hidden="true"></span></div>
-          <ul class="border-t border-line">${articles.length ? articles.map(row).join("") : '<li class="py-4 font-serif text-[0.95rem] text-muted">No articles yet.</li>'}</ul>
-        </div>
-        <div>
-          <div class="section-head"><h2 class="title">Explainers</h2><span class="rule" aria-hidden="true"></span></div>
-          <ul class="border-t border-line">${explainers.length ? explainers.map(row).join("") : '<li class="py-4 font-serif text-[0.95rem] text-muted">No explainers yet.</li>'}</ul>
-        </div>
-      </div>
-      <div class="mt-8 flex gap-2">
-        <button type="button" data-ed-signout class="ed-btn ed-btn-ghost">Sign out</button>
-        ${state.token ? "" : `<button type="button" data-ed-settings class="ed-btn ed-btn-ghost">Add GitHub token</button>`}
-      </div>
-    `);
-    root!.querySelectorAll("[data-ed-edit]").forEach((b) =>
-      b.addEventListener("click", () => editView((b as HTMLButtonElement).dataset.edEdit!))
-    );
-    root!.querySelectorAll("[data-ed-new]").forEach((b) =>
-      b.addEventListener("click", () => newView((b as HTMLButtonElement).dataset.edNew!))
-    );
-    root!.querySelector("[data-ed-signout]")!.addEventListener("click", () => {
-      sessionStorage.removeItem(AUTH_KEY);
-      loginView();
-    });
-    const settingsBtn = root!.querySelector("[data-ed-settings]");
-    settingsBtn?.addEventListener("click", () => {
-      const tk = prompt("GitHub fine-grained PAT (Contents: Read & Write on statevera):", state.token);
-      if (tk !== null) {
-        state.token = tk.trim();
-        if (state.token) localStorage.setItem(TOKEN_KEY, state.token);
-        else localStorage.removeItem(TOKEN_KEY);
-        listView("Token updated.");
-      }
-    });
-  }
-
-  function message(text: string) {
-    const el = root!.querySelector("[data-ed-msg]");
-    if (el) el.textContent = text;
-    else listView(text);
-  }
-
-  function slugify(s: string): string {
-    return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
-  }
-
-  function newView(kind: "article" | "explainer") {
-    view(`
-      <a href="#" data-ed-back class="kicker-ink transition-colors duration-200 hover:text-accent">← Back to list</a>
-      <div class="mt-4 max-w-[560px] border border-line bg-paper-soft p-6">
-        <h2 class="t-headline-sm">New ${kind}</h2>
-        <form data-ed-newform class="mt-5 space-y-4">
-          <div>
-            <label class="ed-label" for="ed-slug">Slug (file name — auto-suggested)</label>
-            <input id="ed-slug" type="text" required class="ed-input" placeholder="e.g. realism-in-foreign-policy" />
-          </div>
-          <div>
-            <label class="ed-label" for="ed-ntitle">Title</label>
-            <input id="ed-ntitle" type="text" required class="ed-input" placeholder="Article title" />
-          </div>
-          <button type="submit" class="ed-btn">Create ${kind}</button>
-        </form>
-      </div>
-    `);
-    const slugInput = root!.querySelector("#ed-slug") as HTMLInputElement;
-    const titleInput = root!.querySelector("#ed-ntitle") as HTMLInputElement;
-    titleInput.addEventListener("input", () => {
-      if (slugInput.value === "" || slugInput.value === slugify(titleInput.value)) {
-        slugInput.value = slugify(titleInput.value);
-      }
-    });
-    root!.querySelector("[data-ed-back]")!.addEventListener("click", (e) => { e.preventDefault(); loadIndex(); });
-    root!.querySelector("[data-ed-newform]")!.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const slug = slugify(slugInput.value);
-      const title = titleInput.value.trim();
-      if (!slug) { message("A slug is required."); return; }
-      if (!state.token) { message("A GitHub token is required to create files."); return; }
-      try {
-        const filePath = kind === "article"
-          ? `src/content/articles/${slug}.mdx`
-          : `src/content/explainers/${slug}.mdx`;
-        await ghFetch(`/contents/${filePath}`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json", "User-Agent": "statevera-editor" },
-          body: JSON.stringify({
-            message: `Create ${kind} "${title}" (via editor)`,
-            branch: GITHUB_BRANCH,
-            content: b64EncodeUtf8(buildArticleFile(
-              { title, description: "", date: new Date().toISOString().slice(0, 10), category: "Politics", region: "Global", tags: "", country: "", type: "news", heroImage: state.images[0], heroImageAlt: "", imageCredit: "", sources: "" },
-              ""
-            )),
-          }),
-        });
-        listView(`Created ${kind} "${title}". It now appears in the list — open it and finish the article.`);
-      } catch (err) {
-        message(`Create failed: ${(err as Error).message}`);
-      }
-    });
-  }
-
-  async function editView(url: string) {
-    const slug = decodeURIComponent(url.split("/").pop() || "");
-    const kind = url.includes("/explainers/") ? "explainer" : "article";
-    view(`
-      <a href="#" data-ed-back class="kicker-ink transition-colors duration-200 hover:text-accent">← Back to list</a>
-      <div class="mt-4 flex items-center justify-between gap-3">
-        <div class="min-w-0">
-          <h2 class="t-headline-sm">${kind === "article" ? "Article" : "Explainer"}: <span class="text-accent">${esc(slug)}</span></h2>
-          <p class="meta mt-1">Loading content…</p>
-        </div>
-      </div>
-    `);
-    root!.querySelector("[data-ed-back]")!.addEventListener("click", (e) => { e.preventDefault(); loadIndex(); });
-    try {
-      const dir = kind === "article" ? "articles" : "explainers";
-      const ext = kind === "article" ? "mdx" : "mdx";
-      const meta = (await ghFetch(`/contents/src/content/${dir}/${slug}.${ext}`)) as { content: string; sha: string };
-      const raw = b64DecodeUtf8(meta.content);
-      const { fm, body } = splitFrontmatter(raw);
-      const f = {
-        title: readField(fm, "title"),
-        description: readField(fm, "description"),
-        date: readField(fm, "date").slice(0, 10),
-        updated: readField(fm, "updated").slice(0, 10),
-        category: readField(fm, "category"),
-        region: readField(fm, "region"),
-        type: readField(fm, "type"),
-        tags: readField(fm, "tags").replace(/^\[|\]$/g, "").replace(/"/g, "").split(",").map((s) => s.trim()).join(", "),
-        country: readField(fm, "country").replace(/^\[|\]$/g, "").replace(/"/g, "").split(",").map((s) => s.trim()).join(", "),
-        featured: readField(fm, "featured"),
-        breaking: readField(fm, "breaking"),
-        editorsPick: readField(fm, "editorsPick"),
-        heroImage: readField(fm, "heroImage"),
-        heroImageAlt: readField(fm, "heroImageAlt"),
-        imageCredit: readField(fm, "imageCredit"),
-        sources: fm.includes("sources:")
-          ? fm.split("sources:")[1].split("\n").map((l) => l.trim()).filter((l) => l.startsWith("-")).map((l) => l.replace(/^-\s*/, "")).join("\n").replace(/\n/g, "\n").split("\n").map((l) => {
-              const name = l.match(/name:\s*"([^"]*)"/)?.[1] ?? "";
-              const srcUrl = l.match(/url:\s*"([^"]*)"/)?.[1] ?? "";
-              return name + (srcUrl ? ` | ${srcUrl}` : "");
-            }).join("\n")
-          : "",
-      };
-      formView(kind, slug, meta.sha, f, body);
-    } catch (err) {
-      message(`Load failed: ${(err as Error).message}`);
-      listView();
-    }
-  }
-
-  function formView(
-    kind: "article" | "explainer",
-    slug: string,
-    sha: string,
-    f: Record<string, string>,
-    body: string
-  ) {
-    const opt = (list: string[], val: string) =>
-      list.map((o) => `<option value="${esc(o)}" ${o === val ? "selected" : ""}>${esc(o)}</option>`).join("");
-    const imgOpts = state.images
-      .map((i) => `<option value="${esc(i)}" ${i === f.heroImage ? "selected" : ""}>${esc(i.split("/").pop())}</option>`)
-      .join("");
-    const check = (key: string) => (f[key] === "true" ? "checked" : "");
-    view(`
-      <a href="#" data-ed-back class="kicker-ink transition-colors duration-200 hover:text-accent">← Back to list</a>
-      <div class="mt-4 border border-line bg-paper-soft p-5">
-        <form data-ed-form class="grid gap-5 lg:grid-cols-2">
-          <div class="space-y-4 lg:col-span-2">
-            <div>
-              <label class="ed-label" for="f-title">Title</label>
-              <input id="f-title" class="ed-input" value="${esc(f.title)}" />
-            </div>
-            <div>
-              <label class="ed-label" for="f-desc">Description (dek / summary)</label>
-              <textarea id="f-desc" rows="3" class="ed-input">${esc(f.description)}</textarea>
-            </div>
-          </div>
-          ${kind === "article" ? `
-          <div class="space-y-4">
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="ed-label" for="f-date">Published</label>
-                <input id="f-date" type="date" class="ed-input" value="${esc(f.date)}" />
-              </div>
-              <div>
-                <label class="ed-label" for="f-updated">Updated <span class="ed-hint">(optional)</span></label>
-                <input id="f-updated" type="date" class="ed-input" value="${esc(f.updated)}" />
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="ed-label" for="f-category">Category</label>
-                <select id="f-category" class="ed-input">${opt(CATEGORIES, f.category)}</select>
-              </div>
-              <div>
-                <label class="ed-label" for="f-region">Region</label>
-                <select id="f-region" class="ed-input">${opt(REGIONS, f.region)}</select>
-              </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="ed-label" for="f-type">Type</label>
-                <select id="f-type" class="ed-input">${opt(TYPES, f.type)}</select>
-              </div>
-              <div>
-                <label class="ed-label" for="f-tags">Tags (comma separated)</label>
-                <input id="f-tags" class="ed-input" value="${esc(f.tags)}" />
-              </div>
-            </div>
-            <div>
-              <label class="ed-label" for="f-country">Countries (comma separated)</label>
-              <input id="f-country" class="ed-input" value="${esc(f.country)}" />
-            </div>
-            <div class="flex flex-wrap gap-4">
-              <label class="ed-check"><input id="f-featured" type="checkbox" ${check("featured")} /> Featured</label>
-              <label class="ed-check"><input id="f-breaking" type="checkbox" ${check("breaking")} /> Breaking</label>
-              <label class="ed-check"><input id="f-pick" type="checkbox" ${check("editorsPick")} /> Editor's pick</label>
-            </div>
-          </div>` : `
-          <div class="space-y-4">
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="ed-label" for="f-date">Published</label>
-                <input id="f-date" type="date" class="ed-input" value="${esc(f.date)}" />
-              </div>
-              <div>
-                <label class="ed-label" for="f-tags">Tags (comma separated)</label>
-                <input id="f-tags" class="ed-input" value="${esc(f.tags)}" />
-              </div>
-            </div>
-          </div>`}
-          <div class="space-y-4">
-            <div>
-              <label class="ed-label" for="f-hero">Hero image</label>
-              <select id="f-hero" class="ed-input">${imgOpts}<option value="">Custom…</option></select>
-              <input id="f-hero-custom" class="ed-input mt-2 hidden" placeholder="/images/articles/your-file.jpg" value="${esc(f.heroImage)}" />
-            </div>
-            <div>
-              <label class="ed-label" for="f-alt">Hero image alt text</label>
-              <input id="f-alt" class="ed-input" value="${esc(f.heroImageAlt)}" />
-            </div>
-            <div>
-              <label class="ed-label" for="f-credit">Image credit <span class="ed-hint">(optional)</span></label>
-              <input id="f-credit" class="ed-input" value="${esc(f.imageCredit)}" />
-            </div>
-            ${kind === "article" ? `
-            <div>
-              <label class="ed-label" for="f-sources">Sources <span class="ed-hint">(one per line: Name | url)</span></label>
-              <textarea id="f-sources" rows="4" class="ed-input">${esc(f.sources)}</textarea>
-            </div>` : ""}
-          </div>
-          <div class="lg:col-span-2">
-            <div class="flex items-center justify-between">
-              <label class="ed-label" for="f-body">Body (Markdown)</label>
-              <label class="ed-check"><input id="f-preview-toggle" type="checkbox" checked /> Live preview</label>
-            </div>
-            <div class="grid gap-4 lg:grid-cols-2">
-              <textarea id="f-body" rows="26" class="ed-input font-mono text-[0.82rem]">${esc(body)}</textarea>
-              <div id="f-preview" class="article-body ed-preview overflow-y-auto border border-line bg-paper-soft p-5"></div>
-            </div>
-          </div>
-          <div class="flex flex-wrap items-center gap-3 lg:col-span-2">
-            <button type="submit" class="ed-btn" data-ed-save>Save &amp; publish</button>
-            <a href="${esc(BASE + "/articles/" + slug)}" target="_blank" rel="noopener" class="ed-btn ed-btn-ghost" data-ed-view>View on site</a>
-            <span class="meta" data-ed-status></span>
-          </div>
-        </form>
-      </div>
-    `);
-
-    const heroSelect = root!.querySelector("#f-hero") as HTMLSelectElement;
-    const heroCustom = root!.querySelector("#f-hero-custom") as HTMLInputElement;
-    const syncHero = () => {
-      if (heroSelect.value === "") { heroCustom.classList.remove("hidden"); heroCustom.focus(); }
-      else heroCustom.classList.add("hidden");
-    };
-    heroSelect.addEventListener("change", () => { if (heroSelect.value) heroCustom.value = heroSelect.value; syncHero(); });
-    if (heroSelect.value === "") syncHero();
-
-    const bodyEl = root!.querySelector("#f-body") as HTMLTextAreaElement;
-    const previewEl = root!.querySelector("#f-preview") as HTMLElement;
-    const previewToggle = root!.querySelector("#f-preview-toggle") as HTMLInputElement;
-    const renderPreview = () => { if (previewToggle.checked) previewEl.innerHTML = renderMarkdown(bodyEl.value); };
-    bodyEl.addEventListener("input", renderPreview);
-    previewToggle.addEventListener("change", renderPreview);
-    renderPreview();
-
-    root!.querySelector("[data-ed-back]")!.addEventListener("click", (e) => { e.preventDefault(); loadIndex(); });
-    root!.querySelector("[data-ed-form]")!.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      if (!state.token) { message("A GitHub token is required to save."); return; }
-      const g = (id: string) => (root!.querySelector(id) as HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement).value;
-      const fields: Record<string, string> = {
-        title: g("#f-title"),
-        description: g("#f-desc"),
-        date: g("#f-date"),
-        updated: g("#f-updated"),
-        category: g("#f-category"),
-        region: g("#f-region"),
-        type: g("#f-type"),
-        tags: g("#f-tags"),
-        country: g("#f-country"),
-        featured: (root!.querySelector("#f-featured") as HTMLInputElement)?.checked ? "on" : "",
-        breaking: (root!.querySelector("#f-breaking") as HTMLInputElement)?.checked ? "on" : "",
-        editorsPick: (root!.querySelector("#f-pick") as HTMLInputElement)?.checked ? "on" : "",
-        heroImage: heroCustom.classList.contains("hidden") ? heroSelect.value : heroCustom.value.trim(),
-        heroImageAlt: g("#f-alt"),
-        imageCredit: g("#f-credit"),
-        sources: g("#f-sources"),
-        tags: g("#f-tags"),
-      };
-      const fileContent = kind === "article"
-        ? buildArticleFile(fields, bodyEl.value)
-        : buildExplainerFile(fields, bodyEl.value);
-      const statusEl = root!.querySelector("[data-ed-status]") as HTMLElement;
-      statusEl.textContent = "Saving…";
-      try {
-        const dir = kind === "article" ? "articles" : "explainers";
-        await ghFetch(`/contents/src/content/${dir}/${slug}.mdx`, {
-          method: "PUT",
-          headers: { "Content-Type": "application/json", "User-Agent": "statevera-editor" },
-          body: JSON.stringify({
-            message: `Edit ${kind} "${fields.title}" (via editor)`,
-            branch: GITHUB_BRANCH,
-            content: b64EncodeUtf8(fileContent),
-            sha,
-          }),
-        });
-        statusEl.textContent = "Saved. Site rebuilds automatically (~2 min).";
-      } catch (err) {
-        statusEl.textContent = `Save failed: ${(err as Error).message}`;
-      }
-    });
-  }
-
-  // ------------------------------------------------------------
-  // Boot
-  // ------------------------------------------------------------
-
-  if (sessionStorage.getItem(AUTH_KEY)) {
-    await loadIndex();
-  } else {
-    loginView();
-  }
-</script>
+</EditorLayout>
 
 <style is:global>
-  .ed-label {
-    display: block;
+  /* ============================================================
+     THE DESK — a writing surface, not a form
+     ============================================================ */
+
+  .ed-boot {
+    padding: 6rem 1rem;
+    text-align: center;
     font-family: var(--font-sans);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-bottom: 0.35rem;
-  }
-  .ed-hint {
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: 0;
+    font-size: 0.85rem;
     color: var(--muted);
   }
-  .ed-input {
-    width: 100%;
-    border: 1px solid var(--line-strong);
-    background: var(--paper);
-    color: var(--ink);
-    padding: 0.55rem 0.7rem;
+
+  /* ---------- top bar ---------- */
+  .ed-bar {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 1.1rem;
+    border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    backdrop-filter: blur(8px);
+  }
+  .ed-bar-left,
+  .ed-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+  .ed-bar-right {
+    margin-left: auto;
+  }
+  .ed-bar-meta {
     font-family: var(--font-sans);
-    font-size: 0.88rem;
-    border-radius: 0;
-    outline: none;
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
   }
-  .ed-input:focus {
-    border-color: var(--accent);
+  .ed-bar-meta[data-state="error"] {
+    color: var(--wire-deep);
   }
+  .ed-bar-meta[data-state="ok"] {
+    color: var(--journal-deep);
+  }
+
   .ed-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    border: 1px solid var(--ink);
-    background: var(--ink);
-    color: var(--paper);
-    font-family: var(--font-sans);
-    font-size: 0.74rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 0.55rem 1rem;
-    cursor: pointer;
-    transition: opacity 0.15s ease;
-  }
-  .ed-btn:hover {
-    opacity: 0.85;
-  }
-  .ed-btn-sm {
-    padding: 0.3rem 0.7rem;
-    font-size: 0.68rem;
-    white-space: nowrap;
-  }
-  .ed-btn-ghost {
+    border: 1px solid var(--line-strong);
     background: transparent;
     color: var(--ink-soft);
-    border-color: var(--line-strong);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 0.42rem 0.8rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.13s ease;
+    white-space: nowrap;
   }
-  .ed-check {
+  .ed-btn:hover:not(:disabled) {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .ed-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .ed-btn-primary {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+    font-weight: 700;
+  }
+  .ed-btn-primary:hover:not(:disabled) {
+    opacity: 0.86;
+    color: var(--paper);
+  }
+  .ed-btn-quiet {
+    border-color: transparent;
+    color: var(--muted);
+  }
+
+  /* ---------- the page ---------- */
+  .ed-page {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 40vh;
+  }
+
+  .ed-cover {
+    position: relative;
+    margin-bottom: 2rem;
+    border: 1px dashed var(--line-strong);
+    background: var(--paper-soft);
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.15s ease;
+  }
+  .ed-cover:hover {
+    border-color: var(--journal);
+  }
+  .ed-cover.has-image {
+    border-style: solid;
+    border-color: var(--line);
+    min-height: 0;
+    display: block;
+  }
+  .ed-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .ed-cover-hint {
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .ed-cover-swap {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  .ed-cover:hover .ed-cover-swap {
+    opacity: 1;
+  }
+
+  /* Title and standfirst read exactly as they will on the site. */
+  .ed-title,
+  .ed-standfirst,
+  .ed-body {
+    outline: none;
+  }
+  .ed-title {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: clamp(2.1rem, 4vw + 0.6rem, 3.1rem);
+    line-height: 1.03;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 0.9rem;
+  }
+  .ed-standfirst {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 1.8rem;
+  }
+
+  [data-placeholder]:empty::before,
+  .ed-title:empty::before,
+  .ed-standfirst:empty::before {
+    content: attr(data-placeholder);
+    color: var(--muted);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  /* The body inherits the published article typography. */
+  .ed-body {
+    font-family: var(--font-serif);
+    font-size: 1.19rem;
+    line-height: 1.72;
+    color: var(--ink);
+    min-height: 40vh;
+  }
+  .ed-body > * {
+    position: relative;
+  }
+  .ed-body p {
+    margin: 0 0 1.35rem;
+  }
+  .ed-body h2 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.62rem;
+    line-height: 1.2;
+    margin: 2.4rem 0 0.85rem;
+    letter-spacing: -0.013em;
+  }
+  .ed-body h3 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    margin: 1.9rem 0 0.75rem;
+  }
+  .ed-body ul,
+  .ed-body ol {
+    margin: 0 0 1.35rem;
+    padding-left: 1.35rem;
+  }
+  .ed-body li {
+    margin-bottom: 0.45rem;
+  }
+  .ed-body ul li {
+    list-style: disc;
+  }
+  .ed-body ol li {
+    list-style: decimal;
+  }
+  .ed-body li::marker {
+    color: var(--journal);
+  }
+  .ed-body blockquote {
+    margin: 1.7rem 0;
+    padding-left: 1.3rem;
+    border-left: 3px solid var(--journal);
+    font-style: italic;
+    font-size: 1.24rem;
+    color: var(--ink-soft);
+  }
+  .ed-body blockquote p {
+    margin: 0;
+  }
+  .ed-body hr {
+    border: 0;
+    border-top: 1px solid var(--line-strong);
+    margin: 2.2rem auto;
+    width: 5rem;
+  }
+  .ed-body a {
+    color: var(--journal-deep);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .ed-body strong {
+    font-weight: 700;
+  }
+  .ed-body em {
+    font-style: italic;
+  }
+  .ed-body .ed-figure {
+    margin: 2rem 0;
+  }
+  .ed-body .ed-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .ed-body .ed-figure figcaption {
+    margin-top: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    outline: none;
+  }
+
+  .ed-callout {
+    margin: 2rem 0;
+    border-top: 2px solid var(--journal);
+    background: var(--journal-wash);
+    padding: 1rem 1.2rem;
+  }
+  .ed-callout-label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--journal-deep);
+    margin-bottom: 0.45rem;
+    user-select: none;
+  }
+  .ed-callout-body {
+    font-size: 1.03rem;
+    line-height: 1.62;
+    outline: none;
+  }
+  .ed-callout-body > *:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ---------- the inline suggestion ---------- */
+  .ed-ghost-text {
+    color: var(--muted);
+    opacity: 0.62;
+    font-style: italic;
+  }
+
+  /* ---------- selection toolbar ---------- */
+  .ed-float {
+    position: absolute;
+    z-index: 60;
+    display: none;
+    align-items: center;
+    gap: 1px;
+    padding: 3px;
+    background: var(--ink);
+    border-radius: 3px;
+    box-shadow: 0 10px 28px -10px rgba(0, 0, 0, 0.55);
+  }
+  .ed-float.is-open {
+    display: flex;
+  }
+  .ed-float button {
+    border: 0;
+    background: transparent;
+    color: color-mix(in srgb, var(--paper) 80%, transparent);
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 0.34rem 0.55rem;
+    cursor: pointer;
+    border-radius: 2px;
+    line-height: 1;
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
+  }
+  .ed-float button:hover,
+  .ed-float button[aria-pressed="true"] {
+    background: color-mix(in srgb, var(--paper) 16%, transparent);
+    color: var(--paper);
+  }
+  .ed-float .sep {
+    width: 1px;
+    height: 1.1rem;
+    background: color-mix(in srgb, var(--paper) 22%, transparent);
+    margin: 0 3px;
+  }
+  .ed-float input {
+    background: color-mix(in srgb, var(--paper) 12%, transparent);
+    border: 0;
+    outline: none;
+    color: var(--paper);
     font-family: var(--font-sans);
-    font-size: 0.8rem;
+    font-size: 0.76rem;
+    padding: 0.3rem 0.5rem;
+    width: 15rem;
+    border-radius: 2px;
+  }
+  .ed-float input::placeholder {
+    color: color-mix(in srgb, var(--paper) 45%, transparent);
+  }
+
+  /* ---------- insert menu ---------- */
+  .ed-add {
+    position: absolute;
+    left: -2.6rem;
+    top: 0;
+    width: 1.9rem;
+    height: 1.9rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+    color: var(--muted);
+    border-radius: 999px;
+    cursor: pointer;
+    z-index: 30;
+  }
+  .ed-add.is-open {
+    display: flex;
+  }
+  .ed-add:hover {
+    border-color: var(--journal);
+    color: var(--journal-deep);
+  }
+
+  .ed-menu {
+    position: absolute;
+    z-index: 70;
+    display: none;
+    width: 17rem;
+    max-height: 20rem;
+    overflow-y: auto;
+    background: var(--paper);
+    border: 1px solid var(--line-strong);
+    box-shadow: 0 18px 44px -18px rgba(0, 0, 0, 0.45);
+  }
+  .ed-menu.is-open {
+    display: block;
+  }
+  .ed-menu-head {
+    padding: 0.45rem 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+  }
+  .ed-menu button {
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.5rem 0.75rem;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-sans);
+  }
+  .ed-menu button:hover,
+  .ed-menu button.is-active {
+    background: var(--paper-soft);
+  }
+  .ed-menu button .name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .ed-menu button .hint {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+  .ed-menu button.ed-pick {
+    align-items: center;
+  }
+  .ed-pick img {
+    width: 3.5rem;
+    height: 2.6rem;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: var(--paper-soft);
+    flex: none;
+  }
+  .ed-pick .name {
+    white-space: normal;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+  /* ---------- slide-over ---------- */
+  .ed-scrim {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    background: color-mix(in srgb, var(--ink) 45%, transparent);
+    display: none;
+  }
+  .ed-scrim.is-open {
+    display: block;
+  }
+  .ed-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    width: min(27rem, 100%);
+    background: var(--paper);
+    border-left: 1px solid var(--line-strong);
+    transform: translateX(100%);
+    transition: transform 0.22s cubic-bezier(0.2, 0.7, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  .ed-drawer.is-open {
+    transform: translateX(0);
+  }
+  .ed-drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .ed-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.2rem;
+  }
+  .ed-drawer-foot {
+    padding: 1rem 1.2rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .ed-field + .ed-field {
+    margin-top: 1rem;
+  }
+  .ed-field label,
+  .ed-legend {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
     color: var(--ink-soft);
+    margin-bottom: 0.35rem;
+  }
+  .ed-field .note {
+    margin-top: 0.3rem;
+    font-family: var(--font-sans);
+    font-size: 0.71rem;
+    color: var(--muted);
+  }
+  .ed-input,
+  .ed-select {
+    width: 100%;
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+    color: var(--ink);
+    padding: 0.5rem 0.6rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    border-radius: 2px;
+    outline: none;
+  }
+  .ed-input:focus,
+  .ed-select:focus {
+    border-color: var(--journal);
+  }
+  .ed-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+  }
+
+  .ed-switch {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.75rem;
+    border: 1px solid var(--line);
+    background: var(--paper-soft);
     cursor: pointer;
   }
-  .ed-preview {
-    min-height: 480px;
+  .ed-switch input {
+    margin-top: 0.15rem;
   }
-  .dark .ed-input {
-    color-scheme: dark;
+  .ed-switch .t {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .ed-switch .d {
+    display: block;
+    font-weight: 400;
+    font-size: 0.74rem;
+    color: var(--muted);
+    margin-top: 0.1rem;
+  }
+
+  .ed-warn {
+    border: 1px solid var(--wire);
+    background: var(--wire-wash);
+    color: var(--wire-deep);
+    padding: 0.55rem 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+  }
+  .ed-note {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .ed-note[data-state="error"] {
+    color: var(--wire-deep);
+  }
+  .ed-note[data-state="ok"] {
+    color: var(--journal-deep);
+  }
+
+  /* ---------- stories list ---------- */
+  .ed-stories {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 6rem;
+  }
+  .ed-story {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.95rem 0.6rem;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.12s ease;
+  }
+  .ed-story:hover {
+    background: var(--paper-soft);
+  }
+  .ed-story .t {
+    font-family: var(--font-serif);
+    font-size: 1.12rem;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .ed-story .m {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+  .ed-dot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 999px;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+  }
+  .ed-dot[data-live="true"] {
+    background: var(--journal);
+  }
+  .ed-dot[data-live="false"] {
+    background: var(--line-strong);
+  }
+
+  .ed-signin {
+    max-width: 23rem;
+    margin: 0 auto;
+    padding: 6rem 1.25rem;
+  }
+
+  @media (max-width: 700px) {
+    .ed-add {
+      left: -1.6rem;
+    }
+    .ed-page {
+      padding-left: 2rem;
+    }
   }
 </style>
+
+<script>
+  import { MODEL, KEY_HINT, KEY_URL, type AiConfig, type LayoutSuggestion,
+    completeInline, transform, suggestLayout, suggestMeta } from "../lib/editor/ai";
+  import { checkAccess, listDirectory, readFile, writeFile } from "../lib/editor/github";
+  import { parseDocument, serialiseArticle, serialiseExplainer, slugify,
+    findBrokenCharacters, type ArticleFields, type ExplainerFields } from "../lib/editor/document";
+  import { markdownToHtml, htmlToMarkdown, canvasText, countWords, readingMinutes,
+    setAssetBase, CALLOUTS, type CalloutName } from "../lib/editor/richtext";
+
+  const PASSWORD_HASH = "ab6e9c72f635e31ba0aceea151f27e9d2dba668e0bfd521828ed7bb78f784be9";
+  const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
+  setAssetBase(import.meta.env.BASE_URL);
+
+  const K_AUTH = "sv-editor-auth";
+  const K_TOKEN = "sv-editor-gh";
+  const K_AI = "sv-editor-ai";
+  const K_DRAFT = "sv-draft:";
+
+  const DESKS = ["Politics", "Geopolitics", "Economy", "Culture", "Security", "Diplomacy", "Theory", "Opinion"];
+  const REGIONS = ["Europe", "Middle East", "Americas", "Asia-Pacific", "Africa", "Eurasia", "Turkey", "Global"];
+  const TYPES = ["analysis", "news", "opinion", "explainer"];
+
+  type Kind = "article" | "explainer";
+
+  interface Story {
+    kind: Kind;
+    slug: string;
+    path: string;
+    title: string;
+    date: string;
+    desk: string;
+    region: string;
+    live: boolean;
+  }
+
+  const root = document.querySelector<HTMLElement>("[data-editor-root]")!;
+
+  const state = {
+    token: sessionStorage.getItem(K_TOKEN) ?? "",
+    ai: { apiKey: sessionStorage.getItem(K_AI) ?? "" } as AiConfig,
+    stories: [] as Story[],
+    images: [] as string[],
+    canWrite: false,
+  };
+
+  const aiReady = () => Boolean(state.ai.apiKey);
+
+  async function loadLocalKey() {
+    if (!import.meta.env.DEV || state.ai.apiKey) return;
+    try {
+      const res = await fetch(`${BASE}/__dev/openai-key`);
+      if (!res.ok) return;
+      const { key } = await res.json();
+      if (typeof key === "string" && key.trim()) {
+        state.ai.apiKey = key.trim();
+        sessionStorage.setItem(K_AI, state.ai.apiKey);
+      }
+    } catch {
+      /* no local key */
+    }
+  }
+
+  const esc = (v: unknown) =>
+    String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+  const el = <T extends HTMLElement>(s: string) => root.querySelector<T>(s)!;
+  const maybe = <T extends HTMLElement>(s: string) => root.querySelector<T>(s);
+  const view = (html: string) => { root.innerHTML = html; };
+  const today = () => new Date().toISOString().slice(0, 10);
+
+  const debounce = <A extends unknown[]>(fn: (...a: A) => void, ms: number) => {
+    let t: number | undefined;
+    return (...a: A) => { window.clearTimeout(t); t = window.setTimeout(() => fn(...a), ms); };
+  };
+
+  async function sha256Hex(text: string) {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+    return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+  }
+
+  // ==========================================================
+  // Sign in
+  // ==========================================================
+
+  function signInView(message = "") {
+    view(`
+      <div class="ed-signin">
+        <p class="ed-legend">Statevera</p>
+        <h1 style="font-family:var(--font-serif);font-size:1.9rem;font-weight:700;line-height:1.1;margin:.3rem 0 1.2rem">The desk</h1>
+        ${message ? `<p class="ed-warn" style="margin-bottom:1rem">${esc(message)}</p>` : ""}
+        <form data-signin>
+          <div class="ed-field">
+            <label for="pw">Password</label>
+            <input id="pw" type="password" class="ed-input" required autocomplete="current-password" />
+          </div>
+          <button type="submit" class="ed-btn ed-btn-primary" style="width:100%;justify-content:center;margin-top:1rem">Start writing</button>
+        </form>
+      </div>
+    `);
+    el<HTMLFormElement>("[data-signin]").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if ((await sha256Hex(el<HTMLInputElement>("#pw").value)) !== PASSWORD_HASH) {
+        signInView("That password is not right.");
+        return;
+      }
+      sessionStorage.setItem(K_AUTH, "1");
+      await openStories();
+    });
+    el<HTMLInputElement>("#pw").focus();
+  }
+
+  // ==========================================================
+  // Connections
+  // ==========================================================
+
+  function connectionsView(message = "") {
+    view(`
+      <div class="ed-signin" style="max-width:30rem">
+        <p class="ed-legend">Connections</p>
+        <h1 style="font-family:var(--font-serif);font-size:1.7rem;font-weight:700;line-height:1.1;margin:.3rem 0 1rem">Two keys</h1>
+        ${message ? `<p class="ed-warn" style="margin-bottom:1rem">${esc(message)}</p>` : ""}
+        <div class="ed-field">
+          <label for="gh">GitHub token</label>
+          <input id="gh" type="password" class="ed-input" placeholder="github_pat_…" value="${esc(state.token)}" autocomplete="off" />
+          <p class="note">Needed to open and publish stories. Fine-grained, Contents: Read &amp; Write.
+            <a class="link-tone" target="_blank" rel="noopener" href="https://github.com/settings/personal-access-tokens/new">Create one →</a></p>
+        </div>
+        <div class="ed-field">
+          <label for="ai">OpenAI key <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">— optional, for ${esc(MODEL)}</span></label>
+          <input id="ai" type="password" class="ed-input" placeholder="${esc(KEY_HINT)}" value="${esc(state.ai.apiKey)}" autocomplete="off" />
+          <p class="note">Goes straight from this browser to OpenAI. Never stored on the site.
+            <a class="link-tone" target="_blank" rel="noopener" href="${esc(KEY_URL)}">Get a key →</a></p>
+        </div>
+        <p class="note" style="margin-top:.8rem">Both keys are dropped when this tab closes.</p>
+        <div style="display:flex;gap:.5rem;margin-top:1.3rem">
+          <button type="button" class="ed-btn ed-btn-primary" data-go>Continue</button>
+          <button type="button" class="ed-btn ed-btn-quiet" data-out>Sign out</button>
+        </div>
+      </div>
+    `);
+    el<HTMLButtonElement>("[data-go]").addEventListener("click", async () => {
+      state.token = el<HTMLInputElement>("#gh").value.trim();
+      state.ai = { apiKey: el<HTMLInputElement>("#ai").value.trim() };
+      state.token ? sessionStorage.setItem(K_TOKEN, state.token) : sessionStorage.removeItem(K_TOKEN);
+      state.ai.apiKey ? sessionStorage.setItem(K_AI, state.ai.apiKey) : sessionStorage.removeItem(K_AI);
+      await openStories();
+    });
+    el<HTMLButtonElement>("[data-out]").addEventListener("click", signOut);
+  }
+
+  function signOut() {
+    [K_AUTH, K_TOKEN, K_AI].forEach((k) => sessionStorage.removeItem(k));
+    state.token = "";
+    state.ai = { apiKey: "" };
+    signInView();
+  }
+
+  // ==========================================================
+  // Stories
+  // ==========================================================
+
+  async function openStories(notice = "") {
+    view('<p class="ed-boot">Reading the archive…</p>');
+    if (!state.token) return connectionsView("Add a GitHub token to open your stories.");
+
+    try {
+      const access = await checkAccess(state.token);
+      state.canWrite = access.canWrite;
+
+      const [articles, explainers, images] = await Promise.all([
+        listDirectory(state.token, "src/content/articles"),
+        listDirectory(state.token, "src/content/explainers"),
+        listDirectory(state.token, "public/images/articles").catch(() => []),
+      ]);
+
+      state.images = images
+        .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f.name))
+        .map((f) => `/images/articles/${f.name}`);
+
+      const index: { url: string; title: string; category: string; region: string; date: string }[] =
+        await fetch(`${BASE}/search-index.json`).then((r) => r.json()).catch(() => []);
+
+      const build = (kind: Kind) => (f: { name: string; path: string }): Story => {
+        const slug = f.name.replace(/\.mdx?$/, "");
+        const meta = index.find((i) => i.url.endsWith(`/${slug}`));
+        return {
+          kind,
+          slug,
+          path: f.path,
+          title: meta?.title ?? slug.replace(/-/g, " "),
+          date: meta?.date?.slice(0, 10) ?? "",
+          desk: meta?.category ?? "",
+          region: meta?.region ?? "",
+          live: Boolean(meta),
+        };
+      };
+
+      state.stories = [
+        ...articles.filter((f) => /\.mdx?$/.test(f.name)).map(build("article")),
+        ...explainers.filter((f) => /\.mdx?$/.test(f.name)).map(build("explainer")),
+      ].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+      storiesView(notice);
+    } catch (error) {
+      connectionsView(`GitHub: ${(error as Error).message}`);
+    }
+  }
+
+  function storiesView(notice = "") {
+    const row = (s: Story) => `
+      <button type="button" class="ed-story" data-open="${esc(s.path)}">
+        <span class="ed-dot" data-live="${s.live}"></span>
+        <span style="flex:1;min-width:0">
+          <span class="t" style="display:block">${esc(s.title)}</span>
+          <span class="m">${s.live ? "Published" : "Draft"}${s.desk ? ` · ${esc(s.desk)}` : ""}${s.region ? ` · ${esc(s.region)}` : ""}${s.date ? ` · ${esc(s.date)}` : ""}${localStorage.getItem(K_DRAFT + s.path) ? " · unsaved changes here" : ""}</span>
+        </span>
+      </button>`;
+
+    view(`
+      <div class="ed-bar">
+        <div class="ed-bar-left">
+          <span class="ed-legend" style="margin:0">Statevera</span>
+        </div>
+        <div class="ed-bar-right">
+          <span class="ed-bar-meta">${aiReady() ? `${esc(MODEL)} ready` : "assistant off"}</span>
+          <button type="button" class="ed-btn ed-btn-quiet" data-conn>Keys</button>
+          <button type="button" class="ed-btn ed-btn-quiet" data-out>Sign out</button>
+          <button type="button" class="ed-btn" data-new="explainer">New explainer</button>
+          <button type="button" class="ed-btn ed-btn-primary" data-new="article">New story</button>
+        </div>
+      </div>
+      <div class="ed-stories">
+        ${notice ? `<p class="ed-note" data-state="ok" style="margin-bottom:1rem">${esc(notice)}</p>` : ""}
+        ${state.canWrite ? "" : '<p class="ed-warn" style="margin-bottom:1rem">This token cannot publish. Grant Contents: Read &amp; Write.</p>'}
+        <h1 style="font-family:var(--font-serif);font-size:2rem;font-weight:700;margin-bottom:.3rem">Your stories</h1>
+        <p class="ed-note" style="margin-bottom:1.6rem">${state.stories.length} pieces</p>
+        ${state.stories.map(row).join("")}
+      </div>
+    `);
+
+    root.querySelectorAll<HTMLButtonElement>("[data-open]").forEach((b) =>
+      b.addEventListener("click", () => openStory(b.dataset.open!))
+    );
+    root.querySelectorAll<HTMLButtonElement>("[data-new]").forEach((b) =>
+      b.addEventListener("click", () => createStory(b.dataset.new as Kind))
+    );
+    el<HTMLButtonElement>("[data-conn]").addEventListener("click", () => connectionsView());
+    el<HTMLButtonElement>("[data-out]").addEventListener("click", signOut);
+  }
+
+  function createStory(kind: Kind) {
+    compose({
+      kind,
+      slug: "",
+      path: "",
+      sha: "",
+      isNew: true,
+      fields: {
+        title: "",
+        description: "",
+        date: today(),
+        updated: "",
+        author: "Zeynep Doruk",
+        category: "Geopolitics",
+        region: "Global",
+        country: [],
+        tags: [],
+        type: kind === "explainer" ? "explainer" : "analysis",
+        featured: false,
+        editorsPick: false,
+        draft: true,
+        heroImage: "",
+        heroImageAlt: "",
+        imageCredit: "",
+        sources: [],
+      },
+      body: "",
+    });
+  }
+
+  async function openStory(path: string) {
+    view('<p class="ed-boot">Opening…</p>');
+    const kind: Kind = path.includes("/explainers/") ? "explainer" : "article";
+    const slug = path.split("/").pop()!.replace(/\.mdx?$/, "");
+    try {
+      const file = await readFile(state.token, path);
+      const parsed = parseDocument(file.text);
+      const fm = parsed.frontmatter;
+      const bool = (k: string) => fm[k] === "true";
+      const local = localStorage.getItem(K_DRAFT + path);
+
+      compose({
+        kind,
+        slug,
+        path,
+        sha: file.sha,
+        isNew: false,
+        fields: {
+          title: fm.title ?? "",
+          description: fm.description ?? "",
+          date: (fm.date ?? today()).slice(0, 10),
+          updated: (fm.updated ?? "").slice(0, 10),
+          author: fm.author || "Zeynep Doruk",
+          category: fm.category || "Geopolitics",
+          region: fm.region || "Global",
+          country: parsed.lists.country ?? [],
+          tags: parsed.lists.tags ?? [],
+          type: fm.type || (kind === "explainer" ? "explainer" : "analysis"),
+          featured: bool("featured"),
+          editorsPick: bool("editorsPick"),
+          draft: bool("draft"),
+          heroImage: fm.heroImage ?? "",
+          heroImageAlt: fm.heroImageAlt ?? "",
+          imageCredit: fm.imageCredit ?? "",
+          sources: parsed.sources,
+        },
+        body: parsed.body,
+        localBody: local ?? undefined,
+      });
+    } catch (error) {
+      openStories(`Could not open ${slug}: ${(error as Error).message}`);
+    }
+  }
+
+  // ==========================================================
+  // The desk
+  // ==========================================================
+
+  interface ComposeArgs {
+    kind: Kind;
+    slug: string;
+    path: string;
+    sha: string;
+    isNew: boolean;
+    fields: ArticleFields;
+    body: string;
+    localBody?: string;
+  }
+
+  function compose(args: ComposeArgs) {
+    const { kind } = args;
+    let slug = args.slug;
+    let path = args.path;
+    const f = args.fields;
+    let sha = args.sha;
+    let isNew = args.isNew;
+
+    /** New pieces have no path yet, so their local draft needs its own key. */
+    const draftKey = () => K_DRAFT + (path || `new:${kind}`);
+
+    const heroSrc = (p: string) => (p ? (p.startsWith("http") ? p : BASE + p) : "");
+
+    view(`
+      <div class="ed-bar">
+        <div class="ed-bar-left">
+          <button type="button" class="ed-btn ed-btn-quiet" data-back>&larr; Stories</button>
+          <span class="ed-bar-meta" data-status></span>
+        </div>
+        <div class="ed-bar-right">
+          <span class="ed-bar-meta" data-count></span>
+          ${aiReady() ? '<button type="button" class="ed-btn" data-assist>Assist</button>' : ""}
+          <button type="button" class="ed-btn ed-btn-primary" data-publish>Publish</button>
+        </div>
+      </div>
+
+      ${args.localBody ? `<div style="max-width:46rem;margin:1rem auto 0;padding:0 1.25rem"><div class="ed-warn" style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">
+        <span>Unsaved changes from this browser.</span>
+        <button type="button" class="ed-btn" data-restore>Restore</button>
+        <button type="button" class="ed-btn ed-btn-quiet" data-drop>Ignore</button></div></div>` : ""}
+
+      <div class="ed-page">
+        <div class="ed-cover ${f.heroImage ? "has-image" : ""}" data-cover>
+          ${f.heroImage
+            ? `<img src="${esc(heroSrc(f.heroImage))}" alt="" /><button type="button" class="ed-btn ed-cover-swap" data-cover-swap>Change</button>`
+            : '<span class="ed-cover-hint">+ Lead image</span>'}
+        </div>
+
+        <h1 class="ed-title" contenteditable="true" data-title data-placeholder="Headline">${esc(f.title)}</h1>
+        <p class="ed-standfirst" contenteditable="true" data-standfirst data-placeholder="One line on what this argues, and why now">${esc(f.description)}</p>
+
+        <div class="ed-body" contenteditable="true" data-body spellcheck="true"></div>
+      </div>
+
+      <button type="button" class="ed-add" data-add title="Insert (or type /)">+</button>
+
+      <div class="ed-float" data-float>
+        <button type="button" data-cmd="bold" title="Bold  Ctrl+B"><strong>B</strong></button>
+        <button type="button" data-cmd="italic" title="Italic  Ctrl+I"><em>I</em></button>
+        <button type="button" data-cmd="link" title="Link  Ctrl+K">Link</button>
+        <span class="sep"></span>
+        <button type="button" data-cmd="h2" title="Heading">H2</button>
+        <button type="button" data-cmd="h3" title="Sub-heading">H3</button>
+        <button type="button" data-cmd="quote" title="Quote">&ldquo;</button>
+        <span class="sep"></span>
+        <button type="button" data-cmd="clear" title="Plain text">Clear</button>
+      </div>
+
+      <div class="ed-float" data-linkbar>
+        <input type="url" data-linkinput placeholder="https://…  then Enter" />
+        <button type="button" data-linkgo>Apply</button>
+        <button type="button" data-linkoff title="Remove link">&times;</button>
+      </div>
+
+      <div class="ed-menu" data-menu></div>
+
+      <div class="ed-scrim" data-scrim></div>
+      <aside class="ed-drawer" data-drawer aria-label="Publish settings">
+        <div class="ed-drawer-head">
+          <div>
+            <p class="ed-legend" style="margin:0">Publish</p>
+            <p class="ed-note" data-slugline>${esc(kind)} · ${esc(slug || "new")}</p>
+          </div>
+          <button type="button" class="ed-btn ed-btn-quiet" data-drawer-close>Close</button>
+        </div>
+        <div class="ed-drawer-body">
+          <label class="ed-switch">
+            <input type="checkbox" data-live ${f.draft ? "" : "checked"} />
+            <span><span class="t">Visible on the site</span>
+              <span class="d">Off keeps it as a private draft.</span></span>
+          </label>
+
+          ${aiReady() ? '<button type="button" class="ed-btn" style="width:100%;justify-content:center;margin-top:1rem" data-fill>Ask ' + esc(MODEL) + ' to fill this in</button>' : ""}
+          <p class="ed-note" data-fill-note style="margin-top:.5rem"></p>
+
+          <div class="ed-field" style="margin-top:1.2rem">
+            <label class="ed-legend">Lead image</label>
+            <select class="ed-select" data-hero>
+              <option value="">None</option>
+              ${state.images.map((i) => `<option value="${esc(i)}" ${i === f.heroImage ? "selected" : ""}>${esc(i.split("/").pop())}</option>`).join("")}
+            </select>
+          </div>
+          <div class="ed-field">
+            <label for="alt">What the image shows</label>
+            <input id="alt" class="ed-input" data-alt value="${esc(f.heroImageAlt)}" />
+            <p class="note">Read aloud to people who cannot see it.</p>
+          </div>
+          <div class="ed-field">
+            <label for="credit">Image credit</label>
+            <input id="credit" class="ed-input" data-credit value="${esc(f.imageCredit)}" />
+          </div>
+
+          ${kind === "article" ? `
+          <div class="ed-field ed-pair" style="margin-top:1.4rem">
+            <div><label for="desk">Desk</label>
+              <select id="desk" class="ed-select" data-desk>${DESKS.map((d) => `<option ${d === f.category ? "selected" : ""}>${d}</option>`).join("")}</select></div>
+            <div><label for="region">Region</label>
+              <select id="region" class="ed-select" data-region>${REGIONS.map((r) => `<option ${r === f.region ? "selected" : ""}>${r}</option>`).join("")}</select></div>
+          </div>
+          <div class="ed-field ed-pair">
+            <div><label for="type">Kind</label>
+              <select id="type" class="ed-select" data-type>${TYPES.map((t) => `<option ${t === f.type ? "selected" : ""}>${t}</option>`).join("")}</select></div>
+            <div><label for="date">Date</label>
+              <input id="date" type="date" class="ed-input" data-date value="${esc(f.date)}" /></div>
+          </div>
+          <div class="ed-field">
+            <label for="countries">Countries</label>
+            <input id="countries" class="ed-input" data-countries value="${esc(f.country.join(", "))}" placeholder="Germany, Poland" />
+          </div>` : `
+          <div class="ed-field" style="margin-top:1.4rem">
+            <label for="date">Date</label>
+            <input id="date" type="date" class="ed-input" data-date value="${esc(f.date)}" />
+          </div>`}
+
+          <div class="ed-field">
+            <label for="tags">Tags</label>
+            <input id="tags" class="ed-input" data-tags value="${esc(f.tags.join(", "))}" placeholder="NATO, Deterrence" />
+          </div>
+          <div class="ed-field">
+            <label for="sources">Sources</label>
+            <textarea id="sources" rows="3" class="ed-input" data-sources placeholder="NATO | https://nato.int">${esc(f.sources.map((s) => `${s.name} | ${s.url}`).join("\n"))}</textarea>
+            <p class="note">One per line, name then link.</p>
+          </div>
+
+          ${kind === "article" ? `
+          <div class="ed-field">
+            <label class="ed-legend">Promotion</label>
+            <label class="ed-switch" style="margin-bottom:.5rem"><input type="checkbox" data-featured ${f.featured ? "checked" : ""} />
+              <span><span class="t">Lead the Journal</span></span></label>
+            <label class="ed-switch"><input type="checkbox" data-pick ${f.editorsPick ? "checked" : ""} />
+              <span><span class="t">Editor's pick</span></span></label>
+          </div>` : ""}
+        </div>
+        <div class="ed-drawer-foot">
+          <p class="ed-note" data-publish-note></p>
+          <button type="button" class="ed-btn ed-btn-primary" style="justify-content:center" data-save>${isNew ? "Create" : "Publish"}</button>
+        </div>
+      </aside>
+    `);
+
+    // ---------- handles ----------
+    const titleEl = el<HTMLElement>("[data-title]");
+    const standEl = el<HTMLElement>("[data-standfirst]");
+    const bodyEl = el<HTMLElement>("[data-body]");
+    const statusEl = el<HTMLElement>("[data-status]");
+    const countEl = el<HTMLElement>("[data-count]");
+    const floatEl = el<HTMLElement>("[data-float]");
+    const linkbar = el<HTMLElement>("[data-linkbar]");
+    const linkInput = el<HTMLInputElement>("[data-linkinput]");
+    const menuEl = el<HTMLElement>("[data-menu]");
+    const addBtn = el<HTMLButtonElement>("[data-add]");
+    const drawer = el<HTMLElement>("[data-drawer]");
+    const scrim = el<HTMLElement>("[data-scrim]");
+
+    bodyEl.innerHTML = markdownToHtml(args.localBody ?? args.body);
+    if (!bodyEl.firstElementChild) bodyEl.innerHTML = "<p><br></p>";
+    ensureTrailingParagraph();
+
+    // Clicking the empty space under the article puts the caret at the end,
+    // the way a word processor does.
+    const caretToEnd = (event: MouseEvent) => {
+      event.preventDefault();
+      const p = ensureTrailingParagraph();
+      placeCaret(p, true);
+    };
+    el<HTMLElement>(".ed-page").addEventListener("mousedown", (event) => {
+      if (event.target !== event.currentTarget) return;
+      caretToEnd(event);
+    });
+    bodyEl.addEventListener("mousedown", (event) => {
+      if (event.target !== bodyEl) return;
+      const last = bodyEl.lastElementChild;
+      if (last && event.clientY <= last.getBoundingClientRect().bottom) return;
+      caretToEnd(event);
+    });
+
+    const setStatus = (text: string, tone: "ok" | "error" | "" = "") => {
+      statusEl.dataset.state = tone;
+      statusEl.textContent = text;
+    };
+
+    const recount = () => {
+      const words = countWords(canvasText(bodyEl));
+      countEl.textContent = `${words} words · ${readingMinutes(words)} min`;
+    };
+
+    const stash = debounce(() => {
+      try {
+        localStorage.setItem(draftKey(), htmlToMarkdown(bodyEl));
+        setStatus("Saved on this device");
+      } catch { /* quota */ }
+    }, 800);
+
+    const touched = () => { ensureTrailingParagraph(); recount(); stash(); };
+
+    // ---------- paste as plain text ----------
+    for (const surface of [titleEl, standEl, bodyEl]) {
+      surface.addEventListener("paste", (event) => {
+        event.preventDefault();
+        const text = event.clipboardData?.getData("text/plain") ?? "";
+        if (!text) return;
+        if (surface === bodyEl && /\n\s*\n/.test(text)) {
+          // Multi-paragraph paste rebuilds blocks rather than one long line.
+          document.execCommand("insertHTML", false, markdownToHtml(text));
+        } else {
+          document.execCommand("insertText", false, text.replace(/\s+/g, " "));
+        }
+        touched();
+      });
+    }
+
+    // Headline and standfirst are single paragraphs.
+    for (const oneLine of [titleEl, standEl]) {
+      oneLine.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          (oneLine === titleEl ? standEl : bodyEl).focus();
+        }
+      });
+      oneLine.addEventListener("input", touched);
+    }
+
+    // ==========================================================
+    // Body editing
+    // ==========================================================
+
+    /** The block the caret sits in, whether that is in the body or inside a callout. */
+    const currentBlock = (): HTMLElement | null => {
+      const sel = window.getSelection();
+      if (!sel || !sel.anchorNode) return null;
+      let node: Node | null = sel.anchorNode;
+      while (node) {
+        const holder: HTMLElement | null = (node as HTMLElement).parentElement;
+        if (!holder) return null;
+        if (holder === bodyEl || holder.classList?.contains("ed-callout-body")) {
+          return node as HTMLElement;
+        }
+        node = holder;
+      }
+      return null;
+    };
+
+    /**
+     * There must always be a plain paragraph at the end, otherwise a story that
+     * finishes on a list, a quote, a heading or a callout leaves the writer with
+     * nowhere to type.
+     */
+    function ensureTrailingParagraph() {
+      const last = bodyEl.lastElementChild;
+      if (!last || last.tagName !== "P") {
+        const p = document.createElement("p");
+        p.innerHTML = "<br>";
+        bodyEl.append(p);
+        return p;
+      }
+      return last as HTMLElement;
+    }
+
+    const replaceBlock = (block: HTMLElement, tag: string, keepText = true) => {
+      const next = document.createElement(tag);
+      if (keepText) next.innerHTML = block.innerHTML || "<br>";
+      else next.innerHTML = "<br>";
+      block.replaceWith(next);
+      placeCaret(next, true);
+      return next;
+    };
+
+    function placeCaret(node: HTMLElement, atEnd = false) {
+      const range = document.createRange();
+      range.selectNodeContents(node);
+      range.collapse(!atEnd);
+      const sel = window.getSelection();
+      sel?.removeAllRanges();
+      sel?.addRange(range);
+      node.focus?.();
+    }
+
+    // ---------- markdown-style input rules ----------
+    const INPUT_RULES: [RegExp, (block: HTMLElement) => void][] = [
+      [/^#\s$/, (b) => replaceBlock(b, "h2", false)],
+      [/^##\s$/, (b) => replaceBlock(b, "h2", false)],
+      [/^###\s$/, (b) => replaceBlock(b, "h3", false)],
+      [/^>\s$/, (b) => { const q = document.createElement("blockquote"); q.innerHTML = "<p><br></p>"; b.replaceWith(q); placeCaret(q.firstElementChild as HTMLElement); }],
+      [/^[-*]\s$/, (b) => makeList(b, "ul")],
+      [/^1[.)]\s$/, (b) => makeList(b, "ol")],
+      [/^---$/, (b) => insertBlock(b, hrBlock())],
+    ];
+
+    function makeList(block: HTMLElement, tag: "ul" | "ol") {
+      const list = document.createElement(tag);
+      const li = document.createElement("li");
+      li.innerHTML = "<br>";
+      list.append(li);
+      block.replaceWith(list);
+      placeCaret(li);
+    }
+
+    const hrBlock = () => {
+      const hr = document.createElement("hr");
+      hr.setAttribute("contenteditable", "false");
+      return hr;
+    };
+
+    function insertBlock(after: HTMLElement, node: HTMLElement) {
+      after.replaceWith(node);
+      const p = document.createElement("p");
+      p.innerHTML = "<br>";
+      node.after(p);
+      placeCaret(p);
+    }
+
+    bodyEl.addEventListener("input", () => {
+      const block = currentBlock();
+      // Browsers hand back a <div> after Enter; treat it as an ordinary paragraph.
+      if (block && (block.tagName === "P" || block.tagName === "DIV")) {
+        const text = block.textContent ?? "";
+        for (const [pattern, apply] of INPUT_RULES) {
+          if (pattern.test(text)) {
+            apply(block);
+            touched();
+            return;
+          }
+        }
+      }
+      clearGhost();
+      touched();
+      scheduleSuggestion();
+    });
+
+    /**
+     * Enter is handled by hand so every new block is a <p>. Left to the browser
+     * it produces <div>s, which breaks both the markdown shortcuts and the
+     * published typography.
+     */
+    function splitBlock(block: HTMLElement) {
+      const sel = window.getSelection();
+      if (!sel || !sel.rangeCount) return;
+      const caret = sel.getRangeAt(0);
+
+      const tailRange = document.createRange();
+      tailRange.selectNodeContents(block);
+      tailRange.setStart(caret.endContainer, caret.endOffset);
+      const tail = tailRange.extractContents();
+
+      const next = document.createElement("p");
+      if ((tail.textContent ?? "").trim() || tail.querySelector("*")) next.append(tail);
+      else next.innerHTML = "<br>";
+
+      if (!(block.textContent ?? "").trim()) block.innerHTML = "<br>";
+      block.after(next);
+      placeCaret(next);
+    }
+
+    bodyEl.addEventListener("keydown", (event) => {
+      // Accept the inline suggestion.
+      if (event.key === "Tab" && ghostNode) {
+        event.preventDefault();
+        acceptGhost();
+        return;
+      }
+      if (event.key === "Escape" && ghostNode) {
+        event.preventDefault();
+        clearGhost();
+        return;
+      }
+      if (ghostNode) clearGhost();
+
+      if ((event.ctrlKey || event.metaKey) && !event.shiftKey) {
+        const key = event.key.toLowerCase();
+        if (key === "b") { event.preventDefault(); runCommand("bold"); return; }
+        if (key === "i") { event.preventDefault(); runCommand("italic"); return; }
+        if (key === "k") { event.preventDefault(); openLinkBar(); return; }
+        if (key === " ") { event.preventDefault(); requestSuggestion(true); return; }
+        if (key === "s") { event.preventDefault(); openDrawer(); return; }
+      }
+
+      if (event.key === "/" ) {
+        const block = currentBlock();
+        if (block && !block.textContent?.trim()) {
+          // Let the character land, then offer the menu.
+          window.setTimeout(() => openMenu(block), 0);
+        }
+      }
+
+      if (event.key === "Enter" && !event.shiftKey) {
+        const block = currentBlock();
+        if (!block) return;
+        // Lists and quotes behave correctly on their own.
+        if (["UL", "OL", "BLOCKQUOTE", "FIGURE", "HR"].includes(block.tagName) || block.dataset.callout) {
+          if (block.tagName === "BLOCKQUOTE" && !block.textContent?.trim()) {
+            event.preventDefault();
+            replaceBlock(block, "p", false);
+          }
+          return;
+        }
+        event.preventDefault();
+        splitBlock(block);
+        touched();
+        return;
+      }
+      if (event.key === "Backspace") {
+        const block = currentBlock();
+        if (block && block.previousElementSibling?.tagName === "HR" && !block.textContent?.trim()) {
+          event.preventDefault();
+          block.previousElementSibling.remove();
+        }
+      }
+    });
+
+    // ---------- inline formatting ----------
+    function runCommand(cmd: string) {
+      const block = currentBlock();
+      switch (cmd) {
+        case "bold":
+        case "italic":
+          document.execCommand(cmd);
+          break;
+        case "h2":
+        case "h3": {
+          if (!block) break;
+          const tag = cmd.toUpperCase();
+          replaceBlock(block, block.tagName === tag ? "p" : cmd);
+          break;
+        }
+        case "quote": {
+          if (!block) break;
+          if (block.tagName === "BLOCKQUOTE") replaceBlock(block, "p");
+          else {
+            const quote = document.createElement("blockquote");
+            const p = document.createElement("p");
+            p.innerHTML = block.innerHTML || "<br>";
+            quote.append(p);
+            block.replaceWith(quote);
+            placeCaret(p, true);
+          }
+          break;
+        }
+        case "clear":
+          document.execCommand("removeFormat");
+          document.execCommand("unlink");
+          break;
+        case "link":
+          openLinkBar();
+          return;
+      }
+      hideFloat();
+      touched();
+    }
+
+    root.querySelectorAll<HTMLButtonElement>("[data-cmd]").forEach((button) =>
+      button.addEventListener("mousedown", (event) => {
+        event.preventDefault();
+        runCommand(button.dataset.cmd!);
+      })
+    );
+
+    // ---------- selection toolbar ----------
+    let savedRange: Range | null = null;
+
+    const showFloat = (bar: HTMLElement, rect: DOMRect) => {
+      bar.classList.add("is-open");
+      const top = window.scrollY + rect.top - bar.offsetHeight - 8;
+      const left = window.scrollX + rect.left + rect.width / 2 - bar.offsetWidth / 2;
+      bar.style.top = `${Math.max(window.scrollY + 8, top)}px`;
+      bar.style.left = `${Math.max(8, left)}px`;
+    };
+
+    const hideFloat = () => {
+      floatEl.classList.remove("is-open");
+      linkbar.classList.remove("is-open");
+    };
+
+    const syncFloatState = () => {
+      floatEl.querySelector<HTMLElement>('[data-cmd="bold"]')?.setAttribute(
+        "aria-pressed", String(document.queryCommandState("bold"))
+      );
+      floatEl.querySelector<HTMLElement>('[data-cmd="italic"]')?.setAttribute(
+        "aria-pressed", String(document.queryCommandState("italic"))
+      );
+    };
+
+    document.addEventListener("selectionchange", () => {
+      const sel = window.getSelection();
+      if (!sel || sel.isCollapsed || !sel.rangeCount) {
+        if (!linkbar.classList.contains("is-open")) hideFloat();
+        return;
+      }
+      const range = sel.getRangeAt(0);
+      if (!bodyEl.contains(range.commonAncestorContainer)) return;
+      savedRange = range.cloneRange();
+      showFloat(floatEl, range.getBoundingClientRect());
+      syncFloatState();
+    });
+
+    function openLinkBar() {
+      const sel = window.getSelection();
+      if (sel && sel.rangeCount && !sel.isCollapsed) savedRange = sel.getRangeAt(0).cloneRange();
+      if (!savedRange) return;
+      floatEl.classList.remove("is-open");
+      showFloat(linkbar, savedRange.getBoundingClientRect());
+      const anchor = savedRange.startContainer.parentElement?.closest("a");
+      linkInput.value = anchor?.getAttribute("href") ?? "";
+      linkInput.focus();
+      linkInput.select();
+    }
+
+    const applyLink = () => {
+      const href = linkInput.value.trim();
+      if (!savedRange) return;
+      const sel = window.getSelection();
+      sel?.removeAllRanges();
+      sel?.addRange(savedRange);
+      if (href) document.execCommand("createLink", false, href);
+      else document.execCommand("unlink");
+      hideFloat();
+      touched();
+    };
+
+    el<HTMLButtonElement>("[data-linkgo]").addEventListener("mousedown", (e) => { e.preventDefault(); applyLink(); });
+    el<HTMLButtonElement>("[data-linkoff]").addEventListener("mousedown", (e) => {
+      e.preventDefault();
+      linkInput.value = "";
+      applyLink();
+    });
+    linkInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") { event.preventDefault(); applyLink(); }
+      if (event.key === "Escape") { hideFloat(); bodyEl.focus(); }
+    });
+
+    // ---------- insert menu ----------
+    interface MenuItem { name: string; hint: string; run: (block: HTMLElement) => void; }
+
+    const MENU: MenuItem[] = [
+      { name: "Heading", hint: "##", run: (b) => replaceBlock(b, "h2", false) },
+      { name: "Sub-heading", hint: "###", run: (b) => replaceBlock(b, "h3", false) },
+      { name: "Bulleted list", hint: "-", run: (b) => makeList(b, "ul") },
+      { name: "Numbered list", hint: "1.", run: (b) => makeList(b, "ol") },
+      { name: "Quote", hint: ">", run: (b) => { const q = document.createElement("blockquote"); q.innerHTML = "<p><br></p>"; b.replaceWith(q); placeCaret(q.firstElementChild as HTMLElement); } },
+      { name: "Divider", hint: "---", run: (b) => insertBlock(b, hrBlock()) },
+      { name: "Image", hint: "", run: (b) => pickImage(b) },
+      ...(Object.keys(CALLOUTS) as CalloutName[]).map((key) => ({
+        name: CALLOUTS[key],
+        hint: "box",
+        run: (b: HTMLElement) => insertCallout(b, key),
+      })),
+    ];
+
+    let menuBlock: HTMLElement | null = null;
+    let menuIndex = 0;
+    let menuFiltered = MENU;
+
+    function openMenu(block: HTMLElement) {
+      menuBlock = block;
+      menuIndex = 0;
+      renderMenu("");
+      const rect = block.getBoundingClientRect();
+      menuEl.classList.add("is-open");
+      menuEl.style.top = `${window.scrollY + rect.bottom + 6}px`;
+      menuEl.style.left = `${window.scrollX + rect.left}px`;
+    }
+
+    function renderMenu(query: string) {
+      menuFiltered = MENU.filter((m) => m.name.toLowerCase().includes(query.toLowerCase()));
+      menuEl.innerHTML =
+        '<p class="ed-menu-head">Insert</p>' +
+        (menuFiltered.length
+          ? menuFiltered
+              .map((m, i) => `<button type="button" data-mi="${i}" class="${i === menuIndex ? "is-active" : ""}"><span class="name">${esc(m.name)}</span><span class="hint">${esc(m.hint)}</span></button>`)
+              .join("")
+          : '<p class="ed-menu-head" style="border:0">Nothing matches</p>');
+      menuEl.querySelectorAll<HTMLButtonElement>("[data-mi]").forEach((button) =>
+        button.addEventListener("mousedown", (event) => {
+          event.preventDefault();
+          chooseMenu(Number(button.dataset.mi));
+        })
+      );
+    }
+
+    function closeMenu() {
+      menuEl.classList.remove("is-open");
+      menuBlock = null;
+    }
+
+    function chooseMenu(index: number) {
+      const item = menuFiltered[index];
+      if (!item || !menuBlock) return closeMenu();
+      const block = menuBlock;
+      block.textContent = "";
+      closeMenu();
+      item.run(block);
+      touched();
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (!menuEl.classList.contains("is-open")) return;
+      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        event.preventDefault();
+        menuIndex = Math.min(Math.max(menuIndex + (event.key === "ArrowDown" ? 1 : -1), 0), menuFiltered.length - 1);
+        renderMenu((menuBlock?.textContent ?? "").replace(/^\//, ""));
+      } else if (event.key === "Enter") {
+        event.preventDefault();
+        chooseMenu(menuIndex);
+      } else if (event.key === "Escape") {
+        closeMenu();
+      } else {
+        window.setTimeout(() => {
+          const text = menuBlock?.textContent ?? "";
+          if (!text.startsWith("/")) return closeMenu();
+          menuIndex = 0;
+          renderMenu(text.slice(1));
+        }, 0);
+      }
+    });
+
+    addBtn.addEventListener("mousedown", (event) => {
+      event.preventDefault();
+      const block = currentBlock();
+      if (block) openMenu(block);
+    });
+
+    // Show the + handle beside an empty paragraph.
+    const positionAdd = () => {
+      const block = currentBlock();
+      if (!block || block.tagName !== "P" || block.textContent?.trim()) {
+        addBtn.classList.remove("is-open");
+        return;
+      }
+      const rect = block.getBoundingClientRect();
+      addBtn.classList.add("is-open");
+      addBtn.style.top = `${window.scrollY + rect.top}px`;
+      addBtn.style.left = `${window.scrollX + rect.left - 42}px`;
+    };
+    bodyEl.addEventListener("click", positionAdd);
+    bodyEl.addEventListener("keyup", positionAdd);
+    bodyEl.addEventListener("blur", () => window.setTimeout(() => addBtn.classList.remove("is-open"), 150));
+
+    function insertCallout(block: HTMLElement, name: CalloutName) {
+      const aside = document.createElement("aside");
+      aside.className = "ed-callout";
+      aside.dataset.callout = name;
+      aside.setAttribute("contenteditable", "false");
+      const label = document.createElement("span");
+      label.className = "ed-callout-label";
+      label.textContent = CALLOUTS[name];
+      const body = document.createElement("div");
+      body.className = "ed-callout-body";
+      body.setAttribute("contenteditable", "true");
+      body.innerHTML = name === "KeyTakeaways" ? "<ul><li><br></li></ul>" : "<p><br></p>";
+      aside.append(label, body);
+      insertBlock(block, aside);
+      placeCaret((body.querySelector("li") ?? body.firstElementChild) as HTMLElement);
+    }
+
+    /**
+     * A small popup that offers a list of choices and resolves with the index
+     * that was picked, or -1 if the writer clicked away.
+     */
+    function chooseFrom(head: string, rows: string[], anchor: DOMRect | null, width = "17rem") {
+      return new Promise<number>((resolve) => {
+        menuEl.innerHTML =
+          `<p class="ed-menu-head">${esc(head)}</p>` +
+          rows.map((row, i) => `<button type="button" class="ed-pick" data-pick="${i}">${row}</button>`).join("");
+        menuEl.style.width = width;
+        menuEl.classList.add("is-open");
+        menuEl.style.top = `${window.scrollY + (anchor ? anchor.bottom + 6 : 90)}px`;
+        menuEl.style.left = `${window.scrollX + (anchor ? anchor.left : Math.max(12, (window.innerWidth - 360) / 2))}px`;
+
+        let settled = false;
+        const finish = (value: number) => {
+          if (settled) return;
+          settled = true;
+          menuEl.classList.remove("is-open");
+          menuEl.style.width = "";
+          document.removeEventListener("mousedown", away, true);
+          document.removeEventListener("keydown", key, true);
+          resolve(value);
+        };
+        const away = (event: MouseEvent) => {
+          if (!menuEl.contains(event.target as Node)) finish(-1);
+        };
+        const key = (event: KeyboardEvent) => {
+          if (event.key === "Escape") { event.preventDefault(); finish(-1); }
+        };
+        menuEl.querySelectorAll<HTMLButtonElement>("[data-pick]").forEach((button) =>
+          button.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+            finish(Number(button.dataset.pick));
+          })
+        );
+        window.setTimeout(() => {
+          document.addEventListener("mousedown", away, true);
+          document.addEventListener("keydown", key, true);
+        }, 0);
+      });
+    }
+
+    async function pickImage(block: HTMLElement) {
+      if (state.images.length === 0) {
+        setStatus("No images in the repository yet.", "error");
+        return;
+      }
+      const index = await chooseFrom(
+        "Choose an image",
+        state.images.map(
+          (src) =>
+            `<img src="${esc(BASE + src)}" alt="" loading="lazy" /><span class="name">${esc(src.split("/").pop() ?? "")}</span>`
+        ),
+        block.getBoundingClientRect(),
+        "20rem"
+      );
+      const src = state.images[index];
+      if (!src) return;
+      const figure = document.createElement("figure");
+      figure.className = "ed-figure";
+      figure.dataset.image = "";
+      figure.setAttribute("contenteditable", "false");
+      figure.innerHTML =
+        `<img src="${esc(BASE + src)}" data-src="${esc(src)}" alt="" />` +
+        `<figcaption contenteditable="true" data-placeholder="Caption"></figcaption>`;
+      insertBlock(block, figure);
+      placeCaret(figure.querySelector("figcaption") as HTMLElement);
+      touched();
+    }
+
+    // ==========================================================
+    // The assistant
+    // ==========================================================
+
+    let ghostNode: HTMLElement | null = null;
+    let inflight: AbortController | null = null;
+
+    function clearGhost() {
+      ghostNode?.remove();
+      ghostNode = null;
+    }
+
+    function acceptGhost() {
+      if (!ghostNode) return;
+      const text = ghostNode.textContent ?? "";
+      const block = ghostNode.parentElement;
+      clearGhost();
+      if (block) {
+        placeCaret(block, true);
+        document.execCommand("insertText", false, text);
+      }
+      touched();
+    }
+
+    async function requestSuggestion(force = false) {
+      if (!aiReady()) return;
+      // Never chase a suggestion while one is already on screen.
+      if (ghostNode && !force) return;
+      const block = currentBlock();
+      if (!block || block.tagName !== "P") return;
+      clearGhost();
+      const text = block.textContent ?? "";
+      if (!force && text.trim().length < 30) return;
+
+      const before = htmlToMarkdown(bodyEl);
+      inflight?.abort();
+      inflight = new AbortController();
+      setStatus("Thinking…");
+      try {
+        const suggestion = await completeInline(
+          state.ai,
+          { before, after: "", title: titleEl.textContent ?? "" },
+          inflight.signal
+        );
+        if (!suggestion) { setStatus(""); return; }
+        clearGhost();
+        ghostNode = document.createElement("span");
+        ghostNode.className = "ed-ghost-text";
+        ghostNode.setAttribute("contenteditable", "false");
+        ghostNode.textContent = suggestion.startsWith(" ") ? suggestion : ` ${suggestion}`;
+        block.append(ghostNode);
+        setStatus("Tab to accept");
+      } catch (error) {
+        if ((error as Error).name !== "AbortError") setStatus((error as Error).message, "error");
+      }
+    }
+
+    const scheduleSuggestion = debounce(() => requestSuggestion(false), 1400);
+
+    maybe<HTMLButtonElement>("[data-assist]")?.addEventListener("click", (event) => {
+      const anchor = (event.currentTarget as HTMLElement).getBoundingClientRect();
+      openAssistMenu(anchor);
+    });
+
+    function openAssistMenu(anchor: DOMRect) {
+      const actions: { name: string; run: () => Promise<void> }[] = [
+        { name: "Tighten this paragraph", run: () => runTransform("tighten") },
+        { name: "Develop this paragraph", run: () => runTransform("expand") },
+        { name: "Make it clearer", run: () => runTransform("clarify") },
+        { name: "Remove editorialising", run: () => runTransform("neutralise") },
+        { name: "Write the standfirst", run: () => runTransform("dek") },
+        { name: "Suggest headlines", run: () => runTransform("headline") },
+        { name: "Add key takeaways", run: () => runTransform("takeaways") },
+        { name: "Review the layout", run: reviewLayout },
+      ];
+      menuEl.innerHTML =
+        `<p class="ed-menu-head">${esc(MODEL)}</p>` +
+        actions.map((a, i) => `<button type="button" data-ai="${i}"><span class="name">${esc(a.name)}</span></button>`).join("");
+      menuEl.classList.add("is-open");
+      menuEl.style.top = `${window.scrollY + anchor.bottom + 6}px`;
+      menuEl.style.left = `${window.scrollX + anchor.right - 272}px`;
+      menuEl.querySelectorAll<HTMLButtonElement>("[data-ai]").forEach((button) =>
+        button.addEventListener("click", async () => {
+          menuEl.classList.remove("is-open");
+          await actions[Number(button.dataset.ai)].run();
+        })
+      );
+    }
+
+    async function runTransform(id: Parameters<typeof transform>[1]) {
+      const sel = window.getSelection();
+      const block = currentBlock();
+      const selected = sel && !sel.isCollapsed ? sel.toString() : "";
+      const target = selected || (id === "dek" || id === "headline" || id === "takeaways"
+        ? htmlToMarkdown(bodyEl)
+        : block?.textContent ?? "");
+
+      if (!target.trim()) { setStatus("Nothing to work on yet.", "error"); return; }
+
+      setStatus("Working…");
+      try {
+        const result = await transform(state.ai, id, target, {
+          title: titleEl.textContent ?? "",
+          description: standEl.textContent ?? "",
+        });
+
+        if (id === "dek") {
+          standEl.textContent = result.replace(/^["“]|["”]$/g, "");
+        } else if (id === "headline") {
+          const options = result.split("\n").map((l) => l.replace(/^\d+[.)]\s*/, "").trim()).filter(Boolean);
+          const pick = await chooseFrom(
+            "Pick a headline",
+            options.map((o) => `<span class="name">${esc(o.replace(/^["“]|["”]$/g, ""))}</span>`),
+            titleEl.getBoundingClientRect(),
+            "24rem"
+          );
+          const chosen = options[pick];
+          if (chosen) titleEl.textContent = chosen.replace(/^["“]|["”]$/g, "");
+        } else if (id === "takeaways") {
+          const first = bodyEl.firstElementChild as HTMLElement;
+          const holder = document.createElement("p");
+          bodyEl.prepend(holder);
+          insertCallout(holder, "KeyTakeaways");
+          const list = bodyEl.querySelector<HTMLElement>('[data-callout="KeyTakeaways"] ul');
+          if (list) list.innerHTML = result.split("\n").filter((l) => l.trim()).map((l) => `<li>${esc(l.replace(/^[-*]\s*/, ""))}</li>`).join("");
+          if (first) first.scrollIntoView({ block: "center" });
+        } else if (selected) {
+          document.execCommand("insertText", false, result);
+        } else if (block) {
+          block.textContent = result;
+        }
+        setStatus("Done — Ctrl+Z undoes it", "ok");
+        touched();
+      } catch (error) {
+        setStatus((error as Error).message, "error");
+      }
+    }
+
+    async function reviewLayout() {
+      setStatus("Reading the piece…");
+      try {
+        const notes = await suggestLayout(state.ai, {
+          title: titleEl.textContent ?? "",
+          description: standEl.textContent ?? "",
+          body: htmlToMarkdown(bodyEl),
+          kind,
+        });
+        showNotes(notes);
+        setStatus(`${notes.length} notes`, "ok");
+      } catch (error) {
+        setStatus((error as Error).message, "error");
+      }
+    }
+
+    function showNotes(notes: LayoutSuggestion[]) {
+      menuEl.innerHTML =
+        '<p class="ed-menu-head">Production notes</p>' +
+        (notes.length
+          ? notes
+              .map(
+                (n, i) =>
+                  `<button type="button" data-note="${i}" style="display:block">
+                     <span class="name" style="display:block">${esc(n.title)}</span>
+                     <span class="hint" style="display:block;margin:.25rem 0 0;white-space:normal;line-height:1.4">${esc(n.detail)}</span>
+                   </button>`
+              )
+              .join("")
+          : '<p class="ed-menu-head" style="border:0">Nothing to flag.</p>');
+      menuEl.style.width = "24rem";
+      menuEl.classList.add("is-open");
+      menuEl.style.top = `${window.scrollY + 70}px`;
+      menuEl.style.left = `${Math.max(12, window.innerWidth - 420)}px`;
+
+      menuEl.querySelectorAll<HTMLButtonElement>("[data-note]").forEach((button) =>
+        button.addEventListener("click", () => {
+          const note = notes[Number(button.dataset.note)];
+          if (!note.anchor) return;
+          const walker = document.createTreeWalker(bodyEl, NodeFilter.SHOW_TEXT);
+          while (walker.nextNode()) {
+            const index = (walker.currentNode.textContent ?? "").indexOf(note.anchor);
+            if (index === -1) continue;
+            const range = document.createRange();
+            range.setStart(walker.currentNode, index);
+            range.setEnd(walker.currentNode, index + note.anchor.length);
+            const sel = window.getSelection();
+            sel?.removeAllRanges();
+            sel?.addRange(range);
+            (walker.currentNode.parentElement as HTMLElement)?.scrollIntoView({ block: "center" });
+            return;
+          }
+          setStatus("That passage has changed.", "error");
+        })
+      );
+    }
+
+    document.addEventListener("mousedown", (event) => {
+      if (!menuEl.contains(event.target as Node) && !((event.target as HTMLElement).dataset?.assist !== undefined)) {
+        if (menuEl.classList.contains("is-open") && !menuBlock) menuEl.classList.remove("is-open");
+      }
+    });
+
+    // ==========================================================
+    // Publish drawer
+    // ==========================================================
+
+    const openDrawer = () => {
+      drawer.classList.add("is-open");
+      scrim.classList.add("is-open");
+    };
+    const closeDrawer = () => {
+      drawer.classList.remove("is-open");
+      scrim.classList.remove("is-open");
+    };
+
+    el<HTMLButtonElement>("[data-publish]").addEventListener("click", openDrawer);
+    el<HTMLButtonElement>("[data-drawer-close]").addEventListener("click", closeDrawer);
+    scrim.addEventListener("click", closeDrawer);
+
+    const heroSelect = el<HTMLSelectElement>("[data-hero]");
+    const coverEl = el<HTMLElement>("[data-cover]");
+
+    const paintCover = () => {
+      const src = heroSelect.value;
+      if (src) {
+        coverEl.classList.add("has-image");
+        coverEl.innerHTML = `<img src="${esc(BASE + src)}" alt="" /><button type="button" class="ed-btn ed-cover-swap" data-cover-swap>Change</button>`;
+      } else {
+        coverEl.classList.remove("has-image");
+        coverEl.innerHTML = '<span class="ed-cover-hint">+ Lead image</span>';
+      }
+      coverEl.querySelector("[data-cover-swap]")?.addEventListener("click", (e) => { e.stopPropagation(); openDrawer(); });
+    };
+    heroSelect.addEventListener("change", paintCover);
+    coverEl.addEventListener("click", openDrawer);
+    paintCover();
+
+    maybe<HTMLButtonElement>("[data-fill]")?.addEventListener("click", async (event) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      const note = el<HTMLElement>("[data-fill-note]");
+      button.disabled = true;
+      note.dataset.state = "";
+      note.textContent = "Reading the piece…";
+      try {
+        const proposal = await suggestMeta(
+          state.ai,
+          { title: titleEl.textContent ?? "", body: htmlToMarkdown(bodyEl) },
+          { categories: DESKS, regions: REGIONS }
+        );
+        if (!standEl.textContent?.trim() && proposal.description) standEl.textContent = proposal.description;
+        const set = (selector: string, value: string) => {
+          const field = maybe<HTMLInputElement>(selector);
+          if (field && !field.value.trim() && value) field.value = value;
+        };
+        set("[data-tags]", proposal.tags.join(", "));
+        set("[data-countries]", proposal.country.join(", "));
+        set("[data-alt]", proposal.heroImageAlt);
+        const desk = maybe<HTMLSelectElement>("[data-desk]");
+        if (desk && proposal.category) desk.value = proposal.category;
+        const region = maybe<HTMLSelectElement>("[data-region]");
+        if (region && proposal.region) region.value = proposal.region;
+        note.dataset.state = "ok";
+        note.textContent = "Filled in the blanks. Check them.";
+      } catch (error) {
+        note.dataset.state = "error";
+        note.textContent = (error as Error).message;
+      } finally {
+        button.disabled = false;
+      }
+    });
+
+    // ---------- restore / discard ----------
+    maybe<HTMLButtonElement>("[data-restore]")?.addEventListener("click", () => {
+      bodyEl.innerHTML = markdownToHtml(args.localBody!);
+      recount();
+      setStatus("Restored", "ok");
+    });
+    maybe<HTMLButtonElement>("[data-drop]")?.addEventListener("click", () => {
+      localStorage.removeItem(draftKey());
+      bodyEl.innerHTML = markdownToHtml(args.body);
+      recount();
+      setStatus("Using the published version", "ok");
+    });
+
+    // ---------- publish ----------
+    const collect = (): ArticleFields => {
+      const list = (selector: string) =>
+        (maybe<HTMLInputElement>(selector)?.value ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+      const sources = (maybe<HTMLTextAreaElement>("[data-sources]")?.value ?? "")
+        .split("\n").map((l) => l.trim()).filter(Boolean)
+        .map((line) => {
+          const pipe = line.indexOf("|");
+          return pipe === -1
+            ? { name: line, url: "" }
+            : { name: line.slice(0, pipe).trim(), url: line.slice(pipe + 1).trim() };
+        });
+
+      return {
+        title: (titleEl.textContent ?? "").trim(),
+        description: (standEl.textContent ?? "").trim(),
+        date: maybe<HTMLInputElement>("[data-date]")?.value || today(),
+        updated: f.updated,
+        author: "Zeynep Doruk",
+        category: maybe<HTMLSelectElement>("[data-desk]")?.value ?? f.category,
+        region: maybe<HTMLSelectElement>("[data-region]")?.value ?? f.region,
+        country: list("[data-countries]"),
+        tags: list("[data-tags]"),
+        type: maybe<HTMLSelectElement>("[data-type]")?.value ?? f.type,
+        featured: maybe<HTMLInputElement>("[data-featured]")?.checked ?? false,
+        editorsPick: maybe<HTMLInputElement>("[data-pick]")?.checked ?? false,
+        draft: !el<HTMLInputElement>("[data-live]").checked,
+        heroImage: heroSelect.value,
+        heroImageAlt: (maybe<HTMLInputElement>("[data-alt]")?.value ?? "").trim(),
+        imageCredit: (maybe<HTMLInputElement>("[data-credit]")?.value ?? "").trim(),
+        sources,
+      };
+    };
+
+    async function publish() {
+      const button = el<HTMLButtonElement>("[data-save]");
+      const note = el<HTMLElement>("[data-publish-note]");
+      clearGhost();
+      const next = collect();
+      const markdown = htmlToMarkdown(bodyEl);
+
+      const missing: string[] = [];
+      if (!next.title) missing.push("a headline");
+      if (!next.description) missing.push("a standfirst");
+      if (!markdown.trim()) missing.push("some copy");
+      if (!next.draft && !next.heroImage) missing.push("a lead image");
+      if (!next.draft && next.heroImage && !next.heroImageAlt) missing.push("alt text for the image");
+      if (missing.length) {
+        note.dataset.state = "error";
+        note.textContent = `Still needs ${missing.join(", ")}.`;
+        return;
+      }
+
+      const file = kind === "explainer"
+        ? serialiseExplainer(next as unknown as ExplainerFields, markdown)
+        : serialiseArticle(next, markdown);
+
+      const broken = findBrokenCharacters(file);
+      if (broken.length) {
+        note.dataset.state = "error";
+        note.textContent = `Broken characters (${broken.join(" ")}). Retype them.`;
+        return;
+      }
+
+      button.disabled = true;
+      note.dataset.state = "";
+      note.textContent = "Publishing…";
+      const oldDraftKey = draftKey();
+      if (isNew) {
+        const nextSlug = slugify(next.title);
+        if (!nextSlug) {
+          note.dataset.state = "error";
+          note.textContent = "The headline needs some Latin letters or digits for the web address.";
+          button.disabled = false;
+          return;
+        }
+        slug = nextSlug;
+        path = `src/content/${kind === "article" ? "articles" : "explainers"}/${slug}.mdx`;
+        el<HTMLElement>("[data-slugline]").textContent = `${kind} · ${slug}`;
+      }
+      try {
+        const result = await writeFile(
+          state.token, path, file,
+          `${isNew ? "Create" : "Edit"} ${kind} "${next.title}"`,
+          sha || undefined
+        );
+        sha = result.sha;
+        isNew = false;
+        localStorage.removeItem(oldDraftKey);
+        localStorage.removeItem(draftKey());
+        note.dataset.state = "ok";
+        note.textContent = next.draft ? "Saved as a draft." : "Live in a couple of minutes.";
+        button.textContent = "Publish";
+        setStatus("Published", "ok");
+      } catch (error) {
+        note.dataset.state = "error";
+        note.textContent = (error as Error).message;
+      } finally {
+        button.disabled = false;
+      }
+    }
+
+    el<HTMLButtonElement>("[data-save]").addEventListener("click", publish);
+    el<HTMLButtonElement>("[data-back]").addEventListener("click", () => openStories());
+
+    document.addEventListener("keydown", function onKey(event) {
+      if (!document.body.contains(bodyEl)) { document.removeEventListener("keydown", onKey); return; }
+      if (event.key === "Escape") closeDrawer();
+    });
+
+    recount();
+    if (!f.title) titleEl.focus();
+    else placeCaret(bodyEl.lastElementChild as HTMLElement, true);
+  }
+
+  // ==========================================================
+  // Boot
+  // ==========================================================
+
+  await loadLocalKey();
+  if (sessionStorage.getItem(K_AUTH)) {
+    if (state.token) await openStories();
+    else connectionsView();
+  } else {
+    signInView();
+  }
+</script>

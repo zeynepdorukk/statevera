@@ -1,61 +1,56 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { site } from "../site";
-import { getLatestArticles, getLatestBriefings, formatTime, root } from "../utils/collection";
+import { pillarList } from "../site";
+import { latest } from "../data/wire";
+import { getLatestArticles, root } from "../utils/collection";
+import WireCard from "../components/WireCard.astro";
+import JournalCard from "../components/JournalCard.astro";
+import SectionHead from "../components/SectionHead.astro";
 
-const [articles, briefings] = await Promise.all([getLatestArticles(4), getLatestBriefings(4)]);
+const wire = latest(5);
+const journal = await getLatestArticles(3);
 ---
 
-<BaseLayout title="Page not found" description="The page you were looking for could not be found." path="/404" noindex={true}>
-  <div class="mx-auto max-w-[820px] px-4 pt-16 text-center md:px-8 md:pt-24">
-    <p class="font-serif text-[5rem] font-semibold leading-none tracking-tight text-line-strong">404</p>
-    <h1 class="t-headline mt-2">This page has left the building</h1>
-    <p class="mx-auto mt-3 max-w-md font-serif text-[1.05rem] leading-relaxed text-muted">
-      The address you followed does not exist on {site.publicationNameDisplay}. The international
-      system moves quickly — perhaps this story moved with it.
-    </p>
-    <p class="mt-6">
-      <a href={root("/")} class="border border-accent bg-accent px-5 py-2.5 font-sans text-[0.75rem] font-bold tracking-[0.1em] text-white uppercase transition-colors duration-200 hover:bg-accent-ink">
-        Return to the front page
-      </a>
+<BaseLayout
+  title="Page not found"
+  description="That page does not exist."
+  path="/404"
+  noindex
+>
+  <div class="shell max-w-[1100px] py-14">
+    <p class="kicker-ink">Error 404</p>
+    <h1 class="t-display mt-2">This page is not on file.</h1>
+    <p class="mt-4 max-w-2xl font-serif text-[1.14rem] leading-relaxed text-ink-soft">
+      The address may have changed, or the page may never have existed. The three
+      sections of the publication are all still here.
     </p>
 
-    <div class="mt-14 grid gap-8 border-t border-line pt-8 text-left sm:grid-cols-2">
-      <div>
-        <div class="section-head">
-          <h2 class="title">News</h2>
-          <span class="rule" aria-hidden="true"></span>
+    <div class="mt-8 grid gap-px border border-line-strong bg-line-strong sm:grid-cols-3">
+      {pillarList.map((pillar) => (
+        <a href={root(pillar.url)} class="group bg-paper p-5 transition-colors hover:bg-paper-soft" data-tone={pillar.tone}>
+          <p class="kicker flex items-center gap-2">
+            <span class="inline-block h-2 w-2 bg-tone" aria-hidden="true"></span>
+            {pillar.name}
+          </p>
+          <p class="mt-1.5 font-serif text-[1.05rem] leading-snug text-ink">{pillar.tagline}</p>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-12 grid gap-x-9 gap-y-10 lg:grid-cols-2">
+      <div data-tone="wire">
+        <SectionHead title="Latest on the wire" tone="wire" href="/wire" moreLabel="The Wire" />
+        <div class="rule-list">
+          {wire.map((item) => <WireCard item={item} variant="text" />)}
         </div>
-        <ul class="border-t border-line">
-          {articles.map((a) => (
-            <li class="border-b border-line py-3">
-              <h3 class="font-serif text-[1rem] font-medium leading-snug">
-                <a href={root(`/articles/${a.id.replace(/\.mdx?$/, "")}`)} class="editorial-link">
-                  {a.data.title}
-                </a>
-              </h3>
-            </li>
-          ))}
-        </ul>
       </div>
-      <div>
-        <div class="section-head">
-          <h2 class="title">Briefing</h2>
-          <span class="rule" aria-hidden="true"></span>
-        </div>
-        <ul class="border-t border-line">
-          {briefings.map((b) => (
-            <li class="border-b border-line py-3">
-              <p class="flex items-baseline gap-2">
-                <time class="font-sans text-[0.7rem] font-semibold text-accent" datetime={b.data.timestamp.toISOString()}>
-                  {formatTime(b.data.timestamp)}
-                </time>
-                <span class="meta-strong">{b.data.location}</span>
-              </p>
-              <p class="mt-1 font-serif text-[0.9rem] leading-snug text-ink-soft">{b.body.trim()}</p>
-            </li>
+      <div data-tone="journal">
+        <SectionHead title="From the journal" tone="journal" href="/journal" moreLabel="The Journal" />
+        <div class="rule-list">
+          {journal.map((entry) => (
+            <JournalCard item={{ kind: "article", entry }} variant="compact" />
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   </div>
