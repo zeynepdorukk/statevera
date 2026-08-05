@@ -1856,6 +1856,17 @@ import EditorLayout from "../layouts/EditorLayout.astro";
      * passage is remembered when the box opens, because clicking into the input
      * takes the selection away from the page.
      */
+    /** The top-level blocks a selection touches, in document order. */
+    const blocksInRange = (range: Range): HTMLElement[] =>
+      [...bodyEl.children].filter((child) => range.intersectsNode(child)) as HTMLElement[];
+
+    /** Those blocks as the MDX they would be saved as. */
+    const markdownOfBlocks = (blocks: HTMLElement[]): string => {
+      const holder = document.createElement("div");
+      for (const b of blocks) holder.append(b.cloneNode(true));
+      return htmlToMarkdown(holder);
+    };
+
     function openAsk() {
       const sel = window.getSelection();
       const selected = sel && !sel.isCollapsed ? sel.toString().trim() : "";
@@ -1867,15 +1878,23 @@ import EditorLayout from "../layouts/EditorLayout.astro";
       }
 
       const range = selected && sel ? sel.getRangeAt(0).cloneRange() : null;
-      const passage = selected || block?.textContent || "";
+
+      // A selection inside one paragraph is a run of words. A selection across
+      // several is a piece of the document, and has to keep its shape.
+      const spanned = range ? blocksInRange(range) : [];
+      const asBlocks = spanned.length > 1;
+      const passage = asBlocks ? markdownOfBlocks(spanned) : selected || block?.textContent || "";
       const anchor = (range ?? block!).getBoundingClientRect();
+      const scope = asBlocks
+        ? `${spanned.length} blocks · ${countWords(canvasText(bodyEl))} words in the piece`
+        : `${passage.slice(0, 90)}${passage.length > 90 ? "…" : ""}`;
 
       menuEl.innerHTML = `
         <p class="ed-menu-head">${esc(state.model)}</p>
         <form class="ed-ask" data-ask>
           <input type="text" data-ask-input autocomplete="off" spellcheck="false"
-            placeholder="Tighten this. Make it plainer. Cut the last sentence." />
-          <p class="ed-ask-target">${esc(passage.slice(0, 90))}${passage.length > 90 ? "…" : ""}</p>
+            placeholder="${asBlocks ? "Add sub-headings. Cut this to half. Pull out the key takeaways." : "Tighten this. Make it plainer. Cut the last sentence."}" />
+          <p class="ed-ask-target">${esc(scope)}</p>
           <div class="ed-ask-row">
             <button type="submit" class="ed-btn ed-btn-primary">Rewrite</button>
             <button type="button" class="ed-btn ed-btn-quiet" data-ask-layout>Review the layout</button>
@@ -1911,10 +1930,62 @@ import EditorLayout from "../layouts/EditorLayout.astro";
         const instruction = input.value.trim();
         if (!instruction) return;
         close();
-        await applyRewrite(instruction, passage, range, block);
+        if (asBlocks) await rewriteBlocks(instruction, passage, spanned);
+        else await applyRewrite(instruction, passage, range, block);
       });
 
       input.focus();
+    }
+
+    /** Rewrites whole blocks and puts the returned markdown back as blocks. */
+    async function rewriteBlocks(instruction: string, passage: string, blocks: HTMLElement[]) {
+      // A small stagger sends the wave down the piece rather than flashing it all at once.
+      blocks.forEach((b, i) => {
+        b.style.animationDelay = `${i * 90}ms`;
+        b.classList.add("ed-working");
+      });
+      const clear = () => blocks.forEach((b) => { b.classList.remove("ed-working"); b.style.animationDelay = ""; });
+      window.getSelection()?.removeAllRanges();
+
+      try {
+        const result = await rewrite(
+          state.ai,
+          instruction,
+          passage,
+          {
+            title: titleEl.textContent ?? "",
+            description: standEl.textContent ?? "",
+            draft: htmlToMarkdown(bodyEl),
+          },
+          "blocks"
+        );
+        if (!result.trim()) throw new Error("Nothing came back.");
+
+        const holder = document.createElement("div");
+        holder.innerHTML = markdownToHtml(result);
+        const fresh = [...holder.children] as HTMLElement[];
+        if (!fresh.length) throw new Error("Nothing came back.");
+
+        blocks[0].replaceWith(...fresh);
+        blocks.slice(1).forEach((b) => b.remove());
+
+        fresh.forEach((b, i) => {
+          b.style.animationDelay = `${i * 70}ms`;
+          b.classList.add("ed-arrived");
+        });
+        window.setTimeout(
+          () => fresh.forEach((b) => { b.classList.remove("ed-arrived"); b.style.animationDelay = ""; }),
+          1100 + fresh.length * 70
+        );
+        fresh[0].scrollIntoView({ block: "center", behavior: "smooth" });
+
+        ensureTrailingParagraph();
+        setStatus("Ctrl+Z undoes it", "ok");
+        touched();
+      } catch (error) {
+        clear();
+        setStatus((error as Error).message, "error");
+      }
     }
 
     async function applyRewrite(

@@ -121,6 +121,34 @@ ${context.after.slice(0, 400)}`;
 // ------------------------------------------------------------
 
 /**
+ * A selection inside one paragraph is a run of words; a selection across several
+ * is a piece of the document. They have to be asked for differently, or a
+ * structural instruction flattens the article into one blob.
+ */
+export type RewriteMode = "inline" | "blocks";
+
+const INLINE_RULES = `- Return ONLY the rewritten passage, as a single run of text.
+- Do NOT add headings, lists, blank lines or block structure: this is part of one paragraph.
+- Inline markdown is allowed where it already fits: **bold**, *italic*, [text](url).`;
+
+const BLOCK_RULES = `- Return markdown for the WHOLE of the passage, structure included.
+- Keep the shape of the piece unless the instruction asks you to change it. A
+  heading stays a heading, a list stays a list, a pull quote stays a pull quote.
+- The vocabulary you may use, and nothing else:
+    ## Section heading          ### Sub-heading
+    - bulleted item             1. numbered item
+    > pulled quotation          ---  a section break
+    **bold**  *italic*  [text](url)
+    ![caption](/images/articles/file.jpg)   a picture already in the piece
+    <KeyTakeaways> … </KeyTakeaways>        the four callout boxes, each
+    <WhyItMatters> … </WhyItMatters>        wrapping markdown of its own
+    <TheBigPicture> … </TheBigPicture>
+    <AnalysisSection> … </AnalysisSection>
+- Separate every block with a blank line.
+- Do not invent a headline, and do not wrap the answer in a code fence.
+- Keep every picture that is already there unless told to remove it.`;
+
+/**
  * Rewrites a passage according to whatever the writer typed. The rest of the
  * piece goes in as context so the model can match the voice, but only the
  * passage comes back.
@@ -130,26 +158,27 @@ export async function rewrite(
   instruction: string,
   passage: string,
   context: { title: string; description: string; draft: string },
+  mode: RewriteMode = "inline",
   signal?: AbortSignal
 ): Promise<string> {
-  const prompt = `Rewrite the passage below according to the writer's instruction.
+  const prompt = `You are editing one part of a piece for STATEVERA. Carry out the
+writer's instruction on the passage at the bottom, and nothing else.
 
 The writer's instruction:
 ${instruction}
 
 Rules:
-- Return ONLY the rewritten passage. No preamble, no explanation, no quotes, no
-  markdown fence, no commentary about what you changed.
+${mode === "blocks" ? BLOCK_RULES : INLINE_RULES}
+- No preamble, no explanation, no commentary about what you changed.
 - Keep the writer's voice. Change only what the instruction asks for.
-- Keep any markdown that is already in the passage unless asked otherwise.
 - Invent no facts, figures, dates, quotations or named sources.
 - If the instruction cannot be carried out honestly, return the passage unchanged.
 
 Working title: ${context.title || "(untitled)"}
 Standfirst: ${context.description || "(none yet)"}
 
---- THE PIECE SO FAR, FOR CONTEXT ONLY ---
-${context.draft.slice(0, 6000)}
+--- THE WHOLE PIECE, FOR CONTEXT ONLY. DO NOT RETURN IT. ---
+${context.draft.slice(0, 8000)}
 
 --- THE PASSAGE TO REWRITE ---
 ${passage}`;
@@ -157,10 +186,11 @@ ${passage}`;
   const raw = await ask(config, prompt, {
     system: HOUSE_STYLE,
     temperature: 0.4,
-    maxTokens: 1200,
+    maxTokens: mode === "blocks" ? 4000 : 1200,
     signal,
   });
-  return stripFence(raw).replace(/^["“]|["”]$/g, "");
+  const out = stripFence(raw);
+  return mode === "blocks" ? out : out.replace(/^["“]|["”]$/g, "");
 }
 
 // ------------------------------------------------------------
