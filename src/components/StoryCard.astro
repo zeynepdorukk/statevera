@@ -1,0 +1,119 @@
+---
+import { heroImageOf, formatDate, readingTime, type Article } from "../utils/collection";
+import { creditFor } from "../data/imageCredits";
+import { sampleContentNote } from "../site";
+
+interface Props {
+  article: Article;
+  variant?: "standard" | "overlay" | "compact" | "minimal";
+  priority?: boolean;
+  showDek?: boolean;
+  linkPrefix?: string;
+}
+
+const {
+  article,
+  variant = "standard",
+  priority = false,
+  showDek = true,
+} = Astro.props;
+const { data, body } = article;
+const href = `/articles/${article.id.replace(/\.mdx?$/, "")}`;
+const credit = creditFor(data.heroImage);
+const rt = readingTime(article);
+const formatted = formatDate(data.date, { day: "numeric", month: "short", year: "numeric" });
+---
+
+{
+  variant === "overlay" && (
+    <article class="group">
+      <a href={href} class="hero-overlay relative block overflow-hidden" tabindex="-1" aria-hidden="true">
+        <img
+          src={heroImageOf(data.heroImage)}
+          alt=""
+          width="1600"
+          height="1000"
+          loading={priority ? "eager" : "lazy"}
+          class="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.015] sm:aspect-[16/9]"
+        />
+      </a>
+      <div class="relative z-10 mt-0">
+        <a href={href} class="block">
+          <p class="kicker mb-2">{data.category}</p>
+          <h3 class="t-headline-lg text-ink group-hover:text-accent-ink transition-colors duration-200">
+            {data.title}
+          </h3>
+        </a>
+        {showDek && <p class="mt-2.5 font-serif text-[1.05rem] leading-relaxed text-ink-soft">{data.description}</p>}
+        <p class="meta mt-3">
+          By <span class="meta-strong">{data.author}</span> · {formatted} · {rt} min read
+        </p>
+      </div>
+    </article>
+  )
+}
+
+{variant === "standard" && (
+  <article class="group flex h-full flex-col">
+    <a
+      href={href}
+      class="img-zoom block overflow-hidden border border-line/60 bg-paper-soft"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <img
+        src={heroImageOf(data.heroImage)}
+        alt=""
+        width="1600"
+        height="1000"
+        loading={priority ? "eager" : "lazy"}
+        class="aspect-[3/2] w-full object-cover"
+      />
+    </a>
+    <div class="flex flex-1 flex-col pt-3">
+      <p class="kicker">{data.category}</p>
+      <h3 class="t-headline-xs mt-1.5">
+        <a href={href} class="editorial-link">
+          {data.title}
+        </a>
+      </h3>
+      {showDek && data.description && (
+        <p class="mt-1.5 line-clamp-3 font-serif text-[0.95rem] leading-relaxed text-muted">
+          {data.description}
+        </p>
+      )}
+      <p class="meta mt-auto pt-2.5">
+        {formatted} · {rt} min read
+      </p>
+    </div>
+  </article>
+)}
+
+{variant === "compact" && (
+  <article class="group flex gap-4">
+    <a
+      href={href}
+      class="img-zoom block w-28 shrink-0 overflow-hidden border border-line/60 bg-paper-soft sm:w-36"
+      tabindex="-1"
+      aria-hidden="true"
+    >
+      <img
+        src={heroImageOf(data.heroImage)}
+        alt=""
+        width="1600"
+        height="1000"
+        loading="lazy"
+        class="aspect-[3/2] w-full object-cover"
+      />
+    </a>
+    <div class="min-w-0">
+      <p class="kicker">{data.category}</p>
+      <h3 class="mt-1">
+        <a href={href} class="t-headline-xs editorial-link">
+          {data.title}
+        </a>
+      </h3>
+      <p class="meta mt-1.5">{formatted} · {rt} min read</p>
+    </div>
+  </article>
+)}

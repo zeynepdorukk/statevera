@@ -1,0 +1,223 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { categories, type CategorySlug } from "../site";
+import { getByCategory, getByType, getAllArticles, getAllBriefings, getAllExplainers, getLatestStream, heroImageOf, formatDate, formatTime, readingTime } from "../utils/collection";
+import StoryCard from "../components/StoryCard.astro";
+import HeadlineItem from "../components/HeadlineItem.astro";
+
+export async function getStaticPaths() {
+  return Object.keys(categories).map((slug) => ({ params: { section: slug } }));
+}
+
+const { section } = Astro.params;
+const meta = categories[section as CategorySlug];
+if (!meta) return Astro.redirect("/404");
+
+let lead: Awaited<ReturnType<typeof getByCategory>>[0] | undefined;
+let items: Awaited<ReturnType<typeof getLatestStream>> = [];
+let briefings: Awaited<ReturnType<typeof getAllBriefings>> = [];
+let explainerItems: Awaited<ReturnType<typeof getAllExplainers>> = [];
+
+switch (section) {
+  case "latest": {
+    items = await getLatestStream(24);
+    break;
+  }
+  case "world": {
+    const [articles, b] = await Promise.all([getAllArticles(), getAllBriefings()]);
+    lead = articles[0];
+    items = [
+      ...articles.slice(1).map((e) => ({ kind: "article" as const, entry: e })),
+      ...b.map((e) => ({ kind: "briefing" as const, entry: e })),
+    ];
+    briefings = b;
+    break;
+  }
+  case "explainers": {
+    explainerItems = await getAllExplainers();
+    break;
+  }
+  case "analysis": {
+    const [byType, byCat, b] = await Promise.all([
+      getByType("analysis"),
+      getByCategory("Analysis"),
+      getAllBriefings(),
+    ]);
+    const merged = [...byType, ...byCat.filter((a) => !byType.some((t) => t.id === a.id))];
+    lead = merged[0];
+    items = [
+      ...merged.slice(1).map((e) => ({ kind: "article" as const, entry: e })),
+      ...b.map((e) => ({ kind: "briefing" as const, entry: e })),
+    ];
+    briefings = b;
+    break;
+  }
+  case "opinion": {
+    const [byType, byCat, b] = await Promise.all([
+      getByType("opinion"),
+      getByCategory("Opinion"),
+      getAllBriefings(),
+    ]);
+    const merged = [...byType, ...byCat.filter((a) => !byType.some((t) => t.id === a.id))];
+    lead = merged[0];
+    items = [
+      ...merged.slice(1).map((e) => ({ kind: "article" as const, entry: e })),
+      ...b.map((e) => ({ kind: "briefing" as const, entry: e })),
+    ];
+    briefings = b;
+    break;
+  }
+  default: {
+    const [articles, b] = await Promise.all([
+      getByCategory(meta.name),
+      getAllBriefings(),
+    ]);
+    lead = articles[0];
+    items = [
+      ...articles.slice(1).map((e) => ({ kind: "article" as const, entry: e })),
+      ...b.map((e) => ({ kind: "briefing" as const, entry: e })),
+    ];
+    briefings = b;
+  }
+}
+
+const displayItems = items.slice(0, 18);
+const briefingsShown = briefings.slice(0, 6);
+const leadHref = lead ? `/articles/${lead.id.replace(/\.mdx?$/, "")}` : "";
+---
+
+<BaseLayout
+  title={meta.name}
+  description={meta.description}
+  path={meta.url}
+>
+  <div class="mx-auto max-w-[1400px] px-4 pt-8 md:px-8 md:pt-10">
+    <!-- Section header -->
+    <header class="border-b-2 border-ink pb-5">
+      <h1 class="t-headline-lg">{meta.name}</h1>
+      <p class="mt-1 font-sans text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-accent">
+        {meta.tagline}
+      </p>
+      <p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-ink-soft">
+        {meta.description}
+      </p>
+    </header>
+
+    {section === "explainers" && (
+      <div class="py-8">
+        <div class="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+          {explainerItems.map((e) => {
+            const href = `/explainers/${e.id.replace(/\.mdx?$/, "")}`;
+            return (
+              <article class="group border border-line bg-paper-soft p-5 transition-colors duration-200 hover:border-line-strong">
+                <p class="kicker">Reference</p>
+                <h2 class="t-headline-xs mt-2">
+                  <a href={href} class="editorial-link">{e.data.title}</a>
+                </h2>
+                <p class="mt-2 line-clamp-2 font-sans text-[0.82rem] leading-relaxed text-muted">
+                  {e.data.description}
+                </p>
+                <p class="meta mt-3">{readingTime(e)} min read</p>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    )}
+
+    {section !== "explainers" && (
+      <div class="grid gap-10 py-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-12">
+        <div class="min-w-0 space-y-10">
+          {lead && (
+            <article class="group">
+              <a href={leadHref} class="img-zoom block overflow-hidden border border-line/60 bg-paper-soft" tabindex="-1" aria-hidden="true">
+                <img src={heroImageOf(lead.data.heroImage)} alt="" width="1600" height="1000" loading="eager" class="aspect-[16/9] w-full object-cover" />
+              </a>
+              <p class="kicker mt-4">{lead.data.category} · {lead.data.region}</p>
+              <h2 class="t-headline mt-2">
+                <a href={leadHref} class="editorial-link">{lead.data.title}</a>
+              </h2>
+              <p class="mt-2.5 max-w-2xl font-serif text-[1.02rem] leading-relaxed text-muted">
+                {lead.data.description}
+              </p>
+              <p class="meta mt-3">
+                By <span class="meta-strong">{lead.data.author}</span> · {formatDate(lead.data.date)} · {readingTime(lead)} min read
+              </p>
+            </article>
+          )}
+
+          <div>
+            <div class="section-head">
+              <h2 class="title">Latest</h2>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <div class="divide-y divide-line border-t border-line">
+              {displayItems.map((item) =>
+                item.kind === "article" ? (
+                  <HeadlineItem article={item.entry} />
+                ) : (
+                  <div class="flex gap-3 py-3">
+                    <span class="mt-0.5 shrink-0 font-sans text-[0.72rem] font-semibold text-accent">
+                      {formatTime(item.entry.data.timestamp)}
+                    </span>
+                    <div>
+                      <p class="font-serif text-[0.95rem] leading-snug text-ink-soft">
+                        {item.entry.body.trim()}
+                      </p>
+                      <p class="meta mt-1">
+                        {item.entry.data.location} · {item.entry.data.category}
+                      </p>
+                    </div>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="space-y-8 lg:border-l lg:border-line lg:pl-8">
+          <div>
+            <div class="section-head">
+              <h2 class="title">Today</h2>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <ul class="border-t border-line">
+              {briefingsShown.map((b) => (
+                <li class="border-b border-line py-3">
+                  <p class="flex items-baseline gap-2">
+                    <time class="font-sans text-[0.7rem] font-semibold text-accent" datetime={b.data.timestamp.toISOString()}>
+                      {formatTime(b.data.timestamp)}
+                    </time>
+                    <span class="meta-strong">{b.data.location}</span>
+                  </p>
+                  <p class="mt-1 font-serif text-[0.92rem] leading-snug text-ink-soft">{b.body.trim()}</p>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-3"><a href="/briefings" class="kicker-ink transition-colors duration-200 hover:text-accent">All briefings →</a></p>
+          </div>
+
+          <div>
+            <div class="section-head">
+              <h2 class="title">In this section</h2>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <ul class="space-y-2">
+              {Object.entries(categories)
+                .filter(([k]) => k !== section)
+                .slice(0, 6)
+                .map(([k, c]) => (
+                  <li>
+                    <a href={c.url} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft">
+                      {c.name}
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        </aside>
+      </div>
+    )}
+  </div>
+</BaseLayout>

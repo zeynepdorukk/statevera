@@ -1,0 +1,100 @@
+---
+import { site } from "../../site";
+import { heroImageOf, formatDate, readingTime, type Article } from "../../utils/collection";
+import { creditFor } from "../../data/imageCredits";
+
+interface Props {
+  article: Article;
+}
+
+const { article } = Astro.props;
+const { data, body } = article;
+const credit = creditFor(data.heroImage);
+const rt = readingTime(article);
+---
+
+<header class="mx-auto max-w-[880px] px-4 pt-8 md:px-8 md:pt-12">
+  <nav aria-label="Breadcrumb" class="mb-5">
+    <ol class="flex items-center gap-2 font-sans text-[0.72rem] font-semibold tracking-[0.1em] uppercase">
+      <li><a href={`/${data.category.toLowerCase()}`} class="kicker transition-colors duration-200 hover:text-ink">{data.category}</a></li>
+      <li aria-hidden="true" class="text-muted">/</li>
+      <li>
+        <a
+          href={`/regions/${data.region.toLowerCase().replace(/ /g, "-").replace(/[^a-z-]/g, "")}`}
+          class="kicker-ink transition-colors duration-200 hover:text-accent"
+        >
+          {data.region}
+        </a>
+      </li>
+    </ol>
+  </nav>
+
+  <h1 class="t-display">{data.title}</h1>
+  <p class="mt-4 max-w-[46rem] font-serif text-[1.22rem] leading-relaxed text-ink-soft">
+    {data.description}
+  </p>
+
+  <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 border-y border-line py-3.5">
+    <div class="flex items-center gap-3">
+      <img
+        src={site.authorPhoto}
+        alt=""
+        width="400"
+        height="400"
+        loading="lazy"
+        class="h-9 w-9 rounded-full border border-line object-cover"
+      />
+      <div>
+        <p class="font-sans text-[0.8rem] font-semibold text-ink">
+          By {data.author}
+        </p>
+        <p class="meta">{site.authorRole} of {site.publicationNameDisplay}</p>
+      </div>
+    </div>
+    <span class="hidden h-8 w-px bg-line sm:block" aria-hidden="true"></span>
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+      <time class="meta" datetime={data.date.toISOString()}>
+        Published {formatDate(data.date)}
+      </time>
+      {data.updated && (
+        <time class="meta" datetime={data.updated.toISOString()}>
+          Updated {formatDate(data.updated)}
+        </time>
+      )}
+      <span class="meta">{rt} min read</span>
+    </div>
+    {data.sample && (
+      <span class="ml-auto inline-flex items-center gap-1.5 border border-line-strong px-2 py-1 font-sans text-[0.62rem] font-bold tracking-[0.14em] uppercase text-muted">
+        Demo content
+      </span>
+    )}
+  </div>
+</header>
+
+<figure class="mx-auto mt-7 max-w-[1100px] px-4 md:px-8">
+  <img
+    src={heroImageOf(data.heroImage)}
+    alt={data.heroImageAlt}
+    width="1600"
+    height="1000"
+    fetchpriority="high"
+    class="w-full border border-line/60 object-cover"
+  />
+  <figcaption class="mt-1.5 flex flex-wrap items-baseline justify-between gap-2 border-b border-line pb-2.5 font-sans text-[0.72rem] text-muted">
+    <span>
+      {credit ? (
+        <>
+          <span class="font-medium text-ink-soft">{credit.label}.</span>{" "}
+          {credit.credit}, {credit.license}.
+        </>
+      ) : (
+        data.imageCredit
+      )}
+    </span>
+    {data.country.length > 0 && (
+      <span class="tracking-[0.08em] uppercase">
+        {data.country.join(" · ")}
+      </span>
+    )}
+  </figcaption>
+</figure>

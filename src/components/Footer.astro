@@ -1,0 +1,105 @@
+---
+import { site, nav, categories, regions } from "../site";
+import Masthead from "./Masthead.astro";
+---
+
+<footer class="mt-16 border-t border-line-strong bg-paper-soft">
+  <div class="mx-auto max-w-[1400px] px-4 py-10 md:px-8">
+    <div class="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+      <div class="max-w-xs">
+        <Masthead tagline={false} />
+        <p class="mt-3 font-sans text-[0.8rem] leading-relaxed text-muted">
+          {site.publicationDescription}
+        </p>
+        <p class="mt-4 font-sans text-[0.75rem] leading-relaxed text-muted">
+          <span class="kicker-ink block pb-1">Contact</span>
+          <a href={`mailto:${site.socialLinks.email}`} class="link-accent">
+            {site.socialLinks.email}
+          </a>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <nav aria-label="Sections">
+          <p class="kicker-ink mb-3">Sections</p>
+          <ul class="space-y-2">
+            {nav.primary.slice(0, 7).map((item) => (
+              <li>
+                <a href={item.url} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a href="/explainers" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+                Explainers
+              </a>
+            </li>
+            <li>
+              <a href="/briefings" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+                Briefings
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Regions">
+          <p class="kicker-ink mb-3">Regions</p>
+          <ul class="space-y-2">
+            {Object.values(regions).map((r) => (
+              <li>
+                <a href={r.url} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+                  {r.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav aria-label="Publication">
+          <p class="kicker-ink mb-3">Publication</p>
+          <ul class="space-y-2">
+            <li><a href="/about" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">About</a></li>
+            <li><a href="/about#principles" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Editorial Principles</a></li>
+            <li><a href="/about#sourcing" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Sources &amp; Attribution</a></li>
+            <li><a href="/about#corrections" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Corrections</a></li>
+            <li><a href="/about#contact" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Follow">
+          <p class="kicker-ink mb-3">Follow</p>
+          <ul class="space-y-2">
+            <li>
+              <a href={site.socialLinks.x} rel="noopener" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+                X — Twitter
+              </a>
+            </li>
+            <li>
+              <a href={site.socialLinks.linkedin} rel="noopener" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href={site.socialLinks.rss} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+                RSS Feed
+              </a>
+            </li>
+            <li>
+              <a href="/about" class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft hover:text-ink">
+                Newsletter
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-col items-start justify-between gap-3 border-t border-line pt-5 sm:flex-row sm:items-center">
+      <p class="meta">
+        © {new Date().getFullYear()} {site.publicationNameDisplay}. {site.publicationDescription}
+      </p>
+      <p class="meta">Independent editorial publication · Sample content for demonstration</p>
+    </div>
+  </div>
+</footer>

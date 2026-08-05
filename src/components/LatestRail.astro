@@ -1,0 +1,26 @@
+---
+import { getLatestArticles, getBreakingArticles, formatTime, readingTime } from "../utils/collection";
+import { formatDate } from "../utils/collection";
+import HeadlineItem from "./HeadlineItem.astro";
+
+const [latest, breaking] = await Promise.all([getLatestArticles(6), getBreakingArticles()]);
+const breakingTitles = breaking.map((b) => b.data.title);
+---
+
+<aside aria-label="Latest news">
+  <div class="section-head">
+    <span class="no">00</span>
+    <h2 class="title">Latest</h2>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+  <div class="divide-y divide-line border-t border-line">
+    {latest.map((a) => (
+      <HeadlineItem article={a} showTime={true} />
+    ))}
+  </div>
+  <p class="mt-3">
+    <a href="/latest" class="kicker-ink transition-colors duration-200 hover:text-accent">
+      All latest →
+    </a>
+  </p>
+</aside>

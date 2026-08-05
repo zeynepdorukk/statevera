@@ -1,0 +1,132 @@
+---
+import { getBriefingsByRegion, getByRegion, type Article, type Briefing } from "../utils/collection";
+import { regions } from "../site";
+import SectionHeader from "./SectionHeader.astro";
+
+const tabs = [
+  { key: "europe", name: "Europe" },
+  { key: "middle-east", name: "Middle East" },
+  { key: "americas", name: "Americas" },
+  { key: "asia-pacific", name: "Asia-Pacific" },
+  { key: "eurasia", name: "Eurasia" },
+  { key: "africa", name: "Africa" },
+] as const;
+
+interface Item {
+  place: string;
+  title: string;
+  time: Date;
+  kind: "briefing" | "article";
+  href?: string;
+}
+
+async function itemsFor(regionName: string): Promise<Item[]> {
+  const [briefings, articles] = await Promise.all([
+    getBriefingsByRegion(regionName, 4),
+    getByRegion(regionName, 3),
+  ]);
+  const merged: Item[] = [
+    ...briefings.map((b) => ({
+      place: b.data.location,
+      title: b.body.trim(),
+      time: b.data.timestamp,
+      kind: "briefing" as const,
+    })),
+    ...articles.map((a) => ({
+      place: a.data.country[0] ?? a.data.region,
+      title: a.data.title,
+      time: a.data.date,
+      kind: "article" as const,
+      href: `/articles/${a.id.replace(/\.mdx?$/, "")}`,
+    })),
+  ];
+  return merged.sort((a, b) => b.time.getTime() - a.time.getTime()).slice(0, 4);
+}
+
+const all = await Promise.all(tabs.map((t) => itemsFor(regions[t.key].name)));
+const ids = tabs.map((t) => `region-${t.key}`);
+---
+
+<section aria-label="Regional watch" class="border-t border-line-strong pt-6">
+  <SectionHeader number="09" title="Regional Watch" link="/regions" linkLabel="All regions" />
+
+  <div class="region-tabs-root">
+    {ids.map((id) => (
+      <input type="radio" name="regional-watch" id={id} class="region-tab-input" checked={id === ids[0]} />
+    ))}
+
+    <div
+      class="region-tabs no-scrollbar flex gap-1 overflow-x-auto border-b-2 border-ink/80"
+      role="tablist"
+      aria-label="Regions"
+    >
+      {tabs.map((t, i) => (
+        <label
+          for={ids[i]}
+          role="tab"
+          aria-controls={`panel-${t.key}`}
+          aria-selected={i === 0}
+          class="region-tab cursor-pointer whitespace-nowrap border-b-2 border-transparent px-3 pb-2 pt-1 font-sans text-[0.72rem] font-bold tracking-[0.14em] uppercase text-muted transition-colors duration-200 hover:text-ink first:pl-0"
+        >
+          {t.name}
+        </label>
+      ))}
+    </div>
+
+    <div class="region-panels mt-4">
+      {tabs.map((t, i) => (
+        <div id={`panel-${t.key}`} role="tabpanel" class="region-panel" aria-labelledby={ids[i]}>
+          <ul class="grid gap-x-8 gap-y-5 md:grid-cols-2">
+            {all[i].map((item) => (
+              <li class="border-b border-line pb-4">
+                <p class="flex items-baseline gap-2">
+                  <span class="kicker">{item.place}</span>
+                  <span class="meta">{item.kind === "article" ? "Story" : "Update"}</span>
+                </p>
+                {item.href ? (
+                  <h3 class="mt-1 font-serif text-[1.05rem] font-medium leading-snug">
+                    <a href={item.href} class="editorial-link">
+                      {item.title}
+                    </a>
+                  </h3>
+                ) : (
+                  <p class="mt-1 font-serif text-[1.05rem] font-medium leading-snug text-ink-soft">
+                    {item.title}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+          <p class="mt-3">
+            <a href={regions[t.key].url} class="kicker-ink transition-colors duration-200 hover:text-accent">
+              Full {t.name} coverage →
+            </a>
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .region-panel {
+    display: none;
+  }
+  #region-europe:checked ~ .region-panels #panel-europe,
+  #region-middle-east:checked ~ .region-panels #panel-middle-east,
+  #region-americas:checked ~ .region-panels #panel-americas,
+  #region-asia-pacific:checked ~ .region-panels #panel-asia-pacific,
+  #region-eurasia:checked ~ .region-panels #panel-eurasia,
+  #region-africa:checked ~ .region-panels #panel-africa {
+    display: block;
+  }
+  #region-europe:checked ~ .region-tabs label[for="region-europe"],
+  #region-middle-east:checked ~ .region-tabs label[for="region-middle-east"],
+  #region-americas:checked ~ .region-tabs label[for="region-americas"],
+  #region-asia-pacific:checked ~ .region-tabs label[for="region-asia-pacific"],
+  #region-eurasia:checked ~ .region-tabs label[for="region-eurasia"],
+  #region-africa:checked ~ .region-tabs label[for="region-africa"] {
+    color: var(--ink);
+    border-color: var(--accent);
+  }
+</style>

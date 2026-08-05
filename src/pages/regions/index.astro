@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { regions } from "../../site";
+import { getByRegionSlug, getLatestBriefings, formatTime } from "../../utils/collection";
+
+const rows = await Promise.all(
+  Object.values(regions).map(async (r) => {
+    const [articles, briefings] = await Promise.all([
+      getByRegionSlug(r.url.split("/").pop() ?? "", 3),
+      getLatestBriefings(4),
+    ]);
+    return {
+      region: r,
+      articles,
+      briefings: briefings.filter((b) => b.data.region === r.name).slice(0, 3),
+    };
+  })
+);
+---
+
+<BaseLayout title="Regions" description="Regional desks covering Europe, the Middle East, the Americas, Asia-Pacific, Africa, Eurasia and Turkey." path="/regions">
+  <div class="mx-auto max-w-[1400px] px-4 pt-8 md:px-8 md:pt-10">
+    <header class="border-b-2 border-ink pb-5">
+      <h1 class="t-headline-lg">Regions</h1>
+      <p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-ink-soft">
+        Each regional desk covers politics, security, diplomacy and economics from a ground-level
+        perspective, connected to the forces shaping the international system.
+      </p>
+    </header>
+
+    <div class="grid gap-10 py-10 md:grid-cols-2">
+      {rows.map(({ region, articles, briefings }) => (
+        <section class="border border-line bg-paper-soft p-6 transition-colors duration-200 hover:border-line-strong" aria-label={region.name}>
+          <div class="flex items-baseline justify-between">
+            <h2 class="t-headline-sm">
+              <a href={region.url} class="editorial-link">{region.name}</a>
+            </h2>
+            <a href={region.url} class="kicker transition-colors duration-200 hover:text-ink">Desk →</a>
+          </div>
+          <p class="mt-2 font-serif text-[0.92rem] leading-relaxed text-muted">{region.description}</p>
+
+          <ul class="mt-4 border-t border-line">
+            {articles.map((a) => (
+              <li class="border-b border-line py-2.5 last:border-b-0">
+                <p class="kicker">{a.data.category}</p>
+                <h3 class="mt-0.5 font-serif text-[1rem] font-medium leading-snug">
+                  <a href={`/articles/${a.id.replace(/\.mdx?$/, "")}`} class="editorial-link">
+                    {a.data.title}
+                  </a>
+                </h3>
+              </li>
+            ))}
+            {articles.length === 0 && (
+              <li class="py-3 font-serif text-[0.92rem] italic text-muted">
+                Coverage from this desk is forthcoming.
+              </li>
+            )}
+          </ul>
+
+          {briefings.length > 0 && (
+            <div class="mt-3">
+              {briefings.map((b) => (
+                <p class="flex gap-2 font-sans text-[0.74rem] leading-snug text-ink-soft">
+                  <time class="shrink-0 font-semibold text-accent" datetime={b.data.timestamp.toISOString()}>
+                    {formatTime(b.data.timestamp)}
+                  </time>
+                  <span class="line-clamp-1">{b.body.trim()}</span>
+                </p>
+              ))}
+            </div>
+          )}
+        </section>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

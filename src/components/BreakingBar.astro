@@ -1,0 +1,30 @@
+---
+import { getLatestBriefings } from "../utils/collection";
+import { formatTime } from "../utils/collection";
+
+const briefings = await getLatestBriefings(6);
+---
+
+<div class="border-b border-line bg-paper-soft" role="region" aria-label="Global briefing ticker">
+  <div class="mx-auto flex max-w-[1400px] items-stretch px-4 md:px-8">
+    <div class="flex shrink-0 items-center gap-2 border-r border-line py-2 pr-3">
+      <span class="live-dot inline-block h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true"></span>
+      <span class="kicker">Live</span>
+    </div>
+    <div
+      class="breaking-scroll flex items-center gap-6 overflow-x-auto whitespace-nowrap py-2 pl-4"
+    >
+      {briefings.map((b) => (
+        <span class="flex items-center gap-2 text-[0.78rem]">
+          <time class="font-sans font-semibold text-accent" datetime={b.data.timestamp.toISOString()}>
+            {formatTime(b.data.timestamp)}
+          </time>
+          <span class="font-sans font-medium text-ink-soft">
+            {b.body.trim().replace(/\.$/, "")}
+          </span>
+          <span class="h-3 w-px shrink-0 bg-line" aria-hidden="true"></span>
+        </span>
+      ))}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+---
+import { getByCategory, heroImageOf, formatDate, readingTime, type Article } from "../utils/collection";
+import SectionHeader from "./SectionHeader.astro";
+
+interface Props {
+  number: string;
+  title: string;
+  category: string;
+  url: string;
+  layout?: "split" | "feature" | "grid";
+}
+
+const { number, title, category, url, layout = "split" } = Astro.props;
+const stories = await getByCategory(category, 5);
+if (stories.length === 0) return null;
+const [lead, ...rest] = stories;
+const leadHref = `/articles/${lead.id.replace(/\.mdx?$/, "")}`;
+const rt = readingTime(lead);
+---
+
+<section aria-label={title} class="border-t border-line-strong pt-6">
+  <SectionHeader number={number} title={title} link={url} linkLabel="More" />
+
+  {layout === "split" && (
+    <div class="grid gap-8 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+      <article class="group">
+        <a href={leadHref} class="img-zoom block overflow-hidden border border-line/60 bg-paper-soft" tabindex="-1" aria-hidden="true">
+          <img src={heroImageOf(lead.data.heroImage)} alt="" width="1600" height="1000" loading="lazy" class="aspect-[16/9] w-full object-cover" />
+        </a>
+        <h3 class="t-headline-sm mt-3">
+          <a href={leadHref} class="editorial-link">{lead.data.title}</a>
+        </h3>
+        <p class="mt-1.5 line-clamp-2 font-serif text-[0.95rem] leading-relaxed text-muted">{lead.data.description}</p>
+        <p class="meta mt-2">{formatDate(lead.data.date, { day: "numeric", month: "short" })} · {rt} min read</p>
+      </article>
+      <ul class="border-t border-line">
+        {rest.map((a) => (
+          <li class="border-b border-line py-3.5 first:pt-3.5 last:border-b-0 last:pb-0">
+            <p class="kicker">{formatDate(a.data.date, { day: "numeric", month: "short" })}</p>
+            <h3 class="mt-1 font-serif text-[1.02rem] font-medium leading-snug">
+              <a href={`/articles/${a.id.replace(/\.mdx?$/, "")}`} class="editorial-link">{a.data.title}</a>
+            </h3>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {layout === "feature" && (
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+      <article class="group">
+        <a href={leadHref} class="hero-overlay relative block overflow-hidden border border-line/60 bg-paper-soft" tabindex="-1" aria-hidden="true">
+          <img src={heroImageOf(lead.data.heroImage)} alt="" width="1600" height="1000" loading="lazy" class="aspect-[16/9] w-full object-cover" />
+          <div class="absolute inset-x-0 bottom-0 z-10 p-5">
+            <h3 class="t-headline-sm text-white">{lead.data.title}</h3>
+            <p class="mt-1.5 font-sans text-[0.72rem] text-white/75">
+              {formatDate(lead.data.date, { day: "numeric", month: "short" })} · {rt} min read
+            </p>
+          </div>
+        </a>
+        <p class="mt-2.5 font-serif text-[0.95rem] leading-relaxed text-muted">{lead.data.description}</p>
+      </article>
+      <ul class="border-t border-line">
+        {rest.slice(0, 4).map((a) => (
+          <li class="border-b border-line py-3.5 first:pt-3.5 last:border-b-0 last:pb-0">
+            <h3 class="font-serif text-[1.02rem] font-medium leading-snug">
+              <a href={`/articles/${a.id.replace(/\.mdx?$/, "")}`} class="editorial-link">{a.data.title}</a>
+            </h3>
+            <p class="meta mt-1">{a.data.region} · {formatDate(a.data.date, { day: "numeric", month: "short" })}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {layout === "grid" && (
+    <div class="grid gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+      {[lead, ...rest].map((a) => (
+        <article class="group">
+          <a href={`/articles/${a.id.replace(/\.mdx?$/, "")}`} class="img-zoom block overflow-hidden border border-line/60 bg-paper-soft" tabindex="-1" aria-hidden="true">
+            <img src={heroImageOf(a.data.heroImage)} alt="" width="1600" height="1000" loading="lazy" class="aspect-[16/9] w-full object-cover" />
+          </a>
+          <h3 class="t-headline-xs mt-3">
+            <a href={`/articles/${a.id.replace(/\.mdx?$/, "")}`} class="editorial-link">{a.data.title}</a>
+          </h3>
+          <p class="meta mt-1.5">{a.data.region} · {formatDate(a.data.date, { day: "numeric", month: "short" })} · {readingTime(a)} min read</p>
+        </article>
+      ))}
+    </div>
+  )}
+</section>

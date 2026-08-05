@@ -1,0 +1,87 @@
+---
+import { getLatestArticles, heroImageOf, formatDate, readingTime } from "../utils/collection";
+import SectionHeader from "./SectionHeader.astro";
+import { creditFor } from "../data/imageCredits";
+
+const all = await getLatestArticles(5);
+const [first, ...rest] = all;
+const firstHref = `/articles/${first.id.replace(/\.mdx?$/, "")}`;
+const rt = readingTime(first);
+---
+
+<section aria-label="Top stories" class="border-t border-line-strong pt-6">
+  <SectionHeader number="02" title="Top Stories" />
+
+  <div class="grid gap-8 lg:grid-cols-2 lg:gap-10">
+    <!-- Large story -->
+    <article class="group">
+      <a
+        href={firstHref}
+        class="img-zoom block overflow-hidden border border-line/60 bg-paper-soft"
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <img
+          src={heroImageOf(first.data.heroImage)}
+          alt=""
+          width="1600"
+          height="1000"
+          loading="lazy"
+          class="aspect-[16/10] w-full object-cover"
+        />
+      </a>
+      <p class="kicker mt-4">{first.data.category}</p>
+      <h2 class="t-headline mt-2">
+        <a href={firstHref} class="editorial-link">
+          {first.data.title}
+        </a>
+      </h2>
+      <p class="mt-2.5 max-w-xl font-serif text-[1.02rem] leading-relaxed text-muted">
+        {first.data.description}
+      </p>
+      <p class="meta mt-3">
+        By <span class="meta-strong">{first.data.author}</span> · {formatDate(first.data.date, { day: "numeric", month: "short", year: "numeric" })} · {rt} min read
+      </p>
+    </article>
+
+    <!-- Four smaller stories -->
+    <div class="flex flex-col justify-between">
+      {rest.map((a) => {
+        const href = `/articles/${a.id.replace(/\.mdx?$/, "")}`;
+        return (
+          <article class="group border-b border-line py-4 first:pt-0 last:border-b-0 lg:py-3.5">
+            <div class="flex gap-5">
+              <a
+                href={href}
+                class="img-zoom block w-32 shrink-0 overflow-hidden border border-line/60 bg-paper-soft sm:w-44"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <img
+                  src={heroImageOf(a.data.heroImage)}
+                  alt=""
+                  width="1600"
+                  height="1000"
+                  loading="lazy"
+                  class="aspect-[3/2] w-full object-cover"
+                />
+              </a>
+              <div class="min-w-0">
+                <p class="kicker">{a.data.category}</p>
+                <h3 class="t-headline-xs mt-1">
+                  <a href={href} class="editorial-link">
+                    {a.data.title}
+                  </a>
+                </h3>
+                <p class="meta mt-1.5">
+                  {formatDate(a.data.date, { day: "numeric", month: "short" })} ·{" "}
+                  {readingTime(a)} min read
+                </p>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>

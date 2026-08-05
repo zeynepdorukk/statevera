@@ -1,0 +1,137 @@
+---
+import { render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site } from "../../site";
+import { getArticleBySlug, getLatestArticles, heroImageOf, readingTime } from "../../utils/collection";
+import ArticleHeader from "../../components/article/ArticleHeader.astro";
+import ArticleSources from "../../components/article/ArticleSources.astro";
+import ArticleShare from "../../components/article/ArticleShare.astro";
+import RelatedStories from "../../components/article/RelatedStories.astro";
+import HeadlineItem from "../../components/HeadlineItem.astro";
+import KeyTakeaways from "../../components/mdx/KeyTakeaways.astro";
+import WhyItMatters from "../../components/mdx/WhyItMatters.astro";
+import TheBigPicture from "../../components/mdx/TheBigPicture.astro";
+import AnalysisSection from "../../components/mdx/AnalysisSection.astro";
+
+export async function getStaticPaths() {
+  const { getCollection } = await import("astro:content");
+  const articles = await getCollection("articles");
+  return articles.map((a) => ({
+    params: { slug: a.id.replace(/\.mdx?$/, "") },
+  }));
+}
+
+const { slug } = Astro.params;
+const article = await getArticleBySlug(slug ?? "");
+if (!article) return Astro.redirect("/404");
+
+const { Content } = await render(article);
+
+const { data, body } = article;
+const rt = readingTime(article);
+const href = `/articles/${article.id.replace(/\.mdx?$/, "")}`;
+const latest = await getLatestArticles(5);
+const related = latest.filter((a) => a.id !== article.id).slice(0, 4);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: data.title,
+    description: data.description,
+    datePublished: data.date.toISOString(),
+    ...(data.updated ? { dateModified: data.updated.toISOString() } : {}),
+    author: { "@type": "Person", name: data.author },
+    publisher: {
+      "@type": "Organization",
+      name: site.publicationName,
+      logo: { "@type": "ImageObject", url: new URL("/images/branding/favicon-64.png", site.siteUrl).toString() },
+    },
+    image: [new URL(heroImageOf(data.heroImage), site.siteUrl).toString()],
+    articleSection: data.category,
+    keywords: [...data.tags, data.region, ...data.country].join(", "),
+    mainEntityOfPage: new URL(href, site.siteUrl).toString(),
+  },
+];
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  image={heroImageOf(data.heroImage)}
+  type="article"
+  path={href}
+  jsonLd={jsonLd}
+  article={{
+    publishedTime: data.date.toISOString(),
+    modifiedTime: data.updated?.toISOString(),
+    authors: [data.author],
+    tags: data.tags,
+    section: data.category,
+  }}
+>
+  <ArticleHeader article={article} />
+
+  <div class="mx-auto flex max-w-[1400px] gap-10 px-4 md:px-8">
+    <!-- Left share rail (desktop) -->
+    <div class="hidden shrink-0 pt-10 xl:block xl:w-12">
+      <div class="sticky top-28">
+        <ArticleShare title={data.title} url={new URL(href, site.siteUrl).toString()} />
+      </div>
+    </div>
+
+    <!-- Article body -->
+    <article class="min-w-0 flex-1 py-8 md:py-10">
+      <div class="mx-auto max-w-[700px]">
+        <div class="article-body">
+          <Content
+            components={{
+              KeyTakeaways,
+              WhyItMatters,
+              TheBigPicture,
+              AnalysisSection,
+            }}
+          />
+        </div>
+
+        <ArticleSources sources={data.sources} />
+
+        <!-- Mobile share -->
+        <div class="mt-6 xl:hidden">
+          <ArticleShare title={data.title} url={new URL(href, site.siteUrl).toString()} />
+        </div>
+
+        <p class="mt-8 border-t border-line pt-4 font-sans text-[0.72rem] leading-relaxed text-muted">
+          By {data.author} · {site.publicationNameDisplay}. {data.region} desk.{" "}
+          {data.country.length > 0 && `Focus: ${data.country.join(", ")}.`} Follow the discussion
+          on <a href={site.socialLinks.x} class="link-accent" rel="noopener">X</a> and{" "}
+          <a href={site.socialLinks.linkedin} class="link-accent" rel="noopener">LinkedIn</a>.
+        </p>
+      </div>
+    </article>
+
+    <!-- Right rail (desktop) -->
+    <aside class="hidden w-72 shrink-0 pt-10 lg:block">
+      <div class="sticky top-28 border-l border-line pl-8">
+        <div class="section-head">
+          <h2 class="title">Latest</h2>
+          <span class="rule" aria-hidden="true"></span>
+        </div>
+        <div class="divide-y divide-line border-t border-line">
+          {related.map((a) => (
+            <HeadlineItem article={a} />
+          ))}
+        </div>
+        <p class="mt-4">
+          <a href="/latest" class="kicker-ink transition-colors duration-200 hover:text-accent">
+            All latest →
+          </a>
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="mx-auto max-w-[1400px] px-4 pb-4 md:px-8">
+    <RelatedStories article={article} />
+  </div>
+</BaseLayout>

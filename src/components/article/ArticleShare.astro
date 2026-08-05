@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+  url: string;
+}
+
+const { title, url } = Astro.props;
+const encoded = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+---
+
+<div class="flex items-center gap-1" data-share>
+  <span class="kicker-ink mr-1 hidden xl:block" style="writing-mode: vertical-rl;">Share</span>
+  <a
+    href={`https://twitter.com/intent/tweet?url=${encoded}&text=${encodedTitle}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on X (Twitter)"
+    class="group flex h-9 w-9 items-center justify-center border border-line text-ink-soft transition-colors duration-200 hover:border-accent hover:text-accent"
+  >
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.9 2H22l-6.9 7.9L23.3 22h-6.4l-5-6.5L6.2 22H3l7.4-8.5L1.5 2H8l4.5 5.9L18.9 2Zm-1.1 18h1.7L7.4 3.7H5.5L17.8 20Z" /></svg>
+  </a>
+  <a
+    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encoded}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Share on LinkedIn"
+    class="group flex h-9 w-9 items-center justify-center border border-line text-ink-soft transition-colors duration-200 hover:border-accent hover:text-accent"
+  >
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.4h-3.5v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.6H9.4V9h3.4v1.6h.1c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1ZM7.1 20.4H3.6V9h3.5v11.4Z" /></svg>
+  </a>
+  <button
+    type="button"
+    data-copy-share
+    aria-label="Copy link to article"
+    class="flex h-9 w-9 cursor-pointer items-center justify-center border border-line text-ink-soft transition-colors duration-200 hover:border-accent hover:text-accent"
+  >
+    <svg data-copy-icon width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7" /><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7" /></svg>
+  </button>
+  <button
+    type="button"
+    data-native-share
+    aria-label="Share via device"
+    class="hidden h-9 w-9 cursor-pointer items-center justify-center border border-line text-ink-soft transition-colors duration-200 hover:border-accent hover:text-accent md:flex"
+  >
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" /><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4" /></svg>
+  </button>
+</div>
+
+<script>
+  const url = { shareUrl: `{url}?utm_source=share&utm_medium=web` };
+  const title = { title: `{title}` };
+  const root = document.querySelector<HTMLElement>("[data-share]");
+  const copyBtn = root?.querySelector<HTMLButtonElement>("[data-copy-share]");
+  const nativeBtn = root?.querySelector<HTMLButtonElement>("[data-native-share]");
+
+  copyBtn?.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(url.shareUrl);
+      const original = copyBtn.innerHTML;
+      copyBtn.innerHTML = '<span class="font-sans text-[0.6rem] font-bold text-accent">COPIED</span>';
+      setTimeout(() => (copyBtn.innerHTML = original), 1600);
+    } catch (e) {}
+  });
+
+  nativeBtn?.addEventListener("click", async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: title.title, url: url.shareUrl });
+      } catch (e) {}
+    }
+  });
+</script>

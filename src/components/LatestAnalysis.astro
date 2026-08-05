@@ -1,0 +1,54 @@
+---
+import { getByType, formatDate, readingTime } from "../utils/collection";
+import { heroImageOf } from "../utils/collection";
+import SectionHeader from "./SectionHeader.astro";
+
+const analysis = await getByType("analysis", 4);
+---
+
+<section aria-label="Latest analysis" class="border-t border-line-strong pt-6">
+  <SectionHeader number="04" title="Latest Analysis" link="/analysis" linkLabel="All analysis" />
+
+  <div class="grid gap-x-8 gap-y-10 md:grid-cols-2">
+    {analysis.map((a, i) => {
+      const href = `/articles/${a.id.replace(/\.mdx?$/, "")}`;
+      const rt = readingTime(a);
+      return (
+        <article
+          class:list={[
+            "group flex flex-col",
+            i === 0 ? "md:border-r md:border-line md:pr-8" : "md:pl-8",
+          ]}
+        >
+          <a
+            href={href}
+            class="img-zoom block overflow-hidden border border-line/60 bg-paper-soft"
+            tabindex="-1"
+            aria-hidden="true"
+          >
+            <img
+              src={heroImageOf(a.data.heroImage)}
+              alt=""
+              width="1600"
+              height="1000"
+              loading="lazy"
+              class="aspect-[16/9] w-full object-cover"
+            />
+          </a>
+          <p class="kicker mt-4">Analysis</p>
+          <h3 class="t-headline-sm mt-2">
+            <a href={href} class="editorial-link">
+              {a.data.title}
+            </a>
+          </h3>
+          <p class="mt-2 line-clamp-3 font-serif text-[0.98rem] leading-relaxed text-muted">
+            {a.data.description}
+          </p>
+          <p class="meta mt-3">
+            {formatDate(a.data.date, { day: "numeric", month: "short" })} · {rt} min read
+          </p>
+        </article>
+      );
+    })}
+  </div>
+</section>

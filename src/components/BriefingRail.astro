@@ -1,0 +1,45 @@
+---
+import { getAllBriefings, formatTime } from "../utils/collection";
+
+const briefings = await getAllBriefings();
+const byImportance = [...briefings].sort((a, b) => {
+  const rank = { high: 0, medium: 1, low: 2 } as const;
+  return rank[a.data.importance] - rank[b.data.importance];
+});
+const shown = byImportance.slice(0, 6);
+---
+
+<aside aria-label="Today's briefing">
+  <div class="section-head">
+    <span class="no">01</span>
+    <h2 class="title">Today</h2>
+    <span class="rule" aria-hidden="true"></span>
+  </div>
+
+  {shown.map((b, i) => (
+    <article class="group relative border-b border-line py-3.5 first:border-t first:pt-0 last:border-b-0">
+      <div class="flex items-center gap-2">
+        <time
+          class="font-sans text-[0.72rem] font-semibold tracking-[0.04em] text-accent"
+          datetime={b.data.timestamp.toISOString()}
+        >
+          {formatTime(b.data.timestamp)}
+        </time>
+        <span class="h-3 w-px bg-line" aria-hidden="true"></span>
+        <span class="meta-strong">{b.data.location}</span>
+        {b.data.importance === "high" && (
+          <span class="live-dot ml-auto inline-block h-1 w-1 rounded-full bg-accent" aria-hidden="true"></span>
+        )}
+      </div>
+      <p class="mt-1.5 font-serif text-[0.95rem] leading-snug text-ink">
+        {b.body.trim()}
+      </p>
+    </article>
+  ))}
+
+  <p class="mt-3">
+    <a href="/briefings" class="kicker-ink transition-colors duration-200 hover:text-accent">
+      All briefings →
+    </a>
+  </p>
+</aside>

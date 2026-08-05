@@ -1,0 +1,132 @@
+﻿---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { regions } from "../../site";
+import { getByRegionSlug, getLatestBriefings, heroImageOf, formatDate, formatTime, readingTime } from "../../utils/collection";
+import StoryCard from "../../components/StoryCard.astro";
+import HeadlineItem from "../../components/HeadlineItem.astro";
+
+export async function getStaticPaths() {
+  return Object.keys(regions).map((region) => ({ params: { region } }));
+}
+
+const { region } = Astro.params;
+const meta = regions[region as keyof typeof regions];
+if (!meta) return Astro.redirect("/404");
+
+const [articles, briefings] = await Promise.all([
+  getByRegionSlug(region ?? "", 8),
+  getLatestBriefings(10),
+]);
+const [lead, ...rest] = articles;
+const regionBriefings = briefings.filter((b) => b.data.region === meta.name);
+const leadHref = lead ? `/articles/${lead.id.replace(/\.mdx?$/, "")}` : "";
+---
+
+<BaseLayout
+  title={meta.name}
+  description={meta.description}
+  path={meta.url}
+>
+  <div class="mx-auto max-w-[1400px] px-4 pt-8 md:px-8 md:pt-10">
+    <header class="border-b-2 border-ink pb-5">
+      <p class="kicker mb-1">Regional Desk</p>
+      <h1 class="t-headline-lg">{meta.name}</h1>
+      <p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-ink-soft">
+        {meta.description}
+      </p>
+    </header>
+
+    <div class="grid gap-10 py-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-12">
+      <div class="min-w-0 space-y-10">
+        {lead && (
+          <article class="group">
+            <a href={leadHref} class="img-zoom block overflow-hidden border border-line/60 bg-paper-soft" tabindex="-1" aria-hidden="true">
+              <img src={heroImageOf(lead.data.heroImage)} alt="" width="1600" height="1000" loading="eager" class="aspect-[16/9] w-full object-cover" />
+            </a>
+            <p class="kicker mt-4">{lead.data.category} Â· {lead.data.region}</p>
+            <h2 class="t-headline mt-2">
+              <a href={leadHref} class="editorial-link">{lead.data.title}</a>
+            </h2>
+            <p class="mt-2.5 max-w-2xl font-serif text-[1.02rem] leading-relaxed text-muted">
+              {lead.data.description}
+            </p>
+            <p class="meta mt-3">
+              By <span class="meta-strong">{lead.data.author}</span> Â· {formatDate(lead.data.date)} Â· {readingTime(lead)} min read
+            </p>
+          </article>
+        )}
+
+        <div class="grid gap-x-8 gap-y-8 sm:grid-cols-2">
+          {rest.map((a) => (
+            <StoryCard article={a} />
+          ))}
+        </div>
+
+        <div>
+          <div class="section-head">
+            <h2 class="title">Latest on the {meta.name} desk</h2>
+            <span class="rule" aria-hidden="true"></span>
+          </div>
+          <div class="divide-y divide-line border-t border-line">
+            {articles.slice(3).map((a) => (
+              <HeadlineItem article={a} />
+            ))}
+            {articles.length <= 3 && (
+              <p class="py-4 font-serif text-[0.95rem] text-muted">
+                More {meta.name} coverage is being reported. Check the global briefing for the
+                latest.
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <aside class="space-y-8 lg:border-l lg:border-line lg:pl-8">
+        <div>
+          <div class="section-head">
+            <h2 class="title">Region Briefing</h2>
+            <span class="rule" aria-hidden="true"></span>
+          </div>
+          <ul class="border-t border-line">
+            {regionBriefings.map((b) => (
+              <li class="border-b border-line py-3">
+                <p class="flex items-baseline gap-2">
+                  <time class="font-sans text-[0.7rem] font-semibold text-accent" datetime={b.data.timestamp.toISOString()}>
+                    {formatTime(b.data.timestamp)}
+                  </time>
+                  <span class="meta-strong">{b.data.location}</span>
+                </p>
+                <p class="mt-1 font-serif text-[0.92rem] leading-snug text-ink-soft">{b.body.trim()}</p>
+              </li>
+            ))}
+            {regionBriefings.length === 0 && (
+              <li class="py-4 font-serif text-[0.95rem] text-muted">
+                No region-specific briefings at this hour â€” the global briefing is current.
+              </li>
+            )}
+          </ul>
+          <p class="mt-3"><a href="/briefings" class="kicker-ink transition-colors duration-200 hover:text-accent">All briefings â†’</a></p>
+        </div>
+
+        <div>
+          <div class="section-head">
+            <h2 class="title">Other regions</h2>
+            <span class="rule" aria-hidden="true"></span>
+          </div>
+          <ul class="grid grid-cols-2 gap-2">
+            {Object.entries(regions)
+              .filter(([k]) => k !== region)
+              .map(([k, r]) => (
+                <li>
+                  <a href={r.url} class="editorial-link font-sans text-[0.85rem] font-medium text-ink-soft">
+                    {r.name}
+                  </a>
+                </li>
+              ))}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+

@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../site";
+---
+
+<BaseLayout title="About" description="About The Dispatch — an independent international affairs publication." path="/about">
+  <div class="mx-auto max-w-[820px] px-4 pt-10 md:px-8 md:pt-14">
+    <header>
+      <p class="kicker">About the publication</p>
+      <h1 class="t-display">Independent analysis of global politics, security and economics.</h1>
+      <p class="mt-5 font-serif text-[1.2rem] leading-relaxed text-ink-soft">
+        {site.publicationTagline}
+      </p>
+    </header>
+
+    <div class="article-body mt-10">
+      <h2 id="about">About</h2>
+      <p>
+        {site.publicationNameDisplay} is an independent publication covering international
+        relations, geopolitics, international security, diplomacy and political economy. It is
+        written and edited by {site.authorName}, an analyst with more than a decade of reporting
+        on the intersection of strategy, economics and statecraft.
+      </p>
+      <p>
+        The publication's coverage focuses on the places where the international system is being
+        remade: the institutions of European security, the diplomacy of the Middle East, the
+        economic competition between Washington and Beijing, and the strategic choices of
+        regional powers such as Turkey. The premise is simple — the most consequential decisions
+        in world politics are made by states, and the best service a publication can provide is
+        to explain them clearly, with their costs and constraints attached.
+      </p>
+
+      <h2 id="principles">Editorial Principles</h2>
+      <ul>
+        <li>
+          <strong>Analytical, not advocacy.</strong> Articles identify what is happening, why it
+          is happening and what is at stake — they do not campaign.
+        </li>
+        <li>
+          <strong>Structure over impression.</strong> Long-form analysis separates facts from
+          interpretation, and both from judgment, so readers can see the reasoning.
+        </li>
+        <li>
+          <strong>Open about uncertainty.</strong> Where the record is ambiguous, the ambiguity
+          is stated rather than hidden.
+        </li>
+        <li>
+          <strong>Editorial independence.</strong> The publication has no institutional
+          affiliation, and no advertisement or sponsor influences editorial decisions.
+        </li>
+      </ul>
+
+      <h2 id="sourcing">Sources &amp; Attribution</h2>
+      <p>
+        Articles cite their sources in a structured section at the foot of each piece, linking to
+        primary documents, official statements and wire reporting where available. External links
+        open in a new tab and leave {site.publicationNameDisplay}. Where information comes from
+        background conversations, it is described as such in the text. Photographs are
+        individually credited with their author and licence.
+      </p>
+
+      <h2 id="corrections">Corrections</h2>
+      <p>
+        When an error is identified — whether of fact, framing or omission — it is corrected
+        promptly and transparently. Substantive corrections are noted in the article itself with
+        an "updated" marker and a short explanation. To report an error, write to{" "}
+        <a href={`mailto:${site.socialLinks.email}`} class="link-accent">
+          {site.socialLinks.email}
+        </a>{" "}
+        with the article title and the correction requested.
+      </p>
+
+      <h2 id="contact">Contact</h2>
+      <p>
+        Editorial and press enquiries:{" "}
+        <a href={`mailto:${site.socialLinks.email}`} class="link-accent">
+          {site.socialLinks.email}
+        </a>
+        <br />
+        Follow: <a href={site.socialLinks.x} class="link-accent" rel="noopener">X</a> ·{" "}
+        <a href={site.socialLinks.linkedin} class="link-accent" rel="noopener">LinkedIn</a> ·{" "}
+        <a href="/rss.xml" class="link-accent">RSS</a>
+      </p>
+
+      <figure class="mt-8">
+        <blockquote>
+          "The purpose of analysis is not to predict the future, but to make the present legible
+          — and to make the costs of policy choices visible before they are paid."
+        </blockquote>
+        <figcaption class="mt-3 flex items-center gap-3">
+          <img
+            src={site.authorPhoto}
+            alt={`Portrait of ${site.authorName}`}
+            width="400"
+            height="400"
+            loading="lazy"
+            class="h-14 w-14 rounded-full border border-line object-cover"
+          />
+          <span>
+            <span class="block font-sans text-[0.85rem] font-semibold text-ink">{site.authorName}</span>
+            <span class="meta">{site.authorRole}, {site.publicationNameDisplay}</span>
+          </span>
+        </figcaption>
+      </figure>
+
+      <div class="mt-10 border border-line bg-paper-soft p-4">
+        <p class="font-sans text-[0.78rem] leading-relaxed text-muted">
+          <strong class="text-ink-soft">Demonstration notice:</strong> the articles, briefings and
+          explainers on this prototype are sample content written to demonstrate the publication's
+          format and design. They are fictional and should be replaced with real reporting before
+          public launch.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

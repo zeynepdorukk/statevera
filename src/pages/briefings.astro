@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getAllBriefings, formatTime, formatDate } from "../utils/collection";
+import { site } from "../site";
+
+const briefings = await getAllBriefings();
+const byDate = briefings.reduce<Record<string, typeof briefings>>((acc, b) => {
+  const key = formatDate(b.data.timestamp);
+  (acc[key] ??= []).push(b);
+  return acc;
+}, {});
+const dates = Object.keys(byDate);
+---
+
+<BaseLayout
+  title="Briefings"
+  description="Timestamped updates from around the world — the global briefing terminal."
+  path="/briefings"
+>
+  <div class="mx-auto max-w-[1100px] px-4 pt-8 md:px-8 md:pt-10">
+    <header class="border-b-2 border-ink pb-5">
+      <div class="flex items-center gap-3">
+        <span class="live-dot inline-block h-2 w-2 rounded-full bg-accent" aria-hidden="true"></span>
+        <h1 class="t-headline-lg">The Global Briefing</h1>
+      </div>
+      <p class="mt-2 font-sans text-[0.72rem] font-semibold tracking-[0.18em] uppercase text-accent">
+        Live updates · {site.publicationNameDisplay}
+      </p>
+      <p class="mt-3 max-w-2xl font-serif text-[1.05rem] leading-relaxed text-ink-soft">
+        Concise, timestamped updates on the international system as it moves — from summits and
+        chanceries to markets and maritime chokepoints.
+      </p>
+    </header>
+
+    <div class="py-8">
+      {dates.map((date) => (
+        <section aria-label={date}>
+          <h2 class="kicker-ink mb-2 border-b border-line pb-1.5">{date}</h2>
+          <ol>
+            {byDate[date].map((b) => (
+              <li class="flex gap-4 border-b border-line py-4">
+                <time
+                  class="w-14 shrink-0 pt-0.5 font-sans text-[0.78rem] font-bold tracking-[0.04em] text-accent"
+                  datetime={b.data.timestamp.toISOString()}
+                >
+                  {formatTime(b.data.timestamp)}
+                </time>
+                <div>
+                  <p class="flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                    <span class="meta-strong">{b.data.location}</span>
+                    <span class="h-3 w-px bg-line" aria-hidden="true"></span>
+                    <span class="kicker">{b.data.category}</span>
+                    <span class="kicker-ink">{b.data.region}</span>
+                    {b.data.importance === "high" && (
+                      <span class="inline-flex items-center gap-1 font-sans text-[0.62rem] font-bold tracking-[0.14em] uppercase text-accent">
+                        <span class="live-dot inline-block h-1 w-1 rounded-full bg-accent" aria-hidden="true"></span>
+                        High
+                      </span>
+                    )}
+                  </p>
+                  <p class="mt-1.5 max-w-2xl font-serif text-[1rem] leading-relaxed text-ink">
+                    {b.body.trim()}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

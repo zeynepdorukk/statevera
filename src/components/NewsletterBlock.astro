@@ -1,0 +1,40 @@
+---
+import { site } from "../site";
+---
+
+<section
+  aria-label="Newsletter"
+  class="border-y border-line-strong bg-paper-soft"
+>
+  <div class="mx-auto flex max-w-[1400px] flex-col items-start gap-4 px-4 py-8 md:flex-row md:items-center md:justify-between md:px-8">
+    <div class="max-w-xl">
+      <p class="kicker">The Daily Dispatch</p>
+      <h2 class="t-headline-sm mt-1.5">
+        The world in your inbox, before the day starts
+      </h2>
+      <p class="mt-1.5 font-sans text-[0.85rem] leading-relaxed text-muted">
+        One briefing on the forces shaping the international system. No noise, no spam — the
+        editor's daily selection of stories that matter.
+      </p>
+    </div>
+    <form
+      class="flex w-full max-w-md gap-2"
+      onsubmit="event.preventDefault(); alert('Newsletter signup is disabled in this demonstration build.');"
+    >
+      <label class="sr-only" for="newsletter-email">Email address</label>
+      <input
+        type="email"
+        id="newsletter-email"
+        required
+        placeholder="you@example.com"
+        class="w-full border border-line-strong bg-paper px-3 py-2.5 font-sans text-[0.85rem] text-ink outline-none transition-colors duration-200 placeholder:text-muted focus:border-accent"
+      />
+      <button
+        type="submit"
+        class="shrink-0 cursor-pointer border border-accent bg-accent px-4 py-2.5 font-sans text-[0.75rem] font-bold tracking-[0.1em] text-white uppercase transition-colors duration-200 hover:bg-accent-ink"
+      >
+        Subscribe
+      </button>
+    </form>
+  </div>
+</section>

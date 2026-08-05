@@ -1,0 +1,64 @@
+---
+import { site } from "../site";
+
+interface Props {
+  compact?: boolean;
+  tagline?: boolean;
+}
+
+const { compact = false, tagline = true } = Astro.props;
+---
+
+<a
+  href="/"
+  class:list={[
+    "group inline-block select-none no-underline",
+    compact ? "" : "text-center",
+  ]}
+  aria-label={`${site.publicationNameDisplay} — home`}
+>
+  <span
+    class:list={[
+      "inline-flex items-center justify-center gap-[0.62em]",
+      compact ? "" : "justify-center",
+    ]}
+    style="font-size: clamp(1.35rem, 3.4vw, 1.85rem)"
+  >
+    <img
+      src="/images/branding/logo-mark.svg"
+      alt=""
+      width="44"
+      height="44"
+      class:list={[
+        "logo-mark-light",
+        "shrink-0",
+        compact ? "h-[1.5em] w-[1.5em]" : "h-[1.7em] w-[1.7em]",
+      ]}
+      aria-hidden="true"
+    />
+    <img
+      src="/images/branding/logo-mark-light.svg"
+      alt=""
+      width="44"
+      height="44"
+      class:list={[
+        "logo-mark-dark",
+        "shrink-0",
+        compact ? "h-[1.5em] w-[1.5em]" : "h-[1.7em] w-[1.7em]",
+      ]}
+      aria-hidden="true"
+    />
+    <span
+      class="font-serif font-semibold text-ink leading-none tracking-[0.085em]"
+    >
+      STATE<span class="text-accent">VERA</span>
+    </span>
+  </span>
+  {tagline && !compact && (
+    <span
+      class="mt-[0.55em] hidden font-sans text-[0.62rem] font-medium tracking-[0.14em] text-muted uppercase md:block"
+    >
+      {site.publicationTagline}
+    </span>
+  )}
+</a>
