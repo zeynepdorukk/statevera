@@ -26,8 +26,8 @@ const DEFAULT_REPO = "zeynepdorukk/statevera";
 const COOKIE = "sv_session";
 const SESSION_MS = 12 * 60 * 60 * 1000;
 
-/** Set OPENAI_MODEL to whatever the key can actually reach; /api/models lists it. */
-const DEFAULT_MODEL = "gpt-4o-mini";
+/** The API id uses underscores, not the dotted name the model is written with. */
+const DEFAULT_MODEL = "gpt-5_6-luna";
 const modelOf = (env: DeskEnv): string => env.OPENAI_MODEL?.trim() || DEFAULT_MODEL;
 
 /** A signed-in session may only touch the two content folders. */
