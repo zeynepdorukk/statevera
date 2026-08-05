@@ -26,8 +26,8 @@ const DEFAULT_REPO = "zeynepdorukk/statevera";
 const COOKIE = "sv_session";
 const SESSION_MS = 12 * 60 * 60 * 1000;
 
-/** The API id uses underscores, not the dotted name the model is written with. */
-const DEFAULT_MODEL = "gpt-5_6-luna";
+/** The catalogue writes it GPT-5.6 Luna; the API id is lower case with dots. */
+const DEFAULT_MODEL = "gpt-5.6-luna";
 const modelOf = (env: DeskEnv): string => env.OPENAI_MODEL?.trim() || DEFAULT_MODEL;
 
 /** A signed-in session may only touch the two content folders. */
@@ -224,7 +224,10 @@ async function askOpenAI(env: DeskEnv, body: AskBody, signal?: AbortSignal): Pro
       { role: "user", content: body.prompt ?? "" },
     ],
     temperature: body.temperature ?? 0.4,
-    max_completion_tokens: Math.min(Math.max(body.maxTokens ?? 400, 16), 2000),
+    // These are reasoning models: without this, a short budget is spent thinking
+    // and the reply comes back empty. Copy-editing does not need deliberation.
+    reasoning_effort: "none",
+    max_completion_tokens: Math.min(Math.max(body.maxTokens ?? 400, 64), 4000),
     ...(body.jsonOnly ? { response_format: { type: "json_object" } } : {}),
   };
 
@@ -239,9 +242,13 @@ async function askOpenAI(env: DeskEnv, body: AskBody, signal?: AbortSignal): Pro
       body: JSON.stringify(data),
     });
 
+  const OPTIONAL = ["reasoning_effort", "temperature", "max_completion_tokens", "response_format"];
   let response = await send(payload);
 
-  if (response.status === 400 || response.status === 404) {
+  // Each generation refuses a different set of knobs, and only names one at a
+  // time, so drop what it names and ask again rather than guessing up front.
+  for (let attempt = 0; attempt < OPTIONAL.length; attempt += 1) {
+    if (response.status !== 400 && response.status !== 404) break;
     const detail = await response.text();
 
     if (/model/i.test(detail) && /does not exist|not found|unsupported/i.test(detail)) {
@@ -255,15 +262,13 @@ async function askOpenAI(env: DeskEnv, body: AskBody, signal?: AbortSignal): Pro
       }
       payload.model = match;
       response = await send(payload);
-    } else {
-      const named = ["temperature", "max_completion_tokens", "response_format"].find((param) =>
-        detail.includes(param)
-      );
-      if (!named) throw new Error(readOpenAiError(detail));
-      const retry = { ...payload };
-      delete retry[named];
-      response = await send(retry);
+      continue;
     }
+
+    const named = OPTIONAL.find((param) => param in payload && detail.includes(param));
+    if (!named) throw new Error(readOpenAiError(detail));
+    delete payload[named];
+    response = await send(payload);
   }
 
   const text = await response.text();
