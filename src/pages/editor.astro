@@ -438,6 +438,45 @@ import EditorLayout from "../layouts/EditorLayout.astro";
   .ed-menu button.ed-pick {
     align-items: center;
   }
+
+  /* ---------- say what you want ---------- */
+  .ed-ask {
+    display: block;
+    padding: 0.75rem;
+  }
+  .ed-ask input {
+    width: 100%;
+    padding: 0.55rem 0.65rem;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    color: var(--ink);
+    background: var(--paper-soft);
+    border: 1px solid var(--line-strong);
+    border-radius: 0;
+  }
+  .ed-ask input:focus {
+    outline: 2px solid var(--tone);
+    outline-offset: -1px;
+  }
+  .ed-ask-target {
+    margin: 0.5rem 0 0;
+    font-family: var(--font-serif);
+    font-size: 0.8rem;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--muted);
+    border-left: 2px solid var(--line-strong);
+    padding-left: 0.55rem;
+  }
+  .ed-ask-row {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.7rem;
+  }
+  .ed-float-ai {
+    color: var(--tone);
+    font-weight: 700;
+  }
   .ed-pick img {
     width: 3.5rem;
     height: 2.6rem;
@@ -656,7 +695,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
 
 <script>
   import { type AiConfig, type LayoutSuggestion,
-    completeInline, transform, suggestLayout, suggestMeta } from "../lib/editor/ai";
+    completeInline, rewrite, suggestLayout, suggestMeta } from "../lib/editor/ai";
   import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile,
     type FileEntry } from "../lib/editor/desk";
   import { parseDocument, serialiseArticle, serialiseExplainer, slugify,
@@ -997,6 +1036,8 @@ import EditorLayout from "../layouts/EditorLayout.astro";
         <button type="button" data-cmd="quote" title="Quote">&ldquo;</button>
         <span class="sep"></span>
         <button type="button" data-cmd="clear" title="Plain text">Clear</button>
+        <span class="sep"></span>
+        <button type="button" class="ed-float-ai" data-cmd="ask" title="Tell the assistant what to do  Ctrl+J">Ask</button>
       </div>
 
       <div class="ed-float" data-linkbar>
@@ -1323,6 +1364,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
         if (key === "b") { event.preventDefault(); runCommand("bold"); return; }
         if (key === "i") { event.preventDefault(); runCommand("italic"); return; }
         if (key === "k") { event.preventDefault(); openLinkBar(); return; }
+        if (key === "j") { event.preventDefault(); openAsk(); return; }
         if (key === " ") { event.preventDefault(); requestSuggestion(true); return; }
         if (key === "s") { event.preventDefault(); openDrawer(); return; }
       }
@@ -1394,6 +1436,9 @@ import EditorLayout from "../layouts/EditorLayout.astro";
           break;
         case "link":
           openLinkBar();
+          return;
+        case "ask":
+          openAsk();
           return;
       }
       hideFloat();
@@ -1734,77 +1779,98 @@ import EditorLayout from "../layouts/EditorLayout.astro";
 
     const scheduleSuggestion = debounce(() => requestSuggestion(false), 1400);
 
-    maybe<HTMLButtonElement>("[data-assist]")?.addEventListener("click", (event) => {
-      const anchor = (event.currentTarget as HTMLElement).getBoundingClientRect();
-      openAssistMenu(anchor);
-    });
+    maybe<HTMLButtonElement>("[data-assist]")?.addEventListener("click", () => openAsk());
 
-    function openAssistMenu(anchor: DOMRect) {
-      const actions: { name: string; run: () => Promise<void> }[] = [
-        { name: "Tighten this paragraph", run: () => runTransform("tighten") },
-        { name: "Develop this paragraph", run: () => runTransform("expand") },
-        { name: "Make it clearer", run: () => runTransform("clarify") },
-        { name: "Remove editorialising", run: () => runTransform("neutralise") },
-        { name: "Write the standfirst", run: () => runTransform("dek") },
-        { name: "Suggest headlines", run: () => runTransform("headline") },
-        { name: "Add key takeaways", run: () => runTransform("takeaways") },
-        { name: "Review the layout", run: reviewLayout },
-      ];
-      menuEl.innerHTML =
-        `<p class="ed-menu-head">${esc(state.model)}</p>` +
-        actions.map((a, i) => `<button type="button" data-ai="${i}"><span class="name">${esc(a.name)}</span></button>`).join("");
+    /**
+     * Select some words, say what you want done to them, and it is done. The
+     * passage is remembered when the box opens, because clicking into the input
+     * takes the selection away from the page.
+     */
+    function openAsk() {
+      const sel = window.getSelection();
+      const selected = sel && !sel.isCollapsed ? sel.toString().trim() : "";
+      const block = currentBlock();
+
+      if (!selected && !block?.textContent?.trim()) {
+        setStatus("Select the words you want changed first.", "error");
+        return;
+      }
+
+      const range = selected && sel ? sel.getRangeAt(0).cloneRange() : null;
+      const passage = selected || block?.textContent || "";
+      const anchor = (range ?? block!).getBoundingClientRect();
+
+      menuEl.innerHTML = `
+        <p class="ed-menu-head">${esc(state.model)}</p>
+        <form class="ed-ask" data-ask>
+          <input type="text" data-ask-input autocomplete="off" spellcheck="false"
+            placeholder="Tighten this. Make it plainer. Cut the last sentence." />
+          <p class="ed-ask-target">${esc(passage.slice(0, 90))}${passage.length > 90 ? "…" : ""}</p>
+          <div class="ed-ask-row">
+            <button type="submit" class="ed-btn ed-btn-primary">Rewrite</button>
+            <button type="button" class="ed-btn ed-btn-quiet" data-ask-layout>Review the layout</button>
+          </div>
+        </form>`;
+      menuEl.style.width = "26rem";
       menuEl.classList.add("is-open");
-      menuEl.style.top = `${window.scrollY + anchor.bottom + 6}px`;
-      menuEl.style.left = `${window.scrollX + anchor.right - 272}px`;
-      menuEl.querySelectorAll<HTMLButtonElement>("[data-ai]").forEach((button) =>
-        button.addEventListener("click", async () => {
-          menuEl.classList.remove("is-open");
-          await actions[Number(button.dataset.ai)].run();
-        })
-      );
+      menuEl.style.top = `${window.scrollY + anchor.bottom + 8}px`;
+      menuEl.style.left = `${Math.max(12, Math.min(window.scrollX + anchor.left, window.innerWidth - 440))}px`;
+
+      const input = el<HTMLInputElement>("[data-ask-input]");
+      const close = () => {
+        menuEl.classList.remove("is-open");
+        menuEl.style.width = "";
+        document.removeEventListener("mousedown", away, true);
+      };
+      const away = (event: MouseEvent) => {
+        if (!menuEl.contains(event.target as Node)) close();
+      };
+      window.setTimeout(() => document.addEventListener("mousedown", away, true), 0);
+
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") { event.preventDefault(); close(); bodyEl.focus(); }
+      });
+
+      el<HTMLButtonElement>("[data-ask-layout]").addEventListener("click", async () => {
+        close();
+        await reviewLayout();
+      });
+
+      el<HTMLFormElement>("[data-ask]").addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const instruction = input.value.trim();
+        if (!instruction) return;
+        close();
+        await applyRewrite(instruction, passage, range, block);
+      });
+
+      input.focus();
     }
 
-    async function runTransform(id: Parameters<typeof transform>[1]) {
-      const sel = window.getSelection();
-      const block = currentBlock();
-      const selected = sel && !sel.isCollapsed ? sel.toString() : "";
-      const target = selected || (id === "dek" || id === "headline" || id === "takeaways"
-        ? htmlToMarkdown(bodyEl)
-        : block?.textContent ?? "");
-
-      if (!target.trim()) { setStatus("Nothing to work on yet.", "error"); return; }
-
+    async function applyRewrite(
+      instruction: string,
+      passage: string,
+      range: Range | null,
+      block: HTMLElement | null
+    ) {
       setStatus("Working…");
       try {
-        const result = await transform(state.ai, id, target, {
+        const result = await rewrite(state.ai, instruction, passage, {
           title: titleEl.textContent ?? "",
           description: standEl.textContent ?? "",
+          draft: htmlToMarkdown(bodyEl),
         });
+        if (!result.trim()) { setStatus("Nothing came back.", "error"); return; }
 
-        if (id === "dek") {
-          standEl.textContent = result.replace(/^["“]|["”]$/g, "");
-        } else if (id === "headline") {
-          const options = result.split("\n").map((l) => l.replace(/^\d+[.)]\s*/, "").trim()).filter(Boolean);
-          const pick = await chooseFrom(
-            "Pick a headline",
-            options.map((o) => `<span class="name">${esc(o.replace(/^["“]|["”]$/g, ""))}</span>`),
-            titleEl.getBoundingClientRect(),
-            "24rem"
-          );
-          const chosen = options[pick];
-          if (chosen) titleEl.textContent = chosen.replace(/^["“]|["”]$/g, "");
-        } else if (id === "takeaways") {
-          const first = bodyEl.firstElementChild as HTMLElement;
-          const holder = document.createElement("p");
-          bodyEl.prepend(holder);
-          insertCallout(holder, "KeyTakeaways");
-          const list = bodyEl.querySelector<HTMLElement>('[data-callout="KeyTakeaways"] ul');
-          if (list) list.innerHTML = result.split("\n").filter((l) => l.trim()).map((l) => `<li>${esc(l.replace(/^[-*]\s*/, ""))}</li>`).join("");
-          if (first) first.scrollIntoView({ block: "center" });
-        } else if (selected) {
+        if (range) {
+          const selection = window.getSelection();
+          selection?.removeAllRanges();
+          selection?.addRange(range);
+          bodyEl.focus();
           document.execCommand("insertText", false, result);
         } else if (block) {
           block.textContent = result;
+          placeCaret(block, true);
         }
         setStatus("Done — Ctrl+Z undoes it", "ok");
         touched();

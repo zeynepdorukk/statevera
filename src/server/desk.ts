@@ -198,10 +198,23 @@ interface AskBody {
   jsonOnly?: boolean;
 }
 
+async function listModels(env: DeskEnv): Promise<string[]> {
+  const response = await fetch("https://api.openai.com/v1/models", {
+    headers: { authorization: `Bearer ${env.OPENAI_KEY}` },
+  });
+  if (!response.ok) return [];
+  const listed = (await response.json()) as { data?: { id: string }[] };
+  return (listed.data ?? []).map((m) => m.id);
+}
+
+/** Model names get written with dots, capitals and underscores interchangeably. */
+const loosely = (id: string): string => id.toLowerCase().replace(/[._-]/g, "");
+
 /**
- * Model generations disagree about which parameters they accept. Rather than
- * guess, a rejected call is read and retried once without the parameter the
- * API actually named.
+ * Model generations disagree about which parameters they accept, and the name a
+ * model is written with is not always the id the API answers to. Rather than
+ * guess at either, a rejection is read: a refused parameter is dropped and the
+ * call repeated, and a refused model is looked up in the account's real list.
  */
 async function askOpenAI(env: DeskEnv, body: AskBody, signal?: AbortSignal): Promise<string> {
   const payload: Record<string, unknown> = {
@@ -228,15 +241,29 @@ async function askOpenAI(env: DeskEnv, body: AskBody, signal?: AbortSignal): Pro
 
   let response = await send(payload);
 
-  if (response.status === 400) {
+  if (response.status === 400 || response.status === 404) {
     const detail = await response.text();
-    const named = ["temperature", "max_completion_tokens", "response_format"].find((param) =>
-      detail.includes(param)
-    );
-    if (!named) throw new Error(readOpenAiError(detail));
-    const retry = { ...payload };
-    delete retry[named];
-    response = await send(retry);
+
+    if (/model/i.test(detail) && /does not exist|not found|unsupported/i.test(detail)) {
+      const wanted = String(payload.model);
+      const available = await listModels(env);
+      const match = available.find((id) => loosely(id) === loosely(wanted));
+      if (!match) {
+        throw new Error(
+          `No model called "${wanted}". This key can reach: ${available.slice(0, 40).join(", ") || "nothing"}.`
+        );
+      }
+      payload.model = match;
+      response = await send(payload);
+    } else {
+      const named = ["temperature", "max_completion_tokens", "response_format"].find((param) =>
+        detail.includes(param)
+      );
+      if (!named) throw new Error(readOpenAiError(detail));
+      const retry = { ...payload };
+      delete retry[named];
+      response = await send(retry);
+    }
   }
 
   const text = await response.text();
@@ -360,15 +387,7 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
 
     if (route === "models" && request.method === "GET") {
       if (!env.OPENAI_KEY) return fail(503, "No assistant key on the server.");
-      const response = await fetch("https://api.openai.com/v1/models", {
-        headers: { authorization: `Bearer ${env.OPENAI_KEY}` },
-      });
-      if (!response.ok) return fail(502, readOpenAiError(await response.text()));
-      const listed = (await response.json()) as { data?: { id: string }[] };
-      return json({
-        using: modelOf(env),
-        available: (listed.data ?? []).map((m) => m.id).sort(),
-      });
+      return json({ using: modelOf(env), available: (await listModels(env)).sort() });
     }
 
     if (route === "ai" && request.method === "POST") {

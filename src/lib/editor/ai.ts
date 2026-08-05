@@ -116,95 +116,51 @@ ${context.after.slice(0, 400)}`;
     ?.replace(/^["“]|["”]$/g, "") ?? "";
 }
 
-export type TransformId =
-  | "tighten"
-  | "expand"
-  | "clarify"
-  | "neutralise"
-  | "continue"
-  | "dek"
-  | "headline"
-  | "takeaways";
+// ------------------------------------------------------------
+// Say what you want
+// ------------------------------------------------------------
 
-const TRANSFORMS: Record<TransformId, { label: string; instruction: string; temperature: number }> = {
-  tighten: {
-    label: "Tighten",
-    instruction:
-      "Rewrite the passage so it says the same thing in noticeably fewer words. Keep every fact. Return only the rewritten passage.",
-    temperature: 0.3,
-  },
-  expand: {
-    label: "Develop",
-    instruction:
-      "Develop the passage by one short paragraph that follows logically from what is already there. Introduce no new facts, figures or names. Return the original passage followed by the new paragraph.",
-    temperature: 0.5,
-  },
-  clarify: {
-    label: "Clarify",
-    instruction:
-      "Rewrite the passage so a well-informed general reader can follow it without specialist knowledge. Keep the argument and the facts. Return only the rewritten passage.",
-    temperature: 0.35,
-  },
-  neutralise: {
-    label: "De-editorialise",
-    instruction:
-      "Rewrite the passage to remove loaded or evaluative language, leaving the reporting intact. Return only the rewritten passage.",
-    temperature: 0.25,
-  },
-  continue: {
-    label: "Continue",
-    instruction:
-      "Write the next paragraph of the piece. Introduce no new facts, figures or names. Return only the new paragraph.",
-    temperature: 0.55,
-  },
-  dek: {
-    label: "Standfirst",
-    instruction:
-      "Write one standfirst (dek) of 20-32 words that states what the piece argues and why it matters now. Return only the standfirst, no quotes.",
-    temperature: 0.5,
-  },
-  headline: {
-    label: "Headlines",
-    instruction:
-      "Suggest five headlines of at most nine words each. Declarative, specific, no colons unless necessary, no questions. Return them as a plain numbered list and nothing else.",
-    temperature: 0.7,
-  },
-  takeaways: {
-    label: "Key takeaways",
-    instruction:
-      "Write three key takeaways, each a single sentence of at most 28 words, drawn strictly from the text. Return them as a markdown bullet list and nothing else.",
-    temperature: 0.4,
-  },
-};
-
-export const transformList = (Object.keys(TRANSFORMS) as TransformId[]).map((id) => ({
-  id,
-  label: TRANSFORMS[id].label,
-}));
-
-export async function transform(
+/**
+ * Rewrites a passage according to whatever the writer typed. The rest of the
+ * piece goes in as context so the model can match the voice, but only the
+ * passage comes back.
+ */
+export async function rewrite(
   config: AiConfig,
-  id: TransformId,
-  text: string,
-  context: { title: string; description: string },
+  instruction: string,
+  passage: string,
+  context: { title: string; description: string; draft: string },
   signal?: AbortSignal
 ): Promise<string> {
-  const spec = TRANSFORMS[id];
-  const prompt = `${spec.instruction}
+  const prompt = `Rewrite the passage below according to the writer's instruction.
+
+The writer's instruction:
+${instruction}
+
+Rules:
+- Return ONLY the rewritten passage. No preamble, no explanation, no quotes, no
+  markdown fence, no commentary about what you changed.
+- Keep the writer's voice. Change only what the instruction asks for.
+- Keep any markdown that is already in the passage unless asked otherwise.
+- Invent no facts, figures, dates, quotations or named sources.
+- If the instruction cannot be carried out honestly, return the passage unchanged.
 
 Working title: ${context.title || "(untitled)"}
 Standfirst: ${context.description || "(none yet)"}
 
---- PASSAGE ---
-${text}`;
+--- THE PIECE SO FAR, FOR CONTEXT ONLY ---
+${context.draft.slice(0, 6000)}
+
+--- THE PASSAGE TO REWRITE ---
+${passage}`;
 
   const raw = await ask(config, prompt, {
     system: HOUSE_STYLE,
-    temperature: spec.temperature,
-    maxTokens: 800,
+    temperature: 0.4,
+    maxTokens: 1200,
     signal,
   });
-  return stripFence(raw);
+  return stripFence(raw).replace(/^["“]|["”]$/g, "");
 }
 
 // ------------------------------------------------------------
