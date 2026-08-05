@@ -1,9 +1,14 @@
 ---
 import EditorLayout from "../layouts/EditorLayout.astro";
+import { site } from "../site";
+
+// This page ships with the publication as well, where there is no server behind
+// it. Rather than let the writer hit a dead end, that build sends her onward.
+const hasServer = Boolean(process.env.NETLIFY);
 ---
 
 <EditorLayout title="Desk">
-  <div data-editor-root>
+  <div data-editor-root data-desk={String(hasServer)} data-desk-url={site.deskUrl}>
     <p class="ed-boot">Opening the desk…</p>
   </div>
 </EditorLayout>
@@ -2322,23 +2327,39 @@ import EditorLayout from "../layouts/EditorLayout.astro";
   // Boot
   // ==========================================================
 
-  const session = await readSession();
-  if (!session.configured) {
+  // On the publication's own deployment there is no server behind this page, and
+  // the writer is one build away from the desk. Say so before asking anything.
+  if (root.dataset.desk !== "true") {
+    const desk = `${root.dataset.deskUrl ?? ""}/editor`;
     view(`
       <div class="ed-signin">
         <p class="ed-legend">Statevera</p>
-        <h1 style="font-family:var(--font-serif);font-size:1.7rem;font-weight:700;line-height:1.1;margin:.3rem 0 1rem">The desk is not set up yet</h1>
-        <p class="ed-note">This page needs its server half. Add EDITOR_PASSWORD, SESSION_SECRET,
-        OPENAI_KEY and GITHUB_TOKEN to the deployment, then reload.</p>
+        <h1 style="font-family:var(--font-serif);font-size:1.7rem;font-weight:700;line-height:1.1;margin:.3rem 0 .8rem">The desk is not here</h1>
+        <p class="ed-note" style="margin-bottom:1.4rem">This address is the published site, which is
+        only files. Writing happens where there is a server to hold the keys.</p>
+        <a class="ed-btn ed-btn-primary" style="display:inline-flex" href="${esc(desk)}">Go to the desk &rarr;</a>
+        <p class="ed-note" style="margin-top:1rem">${esc(desk)}</p>
       </div>
     `);
-  } else if (session.signedIn) {
-    state.user = session.user;
-    state.assistant = session.assistant;
-    state.canPublish = session.canPublish;
-    state.model = session.model;
-    await openStories();
   } else {
-    signInView();
+    const session = await readSession();
+    if (!session.configured) {
+      view(`
+        <div class="ed-signin">
+          <p class="ed-legend">Statevera</p>
+          <h1 style="font-family:var(--font-serif);font-size:1.7rem;font-weight:700;line-height:1.1;margin:.3rem 0 1rem">The desk is not set up yet</h1>
+          <p class="ed-note">This page needs its server half. Add EDITOR_PASSWORD, SESSION_SECRET,
+          OPENAI_KEY and GITHUB_TOKEN to the deployment, then reload.</p>
+        </div>
+      `);
+    } else if (session.signedIn) {
+      state.user = session.user;
+      state.assistant = session.assistant;
+      state.canPublish = session.canPublish;
+      state.model = session.model;
+      await openStories();
+    } else {
+      signInView();
+    }
   }
 </script>

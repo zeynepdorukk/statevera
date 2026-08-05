@@ -34,6 +34,8 @@ export const site = {
 
   // Technical ------------------------------------------------
   siteUrl: "https://zeynepdorukk.github.io/statevera",
+  /** The editorial desk. It needs a server, so it is not on GitHub Pages. */
+  deskUrl: "https://statevera.netlify.app",
   defaultOgImage: "/images/branding/og-image.jpg",
   locale: "en",
   language: "en-US",
