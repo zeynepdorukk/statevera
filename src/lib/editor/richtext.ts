@@ -41,7 +41,7 @@ const escapeHtml = (value: string): string =>
 // ------------------------------------------------------------
 
 /** Inline markdown to HTML, for one line of text. */
-function inlineToHtml(text: string): string {
+export function inlineToHtml(text: string): string {
   let out = escapeHtml(text);
   out = out.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   out = out.replace(/(^|[^*])\*([^*\n]+)\*/g, "$1<em>$2</em>");
