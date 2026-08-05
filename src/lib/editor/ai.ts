@@ -1,24 +1,19 @@
 // ============================================================
 // EDITOR — AI assistance
 // ------------------------------------------------------------
-// Statevera is a static site: there is no server to hold a key.
-// The editor therefore uses the writer's OWN OpenAI key, entered
-// on the connections screen, kept in sessionStorage and sent
-// directly from her browser to OpenAI. It is never part of the
-// build and never reaches Statevera.
+// The OpenAI key is never in the browser. Every request goes to
+// the desk's own /api/ai, which is the only place that holds the
+// key and which refuses anyone without a signed-in session.
 //
+// This module owns the prompts; the transport is one function.
 // One provider, one model, no choices to make while writing.
 // ============================================================
 
-/** The only model the desk uses. Change it here and nowhere else. */
+/** The only model the desk uses. The server pins the same name. */
 export const MODEL = "gpt-5.6-LUNA";
-export const API_BASE = "https://api.openai.com/v1";
-export const KEY_URL = "https://platform.openai.com/api-keys";
-export const KEY_HINT = "sk-…";
 
-export interface AiConfig {
-  apiKey: string;
-}
+/** Kept as a type so the call sites read the same; there is nothing in it. */
+export type AiConfig = Record<string, never>;
 
 export interface AskOptions {
   system?: string;
@@ -39,85 +34,27 @@ export class AiError extends Error {
   }
 }
 
-const readError = async (res: Response): Promise<string> => {
-  const text = await res.text();
-  try {
-    const parsed = JSON.parse(text);
-    return parsed?.error?.message ?? parsed?.message ?? text.slice(0, 300);
-  } catch {
-    return text.slice(0, 300);
-  }
-};
-
-/** One-shot completion against the house model. */
+/** One-shot completion against the house model, by way of the desk's server. */
 export async function ask(
-  config: AiConfig,
+  _config: AiConfig,
   prompt: string,
   options: AskOptions = {}
 ): Promise<string> {
-  if (!config.apiKey) throw new AiError("No OpenAI key configured.");
-
   const { system, temperature = 0.5, maxTokens = 900, signal, json = false } = options;
 
-  const messages = [
-    ...(system ? [{ role: "system", content: system }] : []),
-    { role: "user", content: prompt },
-  ];
+  const res = await fetch("/api/ai", {
+    method: "POST",
+    signal,
+    credentials: "same-origin",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ prompt, system, temperature, maxTokens, jsonOnly: json }),
+  });
 
-  const send = async (body: Record<string, unknown>) =>
-    fetch(`${API_BASE}/chat/completions`, {
-      method: "POST",
-      signal,
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${config.apiKey}`,
-      },
-      body: JSON.stringify(body),
-    });
-
-  let body: Record<string, unknown> = {
-    model: MODEL,
-    messages,
-    temperature,
-    max_completion_tokens: maxTokens,
-    ...(json ? { response_format: { type: "json_object" } } : {}),
-  };
-
-  let res = await send(body);
-
-  // Model generations differ over which knobs they accept. Rather than guess,
-  // read the rejection and retry once without the parameter it named.
-  if (res.status === 400) {
-    const message = await readError(res);
-    const retry = { ...body };
-    let adjusted = false;
-
-    if (/temperature/i.test(message)) {
-      delete retry.temperature;
-      adjusted = true;
-    }
-    if (/max_completion_tokens/i.test(message)) {
-      delete retry.max_completion_tokens;
-      adjusted = true;
-    } else if (/max_tokens/i.test(message)) {
-      delete retry.max_completion_tokens;
-      retry.max_tokens = maxTokens;
-      adjusted = true;
-    }
-    if (/response_format/i.test(message)) {
-      delete retry.response_format;
-      adjusted = true;
-    }
-
-    if (!adjusted) throw new AiError(message, 400);
-    body = retry;
-    res = await send(body);
-  }
-
-  if (!res.ok) throw new AiError(await readError(res), res.status);
-  const data = await res.json();
-  return data?.choices?.[0]?.message?.content ?? "";
+  const data = (await res.json().catch(() => ({}))) as { text?: string; error?: string };
+  if (!res.ok) throw new AiError(data.error ?? `The assistant failed (${res.status}).`, res.status);
+  return data.text ?? "";
 }
+
 
 // ------------------------------------------------------------
 // Statevera house voice

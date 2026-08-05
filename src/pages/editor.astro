@@ -655,21 +655,18 @@ import EditorLayout from "../layouts/EditorLayout.astro";
 </style>
 
 <script>
-  import { MODEL, KEY_HINT, KEY_URL, type AiConfig, type LayoutSuggestion,
+  import { MODEL, type AiConfig, type LayoutSuggestion,
     completeInline, transform, suggestLayout, suggestMeta } from "../lib/editor/ai";
-  import { checkAccess, listDirectory, readFile, writeFile } from "../lib/editor/github";
+  import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile,
+    type FileEntry } from "../lib/editor/desk";
   import { parseDocument, serialiseArticle, serialiseExplainer, slugify,
     findBrokenCharacters, type ArticleFields, type ExplainerFields } from "../lib/editor/document";
   import { markdownToHtml, htmlToMarkdown, canvasText, countWords, readingMinutes,
     setAssetBase, CALLOUTS, type CalloutName } from "../lib/editor/richtext";
 
-  const PASSWORD_HASH = "ab6e9c72f635e31ba0aceea151f27e9d2dba668e0bfd521828ed7bb78f784be9";
   const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
   setAssetBase(import.meta.env.BASE_URL);
 
-  const K_AUTH = "sv-editor-auth";
-  const K_TOKEN = "sv-editor-gh";
-  const K_AI = "sv-editor-ai";
   const K_DRAFT = "sv-draft:";
 
   const DESKS = ["Politics", "Geopolitics", "Economy", "Culture", "Security", "Diplomacy", "Theory", "Opinion"];
@@ -692,29 +689,15 @@ import EditorLayout from "../layouts/EditorLayout.astro";
   const root = document.querySelector<HTMLElement>("[data-editor-root]")!;
 
   const state = {
-    token: sessionStorage.getItem(K_TOKEN) ?? "",
-    ai: { apiKey: sessionStorage.getItem(K_AI) ?? "" } as AiConfig,
+    user: "",
+    assistant: false,
+    canPublish: false,
+    ai: {} as AiConfig,
     stories: [] as Story[],
     images: [] as string[],
-    canWrite: false,
   };
 
-  const aiReady = () => Boolean(state.ai.apiKey);
-
-  async function loadLocalKey() {
-    if (!import.meta.env.DEV || state.ai.apiKey) return;
-    try {
-      const res = await fetch(`${BASE}/__dev/openai-key`);
-      if (!res.ok) return;
-      const { key } = await res.json();
-      if (typeof key === "string" && key.trim()) {
-        state.ai.apiKey = key.trim();
-        sessionStorage.setItem(K_AI, state.ai.apiKey);
-      }
-    } catch {
-      /* no local key */
-    }
-  }
+  const aiReady = () => state.assistant;
 
   const esc = (v: unknown) =>
     String(v ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -729,11 +712,6 @@ import EditorLayout from "../layouts/EditorLayout.astro";
     return (...a: A) => { window.clearTimeout(t); t = window.setTimeout(() => fn(...a), ms); };
   };
 
-  async function sha256Hex(text: string) {
-    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
-    return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
-  }
-
   // ==========================================================
   // Sign in
   // ==========================================================
@@ -746,68 +724,41 @@ import EditorLayout from "../layouts/EditorLayout.astro";
         ${message ? `<p class="ed-warn" style="margin-bottom:1rem">${esc(message)}</p>` : ""}
         <form data-signin>
           <div class="ed-field">
+            <label for="who">Name</label>
+            <input id="who" type="text" class="ed-input" required autocomplete="username" autocapitalize="off" spellcheck="false" />
+          </div>
+          <div class="ed-field" style="margin-top:.9rem">
             <label for="pw">Password</label>
             <input id="pw" type="password" class="ed-input" required autocomplete="current-password" />
           </div>
-          <button type="submit" class="ed-btn ed-btn-primary" style="width:100%;justify-content:center;margin-top:1rem">Start writing</button>
+          <button type="submit" class="ed-btn ed-btn-primary" style="width:100%;justify-content:center;margin-top:1.2rem" data-submit>Start writing</button>
+          <p class="note" style="margin-top:1rem">Nothing else to enter. The keys live on the server.</p>
         </form>
       </div>
     `);
-    el<HTMLFormElement>("[data-signin]").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      if ((await sha256Hex(el<HTMLInputElement>("#pw").value)) !== PASSWORD_HASH) {
-        signInView("That password is not right.");
-        return;
+
+    el<HTMLFormElement>("[data-signin]").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const button = el<HTMLButtonElement>("[data-submit]");
+      button.disabled = true;
+      button.textContent = "Checking…";
+      try {
+        const session = await signIn(el<HTMLInputElement>("#who").value, el<HTMLInputElement>("#pw").value);
+        state.user = session.user;
+        state.assistant = session.assistant;
+        state.canPublish = session.canPublish;
+        await openStories();
+      } catch (error) {
+        signInView((error as Error).message);
       }
-      sessionStorage.setItem(K_AUTH, "1");
-      await openStories();
     });
-    el<HTMLInputElement>("#pw").focus();
+    el<HTMLInputElement>("#who").focus();
   }
 
-  // ==========================================================
-  // Connections
-  // ==========================================================
-
-  function connectionsView(message = "") {
-    view(`
-      <div class="ed-signin" style="max-width:30rem">
-        <p class="ed-legend">Connections</p>
-        <h1 style="font-family:var(--font-serif);font-size:1.7rem;font-weight:700;line-height:1.1;margin:.3rem 0 1rem">Two keys</h1>
-        ${message ? `<p class="ed-warn" style="margin-bottom:1rem">${esc(message)}</p>` : ""}
-        <div class="ed-field">
-          <label for="gh">GitHub token</label>
-          <input id="gh" type="password" class="ed-input" placeholder="github_pat_…" value="${esc(state.token)}" autocomplete="off" />
-          <p class="note">Needed to open and publish stories. Fine-grained, Contents: Read &amp; Write.
-            <a class="link-tone" target="_blank" rel="noopener" href="https://github.com/settings/personal-access-tokens/new">Create one →</a></p>
-        </div>
-        <div class="ed-field">
-          <label for="ai">OpenAI key <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">— optional, for ${esc(MODEL)}</span></label>
-          <input id="ai" type="password" class="ed-input" placeholder="${esc(KEY_HINT)}" value="${esc(state.ai.apiKey)}" autocomplete="off" />
-          <p class="note">Goes straight from this browser to OpenAI. Never stored on the site.
-            <a class="link-tone" target="_blank" rel="noopener" href="${esc(KEY_URL)}">Get a key →</a></p>
-        </div>
-        <p class="note" style="margin-top:.8rem">Both keys are dropped when this tab closes.</p>
-        <div style="display:flex;gap:.5rem;margin-top:1.3rem">
-          <button type="button" class="ed-btn ed-btn-primary" data-go>Continue</button>
-          <button type="button" class="ed-btn ed-btn-quiet" data-out>Sign out</button>
-        </div>
-      </div>
-    `);
-    el<HTMLButtonElement>("[data-go]").addEventListener("click", async () => {
-      state.token = el<HTMLInputElement>("#gh").value.trim();
-      state.ai = { apiKey: el<HTMLInputElement>("#ai").value.trim() };
-      state.token ? sessionStorage.setItem(K_TOKEN, state.token) : sessionStorage.removeItem(K_TOKEN);
-      state.ai.apiKey ? sessionStorage.setItem(K_AI, state.ai.apiKey) : sessionStorage.removeItem(K_AI);
-      await openStories();
-    });
-    el<HTMLButtonElement>("[data-out]").addEventListener("click", signOut);
-  }
-
-  function signOut() {
-    [K_AUTH, K_TOKEN, K_AI].forEach((k) => sessionStorage.removeItem(k));
-    state.token = "";
-    state.ai = { apiKey: "" };
+  async function signOut() {
+    await signOutRequest().catch(() => {});
+    state.user = "";
+    state.assistant = false;
     signInView();
   }
 
@@ -817,26 +768,15 @@ import EditorLayout from "../layouts/EditorLayout.astro";
 
   async function openStories(notice = "") {
     view('<p class="ed-boot">Reading the archive…</p>');
-    if (!state.token) return connectionsView("Add a GitHub token to open your stories.");
 
     try {
-      const access = await checkAccess(state.token);
-      state.canWrite = access.canWrite;
-
-      const [articles, explainers, images] = await Promise.all([
-        listDirectory(state.token, "src/content/articles"),
-        listDirectory(state.token, "src/content/explainers"),
-        listDirectory(state.token, "public/images/articles").catch(() => []),
-      ]);
-
-      state.images = images
-        .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f.name))
-        .map((f) => `/images/articles/${f.name}`);
+      const library = await readLibrary();
+      state.images = library.images;
 
       const index: { url: string; title: string; category: string; region: string; date: string }[] =
         await fetch(`${BASE}/search-index.json`).then((r) => r.json()).catch(() => []);
 
-      const build = (kind: Kind) => (f: { name: string; path: string }): Story => {
+      const build = (kind: Kind) => (f: FileEntry): Story => {
         const slug = f.name.replace(/\.mdx?$/, "");
         const meta = index.find((i) => i.url.endsWith(`/${slug}`));
         return {
@@ -852,13 +792,13 @@ import EditorLayout from "../layouts/EditorLayout.astro";
       };
 
       state.stories = [
-        ...articles.filter((f) => /\.mdx?$/.test(f.name)).map(build("article")),
-        ...explainers.filter((f) => /\.mdx?$/.test(f.name)).map(build("explainer")),
+        ...library.articles.filter((f) => /\.mdx?$/.test(f.name)).map(build("article")),
+        ...library.explainers.filter((f) => /\.mdx?$/.test(f.name)).map(build("explainer")),
       ].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
       storiesView(notice);
     } catch (error) {
-      connectionsView(`GitHub: ${(error as Error).message}`);
+      signInView((error as Error).message);
     }
   }
 
@@ -879,7 +819,6 @@ import EditorLayout from "../layouts/EditorLayout.astro";
         </div>
         <div class="ed-bar-right">
           <span class="ed-bar-meta">${aiReady() ? `${esc(MODEL)} ready` : "assistant off"}</span>
-          <button type="button" class="ed-btn ed-btn-quiet" data-conn>Keys</button>
           <button type="button" class="ed-btn ed-btn-quiet" data-out>Sign out</button>
           <button type="button" class="ed-btn" data-new="explainer">New explainer</button>
           <button type="button" class="ed-btn ed-btn-primary" data-new="article">New story</button>
@@ -887,7 +826,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
       </div>
       <div class="ed-stories">
         ${notice ? `<p class="ed-note" data-state="ok" style="margin-bottom:1rem">${esc(notice)}</p>` : ""}
-        ${state.canWrite ? "" : '<p class="ed-warn" style="margin-bottom:1rem">This token cannot publish. Grant Contents: Read &amp; Write.</p>'}
+        ${state.canPublish ? "" : '<p class="ed-warn" style="margin-bottom:1rem">This deployment cannot publish — no GitHub token on the server. You can read and draft, but not save.</p>'}
         <h1 style="font-family:var(--font-serif);font-size:2rem;font-weight:700;margin-bottom:.3rem">Your stories</h1>
         <p class="ed-note" style="margin-bottom:1.6rem">${state.stories.length} pieces</p>
         ${state.stories.map(row).join("")}
@@ -900,7 +839,6 @@ import EditorLayout from "../layouts/EditorLayout.astro";
     root.querySelectorAll<HTMLButtonElement>("[data-new]").forEach((b) =>
       b.addEventListener("click", () => createStory(b.dataset.new as Kind))
     );
-    el<HTMLButtonElement>("[data-conn]").addEventListener("click", () => connectionsView());
     el<HTMLButtonElement>("[data-out]").addEventListener("click", signOut);
   }
 
@@ -939,8 +877,8 @@ import EditorLayout from "../layouts/EditorLayout.astro";
     const kind: Kind = path.includes("/explainers/") ? "explainer" : "article";
     const slug = path.split("/").pop()!.replace(/\.mdx?$/, "");
     try {
-      const file = await readFile(state.token, path);
-      const parsed = parseDocument(file.text);
+      const file = await readFile(path);
+      const parsed = parseDocument(file.content);
       const fm = parsed.frontmatter;
       const bool = (k: string) => fm[k] === "true";
       const local = localStorage.getItem(K_DRAFT + path);
@@ -2092,7 +2030,7 @@ import EditorLayout from "../layouts/EditorLayout.astro";
       }
       try {
         const result = await writeFile(
-          state.token, path, file,
+          path, file,
           `${isNew ? "Create" : "Edit"} ${kind} "${next.title}"`,
           sha || undefined
         );
@@ -2129,10 +2067,21 @@ import EditorLayout from "../layouts/EditorLayout.astro";
   // Boot
   // ==========================================================
 
-  await loadLocalKey();
-  if (sessionStorage.getItem(K_AUTH)) {
-    if (state.token) await openStories();
-    else connectionsView();
+  const session = await readSession();
+  if (!session.configured) {
+    view(`
+      <div class="ed-signin">
+        <p class="ed-legend">Statevera</p>
+        <h1 style="font-family:var(--font-serif);font-size:1.7rem;font-weight:700;line-height:1.1;margin:.3rem 0 1rem">The desk is not set up yet</h1>
+        <p class="ed-note">This page needs its server half. Add EDITOR_PASSWORD, SESSION_SECRET,
+        OPENAI_KEY and GITHUB_TOKEN to the deployment, then reload.</p>
+      </div>
+    `);
+  } else if (session.signedIn) {
+    state.user = session.user;
+    state.assistant = session.assistant;
+    state.canPublish = session.canPublish;
+    await openStories();
   } else {
     signInView();
   }

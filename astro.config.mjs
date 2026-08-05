@@ -30,45 +30,75 @@ function readProjectEnv(name) {
 }
 
 /**
- * Hands the local OpenAI key to the editor while running `astro dev`.
+ * Runs the desk's API locally, using the same handler that Cloudflare runs in
+ * production, so there is only one implementation to keep honest.
  *
- * `apply: "serve"` means this plugin does not exist during a build, and the key
- * is read from disk rather than from anything the bundler can see, so it cannot
- * end up in dist/. Put it in the gitignored .env:
- *
- *   OPENAI_KEY=sk-...
+ * `apply: "serve"` means this plugin does not exist during a build. Secrets are
+ * read from the gitignored .env at request time and never reach the bundler, so
+ * they cannot end up in dist/.
  */
-const DEV_KEY_PATH = "/__dev/openai-key";
 
 /** @type {import("vite").Plugin} */
-const devKeyPlugin = {
-  name: "statevera-dev-openai-key",
+const deskDevPlugin = {
+  name: "statevera-desk-api",
   apply: "serve",
   configureServer(server) {
-    const key = readProjectEnv("OPENAI_KEY");
+    /** @returns {Record<string, string>} */
+    const env = () => ({
+      EDITOR_USER: readProjectEnv("EDITOR_USER"),
+      EDITOR_PASSWORD: readProjectEnv("EDITOR_PASSWORD"),
+      SESSION_SECRET: readProjectEnv("SESSION_SECRET"),
+      OPENAI_KEY: readProjectEnv("OPENAI_KEY"),
+      GITHUB_TOKEN: readProjectEnv("GITHUB_TOKEN"),
+      GITHUB_REPO: readProjectEnv("GITHUB_REPO"),
+    });
+
+    const ready = env();
     console.log(
-      key
-        ? "  editor: OpenAI key loaded from .env — the assistant is ready in dev"
-        : "  editor: no OPENAI_KEY in .env — paste a key in the editor to use the assistant"
+      ready.EDITOR_PASSWORD && ready.SESSION_SECRET
+        ? `  desk: sign in as ${ready.EDITOR_USER || "zeynepdoruk"}${ready.OPENAI_KEY ? " — assistant ready" : " — no assistant key"}`
+        : "  desk: add EDITOR_PASSWORD and SESSION_SECRET to .env to sign in locally"
     );
 
-    // Mounted at the root and matched by hand: the base path is stripped from
-    // req.url at different points depending on middleware order.
     server.middlewares.use((req, res, next) => {
       const url = req.url ?? "";
-      const wanted = url.startsWith(DEV_KEY_PATH) || url.startsWith(`${BASE}${DEV_KEY_PATH}`);
-      if (!wanted) return next();
+      const path = url.startsWith(`${BASE}/api/`) ? url.slice(BASE.length) : url;
+      if (!path.startsWith("/api/")) return next();
 
-      // Only the editor page itself may read it, never another local page.
-      const site = req.headers["sec-fetch-site"];
-      const sameOrigin = site === undefined || site === "same-origin";
-
-      res.setHeader("Content-Type", "application/json");
-      res.setHeader("Cache-Control", "no-store");
-      res.end(JSON.stringify({ key: sameOrigin ? key : "" }));
+      /** @type {Buffer[]} */
+      const chunks = [];
+      req.on("data", (chunk) => chunks.push(chunk));
+      req.on("end", () => {
+        void (async () => {
+          try {
+            const { handleDesk } = await server.ssrLoadModule("/src/server/desk.ts");
+            const headers = new Headers();
+            for (const [name, value] of Object.entries(req.headers)) {
+              if (typeof value === "string") headers.set(name, value);
+              else if (Array.isArray(value)) headers.set(name, value.join(", "));
+            }
+            const request = new Request(`http://${req.headers.host ?? "localhost"}${path}`, {
+              method: req.method,
+              headers,
+              body: chunks.length ? Buffer.concat(chunks) : undefined,
+            });
+            const response = await handleDesk(request, env());
+            res.statusCode = response.status;
+            response.headers.forEach((/** @type {string} */ value, /** @type {string} */ name) =>
+              res.setHeader(name, value)
+            );
+            res.end(Buffer.from(await response.arrayBuffer()));
+          } catch (error) {
+            res.statusCode = 500;
+            res.setHeader("content-type", "application/json");
+            res.end(JSON.stringify({ error: String(error) }));
+          }
+        })();
+      });
     });
   },
 };
+
 
 // The site was reorganised around three pillars; these keep the addresses that
 // were published under the old structure working. Astro prefixes the base path
@@ -111,6 +141,6 @@ export default defineConfig({
   redirects: legacyRedirects,
   integrations: [mdx(), sitemap({ filter: (page) => !page.includes("/editor") })],
   vite: {
-    plugins: [tailwindcss(), devKeyPlugin],
+    plugins: [tailwindcss(), deskDevPlugin],
   },
 });

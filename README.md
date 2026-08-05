@@ -18,9 +18,10 @@ There is no placeholder content anywhere on the site.
 
 ```sh
 npm install
-npm run wire      # take a fresh snapshot of the wire
-npm run dev       # http://localhost:4321/statevera/
-npm run verify    # integrity checks + production build
+cp .env.example .env   # then fill in EDITOR_PASSWORD and SESSION_SECRET
+npm run wire           # take a fresh snapshot of the wire
+npm run dev            # http://localhost:4321/statevera/
+npm run verify         # integrity checks + production build
 ```
 
 > On Windows PowerShell use `npm.cmd`; the execution policy blocks `npm.ps1`.
@@ -173,49 +174,82 @@ API named, so the desk keeps working when the model changes underneath it.
 
 ### Access and keys
 
-- **Password**: `statevera2026` by default. Replace `PASSWORD_HASH` in
-  `src/pages/editor.astro` with the SHA-256 hex of a new one:
-  `node -e "console.log(require('crypto').createHash('sha256').update('newpassword').digest('hex'))"`
-- **GitHub token**: a fine-grained PAT with **Contents: Read and Write** on
-  `zeynepdorukk/statevera`. Required to save.
-- **OpenAI key**: optional, hers. Used only for `gpt-5.6-LUNA`.
+Zeynep signs in with a **name and a password**. That is the whole of it: there
+is no key to paste, no token to manage, and nothing sensitive in her browser.
 
-Both keys live in `sessionStorage` — this tab only, discarded when it closes.
-Neither is ever part of the build. `localStorage` is deliberately not used: the
-`zeynepdorukk.github.io` origin is shared with every other project on the
-account, and a write-scoped token should not outlive the tab.
+Everything privileged lives on the server half of the desk, in
+[src/server/desk.ts](src/server/desk.ts):
 
-The password gate is not a hard security boundary — anyone reading the page
-source can read the hash. The GitHub token is the real control over who can
-write.
+| Variable          | What it is                                              |
+| ----------------- | ------------------------------------------------------- |
+| `EDITOR_USER`     | the name she types (defaults to `zeynepdoruk`)          |
+| `EDITOR_PASSWORD` | the password she types                                  |
+| `SESSION_SECRET`  | signs the session cookie; changing it signs everyone out |
+| `OPENAI_KEY`      | the assistant. Without it the desk works, unassisted     |
+| `GITHUB_TOKEN`    | fine-grained PAT, **Contents: Read and Write**           |
+| `GITHUB_REPO`     | `zeynepdorukk/statevera`                                 |
 
-#### Why the OpenAI key is not a repository secret
+A successful sign-in returns a cookie that is `HttpOnly`, `Secure`,
+`SameSite=Lax` and good for twelve hours. `HttpOnly` means page scripts cannot
+read it even in principle, which is why `sessionStorage` is no longer used for
+anything but the local draft of the piece being written.
 
-The editor runs in the browser. A static site has no server, so a key baked in
-at build time is shipped to every visitor inside the JavaScript bundle — whether
-it came from a committed file, an `.env` or a GitHub Actions secret. There is no
-version of "put the key in the repo" that is safe here.
+The cookie carries `user.expiry.hmac`. Editing any part of it — extending the
+expiry, changing the name — invalidates the signature, so a session cannot be
+forged without `SESSION_SECRET`.
 
-What there is instead:
+Two further limits apply after sign-in, on the assumption that a session could
+one day be stolen:
 
-- **Locally**, set `OPENAI_KEY` as a machine environment variable or copy
-  `.env.example` to `.env` (git-ignored). While `npm run dev` is running, a
-  dev-only Vite middleware serves it to the editor so the key never has to be
-  pasted. The middleware carries `apply: "serve"`, so it does not exist in a
-  build, and the key is read from the environment rather than from anything the
-  bundler can see.
-- **In production**, the key is typed into the editor once per session and kept
-  in `sessionStorage`.
-- **`npm run check` scans `dist/` for credential shapes** (OpenAI, Anthropic,
-  GitHub, Google) and fails the build if it finds one. It reports the file and
-  the kind of token, never the value. This check runs in CI before every deploy,
-  so a key can never be published by accident.
+- **Only two folders are reachable.** `src/content/articles` and
+  `src/content/explainers`, matching `[a-z0-9-]+.mdx`. Anything else — `.env`,
+  a workflow file, a `../` traversal — is refused before GitHub is contacted.
+- **Mutating calls require a same-origin request.** `SameSite=Lax` already
+  blocks cross-site form posts; an explicit `Origin` check closes the rest.
 
-If a server-side key ever becomes necessary — to stop paying per-writer, or to
-call a model the browser cannot reach — the shape of the answer is a small proxy
-(a Cloudflare Worker or a Vercel function) that holds the key and forwards the
-request. Only then does a repository secret make sense, and it would live with
-the proxy rather than with this site.
+Login attempts are answered in constant time after a fixed delay, and both the
+name and the password are compared without leaking where they diverge.
+
+### Why the site is on GitHub Pages but the desk is not
+
+GitHub Pages serves files. It cannot run code, so it cannot hold a secret: a key
+baked in at build time is shipped to every visitor inside the JavaScript bundle,
+whether it came from a committed file, an `.env` or a GitHub Actions secret.
+There is no version of "put the key in the repo" that is safe.
+
+So the two halves are hosted separately:
+
+| | Where | What it holds |
+| --- | --- | --- |
+| The publication | GitHub Pages | static pages, free and unlimited |
+| The desk | Cloudflare Pages | `/editor` and `/api/*`, and every secret |
+
+Cloudflare was chosen because the editor and its API sit on the **same origin**
+there, which is what allows a first-party `HttpOnly` cookie. Static requests are
+free and unlimited; the free plan allows 100,000 function requests a day, and a
+writer working all day uses a few hundred.
+
+The public site is untouched by any of this. It has no login, no API and no
+JavaScript that knows the desk exists.
+
+#### Setting up the desk
+
+1. Create a free Cloudflare account and a **Pages** project connected to this
+   repository. Build command `npm run build`, output directory `dist`.
+2. Add the variables in the table above under **Settings → Environment
+   variables**, as **encrypted** values. They are write-only once saved.
+3. Deploy. The desk answers at `<project>.pages.dev`, and its front door
+   redirects to `/statevera/editor`.
+
+Locally, copy `.env.example` to `.env` and run `npm run dev`; the same handler
+runs behind the dev server, so there is one implementation to keep honest.
+Reads work without a `GITHUB_TOKEN` because the repository is public — the desk
+will open and render stories, and only refuse to publish.
+
+**`npm run check` scans `dist/` for credential shapes** (OpenAI, Anthropic,
+GitHub, Google) and fails the build if it finds one. It reports the file and the
+kind of token, never the value. This runs in CI before every deploy.
+
 
 ---
 
@@ -258,12 +292,16 @@ publish.
 ## Architecture
 
 ```
+functions/
+└── api/[[path]].ts         # Cloudflare entry point; one line, calls the router
+
 scripts/
-├── wire-sources.mjs       # feed registry + classification vocabulary
-├── fetch-wire.mjs         # the aggregation pipeline
-└── check-content.mjs      # encoding, BOM, wire and content guards
+├── wire-sources.mjs        # feed registry + classification vocabulary
+├── fetch-wire.mjs          # the aggregation pipeline
+└── check-content.mjs       # encoding, BOM, wire and credential guards
 
 src/
+├── server/desk.ts          # sign-in, sessions, GitHub and OpenAI — the only secret holder
 ├── site.ts                # pillars, navigation, desks, regions — one source of truth
 ├── content.config.ts      # Zod schemas
 ├── data/
@@ -271,7 +309,7 @@ src/
 │   ├── wire.ts            # typed access + lead selection
 │   └── imageCredits.ts    # attribution for the journal's own pictures
 ├── utils/collection.ts    # journal data access
-├── lib/editor/            # ai.ts · github.ts · document.ts · richtext.ts
+├── lib/editor/            # ai.ts · desk.ts · document.ts · richtext.ts
 ├── styles/global.css      # three-colour design system
 ├── layouts/BaseLayout.astro
 ├── layouts/EditorLayout.astro      # chrome-free shell for the desk
