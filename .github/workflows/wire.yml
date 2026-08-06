@@ -1,7 +1,7 @@
 name: Refresh the wire
 
 # The site is static, so the News feed is a snapshot. This job retakes it every
-# fifteen minutes and commits changes, which in turn triggers the Pages deploy.
+# fifteen minutes and commits changes, which in turn triggers the Netlify deploy.
 
 on:
   schedule:

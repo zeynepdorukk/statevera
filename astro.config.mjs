@@ -7,10 +7,10 @@ import { unified } from "@astrojs/markdown-remark";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 
-// GitHub Pages serves the repository under /statevera/. Netlify serves the desk
-// from the root, so the base has to follow the host or every link and asset on
-// the desk points at a path that does not exist there.
-const BASE = process.env.NETLIFY ? "" : "/statevera";
+// The publication is served from the root of statevera.netlify.app, which also
+// runs the desk. There is no base path any more: the GitHub Pages deployment,
+// which needed /statevera/, has been retired.
+const BASE = "";
 
 /**
  * Reads one key out of the project's .env.
@@ -161,7 +161,7 @@ const legacyRedirects = Object.fromEntries(
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://zeynepdorukk.github.io",
+  site: "https://statevera.netlify.app",
   base: `${BASE}/`,
   output: "static",
   trailingSlash: "ignore",
