@@ -13,6 +13,18 @@ const indices = [
   { id: "stoxx", label: "STOXX", symbol: "^STOXX50E", decimals: 2 },
   { id: "ftse", label: "FTSE", symbol: "^FTSE", decimals: 2 },
   { id: "n225", label: "N225", symbol: "^N225", decimals: 2 },
+  { id: "bist", label: "BIST100", symbol: "XU100.IS", decimals: 2 },
+  { id: "hsi", label: "HANG SENG", symbol: "^HSI", decimals: 2 },
+  { id: "kospi", label: "KOSPI", symbol: "^KS11", decimals: 2 },
+  { id: "shanghai", label: "SHANGHAI", symbol: "000001.SS", decimals: 2 },
+  { id: "brent", label: "BRENT", symbol: "BZ=F", decimals: 2 },
+  { id: "gold", label: "GOLD", symbol: "GC=F", decimals: 2 },
+  { id: "wti", label: "WTI", symbol: "CL=F", decimals: 2 },
+  { id: "copper", label: "COPPER", symbol: "HG=F", decimals: 2 },
+  { id: "usdtry", label: "USD/TRY", symbol: "USDTRY=X", decimals: 2 },
+  { id: "eurusd", label: "EUR/USD", symbol: "EURUSD=X", decimals: 4 },
+  { id: "usdjpy", label: "USD/JPY", symbol: "JPY=X", decimals: 2 },
+  { id: "us10y", label: "US 10Y", symbol: "^TNX", decimals: 2 },
 ];
 
 const previous = existsSync(OUT) ? JSON.parse(readFileSync(OUT, "utf8")) : { quotes: [] };
