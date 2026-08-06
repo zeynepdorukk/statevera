@@ -18,9 +18,10 @@ const formatChange = (quote) => {
 
 {quotes.length > 0 && (
   <section class="market-ticker" aria-label="Market indices" title="Delayed market data">
-    <div class="market-heading" aria-hidden="true">
-      <span class="market-pulse"></span>
-      Markets
+    <div class="market-divider" aria-hidden="true">
+      <span class="market-divider-wire"></span>
+      <span class="market-divider-journal"></span>
+      <span class="market-divider-risk"></span>
     </div>
     <div class="market-viewport">
       <div class="market-track">
@@ -56,32 +57,35 @@ const formatChange = (quote) => {
     align-self: stretch;
     display: flex;
     overflow: hidden;
-    border-left: 2px solid var(--line-strong);
     background: var(--paper-tint);
   }
 
-  .market-heading {
+  .market-divider {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
+    justify-content: center;
+    gap: 0.2rem;
     flex: 0 0 auto;
-    padding: 0 0.8rem;
+    width: 2.4rem;
     border-right: 1px solid var(--line);
-    color: var(--muted);
-    font-family: var(--font-sans);
-    font-size: 0.61rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
   }
 
-  .market-pulse {
-    width: 0.38rem;
-    height: 0.38rem;
-    border-radius: 999px;
+  .market-divider span {
+    display: block;
+    width: 2px;
+    height: 1.25rem;
+  }
+
+  .market-divider-wire {
+    background: var(--wire);
+  }
+
+  .market-divider-journal {
     background: var(--journal);
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--journal) 45%, transparent);
-    animation: market-pulse 2.2s ease-out infinite;
+  }
+
+  .market-divider-risk {
+    background: var(--ink);
   }
 
   .market-viewport {
@@ -151,15 +155,6 @@ const formatChange = (quote) => {
     }
   }
 
-  @keyframes market-pulse {
-    70% {
-      box-shadow: 0 0 0 0.32rem transparent;
-    }
-    100% {
-      box-shadow: 0 0 0 0 transparent;
-    }
-  }
-
   @media (max-width: 1023px) {
     :global(.news-toolbar) {
       display: block;
@@ -170,13 +165,14 @@ const formatChange = (quote) => {
       border-top: 1px solid var(--line);
       border-left: 0;
     }
+
+    .market-divider {
+      width: 2.8rem;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .market-track {
-      animation: none;
-    }
-    .market-pulse {
       animation: none;
     }
   }
