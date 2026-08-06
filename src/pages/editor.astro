@@ -1024,26 +1024,67 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
   .ed-form-peek {
     position: relative;
     z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     align-self: flex-start;
-    margin-top: 0.75rem;
-    border: 1px solid var(--line-strong);
-    border-radius: 2px;
-    background: transparent;
-    padding: 0.3rem 0.65rem;
+    margin-top: 0.85rem;
+    border: 1px solid color-mix(in srgb, var(--journal) 55%, transparent);
+    border-radius: 999px;
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--journal) 22%, transparent),
+        color-mix(in srgb, var(--journal) 10%, transparent)
+      );
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--journal) 35%, transparent),
+      0 0 0 0 color-mix(in srgb, var(--journal) 0%, transparent);
+    padding: 0.38rem 0.85rem 0.38rem 0.72rem;
     cursor: pointer;
     font-family: var(--font-sans);
-    font-size: 0.64rem;
+    font-size: 0.66rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--journal-deep);
     transition:
-      color 0.14s ease,
-      border-color 0.14s ease;
+      color 0.16s ease,
+      border-color 0.16s ease,
+      background 0.16s ease,
+      box-shadow 0.16s ease,
+      transform 0.16s ease;
+  }
+  .ed-form-peek svg {
+    width: 0.85rem;
+    height: 0.85rem;
+    flex: none;
+    opacity: 0.95;
   }
   .ed-form-peek:hover {
-    color: var(--ink);
-    border-color: var(--ink);
+    color: #1b1e21;
+    border-color: var(--journal);
+    background: linear-gradient(180deg, var(--journal-deep), var(--journal));
+    box-shadow:
+      0 0 0 3px color-mix(in srgb, var(--journal) 22%, transparent),
+      0 8px 18px color-mix(in srgb, var(--journal) 18%, transparent);
+    transform: translateY(-1px);
+  }
+  .ed-form-peek:active {
+    transform: translateY(0);
+    box-shadow:
+      0 0 0 2px color-mix(in srgb, var(--journal) 18%, transparent),
+      0 3px 8px color-mix(in srgb, var(--journal) 14%, transparent);
+  }
+  .ed-form-peek:focus-visible {
+    outline: 2px solid var(--journal);
+    outline-offset: 3px;
+  }
+  .ed-form:hover .ed-form-peek {
+    border-color: color-mix(in srgb, var(--journal) 75%, transparent);
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--journal) 40%, transparent),
+      0 0 0 3px color-mix(in srgb, var(--journal) 12%, transparent);
   }
 
   /* ---------- what a form looks like written out ---------- */
@@ -1787,7 +1828,13 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         <h2 class="ed-form-name"><button type="button" class="ed-form-use" data-use>${esc(t.name)}</button></h2>
         <p class="ed-form-blurb">${esc(t.blurb)}</p>
         <div class="ed-form-shape">${t.shape.map((part) => `<span>${esc(part)}</span>`).join("")}</div>
-        <button type="button" class="ed-form-peek" data-peek>Preview</button>
+        <button type="button" class="ed-form-peek" data-peek>
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+          <span>Preview</span>
+        </button>
       </article>`;
 
     view(`
