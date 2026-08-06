@@ -49,71 +49,74 @@ const updated = `${formatDate(wireGeneratedAt)} ${formatTime(wireGeneratedAt)} U
       ))}
     </nav>
 
-    <!-- Leads -->
-    <section class="grid gap-x-8 gap-y-8 py-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,4fr)]" aria-label="Leading stories">
-      {leads[0] && <WireCard item={leads[0]} variant="lead" priority headingLevel="h2" />}
-      <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-1 lg:border-l lg:border-line lg:pl-8">
-        {leads.slice(1).map((item) => (
-          <WireCard item={item} variant="feature" priority />
-        ))}
-      </div>
-    </section>
+    <div class="grid gap-x-8 gap-y-8 py-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,4fr)]">
+      <div class="contents lg:block">
+        <section class="order-1" aria-label="Leading stories">
+          {leads[0] && <WireCard item={leads[0]} variant="lead" priority headingLevel="h2" />}
+        </section>
 
-    <!-- Full stream -->
-    <section class="grid gap-x-8 gap-y-10 border-t-2 border-ink pt-7 pb-6 lg:grid-cols-[minmax(0,7.2fr)_minmax(0,2.8fr)]" aria-label="All reporting">
-      <div>
-        <SectionHead title="Every story" tone="wire" />
-        <div class="grid gap-x-7 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
-          {stream.slice(0, 45).map((item, i) => (
-            <WireCard item={item} variant={item.image && i < 12 ? "feature" : "compact"} showDek={i < 12} />
+        <section class="order-3 border-t-2 border-ink pt-7 pb-6 lg:order-none lg:mt-8" aria-label="All reporting">
+          <SectionHead title="Every story" tone="wire" />
+          <div class="grid gap-x-7 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
+            {stream.slice(0, 45).map((item, i) => (
+              <WireCard item={item} variant={item.image && i < 12 ? "feature" : "compact"} showDek={i < 12} />
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <aside class="order-2 lg:order-none lg:border-l lg:border-line lg:pl-8" aria-label="News index">
+        <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-1">
+          {leads.slice(1).map((item) => (
+            <WireCard item={item} variant="feature" priority />
           ))}
         </div>
-      </div>
 
-      <aside class="lg:border-l lg:border-line lg:pl-8" aria-label="Wire index">
-        <SectionHead title="By region" tone="wire" href="/regions" moreLabel="Regions" />
-        <ul class="rule-list">
-          {regionCounts.map(({ region, count }) => {
-            const slug = regionSlugOf(region);
-            return (
-              <li class="flex items-baseline justify-between gap-3">
-                {slug in regions ? (
-                  <a href={root(`/regions/${slug}`)} class="editorial-link font-sans text-[0.86rem] font-medium text-ink">
-                    {region}
-                  </a>
-                ) : (
-                  <span class="font-sans text-[0.86rem] text-ink">{region}</span>
-                )}
-                <span class="meta tabular">{count}</span>
-              </li>
-            );
-          })}
-        </ul>
-
-        <div class="mt-8 border border-line bg-paper-soft p-5">
-          <p class="kicker-ink">How the news feed works</p>
-          <p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
-            Statevera reads the public feeds of {wirePublishers.length} newsrooms and
-            institutions, keeps what belongs to international affairs, and sorts it by
-            desk and region. Headlines and short summaries only — every story opens at
-            the publisher.
-          </p>
-          <p class="mt-3 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
-            For original work, see
-            <a href={root("/journal")} class="link-tone">Journal</a>.
-          </p>
-        </div>
-
-        <div class="mt-6">
-          <p class="kicker-ink mb-2">Sources</p>
-          <ul class="flex flex-wrap gap-x-3 gap-y-1">
-            {wirePublishers.map((publisher) => (
-              <li class="font-sans text-[0.76rem] text-muted">{publisher}</li>
-            ))}
+        <div class="mt-10 border-t-2 border-ink pt-7" aria-label="Wire index">
+          <SectionHead title="By region" tone="wire" href="/regions" moreLabel="Regions" />
+          <ul class="rule-list">
+            {regionCounts.map(({ region, count }) => {
+              const slug = regionSlugOf(region);
+              return (
+                <li class="flex items-baseline justify-between gap-3">
+                  {slug in regions ? (
+                    <a href={root(`/regions/${slug}`)} class="editorial-link font-sans text-[0.86rem] font-medium text-ink">
+                      {region}
+                    </a>
+                  ) : (
+                    <span class="font-sans text-[0.86rem] text-ink">{region}</span>
+                  )}
+                  <span class="meta tabular">{count}</span>
+                </li>
+              );
+            })}
           </ul>
+
+          <div class="mt-8 border border-line bg-paper-soft p-5">
+            <p class="kicker-ink">How the news feed works</p>
+            <p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
+              Statevera reads the public feeds of {wirePublishers.length} newsrooms and
+              institutions, keeps what belongs to international affairs, and sorts it by
+              desk and region. Headlines and short summaries only — every story opens at
+              the publisher.
+            </p>
+            <p class="mt-3 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
+              For original work, see
+              <a href={root("/journal")} class="link-tone">Journal</a>.
+            </p>
+          </div>
+
+          <div class="mt-6">
+            <p class="kicker-ink mb-2">Sources</p>
+            <ul class="flex flex-wrap gap-x-3 gap-y-1">
+              {wirePublishers.map((publisher) => (
+                <li class="font-sans text-[0.76rem] text-muted">{publisher}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </aside>
-    </section>
+    </div>
   </div>
 </BaseLayout>
 
