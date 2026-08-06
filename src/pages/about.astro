@@ -12,7 +12,7 @@ const jsonLd = [
     foundingDate: site.founded,
     description: site.publicationDescription,
     founder: { "@type": "Person", name: site.authorName },
-    logo: new URL(root("/images/branding/logo-512.png"), site.siteUrl).toString(),
+    logo: new URL(root("/images/branding/logo-mark-light.svg"), site.siteUrl).toString(),
     sameAs: [site.socialLinks.x, site.socialLinks.linkedin],
   },
 ];
