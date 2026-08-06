@@ -107,7 +107,7 @@ if (!existsSync(wirePath)) {
 // 3. Content sanity
 // ------------------------------------------------------------
 
-for (const dir of ["src/content/articles", "src/content/explainers"]) {
+for (const dir of ["src/content/articles"]) {
   const full = join(ROOT, dir);
   if (!existsSync(full)) continue;
   for (const name of readdirSync(full)) {
@@ -115,6 +115,9 @@ for (const dir of ["src/content/articles", "src/content/explainers"]) {
     const text = readFileSync(join(full, name), "utf8");
     if (!text.startsWith("---")) problems.push(`${dir}/${name}: no frontmatter`);
     if (/\bsample:\s*true/.test(text)) problems.push(`${dir}/${name}: still flagged as sample content`);
+    if (/^heroImage:\s*["']?\s*["']?\s*$/m.test(text) && !/^draft:\s*true/m.test(text)) {
+      problems.push(`${dir}/${name}: published with no lead image`);
+    }
   }
 }
 

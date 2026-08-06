@@ -1,12 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { liveChannels, liveEmbedUrl } from "../data/live";
-import { latest } from "../data/wire";
+import { spread, wireItems } from "../data/wire";
 import { relativeTime, wireDate } from "../data/wire";
 import { root } from "../utils/collection";
 
 const selectedChannel = liveChannels[0];
-const stories = latest(4);
+const stories = spread(wireItems, 4, 1);
 ---
 
 <BaseLayout
@@ -16,6 +16,7 @@ const stories = latest(4);
   hideTicker
 >
   <div class="live-page shell pt-0" data-tone="wire">
+    <h1 class="sr-only">LIVE — international news channels</h1>
     <div class="live-grid">
       <section class="live-player-column" aria-label="Live player">
         <div class="live-player-frame">
@@ -36,6 +37,8 @@ const stories = latest(4);
                 data-live-channel-logo
                 src={root(selectedChannel.logo)}
                 alt=""
+                width="96"
+                height="32"
                 class="live-now-logo"
                 aria-hidden="true"
               />
@@ -59,7 +62,7 @@ const stories = latest(4);
               role="tab"
               aria-selected={index === 0 ? "true" : "false"}
             >
-              <img src={root(channel.logo)} alt="" class="live-channel-logo" aria-hidden="true" />
+              <img src={root(channel.logo)} alt="" width="64" height="22" class="live-channel-logo" aria-hidden="true" />
               {channel.shortName}
             </button>
           ))}

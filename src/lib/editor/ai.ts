@@ -776,7 +776,7 @@ const KIND_SET = new Set(["structure", "image", "callout", "typography", "cut"])
  */
 export async function suggestLayout(
   config: AiConfig,
-  draft: { title: string; description: string; body: string; kind: "article" | "explainer" },
+  draft: { title: string; description: string; body: string; kind: "article" },
   signal?: AbortSignal
 ): Promise<LayoutSuggestion[]> {
   const prompt = `You are laying out a piece for a serious international-affairs publication.

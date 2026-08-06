@@ -34,7 +34,6 @@ export interface Session {
 
 export interface Library {
   articles: FileEntry[];
-  explainers: FileEntry[];
   images: string[];
 }
 

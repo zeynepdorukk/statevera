@@ -26,11 +26,13 @@ export const site = {
     "Zeynep Doruk is the editor and sole writer of Statevera. She covers international security, diplomacy and political economy, with reporting interests spanning Europe, the Middle East and the Eastern Mediterranean. Her work focuses on the intersection of strategy, economics and statecraft.",
 
   // Links ----------------------------------------------------
+  // Empty means "no account yet": the footer and About page leave the link out
+  // rather than publishing an address that 404s.
   socialLinks: {
-    x: "https://x.com/stateverainews",
-    linkedin: "https://www.linkedin.com/company/statevera",
+    x: "",
+    linkedin: "",
     rss: "/rss.xml",
-    email: "editor@statevera.example",
+    email: "",
   },
 
   // Technical ------------------------------------------------
@@ -74,7 +76,7 @@ export const pillars: Record<PillarId, Pillar> = {
     url: "/journal",
     tagline: "Signed analysis and reference",
     description:
-      "Original analysis, essays and evergreen explainers written for Statevera by Zeynep Doruk.",
+      "Original analysis and essays written for Statevera by Zeynep Doruk.",
     tone: "journal",
   },
   risk: {
@@ -190,14 +192,6 @@ export const journalSections = {
     description:
       "Academic summaries and theoretical essays on international relations and economics.",
     url: "/journal/theory",
-  },
-  explainers: {
-    slug: "explainers",
-    name: "Explainers",
-    tagline: "The ideas that run the world, explained",
-    description:
-      "Evergreen guides to the concepts, institutions and chokepoints of international relations.",
-    url: "/explainers",
   },
 } as const;
 

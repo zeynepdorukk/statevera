@@ -13,6 +13,7 @@ const GLORISK_URL = "https://zeynepdorukk.github.io/Glorisk/";
   hideFooter
 >
   <div class="w-full bg-paper">
+    <h1 class="sr-only">GLORISK — geopolitical risk, scored</h1>
     <iframe
       src={GLORISK_URL}
       title="GLORISK"
@@ -21,5 +22,9 @@ const GLORISK_URL = "https://zeynepdorukk.github.io/Glorisk/";
       allow="fullscreen"
       referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
+    <p class="shell py-4 text-center font-serif text-[0.95rem] text-ink-soft">
+      If the tool does not load,{" "}
+      <a href={GLORISK_URL} class="link-tone" target="_blank" rel="noopener">open GLORISK in a new tab</a>.
+    </p>
   </div>
 </BaseLayout>

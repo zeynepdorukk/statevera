@@ -19,6 +19,8 @@ export interface WireItem {
   publisherHome: string;
   sourceId: string;
   publishedAt: string;
+  /** True when the feed carried no date and this is when Statevera first saw the link. */
+  dateEstimated?: boolean;
   image: string;
   /** Declared width of the picture in the feed. 0 means unknown. */
   imageWidth: number;
@@ -72,6 +74,33 @@ export function latest(count = 12): WireItem[] {
   return wireItems.slice(0, count);
 }
 
+/**
+ * Caps how many items one masthead may take in a single list. Feeds publish in
+ * bursts, and one of them would otherwise fill the front page on its own.
+ * Anything held back is appended rather than lost, so the list is never short.
+ */
+export function spread(items: WireItem[], count: number, maxPerPublisher = 2): WireItem[] {
+  const used = new Map<string, number>();
+  const picked: WireItem[] = [];
+  const held: WireItem[] = [];
+
+  for (const item of items) {
+    if (picked.length >= count) break;
+    const taken = used.get(item.publisher) ?? 0;
+    if (taken < maxPerPublisher) {
+      used.set(item.publisher, taken + 1);
+      picked.push(item);
+    } else {
+      held.push(item);
+    }
+  }
+  for (const item of held) {
+    if (picked.length >= count) break;
+    picked.push(item);
+  }
+  return picked;
+}
+
 /** Illustrated items, newest first — used wherever the layout needs pictures. */
 export function withImages(count = 6, exclude: ReadonlySet<string> = new Set()): WireItem[] {
   return wireItems.filter((i) => canLead(i) && !exclude.has(i.id)).slice(0, count);
@@ -79,20 +108,25 @@ export function withImages(count = 6, exclude: ReadonlySet<string> = new Set()):
 
 /**
  * The lead slots. Prefers items with a picture large enough to carry a headline,
- * then falls back to whatever is newest, never repeating an item.
+ * then falls back to whatever is newest, never repeating an item and never
+ * letting one masthead hold more than a single lead while alternatives exist.
  */
 export function leadStories(count = 4): WireItem[] {
   const chosen: WireItem[] = [];
   const seen = new Set<string>();
-  const push = (item: WireItem) => {
+  const used = new Map<string, number>();
+  const push = (item: WireItem, maxPerPublisher: number) => {
     if (seen.has(item.id) || chosen.length >= count) return;
+    if ((used.get(item.publisher) ?? 0) >= maxPerPublisher) return;
     seen.add(item.id);
+    used.set(item.publisher, (used.get(item.publisher) ?? 0) + 1);
     chosen.push(item);
   };
 
-  for (const item of wireItems) if (canLead(item) && item.weight >= 2) push(item);
-  for (const item of wireItems) if (canLead(item)) push(item);
-  for (const item of wireItems) push(item);
+  for (const item of wireItems) if (canLead(item) && item.weight >= 2) push(item, 1);
+  for (const item of wireItems) if (canLead(item)) push(item, 2);
+  for (const item of wireItems) push(item, 2);
+  for (const item of wireItems) push(item, Number.POSITIVE_INFINITY);
   return chosen;
 }
 

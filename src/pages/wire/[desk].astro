@@ -34,6 +34,7 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
   tone="wire"
 >
   <div class="shell pt-0" data-tone="wire">
+    <h1 class="sr-only">{desk.name} — {desk.tagline}</h1>
     <div class="news-toolbar">
       <nav aria-label="Other desks" class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
         <a href={root("/wire")} class="desk-pill">All</a>

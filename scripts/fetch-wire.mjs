@@ -230,19 +230,26 @@ const countMatches = (re, text) => {
 /**
  * Score every rule and take the strongest, rather than the first match:
  * a headline that mentions one country in passing should not outrank the
- * country it is actually about. Title hits count double.
+ * country it is actually about. Title hits count double, and are reported
+ * separately because the relevance gate cares where the evidence came from.
  */
 function classify(matchers, title, summary) {
   let best = null;
   let bestScore = 0;
+  let inTitle = 0;
+  let inSummary = 0;
   for (const { value, re } of matchers) {
-    const score = countMatches(re, title) * 2 + countMatches(re, summary);
+    const titleHits = countMatches(re, title);
+    const summaryHits = countMatches(re, summary);
+    const score = titleHits * 2 + summaryHits;
     if (score > bestScore) {
       bestScore = score;
       best = value;
+      inTitle = titleHits;
+      inSummary = summaryHits;
     }
   }
-  return { value: best, score: bestScore };
+  return { value: best, score: bestScore, inTitle, inSummary };
 }
 
 // ------------------------------------------------------------
@@ -264,7 +271,7 @@ async function fetchFeed(source) {
   return new TextDecoder("utf-8").decode(buffer);
 }
 
-function toItems(source, xml) {
+function toItems(source, xml, firstSeen) {
   const blocks = parseFeed(xml).slice(0, source.take * 3);
   const cutoff = Date.now() - MAX_AGE_DAYS * 86400000;
   const items = [];
@@ -290,16 +297,28 @@ function toItems(source, xml) {
 
     const matched = classify(CATEGORY_MATCHERS, title, summary);
 
-    // Relevance gate: a general news desk item must read as international affairs,
-    // and must do so on the strength of the headline rather than a passing mention.
-    // Feeds that only ever publish on-topic material carry their own category prior.
-    const category = matched.score >= 2 ? matched.value : source.category;
+    // Relevance gate: the HEADLINE has to read as international affairs. Evidence
+    // from the summary alone is not enough — "government" appearing twice in a
+    // blurb admitted a story about Danish exam rules — so a summary-only match
+    // needs to be emphatic. Only institutions and analysis desks, which publish
+    // nothing else, may fall back on their own category; a general newsroom's
+    // business or politics section also carries consumer and local copy.
+    const relevant = matched.inTitle >= 1 || matched.inSummary >= 3;
+    const category = relevant ? matched.value : source.alwaysOnTopic ? source.category : null;
     if (!category) {
       dropped++;
       continue;
     }
 
     const image = itemImage(block);
+
+    // A feed that publishes no dates would otherwise be stamped "now" on every
+    // run, so it would sit permanently at the top of the site. Remember when the
+    // link was first seen instead, and let it age like everything else.
+    const seen = firstSeen.get(link);
+    const publishedAt = date
+      ? date.toISOString()
+      : (seen ?? new Date().toISOString());
 
     items.push({
       id: createHash("sha1").update(link).digest("hex").slice(0, 12),
@@ -309,7 +328,8 @@ function toItems(source, xml) {
       publisher: source.publisher,
       publisherHome: source.home,
       sourceId: source.id,
-      publishedAt: (date ?? new Date()).toISOString(),
+      publishedAt,
+      ...(date ? {} : { dateEstimated: true }),
       image: image.url,
       imageWidth: image.width,
       category,
@@ -334,10 +354,17 @@ function toItems(source, xml) {
 
 const previous = existsSync(OUT) ? JSON.parse(readFileSync(OUT, "utf8")) : { items: [] };
 
+/** When each undated link was first collected, so its age is real after the first run. */
+const firstSeen = new Map(
+  (previous.items ?? [])
+    .filter((item) => item.dateEstimated && item.url && item.publishedAt)
+    .map((item) => [item.url, item.publishedAt])
+);
+
 const results = await Promise.allSettled(
   sources.map(async (source) => {
     const xml = await fetchFeed(source);
-    return { source, ...toItems(source, xml) };
+    return { source, ...toItems(source, xml, firstSeen) };
   })
 );
 

@@ -33,7 +33,7 @@ export interface Template {
   /** Roughly how long the finished piece runs. */
   length: string;
   /** Frontmatter type, which decides how the piece is labelled on the site. */
-  type: "analysis" | "news" | "opinion" | "explainer";
+  type: "analysis" | "news" | "opinion";
   /** Preselected desk, where the form implies one. */
   category?: string;
   /** The run of the piece, for the card. Not every form marks its parts with headings. */

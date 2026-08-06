@@ -130,19 +130,6 @@ export interface ArticleFields {
   sources: { name: string; url: string }[];
 }
 
-export interface ExplainerFields {
-  title: string;
-  description: string;
-  date: string;
-  updated: string;
-  tags: string[];
-  draft: boolean;
-  heroImage: string;
-  heroImageAlt: string;
-  imageCredit: string;
-  sources: { name: string; url: string }[];
-}
-
 const sourcesBlock = (sources: { name: string; url: string }[]): string[] =>
   sources.length === 0
     ? ["sources: []"]
@@ -166,26 +153,6 @@ export function serialiseArticle(fields: ArticleFields, body: string): string {
     `type: ${quote(fields.type)}`,
     `featured: ${fields.featured}`,
     `editorsPick: ${fields.editorsPick}`,
-    `draft: ${fields.draft}`,
-    `heroImage: ${quote(fields.heroImage)}`,
-    `heroImageAlt: ${quote(fields.heroImageAlt)}`,
-    ...(fields.imageCredit ? [`imageCredit: ${quote(fields.imageCredit)}`] : []),
-    ...sourcesBlock(fields.sources),
-    "---",
-    "",
-    "",
-  ];
-  return lines.join("\n") + body.trim() + "\n";
-}
-
-export function serialiseExplainer(fields: ExplainerFields, body: string): string {
-  const lines = [
-    "---",
-    `title: ${quote(fields.title)}`,
-    `description: ${quote(fields.description)}`,
-    `date: ${fields.date}`,
-    ...(fields.updated ? [`updated: ${fields.updated}`] : []),
-    `tags: ${flowList(fields.tags)}`,
     `draft: ${fields.draft}`,
     `heroImage: ${quote(fields.heroImage)}`,
     `heroImageAlt: ${quote(fields.heroImageAlt)}`,

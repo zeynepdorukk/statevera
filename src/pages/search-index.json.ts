@@ -1,10 +1,5 @@
 import { wireItems } from "../data/wire";
-import {
-  getAllArticles,
-  getAllExplainers,
-  articleHref,
-  explainerHref,
-} from "../utils/collection";
+import { getAllArticles, articleHref } from "../utils/collection";
 
 interface SearchItem {
   title: string;
@@ -20,7 +15,7 @@ interface SearchItem {
 }
 
 export async function GET() {
-  const [articles, explainers] = await Promise.all([getAllArticles(), getAllExplainers()]);
+  const articles = await getAllArticles();
 
   const index: SearchItem[] = [
     ...articles.map((a) => ({
@@ -33,18 +28,6 @@ export async function GET() {
       description: a.data.description,
       source: "Statevera",
       date: a.data.date.toISOString(),
-      external: false,
-    })),
-    ...explainers.map((e) => ({
-      title: e.data.title,
-      url: explainerHref(e),
-      kind: "Explainer",
-      pillar: "journal" as const,
-      category: "Explainers",
-      region: "Global",
-      description: e.data.description,
-      source: "Statevera",
-      date: e.data.date.toISOString(),
       external: false,
     })),
     ...wireItems.map((w) => ({

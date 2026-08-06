@@ -1,10 +1,8 @@
 ---
-import type { Article, Explainer } from "../utils/collection";
-import { articleHref, explainerHref, formatDate, heroImageOf, readingTime } from "../utils/collection";
+import type { Article } from "../utils/collection";
+import { articleHref, formatDate, heroImageOf, readingTime } from "../utils/collection";
 
-type Entry =
-  | { kind: "article"; entry: Article }
-  | { kind: "explainer"; entry: Explainer };
+type Entry = { kind: "article"; entry: Article };
 
 interface Props {
   item: Entry;
@@ -18,9 +16,8 @@ const { item, variant = "feature", showDek = true, priority = false, headingLeve
   Astro.props;
 
 const data = item.entry.data;
-const href = item.kind === "article" ? articleHref(item.entry as Article) : explainerHref(item.entry as Explainer);
-const kicker =
-  item.kind === "explainer" ? "Explainer" : (item.entry as Article).data.type === "opinion" ? "Opinion" : (item.entry as Article).data.category;
+const href = articleHref(item.entry);
+const kicker = data.type === "opinion" ? "Opinion" : data.category;
 const minutes = readingTime(item.entry);
 const loading = priority ? "eager" : "lazy";
 const isDraft = data.draft;
@@ -28,7 +25,7 @@ const isDraft = data.draft;
 
 {variant === "lead" && (
   <article class="group" data-tone="journal">
-    <a href={href} class="img-zoom mb-4 block border border-line/70">
+    <a href={href} tabindex="-1" aria-hidden="true" class="img-zoom mb-4 block border border-line/70">
       <img
         src={heroImageOf(data.heroImage)}
         alt={data.heroImageAlt}

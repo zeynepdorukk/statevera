@@ -1716,8 +1716,8 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
   import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
     searchPhotos, importPhoto, type FileEntry, type Photo } from "../lib/editor/desk";
   import { TEMPLATES, templateById, type Template } from "../lib/editor/templates";
-  import { parseDocument, serialiseArticle, serialiseExplainer, slugify,
-    findBrokenCharacters, type ArticleFields, type ExplainerFields } from "../lib/editor/document";
+  import { parseDocument, serialiseArticle, slugify,
+    findBrokenCharacters, type ArticleFields } from "../lib/editor/document";
   import { markdownToHtml, htmlToMarkdown, canvasText, countWords, readingMinutes,
     setAssetBase, inlineToHtml, CALLOUTS, type CalloutName } from "../lib/editor/richtext";
   import { site } from "../site";
@@ -1734,9 +1734,9 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 
   const DESKS = ["Politics", "Geopolitics", "Economy", "Security", "Diplomacy", "Theory", "Opinion"];
   const REGIONS = ["Europe", "Middle East", "Americas", "Asia-Pacific", "Africa", "Eurasia", "Turkey", "Global"];
-  const TYPES = ["analysis", "news", "opinion", "explainer"];
+  const TYPES = ["analysis", "news", "opinion"];
 
-  type Kind = "article" | "explainer";
+  type Kind = "article";
 
   interface Story {
     kind: Kind;
@@ -1905,10 +1905,10 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         };
       };
 
-      state.stories = [
-        ...library.articles.filter((f) => /\.mdx?$/.test(f.name)).map(build("article")),
-        ...library.explainers.filter((f) => /\.mdx?$/.test(f.name)).map(build("explainer")),
-      ].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+      state.stories = library.articles
+        .filter((f) => /\.mdx?$/.test(f.name))
+        .map(build("article"))
+        .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
       storiesView(notice);
     } catch (error) {
@@ -1926,7 +1926,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         <article class="ed-card" data-card="${esc(s.path)}">
           <div class="ed-card-top">
             <span class="ed-pill" data-kind="${stateKind}">${stateLabel}</span>
-            <span class="ed-card-desk">${esc(s.kind === "explainer" ? "Explainer" : s.desk || "Journal")}</span>
+            <span class="ed-card-desk">${esc(s.desk || "Journal")}</span>
           </div>
           <h2 class="ed-card-title">
             <button type="button" class="ed-card-open" data-open="${esc(s.path)}">${esc(s.title)}</button>
@@ -2151,7 +2151,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 
   async function openStory(path: string) {
     view(booting("Opening"));
-    const kind: Kind = path.includes("/explainers/") ? "explainer" : "article";
+    const kind: Kind = "article";
     const slug = path.split("/").pop()!.replace(/\.mdx?$/, "");
     try {
       const file = await readFile(path);
@@ -2176,7 +2176,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
           region: fm.region || "Global",
           country: parsed.lists.country ?? [],
           tags: parsed.lists.tags ?? [],
-          type: fm.type || (kind === "explainer" ? "explainer" : "analysis"),
+          type: fm.type || "analysis",
           featured: bool("featured"),
           editorsPick: bool("editorsPick"),
           draft: bool("draft"),
@@ -3813,9 +3813,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         return;
       }
 
-      const file = kind === "explainer"
-        ? serialiseExplainer(next as unknown as ExplainerFields, markdown)
-        : serialiseArticle(next, markdown);
+      const file = serialiseArticle(next, markdown);
 
       const broken = findBrokenCharacters(file);
       if (broken.length) {
@@ -3837,7 +3835,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
           return;
         }
         slug = nextSlug;
-        path = `src/content/${kind === "article" ? "articles" : "explainers"}/${slug}.mdx`;
+        path = `src/content/articles/${slug}.mdx`;
         el<HTMLElement>("[data-slugline]").textContent = `${kind} · ${slug}`;
       }
       try {

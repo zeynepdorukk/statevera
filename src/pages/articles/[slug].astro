@@ -34,7 +34,7 @@ if (!article) return Astro.redirect(root("/404"));
 const { Content } = await render(article);
 const { data } = article;
 const href = articleHref(article);
-const canonical = new URL(href, site.siteUrl).toString();
+const canonical = new URL(href.replace(/\/?$/, "/"), site.siteUrl).toString();
 const regionSlug = regionSlugOf(data.region);
 
 // Live reporting from the same region, as context alongside the analysis.

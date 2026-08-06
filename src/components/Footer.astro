@@ -21,10 +21,16 @@ const year = new Date().getFullYear();
           {site.publicationType}, founded {site.founded}.
         </p>
         <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2">
-          <a href={site.socialLinks.x} target="_blank" rel="noopener" class="kicker-ink hover:text-tone">X</a>
-          <a href={site.socialLinks.linkedin} target="_blank" rel="noopener" class="kicker-ink hover:text-tone">LinkedIn</a>
+          {site.socialLinks.x && (
+            <a href={site.socialLinks.x} target="_blank" rel="noopener" class="kicker-ink hover:text-tone">X</a>
+          )}
+          {site.socialLinks.linkedin && (
+            <a href={site.socialLinks.linkedin} target="_blank" rel="noopener" class="kicker-ink hover:text-tone">LinkedIn</a>
+          )}
           <a href={root(site.socialLinks.rss)} class="kicker-ink hover:text-tone">RSS</a>
-          <a href={`mailto:${site.socialLinks.email}`} class="kicker-ink hover:text-tone">Email</a>
+          {site.socialLinks.email && (
+            <a href={`mailto:${site.socialLinks.email}`} class="kicker-ink hover:text-tone">Email</a>
+          )}
         </div>
       </div>
 
@@ -48,7 +54,6 @@ const year = new Date().getFullYear();
           <ul class="space-y-1.5">
             <li><a href={root("/journal")} class="font-sans text-[0.82rem] text-ink-soft hover:text-tone">Analysis &amp; essays</a></li>
             <li><a href={root("/journal/theory")} class="font-sans text-[0.82rem] text-ink-soft hover:text-tone">Theory</a></li>
-            <li><a href={root("/explainers")} class="font-sans text-[0.82rem] text-ink-soft hover:text-tone">Explainers</a></li>
             <li><a href={root("/risk")} class="font-sans text-[0.82rem] text-ink-soft hover:text-tone">GLORISK</a></li>
             <li><a href={root("/about")} class="font-sans text-[0.82rem] text-ink-soft hover:text-tone">About</a></li>
           </ul>

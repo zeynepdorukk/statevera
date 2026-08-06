@@ -4,6 +4,22 @@ import marketData from "../data/markets.json";
 const quotes = marketData.quotes ?? [];
 const track = [...quotes, ...quotes];
 
+// Prices with no time on them read as live even when the refresh job has stopped,
+// so the strip always says when it was taken and admits when that was a while ago.
+const takenAt = new Date(marketData.updatedAt);
+const ageHours = (Date.now() - takenAt.getTime()) / 3600000;
+const stale = !Number.isFinite(ageHours) || ageHours > 24;
+const stamp = Number.isFinite(takenAt.getTime())
+  ? new Intl.DateTimeFormat("en-GB", {
+      day: "numeric",
+      month: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+      timeZone: "UTC",
+    }).format(takenAt) + " UTC"
+  : "";
+
 const formatPrice = (quote) =>
   new Intl.NumberFormat("en-US", {
     minimumFractionDigits: quote.decimals,
@@ -17,7 +33,11 @@ const formatChange = (quote) => {
 ---
 
 {quotes.length > 0 && (
-  <section class="market-ticker" aria-label="Market indices" title="Delayed market data">
+  <section class="market-ticker" aria-label="Market indices">
+    <p class:list={["market-stamp", stale && "is-stale"]}>
+      {stale ? "Last close" : "Close"}
+      {stamp && <span class="market-stamp-time">{stamp}</span>}
+    </p>
     <div class="market-viewport">
       <div class="market-track">
         {track.map((quote, index) => (
@@ -59,6 +79,38 @@ const formatChange = (quote) => {
     min-width: 0;
     height: 100%;
     overflow: hidden;
+  }
+
+  .market-stamp {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0 0.85rem;
+    border-right: 1px solid var(--line);
+    color: var(--muted);
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .market-stamp.is-stale {
+    color: var(--wire);
+  }
+
+  .market-stamp-time {
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: none;
+  }
+
+  @media (max-width: 40rem) {
+    .market-stamp-time {
+      display: none;
+    }
   }
 
   .market-track {

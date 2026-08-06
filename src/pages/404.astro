@@ -1,13 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { pillarList } from "../site";
-import { latest } from "../data/wire";
+import { spread, wireItems } from "../data/wire";
 import { getLatestArticles, root } from "../utils/collection";
 import WireCard from "../components/WireCard.astro";
 import JournalCard from "../components/JournalCard.astro";
 import SectionHead from "../components/SectionHead.astro";
 
-const wire = latest(5);
+const wire = spread(wireItems, 5, 1);
 const journal = await getLatestArticles(3);
 ---
 

@@ -30,15 +30,11 @@ const SESSION_MS = 12 * 60 * 60 * 1000;
 const DEFAULT_MODEL = "gpt-5.6-luna";
 const modelOf = (env: DeskEnv): string => env.OPENAI_MODEL?.trim() || DEFAULT_MODEL;
 
-/** A signed-in session may only touch the two content folders. */
-const WRITEABLE = /^src\/content\/(articles|explainers)\/[a-z0-9][a-z0-9-]*\.mdx$/;
+/** A signed-in session may only touch the content folder. */
+const WRITEABLE = /^src\/content\/articles\/[a-z0-9][a-z0-9-]*\.mdx$/;
 /** Pictures imported from the web land here, and nowhere else. */
 const IMAGE_WRITEABLE = /^public\/images\/articles\/[a-z0-9][a-z0-9-]*\.(jpg|png)$/;
-const READABLE_DIRS = new Set([
-  "src/content/articles",
-  "src/content/explainers",
-  "public/images/articles",
-]);
+const READABLE_DIRS = new Set(["src/content/articles", "public/images/articles"]);
 
 const encoder = new TextEncoder();
 
@@ -497,15 +493,13 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
   try {
     if (route === "library" && request.method === "GET") {
       // An empty publication has no content folders in the repository at all.
-      const [articles, explainers, images] = await Promise.all([
+      const [articles, images] = await Promise.all([
         listDirectory(env, "src/content/articles").catch(() => [] as Entry[]),
-        listDirectory(env, "src/content/explainers").catch(() => [] as Entry[]),
         listDirectory(env, "public/images/articles").catch(() => [] as Entry[]),
       ]);
       const slim = (entries: Entry[]) => entries.map(({ name, path, sha }) => ({ name, path, sha }));
       return json({
         articles: slim(articles.filter((f) => /\.mdx?$/.test(f.name))),
-        explainers: slim(explainers.filter((f) => /\.mdx?$/.test(f.name))),
         images: images
           .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f.name))
           .map((f) => f.name),

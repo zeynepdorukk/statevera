@@ -1,14 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { journalSections } from "../../site";
-import { getByCategory, getAllExplainers, root } from "../../utils/collection";
+import { getByCategory, root } from "../../utils/collection";
 import JournalCard from "../../components/JournalCard.astro";
-import SectionHead from "../../components/SectionHead.astro";
 
 const meta = journalSections.theory;
 const articles = await getByCategory("Theory");
 const [lead, ...rest] = articles;
-const explainers = (await getAllExplainers()).slice(0, 5);
 ---
 
 <BaseLayout title={meta.name} description={meta.description} path={meta.url} tone="journal">
@@ -33,30 +31,15 @@ const explainers = (await getAllExplainers()).slice(0, 5);
     {articles.length === 0 ? (
       <p class="py-16 text-center font-serif text-[1.05rem] text-muted">Nothing here yet.</p>
     ) : (
-      <section class="grid gap-x-9 gap-y-10 py-9 lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)]">
-        <div>
-          {lead && <JournalCard item={{ kind: "article", entry: lead }} variant="lead" priority headingLevel="h2" />}
-          {rest.length > 0 && (
-            <div class="mt-9 grid gap-x-8 gap-y-9 border-t border-line pt-8 sm:grid-cols-2">
-              {rest.map((entry) => (
-                <JournalCard item={{ kind: "article", entry }} variant="feature" />
-              ))}
-            </div>
-          )}
-        </div>
-
-        <aside class="lg:border-l lg:border-line lg:pl-8">
-          <SectionHead title="Explainers" tone="journal" href="/explainers" moreLabel="All" />
-          <div class="rule-list">
-            {explainers.map((entry) => (
-              <JournalCard item={{ kind: "explainer", entry }} variant="text" showDek={false} />
+      <section class="py-9">
+        {lead && <JournalCard item={{ kind: "article", entry: lead }} variant="lead" priority headingLevel="h2" />}
+        {rest.length > 0 && (
+          <div class="mt-9 grid gap-x-8 gap-y-9 border-t border-line pt-8 sm:grid-cols-2 lg:grid-cols-3">
+            {rest.map((entry) => (
+              <JournalCard item={{ kind: "article", entry }} variant="feature" />
             ))}
           </div>
-          <p class="mt-6 border-t border-line pt-4 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
-            Theory essays explain why states behave as they do. Explainers cover the
-            institutions and chokepoints those theories keep running into.
-          </p>
-        </aside>
+        )}
       </section>
     )}
   </div>

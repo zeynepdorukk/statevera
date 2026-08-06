@@ -29,6 +29,7 @@ const initialSlug = rows.some((row) => row.slug === "global")
   path="/regions"
 >
   <div class="shell pt-0" data-tone="wire">
+    <h1 class="sr-only">Regions — international affairs by place</h1>
     <WorldMap rows={rows} initialSlug={initialSlug} />
   </div>
 </BaseLayout>

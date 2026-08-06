@@ -1,8 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site, pillars, deskList } from "../site";
-import { leadStories, byCategory, latest } from "../data/wire";
-import { getJournalStream, getFeaturedArticle, getAllExplainers, root } from "../utils/collection";
+import { leadStories, byCategory, spread, wireItems } from "../data/wire";
+import { getJournalStream, getFeaturedArticle, root } from "../utils/collection";
 import WireCard from "../components/WireCard.astro";
 import JournalCard from "../components/JournalCard.astro";
 import SectionHead from "../components/SectionHead.astro";
@@ -11,13 +11,16 @@ const leads = leadStories(5);
 const leadIds = new Set(leads.map((i) => i.id));
 const [lead, ...secondary] = leads;
 
-const stream = latest(30).filter((i) => !leadIds.has(i.id));
+const stream = spread(
+  wireItems.filter((i) => !leadIds.has(i.id)),
+  30,
+  2
+);
 const briefColumn = stream.slice(0, 9);
 const rest = stream.slice(9);
 
 const journal = await getJournalStream(6);
 const featured = await getFeaturedArticle();
-const explainers = (await getAllExplainers()).slice(0, 4);
 
 const deskBlocks = deskList
   .map((desk) => ({ desk, items: byCategory(desk.name, 4) }))
@@ -81,13 +84,9 @@ const deskBlocks = deskList
             {journal
               .filter((item) => item.entry.id !== featured?.id)
               .slice(0, 4)
-              .map((item) =>
-                item.kind === "article" ? (
-                  <JournalCard item={{ kind: "article", entry: item.entry }} variant="text" />
-                ) : (
-                  <JournalCard item={{ kind: "explainer", entry: item.entry }} variant="text" />
-                )
-              )}
+              .map((item) => (
+                <JournalCard item={{ kind: "article", entry: item.entry }} variant="text" />
+              ))}
           </div>
         </div>
       )}
@@ -130,34 +129,13 @@ const deskBlocks = deskList
     </div>
   </section>
 
-  <!-- ============ MORE FROM NEWS + EXPLAINERS ============ -->
-  <section class="shell mt-14 pb-6" aria-label="More reporting">
-    <div class="grid gap-x-8 gap-y-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)]">
-      <div data-tone="wire">
-        <SectionHead title="More from News" tone="wire" href="/wire" moreLabel="All news" />
-        <div class="grid gap-x-7 gap-y-7 sm:grid-cols-2">
-          {rest.slice(0, 10).map((item) => (
-            <WireCard item={item} variant="compact" />
-          ))}
-        </div>
-      </div>
-
-      <aside class="lg:border-l lg:border-line lg:pl-8" data-tone="journal" aria-label="Explainers">
-        <SectionHead title="Explainers" tone="journal" href="/explainers" moreLabel="All" />
-        {explainers.length === 0 ? (
-          <p class="font-serif text-[1rem] leading-relaxed text-muted">Nothing here yet.</p>
-        ) : (
-          <div class="rule-list">
-            {explainers.map((entry) => (
-              <JournalCard item={{ kind: "explainer", entry }} variant="text" showDek={false} />
-            ))}
-          </div>
-        )}
-        <p class="mt-5 border-t border-line pt-4 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
-          Evergreen reference on the institutions, doctrines and chokepoints that keep
-          returning to the news.
-        </p>
-      </aside>
+  <!-- ============ MORE FROM NEWS ============ -->
+  <section class="shell mt-14 pb-6" aria-label="More reporting" data-tone="wire">
+    <SectionHead title="More from News" tone="wire" href="/wire" moreLabel="All news" />
+    <div class="grid gap-x-7 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
+      {rest.slice(0, 12).map((item) => (
+        <WireCard item={item} variant="compact" />
+      ))}
     </div>
   </section>
 </BaseLayout>

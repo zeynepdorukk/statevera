@@ -1,7 +1,7 @@
 ---
-import { latest } from "../data/wire";
+import { spread, wireItems } from "../data/wire";
 
-const items = latest(14);
+const items = spread(wireItems, 14, 2);
 // The track is duplicated so the marquee can loop seamlessly at -50%.
 const track = [...items, ...items];
 ---

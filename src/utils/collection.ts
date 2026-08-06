@@ -9,7 +9,6 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import { regionSlugOf } from "../site";
 
 export type Article = CollectionEntry<"articles">;
-export type Explainer = CollectionEntry<"explainers">;
 
 const IS_DEV = import.meta.env.DEV;
 
@@ -17,14 +16,23 @@ const IS_DEV = import.meta.env.DEV;
 // Paths & formatting
 // ------------------------------------------------------------
 
-/** Prefix a site-absolute path with the deployment base path. */
-export const root = (p: string): string =>
-  p.startsWith("http") ? p : import.meta.env.BASE_URL.replace(/\/$/, "") + p;
+/**
+ * Prefix a site-absolute path with the deployment base path.
+ *
+ * Idempotent on purpose: callers pass around values that are sometimes already
+ * prefixed (an article's href, a hero image path), and prefixing twice produced
+ * /statevera/statevera/... in canonicals and share images.
+ */
+export const root = (p: string): string => {
+  if (p.startsWith("http")) return p;
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  if (!base) return p;
+  return p === base || p.startsWith(`${base}/`) ? p : base + p;
+};
 
 export const slugOf = (entry: { id: string }): string => entry.id.replace(/\.mdx?$/, "");
 
 export const articleHref = (entry: Article): string => root(`/articles/${slugOf(entry)}`);
-export const explainerHref = (entry: Explainer): string => root(`/explainers/${slugOf(entry)}`);
 
 export function heroImageOf(heroImage: string): string {
   if (heroImage.startsWith("http")) return heroImage;
@@ -133,47 +141,25 @@ export async function getRelated(article: Article, count = 3): Promise<Article[]
 }
 
 // ------------------------------------------------------------
-// Explainers
+// Journal stream
 // ------------------------------------------------------------
 
-let explainersCache: Explainer[] | null = null;
-export async function getAllExplainers(): Promise<Explainer[]> {
-  if (!explainersCache) {
-    explainersCache = published([...(await getCollection("explainers"))]).sort(byDateDesc);
-  }
-  return explainersCache;
-}
-
-export async function getExplainerBySlug(slug: string): Promise<Explainer | undefined> {
-  return (await getAllExplainers()).find((e) => slugOf(e) === slug);
-}
-
-// ------------------------------------------------------------
-// Combined journal stream
-// ------------------------------------------------------------
-
-export type JournalItem =
-  | { kind: "article"; entry: Article; date: Date; href: string; title: string }
-  | { kind: "explainer"; entry: Explainer; date: Date; href: string; title: string };
+export type JournalItem = {
+  kind: "article";
+  entry: Article;
+  date: Date;
+  href: string;
+  title: string;
+};
 
 export async function getJournalStream(count?: number): Promise<JournalItem[]> {
-  const [articles, explainers] = await Promise.all([getAllArticles(), getAllExplainers()]);
-  const items: JournalItem[] = [
-    ...articles.map((entry) => ({
-      kind: "article" as const,
-      entry,
-      date: entry.data.date,
-      href: articleHref(entry),
-      title: entry.data.title,
-    })),
-    ...explainers.map((entry) => ({
-      kind: "explainer" as const,
-      entry,
-      date: entry.data.date,
-      href: explainerHref(entry),
-      title: entry.data.title,
-    })),
-  ];
+  const items: JournalItem[] = (await getAllArticles()).map((entry) => ({
+    kind: "article" as const,
+    entry,
+    date: entry.data.date,
+    href: articleHref(entry),
+    title: entry.data.title,
+  }));
   items.sort((a, b) => b.date.getTime() - a.date.getTime());
   return count ? items.slice(0, count) : items;
 }

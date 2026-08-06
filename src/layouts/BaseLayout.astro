@@ -53,7 +53,10 @@ const {
   jsonLd = [],
 } = Astro.props;
 
-const url = new URL(root(path), site.siteUrl);
+// The sitemap emits directory URLs with a trailing slash, so the canonical has to
+// agree with it or the two send Google different addresses for the same page.
+const canonicalPath = root(path).replace(/\/?$/, "/");
+const url = new URL(canonicalPath, site.siteUrl);
 const absoluteImage = new URL(root(image), site.siteUrl).toString();
 const fullTitle = path === "/" ? site.publicationName : `${title} — ${site.publicationName}`;
 
@@ -112,6 +115,7 @@ const webJsonLd = {
     <meta property="og:type" content={type === "article" ? "article" : "website"} />
     <meta property="og:url" content={url.toString()} />
     <meta property="og:image" content={absoluteImage} />
+    <meta property="og:image:alt" content={`${site.publicationName} — ${site.publicationTagline}`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content={site.locale} />

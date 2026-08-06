@@ -5,9 +5,12 @@
 // institutions. Statevera stores only headline, summary, source
 // and link; every item drives traffic back to the publisher.
 //
-// `category` / `region` are priors. A feed WITHOUT a `category`
-// is a general news desk: its items must earn their place by
-// matching the international-affairs vocabulary below.
+// `category` / `region` are priors. `alwaysOnTopic` is the only thing that
+// skips the relevance gate, and it belongs to institutions and analysis desks
+// that publish nothing but international affairs. A general newsroom's business
+// or politics section is NOT one of those: it also runs consumer, lifestyle and
+// local copy, so its items still have to earn their place on the vocabulary
+// below.
 // ============================================================
 
 /**
@@ -16,7 +19,8 @@
  * @property {string} publisher
  * @property {string} url        RSS/Atom endpoint
  * @property {string} home       publisher section homepage
- * @property {string} [category] on-topic feeds only: skips the relevance gate
+ * @property {string} [category] the desk an item falls to when the vocabulary is quiet
+ * @property {boolean} [alwaysOnTopic] institution or analysis feed: skips the relevance gate
  * @property {string} [region]
  * @property {number} weight     1 = wire copy, 3 = considered analysis
  * @property {number} take       max items kept from this feed
@@ -39,7 +43,7 @@ export const sources = [
   { id: "guardian-mideast", publisher: "The Guardian", url: "https://www.theguardian.com/world/middleeast/rss", home: "https://www.theguardian.com/world/middleeast", region: "Middle East", weight: 2, take: 15 },
   { id: "bbc-mideast", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml", home: "https://www.bbc.com/news/world/middle_east", region: "Middle East", weight: 2, take: 12 },
   { id: "guardian-asia", publisher: "The Guardian", url: "https://www.theguardian.com/world/asia-pacific/rss", home: "https://www.theguardian.com/world/asia-pacific", region: "Asia-Pacific", weight: 2, take: 15 },
-  { id: "diplomat", publisher: "The Diplomat", url: "https://thediplomat.com/feed/", home: "https://thediplomat.com", region: "Asia-Pacific", category: "Geopolitics", weight: 3, take: 15 },
+  { id: "diplomat", publisher: "The Diplomat", url: "https://thediplomat.com/feed/", home: "https://thediplomat.com", region: "Asia-Pacific", category: "Geopolitics", alwaysOnTopic: true, weight: 3, take: 15 },
   { id: "guardian-africa", publisher: "The Guardian", url: "https://www.theguardian.com/world/africa/rss", home: "https://www.theguardian.com/world/africa", region: "Africa", weight: 2, take: 12 },
   { id: "bbc-africa", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/world/africa/rss.xml", home: "https://www.bbc.com/news/world/africa", region: "Africa", weight: 2, take: 10 },
   { id: "guardian-us", publisher: "The Guardian", url: "https://www.theguardian.com/us-news/rss", home: "https://www.theguardian.com/us-news", region: "Americas", weight: 2, take: 12 },
@@ -53,12 +57,12 @@ export const sources = [
   { id: "bbc-business", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/business/rss.xml", home: "https://www.bbc.com/news/business", category: "Economy", region: "Global", weight: 2, take: 12 },
 
   // ---- Institutions ----------------------------------------
-  { id: "un-news", publisher: "UN News", url: "https://news.un.org/feed/subscribe/en/news/all/rss.xml", home: "https://news.un.org/en", category: "Diplomacy", region: "Global", weight: 2, take: 15 },
+  { id: "un-news", publisher: "UN News", url: "https://news.un.org/feed/subscribe/en/news/all/rss.xml", home: "https://news.un.org/en", category: "Diplomacy", alwaysOnTopic: true, region: "Global", weight: 2, take: 15 },
 
   // ---- Analysis & commentary -------------------------------
-  { id: "war-on-the-rocks", publisher: "War on the Rocks", url: "https://warontherocks.com/feed/", home: "https://warontherocks.com", category: "Security", region: "Global", weight: 3, take: 12 },
-  { id: "responsible-statecraft", publisher: "Responsible Statecraft", url: "https://responsiblestatecraft.org/feed/", home: "https://responsiblestatecraft.org", category: "Diplomacy", region: "Global", weight: 3, take: 12 },
-  { id: "atlantic-council", publisher: "Atlantic Council", url: "https://www.atlanticcouncil.org/feed/", home: "https://www.atlanticcouncil.org", category: "Geopolitics", region: "Global", weight: 3, take: 12 },
+  { id: "war-on-the-rocks", publisher: "War on the Rocks", url: "https://warontherocks.com/feed/", home: "https://warontherocks.com", category: "Security", alwaysOnTopic: true, region: "Global", weight: 3, take: 12 },
+  { id: "responsible-statecraft", publisher: "Responsible Statecraft", url: "https://responsiblestatecraft.org/feed/", home: "https://responsiblestatecraft.org", category: "Diplomacy", alwaysOnTopic: true, region: "Global", weight: 3, take: 12 },
+  { id: "atlantic-council", publisher: "Atlantic Council", url: "https://www.atlanticcouncil.org/feed/", home: "https://www.atlanticcouncil.org", category: "Geopolitics", alwaysOnTopic: true, region: "Global", weight: 3, take: 12 },
   { id: "politico-eu", publisher: "POLITICO Europe", url: "https://www.politico.eu/feed/", home: "https://www.politico.eu", category: "Politics", region: "Europe", weight: 2, take: 12 },
 ];
 
@@ -78,8 +82,8 @@ export const categoryRules = [
       "troops", "army", "navy", "naval", "air force", "airstrike*", "air strike*",
       "drone*", "ceasefire", "cease-fire", "offensive", "deterrence", "deterrent",
       "rearm*", "weapon*", "arms control", "arms deal", "insurgen*", "militant*",
-      "war", "warfare", "wartime", "conscript*", "battalion*", "brigade*", "frigate*",
-      "submarine*", "artillery", "bombard*", "combat", "peacekeep*", "paramilitary",
+      "war", "warfare", "conscript*", "battalion*", "brigade*", "frigate*",
+      "submarine*", "artillery", "bombard*", "peacekeep*", "paramilitary",
       "ballistic", "cyberattack*", "espionage", "airspace", "warship*",
     ],
   },
@@ -214,9 +218,10 @@ export const excludeTerms = [
   "sentenced to", "paedophile", "pedophile", "rape", "stabbing", "shoplift*",
   "celebrit*", "kardashian", "influencer", "reality tv", "box office", "grammy",
   "oscars", "eurovision", "netflix", "album", "tour dates", "red carpet",
-  "football", "soccer", "premier league", "olympic*", "world cup", "tennis",
+  "football*", "soccer", "premier league", "olympic*", "world cup", "tennis",
   "cricket", "formula one", "nba", "nfl", "golf", "rugby", "athlete*",
-  "recipe", "horoscope", "weather forecast", "heatwave warning", "lottery",
+  "fifa", "uefa", "infantino", "striker", "midfielder",
+  "recipe", "horoscope", "weather forecast", "heatwave warning", "wildfire*", "lottery",
   "crossword", "obituar*", "royal family", "wedding", "divorce",
 ];
 

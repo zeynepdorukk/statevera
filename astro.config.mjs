@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
+import { unified } from "@astrojs/markdown-remark";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -133,14 +134,14 @@ const legacy = {
   "/news/politics": "/wire/politics",
   "/news/geopolitics": "/wire/geopolitics",
   "/news/economy": "/wire/economy",
-  "/news/culture": "/wire/culture",
+  "/news/culture": "/wire",
   "/news/security": "/wire/security",
   "/news/diplomacy": "/wire/diplomacy",
   "/news/opinion": "/journal",
   "/politics": "/wire/politics",
   "/geopolitics": "/wire/geopolitics",
   "/economy": "/wire/economy",
-  "/culture": "/wire/culture",
+  "/culture": "/wire",
   "/security": "/wire/security",
   "/diplomacy": "/wire/diplomacy",
   "/opinion": "/journal",
@@ -151,7 +152,8 @@ const legacy = {
   "/concepts": "/journal",
   "/concepts/theory": "/journal/theory",
   "/theory": "/journal/theory",
-};
+  "/explainers": "/journal",
+};;
 
 const legacyRedirects = Object.fromEntries(
   Object.entries(legacy).map(([from, to]) => [from, `${BASE}${to}`])
@@ -164,7 +166,7 @@ export default defineConfig({
   output: "static",
   trailingSlash: "ignore",
   redirects: legacyRedirects,
-  markdown: { rehypePlugins: [rehypeBaseImages] },
+  markdown: { processor: unified({ rehypePlugins: [rehypeBaseImages] }) },
   integrations: [mdx(), sitemap({ filter: (page) => !page.includes("/editor") })],
   vite: {
     plugins: [tailwindcss(), deskDevPlugin],
