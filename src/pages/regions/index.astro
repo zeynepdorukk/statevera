@@ -29,21 +29,6 @@ const initialSlug = rows.some((row) => row.slug === "global")
   path="/regions"
 >
   <div class="shell pt-0" data-tone="wire">
-    <header class="regions-intro">
-      <p class="kicker-ink">Regions</p>
-      <h1 class="t-lead mt-1.5">See the system by place.</h1>
-      <p class="mt-3 max-w-2xl font-serif text-[1.06rem] leading-relaxed text-ink-soft">
-        Explore the international system through the places where its pressure is felt.
-      </p>
-    </header>
-
     <WorldMap rows={rows} initialSlug={initialSlug} />
   </div>
 </BaseLayout>
-
-<style>
-  .regions-intro {
-    padding: 2.25rem 0 1.75rem;
-    border-bottom: 2px solid var(--ink);
-  }
-</style>
