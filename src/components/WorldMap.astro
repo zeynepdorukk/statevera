@@ -1,0 +1,495 @@
+---
+import world from "world-atlas/countries-110m.json";
+import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
+import { feature, mesh } from "topojson-client";
+import { relativeTime, wireDate, type WireItem } from "../data/wire";
+import { articleHref, type Article } from "../utils/collection";
+
+interface RegionRow {
+  slug: string;
+  region: {
+    name: string;
+    short: string;
+    description: string;
+  };
+  wire: WireItem[];
+  journal: Article[];
+}
+
+interface Props {
+  rows: RegionRow[];
+  initialSlug: string;
+}
+
+const { rows, initialSlug } = Astro.props;
+const width = 960;
+const height = 520;
+const topology = world as any;
+const countries = feature(topology, topology.objects.countries) as any;
+const countryFeatures = countries.features as any[];
+const countryBorders = mesh(topology, topology.objects.countries, (a: any, b: any) => a !== b);
+const projection = geoNaturalEarth1().fitSize([width, height], countries);
+const path = geoPath(projection);
+
+const regionCountryIds: Record<string, string[]> = {
+  europe: ["008", "040", "056", "070", "100", "191", "196", "203", "208", "233", "246", "250", "276", "300", "348", "352", "372", "380", "428", "438", "440", "442", "470", "492", "498", "499", "528", "578", "616", "620", "642", "674", "688", "703", "705", "724", "752", "756", "807", "826", "831", "832", "833"],
+  "middle-east": ["048", "196", "275", "364", "368", "376", "400", "414", "422", "512", "634", "682", "760", "784", "818", "887"],
+  americas: ["032", "044", "052", "060", "084", "124", "132", "136", "152", "170", "188", "192", "208", "212", "214", "218", "222", "238", "254", "304", "308", "320", "328", "332", "340", "388", "474", "484", "500", "530", "533", "558", "591", "600", "604", "624", "630", "662", "666", "670", "674", "740", "780", "796", "840", "850", "858", "862"],
+  "asia-pacific": ["036", "050", "064", "096", "116", "144", "156", "158", "162", "166", "184", "242", "258", "262", "296", "316", "334", "356", "360", "392", "408", "410", "418", "446", "458", "462", "496", "520", "524", "540", "548", "554", "570", "574", "583", "584", "585", "586", "598", "608", "626", "630", "634", "660", "690", "691", "694", "702", "704", "716", "728", "732", "776", "798", "834", "882"],
+  africa: ["012", "024", "072", "108", "120", "132", "140", "148", "174", "175", "178", "180", "204", "226", "231", "232", "262", "266", "270", "288", "292", "324", "336", "342", "350", "404", "426", "430", "434", "450", "454", "466", "478", "480", "484", "504", "508", "516", "520", "562", "566", "570", "578", "583", "624", "626", "646", "654", "686", "690", "694", "706", "710", "716", "720", "724", "728", "729", "732", "748", "768", "788", "800", "834", "854", "894"],
+  eurasia: ["031", "051", "112", "268", "398", "417", "643", "762", "795", "804", "860"],
+  turkey: ["792"],
+};
+
+const countryToRegion = Object.fromEntries(
+  Object.entries(regionCountryIds).flatMap(([slug, ids]) => ids.map((id) => [id, slug]))
+);
+const regionBySlug = Object.fromEntries(rows.map((row) => [row.slug, row]));
+const initialRow = regionBySlug[initialSlug] ?? rows[0];
+const graticulePath = path(geoGraticule10());
+const borderPath = path(countryBorders);
+---
+
+<section class="region-explorer" data-region-explorer>
+  <div class="region-map-stage">
+    <svg
+      data-world-map
+      class="region-map"
+      viewBox={`0 0 ${width} ${height}`}
+      role="img"
+      aria-label="Interactive world map by region"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <rect class="map-ocean" x="0" y="0" width={width} height={height}></rect>
+      {graticulePath && <path class="map-graticule" d={graticulePath}></path>}
+      <g data-country-layer>
+        {countryFeatures.map((country) => {
+          const id = String(country.id).padStart(3, "0");
+          const regionSlug = countryToRegion[id] ?? "";
+          const countryPath = path(country);
+          if (!countryPath) return null;
+          return (
+            <path
+              d={countryPath}
+              class:list={["country-shape", regionSlug && "is-mappable"]}
+              data-country
+              data-region={regionSlug}
+              data-country-name={country.properties?.name ?? id}
+              tabindex={regionSlug ? 0 : undefined}
+              role={regionSlug ? "button" : undefined}
+              aria-label={regionSlug ? `${country.properties?.name ?? "Country"}, ${regionBySlug[regionSlug]?.region.short ?? "region"}` : undefined}
+            ></path>
+          );
+        })}
+      </g>
+      {borderPath && <path class="map-borders" d={borderPath}></path>}
+    </svg>
+    <div class="map-caption">
+      <span>World regions</span>
+      <span class="map-caption-rule"></span>
+      <span>News, Journal, GLORISK</span>
+    </div>
+  </div>
+
+  <div class="region-switcher" role="tablist" aria-label="Choose a region">
+    {rows.map((row) => (
+      <button
+        type="button"
+        class:list={["region-tab", row.slug === initialSlug && "is-selected"]}
+        id={`region-tab-${row.slug}`}
+        data-region-tab={row.slug}
+        role="tab"
+        aria-selected={row.slug === initialSlug ? "true" : "false"}
+      >
+        <span class="region-tab-name">{row.region.short}</span>
+        <span class="region-tab-count">{row.wire.length}</span>
+      </button>
+    ))}
+  </div>
+
+  <div class="region-details">
+    {rows.map((row) => (
+      <section
+        class:list={["region-detail", row.slug !== initialSlug && "is-hidden"]}
+        data-region-panel={row.slug}
+        role="tabpanel"
+        aria-labelledby={`region-tab-${row.slug}`}
+        hidden={row.slug !== initialSlug}
+      >
+        <div class="region-detail-heading">
+          <p class="kicker-ink">{row.region.short}</p>
+          <h2>{row.region.name}</h2>
+          <p>{row.region.description}</p>
+        </div>
+        <div class="region-detail-columns">
+          <div data-tone="wire">
+            <p class="kicker">Latest news</p>
+            {row.wire.length > 0 ? (
+              <ul class="region-story-list">
+                {row.wire.slice(0, 5).map((item) => (
+                  <li>
+                    <a href={item.url} target="_blank" rel="noopener noreferrer nofollow">{item.title}</a>
+                    <span>{item.publisher} &middot; {relativeTime(wireDate(item))}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="region-empty">No current news in this region.</p>
+            )}
+          </div>
+          <div data-tone="journal">
+            <p class="kicker">From Journal</p>
+            {row.journal.length > 0 ? (
+              <ul class="region-story-list journal-list">
+                {row.journal.slice(0, 3).map((entry) => (
+                  <li>
+                    <a href={articleHref(entry)}>{entry.data.title}</a>
+                    <span>{entry.data.category}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="region-empty">No Journal piece in this region yet.</p>
+            )}
+          </div>
+        </div>
+      </section>
+    ))}
+  </div>
+</section>
+
+<script>
+  const explorer = document.querySelector<HTMLElement>("[data-region-explorer]");
+  const map = explorer?.querySelector<SVGSVGElement>("[data-world-map]");
+  const tabs = [...(explorer?.querySelectorAll<HTMLButtonElement>("[data-region-tab]") ?? [])];
+  const panels = [...(explorer?.querySelectorAll<HTMLElement>("[data-region-panel]") ?? [])];
+  const countries = [...(explorer?.querySelectorAll<SVGPathElement>("[data-country].is-mappable") ?? [])];
+  const defaultView = { x: 0, y: 0, width: 960, height: 520 };
+  let animationId = 0;
+  let activeRegion = tabs.find((tab) => tab.getAttribute("aria-selected") === "true")?.dataset.regionTab ?? "";
+
+  const viewBox = () => {
+    const value = map?.getAttribute("viewBox")?.split(" ").map(Number) ?? [0, 0, 960, 520];
+    return { x: value[0], y: value[1], width: value[2], height: value[3] };
+  };
+
+  const fitBounds = (region: string) => {
+    const selected = countries.filter((country) => country.dataset.region === region);
+    if (selected.length === 0) return defaultView;
+    const bounds = selected.map((country) => country.getBBox());
+    const minX = Math.min(...bounds.map((box) => box.x));
+    const minY = Math.min(...bounds.map((box) => box.y));
+    const maxX = Math.max(...bounds.map((box) => box.x + box.width));
+    const maxY = Math.max(...bounds.map((box) => box.y + box.height));
+    const aspect = defaultView.width / defaultView.height;
+    const padding = Math.max(maxX - minX, maxY - minY) * 0.38;
+    let width = maxX - minX + padding * 2;
+    let height = maxY - minY + padding * 2;
+    if (width / height > aspect) height = width / aspect;
+    else width = height * aspect;
+    width = Math.min(width, defaultView.width);
+    height = Math.min(height, defaultView.height);
+    const centerX = (minX + maxX) / 2;
+    const centerY = (minY + maxY) / 2;
+    return {
+      x: Math.max(0, Math.min(defaultView.width - width, centerX - width / 2)),
+      y: Math.max(0, Math.min(defaultView.height - height, centerY - height / 2)),
+      width,
+      height,
+    };
+  };
+
+  const animateTo = (target: typeof defaultView) => {
+    if (!map) return;
+    const start = viewBox();
+    const startedAt = performance.now();
+    const token = ++animationId;
+    const frame = (now: number) => {
+      if (token !== animationId) return;
+      const progress = Math.min(1, (now - startedAt) / 650);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const next = ["x", "y", "width", "height"].map((key) => start[key] + (target[key] - start[key]) * eased);
+      map.setAttribute("viewBox", next.join(" "));
+      if (progress < 1) requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+  };
+
+  const updateUrl = (region: string) => {
+    const url = new URL(window.location.href);
+    if (region && region !== "global") url.searchParams.set("region", region);
+    else url.searchParams.delete("region");
+    window.history.replaceState({}, "", url);
+  };
+
+  const selectRegion = (region: string, pushUrl = true) => {
+    activeRegion = region;
+    tabs.forEach((tab) => tab.setAttribute("aria-selected", String(tab.dataset.regionTab === region)));
+    tabs.forEach((tab) => tab.classList.toggle("is-selected", tab.dataset.regionTab === region));
+    panels.forEach((panel) => {
+      const visible = panel.dataset.regionPanel === region;
+      panel.hidden = !visible;
+      panel.classList.toggle("is-hidden", !visible);
+    });
+    countries.forEach((country) => {
+      country.classList.toggle("is-selected", country.dataset.region === region);
+      country.classList.toggle("is-dimmed", region !== "global" && Boolean(region) && country.dataset.region !== region);
+    });
+    animateTo(region === "global" ? defaultView : fitBounds(region));
+    if (pushUrl) updateUrl(region);
+  };
+
+  tabs.forEach((tab) => tab.addEventListener("click", () => selectRegion(tab.dataset.regionTab ?? "")));
+  countries.forEach((country) => {
+    country.addEventListener("click", () => selectRegion(country.dataset.region ?? ""));
+    country.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        selectRegion(country.dataset.region ?? "");
+      }
+    });
+  });
+
+  window.addEventListener("popstate", () => {
+    const slug = new URL(window.location.href).searchParams.get("region") ?? "global";
+    selectRegion(slug, false);
+  });
+
+  const queryRegion = new URL(window.location.href).searchParams.get("region");
+  selectRegion(queryRegion && tabs.some((tab) => tab.dataset.regionTab === queryRegion) ? queryRegion : activeRegion, false);
+</script>
+
+<style>
+  .region-explorer {
+    margin-top: 2rem;
+    border-top: 2px solid var(--ink);
+    background: var(--paper-tint);
+  }
+
+  .region-map-stage {
+    position: relative;
+    padding: 1rem 1rem 0;
+    background: #171a1d;
+    overflow: hidden;
+  }
+
+  .region-map {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 960 / 520;
+  }
+
+  .map-ocean {
+    fill: #171a1d;
+  }
+
+  .map-graticule {
+    fill: none;
+    stroke: rgba(233, 229, 218, 0.08);
+    stroke-width: 0.55;
+  }
+
+  .country-shape {
+    fill: #24282c;
+    stroke: #474d53;
+    stroke-width: 0.55;
+    vector-effect: non-scaling-stroke;
+    transition: fill 180ms ease, stroke 180ms ease, opacity 180ms ease;
+  }
+
+  .country-shape.is-mappable {
+    cursor: pointer;
+  }
+
+  .country-shape.is-mappable:hover,
+  .country-shape.is-mappable:focus-visible {
+    fill: var(--journal);
+    stroke: var(--journal);
+    outline: none;
+  }
+
+  .country-shape.is-selected {
+    fill: var(--wire);
+    stroke: #f1eee4;
+  }
+
+  .country-shape.is-dimmed {
+    opacity: 0.34;
+  }
+
+  .map-borders {
+    fill: none;
+    stroke: rgba(233, 229, 218, 0.2);
+    stroke-width: 0.35;
+    pointer-events: none;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .map-caption {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.7rem 0.2rem 0.8rem;
+    color: rgba(233, 229, 218, 0.64);
+    font-family: var(--font-sans);
+    font-size: 0.61rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .map-caption-rule {
+    width: 2rem;
+    height: 1px;
+    background: var(--wire);
+  }
+
+  .region-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .region-tab {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+  }
+
+  .region-tab:hover,
+  .region-tab:focus-visible {
+    color: var(--ink);
+    border-color: var(--line-strong);
+    outline: none;
+  }
+
+  .region-tab.is-selected {
+    color: var(--ink);
+    border-color: var(--wire);
+    background: var(--wire-wash);
+  }
+
+  .region-tab-count {
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+  }
+
+  .region-details {
+    min-height: 20rem;
+  }
+
+  .region-detail {
+    padding: 2rem;
+  }
+
+  .region-detail.is-hidden {
+    display: none;
+  }
+
+  .region-detail-heading {
+    max-width: 48rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .region-detail-heading h2 {
+    margin-top: 0.3rem;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.05;
+  }
+
+  .region-detail-heading p:last-child {
+    margin-top: 0.7rem;
+    max-width: 42rem;
+    color: var(--ink-soft);
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .region-detail-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+    gap: 2.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .region-story-list {
+    margin-top: 0.7rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .region-story-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .region-story-list a {
+    display: block;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.25;
+    text-decoration: none;
+  }
+
+  .region-story-list a:hover {
+    color: var(--tone);
+  }
+
+  .region-story-list span {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .region-empty {
+    margin-top: 0.7rem;
+    color: var(--muted);
+    font-family: var(--font-serif);
+  }
+
+  @media (max-width: 700px) {
+    .region-detail {
+      padding: 1.25rem;
+    }
+
+    .region-detail-columns {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .region-tab {
+      flex: 1 1 calc(50% - 0.35rem);
+      justify-content: space-between;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .country-shape {
+      transition: none;
+    }
+  }
+</style>
