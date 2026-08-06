@@ -46,6 +46,7 @@ const stories = latest(7);
       </section>
 
       <aside class="live-news-column" aria-label="Latest News">
+        <p class="kicker-ink live-channels-heading">Channels</p>
         <div class="live-channel-switcher" role="tablist" aria-label="Live channels">
           {liveChannels.map((channel, index) => (
             <button
@@ -111,6 +112,10 @@ const stories = latest(7);
     padding-bottom: 1rem;
     margin-bottom: 1rem;
     border-bottom: 1px solid var(--line);
+  }
+
+  .live-channels-heading {
+    margin-bottom: 0.7rem;
   }
 
   .live-channel-tab {
