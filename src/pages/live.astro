@@ -24,7 +24,6 @@ const stories = latest(7);
           data-channel-id={channel.id}
           data-embed-url={liveEmbedUrl(channel.channelId)}
           data-channel-name={channel.name}
-          data-channel-url={channel.url}
           role="tab"
           aria-selected={index === 0 ? "true" : "false"}
         >
@@ -51,9 +50,6 @@ const stories = latest(7);
             <p class="kicker-ink">Now watching</p>
             <h2 data-live-channel-title>{selectedChannel.name}</h2>
           </div>
-          <a data-live-channel-link href={selectedChannel.url} target="_blank" rel="noopener noreferrer">
-            Open channel <span class="outbound" aria-hidden="true"></span>
-          </a>
         </div>
       </section>
 
@@ -78,7 +74,6 @@ const stories = latest(7);
 <script>
   const player = document.querySelector<HTMLIFrameElement>("[data-live-player]");
   const title = document.querySelector<HTMLElement>("[data-live-channel-title]");
-  const channelLink = document.querySelector<HTMLAnchorElement>("[data-live-channel-link]");
   const tabs = [...document.querySelectorAll<HTMLButtonElement>("[data-channel-id]")];
 
   tabs.forEach((tab) => {
@@ -93,7 +88,6 @@ const stories = latest(7);
       player.title = `${tab.dataset.channelName ?? "Live channel"} live stream`;
       player.src = embedUrl;
       if (title) title.textContent = tab.dataset.channelName ?? "Live channel";
-      if (channelLink) channelLink.href = tab.dataset.channelUrl ?? "#";
     });
   });
 </script>
