@@ -524,40 +524,6 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
     display: block;
     padding: 0 0.85rem 0.85rem;
   }
-  .ed-ask-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    margin: 0 0 0.7rem;
-  }
-  .ed-ask-chip {
-    border: 1px solid color-mix(in srgb, var(--journal) 28%, var(--line));
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--journal) 8%, transparent);
-    color: var(--ink-soft);
-    padding: 0.28rem 0.62rem;
-    font-family: var(--font-sans);
-    font-size: 0.68rem;
-    font-weight: 650;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-    transition:
-      background 0.14s ease,
-      border-color 0.14s ease,
-      color 0.14s ease,
-      transform 0.14s ease;
-  }
-  .ed-ask-chip:hover {
-    color: var(--journal-deep);
-    border-color: color-mix(in srgb, var(--journal) 55%, transparent);
-    background: color-mix(in srgb, var(--journal) 16%, transparent);
-  }
-  .ed-ask-chip.is-on {
-    color: #1b1e21;
-    border-color: var(--journal);
-    background: linear-gradient(180deg, var(--journal-deep), var(--journal));
-    transform: translateY(-1px);
-  }
   .ed-ask-field {
     position: relative;
   }
@@ -1744,10 +1710,9 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 </style>
 
 <script>
-  import { type AiConfig, type LayoutSuggestion,
-    completeInline, rewrite, suggestLayout, suggestMeta, suggestPhotoQuery,
-    chatAboutPiece, suggestSources, presetsFor,
-    type AskScope, type AskPreset, type SourceSuggestion } from "../lib/editor/ai";
+  import { type AiConfig,
+    completeInline, suggestMeta, suggestPhotoQuery,
+    chatAboutPiece, suggestSources, type SourceSuggestion } from "../lib/editor/ai";
   import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
     searchPhotos, importPhoto, type FileEntry, type Photo } from "../lib/editor/desk";
   import { TEMPLATES, templateById, type Template } from "../lib/editor/templates";
@@ -3243,23 +3208,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 
     const scheduleSuggestion = debounce(() => requestSuggestion(false), 1400);
 
-    /**
-     * Select some words, say what you want done to them, and it is done. The
-     * passage is remembered when the box opens, because clicking into the input
-     * takes the selection away from the page.
-     */
-    /** The top-level blocks a selection touches, in document order. */
-    const blocksInRange = (range: Range): HTMLElement[] =>
-      [...bodyEl.children].filter((child) => range.intersectsNode(child)) as HTMLElement[];
-
-    /** Those blocks as the MDX they would be saved as. */
-    const markdownOfBlocks = (blocks: HTMLElement[]): string => {
-      const holder = document.createElement("div");
-      for (const b of blocks) holder.append(b.cloneNode(true));
-      return htmlToMarkdown(holder);
-    };
-
-    function openAsk(forceMode?: "edit" | "chat" | "research" | "sources") {
+    function openAsk(forceMode?: "chat" | "research" | "sources") {
       if (!aiReady()) {
         setStatus("The assistant is not available on this desk.", "error");
         return;
@@ -3272,52 +3221,16 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
       const inStand = !!(anchorNode && standEl.contains(anchorNode));
       const inBody = !!(anchorNode && bodyEl.contains(anchorNode));
       const block = inBody && !inTitle && !inStand ? currentBlock() : null;
-
       const range = selected && sel ? sel.getRangeAt(0).cloneRange() : null;
-      const spanned = range && inBody ? blocksInRange(range) : [];
-      const asBlocks =
-        spanned.length > 1 ||
-        (!!selected && spanned.length === 1 && (selected.length > 280 || /\n/.test(selected)));
-      const wholeBlock = !selected && !!block;
 
-      const hasEditTarget = !!(
-        inTitle ||
-        inStand ||
-        selected ||
-        (block && block.textContent?.trim())
-      );
-
-      type AskJob = "edit" | "chat" | "research" | "sources";
-      let job: AskJob =
-        forceMode ??
-        (hasEditTarget ? "edit" : "chat");
-      if (job === "edit" && !hasEditTarget) job = "chat";
-
-      const field: "headline" | "standfirst" | "body" = inTitle
-        ? "headline"
-        : inStand
-          ? "standfirst"
-          : "body";
+      type AskJob = "chat" | "research" | "sources";
+      let job: AskJob = forceMode ?? "chat";
 
       const passage = inTitle
         ? (selected || titleEl.textContent || "").trim()
         : inStand
           ? (selected || standEl.textContent || "").trim()
-          : asBlocks || wholeBlock
-            ? markdownOfBlocks(asBlocks ? spanned : block ? [block] : [])
-            : selected || block?.textContent || "";
-
-      const targetBlocks = asBlocks ? spanned : wholeBlock && block ? [block] : [];
-
-      const askScope: AskScope = inTitle
-        ? "headline"
-        : inStand
-          ? "standfirst"
-          : targetBlocks.length
-            ? "blocks"
-            : selected
-              ? "inline"
-              : "empty";
+          : selected || "";
 
       const anchorEl = inTitle
         ? titleEl
@@ -3326,19 +3239,13 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
           : block ?? bodyEl;
       const anchorRect = (range ?? anchorEl).getBoundingClientRect();
 
-      const scopeLabel = !passage.trim()
-        ? "Whole piece"
-        : field === "headline"
+      const scopeLabel = selected
+        ? "Selection"
+        : inTitle
           ? "Headline"
-          : field === "standfirst"
+          : inStand
             ? "Standfirst"
-            : targetBlocks.length > 1
-              ? `${targetBlocks.length} blocks`
-              : targetBlocks.length === 1
-                ? "This block"
-                : selected
-                  ? "Selection"
-                  : "Whole piece";
+            : "Whole piece";
 
       const previewText = (passage || htmlToMarkdown(bodyEl) || titleEl.textContent || "")
         .replace(/\s+/g, " ")
@@ -3353,118 +3260,31 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         selection: passage,
       });
 
-      const modeMeta: Record<
-        AskJob,
-        { label: string; placeholder: string; go: string; showChips: boolean }
-      > = {
-        edit: {
-          label: "Edit",
-          placeholder:
-            field === "headline"
-              ? "Shorter. More specific. House headline."
-              : field === "standfirst"
-                ? "One sentence. 20–32 words. The argument, not the headline."
-                : askScope === "blocks"
-                  ? "Add heads. Halve it. Pull key takeaways…"
-                  : "Tighten this. Make it plainer. Cut the last sentence…",
-          go: "Apply",
-          showChips: true,
-        },
+      const modeMeta: Record<AskJob, { label: string; placeholder: string; go: string }> = {
         chat: {
           label: "Chat",
           placeholder:
             "Ask anything — outline the next section, stress-test the argument, suggest angles…",
           go: "Ask",
-          showChips: false,
         },
         research: {
           label: "Research",
           placeholder:
             "What should I look up? e.g. NATO 2% spending compliance 2025, Red Sea insurance clauses…",
           go: "Research",
-          showChips: false,
         },
         sources: {
           label: "Sources",
           placeholder:
             "Optional focus — leave blank to source the whole piece, or name a topic/document.",
           go: "Find sources",
-          showChips: false,
         },
       };
 
-      let activePreset: string | null = null;
       let lastInsert = "";
       let lastSources: SourceSuggestion[] = [];
       let busy = false;
-
-      const paint = () => {
-        const meta = modeMeta[job];
-        const chips = meta.showChips && hasEditTarget ? presetsFor(askScope) : [];
-        const canEdit = hasEditTarget && !!passage.trim();
-
-        menuEl.classList.add("is-ask", "is-open");
-        menuEl.innerHTML = `
-          <div class="ed-menu-head">
-            <span class="ed-ask-kicker">
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" />
-                <circle cx="12" cy="12" r="3.2" />
-              </svg>
-              Ask
-            </span>
-            <span class="ed-ask-scope">${esc(scopeLabel)}</span>
-          </div>
-          <form class="ed-ask" data-ask>
-            <div class="ed-ask-modes" data-modes>
-              ${(["edit", "chat", "research", "sources"] as AskJob[])
-                .map((m) => {
-                  const disabled = m === "edit" && !canEdit;
-                  return `<button type="button" class="ed-ask-mode ${job === m ? "is-on" : ""}" data-mode="${m}"${disabled ? " disabled title=\"Select text to edit\"" : ""}>${modeMeta[m].label}</button>`;
-                })
-                .join("")}
-            </div>
-            ${
-              chips.length
-                ? `<div class="ed-ask-chips" data-chips>${chips
-                    .map(
-                      (p) =>
-                        `<button type="button" class="ed-ask-chip ${activePreset === p.id ? "is-on" : ""}" data-preset="${esc(p.id)}" title="${esc(p.hint)}">${esc(p.label)}</button>`
-                    )
-                    .join("")}</div>`
-                : ""
-            }
-            <div class="ed-ask-field">
-              <textarea data-ask-input rows="3" autocomplete="off" spellcheck="true"
-                placeholder="${esc(meta.placeholder)}"></textarea>
-            </div>
-            <p class="ed-ask-target"><strong>${
-              job === "edit" ? "Working on" : job === "sources" ? "Sourcing" : "Context"
-            }</strong>${esc(preview || "Untitled piece")}</p>
-            <div data-ask-result></div>
-            <p class="ed-ask-busy" data-ask-busy hidden>Working…</p>
-            <div class="ed-ask-row">
-              <button type="submit" class="ed-btn ed-btn-primary" data-ask-go>${esc(meta.go)}</button>
-              <button type="button" class="ed-btn ed-btn-quiet" data-ask-insert hidden>Insert into piece</button>
-              <button type="button" class="ed-btn ed-btn-quiet" data-ask-add-sources hidden>Add sources</button>
-              ${
-                job === "edit" && field === "body"
-                  ? '<button type="button" class="ed-btn ed-btn-quiet" data-ask-layout>Review layout</button>'
-                  : ""
-              }
-              <span class="ed-ask-hint"><kbd>Enter</kbd> go · <kbd>Esc</kbd> close</span>
-            </div>
-          </form>`;
-
-        // Keep prior typed text when switching modes if the box was empty of presets.
-        const input = el<HTMLTextAreaElement>("[data-ask-input]");
-        if (paint.prev && !activePreset) input.value = paint.prev;
-        input.focus();
-
-        bind();
-      };
-
-      paint.prev = "";
+      let prevText = "";
 
       const close = () => {
         menuEl.classList.remove("is-open", "is-ask");
@@ -3493,7 +3313,6 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
       const showAnswer = (text: string) => {
         const host = maybe<HTMLElement>("[data-ask-result]");
         if (!host) return;
-        // Lightweight markdown-ish: paragraphs + bullets only.
         const html = text
           .split(/\n{2,}/)
           .map((para) => {
@@ -3577,21 +3396,6 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         touched();
       };
 
-      const runEdit = async (instruction: string) => {
-        if (!passage.trim()) {
-          setStatus("Select the words you want changed first.", "error");
-          return;
-        }
-        close();
-        if (field === "headline" || field === "standfirst") {
-          await applyFieldRewrite(instruction, passage, field, range);
-        } else if (targetBlocks.length) {
-          await rewriteBlocks(instruction, passage, targetBlocks);
-        } else {
-          await applyRewrite(instruction, passage, range, block);
-        }
-      };
-
       const runChat = async (question: string, withResearch: boolean) => {
         setBusy(true, withResearch ? "Researching…" : "Thinking…");
         lastInsert = "";
@@ -3599,17 +3403,14 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         showAnswer("");
         try {
           const ctx = pieceCtx();
-          const result = await chatAboutPiece(
-            state.ai,
-            {
-              question,
-              title: ctx.title,
-              description: ctx.description,
-              draft: ctx.draft,
-              selection: ctx.selection,
-              withResearch,
-            }
-          );
+          const result = await chatAboutPiece(state.ai, {
+            question,
+            title: ctx.title,
+            description: ctx.description,
+            draft: ctx.draft,
+            selection: ctx.selection,
+            withResearch,
+          });
           lastInsert = result.insert ?? "";
           lastSources = result.sources ?? [];
           showAnswer(result.answer || "Nothing came back.");
@@ -3652,53 +3453,21 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         }
       };
 
-      function bind() {
+      const bind = () => {
         const input = el<HTMLTextAreaElement>("[data-ask-input]");
-        const chips = job === "edit" && hasEditTarget ? presetsFor(askScope) : [];
 
         menuEl.querySelectorAll<HTMLButtonElement>("[data-mode]").forEach((btn) => {
           btn.addEventListener("mousedown", (e) => e.preventDefault());
           btn.addEventListener("click", () => {
-            if (btn.disabled || busy) return;
-            paint.prev = input.value;
-            activePreset = null;
+            if (busy) return;
+            prevText = input.value;
             job = btn.dataset.mode as AskJob;
             paint();
           });
         });
 
-        menuEl.querySelectorAll<HTMLButtonElement>("[data-preset]").forEach((btn) => {
-          btn.addEventListener("mousedown", (e) => e.preventDefault());
-          btn.addEventListener("click", () => {
-            const preset = chips.find((p) => p.id === btn.dataset.preset);
-            if (!preset) return;
-            if (activePreset === preset.id && input.value.trim() === preset.instruction) {
-              activePreset = null;
-              input.value = "";
-            } else {
-              activePreset = preset.id;
-              input.value = preset.instruction;
-            }
-            paint.prev = input.value;
-            // repaint chip on state without full rebuild
-            menuEl.querySelectorAll<HTMLButtonElement>("[data-preset]").forEach((b) => {
-              b.classList.toggle("is-on", b.dataset.preset === activePreset);
-            });
-            input.focus();
-          });
-        });
-
         input.addEventListener("input", () => {
-          paint.prev = input.value;
-          if (activePreset) {
-            const preset = chips.find((p) => p.id === activePreset);
-            if (!preset || input.value.trim() !== preset.instruction) {
-              activePreset = null;
-              menuEl.querySelectorAll<HTMLButtonElement>("[data-preset]").forEach((b) => {
-                b.classList.remove("is-on");
-              });
-            }
-          }
+          prevText = input.value;
         });
 
         input.addEventListener("keydown", (event) => {
@@ -3712,11 +3481,6 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
             event.preventDefault();
             if (!busy) el<HTMLFormElement>("[data-ask]").requestSubmit();
           }
-        });
-
-        maybe<HTMLButtonElement>("[data-ask-layout]")?.addEventListener("click", async () => {
-          close();
-          await reviewLayout();
         });
 
         maybe<HTMLButtonElement>("[data-ask-insert]")?.addEventListener("click", () => {
@@ -3744,11 +3508,6 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
           event.preventDefault();
           if (busy) return;
           const text = input.value.trim();
-          if (job === "edit") {
-            if (!text) { input.focus(); return; }
-            await runEdit(text);
-            return;
-          }
           if (job === "chat") {
             if (!text) { input.focus(); return; }
             await runChat(text, false);
@@ -3759,253 +3518,58 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
             await runChat(text, true);
             return;
           }
-          // sources — empty focus is allowed
           await runSources(text);
         });
-      }
+      };
+
+      const paint = () => {
+        const meta = modeMeta[job];
+        menuEl.classList.add("is-ask", "is-open");
+        menuEl.innerHTML = `
+          <div class="ed-menu-head">
+            <span class="ed-ask-kicker">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" />
+                <circle cx="12" cy="12" r="3.2" />
+              </svg>
+              Ask
+            </span>
+            <span class="ed-ask-scope">${esc(scopeLabel)}</span>
+          </div>
+          <form class="ed-ask" data-ask>
+            <div class="ed-ask-modes" data-modes>
+              ${(["chat", "research", "sources"] as AskJob[])
+                .map(
+                  (m) =>
+                    `<button type="button" class="ed-ask-mode ${job === m ? "is-on" : ""}" data-mode="${m}">${modeMeta[m].label}</button>`
+                )
+                .join("")}
+            </div>
+            <div class="ed-ask-field">
+              <textarea data-ask-input rows="3" autocomplete="off" spellcheck="true"
+                placeholder="${esc(meta.placeholder)}"></textarea>
+            </div>
+            <p class="ed-ask-target"><strong>${
+              job === "sources" ? "Sourcing" : "Context"
+            }</strong>${esc(preview || "Untitled piece")}</p>
+            <div data-ask-result></div>
+            <p class="ed-ask-busy" data-ask-busy hidden>Working…</p>
+            <div class="ed-ask-row">
+              <button type="submit" class="ed-btn ed-btn-primary" data-ask-go>${esc(meta.go)}</button>
+              <button type="button" class="ed-btn ed-btn-quiet" data-ask-insert hidden>Insert into piece</button>
+              <button type="button" class="ed-btn ed-btn-quiet" data-ask-add-sources hidden>Add sources</button>
+              <span class="ed-ask-hint"><kbd>Enter</kbd> go · <kbd>Esc</kbd> close</span>
+            </div>
+          </form>`;
+
+        const input = el<HTMLTextAreaElement>("[data-ask-input]");
+        if (prevText) input.value = prevText;
+        input.focus();
+        bind();
+      };
 
       paint();
     }
-
-    /** Headline or standfirst — plain text fields, not body blocks. */
-    async function applyFieldRewrite(
-      instruction: string,
-      passage: string,
-      field: "headline" | "standfirst",
-      range: Range | null
-    ) {
-      const target = field === "headline" ? titleEl : standEl;
-      const mark = document.createElement("span");
-      if (range && target.contains(range.commonAncestorContainer)) {
-        try {
-          range.surroundContents(mark);
-        } catch {
-          mark.textContent = passage;
-          target.textContent = "";
-          target.append(mark);
-        }
-      } else {
-        mark.textContent = target.textContent ?? passage;
-        target.textContent = "";
-        target.append(mark);
-      }
-      mark.classList.add("ed-working");
-      window.getSelection()?.removeAllRanges();
-
-      try {
-        const result = await rewrite(
-          state.ai,
-          instruction,
-          passage,
-          {
-            title: titleEl.textContent ?? "",
-            description: standEl.textContent ?? "",
-            draft: htmlToMarkdown(bodyEl),
-            field,
-          },
-          "field"
-        );
-        if (!result.trim()) throw new Error("Nothing came back.");
-        mark.textContent = result;
-        mark.classList.remove("ed-working");
-        mark.classList.add("ed-arrived");
-        window.setTimeout(() => {
-          mark.replaceWith(document.createTextNode(mark.textContent ?? ""));
-        }, 900);
-        setStatus("Ctrl+Z undoes it", "ok");
-        touched();
-      } catch (error) {
-        mark.classList.remove("ed-working");
-        if (mark.parentNode) mark.replaceWith(document.createTextNode(passage));
-        setStatus((error as Error).message, "error");
-      }
-    }
-
-    /** Rewrites whole blocks and puts the returned markdown back as blocks. */
-    async function rewriteBlocks(instruction: string, passage: string, blocks: HTMLElement[]) {
-      // A small stagger sends the wave down the piece rather than flashing it all at once.
-      blocks.forEach((b, i) => {
-        b.style.animationDelay = `${i * 90}ms`;
-        b.classList.add("ed-working");
-      });
-      const clear = () => blocks.forEach((b) => { b.classList.remove("ed-working"); b.style.animationDelay = ""; });
-      window.getSelection()?.removeAllRanges();
-
-      try {
-        const result = await rewrite(
-          state.ai,
-          instruction,
-          passage,
-          {
-            title: titleEl.textContent ?? "",
-            description: standEl.textContent ?? "",
-            draft: htmlToMarkdown(bodyEl),
-            field: "body",
-          },
-          "blocks"
-        );
-        if (!result.trim()) throw new Error("Nothing came back.");
-
-        const holder = document.createElement("div");
-        holder.innerHTML = markdownToHtml(result);
-        const fresh = [...holder.children] as HTMLElement[];
-        if (!fresh.length) throw new Error("Nothing came back.");
-
-        blocks[0].replaceWith(...fresh);
-        blocks.slice(1).forEach((b) => b.remove());
-
-        fresh.forEach((b, i) => {
-          b.style.animationDelay = `${i * 70}ms`;
-          b.classList.add("ed-arrived");
-        });
-        window.setTimeout(
-          () => fresh.forEach((b) => { b.classList.remove("ed-arrived"); b.style.animationDelay = ""; }),
-          1100 + fresh.length * 70
-        );
-        fresh[0].scrollIntoView({ block: "center", behavior: "smooth" });
-
-        ensureTrailingParagraph();
-        setStatus("Ctrl+Z undoes it", "ok");
-        touched();
-      } catch (error) {
-        clear();
-        setStatus((error as Error).message, "error");
-      }
-    }
-
-    async function applyRewrite(
-      instruction: string,
-      passage: string,
-      range: Range | null,
-      block: HTMLElement | null
-    ) {
-      // The waiting and the arrival both happen on the words themselves, so the
-      // writer never has to look away from the sentence being changed.
-      let mark: HTMLElement | null = null;
-      if (range) {
-        mark = document.createElement("span");
-        try {
-          range.surroundContents(mark);
-        } catch {
-          // A selection that crosses element boundaries cannot be wrapped directly.
-          mark.append(range.extractContents());
-          range.insertNode(mark);
-        }
-      } else if (block) {
-        mark = block;
-      }
-      mark?.classList.add("ed-working");
-      window.getSelection()?.removeAllRanges();
-
-      const settle = (element: HTMLElement) => {
-        element.classList.remove("ed-working");
-        element.classList.add("ed-arrived");
-        window.setTimeout(() => {
-          element.classList.remove("ed-arrived");
-          if (element === block) return;
-          // Unwrap the temporary span so it never reaches the saved markdown, and
-          // leave the caret where the writer would carry on.
-          const last = element.lastChild;
-          const parent = element.parentElement;
-          if (!element.parentNode) return;
-          element.replaceWith(...element.childNodes);
-          if (last && parent && bodyEl.contains(parent)) {
-            const caret = document.createRange();
-            caret.setStartAfter(last);
-            caret.collapse(true);
-            const selection = window.getSelection();
-            selection?.removeAllRanges();
-            selection?.addRange(caret);
-          }
-        }, 1100);
-      };
-
-      try {
-        const result = await rewrite(state.ai, instruction, passage, {
-          title: titleEl.textContent ?? "",
-          description: standEl.textContent ?? "",
-          draft: htmlToMarkdown(bodyEl),
-          field: "body",
-        }, "inline");
-        if (!result.trim()) throw new Error("Nothing came back.");
-
-        if (mark) {
-          mark.innerHTML = inlineToHtml(result);
-          settle(mark);
-        }
-        setStatus("Ctrl+Z undoes it", "ok");
-        touched();
-      } catch (error) {
-        if (mark) {
-          mark.classList.remove("ed-working");
-          if (mark !== block && mark.parentNode) mark.replaceWith(...mark.childNodes);
-        }
-        setStatus((error as Error).message, "error");
-      }
-    }
-
-    async function reviewLayout() {
-      setStatus("Reading the piece…");
-      try {
-        const notes = await suggestLayout(state.ai, {
-          title: titleEl.textContent ?? "",
-          description: standEl.textContent ?? "",
-          body: htmlToMarkdown(bodyEl),
-          kind,
-        });
-        showNotes(notes);
-        setStatus(`${notes.length} notes`, "ok");
-      } catch (error) {
-        setStatus((error as Error).message, "error");
-      }
-    }
-
-    function showNotes(notes: LayoutSuggestion[]) {
-      menuEl.innerHTML =
-        '<p class="ed-menu-head">Production notes</p>' +
-        (notes.length
-          ? notes
-              .map(
-                (n, i) =>
-                  `<button type="button" data-note="${i}" style="display:block">
-                     <span class="name" style="display:block">${esc(n.title)}</span>
-                     <span class="hint" style="display:block;margin:.25rem 0 0;white-space:normal;line-height:1.4">${esc(n.detail)}</span>
-                   </button>`
-              )
-              .join("")
-          : '<p class="ed-menu-head" style="border:0">Nothing to flag.</p>');
-      menuEl.style.width = "24rem";
-      menuEl.classList.add("is-open");
-      menuEl.style.top = `${window.scrollY + 70}px`;
-      menuEl.style.left = `${Math.max(12, window.innerWidth - 420)}px`;
-      dismissOnClickAway(() => { menuEl.classList.remove("is-open"); menuEl.style.width = ""; });
-
-      menuEl.querySelectorAll<HTMLButtonElement>("[data-note]").forEach((button) =>
-        button.addEventListener("click", () => {
-          const note = notes[Number(button.dataset.note)];
-          if (!note.anchor) return;
-          const walker = document.createTreeWalker(bodyEl, NodeFilter.SHOW_TEXT);
-          while (walker.nextNode()) {
-            const index = (walker.currentNode.textContent ?? "").indexOf(note.anchor);
-            if (index === -1) continue;
-            const range = document.createRange();
-            range.setStart(walker.currentNode, index);
-            range.setEnd(walker.currentNode, index + note.anchor.length);
-            const sel = window.getSelection();
-            sel?.removeAllRanges();
-            sel?.addRange(range);
-            (walker.currentNode.parentElement as HTMLElement)?.scrollIntoView({ block: "center" });
-            return;
-          }
-          setStatus("That passage has changed.", "error");
-        })
-      );
-    }
-
-    document.addEventListener("mousedown", (event) => {
-      if (!menuBlock) return;
-      if (!menuEl.contains(event.target as Node)) closeMenu();
-    });
 
     // ==========================================================
     // Publish drawer
