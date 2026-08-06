@@ -7,6 +7,18 @@ import WireTicker from "../components/WireTicker.astro";
 import Footer from "../components/Footer.astro";
 import SearchOverlay from "../components/SearchOverlay.astro";
 
+// Preloaded so the browser fetches these in parallel with the document
+// instead of waiting to discover them inside global.css. Without this, a
+// cold cache (a hard refresh) shows the fallback font first and visibly
+// resizes text once Newsreader/Inter swap in — these are the weights that
+// render above the fold.
+import newsreader400 from "@fontsource/newsreader/files/newsreader-latin-400-normal.woff2?url";
+import newsreader600 from "@fontsource/newsreader/files/newsreader-latin-600-normal.woff2?url";
+import newsreader700 from "@fontsource/newsreader/files/newsreader-latin-700-normal.woff2?url";
+import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
+import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2?url";
+import inter700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url";
+
 interface Props {
   title: string;
   description?: string;
@@ -68,6 +80,12 @@ const webJsonLd = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" as="font" type="font/woff2" href={newsreader400} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={newsreader600} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={newsreader700} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={inter400} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={inter600} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={inter700} crossorigin />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />

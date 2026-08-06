@@ -3,6 +3,15 @@ import "../styles/global.css";
 import { site } from "../site";
 import { root } from "../utils/collection";
 
+// See BaseLayout.astro: preloaded so a cold cache doesn't flash the fallback
+// font and resize text once Newsreader/Inter swap in.
+import newsreader400 from "@fontsource/newsreader/files/newsreader-latin-400-normal.woff2?url";
+import newsreader600 from "@fontsource/newsreader/files/newsreader-latin-600-normal.woff2?url";
+import newsreader700 from "@fontsource/newsreader/files/newsreader-latin-700-normal.woff2?url";
+import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2?url";
+import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2?url";
+import inter700 from "@fontsource/inter/files/inter-latin-700-normal.woff2?url";
+
 interface Props {
   title: string;
 }
@@ -15,6 +24,12 @@ const { title } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" as="font" type="font/woff2" href={newsreader400} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={newsreader600} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={newsreader700} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={inter400} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={inter600} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={inter700} crossorigin />
     <title>{title} — {site.publicationName}</title>
     <meta name="robots" content="noindex, nofollow" />
     <meta name="color-scheme" content="dark" />
