@@ -528,8 +528,7 @@ a:hover > .outbound::after,
   mask-image: linear-gradient(to right, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);
 }
 
-.ticker-viewport:hover .ticker-track,
-.ticker-viewport:focus-within .ticker-track {
+.ticker-viewport:hover .ticker-track {
   animation-play-state: paused;
 }
 
