@@ -113,15 +113,7 @@ export const nav: { primary: NavItem[] } = {
         { label: "Politics", url: "/wire/politics" },
       ],
     },
-    {
-      label: "Journal",
-      url: "/journal",
-      subs: [
-        { label: "Analysis & essays", url: "/journal" },
-        { label: "Theory", url: "/journal/theory" },
-        { label: "Explainers", url: "/explainers" },
-      ],
-    },
+    { label: "Journal", url: "/journal" },
     { label: "GLORISK", url: "/risk" },
     { label: "Regions", url: "/regions" },
   ],
