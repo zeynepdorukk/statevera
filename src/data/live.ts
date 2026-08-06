@@ -3,6 +3,7 @@ export interface LiveChannel {
   name: string;
   shortName: string;
   channelId: string;
+  logo: string;
 }
 
 export const liveChannels: LiveChannel[] = [
@@ -11,18 +12,21 @@ export const liveChannels: LiveChannel[] = [
     name: "France 24 English",
     shortName: "France 24",
     channelId: "UCQfwfsi5VrQ8yKZ-UWmAEFg",
+    logo: "/images/live/france24.svg",
   },
   {
     id: "dw",
     name: "DW News",
     shortName: "DW",
     channelId: "UCknLrEdhRCp1aegoMqRaCZg",
+    logo: "/images/live/dw.svg",
   },
   {
     id: "aljazeera",
     name: "Al Jazeera English",
     shortName: "Al Jazeera",
     channelId: "UCNye-wNBqNL5ZzHSJj3l8Bg",
+    logo: "/images/live/aljazeera.png",
   },
 ];
 
