@@ -2,9 +2,8 @@
 import EditorLayout from "../layouts/EditorLayout.astro";
 import { site } from "../site";
 
-// This page ships with the publication as well, where there is no server behind
-// it. Rather than let the writer hit a dead end, that build sends her onward.
-const hasServer = Boolean(process.env.NETLIFY);
+// The static publication build has no desk server; local dev does.
+const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 ---
 
 <EditorLayout title="Desk">
