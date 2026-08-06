@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { desks, deskList, regions, regionSlugOf, type DeskSlug } from "../../site";
-import { byCategory, wireItems, activeRegions } from "../../data/wire";
+import { desks, deskList, type DeskSlug } from "../../site";
+import { byCategory } from "../../data/wire";
 import { getByCategory, root } from "../../utils/collection";
 import WireCard from "../../components/WireCard.astro";
 import JournalCard from "../../components/JournalCard.astro";
@@ -17,13 +17,6 @@ const desk = desks[deskSlug];
 const items = byCategory(desk.name);
 const [lead, ...rest] = items;
 const journalOnDesk = await getByCategory(desk.name, 3);
-
-const regionCounts = activeRegions()
-  .map(({ region }) => ({
-    region,
-    count: items.filter((i) => i.region === region).length,
-  }))
-  .filter((r) => r.count > 0);
 
 const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
 ---
@@ -71,27 +64,6 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
             </div>
           )}
 
-          <SectionHead title="By region" tone="wire" href="/regions" moreLabel="Regions" />
-          <ul class="rule-list">
-            {regionCounts.map(({ region, count }) => {
-              const slug = regionSlugOf(region);
-              return (
-                <li class="flex items-baseline justify-between gap-3">
-                  {slug in regions ? (
-                    <a href={root(`/regions/${slug}`)} class="editorial-link font-sans text-[0.86rem] font-medium text-ink">
-                      {region}
-                    </a>
-                  ) : (
-                    <span class="font-sans text-[0.86rem] text-ink">{region}</span>
-                  )}
-                  <span class="meta tabular">{count}</span>
-                </li>
-              );
-            })}
-          </ul>
-          <p class="meta mt-6 border-t border-line pt-3">
-            {desk.name} accounts for {items.length} of {wireItems.length} stories currently in the news feed.
-          </p>
         </aside>
       </section>
     )}
