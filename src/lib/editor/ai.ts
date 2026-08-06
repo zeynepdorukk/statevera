@@ -469,10 +469,16 @@ export interface SourceSuggestion {
   why: string;
 }
 
+export interface ChatApply {
+  /** Replace the captured selection, or insert a new passage at the cursor. */
+  action: "replace" | "insert";
+  text: string;
+}
+
 export interface ChatResult {
   answer: string;
-  /** Optional body markdown the writer may insert. */
-  insert?: string;
+  /** Optional edit proposed by the conversation. The writer must apply it. */
+  apply?: ChatApply;
   sources?: SourceSuggestion[];
 }
 
@@ -549,11 +555,14 @@ the way they would ask ChatGPT. Answer helpfully. You are a colleague on the des
 not a generic chatbot.
 
 Return JSON only:
-{"answer":"markdown answer to the writer (may use short lists)","insert":"optional body markdown they could paste into the piece, or empty string","sources":[{"name":"Outlet or document","url":"https://...","why":"one line on why it belongs on the piece"}]}
+{"answer":"markdown answer to the writer (may use short lists)","apply":null or {"action":"replace|insert","text":"plain text or markdown to apply"},"sources":[{"name":"Outlet or document","url":"https://...","why":"one line on why it belongs on the piece"}]}
 
 Rules:
 - "answer" is for the writer. Clear, British English, no hype.
-- "insert" is optional finished copy for the article. House voice. Empty string if the ask was only a question.
+- "apply" is null for a question, explanation, outline or critique that should remain conversational.
+- Use "action":"replace" when the writer asks to edit, rewrite, shorten, expand, clarify or otherwise change the selected passage. Return ONLY the replacement text in "text"; do not include an explanation, heading or quotation marks around it.
+- Use "action":"insert" when the writer asks you to draft, continue or add new copy. Return ONLY the finished markdown to insert into the piece.
+- If there is no selection and the writer asks to edit the piece, use "action":"insert" only when you can produce a genuinely new passage; otherwise leave "apply":null and explain what needs selecting.
 - "sources" may be empty. Every url must come from the research block or from a link already in the draft. Never mint a URL.
 - Invent no facts, figures, quotations or named sources.
 - If the selection is template placeholder text, treat it as scaffolding unless asked to draft over it.
@@ -615,9 +624,18 @@ ${question}`;
     }
   }
 
+  const proposed = parsed.apply as Record<string, unknown> | null | undefined;
+  const apply =
+    proposed &&
+    (proposed.action === "replace" || proposed.action === "insert") &&
+    typeof proposed.text === "string" &&
+    proposed.text.trim()
+      ? { action: proposed.action, text: proposed.text.trim() } as ChatApply
+      : undefined;
+
   return {
     answer: String(parsed.answer ?? "").trim() || stripFence(raw),
-    insert: String(parsed.insert ?? "").trim(),
+    ...(apply ? { apply } : {}),
     sources,
   };
 }

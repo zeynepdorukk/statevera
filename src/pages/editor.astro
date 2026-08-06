@@ -1712,7 +1712,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 <script>
   import { type AiConfig,
     completeInline, suggestMeta, suggestPhotoQuery,
-    chatAboutPiece, suggestSources, type SourceSuggestion } from "../lib/editor/ai";
+    chatAboutPiece, suggestSources, type ChatApply, type SourceSuggestion } from "../lib/editor/ai";
   import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
     searchPhotos, importPhoto, type FileEntry, type Photo } from "../lib/editor/desk";
   import { TEMPLATES, templateById, type Template } from "../lib/editor/templates";
@@ -3281,7 +3281,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         },
       };
 
-      let lastInsert = "";
+      let lastApply: ChatApply | null = null;
       let lastSources: SourceSuggestion[] = [];
       let busy = false;
       let prevText = "";
@@ -3341,9 +3341,9 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         host.innerHTML =
           (text.trim() ? `<div class="ed-ask-answer">${html}</div>` : "") + sourcesHtml;
 
-        const insertBtn = maybe<HTMLButtonElement>("[data-ask-insert]");
+        const applyBtn = maybe<HTMLButtonElement>("[data-ask-apply]");
         const addBtn = maybe<HTMLButtonElement>("[data-ask-add-sources]");
-        if (insertBtn) insertBtn.hidden = !lastInsert.trim();
+        if (applyBtn) applyBtn.hidden = !lastApply?.text.trim();
         if (addBtn) addBtn.hidden = !lastSources.length;
       };
 
@@ -3380,7 +3380,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         holder.innerHTML = html;
         const nodes = [...holder.children] as HTMLElement[];
         if (!nodes.length) return;
-        const at = currentBlock() || bodyEl.lastElementChild;
+        const at = block && bodyEl.contains(block) ? block : currentBlock() || bodyEl.lastElementChild;
         if (at && bodyEl.contains(at)) at.after(...nodes);
         else bodyEl.append(...nodes);
         nodes[0]?.scrollIntoView({ block: "center", behavior: "smooth" });
@@ -3396,9 +3396,53 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         touched();
       };
 
+      const applyChatDraft = (proposal: ChatApply) => {
+        const text = proposal.text.trim();
+        if (!text) return;
+
+        if (proposal.action === "insert") {
+          insertMarkdown(text);
+          setStatus("Applied to the piece", "ok");
+          return;
+        }
+
+        if (inTitle || inStand) {
+          const target = inTitle ? titleEl : standEl;
+          if (range && target.contains(range.commonAncestorContainer)) {
+            range.deleteContents();
+            range.insertNode(document.createTextNode(text));
+            target.normalize();
+          } else {
+            target.textContent = text;
+          }
+          target.classList.add("ed-arrived");
+          window.setTimeout(() => target.classList.remove("ed-arrived"), 900);
+          touched();
+          setStatus("Applied to the piece", "ok");
+          return;
+        }
+
+        if (!range || !bodyEl.contains(range.commonAncestorContainer)) {
+          setStatus("Select the passage you want to replace first.", "error");
+          return;
+        }
+
+        const holder = document.createElement("div");
+        holder.innerHTML = inlineToHtml(text.replace(/\s*\n\s*/g, " "));
+        const fragment = document.createDocumentFragment();
+        while (holder.firstChild) fragment.append(holder.firstChild);
+        range.deleteContents();
+        range.insertNode(fragment);
+        bodyEl.classList.add("ed-arrived");
+        window.setTimeout(() => bodyEl.classList.remove("ed-arrived"), 900);
+        ensureTrailingParagraph();
+        touched();
+        setStatus("Applied to the piece", "ok");
+      };
+
       const runChat = async (question: string, withResearch: boolean) => {
         setBusy(true, withResearch ? "Researching…" : "Thinking…");
-        lastInsert = "";
+        lastApply = null;
         lastSources = [];
         showAnswer("");
         try {
@@ -3411,7 +3455,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
             selection: ctx.selection,
             withResearch,
           });
-          lastInsert = result.insert ?? "";
+          lastApply = result.apply ?? null;
           lastSources = result.sources ?? [];
           showAnswer(result.answer || "Nothing came back.");
           setStatus(withResearch ? "Research in." : "Answer in.", "ok");
@@ -3425,7 +3469,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 
       const runSources = async (focus: string) => {
         setBusy(true, "Finding sources…");
-        lastInsert = "";
+        lastApply = null;
         lastSources = [];
         showAnswer("");
         try {
@@ -3483,10 +3527,13 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
           }
         });
 
-        maybe<HTMLButtonElement>("[data-ask-insert]")?.addEventListener("click", () => {
-          if (!lastInsert.trim()) return;
-          insertMarkdown(lastInsert);
-          setStatus("Inserted into the piece", "ok");
+        maybe<HTMLButtonElement>("[data-ask-apply]")?.addEventListener("click", () => {
+          if (!lastApply?.text.trim()) return;
+          const proposal = lastApply;
+          applyChatDraft(proposal);
+          lastApply = null;
+          const button = maybe<HTMLButtonElement>("[data-ask-apply]");
+          if (button) button.hidden = true;
         });
 
         maybe<HTMLButtonElement>("[data-ask-add-sources]")?.addEventListener("click", () => {
@@ -3556,7 +3603,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
             <p class="ed-ask-busy" data-ask-busy hidden>Working…</p>
             <div class="ed-ask-row">
               <button type="submit" class="ed-btn ed-btn-primary" data-ask-go>${esc(meta.go)}</button>
-              <button type="button" class="ed-btn ed-btn-quiet" data-ask-insert hidden>Insert into piece</button>
+              <button type="button" class="ed-btn ed-btn-primary" data-ask-apply hidden>Apply</button>
               <button type="button" class="ed-btn ed-btn-quiet" data-ask-add-sources hidden>Add sources</button>
               <span class="ed-ask-hint"><kbd>Enter</kbd> go · <kbd>Esc</kbd> close</span>
             </div>
