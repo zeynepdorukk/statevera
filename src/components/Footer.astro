@@ -1,5 +1,5 @@
 ---
-import { site, pillarList, deskList, regions } from "../site";
+import { site, deskList, regions } from "../site";
 import { root } from "../utils/collection";
 import { wirePublishers } from "../data/wire";
 import Masthead from "./Masthead.astro";
@@ -84,14 +84,6 @@ const year = new Date().getFullYear();
 
     <div class="mt-6 flex flex-col gap-2 border-t border-line pt-5 sm:flex-row sm:items-center sm:justify-between">
       <p class="meta">&copy; {year} {site.publicationNameDisplay}. All rights reserved.</p>
-      <p class="meta flex flex-wrap items-center gap-x-3">
-        {pillarList.map((pillar) => (
-          <a href={root(pillar.url)} data-tone={pillar.tone} class="inline-flex items-center gap-1.5 hover:text-ink">
-            <span class="inline-block h-1.5 w-1.5 bg-tone" aria-hidden="true"></span>
-            {pillar.name}
-          </a>
-        ))}
-      </p>
     </div>
   </div>
 </footer>
