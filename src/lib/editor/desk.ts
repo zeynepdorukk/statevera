@@ -79,3 +79,23 @@ export const writeFile = (
 
 export const deleteFile = (path: string, message: string, sha: string): Promise<{ deleted: boolean }> =>
   call("file", { method: "DELETE", body: JSON.stringify({ path, message, sha }) });
+
+export interface Photo {
+  file: string;
+  title: string;
+  thumb: string;
+  width: number;
+  height: number;
+  artist: string;
+  licence: string;
+  source: string;
+  /** A ready-made credit line: label, author, licence. */
+  credit: string;
+}
+
+export const searchPhotos = (query: string): Promise<{ photos: Photo[] }> =>
+  call(`photos?q=${encodeURIComponent(query)}`);
+
+/** Copies a Commons picture into the repository and returns its filename. */
+export const importPhoto = (file: string, name: string): Promise<{ name: string; preview: string }> =>
+  call("photos", { method: "POST", body: JSON.stringify({ file, name }) });

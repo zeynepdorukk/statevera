@@ -194,6 +194,41 @@ ${passage}`;
 }
 
 // ------------------------------------------------------------
+// Looking for a picture
+// ------------------------------------------------------------
+
+/**
+ * Turns a piece into something worth typing into an image archive. A headline is
+ * usually the wrong query — archives are catalogued by what is in the frame, not
+ * by what an article argues.
+ */
+export async function suggestPhotoQuery(
+  config: AiConfig,
+  piece: { title: string; description: string; draft: string },
+  signal?: AbortSignal
+): Promise<string> {
+  const prompt = `Below is a piece for STATEVERA. Give me the search phrase I should type
+into a photograph archive to find its lead image.
+
+Rules:
+- Return ONLY the phrase. No quotes, no explanation, no full stop.
+- Two to five words, describing what would be VISIBLE in a suitable photograph:
+  a place, a building, an object, an institution, a kind of scene.
+- Archives are catalogued by subject, not by argument. "NATO headquarters
+  Brussels" is a query; "the future of European deterrence" is not.
+- Prefer things that are actually photographed often.
+
+Headline: ${piece.title || "(untitled)"}
+Standfirst: ${piece.description || "(none)"}
+
+--- THE PIECE ---
+${piece.draft.slice(0, 2500)}`;
+
+  const raw = await ask(config, prompt, { system: HOUSE_STYLE, temperature: 0.3, maxTokens: 40, signal });
+  return stripFence(raw).split("\n")[0]?.replace(/^["“']|["”'.]$/g, "").trim() ?? "";
+}
+
+// ------------------------------------------------------------
 // Structure & layout advice
 // ------------------------------------------------------------
 

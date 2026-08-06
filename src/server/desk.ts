@@ -32,6 +32,8 @@ const modelOf = (env: DeskEnv): string => env.OPENAI_MODEL?.trim() || DEFAULT_MO
 
 /** A signed-in session may only touch the two content folders. */
 const WRITEABLE = /^src\/content\/(articles|explainers)\/[a-z0-9][a-z0-9-]*\.mdx$/;
+/** Pictures imported from the web land here, and nowhere else. */
+const IMAGE_WRITEABLE = /^public\/images\/articles\/[a-z0-9][a-z0-9-]*\.(jpg|png)$/;
 const READABLE_DIRS = new Set([
   "src/content/articles",
   "src/content/explainers",
@@ -91,6 +93,15 @@ const toBase64 = (text: string): string => {
   const bytes = encoder.encode(text);
   let binary = "";
   for (const byte of bytes) binary += String.fromCharCode(byte);
+  return btoa(binary);
+};
+
+/** Chunked so a multi-megabyte picture does not blow the argument limit. */
+const bytesToBase64 = (bytes: Uint8Array): string => {
+  let binary = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  }
   return btoa(binary);
 };
 
@@ -288,6 +299,147 @@ function readOpenAiError(raw: string): string {
 }
 
 // ------------------------------------------------------------
+// Photographs from the web
+// ------------------------------------------------------------
+// Wikimedia Commons is the only source. It needs no key, and every file
+// carries the author and the licence, which is what a published picture
+// needs and what a general image search will not give you.
+
+const COMMONS_API = "https://commons.wikimedia.org/w/api.php";
+/** The only host a picture may be fetched from. Anything else is an open proxy. */
+const COMMONS_FILES = "upload.wikimedia.org";
+const AGENT = "Statevera editorial desk (https://statevera.netlify.app)";
+
+export interface Photo {
+  file: string;
+  title: string;
+  thumb: string;
+  width: number;
+  height: number;
+  artist: string;
+  licence: string;
+  source: string;
+  credit: string;
+}
+
+/** Commons returns author and description as HTML fragments. */
+const plain = (html: string): string =>
+  html
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?39;|&apos;/g, "'")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/\s+/g, " ")
+    .trim();
+
+interface CommonsPage {
+  title?: string;
+  imageinfo?: {
+    url?: string;
+    width?: number;
+    height?: number;
+    thumburl?: string;
+    descriptionurl?: string;
+    extmetadata?: Record<string, { value?: string }>;
+  }[];
+}
+
+async function searchPhotos(query: string, limit: number): Promise<Photo[]> {
+  const params = new URLSearchParams({
+    action: "query",
+    format: "json",
+    formatversion: "2",
+    generator: "search",
+    gsrsearch: `filetype:bitmap ${query}`,
+    gsrnamespace: "6",
+    gsrlimit: String(limit),
+    prop: "imageinfo",
+    iiprop: "url|size|extmetadata",
+    iiurlwidth: "420",
+  });
+  const response = await fetch(`${COMMONS_API}?${params}`, {
+    headers: { "user-agent": AGENT, accept: "application/json" },
+  });
+  if (!response.ok) throw new Error(`Wikimedia Commons answered ${response.status}.`);
+  const body = (await response.json()) as { query?: { pages?: CommonsPage[] } };
+
+  const photos: Photo[] = [];
+  for (const page of body.query?.pages ?? []) {
+    const info = page.imageinfo?.[0];
+    const meta = info?.extmetadata ?? {};
+    if (!info?.thumburl || !info.width || !info.height) continue;
+    // Below this a picture cannot carry a lead slot, so it is not worth offering.
+    if (info.width < 900) continue;
+
+    const artist = plain(meta.Artist?.value ?? "");
+    const licence = plain(meta.LicenseShortName?.value ?? "");
+    const label = plain(meta.ObjectName?.value ?? "") || (page.title ?? "").replace(/^File:|\.\w+$/g, "");
+    photos.push({
+      file: (page.title ?? "").replace(/^File:/, ""),
+      title: label,
+      thumb: info.thumburl,
+      width: info.width,
+      height: info.height,
+      artist,
+      licence,
+      source: info.descriptionurl ?? "",
+      credit: [label, artist, licence].filter(Boolean).join(". ") + (artist || licence ? "." : ""),
+    });
+  }
+  return photos;
+}
+
+/**
+ * Commons only renders thumbnails at certain widths, and which ones is not
+ * predictable from the URL, so the address of a publishable copy is asked for
+ * rather than guessed. Taking a file title instead of a URL also means the
+ * browser never chooses what the server fetches.
+ */
+async function publishableUrl(file: string): Promise<string> {
+  const params = new URLSearchParams({
+    action: "query",
+    format: "json",
+    formatversion: "2",
+    titles: `File:${file}`,
+    prop: "imageinfo",
+    iiprop: "url|size",
+    iiurlwidth: "1280",
+  });
+  const response = await fetch(`${COMMONS_API}?${params}`, {
+    headers: { "user-agent": AGENT, accept: "application/json" },
+  });
+  if (!response.ok) throw new Error(`Wikimedia Commons answered ${response.status}.`);
+  const body = (await response.json()) as { query?: { pages?: CommonsPage[] } };
+  const info = body.query?.pages?.[0]?.imageinfo?.[0];
+  const url = (info?.width ?? 0) > 1280 ? info?.thumburl : info?.url;
+  if (!url) throw new Error("Commons has no copy of that file.");
+  return url;
+}
+
+/** Fetches the bytes of one Commons file, refusing any other host. */
+async function fetchPhotoBytes(rawUrl: string): Promise<{ bytes: Uint8Array; type: string }> {
+  let url: URL;
+  try {
+    url = new URL(rawUrl);
+  } catch {
+    throw new Error("That is not a picture address.");
+  }
+  if (url.protocol !== "https:" || url.hostname !== COMMONS_FILES) {
+    throw new Error("Pictures may only come from Wikimedia Commons.");
+  }
+  const response = await fetch(url.toString(), { headers: { "user-agent": AGENT } });
+  if (!response.ok) throw new Error(`Could not fetch that picture (${response.status}).`);
+  const type = response.headers.get("content-type") ?? "";
+  if (!/^image\/(jpeg|png)$/.test(type)) throw new Error("That file is not a JPEG or a PNG.");
+  const bytes = new Uint8Array(await response.arrayBuffer());
+  if (bytes.byteLength > 8 * 1024 * 1024) throw new Error("That picture is too large to file.");
+  return { bytes, type };
+}
+
+// ------------------------------------------------------------
 // Router
 // ------------------------------------------------------------
 
@@ -412,6 +564,40 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
     if (route === "models" && request.method === "GET") {
       if (!env.OPENAI_KEY) return fail(503, "No assistant key on the server.");
       return json({ using: modelOf(env), available: (await listModels(env)).sort() });
+    }
+
+    if (route === "photos" && request.method === "GET") {
+      const query = (url.searchParams.get("q") ?? "").trim().slice(0, 120);
+      if (!query) return fail(400, "Say what to look for.");
+      return json({ photos: await searchPhotos(query, 24) });
+    }
+
+    // Filing a picture copies it into the repository: the publication then owns
+    // its own copy, and no page depends on a link somewhere else staying up.
+    if (route === "photos" && request.method === "POST") {
+      if (!env.GITHUB_TOKEN) return fail(503, "This deployment cannot publish: no GitHub token on the server.");
+      const body = (await request.json().catch(() => ({}))) as { file?: string; name?: string };
+      const file = (body.file ?? "").trim();
+      if (!file || file.includes("/") || file.length > 240) return fail(400, "That is not a Commons file.");
+      const remote = await publishableUrl(file);
+      const { bytes, type } = await fetchPhotoBytes(remote);
+      const path = `public/images/articles/${(body.name ?? "").trim()}.${type === "image/png" ? "png" : "jpg"}`;
+      if (!IMAGE_WRITEABLE.test(path)) return fail(400, "That is not a usable file name.");
+
+      const existing = await githubJson<{ sha?: string }>(env, `/contents/${path}?ref=HEAD`).catch(
+        () => ({}) as { sha?: string }
+      );
+      await githubJson(env, `/contents/${path}`, {
+        method: "PUT",
+        body: JSON.stringify({
+          message: `Add picture ${path.split("/").pop()}`,
+          content: bytesToBase64(bytes),
+          ...(existing.sha ? { sha: existing.sha } : {}),
+        }),
+      });
+      // The picture is in the repository but not yet in a build, so the desk is
+      // handed back where to preview it from until the site catches up.
+      return json({ name: path.split("/").pop(), preview: remote });
     }
 
     if (route === "ai" && request.method === "POST") {
