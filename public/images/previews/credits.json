@@ -1,0 +1,43 @@
+{
+  "analysis": {
+    "file": "analysis-nato.jpg",
+    "credit": "Romaine / Wikimedia Commons (CC0)",
+    "alt": "NATO headquarters in Brussels",
+    "bytes": 342959
+  },
+  "news": {
+    "file": "news-eu.jpg",
+    "credit": "inyucho / Wikimedia Commons (CC BY 2.0)",
+    "alt": "Hemicycle of European Parliament, Strasbourg, with chamber orchestra performing",
+    "bytes": 804652,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Hemicycle_of_European_Parliament%2C_Strasbourg%2C_with_chamber_orchestra_performing.jpg/1920px-Hemicycle_of_European_Parliament%2C_Strasbourg%2C_with_chamber_orchestra_performing.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+  },
+  "theory": {
+    "file": "theory-balance.jpg",
+    "credit": "Jean-Baptiste Isabey / Wikimedia Commons (Public domain)",
+    "alt": "The Congress of Vienna, 1815",
+    "bytes": 1817248,
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Congress_of_Vienna.PNG/1280px-Congress_of_Vienna.PNG"
+  },
+  "opinion": {
+    "file": "opinion-europe.jpg",
+    "credit": "Unsplash",
+    "alt": "European capital streetscape at dusk",
+    "bytes": 471958,
+    "source": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=80"
+  },
+  "briefing": {
+    "file": "briefing-red-sea.jpg",
+    "credit": "Unsplash",
+    "alt": "Container ship on open water",
+    "bytes": 499438,
+    "source": "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1600&q=80"
+  },
+  "interview": {
+    "file": "interview-defence.jpg",
+    "credit": "Unsplash",
+    "alt": "Formal briefing room before an interview",
+    "bytes": 445889,
+    "source": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1600&q=80"
+  }
+}
