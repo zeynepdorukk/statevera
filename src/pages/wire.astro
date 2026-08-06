@@ -54,7 +54,7 @@ const updated = `${formatDate(wireGeneratedAt)} ${formatTime(wireGeneratedAt)} U
       {leads[0] && <WireCard item={leads[0]} variant="lead" priority headingLevel="h2" />}
       <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-1 lg:border-l lg:border-line lg:pl-8">
         {leads.slice(1).map((item) => (
-          <WireCard item={item} variant="feature" />
+          <WireCard item={item} variant="feature" priority />
         ))}
       </div>
     </section>
