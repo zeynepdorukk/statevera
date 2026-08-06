@@ -35,7 +35,7 @@ export const GET: APIRoute = async (context) => {
   ].sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 
   return rss({
-    title: `${site.publicationName} — The Journal`,
+    title: `${site.publicationName} — Journal`,
     description: "Signed analysis, essays and explainers from Statevera.",
     site: context.site ?? site.siteUrl,
     items,

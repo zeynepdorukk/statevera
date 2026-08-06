@@ -14,8 +14,8 @@ const related = await getRelated(article, count);
 ---
 
 {related.length > 0 && (
-  <section class="mt-12 pb-4" aria-label="More from the journal" data-tone="journal">
-    <SectionHead title="More from the Journal" tone="journal" href="/journal" moreLabel="All analysis" />
+  <section class="mt-12 pb-4" aria-label="More from Journal" data-tone="journal">
+    <SectionHead title="More from Journal" tone="journal" href="/journal" moreLabel="All analysis" />
     <div class="grid gap-x-7 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
       {related.map((entry) => (
         <JournalCard item={{ kind: "article", entry }} variant="feature" />

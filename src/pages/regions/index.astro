@@ -23,7 +23,7 @@ const busiest = activeRegions()[0];
 
 <BaseLayout
   title="Regions"
-  description="International affairs by region: live reporting from the dispatch and signed analysis from the journal, side by side."
+  description="International affairs by region: live news reporting and signed analysis from Journal, side by side."
   path="/regions"
 >
   <div class="shell pt-7 md:pt-9">
@@ -32,8 +32,8 @@ const busiest = activeRegions()[0];
       <h1 class="t-lead mt-1.5">The world, desk by desk</h1>
       <p class="mt-3 max-w-3xl font-serif text-[1.06rem] leading-relaxed text-ink-soft">
         Every region page puts live reporting from
-        <a href={root("/wire")} class="link-tone">the Dispatch</a> next to signed analysis from
-        <a href={root("/journal")} class="link-tone">the Journal</a>.
+        <a href={root("/wire")} class="link-tone">News</a> next to signed analysis from
+        <a href={root("/journal")} class="link-tone">Journal</a>.
       </p>
       {busiest && (
         <p class="meta mt-3">
@@ -53,11 +53,11 @@ const busiest = activeRegions()[0];
           <p class="meta mt-2.5 flex flex-wrap gap-x-3">
             <span data-tone="wire" class="inline-flex items-center gap-1.5">
               <span class="inline-block h-1.5 w-1.5 bg-tone" aria-hidden="true"></span>
-              {wire.length} in the dispatch
+              {wire.length} news stories
             </span>
             <span data-tone="journal" class="inline-flex items-center gap-1.5">
               <span class="inline-block h-1.5 w-1.5 bg-tone" aria-hidden="true"></span>
-              {journal.length} in the journal
+              {journal.length} journal pieces
             </span>
           </p>
 

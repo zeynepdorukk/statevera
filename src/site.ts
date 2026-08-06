@@ -12,7 +12,7 @@ export const site = {
   publicationNameDisplay: "Statevera",
   publicationTagline: "Politics, power and the forces shaping the international system.",
   publicationDescription:
-    "International affairs: a live dispatch of world reporting, signed analysis by Zeynep Doruk, and interactive geopolitical risk.",
+    "International affairs: live news reporting, signed analysis by Zeynep Doruk, and interactive geopolitical risk.",
   publicationType: "Independent international affairs publication",
   founded: "2026",
 
@@ -60,7 +60,7 @@ export interface Pillar {
 export const pillars: Record<PillarId, Pillar> = {
   wire: {
     id: "wire",
-    name: "The Dispatch",
+    name: "News",
     url: "/wire",
     tagline: "World reporting, as it lands",
     description:
@@ -69,7 +69,7 @@ export const pillars: Record<PillarId, Pillar> = {
   },
   journal: {
     id: "journal",
-    name: "The Journal",
+    name: "Journal",
     url: "/journal",
     tagline: "Signed analysis and reference",
     description:
@@ -102,7 +102,7 @@ export type NavItem = {
 export const nav: { primary: NavItem[] } = {
   primary: [
     {
-      label: "The Dispatch",
+      label: "News",
       url: "/wire",
       subs: [
         { label: "All reporting", url: "/wire" },
@@ -114,7 +114,7 @@ export const nav: { primary: NavItem[] } = {
       ],
     },
     {
-      label: "The Journal",
+      label: "Journal",
       url: "/journal",
       subs: [
         { label: "Analysis & essays", url: "/journal" },

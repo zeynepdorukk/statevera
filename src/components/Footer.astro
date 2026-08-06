@@ -31,7 +31,7 @@ const year = new Date().getFullYear();
       <!-- Directory -->
       <div class="grid gap-8 sm:grid-cols-3">
         <div data-tone="wire">
-          <p class="kicker mb-2.5">The Dispatch</p>
+          <p class="kicker mb-2.5">News</p>
           <ul class="space-y-1.5">
             {deskList.map((desk) => (
               <li>
@@ -44,7 +44,7 @@ const year = new Date().getFullYear();
         </div>
 
         <div data-tone="journal">
-          <p class="kicker mb-2.5">The Journal</p>
+          <p class="kicker mb-2.5">Journal</p>
           <ul class="space-y-1.5">
             <li><a href={root("/journal")} class="font-sans text-[0.82rem] text-ink-soft hover:text-tone">Analysis &amp; essays</a></li>
             <li><a href={root("/journal/theory")} class="font-sans text-[0.82rem] text-ink-soft hover:text-tone">Theory</a></li>
@@ -73,11 +73,11 @@ const year = new Date().getFullYear();
     <div class="mt-9 border-t border-line pt-5">
       <p class="kicker-ink mb-2">Sourcing</p>
       <p class="max-w-4xl font-sans text-[0.76rem] leading-relaxed text-muted">
-        The Dispatch aggregates public RSS feeds from
+        News aggregates public RSS feeds from
         {wirePublishers.map((p, i) => (
           <>{i > 0 ? ", " : ""}<span class="text-ink-soft">{p}</span></>
         ))}. Statevera reproduces headlines, short summaries and attribution only;
-        every item links to the original publisher, who retains all rights. The Journal
+        every item links to the original publisher, who retains all rights. Journal
         and Risk sections are original work by {site.authorName}.
       </p>
     </div>
