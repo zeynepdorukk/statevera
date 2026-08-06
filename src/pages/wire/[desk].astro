@@ -34,19 +34,7 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
   path={`/wire/${desk.slug}`}
   tone="wire"
 >
-  <div class="shell pt-7 md:pt-9" data-tone="wire">
-    <header class="border-b-2 border-ink pb-5">
-      <nav aria-label="Breadcrumb" class="mb-3">
-        <ol class="flex items-center gap-2 font-sans text-[0.68rem] font-bold tracking-[0.12em] uppercase">
-          <li><a href={root("/wire")} class="text-muted transition-colors hover:text-tone">News</a></li>
-          <li aria-hidden="true" class="text-line-strong">/</li>
-          <li class="text-tone">{desk.name}</li>
-        </ol>
-      </nav>
-      <h1 class="t-lead">{desk.name}</h1>
-      <p class="meta mt-3">{items.length} stories in the news feed</p>
-    </header>
-
+  <div class="shell pt-0" data-tone="wire">
     <nav aria-label="Other desks" class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
       <a href={root("/wire")} class="desk-pill">All</a>
       <span class="desk-pill is-on">{desk.name}</span>
