@@ -606,9 +606,153 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
       if (!body.prompt?.trim()) return fail(400, "Nothing to ask.");
       return json({ text: await askOpenAI(env, body, request.signal) });
     }
+
+    // Key-less public search for the desk assistant (research / sources).
+    // Never returns raw HTML to the browser — only title, url, snippet, origin.
+    if (route === "research" && request.method === "POST") {
+      const body = (await request.json().catch(() => ({}))) as { query?: string };
+      const query = (body.query ?? "").trim().slice(0, 200);
+      if (query.length < 2) return fail(400, "Say what to look up.");
+      return json({ query, results: await researchWeb(query, request.signal) });
+    }
   } catch (error) {
     return fail(502, (error as Error).message);
   }
 
   return fail(404, "No such endpoint.");
+}
+
+// ------------------------------------------------------------
+// Research (key-less public sources for the desk assistant)
+// ------------------------------------------------------------
+
+export interface ResearchHit {
+  title: string;
+  url: string;
+  snippet: string;
+  origin: "news" | "web" | "reference";
+}
+
+const RESEARCH_AGENT = "Statevera editorial desk (https://statevera.netlify.app)";
+
+function decodeEntities(value: string): string {
+  return value
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#x27;/g, "'")
+    .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)));
+}
+
+function stripTags(value: string): string {
+  return decodeEntities(value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim());
+}
+
+function cleanUrl(raw: string): string {
+  try {
+    // DuckDuckGo wraps outbound links as //duckduckgo.com/l/?uddg=<encoded>
+    if (raw.includes("uddg=")) {
+      const u = new URL(raw.startsWith("http") ? raw : `https:${raw}`);
+      const target = u.searchParams.get("uddg");
+      if (target) return decodeURIComponent(target);
+    }
+    const u = new URL(raw);
+    if (!/^https?:$/.test(u.protocol)) return "";
+    return u.toString();
+  } catch {
+    return "";
+  }
+}
+
+async function researchNews(query: string, signal?: AbortSignal): Promise<ResearchHit[]> {
+  const url =
+    "https://news.google.com/rss/search?q=" +
+    encodeURIComponent(query) +
+    "&hl=en-GB&gl=GB&ceid=GB:en";
+  const res = await fetch(url, {
+    signal,
+    headers: { "user-agent": RESEARCH_AGENT, accept: "application/rss+xml, application/xml, text/xml" },
+  });
+  if (!res.ok) return [];
+  const xml = await res.text();
+  const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/gi)].slice(0, 8);
+  return items
+    .map((m) => {
+      const block = m[1];
+      const title = stripTags(block.match(/<title>([\s\S]*?)<\/title>/i)?.[1] ?? "");
+      const link = cleanUrl(stripTags(block.match(/<link>([\s\S]*?)<\/link>/i)?.[1] ?? ""));
+      const snippet = stripTags(block.match(/<description>([\s\S]*?)<\/description>/i)?.[1] ?? "").slice(0, 280);
+      if (!title || !link) return null;
+      return { title, url: link, snippet, origin: "news" as const };
+    })
+    .filter(Boolean) as ResearchHit[];
+}
+
+async function researchWeb(query: string, signal?: AbortSignal): Promise<ResearchHit[]> {
+  const [news, web, reference] = await Promise.all([
+    researchNews(query, signal).catch(() => [] as ResearchHit[]),
+    researchDdg(query, signal).catch(() => [] as ResearchHit[]),
+    researchWiki(query, signal).catch(() => [] as ResearchHit[]),
+  ]);
+
+  const seen = new Set<string>();
+  const out: ResearchHit[] = [];
+  for (const hit of [...news, ...reference, ...web]) {
+    const key = hit.url.replace(/\/$/, "").toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(hit);
+    if (out.length >= 12) break;
+  }
+  return out;
+}
+
+async function researchDdg(query: string, signal?: AbortSignal): Promise<ResearchHit[]> {
+  const url = "https://html.duckduckgo.com/html/?q=" + encodeURIComponent(query);
+  const res = await fetch(url, {
+    signal,
+    headers: {
+      "user-agent": RESEARCH_AGENT,
+      accept: "text/html",
+    },
+  });
+  if (!res.ok) return [];
+  const html = await res.text();
+  const hits: ResearchHit[] = [];
+  const re =
+    /<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>[\s\S]*?(?:class="result__snippet"[^>]*>([\s\S]*?)<\/(?:a|td)>|)/gi;
+  let match: RegExpExecArray | null;
+  while ((match = re.exec(html)) && hits.length < 8) {
+    const href = cleanUrl(decodeEntities(match[1]));
+    const title = stripTags(match[2]);
+    const snippet = stripTags(match[3] ?? "").slice(0, 280);
+    if (!href || !title) continue;
+    if (/duckduckgo\.com/i.test(href)) continue;
+    hits.push({ title, url: href, snippet, origin: "web" });
+  }
+  return hits;
+}
+
+async function researchWiki(query: string, signal?: AbortSignal): Promise<ResearchHit[]> {
+  const api =
+    "https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=" +
+    encodeURIComponent(query) +
+    "&srlimit=4&utf8=&format=json&origin=*";
+  const res = await fetch(api, {
+    signal,
+    headers: { "user-agent": RESEARCH_AGENT, accept: "application/json" },
+  });
+  if (!res.ok) return [];
+  const data = (await res.json()) as {
+    query?: { search?: { title: string; snippet: string; pageid: number }[] };
+  };
+  return (data.query?.search ?? []).map((row) => ({
+    title: row.title,
+    url: `https://en.wikipedia.org/wiki/${encodeURIComponent(row.title.replace(/ /g, "_"))}`,
+    snippet: stripTags(row.snippet).slice(0, 280),
+    origin: "reference" as const,
+  }));
 }

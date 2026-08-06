@@ -453,6 +453,254 @@ ${passage}`;
 }
 
 // ------------------------------------------------------------
+// ChatGPT-shaped jobs: free chat, research, source lists
+// ------------------------------------------------------------
+
+export interface ResearchHit {
+  title: string;
+  url: string;
+  snippet: string;
+  origin: "news" | "web" | "reference";
+}
+
+export interface SourceSuggestion {
+  name: string;
+  url: string;
+  why: string;
+}
+
+export interface ChatResult {
+  answer: string;
+  /** Optional body markdown the writer may insert. */
+  insert?: string;
+  sources?: SourceSuggestion[];
+}
+
+/** Pull public headlines/pages the desk can show and feed to the model. */
+export async function fetchResearch(
+  query: string,
+  signal?: AbortSignal
+): Promise<ResearchHit[]> {
+  const res = await fetch("/api/research", {
+    method: "POST",
+    signal,
+    credentials: "same-origin",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ query }),
+  });
+  const data = (await res.json().catch(() => ({}))) as {
+    results?: ResearchHit[];
+    error?: string;
+  };
+  if (!res.ok) throw new AiError(data.error ?? `Research failed (${res.status}).`, res.status);
+  return data.results ?? [];
+}
+
+const packHits = (hits: ResearchHit[]): string =>
+  hits
+    .map(
+      (h, i) =>
+        `[${i + 1}] (${h.origin}) ${h.title}\nURL: ${h.url}\n${h.snippet || "(no snippet)"}`
+    )
+    .join("\n\n");
+
+/**
+ * Free-form assistant turn — the ChatGPT habit: ask anything about the piece,
+ * get an answer, optional insertable draft, optional source list. When
+ * `withResearch` is on, public results are fetched first and the model may only
+ * lean on those (plus the draft) for factual claims.
+ */
+export async function chatAboutPiece(
+  config: AiConfig,
+  request: {
+    question: string;
+    title: string;
+    description: string;
+    draft: string;
+    selection?: string;
+    withResearch?: boolean;
+  },
+  signal?: AbortSignal
+): Promise<ChatResult> {
+  const question = request.question.trim();
+  let hits: ResearchHit[] = [];
+  if (request.withResearch) {
+    // Prefer the writer's question; fall back to headline so empty-ish asks still search.
+    const q = question.length >= 4 ? question : request.title || request.selection || "";
+    if (q.trim().length >= 2) {
+      hits = await fetchResearch(q, signal);
+    }
+  }
+
+  const researchBlock = hits.length
+    ? `--- PUBLIC RESEARCH (the only external material you may treat as evidence) ---
+${packHits(hits)}
+
+Rules for research:
+- You may summarise and connect these results. Do not invent URLs or outlets.
+- If the results are thin or off-topic, say so plainly.
+- Prefer primary / established outlets when recommending sources.`
+    : request.withResearch
+      ? "--- PUBLIC RESEARCH ---\nNo usable results came back. Say that you could not verify anything externally."
+      : "--- PUBLIC RESEARCH ---\nNone requested. Do not invent news events, figures or links. If the writer needs facts you do not have, say what to check.";
+
+  const prompt = `The writer is working on a STATEVERA piece and asked you a free-form question,
+the way they would ask ChatGPT. Answer helpfully. You are a colleague on the desk,
+not a generic chatbot.
+
+Return JSON only:
+{"answer":"markdown answer to the writer (may use short lists)","insert":"optional body markdown they could paste into the piece, or empty string","sources":[{"name":"Outlet or document","url":"https://...","why":"one line on why it belongs on the piece"}]}
+
+Rules:
+- "answer" is for the writer. Clear, British English, no hype.
+- "insert" is optional finished copy for the article. House voice. Empty string if the ask was only a question.
+- "sources" may be empty. Every url must come from the research block or from a link already in the draft. Never mint a URL.
+- Invent no facts, figures, quotations or named sources.
+- If the selection is template placeholder text, treat it as scaffolding unless asked to draft over it.
+
+Working title: ${request.title || "(untitled)"}
+Standfirst: ${request.description || "(none yet)"}
+
+--- SELECTION (may be empty) ---
+${(request.selection || "(none)").slice(0, 4000)}
+
+--- DRAFT ---
+${request.draft.slice(0, 8000)}
+
+${researchBlock}
+
+--- THE WRITER'S QUESTION ---
+${question}`;
+
+  const raw = await ask(config, prompt, {
+    system: HOUSE_STYLE,
+    temperature: 0.4,
+    maxTokens: 2200,
+    json: true,
+    signal,
+  });
+
+  let parsed: Record<string, unknown> = {};
+  try {
+    parsed = JSON.parse(stripFence(raw).match(/\{[\s\S]*\}/)?.[0] ?? "{}") as Record<string, unknown>;
+  } catch {
+    return { answer: stripFence(raw) || "Nothing came back." };
+  }
+
+  const sourcesRaw = Array.isArray(parsed.sources) ? parsed.sources : [];
+  const allowed = new Set(hits.map((h) => h.url.replace(/\/$/, "").toLowerCase()));
+  // Links already in the draft are fair game for source suggestions.
+  for (const m of request.draft.matchAll(/https?:\/\/[^\s)\]>'"]+/g)) {
+    allowed.add(m[0].replace(/\/$/, "").toLowerCase());
+  }
+
+  const sources: SourceSuggestion[] = sourcesRaw
+    .map((row) => row as Record<string, unknown>)
+    .filter((row) => typeof row.name === "string" && typeof row.url === "string")
+    .map((row) => ({
+      name: String(row.name).trim(),
+      url: String(row.url).trim(),
+      why: typeof row.why === "string" ? String(row.why).trim() : "",
+    }))
+    .filter((s) => s.name && s.url && allowed.has(s.url.replace(/\/$/, "").toLowerCase()));
+
+  // If the model returned nothing usable but we have research, surface the hits.
+  if (!sources.length && hits.length && /source|cite|link|reference|bibliography/i.test(question)) {
+    for (const h of hits.slice(0, 6)) {
+      sources.push({
+        name: h.title.slice(0, 120),
+        url: h.url,
+        why: h.snippet.slice(0, 140) || h.origin,
+      });
+    }
+  }
+
+  return {
+    answer: String(parsed.answer ?? "").trim() || stripFence(raw),
+    insert: String(parsed.insert ?? "").trim(),
+    sources,
+  };
+}
+
+/**
+ * Build a source list for the Publish drawer from the piece + optional research.
+ */
+export async function suggestSources(
+  config: AiConfig,
+  piece: { title: string; description: string; draft: string; query?: string },
+  signal?: AbortSignal
+): Promise<SourceSuggestion[]> {
+  const q =
+    (piece.query || "").trim() ||
+    [piece.title, piece.description].filter(Boolean).join(" — ") ||
+    piece.draft.slice(0, 180);
+  const hits = q.trim().length >= 2 ? await fetchResearch(q, signal) : [];
+
+  const prompt = `Propose filing sources for a STATEVERA piece — the kind that go in the
+article's Sources list (name + url), not inline footnotes.
+
+Return JSON only:
+{"sources":[{"name":"Short outlet or document name","url":"https://...","why":"one line"}]}
+
+Rules:
+- 4 to 8 sources maximum.
+- Every url MUST appear in the research block below or already in the draft. No invented links.
+- Prefer primary documents, official pages and established reporting over blogs.
+- "name" is short (e.g. "NATO", "European Commission", "Reuters").
+- If research is weak, return fewer sources rather than padding.
+
+Headline: ${piece.title || "(untitled)"}
+Standfirst: ${piece.description || "(none)"}
+
+--- DRAFT (for topic only) ---
+${piece.draft.slice(0, 5000)}
+
+--- RESEARCH ---
+${hits.length ? packHits(hits) : "(none)"}`;
+
+  const raw = await ask(config, prompt, {
+    system: HOUSE_STYLE,
+    temperature: 0.3,
+    maxTokens: 900,
+    json: true,
+    signal,
+  });
+
+  let parsed: { sources?: unknown[] } = {};
+  try {
+    parsed = JSON.parse(stripFence(raw).match(/\{[\s\S]*\}/)?.[0] ?? "{}") as {
+      sources?: unknown[];
+    };
+  } catch {
+    parsed = {};
+  }
+
+  const allowed = new Set(hits.map((h) => h.url.replace(/\/$/, "").toLowerCase()));
+  for (const m of piece.draft.matchAll(/https?:\/\/[^\s)\]>'"]+/g)) {
+    allowed.add(m[0].replace(/\/$/, "").toLowerCase());
+  }
+
+  const fromModel = (parsed.sources ?? [])
+    .map((row) => row as Record<string, unknown>)
+    .filter((row) => typeof row.name === "string" && typeof row.url === "string")
+    .map((row) => ({
+      name: String(row.name).trim(),
+      url: String(row.url).trim(),
+      why: typeof row.why === "string" ? String(row.why).trim() : "",
+    }))
+    .filter((s) => s.name && s.url && allowed.has(s.url.replace(/\/$/, "").toLowerCase()));
+
+  if (fromModel.length) return fromModel.slice(0, 8);
+
+  // Honest fallback: the research hits themselves, never invented.
+  return hits.slice(0, 6).map((h) => ({
+    name: h.title.replace(/\s*-\s*[^-]+$/, "").slice(0, 80) || h.title.slice(0, 80),
+    url: h.url,
+    why: h.snippet.slice(0, 140) || h.origin,
+  }));
+}
+
+// ------------------------------------------------------------
 // Looking for a picture
 // ------------------------------------------------------------
 
