@@ -50,7 +50,7 @@ export async function GET() {
     ...wireItems.map((w) => ({
       title: w.title,
       url: w.url,
-      kind: "Wire",
+      kind: "News",
       pillar: "wire" as const,
       category: w.category,
       region: w.region,
