@@ -25,7 +25,7 @@ const jsonLd = [
 
 <BaseLayout
   title="About"
-  description={`About ${site.publicationNameDisplay}: how the wire, the journal and the risk tool fit together, and who writes it.`}
+  description={`About ${site.publicationNameDisplay}: how the dispatch, the journal and the risk tool fit together, and who writes it.`}
   path="/about"
   jsonLd={jsonLd}
 >
@@ -60,24 +60,24 @@ const jsonLd = [
 
     <div class="grid gap-x-10 gap-y-10 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
       <div class="article-body">
-        <h2>How the wire is put together</h2>
+        <h2>How the dispatch is put together</h2>
         <p>
-          The Wire reads the public RSS feeds of {wirePublishers.length} newsrooms and
+          The Dispatch reads the public RSS feeds of {wirePublishers.length} newsrooms and
           institutions several times a day. Each item is checked against a vocabulary of
           international-affairs terms, sorted onto a desk and a region, de-duplicated
           against the rest of the feed, and published with its headline, a short summary
           and the name of the newsroom that reported it.
         </p>
         <p>
-          Statevera does not reproduce anyone else's article. Every wire item is a link:
+          Statevera does not reproduce anyone else's article. Every dispatch item is a link:
           clicking it takes you to the publisher, who holds the copyright and gets the
-          visit. Nothing on the wire is written, rewritten or summarised by Statevera, and
+          visit. Nothing in the dispatch is written, rewritten or summarised by Statevera, and
           nothing on it is generated.
         </p>
         <p>
-          Because the site is static, the wire is a snapshot rather than a stream. It is
+          Because the site is static, the dispatch is a snapshot rather than a stream. It is
           refreshed on a schedule and stamped with the time it was taken, which you can see
-          at the top of <a href={root("/wire")}>the wire page</a>.
+          at the top of <a href={root("/wire")}>the dispatch page</a>.
         </p>
 
         <h2>What the journal is for</h2>
@@ -88,7 +88,7 @@ const jsonLd = [
           reference on the institutions, doctrines and chokepoints that keep coming back.
         </p>
         <p>
-          Where a journal piece and the wire overlap — an essay on deterrence next to the
+          Where a journal piece and the dispatch overlap — an essay on deterrence next to the
           week's NATO reporting — the two sit side by side on the page, in different
           colours, so it is always obvious which is which.
         </p>
@@ -134,7 +134,7 @@ const jsonLd = [
 
         <dl class="mt-8 grid grid-cols-2 gap-px border border-line-strong bg-line-strong">
           <div class="bg-paper p-4">
-            <dt class="meta">On the wire</dt>
+            <dt class="meta">In the dispatch</dt>
             <dd class="mt-0.5 font-serif text-[1.6rem] font-bold leading-none tabular">{wireItems.length}</dd>
           </div>
           <div class="bg-paper p-4">
@@ -152,7 +152,7 @@ const jsonLd = [
         </dl>
 
         <div class="mt-8 border border-line bg-paper-soft p-5">
-          <p class="kicker-ink">Sources on the wire</p>
+          <p class="kicker-ink">Sources in the dispatch</p>
           <ul class="mt-2 flex flex-wrap gap-x-3 gap-y-1">
             {wirePublishers.map((publisher) => (
               <li class="font-sans text-[0.78rem] text-ink-soft">{publisher}</li>

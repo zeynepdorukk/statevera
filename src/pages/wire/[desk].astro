@@ -29,7 +29,7 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
 ---
 
 <BaseLayout
-  title={`${desk.name} — The Wire`}
+  title={`${desk.name} — The Dispatch`}
   description={desk.description}
   path={`/wire/${desk.slug}`}
   tone="wire"
@@ -38,7 +38,7 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
     <header class="border-b-2 border-ink pb-5">
       <nav aria-label="Breadcrumb" class="mb-3">
         <ol class="flex items-center gap-2 font-sans text-[0.68rem] font-bold tracking-[0.12em] uppercase">
-          <li><a href={root("/wire")} class="text-muted transition-colors hover:text-tone">The Wire</a></li>
+          <li><a href={root("/wire")} class="text-muted transition-colors hover:text-tone">The Dispatch</a></li>
           <li aria-hidden="true" class="text-line-strong">/</li>
           <li class="text-tone">{desk.name}</li>
         </ol>
@@ -50,7 +50,7 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
       <p class="mt-3 max-w-3xl font-serif text-[1.06rem] leading-relaxed text-ink-soft">
         {desk.description}
       </p>
-      <p class="meta mt-3">{items.length} stories on the wire</p>
+      <p class="meta mt-3">{items.length} stories in the dispatch</p>
     </header>
 
     <nav aria-label="Other desks" class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
@@ -63,7 +63,7 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
 
     {items.length === 0 ? (
       <p class="py-14 text-center font-serif text-[1.05rem] text-muted">
-        Nothing on this desk in the current wire window.
+        Nothing on this desk in the current dispatch window.
         <a href={root("/wire")} class="link-tone">See everything &rarr;</a>
       </p>
     ) : (
@@ -108,7 +108,7 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
             })}
           </ul>
           <p class="meta mt-6 border-t border-line pt-3">
-            {desk.name} accounts for {items.length} of {wireItems.length} stories currently on the wire.
+            {desk.name} accounts for {items.length} of {wireItems.length} stories currently in the dispatch.
           </p>
         </aside>
       </section>

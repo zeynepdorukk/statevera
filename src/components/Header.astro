@@ -57,23 +57,17 @@ const isActive = (url: string) =>
     <div class="shell">
       <ul class="flex items-stretch justify-center">
         {nav.primary.map((item) => (
-          <li class="group relative" data-tone={item.tone}>
+          <li class="group relative">
             <a
               href={root(item.url)}
               aria-current={isActive(item.url) ? "page" : undefined}
               class:list={[
                 "relative flex items-center gap-1 px-4 py-2.5 font-sans text-[0.73rem] font-bold tracking-[0.13em] whitespace-nowrap uppercase transition-colors duration-150",
                 isActive(item.url)
-                  ? "text-ink after:absolute after:inset-x-3 after:bottom-0 after:h-[3px] after:bg-tone"
-                  : "text-ink-soft hover:text-tone",
+                  ? "text-ink after:absolute after:inset-x-3 after:bottom-0 after:h-[3px] after:bg-ink"
+                  : "text-ink-soft hover:text-ink",
               ]}
             >
-              {item.tone && (
-                <span
-                  class="inline-block h-1.5 w-1.5 shrink-0 bg-tone"
-                  aria-hidden="true"
-                ></span>
-              )}
               {item.label}
               {item.subs && (
                 <svg class="ml-0.5 opacity-45" width="8" height="5" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
@@ -82,15 +76,15 @@ const isActive = (url: string) =>
               )}
             </a>
             {item.subs && (
-              <div class="invisible absolute left-1/2 top-full z-50 w-max min-w-[200px] -translate-x-1/2 border border-line border-t-[3px] border-t-tone bg-paper opacity-0 shadow-[0_18px_44px_-18px_rgba(0,0,0,0.4)] transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div class="invisible absolute left-1/2 top-full z-50 w-max min-w-[200px] -translate-x-1/2 border border-line border-t-[3px] border-t-ink bg-paper opacity-0 shadow-[0_18px_44px_-18px_rgba(0,0,0,0.4)] transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                 <ul class="py-1.5">
                   {item.subs.map((sub) => (
                     <li>
                       <a
                         href={root(sub.url)}
                         class:list={[
-                          "block px-4 py-2 font-sans text-[0.72rem] font-semibold tracking-[0.07em] uppercase transition-colors duration-150 hover:bg-paper-soft hover:text-tone",
-                          currentPath === sub.url ? "text-tone" : "text-ink-soft",
+                          "block px-4 py-2 font-sans text-[0.72rem] font-semibold tracking-[0.07em] uppercase transition-colors duration-150 hover:bg-paper-soft hover:text-ink",
+                          currentPath === sub.url ? "text-ink" : "text-ink-soft",
                         ]}
                       >
                         {sub.label}
@@ -110,12 +104,11 @@ const isActive = (url: string) =>
   <nav id="mobile-menu" hidden class="border-t border-line md:hidden" aria-label="Sections">
     <ul class="shell divide-y divide-line py-1">
       {nav.primary.map((item) => (
-        <li class="py-1" data-tone={item.tone}>
+        <li class="py-1">
           <a
             href={root(item.url)}
             class="flex items-center gap-2 py-2 font-sans text-[0.78rem] font-bold tracking-[0.12em] uppercase text-ink"
           >
-            {item.tone && <span class="inline-block h-1.5 w-1.5 bg-tone" aria-hidden="true"></span>}
             {item.label}
           </a>
           {item.subs && (

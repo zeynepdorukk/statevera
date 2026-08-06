@@ -44,7 +44,7 @@ const deskBlocks = deskList
       </div>
 
       <aside class="lg:border-l lg:border-line lg:pl-8" aria-label="Latest reporting">
-        <SectionHead title="Latest" tone="wire" href="/wire" moreLabel="The Wire" />
+        <SectionHead title="Latest" tone="wire" href="/wire" moreLabel="The Dispatch" />
         <div class="rule-list">
           {briefColumn.map((item) => (
             <WireCard item={item} variant="text" />
@@ -124,11 +124,11 @@ const deskBlocks = deskList
     </div>
   </section>
 
-  <!-- ============ MORE FROM THE WIRE + EXPLAINERS ============ -->
+  <!-- ============ MORE FROM THE DISPATCH + EXPLAINERS ============ -->
   <section class="shell mt-14 pb-6" aria-label="More reporting">
     <div class="grid gap-x-8 gap-y-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)]">
       <div data-tone="wire">
-        <SectionHead title="More from the Wire" tone="wire" href="/wire" moreLabel="Full wire" />
+        <SectionHead title="More from the Dispatch" tone="wire" href="/wire" moreLabel="All dispatches" />
         <div class="grid gap-x-7 gap-y-7 sm:grid-cols-2">
           {rest.slice(0, 10).map((item) => (
             <WireCard item={item} variant="compact" />

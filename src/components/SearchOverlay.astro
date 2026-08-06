@@ -20,7 +20,7 @@
       <input
         type="search"
         id="search-input"
-        placeholder="Search the wire, the journal, countries, regions…"
+        placeholder="Search the dispatch, the journal, countries, regions…"
         autocomplete="off"
         aria-label="Search"
         aria-controls="search-results"
@@ -31,7 +31,7 @@
 
     <div class="flex gap-1 border-b border-line px-4 py-2.5" role="group" aria-label="Filter results">
       <button type="button" data-filter="all" class="filter-pill is-on">All</button>
-      <button type="button" data-filter="wire" class="filter-pill">The Wire</button>
+      <button type="button" data-filter="wire" class="filter-pill">The Dispatch</button>
       <button type="button" data-filter="journal" class="filter-pill">The Journal</button>
     </div>
 
@@ -140,7 +140,7 @@
     const query = raw.trim().toLowerCase();
     if (!query) {
       resultsEl.innerHTML =
-        '<p class="px-5 py-10 meta">Search reporting on the wire and analysis in the journal — by headline, country, region or source.</p>';
+        '<p class="px-5 py-10 meta">Search reporting in the dispatch and analysis in the journal — by headline, country, region or source.</p>';
       return;
     }
 

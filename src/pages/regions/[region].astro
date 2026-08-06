@@ -46,7 +46,7 @@ const others = Object.entries(regions).filter(([key]) => key !== slug);
       <p class="meta mt-3 flex flex-wrap gap-x-4">
         <span data-tone="wire" class="inline-flex items-center gap-1.5">
           <span class="inline-block h-1.5 w-1.5 bg-tone" aria-hidden="true"></span>
-          {wire.length} on the wire
+            {wire.length} in the dispatch
         </span>
         <span data-tone="journal" class="inline-flex items-center gap-1.5">
           <span class="inline-block h-1.5 w-1.5 bg-tone" aria-hidden="true"></span>
@@ -59,8 +59,8 @@ const others = Object.entries(regions).filter(([key]) => key !== slug);
       <div data-tone="wire">
         {wire.length === 0 ? (
           <p class="py-10 font-serif text-[1.02rem] text-muted">
-            No live reporting from this desk in the current wire window.
-            <a href={root("/wire")} class="link-tone">See the full wire &rarr;</a>
+            No live reporting from this desk in the current dispatch window.
+            <a href={root("/wire")} class="link-tone">See the full dispatch &rarr;</a>
           </p>
         ) : (
           <>
@@ -88,7 +88,7 @@ const others = Object.entries(regions).filter(([key]) => key !== slug);
 
         {deskCounts.length > 0 && (
           <div class="mb-9" data-tone="wire">
-            <SectionHead title="By desk" tone="wire" href="/wire" moreLabel="The Wire" />
+            <SectionHead title="By desk" tone="wire" href="/wire" moreLabel="The Dispatch" />
             <ul class="rule-list">
               {deskCounts.map(({ desk, count }) => (
                 <li class="flex items-baseline justify-between gap-3">

@@ -12,7 +12,7 @@ export const site = {
   publicationNameDisplay: "Statevera",
   publicationTagline: "Politics, power and the forces shaping the international system.",
   publicationDescription:
-    "International affairs: a live wire of world reporting, signed analysis by Zeynep Doruk, and interactive geopolitical risk.",
+    "International affairs: a live dispatch of world reporting, signed analysis by Zeynep Doruk, and interactive geopolitical risk.",
   publicationType: "Independent international affairs publication",
   founded: "2026",
 
@@ -60,7 +60,7 @@ export interface Pillar {
 export const pillars: Record<PillarId, Pillar> = {
   wire: {
     id: "wire",
-    name: "The Wire",
+    name: "The Dispatch",
     url: "/wire",
     tagline: "World reporting, as it lands",
     description:
@@ -96,16 +96,14 @@ export const pillarList: Pillar[] = [pillars.wire, pillars.journal, pillars.risk
 export type NavItem = {
   label: string;
   url: string;
-  tone?: PillarId;
   subs?: { label: string; url: string }[];
 };
 
 export const nav: { primary: NavItem[] } = {
   primary: [
     {
-      label: "The Wire",
+      label: "The Dispatch",
       url: "/wire",
-      tone: "wire",
       subs: [
         { label: "All reporting", url: "/wire" },
         { label: "Security", url: "/wire/security" },
@@ -118,14 +116,13 @@ export const nav: { primary: NavItem[] } = {
     {
       label: "The Journal",
       url: "/journal",
-      tone: "journal",
       subs: [
         { label: "Analysis & essays", url: "/journal" },
         { label: "Theory", url: "/journal/theory" },
         { label: "Explainers", url: "/explainers" },
       ],
     },
-    { label: "Risk", url: "/risk", tone: "risk" },
+    { label: "Risk", url: "/risk" },
     { label: "Regions", url: "/regions" },
   ],
 };

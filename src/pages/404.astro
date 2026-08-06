@@ -39,7 +39,7 @@ const journal = await getLatestArticles(3);
 
     <div class="mt-12 grid gap-x-9 gap-y-10 lg:grid-cols-2">
       <div data-tone="wire">
-        <SectionHead title="Latest on the wire" tone="wire" href="/wire" moreLabel="The Wire" />
+        <SectionHead title="Latest on the dispatch" tone="wire" href="/wire" moreLabel="The Dispatch" />
         <div class="rule-list">
           {wire.map((item) => <WireCard item={item} variant="text" />)}
         </div>
