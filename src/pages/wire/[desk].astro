@@ -16,7 +16,10 @@ const desk = desks[deskSlug];
 
 const items = byCategory(desk.name);
 const [lead, ...rest] = items;
+const railNews = rest.slice(0, 6);
+const mainNews = rest.slice(6);
 const journalOnDesk = await getByCategory(desk.name, 3);
+const hasSidebar = railNews.length > 0 || journalOnDesk.length > 0;
 
 const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
 ---
@@ -42,29 +45,48 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
         <a href={root("/wire")} class="link-tone">See everything &rarr;</a>
       </p>
     ) : (
-      <section class="grid gap-x-8 gap-y-10 py-8 lg:grid-cols-[minmax(0,7.2fr)_minmax(0,2.8fr)]">
+      <section
+        class:list={[
+          "grid gap-x-8 gap-y-10 py-8",
+          hasSidebar && "lg:grid-cols-[minmax(0,7.2fr)_minmax(0,2.8fr)]",
+        ]}
+      >
         <div>
           {lead && <WireCard item={lead} variant="lead" priority headingLevel="h2" />}
-          <div class="mt-8 grid gap-x-7 gap-y-8 border-t border-line pt-7 sm:grid-cols-2 xl:grid-cols-3">
-            {rest.map((item, i) => (
-              <WireCard item={item} variant={item.image && i < 9 ? "feature" : "compact"} showDek={i < 9} />
-            ))}
-          </div>
+          {mainNews.length > 0 && (
+            <div class="category-stream mt-8 border-t border-line pt-7">
+              {mainNews.map((item, i) => (
+                <WireCard item={item} variant={item.image && i < 9 ? "feature" : "compact"} showDek={i < 9} />
+              ))}
+            </div>
+          )}
         </div>
 
-        <aside class="lg:border-l lg:border-line lg:pl-8">
-          {journalOnDesk.length > 0 && (
-            <div class="mb-9" data-tone="journal">
+        {hasSidebar && (
+          <aside class="lg:border-l lg:border-line lg:pl-8">
+            {railNews.length > 0 && (
+              <div class="mb-9" data-tone="wire">
+                <SectionHead title={`More ${desk.name}`} tone="wire" href={`/wire/${desk.slug}`} moreLabel="All" />
+                <div class="rule-list">
+                  {railNews.map((item) => (
+                    <WireCard item={item} variant="compact" />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {journalOnDesk.length > 0 && (
+              <div data-tone="journal">
               <SectionHead title="In Journal" tone="journal" href="/journal" moreLabel="Archive" />
               <div class="rule-list">
                 {journalOnDesk.map((entry) => (
                   <JournalCard item={{ kind: "article", entry }} variant="text" />
                 ))}
               </div>
-            </div>
-          )}
-
-        </aside>
+              </div>
+            )}
+          </aside>
+        )}
       </section>
     )}
   </div>
@@ -90,5 +112,27 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
     color: var(--ink);
     border-color: var(--line-strong);
     background: var(--paper-soft);
+  }
+
+  .category-stream {
+    columns: 1;
+    column-gap: 1.75rem;
+  }
+
+  :global(.category-stream > article) {
+    break-inside: avoid;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 640px) {
+    .category-stream {
+      columns: 2;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .category-stream {
+      columns: 3;
+    }
   }
 </style>
