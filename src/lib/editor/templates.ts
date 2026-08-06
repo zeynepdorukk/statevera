@@ -20,8 +20,12 @@ export interface Template {
   type: "analysis" | "news" | "opinion" | "explainer";
   /** Preselected desk, where the form implies one. */
   category?: string;
+  /** The run of the piece, for the card. Not every form marks its parts with headings. */
+  shape: string[];
   /** Placeholder standfirst, shown as a prompt rather than saved. */
   standfirst: string;
+  /** Invented headline and standfirst, used only to make the preview read like a piece. */
+  sample: { headline: string; standfirst: string; desk: string; minutes: number };
   body: string;
 }
 
@@ -32,7 +36,15 @@ export const TEMPLATES: Template[] = [
     blurb: "The house piece. A claim about how something works, argued through in sections.",
     length: "1,200–1,800 words",
     type: "analysis",
+    shape: ["Opening", "Key takeaways", "What changed", "Why it happened", "What it means", "What to watch"],
     standfirst: "One line on what this argues, and why now",
+    sample: {
+      headline: "NATO is relearning deterrence, and paying for the lesson late",
+      standfirst:
+        "Three summits of promises have produced real money and no doctrine. The gap is where the next crisis will happen.",
+      desk: "Security",
+      minutes: 8,
+    },
     body: `Open on the thing that happened, in two or three sentences. No throat-clearing, no scene-setting: the reader should know by the end of this paragraph what the piece is about and why it is being written this week.
 
 State the argument plainly in the second paragraph. This is the sentence the piece exists to defend.
@@ -69,7 +81,14 @@ Two or three concrete, checkable things. Name the date, the meeting, the number 
     length: "500–900 words",
     type: "news",
     category: "Politics",
+    shape: ["The news", "The detail", "The context", "Why it matters", "What happens next"],
     standfirst: "The second most important fact, in one line",
+    sample: {
+      headline: "EU agrees a twelfth sanctions package after two days of talks",
+      standfirst: "The measures cover shipping insurance and take effect in January.",
+      desk: "Politics",
+      minutes: 4,
+    },
     body: `The most important fact, in one sentence. Who, what, where, when. If the reader stops here they should still have the story.
 
 The second paragraph adds the detail the first had to leave out: the scale, the timing, the immediate consequence.
@@ -97,7 +116,14 @@ The next fixed point in the calendar, and what would count as a surprise.
     blurb: "A signed argument. First person allowed, and the conclusion is the point.",
     length: "800–1,200 words",
     type: "opinion",
+    shape: ["The claim", "The case", "The objection", "What follows"],
     standfirst: "The argument, compressed to one line",
+    sample: {
+      headline: "Europe should stop pretending the American guarantee is permanent",
+      standfirst: "Planning for the alliance you have is not disloyalty. It is the only serious response left.",
+      desk: "Opinion",
+      minutes: 6,
+    },
     body: `Open with the claim. An opinion piece that buries its argument has wasted its first paragraph.
 
 Then the reason the claim is worth making now — the decision, the vote or the drift that makes it urgent rather than merely true.
@@ -121,7 +147,14 @@ What should be done, or what should be expected. Be specific enough to be wrong.
     blurb: "A fast read on a moving story: numbered points, no argument, no scene-setting.",
     length: "400–700 words",
     type: "analysis",
+    shape: ["State of play", "Three points", "The big picture", "The diary"],
     standfirst: "What a reader needs to know this morning, in one line",
+    sample: {
+      headline: "The Red Sea, in three points",
+      standfirst: "Insurance, rerouting and one naval decision that has not been taken yet.",
+      desk: "Economy",
+      minutes: 3,
+    },
     body: `One paragraph on the state of play. Written for a reader who has been away a week.
 
 ## 1. The first point
@@ -152,7 +185,14 @@ Where this sits in the longer story: the trend the week's news is a data point i
     blurb: "A conversation, edited for length and clarity, with the questions kept in.",
     length: "1,000–1,600 words",
     type: "analysis",
+    shape: ["Who they are", "Three questions", "Afterwards"],
     standfirst: "Who this is, and why the conversation is worth reading",
+    sample: {
+      headline: "“We wrote the strategy for a war we did not expect”",
+      standfirst: "A former planning chief on what the last decade of European defence reviews got wrong.",
+      desk: "Diplomacy",
+      minutes: 9,
+    },
     body: `Introduce the person in two paragraphs: what they have done, what they are in a position to know, and why the conversation happened now. Say where and when it took place.
 
 *The conversation has been edited for length and clarity.*
@@ -183,7 +223,14 @@ A short closing note in the writer's own voice: what the answers did and did not
     length: "1,500–2,500 words",
     type: "analysis",
     category: "Theory",
+    shape: ["The puzzle", "The idea", "How it works", "The case", "Where it fails", "What survives"],
     standfirst: "The idea, and what it is good for",
+    sample: {
+      headline: "Balance of power: the oldest idea in the field, and its worst habit",
+      standfirst: "It explains a great deal about the nineteenth century and rather less about this one.",
+      desk: "Theory",
+      minutes: 12,
+    },
     body: `Start with the puzzle the theory was invented to solve. A reader who does not already know the term should still understand the question.
 
 ## The idea

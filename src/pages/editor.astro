@@ -948,6 +948,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
     gap: 1rem;
   }
   .ed-form {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.55rem;
@@ -956,7 +957,6 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
     border-radius: 4px;
     background: var(--paper-soft);
     text-align: left;
-    cursor: pointer;
     transition:
       border-color 0.14s ease,
       transform 0.14s ease;
@@ -977,6 +977,25 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
     font-weight: 700;
     line-height: 1.15;
     color: var(--ink);
+  }
+  /* The name is the whole card: anywhere but Preview starts the piece. */
+  .ed-form-use {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+  .ed-form-use::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 4px;
+  }
+  .ed-form:hover .ed-form-use {
+    color: var(--journal-deep);
   }
   .ed-form-blurb {
     font-family: var(--font-sans);
@@ -1001,6 +1020,110 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
     border: 1px solid var(--line);
     border-radius: 2px;
     padding: 0.16rem 0.36rem;
+  }
+  .ed-form-peek {
+    position: relative;
+    z-index: 1;
+    align-self: flex-start;
+    margin-top: 0.75rem;
+    border: 1px solid var(--line-strong);
+    border-radius: 2px;
+    background: transparent;
+    padding: 0.3rem 0.65rem;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition:
+      color 0.14s ease,
+      border-color 0.14s ease;
+  }
+  .ed-form-peek:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+
+  /* ---------- what a form looks like written out ---------- */
+  .ed-peek-box {
+    width: min(46rem, 100%);
+    max-height: 88vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .ed-peek-scroll {
+    overflow-y: auto;
+    background: var(--paper);
+  }
+  .ed-peek {
+    max-width: 34rem;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 2.5rem;
+  }
+  .ed-peek-lead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 9rem;
+    margin-bottom: 1.5rem;
+    border: 1px dashed var(--line-strong);
+    background: var(--paper-soft);
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .ed-peek-kicker {
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--journal);
+  }
+  .ed-peek h1 {
+    margin-top: 0.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.85rem;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+  }
+  .ed-peek-stand {
+    margin-top: 0.7rem;
+    font-family: var(--font-serif);
+    font-size: 1.02rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .ed-peek-byline {
+    margin-top: 0.9rem;
+    padding: 0.6rem 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    color: var(--muted);
+  }
+  .ed-peek-body {
+    margin-top: 1.4rem;
+    font-size: 0.98rem;
+  }
+  .ed-peek-body > * {
+    margin-top: 0.9rem;
+  }
+  .ed-peek-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1.1rem;
+    border-top: 1px solid var(--line);
   }
 
   /* ---------- finding a photograph ---------- */
@@ -1650,19 +1773,16 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 
   function templatesView() {
     const card = (t: Template) => `
-      <button type="button" class="ed-form" data-form="${esc(t.id)}">
-        <span class="ed-form-top">
+      <article class="ed-form" data-form="${esc(t.id)}">
+        <div class="ed-form-top">
           <span class="ed-pill" data-kind="draft">${esc(t.type)}</span>
           <span class="ed-card-desk">${esc(t.length)}</span>
-        </span>
-        <span class="ed-form-name">${esc(t.name)}</span>
-        <span class="ed-form-blurb">${esc(t.blurb)}</span>
-        <span class="ed-form-shape">${t.body
-          .split("\n")
-          .filter((line) => line.startsWith("## "))
-          .map((line) => `<span>${esc(line.replace(/^##\s+/, ""))}</span>`)
-          .join("")}</span>
-      </button>`;
+        </div>
+        <h2 class="ed-form-name"><button type="button" class="ed-form-use" data-use>${esc(t.name)}</button></h2>
+        <p class="ed-form-blurb">${esc(t.blurb)}</p>
+        <div class="ed-form-shape">${t.shape.map((part) => `<span>${esc(part)}</span>`).join("")}</div>
+        <button type="button" class="ed-form-peek" data-peek>Preview</button>
+      </article>`;
 
     view(`
       <div class="ed-bar">
@@ -1682,11 +1802,62 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
       </div>
     `);
 
-    root.querySelectorAll<HTMLButtonElement>("[data-form]").forEach((b) =>
-      b.addEventListener("click", () => createStory(templateById(b.dataset.form!)))
-    );
+    root.querySelectorAll<HTMLElement>("[data-form]").forEach((formEl) => {
+      const template = templateById(formEl.dataset.form!)!;
+      formEl.querySelector<HTMLButtonElement>("[data-use]")!.addEventListener("click", () => createStory(template));
+      formEl.querySelector<HTMLButtonElement>("[data-peek]")!.addEventListener("click", () => previewTemplate(template));
+    });
     el<HTMLButtonElement>("[data-blank]").addEventListener("click", () => createStory());
     el<HTMLButtonElement>("[data-back-stories]").addEventListener("click", () => openStories());
+  }
+
+  /**
+   * Shows the form as a finished piece. The headline, standfirst and byline are
+   * invented so the shape reads the way the site will render it; the body is the
+   * template itself, which is what the writer will actually be typing over.
+   */
+  function previewTemplate(t: Template) {
+    const host = document.createElement("div");
+    host.className = "ed-modal";
+    host.innerHTML = `
+      <div class="ed-modal-box ed-peek-box" role="dialog" aria-label="${esc(t.name)} preview">
+        <div class="ed-modal-head">
+          <p class="ed-legend" style="margin:0">Preview &middot; ${esc(t.name)}</p>
+          <button type="button" class="ed-btn ed-btn-quiet" data-shut>Close</button>
+        </div>
+        <div class="ed-peek-scroll">
+          <article class="ed-peek">
+            <div class="ed-peek-lead"><span>Lead image</span></div>
+            <p class="ed-peek-kicker">Journal / ${esc(t.sample.desk)}</p>
+            <h1>${esc(t.sample.headline)}</h1>
+            <p class="ed-peek-stand">${esc(t.sample.standfirst)}</p>
+            <p class="ed-peek-byline">By Zeynep Doruk &middot; ${esc(
+              new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
+            )} &middot; ${t.sample.minutes} min read</p>
+            <div class="ed-body ed-peek-body">${markdownToHtml(t.body)}</div>
+          </article>
+        </div>
+        <div class="ed-peek-foot">
+          <p class="ed-note">Sample words. You replace them.</p>
+          <button type="button" class="ed-btn ed-btn-primary" data-take>Write this &rarr;</button>
+        </div>
+      </div>`;
+    document.body.append(host);
+
+    const shut = () => {
+      document.removeEventListener("keydown", onKey, true);
+      host.remove();
+    };
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") { event.preventDefault(); shut(); }
+    }
+    document.addEventListener("keydown", onKey, true);
+    host.addEventListener("mousedown", (event) => { if (event.target === host) shut(); });
+    host.querySelector<HTMLButtonElement>("[data-shut]")!.addEventListener("click", shut);
+    host.querySelector<HTMLButtonElement>("[data-take]")!.addEventListener("click", () => {
+      shut();
+      createStory(t);
+    });
   }
 
   function createStory(template?: Template) {
