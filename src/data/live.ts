@@ -29,18 +29,18 @@ export const liveChannels: LiveChannel[] = [
     url: "https://www.youtube.com/@AlJazeeraEnglish/live",
   },
   {
-    id: "trt-world",
-    name: "TRT World",
-    shortName: "TRT World",
-    channelId: "UC7fWeaHhqgM4Lbaqmx767aQ",
-    url: "https://www.youtube.com/@trtworld/live",
+    id: "sky-news",
+    name: "Sky News",
+    shortName: "Sky News",
+    channelId: "UCoMdktPbSTixAyNGwb-UYkQ",
+    url: "https://www.youtube.com/user/skynews/live",
   },
   {
-    id: "nhk-world",
-    name: "NHK WORLD-JAPAN",
-    shortName: "NHK World",
-    channelId: "UCSPEjw8F2nQDtmUKnyaXRvg",
-    url: "https://www.youtube.com/@NHKWORLDJAPAN/live",
+    id: "euronews",
+    name: "Euronews",
+    shortName: "Euronews",
+    channelId: "UCW2QcKZiU8aUGg4yxCId1Yg",
+    url: "https://www.youtube.com/@euronews/live",
   },
 ];
 
