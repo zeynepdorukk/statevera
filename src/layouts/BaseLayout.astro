@@ -34,6 +34,7 @@ interface Props {
   };
   noindex?: boolean;
   hideTicker?: boolean;
+  hideFooter?: boolean;
   path?: string;
   jsonLd?: Record<string, unknown>[];
 }
@@ -47,6 +48,7 @@ const {
   article,
   noindex = false,
   hideTicker = false,
+  hideFooter = false,
   path = "/",
   jsonLd = [],
 } = Astro.props;
@@ -142,7 +144,7 @@ const webJsonLd = {
     <main id="main-content" class="flex-1">
       <slot />
     </main>
-    <Footer />
+    {!hideFooter && <Footer />}
     <SearchOverlay />
   </body>
 </html>

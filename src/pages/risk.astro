@@ -1,93 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { pillars } from "../site";
-import { root } from "../utils/collection";
-import { byCategory } from "../data/wire";
-import WireCard from "../components/WireCard.astro";
-import SectionHead from "../components/SectionHead.astro";
 
-const RISK_URL = "https://zeynepdorukk.github.io/Glorisk/";
-const geopolitics = byCategory("Geopolitics", 4);
-const security = byCategory("Security", 4);
+const GLORISK_URL = "https://zeynepdorukk.github.io/Glorisk/";
 ---
 
 <BaseLayout
-  title="Geopolitical Risk Analysis"
-  description={pillars.risk.description}
+  title="GLORISK"
+  description="Interactive geopolitical risk analysis."
   path="/risk"
   tone="risk"
+  hideTicker
+  hideFooter
 >
-  <div class="shell pt-7 md:pt-9" data-tone="risk">
-    <header class="border-b-2 border-ink pb-5">
-      <p class="kicker-ink">Risk</p>
-      <h1 class="t-lead mt-1.5">Geopolitical Risk Analysis</h1>
-      <p class="mt-3 max-w-3xl font-serif text-[1.06rem] leading-relaxed text-ink-soft">
-        {pillars.risk.description} Use it to stress-test the assumptions behind the
-        news coverage in <a href={root("/wire")} class="link-accent">News</a> and the
-        arguments in <a href={root("/journal")} class="link-accent">Journal</a>.
-      </p>
-    </header>
-
-    <div class="py-8">
-      <div class="relative border border-line-strong bg-paper-soft">
-        <iframe
-          src={RISK_URL}
-          title="Glorisk — interactive geopolitical risk analysis"
-          class="block h-[78vh] min-h-[560px] w-full border-0 bg-white"
-          loading="eager"
-          allow="fullscreen"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-        <div class="flex flex-wrap items-center justify-between gap-3 border-t border-line px-4 py-2.5">
-          <p class="meta">
-            Glorisk &middot;
-            <a href={RISK_URL} target="_blank" rel="noopener" class="link-accent">
-              open in a new tab<span class="outbound" aria-hidden="true"></span>
-            </a>
-          </p>
-          <p class="meta hidden sm:block">Built and maintained by the Statevera editor</p>
-        </div>
-      </div>
-
-      <div class="mt-7 grid gap-7 md:grid-cols-3">
-        <div class="border-t-2 border-ink pt-3.5">
-          <p class="kicker-ink">What it is</p>
-          <p class="mt-2 font-serif text-[0.97rem] leading-relaxed text-ink-soft">
-            Glorisk scores and visualises geopolitical risk across countries and regions,
-            combining conflict, sanctions, energy and financial exposure into a single
-            assessment.
-          </p>
-        </div>
-        <div class="border-t-2 border-ink pt-3.5">
-          <p class="kicker-ink">How to use it</p>
-          <p class="mt-2 font-serif text-[0.97rem] leading-relaxed text-ink-soft">
-            Filter by region, compare risk categories and explore scenario shocks. The tool
-            is interactive — hover, click and toggle to build your own view.
-          </p>
-        </div>
-        <div class="border-t-2 border-ink pt-3.5">
-          <p class="kicker-ink">Reading it well</p>
-          <p class="mt-2 font-serif text-[0.97rem] leading-relaxed text-ink-soft">
-            A score is a hypothesis, not a forecast. Check it against what the news is
-            actually reporting from the same region before you act on it.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <section class="grid gap-x-8 gap-y-9 border-t-2 border-ink pt-7 pb-6 md:grid-cols-2" aria-label="Related reporting" data-tone="wire">
-      <div>
-        <SectionHead title="Geopolitics news" tone="wire" href="/wire/geopolitics" moreLabel="Desk" />
-        <div class="rule-list">
-          {geopolitics.map((item) => <WireCard item={item} variant="text" />)}
-        </div>
-      </div>
-      <div>
-        <SectionHead title="Security news" tone="wire" href="/wire/security" moreLabel="Desk" />
-        <div class="rule-list">
-          {security.map((item) => <WireCard item={item} variant="text" />)}
-        </div>
-      </div>
-    </section>
+  <div class="w-full bg-paper">
+    <iframe
+      src={GLORISK_URL}
+      title="GLORISK"
+      class="block h-[calc(100dvh-7rem)] min-h-[560px] w-full border-0 bg-white"
+      loading="eager"
+      allow="fullscreen"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
   </div>
 </BaseLayout>

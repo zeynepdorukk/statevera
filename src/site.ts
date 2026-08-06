@@ -78,7 +78,7 @@ export const pillars: Record<PillarId, Pillar> = {
   },
   risk: {
     id: "risk",
-    name: "Risk",
+    name: "GLORISK",
     url: "/risk",
     tagline: "Geopolitical risk, scored",
     description:
@@ -122,7 +122,7 @@ export const nav: { primary: NavItem[] } = {
         { label: "Explainers", url: "/explainers" },
       ],
     },
-    { label: "Risk", url: "/risk" },
+    { label: "GLORISK", url: "/risk" },
     { label: "Regions", url: "/regions" },
   ],
 };
