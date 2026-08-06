@@ -156,10 +156,18 @@ const isActive = (url: string) =>
 
 <script>
   // Shrink the masthead once the reader has committed to scrolling.
+  //
+  // The two thresholds are not decoration. Compacting removes ~19px from a
+  // header that is still in flow, so the browser's scroll anchoring pulls the
+  // page back by that much — with a single threshold it lands on the other side
+  // of the line and the header flickers. The gap must stay well above 19px.
   const header = document.getElementById("site-header");
+  const COMPACT_ABOVE = 160;
+  const RESTORE_BELOW = 60;
   let compacted = false;
   const onScroll = () => {
-    const shouldCompact = window.scrollY > 80;
+    const y = window.scrollY;
+    const shouldCompact = compacted ? y > RESTORE_BELOW : y > COMPACT_ABOVE;
     if (shouldCompact === compacted) return;
     compacted = shouldCompact;
     header?.classList.toggle("is-compact", compacted);
