@@ -125,11 +125,196 @@ ${context.after.slice(0, 400)}`;
  * is a piece of the document. They have to be asked for differently, or a
  * structural instruction flattens the article into one blob.
  */
-export type RewriteMode = "inline" | "blocks";
+export type RewriteMode = "inline" | "blocks" | "field";
+
+export type AskScope = "inline" | "blocks" | "headline" | "standfirst" | "empty";
+
+export interface AskPreset {
+  id: string;
+  label: string;
+  /** Short line under the chip when hovered / for screen readers. */
+  hint: string;
+  /** Fills the instruction box. The writer can edit before applying. */
+  instruction: string;
+  /** Where this chip is useful. */
+  scopes: AskScope[];
+}
+
+/**
+ * Common jobs the desk actually does. Chips fill the box; free text still wins.
+ * Keep labels short — they sit in a horizontal row.
+ */
+export const ASK_PRESETS: AskPreset[] = [
+  {
+    id: "tighten",
+    label: "Tighten",
+    hint: "Cut fat, keep the claim",
+    instruction:
+      "Tighten this. Cut throat-clearing and repetition. Keep every concrete fact, name and number. Prefer shorter sentences where the meaning allows.",
+    scopes: ["inline", "blocks", "standfirst", "headline"],
+  },
+  {
+    id: "plainer",
+    label: "Plainer",
+    hint: "Less jargon, same precision",
+    instruction:
+      "Rewrite in plainer language without dumbing down. Replace jargon with ordinary words. Keep the register serious and the meaning exact.",
+    scopes: ["inline", "blocks", "standfirst"],
+  },
+  {
+    id: "sharper",
+    label: "Sharper",
+    hint: "Stronger verbs, cleaner point",
+    instruction:
+      "Make this sharper. Lead with the point. Prefer concrete nouns and active verbs. Cut hedging that does no work.",
+    scopes: ["inline", "blocks", "headline", "standfirst"],
+  },
+  {
+    id: "longer",
+    label: "Expand",
+    hint: "One step more depth",
+    instruction:
+      "Expand this slightly with one more layer of explanation or consequence. Do not invent facts, figures, dates, quotations or sources. Stay in the writer's voice.",
+    scopes: ["inline", "blocks"],
+  },
+  {
+    id: "shorter",
+    label: "Halve it",
+    hint: "About half the length",
+    instruction:
+      "Cut this to roughly half the length. Keep the essential claim and the hardest facts. Drop colour and restatement first.",
+    scopes: ["inline", "blocks"],
+  },
+  {
+    id: "grammar",
+    label: "Fix English",
+    hint: "Grammar and flow only",
+    instruction:
+      "Fix grammar, spelling, punctuation and awkward phrasing only. Do not change meaning, structure, argument or tone. British English.",
+    scopes: ["inline", "blocks", "headline", "standfirst"],
+  },
+  {
+    id: "british",
+    label: "British EN",
+    hint: "Spelling and usage",
+    instruction:
+      "Convert to British English spelling and usage (defence, programme, towards). Change nothing else about meaning or structure.",
+    scopes: ["inline", "blocks", "headline", "standfirst"],
+  },
+  {
+    id: "neutral",
+    label: "More neutral",
+    hint: "Report, don't argue",
+    instruction:
+      "Rewrite in a more neutral reported register. Remove loaded adjectives and editorial judgement. Keep the facts and the sequence.",
+    scopes: ["inline", "blocks"],
+  },
+  {
+    id: "argument",
+    label: "As argument",
+    hint: "Opinion voice",
+    instruction:
+      "Rewrite as a clear signed argument in the house opinion voice. State the claim early. Keep evidence; cut pure colour. First person is allowed if it helps.",
+    scopes: ["inline", "blocks"],
+  },
+  {
+    id: "takeaways",
+    label: "Key takeaways",
+    hint: "Three bullets in a callout",
+    instruction:
+      "Turn the essential points of this passage into a KeyTakeaways callout with three tight bullets. Return ONLY the callout markdown using <KeyTakeaways> … </KeyTakeaways>. Invent nothing.",
+    scopes: ["blocks"],
+  },
+  {
+    id: "why",
+    label: "Why it matters",
+    hint: "Consequence callout",
+    instruction:
+      "Write a WhyItMatters callout of two or three sentences on the consequence of this passage. Reported, not argued. Return ONLY <WhyItMatters> … </WhyItMatters>. Invent no facts.",
+    scopes: ["blocks"],
+  },
+  {
+    id: "bigpicture",
+    label: "Big picture",
+    hint: "Longer frame callout",
+    instruction:
+      "Write a TheBigPicture callout placing this passage in the longer story. One short paragraph. Return ONLY <TheBigPicture> … </TheBigPicture>. Invent no facts.",
+    scopes: ["blocks"],
+  },
+  {
+    id: "heads",
+    label: "Add heads",
+    hint: "Section the run",
+    instruction:
+      "Add clear ## section headings that match the house forms (What changed / Why it happened / What it means, or equivalents that fit). Do not invent facts. Keep the existing prose under the new heads.",
+    scopes: ["blocks"],
+  },
+  {
+    id: "pullquote",
+    label: "Pull quote",
+    hint: "One line to lift",
+    instruction:
+      "From this passage, produce a single pull quote worth lifting. Return ONLY a markdown blockquote (> …) of one or two short sentences, taken or lightly tightened from the writer's words. Invent nothing.",
+    scopes: ["inline", "blocks"],
+  },
+  {
+    id: "lede",
+    label: "Hard lede",
+    hint: "Who / what / when first",
+    instruction:
+      "Rewrite as a hard news lede: the most important fact first, who/what/where/when in the opening sentence. No throat-clearing. Keep only what the passage supports.",
+    scopes: ["inline", "blocks"],
+  },
+  {
+    id: "standfirst",
+    label: "As standfirst",
+    hint: "One line, 20–32 words",
+    instruction:
+      "Rewrite as a standfirst: one sentence, roughly 20–32 words, that states the argument or the second most important fact. No headline style.",
+    scopes: ["inline", "standfirst", "blocks"],
+  },
+  {
+    id: "headline",
+    label: "As headline",
+    hint: "House headline rules",
+    instruction:
+      "Rewrite as a STATEVERA headline: specific, sober, no clickbait, no question mark, no exclamation mark. Preferably under 12 words. British English. Return ONLY the headline text.",
+    scopes: ["inline", "headline", "blocks"],
+  },
+  {
+    id: "house",
+    label: "House voice",
+    hint: "Match FT / Economist register",
+    instruction:
+      "Rewrite into the STATEVERA house voice: British English, precise, unhurried, concrete. No hype. Keep every fact. Match the surrounding piece.",
+    scopes: ["inline", "blocks", "standfirst"],
+  },
+  {
+    id: "questions",
+    label: "Interview Qs",
+    hint: "Bold questions shape",
+    instruction:
+      "Reshape this into interview form: short bold questions on their own lines (**Question?**) and answers as plain paragraphs beneath. Keep the substance. Do not invent answers the passage does not support.",
+    scopes: ["blocks"],
+  },
+  {
+    id: "briefing",
+    label: "3 points",
+    hint: "Numbered briefing",
+    instruction:
+      "Recast as a three-point briefing: a one-paragraph state of play, then ## 1. / ## 2. / ## 3. with two or three sentences each. Sharpest point first. Invent nothing.",
+    scopes: ["blocks"],
+  },
+];
+
+export function presetsFor(scope: AskScope): AskPreset[] {
+  return ASK_PRESETS.filter((p) => p.scopes.includes(scope));
+}
 
 const INLINE_RULES = `- Return ONLY the rewritten passage, as a single run of text.
 - Do NOT add headings, lists, blank lines or block structure: this is part of one paragraph.
-- Inline markdown is allowed where it already fits: **bold**, *italic*, [text](url).`;
+- Inline markdown is allowed where it already fits: **bold**, *italic*, [text](url).
+- Keep roughly the same length unless the instruction asks to cut or expand.`;
 
 const BLOCK_RULES = `- Return markdown for the WHOLE of the passage, structure included.
 - Keep the shape of the piece unless the instruction asks you to change it. A
@@ -146,7 +331,50 @@ const BLOCK_RULES = `- Return markdown for the WHOLE of the passage, structure i
     <AnalysisSection> … </AnalysisSection>
 - Separate every block with a blank line.
 - Do not invent a headline, and do not wrap the answer in a code fence.
-- Keep every picture that is already there unless told to remove it.`;
+- Keep every picture that is already there unless told to remove it.
+- If the instruction asks for a callout only, return only that callout.`;
+
+const FIELD_RULES = `- Return ONLY the rewritten field text as a single plain line (or two at most for a standfirst).
+- No markdown headings, lists, code fences or labels.
+- No quotation marks wrapped around the whole answer.`;
+
+/**
+ * Light intent routing so free-typed instructions get the same guardrails as chips.
+ * Does not replace the writer's words — only appends constraints the model needs.
+ */
+export function enrichInstruction(instruction: string, mode: RewriteMode): string {
+  const text = instruction.trim();
+  const lower = text.toLowerCase();
+  const extras: string[] = [];
+
+  if (/\b(translat|español|spanish|french|deutsch|turkish|türkçe|arabic)\b/i.test(lower)) {
+    extras.push(
+      "Do not translate into another language. Stay in British English unless the passage is already a quotation in another language."
+    );
+  }
+  if (/\b(invent|make up|fabricat|hallucin)/i.test(lower)) {
+    extras.push("Refuse to invent. If facts are missing, keep the passage and do not pad.");
+  }
+  if (/\b(clickbait|viral|seo|emoji)/i.test(lower)) {
+    extras.push("Stay in house style: no clickbait, no emoji, no SEO tricks.");
+  }
+  if (mode === "inline" && /\b(heading|subhead|bullet|list|callout|takeaway|section)\b/i.test(lower)) {
+    extras.push(
+      "This selection is inside one paragraph. Do not introduce block structure; keep a single run of text. If the job truly needs structure, return the passage unchanged."
+    );
+  }
+  if (/\b(fact[- ]?check|verify sources?)\b/i.test(lower)) {
+    extras.push(
+      "You cannot verify external facts. Flag unsupported claims in [square brackets] inside the passage rather than inventing citations."
+    );
+  }
+
+  if (!extras.length) return text;
+  return `${text}
+
+Additional constraints:
+${extras.map((e) => `- ${e}`).join("\n")}`;
+}
 
 /**
  * Rewrites a passage according to whatever the writer typed. The rest of the
@@ -157,25 +385,49 @@ export async function rewrite(
   config: AiConfig,
   instruction: string,
   passage: string,
-  context: { title: string; description: string; draft: string },
+  context: {
+    title: string;
+    description: string;
+    draft: string;
+    /** headline | standfirst | body — changes field rules. */
+    field?: "headline" | "standfirst" | "body";
+  },
   mode: RewriteMode = "inline",
   signal?: AbortSignal
 ): Promise<string> {
-  const prompt = `You are editing one part of a piece for STATEVERA. Carry out the
-writer's instruction on the passage at the bottom, and nothing else.
+  const field = context.field ?? "body";
+  const effectiveMode: RewriteMode =
+    field === "headline" || field === "standfirst" ? "field" : mode;
+  const rules =
+    effectiveMode === "blocks" ? BLOCK_RULES : effectiveMode === "field" ? FIELD_RULES : INLINE_RULES;
+  const fullInstruction = enrichInstruction(instruction, effectiveMode);
+
+  const fieldLine =
+    field === "headline"
+      ? "You are editing the HEADLINE only."
+      : field === "standfirst"
+        ? "You are editing the STANDFIRST only."
+        : "You are editing one part of the body.";
+
+  const prompt = `${fieldLine} Carry out the writer's instruction on the passage at the bottom, and nothing else.
 
 The writer's instruction:
-${instruction}
+${fullInstruction}
 
 Rules:
-${mode === "blocks" ? BLOCK_RULES : INLINE_RULES}
+${rules}
 - No preamble, no explanation, no commentary about what you changed.
-- Keep the writer's voice. Change only what the instruction asks for.
+- Keep the writer's voice unless the instruction asks for a register change.
+- Change only what the instruction asks for.
 - Invent no facts, figures, dates, quotations or named sources.
+- Do not add a title, label, or "Rewritten:" prefix.
 - If the instruction cannot be carried out honestly, return the passage unchanged.
+- If the passage is a template placeholder (instructions to the writer rather than finished prose), rewrite it into finished sample prose only when the instruction clearly asks to fill, draft, or write; otherwise keep structure and tighten the guidance.
 
 Working title: ${context.title || "(untitled)"}
 Standfirst: ${context.description || "(none yet)"}
+Field: ${field}
+Mode: ${effectiveMode}
 
 --- THE WHOLE PIECE, FOR CONTEXT ONLY. DO NOT RETURN IT. ---
 ${context.draft.slice(0, 8000)}
@@ -185,12 +437,19 @@ ${passage}`;
 
   const raw = await ask(config, prompt, {
     system: HOUSE_STYLE,
-    temperature: 0.4,
-    maxTokens: mode === "blocks" ? 4000 : 1200,
+    temperature: 0.35,
+    maxTokens: effectiveMode === "blocks" ? 4000 : effectiveMode === "field" ? 220 : 1400,
     signal,
   });
-  const out = stripFence(raw);
-  return mode === "blocks" ? out : out.replace(/^["“]|["”]$/g, "");
+  let out = stripFence(raw);
+  out = out.replace(/^(?:rewritten\s*(?:passage|text|version)\s*:\s*)/i, "");
+  if (effectiveMode !== "blocks") {
+    out = out.replace(/^["“]|["”]$/g, "");
+    if (effectiveMode === "field") {
+      out = out.split("\n").map((l) => l.trim()).filter(Boolean)[0] ?? out;
+    }
+  }
+  return out.trim();
 }
 
 // ------------------------------------------------------------

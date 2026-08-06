@@ -474,42 +474,170 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
   }
 
   /* ---------- say what you want ---------- */
+  .ed-menu.is-ask {
+    width: min(28rem, calc(100vw - 1.5rem));
+    max-height: none;
+    overflow: visible;
+    border-radius: 10px;
+    border-color: color-mix(in srgb, var(--journal) 35%, var(--line-strong));
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--journal) 12%, transparent),
+      0 22px 50px -20px rgba(0, 0, 0, 0.55);
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--journal) 7%, var(--paper)) 0%,
+        var(--paper) 3.2rem,
+        var(--paper) 100%
+      );
+  }
+  .ed-menu.is-ask .ed-menu-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.7rem 0.85rem 0.55rem;
+    border-bottom: 0;
+    color: var(--journal-deep);
+    letter-spacing: 0.12em;
+  }
+  .ed-ask-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .ed-ask-kicker svg {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+  .ed-ask-scope {
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.18rem 0.45rem;
+  }
   .ed-ask {
     display: block;
-    padding: 0.75rem;
+    padding: 0 0.85rem 0.85rem;
   }
-  .ed-ask input {
+  .ed-ask-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin: 0 0 0.7rem;
+  }
+  .ed-ask-chip {
+    border: 1px solid color-mix(in srgb, var(--journal) 28%, var(--line));
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--journal) 8%, transparent);
+    color: var(--ink-soft);
+    padding: 0.28rem 0.62rem;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 650;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition:
+      background 0.14s ease,
+      border-color 0.14s ease,
+      color 0.14s ease,
+      transform 0.14s ease;
+  }
+  .ed-ask-chip:hover {
+    color: var(--journal-deep);
+    border-color: color-mix(in srgb, var(--journal) 55%, transparent);
+    background: color-mix(in srgb, var(--journal) 16%, transparent);
+  }
+  .ed-ask-chip.is-on {
+    color: #1b1e21;
+    border-color: var(--journal);
+    background: linear-gradient(180deg, var(--journal-deep), var(--journal));
+    transform: translateY(-1px);
+  }
+  .ed-ask-field {
+    position: relative;
+  }
+  .ed-ask textarea {
+    display: block;
     width: 100%;
-    padding: 0.55rem 0.65rem;
+    min-height: 4.4rem;
+    max-height: 9rem;
+    resize: vertical;
+    padding: 0.7rem 0.75rem;
     font-family: var(--font-sans);
     font-size: 0.92rem;
+    line-height: 1.45;
     color: var(--ink);
     background: var(--paper-soft);
     border: 1px solid var(--line-strong);
-    border-radius: 0;
+    border-radius: 8px;
   }
-  .ed-ask input:focus {
-    outline: 2px solid var(--tone);
-    outline-offset: -1px;
+  .ed-ask textarea:focus {
+    outline: 2px solid color-mix(in srgb, var(--journal) 70%, transparent);
+    outline-offset: 1px;
+    border-color: color-mix(in srgb, var(--journal) 55%, transparent);
   }
   .ed-ask-target {
-    margin: 0.5rem 0 0;
+    margin: 0.65rem 0 0;
+    padding: 0.55rem 0.65rem;
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--ink) 4%, transparent);
+    border: 1px solid var(--line);
     font-family: var(--font-serif);
     font-size: 0.8rem;
     font-style: italic;
-    line-height: 1.4;
+    line-height: 1.45;
     color: var(--muted);
-    border-left: 2px solid var(--line-strong);
-    padding-left: 0.55rem;
+  }
+  .ed-ask-target strong {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-family: var(--font-sans);
+    font-size: 0.58rem;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--muted) 85%, var(--journal));
   }
   .ed-ask-row {
     display: flex;
-    gap: 0.4rem;
-    margin-top: 0.7rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 0.8rem;
+  }
+  .ed-ask-row .ed-btn-primary {
+    background: linear-gradient(180deg, var(--journal-deep), var(--journal));
+    border-color: var(--journal);
+    color: #1b1e21;
+    font-weight: 700;
+  }
+  .ed-ask-row .ed-btn-primary:hover:not(:disabled) {
+    filter: brightness(1.05);
+  }
+  .ed-ask-hint {
+    margin-left: auto;
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .ed-ask-hint kbd {
+    font: inherit;
+    font-weight: 700;
+    color: var(--ink-soft);
   }
   .ed-float-ai {
-    color: var(--tone);
+    color: var(--journal-deep);
     font-weight: 700;
+  }
+  .ed-float-ai:hover {
+    color: var(--journal);
   }
   .ed-float[data-scope="line"] .block-only {
     display: none;
@@ -1514,7 +1642,8 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 
 <script>
   import { type AiConfig, type LayoutSuggestion,
-    completeInline, rewrite, suggestLayout, suggestMeta, suggestPhotoQuery } from "../lib/editor/ai";
+    completeInline, rewrite, suggestLayout, suggestMeta, suggestPhotoQuery,
+    presetsFor, type AskScope, type AskPreset } from "../lib/editor/ai";
   import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
     searchPhotos, importPhoto, type FileEntry, type Photo } from "../lib/editor/desk";
   import { TEMPLATES, templateById, type Template } from "../lib/editor/templates";
@@ -2392,6 +2521,11 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
     // Headline and standfirst are single paragraphs.
     for (const oneLine of [titleEl, standEl]) {
       oneLine.addEventListener("keydown", (event) => {
+        if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "j") {
+          event.preventDefault();
+          openAsk();
+          return;
+        }
         if (event.key === "Enter") {
           event.preventDefault();
           (oneLine === titleEl ? standEl : bodyEl).focus();
@@ -3021,46 +3155,132 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
     };
 
     function openAsk() {
+      if (!aiReady()) {
+        setStatus("The assistant is not available on this desk.", "error");
+        return;
+      }
+
       const sel = window.getSelection();
       const selected = sel && !sel.isCollapsed ? sel.toString().trim() : "";
-      const block = currentBlock();
+      const anchorNode = sel?.anchorNode ?? null;
+      const inTitle = !!(anchorNode && titleEl.contains(anchorNode));
+      const inStand = !!(anchorNode && standEl.contains(anchorNode));
+      const block = !inTitle && !inStand ? currentBlock() : null;
 
-      if (!selected && !block?.textContent?.trim()) {
-        setStatus("Select the words you want changed first.", "error");
+      // Headline / standfirst can be asked on with or without a text selection.
+      if (!inTitle && !inStand && !selected && !block?.textContent?.trim()) {
+        setStatus("Select the words you want changed, or put the caret in the headline.", "error");
         return;
       }
 
       const range = selected && sel ? sel.getRangeAt(0).cloneRange() : null;
+      const spanned = range && !inTitle && !inStand ? blocksInRange(range) : [];
+      const asBlocks = spanned.length > 1 || (!!selected && spanned.length === 1 && (selected.length > 280 || /\n/.test(selected)));
+      // Whole-block ask when caret is in a block with no selection.
+      const wholeBlock = !selected && !!block && !inTitle && !inStand;
 
-      // A selection inside one paragraph is a run of words. A selection across
-      // several is a piece of the document, and has to keep its shape.
-      const spanned = range ? blocksInRange(range) : [];
-      const asBlocks = spanned.length > 1;
-      const passage = asBlocks ? markdownOfBlocks(spanned) : selected || block?.textContent || "";
-      const anchor = (range ?? block!).getBoundingClientRect();
-      const scope = asBlocks
-        ? `${spanned.length} blocks · ${countWords(canvasText(bodyEl))} words in the piece`
-        : `${passage.slice(0, 90)}${passage.length > 90 ? "…" : ""}`;
+      const askScope: AskScope = inTitle
+        ? "headline"
+        : inStand
+          ? "standfirst"
+          : asBlocks || wholeBlock
+            ? "blocks"
+            : selected
+              ? "inline"
+              : "empty";
 
+      const field: "headline" | "standfirst" | "body" = inTitle
+        ? "headline"
+        : inStand
+          ? "standfirst"
+          : "body";
+
+      const passage = inTitle
+        ? (selected || titleEl.textContent || "").trim()
+        : inStand
+          ? (selected || standEl.textContent || "").trim()
+          : asBlocks || wholeBlock
+            ? markdownOfBlocks(asBlocks ? spanned : block ? [block] : [])
+            : selected || block?.textContent || "";
+
+      if (!passage.trim()) {
+        setStatus("Nothing to rewrite there yet.", "error");
+        return;
+      }
+
+      const targetBlocks = asBlocks ? spanned : wholeBlock && block ? [block] : [];
+      const anchorRect = (
+        range ?? (inTitle ? titleEl : inStand ? standEl : block)!
+      ).getBoundingClientRect();
+
+      const scopeLabel =
+        field === "headline"
+          ? "Headline"
+          : field === "standfirst"
+            ? "Standfirst"
+            : targetBlocks.length > 1
+              ? `${targetBlocks.length} blocks`
+              : targetBlocks.length === 1
+                ? "This block"
+                : "Selection";
+
+      const preview =
+        passage.replace(/\s+/g, " ").trim().slice(0, 110) + (passage.length > 110 ? "…" : "");
+      const chips = presetsFor(askScope);
+      const placeholder =
+        field === "headline"
+          ? "Shorter. More specific. House headline."
+          : field === "standfirst"
+            ? "One sentence. 20–32 words. The argument, not the headline."
+            : askScope === "blocks"
+              ? "Add heads. Halve it. Pull key takeaways…"
+              : "Tighten this. Make it plainer. Cut the last sentence…";
+
+      menuEl.classList.add("is-ask");
       menuEl.innerHTML = `
-        <p class="ed-menu-head">${esc(state.model)}</p>
+        <div class="ed-menu-head">
+          <span class="ed-ask-kicker">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" />
+              <circle cx="12" cy="12" r="3.2" />
+            </svg>
+            Ask
+          </span>
+          <span class="ed-ask-scope">${esc(scopeLabel)}</span>
+        </div>
         <form class="ed-ask" data-ask>
-          <input type="text" data-ask-input autocomplete="off" spellcheck="false"
-            placeholder="${asBlocks ? "Add sub-headings. Cut this to half. Pull out the key takeaways." : "Tighten this. Make it plainer. Cut the last sentence."}" />
-          <p class="ed-ask-target">${esc(scope)}</p>
+          <div class="ed-ask-chips" data-chips>
+            ${chips
+              .map(
+                (p) =>
+                  `<button type="button" class="ed-ask-chip" data-preset="${esc(p.id)}" title="${esc(p.hint)}">${esc(p.label)}</button>`
+              )
+              .join("")}
+          </div>
+          <div class="ed-ask-field">
+            <textarea data-ask-input rows="3" autocomplete="off" spellcheck="true"
+              placeholder="${esc(placeholder)}"></textarea>
+          </div>
+          <p class="ed-ask-target"><strong>Working on</strong>${esc(preview)}</p>
           <div class="ed-ask-row">
-            <button type="submit" class="ed-btn ed-btn-primary">Rewrite</button>
-            <button type="button" class="ed-btn ed-btn-quiet" data-ask-layout>Review the layout</button>
+            <button type="submit" class="ed-btn ed-btn-primary" data-ask-go>Apply</button>
+            ${
+              field === "body"
+                ? '<button type="button" class="ed-btn ed-btn-quiet" data-ask-layout>Review layout</button>'
+                : ""
+            }
+            <span class="ed-ask-hint"><kbd>Enter</kbd> apply · <kbd>Esc</kbd> close</span>
           </div>
         </form>`;
-      menuEl.style.width = "26rem";
       menuEl.classList.add("is-open");
-      menuEl.style.top = `${window.scrollY + anchor.bottom + 8}px`;
-      menuEl.style.left = `${Math.max(12, Math.min(window.scrollX + anchor.left, window.innerWidth - 440))}px`;
+      menuEl.style.top = `${window.scrollY + anchorRect.bottom + 10}px`;
+      menuEl.style.left = `${Math.max(12, Math.min(window.scrollX + anchorRect.left, window.innerWidth - 460))}px`;
 
-      const input = el<HTMLInputElement>("[data-ask-input]");
+      const input = el<HTMLTextAreaElement>("[data-ask-input]");
+      let activePreset: string | null = null;
+
       const close = () => {
-        menuEl.classList.remove("is-open");
+        menuEl.classList.remove("is-open", "is-ask");
         menuEl.style.width = "";
         document.removeEventListener("mousedown", away, true);
       };
@@ -3069,11 +3289,55 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
       };
       window.setTimeout(() => document.addEventListener("mousedown", away, true), 0);
 
-      input.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") { event.preventDefault(); close(); bodyEl.focus(); }
+      const paintChip = () => {
+        menuEl.querySelectorAll<HTMLButtonElement>("[data-preset]").forEach((btn) => {
+          btn.classList.toggle("is-on", btn.dataset.preset === activePreset);
+        });
+      };
+
+      menuEl.querySelectorAll<HTMLButtonElement>("[data-preset]").forEach((btn) => {
+        btn.addEventListener("mousedown", (event) => event.preventDefault());
+        btn.addEventListener("click", () => {
+          const preset = chips.find((p) => p.id === btn.dataset.preset);
+          if (!preset) return;
+          if (activePreset === preset.id && input.value.trim() === preset.instruction) {
+            activePreset = null;
+            input.value = "";
+          } else {
+            activePreset = preset.id;
+            input.value = preset.instruction;
+          }
+          paintChip();
+          input.focus();
+          input.setSelectionRange(input.value.length, input.value.length);
+        });
       });
 
-      el<HTMLButtonElement>("[data-ask-layout]").addEventListener("click", async () => {
+      input.addEventListener("input", () => {
+        if (activePreset) {
+          const preset = chips.find((p) => p.id === activePreset);
+          if (!preset || input.value.trim() !== preset.instruction) {
+            activePreset = null;
+            paintChip();
+          }
+        }
+      });
+
+      input.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          event.preventDefault();
+          close();
+          (inTitle ? titleEl : inStand ? standEl : bodyEl).focus();
+          return;
+        }
+        // Enter applies; Shift+Enter makes a newline in the box.
+        if (event.key === "Enter" && !event.shiftKey) {
+          event.preventDefault();
+          el<HTMLFormElement>("[data-ask]").requestSubmit();
+        }
+      });
+
+      maybe<HTMLButtonElement>("[data-ask-layout]")?.addEventListener("click", async () => {
         close();
         await reviewLayout();
       });
@@ -3081,13 +3345,75 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
       el<HTMLFormElement>("[data-ask]").addEventListener("submit", async (event) => {
         event.preventDefault();
         const instruction = input.value.trim();
-        if (!instruction) return;
+        if (!instruction) {
+          input.focus();
+          return;
+        }
         close();
-        if (asBlocks) await rewriteBlocks(instruction, passage, spanned);
-        else await applyRewrite(instruction, passage, range, block);
+        if (field === "headline" || field === "standfirst") {
+          await applyFieldRewrite(instruction, passage, field, range);
+        } else if (targetBlocks.length) {
+          await rewriteBlocks(instruction, passage, targetBlocks);
+        } else {
+          await applyRewrite(instruction, passage, range, block);
+        }
       });
 
       input.focus();
+    }
+
+    /** Headline or standfirst — plain text fields, not body blocks. */
+    async function applyFieldRewrite(
+      instruction: string,
+      passage: string,
+      field: "headline" | "standfirst",
+      range: Range | null
+    ) {
+      const target = field === "headline" ? titleEl : standEl;
+      const mark = document.createElement("span");
+      if (range && target.contains(range.commonAncestorContainer)) {
+        try {
+          range.surroundContents(mark);
+        } catch {
+          mark.textContent = passage;
+          target.textContent = "";
+          target.append(mark);
+        }
+      } else {
+        mark.textContent = target.textContent ?? passage;
+        target.textContent = "";
+        target.append(mark);
+      }
+      mark.classList.add("ed-working");
+      window.getSelection()?.removeAllRanges();
+
+      try {
+        const result = await rewrite(
+          state.ai,
+          instruction,
+          passage,
+          {
+            title: titleEl.textContent ?? "",
+            description: standEl.textContent ?? "",
+            draft: htmlToMarkdown(bodyEl),
+            field,
+          },
+          "field"
+        );
+        if (!result.trim()) throw new Error("Nothing came back.");
+        mark.textContent = result;
+        mark.classList.remove("ed-working");
+        mark.classList.add("ed-arrived");
+        window.setTimeout(() => {
+          mark.replaceWith(document.createTextNode(mark.textContent ?? ""));
+        }, 900);
+        setStatus("Ctrl+Z undoes it", "ok");
+        touched();
+      } catch (error) {
+        mark.classList.remove("ed-working");
+        if (mark.parentNode) mark.replaceWith(document.createTextNode(passage));
+        setStatus((error as Error).message, "error");
+      }
     }
 
     /** Rewrites whole blocks and puts the returned markdown back as blocks. */
@@ -3109,6 +3435,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
             title: titleEl.textContent ?? "",
             description: standEl.textContent ?? "",
             draft: htmlToMarkdown(bodyEl),
+            field: "body",
           },
           "blocks"
         );
@@ -3193,7 +3520,8 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
           title: titleEl.textContent ?? "",
           description: standEl.textContent ?? "",
           draft: htmlToMarkdown(bodyEl),
-        });
+          field: "body",
+        }, "inline");
         if (!result.trim()) throw new Error("Nothing came back.");
 
         if (mark) {
