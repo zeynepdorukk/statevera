@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { desks, deskList, type DeskSlug } from "../../site";
-import { byCategory } from "../../data/wire";
+import { byCategory, canLead } from "../../data/wire";
 import { getByCategory, root } from "../../utils/collection";
 import WireCard from "../../components/WireCard.astro";
 import JournalCard from "../../components/JournalCard.astro";
@@ -15,7 +15,9 @@ const deskSlug = Astro.params.desk as DeskSlug;
 const desk = desks[deskSlug];
 
 const items = byCategory(desk.name);
-const [lead, ...rest] = items;
+const leadIndex = Math.max(items.findIndex(canLead), 0);
+const lead = items[leadIndex];
+const rest = items.filter((_, index) => index !== leadIndex);
 const railNews = rest.slice(0, 6);
 const mainNews = rest.slice(6);
 const journalOnDesk = await getByCategory(desk.name, 3);
