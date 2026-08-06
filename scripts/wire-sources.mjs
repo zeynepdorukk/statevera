@@ -125,13 +125,6 @@ export const categoryRules = [
       "primary", "foreign policy",
     ],
   },
-  {
-    category: "Culture",
-    terms: [
-      "museum*", "heritage", "soft power", "diaspora", "religious", "memorial",
-      "artefact*", "artifact*", "language policy", "cultural",
-    ],
-  },
 ];
 
 /** Region terms. Scored, not first-match — see the classifier. */

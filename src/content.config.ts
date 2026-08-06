@@ -5,7 +5,6 @@ const CATEGORIES = [
   "Politics",
   "Geopolitics",
   "Economy",
-  "Culture",
   "Security",
   "Diplomacy",
   "Theory",

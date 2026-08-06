@@ -136,8 +136,7 @@ export type DeskSlug =
   | "diplomacy"
   | "economy"
   | "geopolitics"
-  | "politics"
-  | "culture";
+  | "politics";
 
 export interface Desk {
   slug: DeskSlug;
@@ -182,13 +181,6 @@ export const desks: Record<DeskSlug, Desk> = {
     tagline: "Power, elections and the politics of states",
     description:
       "How domestic politics and statecraft shape the international system.",
-  },
-  culture: {
-    slug: "culture",
-    name: "Culture",
-    tagline: "Ideas, identity and soft power",
-    description:
-      "How culture, language, media and public memory shape foreign policy.",
   },
 };
 

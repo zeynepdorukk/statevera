@@ -1,8 +1,83 @@
 {
-  "generatedAt": "2026-08-06T03:54:45.746Z",
+  "generatedAt": "2026-08-06T04:12:52.185Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "b6e5e56f1c87",
+      "title": "American veterans know the cost of a military-first foreign policy",
+      "summary": "My nearly 32-year career in uniform has taught me many lessons. One of the most important is that the gap between operational military success and strategic political outcomes can be significant and is rarely, if at all, closed by increased military activity.…",
+      "url": "https://responsiblestatecraft.org/veterans-us-foreign-policy/",
+      "publisher": "Responsible Statecraft",
+      "publisherHome": "https://responsiblestatecraft.org",
+      "sourceId": "responsible-statecraft",
+      "publishedAt": "2026-08-06T04:05:02.000Z",
+      "image": "https://responsiblestatecraft.org/media-library/us-army-in-iraq.jpg?id=67579229&width=980",
+      "imageWidth": 0,
+      "category": "Security",
+      "region": "Americas",
+      "weight": 3
+    },
+    {
+      "id": "55bd9cf69de7",
+      "title": "Surprise strikes signal Iran is digging in for a long war",
+      "summary": "In recent weeks, Iran has gone on the offensive, striking commercial ships in the Strait of Hormuz and launching a surprise attack on U.S. forces in Jordan. From a distance, these moves look like self-defeating escalation. Why should a badly damaged state,…",
+      "url": "https://responsiblestatecraft.org/us-iran-strikes/",
+      "publisher": "Responsible Statecraft",
+      "publisherHome": "https://responsiblestatecraft.org",
+      "sourceId": "responsible-statecraft",
+      "publishedAt": "2026-08-06T04:05:02.000Z",
+      "image": "https://responsiblestatecraft.org/media-library/people-walk-next-to-a-symbolic-mockup-of-an-iranian-missile-and-an-iranian-flag-at-imam-hussein-square-in-tehran-iran-on-july.jpg?id=67578110&width=980",
+      "imageWidth": 0,
+      "category": "Security",
+      "region": "Middle East",
+      "weight": 3
+    },
+    {
+      "id": "15e008dca630",
+      "title": "Why are Commission staffers so miserable?",
+      "summary": "Working at the European Commission is one of the most coveted civil service jobs in Brussels. Yet, officials employed there describe high pressure, bureaucracy and burnout. Our colleague Seb Starcevic has interviewed dozen officials from different…",
+      "url": "https://www.politico.eu/podcast/brussels-playbook-podcast/why-are-commission-staffers-so-miserable/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+      "publisher": "POLITICO Europe",
+      "publisherHome": "https://www.politico.eu",
+      "sourceId": "politico-eu",
+      "publishedAt": "2026-08-06T04:05:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "b7e0c5b58316",
+      "title": "Trump attacks El-Sayed as ‘hater of Jews’ after Michigan win",
+      "summary": "US President Donald Trump attacked Michigan’s Democratic Senate candidate Abdul El-Sayed, calling him a ‘hater of Jews.'",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/6/trump-attacks-el-sayed-as-hater-of-jews-after-michigan-win?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-06T04:02:29.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "9738c8117929",
+      "title": "The hidden cost of global flight disruptions",
+      "summary": "A new global survey puts a number on what flight disruptions really cost passengers, not just in terms of money, and reveals how few know their rights.",
+      "url": "https://www.politico.eu/sponsored-content/the-hidden-cost-of-global-flight-disruptions/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+      "publisher": "POLITICO Europe",
+      "publisherHome": "https://www.politico.eu",
+      "sourceId": "politico-eu",
+      "publishedAt": "2026-08-06T04:00:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "region": "Europe",
+      "weight": 2
+    },
     {
       "id": "03943e702c77",
       "title": "Could the Iran war derail Donald Trump’s legacy?",
@@ -1204,21 +1279,6 @@
       "weight": 2
     },
     {
-      "id": "5de421ba7695",
-      "title": "Europe’s new border system works by being switched off when overwhelmed",
-      "summary": "Travelers are being exempted from facial scans and fingerprint collection whenever lines get too long.",
-      "url": "https://www.politico.eu/article/europe-entry-exit-system-switch-off-overwhelm/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-05T16:24:33.000Z",
-      "image": "https://www.politico.eu/wp-content/uploads/2026/05/13/GettyImages-1215826205-1024x683.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "d43b7aeeafef",
       "title": "Has Life in North Korea Changed Since 2013?",
       "summary": "The author of “Witness to North Korea” reflects on which lessons from his time in the country are still relevant today.",
@@ -1276,21 +1336,6 @@
       "imageWidth": 700,
       "category": "Politics",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "61946ebda64f",
-      "title": "EU health plans on ice as capitals dispute budget",
-      "summary": "The standoff between the European Commission and a group of EU countries stems from disagreement over NGO grants.",
-      "url": "https://www.politico.eu/article/eu-health-plans-dispute-budget/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-05T16:12:52.000Z",
-      "image": "https://www.politico.eu/wp-content/uploads/2026/08/05/GettyImages-2278864857-1024x734.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -2699,7 +2744,7 @@
       "publishedAt": "2026-08-04T13:15:34.000Z",
       "image": "https://i.guim.co.uk/img/media/a6d444e9564511fa1a879b531aaff4271caaea93/326_0_6361_5088/master/6361.jpg?width=700&quality=85&auto=format&fit=max&s=8bd7345e3c14f9721ceeb7ef99ffe289",
       "imageWidth": 700,
-      "category": "Culture",
+      "category": "Economy",
       "region": "Middle East",
       "weight": 2
     },
@@ -2866,21 +2911,6 @@
       "imageWidth": 700,
       "category": "Economy",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "439e27b98104",
-      "title": "We launched a war on nature. Now we are in a climate warzone | Rebecca Solnit",
-      "summary": "Summer is not what it once was. We have been robbed of one of life’s great joys Far beyond the fires raging across Europe and North America, the smoke, dangerous to breathe, hangs in the air, dimming the view, changing the very color of sunlight into…",
-      "url": "https://www.theguardian.com/commentisfree/2026/aug/04/summer-heat-climate-war-zone",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-04T10:00:47.000Z",
-      "image": "https://i.guim.co.uk/img/media/81531c39c97e347358c0934cbf71d0f15f7849af/421_0_5600_4480/master/5600.jpg?width=700&quality=85&auto=format&fit=max&s=36ba84e5f0549efe973deaa2cc51c1bb",
-      "imageWidth": 700,
-      "category": "Security",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -3272,36 +3302,6 @@
       "category": "Security",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "cab9fa05308f",
-      "title": "Possible Is Not Plausible: How Nightmare Scenarios Hijack Unconventional Weapons Policy",
-      "summary": "Current conversations surrounding unconventional weapons — chemical, biological, radiological, and nuclear — have become so fantastical as to be unserious. As the Chinese military fundamentally rethinks biological warfare and Russia continues to use…",
-      "url": "https://warontherocks.com/possible-is-not-plausible-how-nightmare-scenarios-hijack-unconventional-weapons-policy/",
-      "publisher": "War on the Rocks",
-      "publisherHome": "https://warontherocks.com",
-      "sourceId": "war-on-the-rocks",
-      "publishedAt": "2026-08-03T07:30:16.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "region": "Eurasia",
-      "weight": 3
-    },
-    {
-      "id": "bf0cd8c06891",
-      "title": "Fact check: Russian disinformation targets German elections",
-      "summary": "Ahead of four elections in Germany this fall, dozens of fake posts are circulating online aimed at discrediting candidates and portraying Germany as divided. Analysts warn that Russia is now targeting local candidates.",
-      "url": "https://www.dw.com/en/fact-check-russian-disinformation-targets-german-elections/a-78193305?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-03T07:06:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "region": "Europe",
-      "weight": 2
     }
   ]
 }
