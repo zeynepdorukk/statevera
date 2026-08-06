@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import { site, type PillarId } from "../site";
-import { root } from "../utils/collection";
+import { absoluteUrl, root } from "../utils/collection";
 import Header from "../components/Header.astro";
 import WireTicker from "../components/WireTicker.astro";
 import Footer from "../components/Footer.astro";
@@ -55,9 +55,8 @@ const {
 
 // The sitemap emits directory URLs with a trailing slash, so the canonical has to
 // agree with it or the two send Google different addresses for the same page.
-const canonicalPath = root(path).replace(/\/?$/, "/");
-const url = new URL(canonicalPath, site.siteUrl);
-const absoluteImage = new URL(root(image), site.siteUrl).toString();
+const url = absoluteUrl(path.replace(/\/?$/, "/"));
+const absoluteImage = absoluteUrl(image);
 const fullTitle = path === "/" ? site.publicationName : `${title} — ${site.publicationName}`;
 
 const webJsonLd = {
@@ -74,7 +73,7 @@ const webJsonLd = {
     foundingDate: site.founded,
     logo: {
       "@type": "ImageObject",
-      url: new URL(root("/images/branding/logo-mark-light.svg"), site.siteUrl).toString(),
+      url: absoluteUrl("/images/branding/logo-mark-light.svg"),
     },
   },
 };

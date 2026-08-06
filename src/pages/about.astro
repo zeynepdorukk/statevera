@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site, regions } from "../site";
-import { root } from "../utils/collection";
+import { absoluteUrl, root } from "../utils/collection";
 
 const profiles = [site.socialLinks.x, site.socialLinks.linkedin].filter(Boolean);
 
@@ -14,7 +14,7 @@ const jsonLd = [
     foundingDate: site.founded,
     description: site.publicationDescription,
     founder: { "@type": "Person", name: site.authorName },
-    logo: new URL(root("/images/branding/logo-mark-light.svg"), site.siteUrl).toString(),
+    logo: absoluteUrl("/images/branding/logo-mark-light.svg"),
     ...(profiles.length ? { sameAs: profiles } : {}),
   },
 ];

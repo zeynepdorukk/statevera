@@ -1,7 +1,7 @@
 import rss from "@astrojs/rss";
 import type { APIRoute } from "astro";
 import { site } from "../site";
-import { getAllArticles, heroImageOf, slugOf } from "../utils/collection";
+import { getAllArticles, absoluteUrl, heroImageOf, slugOf } from "../utils/collection";
 
 /**
  * Every URL here is written out in full. `context.site` is the bare origin,
@@ -24,7 +24,7 @@ export const GET: APIRoute = async () => {
       categories: [...a.data.tags, a.data.region, a.data.category],
       customData: [
         `<dc:creator><![CDATA[${a.data.author}]]></dc:creator>`,
-        `<media:content url="${new URL(heroImageOf(a.data.heroImage), site.siteUrl)}" medium="image"/>`,
+        `<media:content url="${absoluteUrl(heroImageOf(a.data.heroImage))}" medium="image"/>`,
       ].join(""),
     }))
     .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());

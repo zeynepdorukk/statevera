@@ -6,7 +6,7 @@
 // ============================================================
 
 import { getCollection, type CollectionEntry } from "astro:content";
-import { regionSlugOf } from "../site";
+import { regionSlugOf, site } from "../site";
 
 export type Article = CollectionEntry<"articles">;
 
@@ -28,6 +28,26 @@ export const root = (p: string): string => {
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   if (!base) return p;
   return p === base || p.startsWith(`${base}/`) ? p : base + p;
+};
+
+/** Strip the deployment base path back off, giving the publication-relative path. */
+export const unroot = (p: string): string => {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  if (!base || !p.startsWith(base)) return p;
+  return p.slice(base.length) || "/";
+};
+
+/**
+ * A full URL on the canonical host.
+ *
+ * `new URL(path, siteUrl)` is wrong here: an absolute path discards siteUrl's own
+ * path, so the desk deployment — which builds at the root — produced
+ * github.io/wire/ instead of github.io/statevera/wire/.
+ */
+export const absoluteUrl = (p: string): string => {
+  if (p.startsWith("http")) return p;
+  const path = unroot(p);
+  return site.siteUrl + (path.startsWith("/") ? path : `/${path}`);
 };
 
 export const slugOf = (entry: { id: string }): string => entry.id.replace(/\.mdx?$/, "");

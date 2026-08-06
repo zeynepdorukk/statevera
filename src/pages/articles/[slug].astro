@@ -34,7 +34,7 @@ if (!article) return Astro.redirect(root("/404"));
 const { Content } = await render(article);
 const { data } = article;
 const href = articleHref(article);
-const canonical = new URL(href.replace(/\/?$/, "/"), site.siteUrl).toString();
+const canonical = absoluteUrl(href.replace(/\/?$/, "/"));
 const regionSlug = regionSlugOf(data.region);
 
 // Live reporting from the same region, as context alongside the analysis.
@@ -48,16 +48,16 @@ const jsonLd = [
     description: data.description,
     datePublished: data.date.toISOString(),
     ...(data.updated ? { dateModified: data.updated.toISOString() } : {}),
-    author: { "@type": "Person", name: data.author, url: new URL(root("/about"), site.siteUrl).toString() },
+    author: { "@type": "Person", name: data.author, url: absoluteUrl("/about") },
     publisher: {
       "@type": "Organization",
       name: site.publicationName,
       logo: {
         "@type": "ImageObject",
-        url: new URL(root("/images/branding/logo-mark-light.svg"), site.siteUrl).toString(),
+        url: absoluteUrl("/images/branding/logo-mark-light.svg"),
       },
     },
-    image: [new URL(heroImageOf(data.heroImage), site.siteUrl).toString()],
+    image: [absoluteUrl(heroImageOf(data.heroImage))],
     articleSection: data.category,
     keywords: [...data.tags, data.region, ...data.country].join(", "),
     isAccessibleForFree: true,
