@@ -76,3 +76,6 @@ export const writeFile = (
   sha?: string
 ): Promise<{ sha: string }> =>
   call("file", { method: "PUT", body: JSON.stringify({ path, content, message, sha }) });
+
+export const deleteFile = (path: string, message: string, sha: string): Promise<{ deleted: boolean }> =>
+  call("file", { method: "DELETE", body: JSON.stringify({ path, message, sha }) });

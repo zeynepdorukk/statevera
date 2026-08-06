@@ -390,6 +390,24 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
       return json({ sha: result.content?.sha ?? "" });
     }
 
+    if (route === "file" && request.method === "DELETE") {
+      if (!env.GITHUB_TOKEN) return fail(503, "This deployment cannot publish: no GitHub token on the server.");
+      const body = (await request.json().catch(() => ({}))) as {
+        path?: string;
+        message?: string;
+        sha?: string;
+      };
+      if (!WRITEABLE.test(body.path ?? "")) return fail(400, "That file is out of bounds.");
+      // GitHub needs the exact blob it is removing, which also stops a stale
+      // desk from deleting a piece someone edited in the meantime.
+      if (!body.sha) return fail(400, "That piece has no version to delete.");
+      await githubJson(env, `/contents/${body.path}`, {
+        method: "DELETE",
+        body: JSON.stringify({ message: body.message || `Delete ${body.path}`, sha: body.sha }),
+      });
+      return json({ deleted: true });
+    }
+
     if (route === "models" && request.method === "GET") {
       if (!env.OPENAI_KEY) return fail(503, "No assistant key on the server.");
       return json({ using: modelOf(env), available: (await listModels(env)).sort() });
