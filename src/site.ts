@@ -102,6 +102,7 @@ export type NavItem = {
 
 export const nav: { primary: NavItem[] } = {
   primary: [
+    { label: "Journal", url: "/journal" },
     {
       label: "News",
       url: "/wire",
@@ -114,7 +115,6 @@ export const nav: { primary: NavItem[] } = {
         { label: "Politics", url: "/wire/politics" },
       ],
     },
-    { label: "Journal", url: "/journal" },
     { label: "Regions", url: "/regions" },
     { label: "GLORISK", url: "/risk" },
     { label: "LIVE", url: "/live" },
