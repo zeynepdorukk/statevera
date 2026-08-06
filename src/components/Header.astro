@@ -20,8 +20,7 @@ const isActive = (url: string) =>
       <!-- Balances the utilities column so the masthead stays centred. -->
       <div class="hidden w-48 shrink-0 lg:block" aria-hidden="true"></div>
 
-      <Masthead class="masthead-full" />
-      <Masthead compact class="masthead-compact" />
+      <Masthead />
 
       <div class="flex w-48 shrink-0 items-center justify-end gap-1">
         <button
@@ -131,48 +130,7 @@ const isActive = (url: string) =>
   </nav>
 </header>
 
-<style>
-  :global(.masthead-compact) {
-    display: none;
-  }
-  #site-header:not(.is-ready) :global(.masthead-full),
-  #site-header:not(.is-ready) :global(.masthead-compact) {
-    visibility: hidden;
-  }
-  #site-header.is-compact :global(.masthead-full) {
-    display: none;
-  }
-  #site-header.is-compact :global(.masthead-compact) {
-    display: inline-flex;
-  }
-</style>
-
 <script>
-  // Shrink the masthead once the reader has committed to scrolling.
-  //
-  // The two thresholds are not decoration. Compacting removes ~19px from a
-  // header that is still in flow, so the browser's scroll anchoring pulls the
-  // page back by that much — with a single threshold it lands on the other side
-  // of the line and the header flickers. The gap must stay well above 19px.
-  const header = document.getElementById("site-header");
-  const COMPACT_ABOVE = 160;
-  const RESTORE_BELOW = 60;
-  let compacted = false;
-  const onScroll = () => {
-    const y = window.scrollY;
-    const shouldCompact = compacted ? y > RESTORE_BELOW : y > COMPACT_ABOVE;
-    if (shouldCompact === compacted) return;
-    compacted = shouldCompact;
-    header?.classList.toggle("is-compact", compacted);
-  };
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("pageshow", () => {
-    requestAnimationFrame(() => {
-      onScroll();
-      header?.classList.add("is-ready");
-    });
-  });
-
   const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
   const menu = document.getElementById("mobile-menu");
   toggle?.addEventListener("click", () => {
