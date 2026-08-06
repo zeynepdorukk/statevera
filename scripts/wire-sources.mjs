@@ -44,7 +44,7 @@ export const sources = [
   { id: "bbc-africa", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/world/africa/rss.xml", home: "https://www.bbc.com/news/world/africa", region: "Africa", weight: 2, take: 10 },
   { id: "guardian-us", publisher: "The Guardian", url: "https://www.theguardian.com/us-news/rss", home: "https://www.theguardian.com/us-news", region: "Americas", weight: 2, take: 12 },
   { id: "anadolu-politics", publisher: "Anadolu Agency", url: "https://www.aa.com.tr/en/rss/default?cat=politics", home: "https://www.aa.com.tr/en", region: "Turkey", category: "Politics", weight: 2, take: 15 },
-  { id: "japan-times", publisher: "The Japan Times", url: "https://www.japantimes.co.jp/feed/", home: "https://www.japantimes.co.jp/news/", region: "Asia-Pacific", weight: 2, take: 10 },
+  { id: "nikkei-asia", publisher: "Nikkei Asia", url: "https://asia.nikkei.com/rss/feed/nar", home: "https://asia.nikkei.com", region: "Asia-Pacific", weight: 2, take: 12 },
   { id: "africanews", publisher: "Africanews", url: "https://www.africanews.com/feed/", home: "https://www.africanews.com/", region: "Africa", weight: 2, take: 12 },
   { id: "middle-east-eye", publisher: "Middle East Eye", url: "https://www.middleeasteye.net/rss", home: "https://www.middleeasteye.net/", region: "Middle East", weight: 2, take: 12 },
 
