@@ -1,11 +1,11 @@
 name: Refresh the wire
 
-# The site is static, so the wire is a snapshot. This job retakes it several
-# times a day and commits the result, which in turn triggers the Pages deploy.
+# The site is static, so the News feed is a snapshot. This job retakes it every
+# fifteen minutes and commits changes, which in turn triggers the Pages deploy.
 
 on:
   schedule:
-    - cron: "17 */3 * * *"
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
