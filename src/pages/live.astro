@@ -1,0 +1,269 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { liveChannels, liveEmbedUrl } from "../data/live";
+import { latest } from "../data/wire";
+import { relativeTime, wireDate } from "../data/wire";
+import { root } from "../utils/collection";
+
+const selectedChannel = liveChannels[0];
+const stories = latest(7);
+---
+
+<BaseLayout
+  title="LIVE"
+  description="Watch international news channels and follow the latest Statevera News headlines."
+  path="/live"
+  hideTicker
+>
+  <div class="live-page shell pt-0" data-tone="wire">
+    <header class="live-intro">
+      <p class="kicker-ink">LIVE</p>
+      <h1 class="t-lead mt-1.5">Watch the world as it moves.</h1>
+    </header>
+
+    <div class="live-channel-switcher" role="tablist" aria-label="Live channels">
+      {liveChannels.map((channel, index) => (
+        <button
+          type="button"
+          class:list={["live-channel-tab", index === 0 && "is-selected"]}
+          data-channel-id={channel.id}
+          data-embed-url={liveEmbedUrl(channel.channelId)}
+          data-channel-name={channel.name}
+          data-channel-url={channel.url}
+          role="tab"
+          aria-selected={index === 0 ? "true" : "false"}
+        >
+          <span class="live-channel-dot" aria-hidden="true"></span>
+          {channel.shortName}
+        </button>
+      ))}
+    </div>
+
+    <div class="live-grid">
+      <section class="live-player-column" aria-label="Live player">
+        <div class="live-player-frame">
+          <iframe
+            data-live-player
+            src={liveEmbedUrl(selectedChannel.channelId)}
+            title={`${selectedChannel.name} live stream`}
+            loading="eager"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="live-player-caption">
+          <div>
+            <p class="kicker-ink">Now watching</p>
+            <h2 data-live-channel-title>{selectedChannel.name}</h2>
+          </div>
+          <a data-live-channel-link href={selectedChannel.url} target="_blank" rel="noopener noreferrer">
+            Open channel <span class="outbound" aria-hidden="true"></span>
+          </a>
+        </div>
+      </section>
+
+      <aside class="live-news-column" aria-label="Latest News">
+        <div class="live-news-heading">
+          <p class="kicker">Latest News</p>
+          <a href={root("/wire")} class="kicker-ink">All news &rarr;</a>
+        </div>
+        <ul class="live-story-list">
+          {stories.map((item) => (
+            <li>
+              <a href={item.url} target="_blank" rel="noopener noreferrer nofollow">{item.title}</a>
+              <span>{item.publisher} &middot; {relativeTime(wireDate(item))}</span>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  const player = document.querySelector<HTMLIFrameElement>("[data-live-player]");
+  const title = document.querySelector<HTMLElement>("[data-live-channel-title]");
+  const channelLink = document.querySelector<HTMLAnchorElement>("[data-live-channel-link]");
+  const tabs = [...document.querySelectorAll<HTMLButtonElement>("[data-channel-id]")];
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const embedUrl = tab.dataset.embedUrl;
+      if (!embedUrl || !player) return;
+      tabs.forEach((item) => {
+        const selected = item === tab;
+        item.classList.toggle("is-selected", selected);
+        item.setAttribute("aria-selected", String(selected));
+      });
+      player.title = `${tab.dataset.channelName ?? "Live channel"} live stream`;
+      player.src = embedUrl;
+      if (title) title.textContent = tab.dataset.channelName ?? "Live channel";
+      if (channelLink) channelLink.href = tab.dataset.channelUrl ?? "#";
+    });
+  });
+</script>
+
+<style>
+  .live-intro {
+    padding: 2rem 0 1.5rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .live-channel-switcher {
+    display: flex;
+    gap: 0.35rem;
+    overflow-x: auto;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--line);
+    scrollbar-width: thin;
+  }
+
+  .live-channel-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex: 0 0 auto;
+    padding: 0.55rem 0.75rem;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+  }
+
+  .live-channel-tab:hover,
+  .live-channel-tab:focus-visible {
+    color: var(--ink);
+    border-color: var(--line-strong);
+    outline: none;
+  }
+
+  .live-channel-tab.is-selected {
+    color: var(--ink);
+    border-color: var(--wire);
+    background: var(--wire-wash);
+  }
+
+  .live-channel-dot {
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 999px;
+    background: var(--muted);
+  }
+
+  .live-channel-tab.is-selected .live-channel-dot {
+    background: var(--wire);
+    box-shadow: 0 0 0 0.22rem var(--wire-wash);
+  }
+
+  .live-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(18rem, 0.65fr);
+    gap: 2rem;
+    padding: 2rem 0 3rem;
+  }
+
+  .live-player-frame {
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+  }
+
+  .live-player-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .live-player-caption {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 0.85rem;
+  }
+
+  .live-player-caption h2 {
+    margin-top: 0.2rem;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .live-player-caption a {
+    flex: 0 0 auto;
+    color: var(--tone);
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .live-news-column {
+    border-left: 1px solid var(--line);
+    padding-left: 1.5rem;
+  }
+
+  .live-news-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .live-story-list {
+    border-top: 0;
+  }
+
+  .live-story-list li {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .live-story-list a {
+    display: block;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .live-story-list a:hover {
+    color: var(--tone);
+  }
+
+  .live-story-list span {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-family: var(--font-sans);
+    font-size: 0.64rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 800px) {
+    .live-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .live-news-column {
+      border-top: 1px solid var(--line);
+      border-left: 0;
+      padding: 1.5rem 0 0;
+    }
+  }
+</style>
