@@ -262,12 +262,19 @@ const borderPath = path(countryBorders);
 <style>
   .region-explorer {
     margin-top: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    align-items: start;
     background: var(--paper-tint);
   }
 
   .region-map-stage {
+    grid-column: 2;
+    grid-row: 1 / span 2;
     position: relative;
-    padding: 1rem 1rem 0;
+    min-width: 0;
+    padding: 0.7rem 0.7rem 0;
+    border-left: 1px solid var(--line);
     background: #171a1d;
     overflow: hidden;
   }
@@ -351,6 +358,8 @@ const borderPath = path(countryBorders);
   }
 
   .region-switcher {
+    grid-column: 1;
+    grid-row: 1;
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem;
@@ -395,11 +404,13 @@ const borderPath = path(countryBorders);
   }
 
   .region-details {
-    min-height: 20rem;
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
   }
 
   .region-detail {
-    padding: 2rem;
+    padding: 1.5rem 1.5rem 1.75rem;
   }
 
   .region-detail.is-hidden {
@@ -477,6 +488,14 @@ const borderPath = path(countryBorders);
   }
 
   @media (max-width: 700px) {
+    .region-explorer {
+      display: block;
+    }
+
+    .region-map-stage {
+      border-left: 0;
+    }
+
     .region-detail {
       padding: 1.25rem;
     }
