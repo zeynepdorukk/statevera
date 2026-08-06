@@ -16,10 +16,12 @@ import { createHash } from "node:crypto";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { sources, categoryRules, regionRules, excludeTerms, compileTerms } from "./wire-sources.mjs";
+import { dedupeStories } from "./wire-dedupe.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = resolve(ROOT, "src/data/wire.json");
 const DRY = process.argv.includes("--dry");
+const EXPLAIN = process.argv.includes("--explain");
 
 const MAX_ITEMS = 220;
 const MAX_AGE_DAYS = 10;
@@ -323,44 +325,8 @@ function toItems(source, xml) {
 // ------------------------------------------------------------
 // Dedupe
 // ------------------------------------------------------------
-
-const normaliseTitle = (t) =>
-  t.toLowerCase().replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
-
-function dedupe(items) {
-  const byUrl = new Map();
-  const seenTitles = [];
-  const out = [];
-
-  for (const item of items) {
-    const urlKey = item.url.replace(/[?#].*$/, "").replace(/\/$/, "");
-    if (byUrl.has(urlKey)) continue;
-
-    const norm = normaliseTitle(item.title);
-    const words = new Set(norm.split(" ").filter((w) => w.length > 3));
-    let duplicate = false;
-    for (const prev of seenTitles) {
-      if (prev.norm === norm) {
-        duplicate = true;
-        break;
-      }
-      // Two headlines about the same event share most of their distinctive words.
-      let shared = 0;
-      for (const w of words) if (prev.words.has(w)) shared++;
-      const smaller = Math.min(words.size, prev.words.size);
-      if (smaller >= 4 && shared / smaller >= 0.75) {
-        duplicate = true;
-        break;
-      }
-    }
-    if (duplicate) continue;
-
-    byUrl.set(urlKey, true);
-    seenTitles.push({ norm, words });
-    out.push(item);
-  }
-  return out;
-}
+// One event, one entry. `wire-dedupe.mjs` groups every copy of a story —
+// across outlets, not just within one feed — and hands back the best one.
 
 // ------------------------------------------------------------
 // Main
@@ -397,11 +363,29 @@ results.forEach((result, i) => {
 });
 
 collected.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
-const items = dedupe(collected).slice(0, MAX_ITEMS);
+const deduped = dedupeStories(collected);
+const items = deduped.items.slice(0, MAX_ITEMS);
 
 console.log(
-  `\n${ok}/${sources.length} feeds ok, ${collected.length} raw -> ${items.length} after dedupe`
+  `\n${ok}/${sources.length} feeds ok, ${collected.length} raw -> ${deduped.items.length} distinct stories` +
+    ` (${deduped.removed} repeats of a story already covered)`
 );
+
+const repeated = deduped.clusters.filter((c) => c.duplicates.length).sort((a, b) => b.duplicates.length - a.duplicates.length);
+if (repeated.length) {
+  const shown = EXPLAIN ? repeated : repeated.slice(0, 5);
+  console.log(`\nstories covered by more than one outlet (${repeated.length}):`);
+  for (const cluster of shown) {
+    console.log(`  keep  [${cluster.kept.publisher}] ${cluster.kept.title}`);
+    for (const dup of cluster.duplicates) {
+      console.log(`   drop [${dup.item.publisher}] ${dup.item.title}`);
+      if (EXPLAIN) console.log(`        ${dup.reason}`);
+    }
+  }
+  if (!EXPLAIN && repeated.length > shown.length) {
+    console.log(`  ...${repeated.length - shown.length} more (run with --explain)`);
+  }
+}
 
 // ------------------------------------------------------------
 // Verify pictures

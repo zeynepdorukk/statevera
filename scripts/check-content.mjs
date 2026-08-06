@@ -11,6 +11,7 @@ import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { clusterStories } from "./wire-dedupe.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const problems = [];
@@ -86,6 +87,16 @@ if (!existsSync(wirePath)) {
 
   const ids = new Set(items.map((item) => item.id));
   if (ids.size !== items.length) problems.push("wire contains duplicate ids");
+
+  // Readers should never meet the same event twice under two mastheads.
+  const repeated = clusterStories(items).filter((cluster) => cluster.duplicates.length);
+  if (repeated.length) {
+    const [first] = repeated;
+    problems.push(
+      `${repeated.length} wire stories are told twice, e.g. "${first.kept.title}" ` +
+        `and "${first.duplicates[0].item.title}"`
+    );
+  }
 
   notes.push(
     `wire: ${items.length} items, ${items.filter((i) => i.image).length} illustrated, ${Math.round(ageHours)}h old`
