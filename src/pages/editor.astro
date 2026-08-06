@@ -3208,10 +3208,22 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 
     const scheduleSuggestion = debounce(() => requestSuggestion(false), 1400);
 
-    function openAsk(forceMode?: "chat" | "research" | "sources") {
+    function openAsk(
+      forceMode?: "chat" | "research" | "sources",
+      contextTarget?: HTMLElement
+    ) {
       if (!aiReady()) {
         setStatus("The assistant is not available on this desk.", "error");
         return;
+      }
+
+      const contextSelection = window.getSelection();
+      if (contextTarget && bodyEl.contains(contextTarget)) {
+        const caret = document.createRange();
+        caret.selectNodeContents(contextTarget);
+        caret.collapse(true);
+        contextSelection?.removeAllRanges();
+        contextSelection?.addRange(caret);
       }
 
       const sel = window.getSelection();
@@ -3245,6 +3257,8 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
           ? "Headline"
           : inStand
             ? "Standfirst"
+            : contextTarget && block && !block.textContent?.trim()
+              ? "Empty paragraph"
             : "Whole piece";
 
       const previewText = (passage || htmlToMarkdown(bodyEl) || titleEl.textContent || "")
@@ -3621,6 +3635,14 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 
       paint();
     }
+
+    bodyEl.addEventListener("contextmenu", (event) => {
+      const target = event.target as HTMLElement;
+      const block = target.closest<HTMLElement>("p");
+      if (!block || !bodyEl.contains(block) || block.textContent?.trim()) return;
+      event.preventDefault();
+      openAsk("chat", block);
+    });
 
     // ==========================================================
     // Publish drawer
