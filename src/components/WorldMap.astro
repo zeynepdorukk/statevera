@@ -263,14 +263,14 @@ const borderPath = path(countryBorders);
   .region-explorer {
     margin-top: 0;
     display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
     align-items: start;
     background: transparent;
   }
 
   .region-map-stage {
     grid-column: 2;
-    grid-row: 1 / span 2;
+    grid-row: 2;
     position: relative;
     min-width: 0;
     padding: 0.7rem 0.7rem 0;
@@ -358,13 +358,15 @@ const borderPath = path(countryBorders);
   }
 
   .region-switcher {
-    grid-column: 1;
+    grid-column: 1 / -1;
     grid-row: 1;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.35rem;
     padding: 0.8rem;
     border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+    scrollbar-width: thin;
   }
 
   .region-tab {
@@ -506,8 +508,7 @@ const borderPath = path(countryBorders);
     }
 
     .region-tab {
-      flex: 1 1 calc(50% - 0.35rem);
-      justify-content: space-between;
+      flex: 0 0 auto;
     }
   }
 
