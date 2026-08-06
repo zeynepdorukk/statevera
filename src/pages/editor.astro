@@ -3343,7 +3343,11 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 
         const applyBtn = maybe<HTMLButtonElement>("[data-ask-apply]");
         const addBtn = maybe<HTMLButtonElement>("[data-ask-add-sources]");
-        if (applyBtn) applyBtn.hidden = !lastApply?.text.trim();
+        const canApply = Boolean(
+          lastApply?.text.trim() &&
+            (lastApply.action === "insert" || Boolean(passage.trim()))
+        );
+        if (applyBtn) applyBtn.hidden = !canApply;
         if (addBtn) addBtn.hidden = !lastSources.length;
       };
 
