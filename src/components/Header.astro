@@ -1,27 +1,24 @@
 ---
 import { nav, site } from "../site";
-import { root, formatDate } from "../utils/collection";
+import { root } from "../utils/collection";
 import Masthead from "./Masthead.astro";
-import ThemeToggle from "./ThemeToggle.astro";
 
 interface Props {
   currentPath?: string;
 }
 
 const { currentPath = "/" } = Astro.props;
-const today = formatDate(new Date(), { weekday: "long" });
 
 const isActive = (url: string) =>
   url === "/" ? currentPath === "/" : currentPath.startsWith(url);
 ---
 
 <header id="site-header" class="sticky top-0 z-40 border-b border-line bg-paper/97 backdrop-blur-sm no-print">
-  <!-- Row 1: date · masthead · utilities -->
+  <!-- Row 1: masthead · utilities -->
   <div class="shell">
     <div class="flex items-center justify-between gap-4 border-b border-line/70 py-2.5">
-      <p class="hidden w-48 shrink-0 font-sans text-[0.68rem] tracking-[0.04em] text-muted lg:block">
-        {today}
-      </p>
+      <!-- Balances the utilities column so the masthead stays centred. -->
+      <div class="hidden w-48 shrink-0 lg:block" aria-hidden="true"></div>
 
       <Masthead class="masthead-full" />
       <Masthead compact class="masthead-compact" />
@@ -39,7 +36,6 @@ const isActive = (url: string) =>
           </svg>
           <span class="hidden sm:inline">Search</span>
         </button>
-        <ThemeToggle />
         <button
           type="button"
           data-menu-toggle

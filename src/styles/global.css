@@ -27,32 +27,34 @@
 
 /* ---------- Palette ---------- */
 
+/* Statevera is dark only. "ink" is still the reading colour and "paper" the
+   surface behind it, so every rule below keeps reading the same way. */
 :root {
-  --paper: #f6f4ef;
-  --paper-soft: #eeebe2;
-  --paper-tint: #fbfaf7;
-  --paper-invert: #17150e;
+  --paper: #1b1e21;
+  --paper-soft: #24282c;
+  --paper-tint: #16191b;
+  --paper-invert: #e9e5da;
 
-  --ink: #17150e;
-  --ink-soft: #3c3a31;
-  --muted: #6f6c61;
+  --ink: #e9e5da;
+  --ink-soft: #c7c3b7;
+  --muted: #979287;
 
-  --line: #ddd8ca;
-  --line-strong: #b5b0a0;
-  --line-hair: rgba(23, 21, 14, 0.13);
+  --line: #31363a;
+  --line-strong: #474d53;
+  --line-hair: rgba(233, 229, 218, 0.14);
 
   /* Pillar tones */
-  --wire: #9d1c20;
-  --wire-deep: #7c1518;
-  --wire-wash: rgba(157, 28, 32, 0.07);
+  --wire: #de7477;
+  --wire-deep: #eb9294;
+  --wire-wash: rgba(222, 116, 119, 0.13);
 
-  --journal: #a8851d;
-  --journal-deep: #866a13;
-  --journal-wash: rgba(201, 162, 39, 0.13);
+  --journal: #ddbc55;
+  --journal-deep: #e9cd73;
+  --journal-wash: rgba(221, 188, 85, 0.14);
 
-  --risk: #17150e;
-  --risk-deep: #000000;
-  --risk-wash: rgba(23, 21, 14, 0.06);
+  --risk: #e9e5da;
+  --risk-deep: #ffffff;
+  --risk-wash: rgba(233, 229, 218, 0.08);
 
   /* Active tone — overridden by [data-tone] */
   --tone: var(--wire);
@@ -60,36 +62,6 @@
   --tone-wash: var(--wire-wash);
 
   /* Back-compat alias used by long-form copy */
-  --accent: var(--wire);
-  --accent-ink: var(--wire-deep);
-}
-
-.dark {
-  --paper: #111315;
-  --paper-soft: #171a1d;
-  --paper-tint: #0c0e0f;
-  --paper-invert: #e9e5da;
-
-  --ink: #e9e5da;
-  --ink-soft: #c5c1b5;
-  --muted: #918d82;
-
-  --line: #262a2e;
-  --line-strong: #3b4046;
-  --line-hair: rgba(233, 229, 218, 0.14);
-
-  --wire: #cf5a5d;
-  --wire-deep: #e0797b;
-  --wire-wash: rgba(207, 90, 93, 0.12);
-
-  --journal: #d9b64a;
-  --journal-deep: #e6c968;
-  --journal-wash: rgba(217, 182, 74, 0.14);
-
-  --risk: #e9e5da;
-  --risk-deep: #ffffff;
-  --risk-wash: rgba(233, 229, 218, 0.08);
-
   --accent: var(--wire);
   --accent-ink: var(--wire-deep);
 }

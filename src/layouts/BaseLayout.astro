@@ -71,7 +71,7 @@ const webJsonLd = {
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="dark" />
     <link rel="canonical" href={url.toString()} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
@@ -110,18 +110,6 @@ const webJsonLd = {
         {article.section && <meta property="article:section" content={article.section} />}
       </>
     )}
-
-    <script is:inline>
-      (function () {
-        try {
-          var stored = localStorage.getItem("statevera-theme");
-          var dark =
-            stored === "dark" ||
-            (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches);
-          if (dark) document.documentElement.classList.add("dark");
-        } catch (e) {}
-      })();
-    </script>
 
     <script
       is:inline

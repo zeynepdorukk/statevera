@@ -1,12 +1,10 @@
 ---
-import { latest, wireGeneratedAt, wireItems } from "../data/wire";
-import { formatTime } from "../utils/collection";
+import { latest } from "../data/wire";
 import { root } from "../utils/collection";
 
 const items = latest(14);
 // The track is duplicated so the marquee can loop seamlessly at -50%.
 const track = [...items, ...items];
-const updated = formatTime(wireGeneratedAt);
 ---
 
 {items.length > 0 && (
@@ -39,9 +37,6 @@ const updated = formatTime(wireGeneratedAt);
           ))}
         </div>
       </div>
-      <p class="hidden shrink-0 py-2 font-sans text-[0.66rem] tracking-[0.06em] text-paper/50 lg:block tabular">
-        {wireItems.length} stories &middot; {updated} UTC
-      </p>
     </div>
   </div>
 )}

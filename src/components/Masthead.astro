@@ -20,19 +20,11 @@ const { compact = false, tone, class: className = "" } = Astro.props;
 >
   <span class="relative shrink-0" style="width: 1.25em; height: 1.25em">
     <img
-      src={root("/images/branding/logo-mark.svg")}
-      alt=""
-      width="44"
-      height="44"
-      class="logo-light absolute inset-0 h-full w-full"
-      aria-hidden="true"
-    />
-    <img
       src={root("/images/branding/logo-mark-light.svg")}
       alt=""
       width="44"
       height="44"
-      class="logo-dark absolute inset-0 h-full w-full"
+      class="absolute inset-0 h-full w-full"
       aria-hidden="true"
     />
   </span>
@@ -43,15 +35,3 @@ const { compact = false, tone, class: className = "" } = Astro.props;
     {site.publicationName}
   </span>
 </a>
-
-<style>
-  .logo-dark {
-    display: none;
-  }
-  :global(.dark) .logo-light {
-    display: none;
-  }
-  :global(.dark) .logo-dark {
-    display: block;
-  }
-</style>
