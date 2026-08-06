@@ -118,6 +118,7 @@ export const nav: { primary: NavItem[] } = {
     { label: "Regions", url: "/regions" },
     { label: "GLORISK", url: "/risk" },
     { label: "LIVE", url: "/live" },
+    { label: "EDITOR LOGIN", url: "https://statevera.netlify.app/editor/" },
   ],
 };
 
