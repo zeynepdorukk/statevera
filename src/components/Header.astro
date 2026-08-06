@@ -135,6 +135,10 @@ const isActive = (url: string) =>
   :global(.masthead-compact) {
     display: none;
   }
+  #site-header:not(.is-ready) :global(.masthead-full),
+  #site-header:not(.is-ready) :global(.masthead-compact) {
+    visibility: hidden;
+  }
   #site-header.is-compact :global(.masthead-full) {
     display: none;
   }
@@ -162,7 +166,12 @@ const isActive = (url: string) =>
     header?.classList.toggle("is-compact", compacted);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  window.addEventListener("pageshow", () => {
+    requestAnimationFrame(() => {
+      onScroll();
+      header?.classList.add("is-ready");
+    });
+  });
 
   const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
   const menu = document.getElementById("mobile-menu");
