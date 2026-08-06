@@ -36,8 +36,8 @@ export const site = {
   },
 
   // Technical ------------------------------------------------
-  siteUrl: "https://statevera.netlify.app",
-  /** The desk shares the publication's origin, so it can hold secrets. */
+  siteUrl: "https://zeynepdorukk.github.io/statevera",
+  /** The editorial desk. It needs a server, so it is not on GitHub Pages. */
   deskUrl: "https://statevera.netlify.app",
   defaultOgImage: "/images/branding/og-image.jpg",
   locale: "en",
@@ -120,7 +120,7 @@ export const nav: { primary: NavItem[] } = {
     { label: "Regions", url: "/regions" },
     { label: "GLORISK", url: "/risk" },
     { label: "LIVE", url: "/live" },
-    { label: "EDITOR LOGIN", url: "/editor" },
+    { label: "EDITOR LOGIN", url: "https://statevera.netlify.app/editor/" },
   ],
 };
 
