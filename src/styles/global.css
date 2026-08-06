@@ -521,10 +521,11 @@ a:hover > .outbound::after,
 }
 
 /* Fade the two edges so words dissolve into the bar instead of being
-   hard-clipped mid-letter by the viewport's overflow. */
+   hard-clipped mid-letter by the viewport's overflow. Narrow: the viewport
+   already runs edge-to-edge, this is only for the last inch of travel. */
 .ticker-viewport {
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 2.5rem, #000 calc(100% - 2.5rem), transparent);
-  mask-image: linear-gradient(to right, transparent, #000 2.5rem, #000 calc(100% - 2.5rem), transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 1.25rem, #000 calc(100% - 1.25rem), transparent);
 }
 
 .ticker-viewport:hover .ticker-track,

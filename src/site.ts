@@ -127,7 +127,6 @@ export const nav: { primary: NavItem[] } = {
     },
     { label: "Risk", url: "/risk", tone: "risk" },
     { label: "Regions", url: "/regions" },
-    { label: "About", url: "/about" },
   ],
 };
 

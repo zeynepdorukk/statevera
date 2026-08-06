@@ -8,25 +8,23 @@ const track = [...items, ...items];
 
 {items.length > 0 && (
   <div class="wire-bar no-print" data-tone="wire">
-    <div class="shell flex items-center gap-4 py-0">
-      <div class="ticker-viewport relative min-w-0 flex-1 overflow-hidden py-2">
-        <div class="ticker-track" style={`width: max-content`}>
-          {track.map((item, i) => (
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              aria-hidden={i >= items.length ? "true" : undefined}
-              tabindex={i >= items.length ? -1 : undefined}
-              class="flex shrink-0 items-center gap-2 font-sans text-[0.775rem] whitespace-nowrap text-paper/85 transition-colors hover:text-paper"
-            >
-              <span class="font-bold tracking-[0.08em] text-[0.64rem] uppercase text-paper/55">
-                {item.publisher}
-              </span>
-              <span>{item.title}</span>
-            </a>
-          ))}
-        </div>
+    <div class="ticker-viewport relative overflow-hidden px-4 py-2">
+      <div class="ticker-track" style={`width: max-content`}>
+        {track.map((item, i) => (
+          <a
+            href={item.url}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            aria-hidden={i >= items.length ? "true" : undefined}
+            tabindex={i >= items.length ? -1 : undefined}
+            class="flex shrink-0 items-center gap-2 font-sans text-[0.775rem] whitespace-nowrap text-paper/85 transition-colors hover:text-paper"
+          >
+            <span class="font-bold tracking-[0.08em] text-[0.64rem] uppercase text-paper/55">
+              {item.publisher}
+            </span>
+            <span>{item.title}</span>
+          </a>
+        ))}
       </div>
     </div>
   </div>
