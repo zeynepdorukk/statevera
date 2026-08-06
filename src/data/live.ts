@@ -28,20 +28,6 @@ export const liveChannels: LiveChannel[] = [
     channelId: "UCNye-wNBqNL5ZzHSJj3l8Bg",
     url: "https://www.youtube.com/@AlJazeeraEnglish/live",
   },
-  {
-    id: "sky-news",
-    name: "Sky News",
-    shortName: "Sky News",
-    channelId: "UCoMdktPbSTixAyNGwb-UYkQ",
-    url: "https://www.youtube.com/user/skynews/live",
-  },
-  {
-    id: "euronews",
-    name: "Euronews",
-    shortName: "Euronews",
-    channelId: "UCW2QcKZiU8aUGg4yxCId1Yg",
-    url: "https://www.youtube.com/@euronews/live",
-  },
 ];
 
 export const liveEmbedUrl = (channelId: string): string =>
