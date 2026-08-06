@@ -9,6 +9,7 @@ import SectionHead from "../components/SectionHead.astro";
 const leads = leadStories(3);
 const leadIds = new Set(leads.map((i) => i.id));
 const stream = wireItems.filter((i) => !leadIds.has(i.id));
+const rail = stream.slice(45, 60);
 
 const deskCounts = deskList
   .map((desk) => ({ desk, count: wireItems.filter((i) => i.category === desk.name).length }))
@@ -55,6 +56,17 @@ const deskCounts = deskList
             <WireCard item={item} variant="feature" priority />
           ))}
         </div>
+
+        {rail.length > 0 && (
+          <div class="mt-10 border-t-2 border-ink pt-7">
+            <SectionHead title="More news" tone="wire" href="/wire" moreLabel="All" />
+            <div class="rule-list">
+              {rail.map((item) => (
+                <WireCard item={item} variant="compact" />
+              ))}
+            </div>
+          </div>
+        )}
       </aside>
     </div>
   </div>
