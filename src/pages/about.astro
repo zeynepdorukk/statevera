@@ -1,12 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { site, pillarList } from "../site";
+import { site, regions } from "../site";
 import { root } from "../utils/collection";
-import { wirePublishers, wireItems } from "../data/wire";
-import { getAllArticles, getAllExplainers } from "../utils/collection";
-
-const articles = await getAllArticles();
-const explainers = await getAllExplainers();
 
 const jsonLd = [
   {
@@ -29,139 +24,77 @@ const jsonLd = [
   path="/about"
   jsonLd={jsonLd}
 >
-  <div class="shell max-w-[1100px] pt-7 md:pt-9">
-    <header class="border-b-2 border-ink pb-5">
-      <p class="kicker-ink">About</p>
-      <h1 class="t-lead mt-1.5">One publication, three jobs</h1>
-      <p class="mt-3 max-w-3xl font-serif text-[1.14rem] leading-relaxed text-ink-soft">
-        {site.publicationNameDisplay} follows the international system from three angles: what
-        is happening, what it means, and what it puts at risk.
+  <div class="shell max-w-[1180px] pt-0" data-tone="journal">
+    <header class="border-b-2 border-ink py-10 md:py-14">
+      <p class="kicker-ink">About Statevera</p>
+      <h1 class="t-lead mt-1.5">International affairs, made readable.</h1>
+      <p class="mt-3 max-w-2xl font-serif text-[1.08rem] leading-relaxed text-ink-soft">
+        Statevera is an independent publication about power, politics and the forces shaping
+        the international system.
       </p>
     </header>
 
-    <!-- Pillars -->
-    <section class="grid gap-px border border-line-strong bg-line-strong my-9 md:grid-cols-3" aria-label="The three pillars">
-      {pillarList.map((pillar) => (
-        <div class="bg-paper p-6" data-tone={pillar.tone}>
-          <p class="kicker flex items-center gap-2">
-            <span class="inline-block h-2 w-2 bg-tone" aria-hidden="true"></span>
-            {pillar.name}
-          </p>
-          <h2 class="t-headline-sm mt-2">{pillar.tagline}</h2>
-          <p class="mt-2.5 font-serif text-[0.98rem] leading-relaxed text-ink-soft">
-            {pillar.description}
-          </p>
-          <a href={root(pillar.url)} class="kicker-ink mt-4 inline-block hover:text-tone">
-            Open {pillar.name} &rarr;
-          </a>
-        </div>
-      ))}
+    <section class="grid gap-x-8 gap-y-9 border-b border-line py-9 sm:grid-cols-2 xl:grid-cols-4" aria-label="What Statevera includes">
+      <a href={root("/wire")} class="block border-t-2 border-tone pt-3 transition-colors hover:text-tone" data-tone="wire">
+        <p class="kicker">News</p>
+        <h2 class="t-headline-sm mt-2">Reporting as it happens.</h2>
+        <p class="mt-2 font-serif text-[0.96rem] leading-relaxed text-ink-soft">
+          News from public sources, refreshed every 15 minutes and organized across five international-affairs categories.
+        </p>
+      </a>
+
+      <a href={root("/journal")} class="block border-t-2 border-tone pt-3 transition-colors hover:text-tone" data-tone="journal">
+        <p class="kicker">Journal</p>
+        <h2 class="t-headline-sm mt-2">Zeynep Doruk's writing.</h2>
+        <p class="mt-2 font-serif text-[0.96rem] leading-relaxed text-ink-soft">
+          Original analysis, essays, theory and explainers about strategy, power and the international system.
+        </p>
+      </a>
+
+      <a href={root("/risk")} class="block border-t-2 border-tone pt-3 transition-colors hover:text-tone" data-tone="risk">
+        <p class="kicker">GLORISK</p>
+        <h2 class="t-headline-sm mt-2">A geopolitical risk platform.</h2>
+        <p class="mt-2 font-serif text-[0.96rem] leading-relaxed text-ink-soft">
+          A practical way to explore country and regional risk through scores, categories and scenarios.
+        </p>
+      </a>
+
+      <div class="border-t-2 border-ink pt-3">
+        <p class="kicker-ink">Regions</p>
+        <h2 class="t-headline-sm mt-2">The world, by place.</h2>
+        <p class="mt-2 font-serif text-[0.96rem] leading-relaxed text-ink-soft">
+          Browse coverage by region, from Europe and the Middle East to Asia-Pacific, Africa and the Americas.
+        </p>
+        <ul class="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+          {Object.entries(regions).map(([slug, region]) => (
+            <li><a href={root(`/regions/${slug}`)} class="link-tone text-[0.78rem]">{region.short}</a></li>
+          ))}
+        </ul>
+      </div>
     </section>
 
-    <div class="grid gap-x-10 gap-y-10 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
-      <div class="article-body">
-        <h2>How the news section is put together</h2>
-        <p>
-          The News section reads the public RSS feeds of {wirePublishers.length} newsrooms and
-          institutions several times a day. Each item is checked against a vocabulary of
-          international-affairs terms, sorted onto a desk and a region, de-duplicated
-          against the rest of the feed, and published with its headline, a short summary
-          and the name of the newsroom that reported it.
-        </p>
-        <p>
-          Statevera does not reproduce anyone else's article. Every news item is a link:
-          clicking it takes you to the publisher, who holds the copyright and gets the
-          visit. Nothing in the news section is written, rewritten or summarised by Statevera, and
-          nothing on it is generated.
-        </p>
-        <p>
-          Because the site is static, the news section is a snapshot rather than a stream. It is
-          refreshed on a schedule and stamped with the time it was taken, which you can see
-          at the top of <a href={root("/wire")}>the news page</a>.
-        </p>
-
-        <h2>What the journal is for</h2>
-        <p>
-          Journal is the opposite: everything in it is written here, signed, and dated.
-          It holds {articles.length} pieces of analysis and {explainers.length} explainers.
-          Analysis argues a case about something happening now; explainers are evergreen
-          reference on the institutions, doctrines and chokepoints that keep coming back.
-        </p>
-        <p>
-          Where a journal piece and the news section overlap — an essay on deterrence next to the
-          week's NATO reporting — the two sit side by side on the page, in different
-          colours, so it is always obvious which is which.
-        </p>
-
-        <h2>Corrections</h2>
-        <p>
-          Journal pieces carry an "Updated" date when they are revised substantively.
-          Wire items are not edited: if a publisher corrects a headline, the correction
-          appears on the next refresh. Write to{" "}
-          <a href={`mailto:${site.socialLinks.email}`}>{site.socialLinks.email}</a>
-          with anything that looks wrong.
+    <section class="grid gap-8 border-b border-line py-9 md:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]" aria-label="Editor and contact">
+      <div>
+        <p class="kicker-ink">Editor &amp; writer</p>
+        <h2 class="t-headline mt-1.5">{site.authorName}</h2>
+        <p class="mt-2 max-w-2xl font-serif text-[1rem] leading-relaxed text-ink-soft">
+          Zeynep Doruk is the editor and sole writer of Statevera. She writes about international security, diplomacy and political economy.
         </p>
       </div>
-
-      <!-- Editor -->
-      <aside class="lg:border-l lg:border-line lg:pl-9">
-        <div class="border-t-2 border-ink pt-4">
-          <p class="kicker-ink">The editor</p>
-          <div class="mt-3 flex items-center gap-3">
-            <img
-              src={root(site.authorPhoto)}
-              alt=""
-              width="96"
-              height="96"
-              loading="lazy"
-              decoding="async"
-              class="h-14 w-14 rounded-full border border-line object-cover"
-            />
-            <div>
-              <p class="font-serif text-[1.15rem] font-semibold text-ink">{site.authorName}</p>
-              <p class="meta">{site.authorRole}</p>
-            </div>
-          </div>
-          <p class="mt-4 font-serif text-[0.99rem] leading-relaxed text-ink-soft">
-            {site.authorBio}
-          </p>
-          <div class="mt-4 flex flex-wrap gap-x-4 gap-y-2">
-            <a href={site.socialLinks.x} target="_blank" rel="noopener" class="kicker-ink hover:text-tone">X</a>
-            <a href={site.socialLinks.linkedin} target="_blank" rel="noopener" class="kicker-ink hover:text-tone">LinkedIn</a>
-            <a href={`mailto:${site.socialLinks.email}`} class="kicker-ink hover:text-tone">Email</a>
-          </div>
+      <div class="md:border-l md:border-line md:pl-8">
+        <p class="kicker-ink">Contact</p>
+        <a href={`mailto:${site.socialLinks.email}`} class="mt-2 inline-block font-serif text-[1rem] text-ink hover:text-tone">
+          {site.socialLinks.email}
+        </a>
+        <div class="mt-3 flex gap-4">
+          <a href={site.socialLinks.x} target="_blank" rel="noopener" class="kicker-ink hover:text-tone">X</a>
+          <a href={site.socialLinks.linkedin} target="_blank" rel="noopener" class="kicker-ink hover:text-tone">LinkedIn</a>
         </div>
+      </div>
+    </section>
 
-        <dl class="mt-8 grid grid-cols-2 gap-px border border-line-strong bg-line-strong">
-          <div class="bg-paper p-4">
-            <dt class="meta">In the news</dt>
-            <dd class="mt-0.5 font-serif text-[1.6rem] font-bold leading-none tabular">{wireItems.length}</dd>
-          </div>
-          <div class="bg-paper p-4">
-            <dt class="meta">Newsrooms</dt>
-            <dd class="mt-0.5 font-serif text-[1.6rem] font-bold leading-none tabular">{wirePublishers.length}</dd>
-          </div>
-          <div class="bg-paper p-4">
-            <dt class="meta">Analysis</dt>
-            <dd class="mt-0.5 font-serif text-[1.6rem] font-bold leading-none tabular">{articles.length}</dd>
-          </div>
-          <div class="bg-paper p-4">
-            <dt class="meta">Explainers</dt>
-            <dd class="mt-0.5 font-serif text-[1.6rem] font-bold leading-none tabular">{explainers.length}</dd>
-          </div>
-        </dl>
-
-        <div class="mt-8 border border-line bg-paper-soft p-5">
-          <p class="kicker-ink">News sources</p>
-          <ul class="mt-2 flex flex-wrap gap-x-3 gap-y-1">
-            {wirePublishers.map((publisher) => (
-              <li class="font-sans text-[0.78rem] text-ink-soft">{publisher}</li>
-            ))}
-          </ul>
-        </div>
-      </aside>
-    </div>
-
-    <div class="h-10"></div>
+    <p class="meta py-5">
+      News headlines and summaries link to their original publishers. Journal and GLORISK are Statevera's original work.
+    </p>
   </div>
 </BaseLayout>
