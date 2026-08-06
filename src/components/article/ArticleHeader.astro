@@ -45,15 +45,17 @@ const regionSlug = regionSlugOf(data.region);
 
   <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 border-y border-line py-3.5">
     <div class="flex items-center gap-2.5">
-      <img
-        src={root(site.authorPhoto)}
-        alt=""
-        width="72"
-        height="72"
-        loading="lazy"
-        decoding="async"
-        class="h-8 w-8 rounded-full border border-line object-cover"
-      />
+      {site.authorPhoto && (
+        <img
+          src={root(site.authorPhoto)}
+          alt=""
+          width="72"
+          height="72"
+          loading="lazy"
+          decoding="async"
+          class="h-8 w-8 rounded-full border border-line object-cover"
+        />
+      )}
       <p class="font-sans text-[0.8rem] font-semibold text-ink">By {data.author}</p>
     </div>
     <time class="meta" datetime={data.date.toISOString()}>{formatDate(data.date)}</time>

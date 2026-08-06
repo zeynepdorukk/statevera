@@ -100,6 +100,7 @@ for (const dir of ["src/content/articles", "src/content/explainers"]) {
   const full = join(ROOT, dir);
   if (!existsSync(full)) continue;
   for (const name of readdirSync(full)) {
+    if (!/\.mdx?$/.test(name)) continue;
     const text = readFileSync(join(full, name), "utf8");
     if (!text.startsWith("---")) problems.push(`${dir}/${name}: no frontmatter`);
     if (/\bsample:\s*true/.test(text)) problems.push(`${dir}/${name}: still flagged as sample content`);

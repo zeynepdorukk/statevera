@@ -20,7 +20,8 @@ export const site = {
   authorName: "Zeynep Doruk",
   authorHandle: "Z. Doruk",
   authorRole: "Editor & Writer",
-  authorPhoto: "/images/authors/zeynep-doruk.svg",
+  /** Empty until there is a real portrait; the byline drops the avatar when it is. */
+  authorPhoto: "",
   authorBio:
     "Zeynep Doruk is the editor and sole writer of Statevera. She covers international security, diplomacy and political economy, with reporting interests spanning Europe, the Middle East and the Eastern Mediterranean. Her work focuses on the intersection of strategy, economics and statecraft.",
 

@@ -748,6 +748,25 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
     grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
     gap: 1rem;
   }
+  .ed-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 5rem 1rem;
+    border: 1px dashed var(--line-strong);
+    border-radius: 4px;
+  }
+  .ed-empty img {
+    width: 2.5rem;
+    height: 2.5rem;
+    opacity: 0.55;
+  }
+  .ed-empty p {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--muted);
+  }
   .ed-card {
     position: relative;
     display: flex;
@@ -1403,7 +1422,13 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
           <h1>Your stories</h1>
           <p class="ed-note">${state.stories.length} pieces · ${published} live</p>
         </div>
-        <div class="ed-grid">${state.stories.map(card).join("")}</div>
+        ${state.stories.length === 0
+          ? `<div class="ed-empty">
+               <img src="${BASE}/images/branding/logo-mark-light.svg" alt="" width="40" height="40" />
+               <p>Nothing filed yet.</p>
+               <button type="button" class="ed-btn ed-btn-primary" data-new-empty>Write the first piece</button>
+             </div>`
+          : `<div class="ed-grid">${state.stories.map(card).join("")}</div>`}
       </div>
     `);
 
@@ -1423,6 +1448,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
         .addEventListener("click", () => removeStory(cardEl.dataset.card!, cardEl));
     });
     el<HTMLButtonElement>("[data-new]").addEventListener("click", () => createStory("article"));
+    maybe<HTMLButtonElement>("[data-new-empty]")?.addEventListener("click", () => createStory("article"));
     el<HTMLButtonElement>("[data-out]").addEventListener("click", signOut);
   }
 

@@ -28,10 +28,14 @@ const explainers = await getAllExplainers();
       <p class="meta mt-3">{explainers.length} entries</p>
     </header>
 
-    <section class="grid gap-x-8 gap-y-9 py-9 sm:grid-cols-2 lg:grid-cols-3">
-      {explainers.map((entry, i) => (
-        <JournalCard item={{ kind: "explainer", entry }} variant="feature" priority={i < 3} />
-      ))}
-    </section>
+    {explainers.length === 0 ? (
+      <p class="py-16 text-center font-serif text-[1.05rem] text-muted">Nothing here yet.</p>
+    ) : (
+      <section class="grid gap-x-8 gap-y-9 py-9 sm:grid-cols-2 lg:grid-cols-3">
+        {explainers.map((entry, i) => (
+          <JournalCard item={{ kind: "explainer", entry }} variant="feature" priority={i < 3} />
+        ))}
+      </section>
+    )}
   </div>
 </BaseLayout>

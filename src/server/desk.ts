@@ -344,9 +344,10 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
 
   try {
     if (route === "library" && request.method === "GET") {
+      // An empty publication has no content folders in the repository at all.
       const [articles, explainers, images] = await Promise.all([
-        listDirectory(env, "src/content/articles"),
-        listDirectory(env, "src/content/explainers"),
+        listDirectory(env, "src/content/articles").catch(() => [] as Entry[]),
+        listDirectory(env, "src/content/explainers").catch(() => [] as Entry[]),
         listDirectory(env, "public/images/articles").catch(() => [] as Entry[]),
       ]);
       const slim = (entries: Entry[]) => entries.map(({ name, path, sha }) => ({ name, path, sha }));

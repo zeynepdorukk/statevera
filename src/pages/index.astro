@@ -69,22 +69,28 @@ const deskBlocks = deskList
         </p>
       </div>
 
-      <div class="grid gap-x-8 gap-y-9 border-t border-line pt-7 lg:grid-cols-[minmax(0,5fr)_minmax(0,5fr)]">
-        {featured && <JournalCard item={{ kind: "article", entry: featured }} variant="lead" priority headingLevel="h3" />}
+      {journal.length === 0 ? (
+        <p class="border-t border-line py-14 text-center font-serif text-[1.05rem] text-muted">
+          Nothing published yet.
+        </p>
+      ) : (
+        <div class="grid gap-x-8 gap-y-9 border-t border-line pt-7 lg:grid-cols-[minmax(0,5fr)_minmax(0,5fr)]">
+          {featured && <JournalCard item={{ kind: "article", entry: featured }} variant="lead" priority headingLevel="h3" />}
 
-        <div class="grid gap-7 sm:grid-cols-2 lg:border-l lg:border-line lg:pl-8">
-          {journal
-            .filter((item) => item.entry.id !== featured?.id)
-            .slice(0, 4)
-            .map((item) =>
-              item.kind === "article" ? (
-                <JournalCard item={{ kind: "article", entry: item.entry }} variant="text" />
-              ) : (
-                <JournalCard item={{ kind: "explainer", entry: item.entry }} variant="text" />
-              )
-            )}
+          <div class="grid gap-7 sm:grid-cols-2 lg:border-l lg:border-line lg:pl-8">
+            {journal
+              .filter((item) => item.entry.id !== featured?.id)
+              .slice(0, 4)
+              .map((item) =>
+                item.kind === "article" ? (
+                  <JournalCard item={{ kind: "article", entry: item.entry }} variant="text" />
+                ) : (
+                  <JournalCard item={{ kind: "explainer", entry: item.entry }} variant="text" />
+                )
+              )}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   </section>
 
@@ -138,11 +144,15 @@ const deskBlocks = deskList
 
       <aside class="lg:border-l lg:border-line lg:pl-8" data-tone="journal" aria-label="Explainers">
         <SectionHead title="Explainers" tone="journal" href="/explainers" moreLabel="All" />
-        <div class="rule-list">
-          {explainers.map((entry) => (
-            <JournalCard item={{ kind: "explainer", entry }} variant="text" showDek={false} />
-          ))}
-        </div>
+        {explainers.length === 0 ? (
+          <p class="font-serif text-[1rem] leading-relaxed text-muted">Nothing here yet.</p>
+        ) : (
+          <div class="rule-list">
+            {explainers.map((entry) => (
+              <JournalCard item={{ kind: "explainer", entry }} variant="text" showDek={false} />
+            ))}
+          </div>
+        )}
         <p class="mt-5 border-t border-line pt-4 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
           Evergreen reference on the institutions, doctrines and chokepoints that keep
           returning to the news.
