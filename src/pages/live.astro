@@ -24,10 +24,11 @@ const stories = latest(7);
           data-channel-id={channel.id}
           data-embed-url={liveEmbedUrl(channel.channelId)}
           data-channel-name={channel.name}
+          data-channel-logo={root(channel.logo)}
           role="tab"
           aria-selected={index === 0 ? "true" : "false"}
         >
-          <span class="live-channel-dot" aria-hidden="true"></span>
+          <img src={root(channel.logo)} alt="" class="live-channel-logo" aria-hidden="true" />
           {channel.shortName}
         </button>
       ))}
@@ -48,7 +49,16 @@ const stories = latest(7);
         <div class="live-player-caption">
           <div>
             <p class="kicker-ink">Now watching</p>
-            <h2 data-live-channel-title>{selectedChannel.name}</h2>
+            <div class="live-now-title">
+              <img
+                data-live-channel-logo
+                src={root(selectedChannel.logo)}
+                alt=""
+                class="live-now-logo"
+                aria-hidden="true"
+              />
+              <h2 data-live-channel-title>{selectedChannel.name}</h2>
+            </div>
           </div>
         </div>
       </section>
@@ -74,6 +84,7 @@ const stories = latest(7);
 <script>
   const player = document.querySelector<HTMLIFrameElement>("[data-live-player]");
   const title = document.querySelector<HTMLElement>("[data-live-channel-title]");
+  const logo = document.querySelector<HTMLImageElement>("[data-live-channel-logo]");
   const tabs = [...document.querySelectorAll<HTMLButtonElement>("[data-channel-id]")];
 
   tabs.forEach((tab) => {
@@ -88,6 +99,7 @@ const stories = latest(7);
       player.title = `${tab.dataset.channelName ?? "Live channel"} live stream`;
       player.src = embedUrl;
       if (title) title.textContent = tab.dataset.channelName ?? "Live channel";
+      if (logo && tab.dataset.channelLogo) logo.src = tab.dataset.channelLogo;
     });
   });
 </script>
@@ -133,16 +145,18 @@ const stories = latest(7);
     background: var(--wire-wash);
   }
 
-  .live-channel-dot {
-    width: 0.42rem;
-    height: 0.42rem;
-    border-radius: 999px;
-    background: var(--muted);
+  .live-channel-logo {
+    display: block;
+    width: 1.15rem;
+    height: 1.15rem;
+    object-fit: contain;
+    opacity: 0.78;
+    transition: opacity 150ms ease, transform 150ms ease;
   }
 
-  .live-channel-tab.is-selected .live-channel-dot {
-    background: var(--wire);
-    box-shadow: 0 0 0 0.22rem var(--wire-wash);
+  .live-channel-tab.is-selected .live-channel-logo {
+    opacity: 1;
+    transform: scale(1.08);
   }
 
   .live-grid {
@@ -176,11 +190,28 @@ const stories = latest(7);
   }
 
   .live-player-caption h2 {
-    margin-top: 0.2rem;
     color: var(--ink);
     font-family: var(--font-serif);
     font-size: 1.25rem;
     font-weight: 600;
+  }
+
+  .live-now-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 0.2rem;
+  }
+
+  .live-now-title h2 {
+    margin: 0;
+  }
+
+  .live-now-logo {
+    display: block;
+    width: 1.7rem;
+    height: 1.7rem;
+    object-fit: contain;
   }
 
   .live-player-caption a {
