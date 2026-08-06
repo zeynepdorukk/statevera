@@ -52,6 +52,9 @@ const borderPath = path(countryBorders);
 
 <section class="region-explorer" data-region-explorer>
   <div class="region-map-stage">
+    <div class="map-region-heading">
+      <h2 data-map-region-title>{initialRow.region.name}</h2>
+    </div>
     <svg
       data-world-map
       class="region-map"
@@ -98,6 +101,7 @@ const borderPath = path(countryBorders);
         class:list={["region-tab", row.slug === initialSlug && "is-selected"]}
         id={`region-tab-${row.slug}`}
         data-region-tab={row.slug}
+        data-region-name={row.region.name}
         role="tab"
         aria-selected={row.slug === initialSlug ? "true" : "false"}
       >
@@ -115,11 +119,6 @@ const borderPath = path(countryBorders);
         aria-labelledby={`region-tab-${row.slug}`}
         hidden={row.slug !== initialSlug}
       >
-        <div class="region-detail-heading">
-          <p class="kicker-ink">{row.region.short}</p>
-          <h2>{row.region.name}</h2>
-          <p>{row.region.description}</p>
-        </div>
         <div class="region-detail-columns">
           <div data-tone="wire">
             <p class="kicker">Latest news</p>
@@ -163,6 +162,7 @@ const borderPath = path(countryBorders);
   const tabs = [...(explorer?.querySelectorAll<HTMLButtonElement>("[data-region-tab]") ?? [])];
   const panels = [...(explorer?.querySelectorAll<HTMLElement>("[data-region-panel]") ?? [])];
   const countries = [...(explorer?.querySelectorAll<SVGPathElement>("[data-country].is-mappable") ?? [])];
+  const mapTitle = explorer?.querySelector<HTMLElement>("[data-map-region-title]");
   const defaultView = { x: 0, y: 0, width: 960, height: 520 };
   let animationId = 0;
   let activeRegion = tabs.find((tab) => tab.getAttribute("aria-selected") === "true")?.dataset.regionTab ?? "";
@@ -223,6 +223,8 @@ const borderPath = path(countryBorders);
 
   const selectRegion = (region: string, pushUrl = true) => {
     activeRegion = region;
+    const selectedTab = tabs.find((tab) => tab.dataset.regionTab === region);
+    if (mapTitle) mapTitle.textContent = selectedTab?.dataset.regionName ?? "Global";
     tabs.forEach((tab) => tab.setAttribute("aria-selected", String(tab.dataset.regionTab === region)));
     tabs.forEach((tab) => tab.classList.toggle("is-selected", tab.dataset.regionTab === region));
     panels.forEach((panel) => {
@@ -278,6 +280,19 @@ const borderPath = path(countryBorders);
     border-radius: 8px;
     background: #171a1d;
     overflow: hidden;
+  }
+
+  .map-region-heading {
+    padding: 0.55rem 0.7rem 0.7rem;
+    color: var(--ink);
+  }
+
+  .map-region-heading h2 {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    font-weight: 600;
+    line-height: 1;
   }
 
   .region-map {
@@ -412,30 +427,6 @@ const borderPath = path(countryBorders);
 
   .region-detail.is-hidden {
     display: none;
-  }
-
-  .region-detail-heading {
-    max-width: 48rem;
-    padding-bottom: 1.4rem;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .region-detail-heading h2 {
-    margin-top: 0.3rem;
-    color: var(--ink);
-    font-family: var(--font-serif);
-    font-size: clamp(1.7rem, 3vw, 2.5rem);
-    font-weight: 600;
-    line-height: 1.05;
-  }
-
-  .region-detail-heading p:last-child {
-    margin-top: 0.7rem;
-    max-width: 42rem;
-    color: var(--ink-soft);
-    font-family: var(--font-serif);
-    font-size: 1rem;
-    line-height: 1.55;
   }
 
   .region-detail-columns {
