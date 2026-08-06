@@ -21,7 +21,7 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const OUT = resolve(ROOT, "src/data/wire.json");
 const DRY = process.argv.includes("--dry");
 
-const MAX_ITEMS = 160;
+const MAX_ITEMS = 220;
 const MAX_AGE_DAYS = 10;
 const TIMEOUT_MS = 20000;
 

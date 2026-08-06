@@ -25,37 +25,37 @@
 /** @type {WireSource[]} */
 export const sources = [
   // ---- General international desks -------------------------
-  { id: "guardian-world", publisher: "The Guardian", url: "https://www.theguardian.com/world/rss", home: "https://www.theguardian.com/world", region: "Global", weight: 2, take: 14 },
-  { id: "bbc-world", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/world/rss.xml", home: "https://www.bbc.com/news/world", region: "Global", weight: 2, take: 12 },
-  { id: "aljazeera", publisher: "Al Jazeera", url: "https://www.aljazeera.com/xml/rss/all.xml", home: "https://www.aljazeera.com", region: "Global", weight: 2, take: 12 },
-  { id: "dw", publisher: "Deutsche Welle", url: "https://rss.dw.com/rdf/rss-en-all", home: "https://www.dw.com/en", region: "Europe", weight: 2, take: 10 },
-  { id: "france24", publisher: "France 24", url: "https://www.france24.com/en/rss", home: "https://www.france24.com/en", region: "Global", weight: 2, take: 8 },
-  { id: "npr-world", publisher: "NPR", url: "https://feeds.npr.org/1004/rss.xml", home: "https://www.npr.org/sections/world", region: "Global", weight: 2, take: 6 },
+  { id: "guardian-world", publisher: "The Guardian", url: "https://www.theguardian.com/world/rss", home: "https://www.theguardian.com/world", region: "Global", weight: 2, take: 20 },
+  { id: "bbc-world", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/world/rss.xml", home: "https://www.bbc.com/news/world", region: "Global", weight: 2, take: 18 },
+  { id: "aljazeera", publisher: "Al Jazeera", url: "https://www.aljazeera.com/xml/rss/all.xml", home: "https://www.aljazeera.com", region: "Global", weight: 2, take: 18 },
+  { id: "dw", publisher: "Deutsche Welle", url: "https://rss.dw.com/rdf/rss-en-all", home: "https://www.dw.com/en", region: "Europe", weight: 2, take: 15 },
+  { id: "france24", publisher: "France 24", url: "https://www.france24.com/en/rss", home: "https://www.france24.com/en", region: "Global", weight: 2, take: 12 },
+  { id: "npr-world", publisher: "NPR", url: "https://feeds.npr.org/1004/rss.xml", home: "https://www.npr.org/sections/world", region: "Global", weight: 2, take: 10 },
 
   // ---- Regional desks --------------------------------------
-  { id: "guardian-europe", publisher: "The Guardian", url: "https://www.theguardian.com/world/europe-news/rss", home: "https://www.theguardian.com/world/europe-news", region: "Europe", weight: 2, take: 10 },
-  { id: "bbc-europe", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/world/europe/rss.xml", home: "https://www.bbc.com/news/world/europe", region: "Europe", weight: 2, take: 8 },
-  { id: "guardian-mideast", publisher: "The Guardian", url: "https://www.theguardian.com/world/middleeast/rss", home: "https://www.theguardian.com/world/middleeast", region: "Middle East", weight: 2, take: 10 },
-  { id: "bbc-mideast", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml", home: "https://www.bbc.com/news/world/middle_east", region: "Middle East", weight: 2, take: 8 },
-  { id: "guardian-asia", publisher: "The Guardian", url: "https://www.theguardian.com/world/asia-pacific/rss", home: "https://www.theguardian.com/world/asia-pacific", region: "Asia-Pacific", weight: 2, take: 10 },
-  { id: "diplomat", publisher: "The Diplomat", url: "https://thediplomat.com/feed/", home: "https://thediplomat.com", region: "Asia-Pacific", category: "Geopolitics", weight: 3, take: 10 },
-  { id: "guardian-africa", publisher: "The Guardian", url: "https://www.theguardian.com/world/africa/rss", home: "https://www.theguardian.com/world/africa", region: "Africa", weight: 2, take: 8 },
-  { id: "bbc-africa", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/world/africa/rss.xml", home: "https://www.bbc.com/news/world/africa", region: "Africa", weight: 2, take: 6 },
-  { id: "guardian-us", publisher: "The Guardian", url: "https://www.theguardian.com/us-news/rss", home: "https://www.theguardian.com/us-news", region: "Americas", weight: 2, take: 8 },
-  { id: "anadolu-politics", publisher: "Anadolu Agency", url: "https://www.aa.com.tr/en/rss/default?cat=politics", home: "https://www.aa.com.tr/en", region: "Turkey", category: "Politics", weight: 2, take: 10 },
+  { id: "guardian-europe", publisher: "The Guardian", url: "https://www.theguardian.com/world/europe-news/rss", home: "https://www.theguardian.com/world/europe-news", region: "Europe", weight: 2, take: 15 },
+  { id: "bbc-europe", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/world/europe/rss.xml", home: "https://www.bbc.com/news/world/europe", region: "Europe", weight: 2, take: 12 },
+  { id: "guardian-mideast", publisher: "The Guardian", url: "https://www.theguardian.com/world/middleeast/rss", home: "https://www.theguardian.com/world/middleeast", region: "Middle East", weight: 2, take: 15 },
+  { id: "bbc-mideast", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/world/middle_east/rss.xml", home: "https://www.bbc.com/news/world/middle_east", region: "Middle East", weight: 2, take: 12 },
+  { id: "guardian-asia", publisher: "The Guardian", url: "https://www.theguardian.com/world/asia-pacific/rss", home: "https://www.theguardian.com/world/asia-pacific", region: "Asia-Pacific", weight: 2, take: 15 },
+  { id: "diplomat", publisher: "The Diplomat", url: "https://thediplomat.com/feed/", home: "https://thediplomat.com", region: "Asia-Pacific", category: "Geopolitics", weight: 3, take: 15 },
+  { id: "guardian-africa", publisher: "The Guardian", url: "https://www.theguardian.com/world/africa/rss", home: "https://www.theguardian.com/world/africa", region: "Africa", weight: 2, take: 12 },
+  { id: "bbc-africa", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/world/africa/rss.xml", home: "https://www.bbc.com/news/world/africa", region: "Africa", weight: 2, take: 10 },
+  { id: "guardian-us", publisher: "The Guardian", url: "https://www.theguardian.com/us-news/rss", home: "https://www.theguardian.com/us-news", region: "Americas", weight: 2, take: 12 },
+  { id: "anadolu-politics", publisher: "Anadolu Agency", url: "https://www.aa.com.tr/en/rss/default?cat=politics", home: "https://www.aa.com.tr/en", region: "Turkey", category: "Politics", weight: 2, take: 15 },
 
   // ---- Political economy -----------------------------------
-  { id: "guardian-economics", publisher: "The Guardian", url: "https://www.theguardian.com/business/economics/rss", home: "https://www.theguardian.com/business/economics", category: "Economy", region: "Global", weight: 2, take: 8 },
-  { id: "bbc-business", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/business/rss.xml", home: "https://www.bbc.com/news/business", category: "Economy", region: "Global", weight: 2, take: 8 },
+  { id: "guardian-economics", publisher: "The Guardian", url: "https://www.theguardian.com/business/economics/rss", home: "https://www.theguardian.com/business/economics", category: "Economy", region: "Global", weight: 2, take: 12 },
+  { id: "bbc-business", publisher: "BBC News", url: "https://feeds.bbci.co.uk/news/business/rss.xml", home: "https://www.bbc.com/news/business", category: "Economy", region: "Global", weight: 2, take: 12 },
 
   // ---- Institutions ----------------------------------------
-  { id: "un-news", publisher: "UN News", url: "https://news.un.org/feed/subscribe/en/news/all/rss.xml", home: "https://news.un.org/en", category: "Diplomacy", region: "Global", weight: 2, take: 10 },
+  { id: "un-news", publisher: "UN News", url: "https://news.un.org/feed/subscribe/en/news/all/rss.xml", home: "https://news.un.org/en", category: "Diplomacy", region: "Global", weight: 2, take: 15 },
 
   // ---- Analysis & commentary -------------------------------
-  { id: "war-on-the-rocks", publisher: "War on the Rocks", url: "https://warontherocks.com/feed/", home: "https://warontherocks.com", category: "Security", region: "Global", weight: 3, take: 8 },
-  { id: "responsible-statecraft", publisher: "Responsible Statecraft", url: "https://responsiblestatecraft.org/feed/", home: "https://responsiblestatecraft.org", category: "Diplomacy", region: "Global", weight: 3, take: 8 },
-  { id: "atlantic-council", publisher: "Atlantic Council", url: "https://www.atlanticcouncil.org/feed/", home: "https://www.atlanticcouncil.org", category: "Geopolitics", region: "Global", weight: 3, take: 8 },
-  { id: "politico-eu", publisher: "POLITICO Europe", url: "https://www.politico.eu/feed/", home: "https://www.politico.eu", category: "Politics", region: "Europe", weight: 2, take: 8 },
+  { id: "war-on-the-rocks", publisher: "War on the Rocks", url: "https://warontherocks.com/feed/", home: "https://warontherocks.com", category: "Security", region: "Global", weight: 3, take: 12 },
+  { id: "responsible-statecraft", publisher: "Responsible Statecraft", url: "https://responsiblestatecraft.org/feed/", home: "https://responsiblestatecraft.org", category: "Diplomacy", region: "Global", weight: 3, take: 12 },
+  { id: "atlantic-council", publisher: "Atlantic Council", url: "https://www.atlanticcouncil.org/feed/", home: "https://www.atlanticcouncil.org", category: "Geopolitics", region: "Global", weight: 3, take: 12 },
+  { id: "politico-eu", publisher: "POLITICO Europe", url: "https://www.politico.eu/feed/", home: "https://www.politico.eu", category: "Politics", region: "Europe", weight: 2, take: 12 },
 ];
 
 // ------------------------------------------------------------
