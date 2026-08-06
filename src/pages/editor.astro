@@ -1,6 +1,7 @@
 ---
 import EditorLayout from "../layouts/EditorLayout.astro";
 import { site } from "../site";
+import { root } from "../utils/collection";
 
 // The static publication build has no desk server; local dev does.
 const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
@@ -8,7 +9,10 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 
 <EditorLayout title="Desk">
   <div data-editor-root data-desk={String(hasServer)} data-desk-url={site.deskUrl}>
-    <p class="ed-boot">Opening the desk…</p>
+    <div class="ed-boot">
+      <img src={root("/images/branding/logo-mark-light.svg")} alt="" width="34" height="34" />
+      <span>Opening the desk</span>
+    </div>
   </div>
 </EditorLayout>
 
@@ -18,11 +22,37 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
      ============================================================ */
 
   .ed-boot {
-    padding: 6rem 1rem;
-    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
     font-family: var(--font-sans);
-    font-size: 0.85rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: var(--muted);
+  }
+  .ed-boot img {
+    width: 2.1rem;
+    height: 2.1rem;
+    animation: ed-breathe 1.7s ease-in-out infinite;
+  }
+  @keyframes ed-breathe {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ed-boot img {
+      animation: none;
+    }
   }
 
   /* ---------- top bar ---------- */
@@ -734,10 +764,220 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
     background: var(--line-strong);
   }
 
-  .ed-signin {
-    max-width: 23rem;
-    margin: 0 auto;
-    padding: 6rem 1.25rem;
+  /* ---------- the gate: every screen shown before the desk opens ---------- */
+  .ed-gate {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 3rem 1.25rem;
+    overflow: hidden;
+  }
+  .ed-gate::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(52rem 30rem at 10% 2%, color-mix(in srgb, var(--journal) 10%, transparent), transparent 62%),
+      radial-gradient(44rem 26rem at 94% 98%, color-mix(in srgb, var(--wire) 9%, transparent), transparent 58%);
+  }
+  .ed-gate-inner {
+    position: relative;
+    width: 100%;
+    max-width: 56rem;
+    display: grid;
+    gap: 2.75rem;
+  }
+  @media (min-width: 62rem) {
+    .ed-gate-inner {
+      grid-template-columns: minmax(0, 1fr) 21.5rem;
+      gap: 4rem;
+      align-items: center;
+    }
+  }
+
+  .ed-gate-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .ed-gate-mark img {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+  .ed-gate-mark span {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    color: var(--ink);
+  }
+  .ed-gate-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 1.4rem 0 0;
+  }
+  .ed-gate-lede {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 34ch;
+    margin-top: 0.65rem;
+  }
+  .ed-gate-pillars {
+    list-style: none;
+    margin: 1.9rem 0 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+    max-width: 30rem;
+  }
+  .ed-gate-pillars li {
+    display: grid;
+    grid-template-columns: auto 5.4rem 1fr;
+    align-items: baseline;
+    gap: 0.7rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .ed-gate-pillars b {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .ed-gate-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--muted);
+    transform: translateY(-0.1rem);
+  }
+  .ed-gate-dot[data-p="journal"] {
+    background: var(--journal);
+  }
+  .ed-gate-dot[data-p="wire"] {
+    background: var(--wire);
+  }
+  .ed-gate-dot[data-p="risk"] {
+    background: var(--ink-soft);
+  }
+  .ed-gate-meta {
+    margin-top: 1.1rem;
+    font-family: var(--font-sans);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .ed-gate-card {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: color-mix(in srgb, var(--paper-soft) 85%, transparent);
+    backdrop-filter: blur(10px);
+    padding: 1.7rem 1.5rem 1.4rem;
+    box-shadow: 0 30px 70px -40px rgb(0 0 0 / 0.85);
+    animation: ed-gate-rise 0.4s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  }
+  .ed-gate-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px -1px auto;
+    height: 2px;
+    background: linear-gradient(90deg, var(--wire), var(--journal));
+  }
+  @keyframes ed-gate-rise {
+    from {
+      opacity: 0;
+      transform: translateY(0.6rem);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ed-gate-card {
+      animation: none;
+    }
+  }
+
+  .ed-gate-card h2 {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 0.15rem 0 0.5rem;
+  }
+  .ed-gate-say {
+    font-family: var(--font-sans);
+    font-size: 0.77rem;
+    color: var(--muted);
+    margin: 0 0 1.15rem;
+  }
+  .ed-gate .ed-input {
+    background: var(--paper-tint);
+    padding: 0.6rem 0.7rem;
+    font-size: 0.88rem;
+    border-radius: 3px;
+    transition:
+      border-color 0.14s ease,
+      box-shadow 0.14s ease;
+  }
+  .ed-gate .ed-input:focus {
+    border-color: var(--journal);
+    box-shadow: 0 0 0 3px var(--journal-wash);
+  }
+  .ed-gate-pw {
+    position: relative;
+  }
+  .ed-gate-pw .ed-input {
+    padding-right: 3.6rem;
+  }
+  .ed-gate-reveal {
+    position: absolute;
+    right: 0.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-family: var(--font-sans);
+    font-size: 0.61rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.45rem;
+    cursor: pointer;
+  }
+  .ed-gate-reveal:hover {
+    color: var(--ink);
+  }
+  .ed-gate-go {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1.3rem;
+    padding-block: 0.6rem;
+    font-size: 0.76rem;
+  }
+  .ed-gate-foot {
+    margin-top: 1rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-sans);
+    font-size: 0.71rem;
+    line-height: 1.5;
+    color: var(--muted);
   }
 
   @media (max-width: 700px) {
@@ -809,6 +1049,11 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
   const maybe = <T extends HTMLElement>(s: string) => root.querySelector<T>(s);
   const view = (html: string) => { root.innerHTML = html; };
   const today = () => new Date().toISOString().slice(0, 10);
+  const booting = (label: string) => `
+    <div class="ed-boot">
+      <img src="${BASE}/images/branding/logo-mark-light.svg" alt="" width="34" height="34" />
+      <span>${esc(label)}</span>
+    </div>`;
 
   const debounce = <A extends unknown[]>(fn: (...a: A) => void, ms: number) => {
     let t: number | undefined;
@@ -819,26 +1064,64 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
   // Sign in
   // ==========================================================
 
-  function signInView(message = "") {
+  // Every screen shown before the desk opens shares one frame: the mark, what
+  // this place is, and a single card holding whatever needs an answer.
+  function gate(card: string) {
+    const stamp = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
     view(`
-      <div class="ed-signin">
-        <p class="ed-legend">Statevera</p>
-        <h1 style="font-family:var(--font-serif);font-size:1.9rem;font-weight:700;line-height:1.1;margin:.3rem 0 1.2rem">The desk</h1>
-        ${message ? `<p class="ed-warn" style="margin-bottom:1rem">${esc(message)}</p>` : ""}
-        <form data-signin>
-          <div class="ed-field">
-            <label for="who">Name</label>
-            <input id="who" type="text" class="ed-input" required autocomplete="username" autocapitalize="off" spellcheck="false" />
+      <div class="ed-gate">
+        <div class="ed-gate-inner">
+          <div class="ed-gate-brand">
+            <span class="ed-gate-mark">
+              <img src="${BASE}/images/branding/logo-mark-light.svg" alt="" width="44" height="44" />
+              <span>${esc(site.publicationName)}</span>
+            </span>
+            <h1 class="ed-gate-title">The desk</h1>
+            <p class="ed-gate-lede">Where Statevera is written, edited and published — one writer, one surface.</p>
+            <ul class="ed-gate-pillars">
+              <li><span class="ed-gate-dot" data-p="journal"></span><b>Journal</b><span>Signed analysis, drafted and filed here</span></li>
+              <li><span class="ed-gate-dot" data-p="wire"></span><b>News</b><span>Public-source reporting, refreshed every 15 minutes</span></li>
+              <li><span class="ed-gate-dot" data-p="risk"></span><b>Glorisk</b><span>Interactive geopolitical risk</span></li>
+            </ul>
+            <p class="ed-gate-meta">Editorial desk · ${esc(stamp)}</p>
           </div>
-          <div class="ed-field" style="margin-top:.9rem">
-            <label for="pw">Password</label>
-            <input id="pw" type="password" class="ed-input" required autocomplete="current-password" />
-          </div>
-          <button type="submit" class="ed-btn ed-btn-primary" style="width:100%;justify-content:center;margin-top:1.2rem" data-submit>Start writing</button>
-          <p class="note" style="margin-top:1rem">Nothing else to enter. The keys live on the server.</p>
-        </form>
+          <div class="ed-gate-card">${card}</div>
+        </div>
       </div>
     `);
+  }
+
+  function signInView(message = "") {
+    gate(`
+      <p class="ed-legend">Sign in</p>
+      <p class="ed-gate-say">Two things, then you are writing.</p>
+      ${message ? `<p class="ed-warn" style="margin-bottom:1rem">${esc(message)}</p>` : ""}
+      <form data-signin>
+        <div class="ed-field">
+          <label for="who">Name</label>
+          <input id="who" type="text" class="ed-input" required autocomplete="username" autocapitalize="off" spellcheck="false" />
+        </div>
+        <div class="ed-field">
+          <label for="pw">Password</label>
+          <div class="ed-gate-pw">
+            <input id="pw" type="password" class="ed-input" required autocomplete="current-password" />
+            <button type="button" class="ed-gate-reveal" data-reveal aria-label="Show password">Show</button>
+          </div>
+        </div>
+        <button type="submit" class="ed-btn ed-btn-primary ed-gate-go" data-submit>Start writing</button>
+      </form>
+      <p class="ed-gate-foot">Nothing else to enter. The keys live on the server.</p>
+    `);
+
+    const pw = el<HTMLInputElement>("#pw");
+    const reveal = el<HTMLButtonElement>("[data-reveal]");
+    reveal.addEventListener("click", () => {
+      const shown = pw.type === "text";
+      pw.type = shown ? "password" : "text";
+      reveal.textContent = shown ? "Show" : "Hide";
+      reveal.setAttribute("aria-label", shown ? "Show password" : "Hide password");
+      pw.focus();
+    });
 
     el<HTMLFormElement>("[data-signin]").addEventListener("submit", async (event) => {
       event.preventDefault();
@@ -846,7 +1129,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
       button.disabled = true;
       button.textContent = "Checking…";
       try {
-        const session = await signIn(el<HTMLInputElement>("#who").value, el<HTMLInputElement>("#pw").value);
+        const session = await signIn(el<HTMLInputElement>("#who").value, pw.value);
         state.user = session.user;
         state.assistant = session.assistant;
         state.canPublish = session.canPublish;
@@ -871,7 +1154,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
   // ==========================================================
 
   async function openStories(notice = "") {
-    view('<p class="ed-boot">Reading the archive…</p>');
+    view(booting("Reading the archive"));
 
     try {
       const library = await readLibrary();
@@ -979,7 +1262,7 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
   }
 
   async function openStory(path: string) {
-    view('<p class="ed-boot">Opening…</p>');
+    view(booting("Opening"));
     const kind: Kind = path.includes("/explainers/") ? "explainer" : "article";
     const slug = path.split("/").pop()!.replace(/\.mdx?$/, "");
     try {
@@ -2330,26 +2613,22 @@ const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
   // the writer is one build away from the desk. Say so before asking anything.
   if (root.dataset.desk !== "true") {
     const desk = `${root.dataset.deskUrl ?? ""}/editor`;
-    view(`
-      <div class="ed-signin">
-        <p class="ed-legend">Statevera</p>
-        <h1 style="font-family:var(--font-serif);font-size:1.7rem;font-weight:700;line-height:1.1;margin:.3rem 0 .8rem">The desk is not here</h1>
-        <p class="ed-note" style="margin-bottom:1.4rem">This address is the published site, which is
-        only files. Writing happens where there is a server to hold the keys.</p>
-        <a class="ed-btn ed-btn-primary" style="display:inline-flex" href="${esc(desk)}">Go to the desk &rarr;</a>
-        <p class="ed-note" style="margin-top:1rem">${esc(desk)}</p>
-      </div>
+    gate(`
+      <p class="ed-legend">Wrong address</p>
+      <h2>The desk is not here</h2>
+      <p class="ed-note">This address is the published site, which is only files. Writing happens
+      where there is a server to hold the keys.</p>
+      <a class="ed-btn ed-btn-primary ed-gate-go" href="${esc(desk)}">Go to the desk &rarr;</a>
+      <p class="ed-gate-foot">${esc(desk)}</p>
     `);
   } else {
     const session = await readSession();
     if (!session.configured) {
-      view(`
-        <div class="ed-signin">
-          <p class="ed-legend">Statevera</p>
-          <h1 style="font-family:var(--font-serif);font-size:1.7rem;font-weight:700;line-height:1.1;margin:.3rem 0 1rem">The desk is not set up yet</h1>
-          <p class="ed-note">This page needs its server half. Add EDITOR_PASSWORD, SESSION_SECRET,
-          OPENAI_KEY and GITHUB_TOKEN to the deployment, then reload.</p>
-        </div>
+      gate(`
+        <p class="ed-legend">Not ready</p>
+        <h2>The desk is not set up yet</h2>
+        <p class="ed-note">This page needs its server half. Add EDITOR_PASSWORD, SESSION_SECRET,
+        OPENAI_KEY and GITHUB_TOKEN to the deployment, then reload.</p>
       `);
     } else if (session.signedIn) {
       state.user = session.user;
