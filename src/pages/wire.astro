@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { deskList, regions, regionSlugOf } from "../site";
-import { wireItems, wirePublishers, leadStories, activeRegions } from "../data/wire";
+import { deskList } from "../site";
+import { wireItems, wirePublishers, leadStories } from "../data/wire";
 import { root } from "../utils/collection";
 import WireCard from "../components/WireCard.astro";
 import SectionHead from "../components/SectionHead.astro";
@@ -14,7 +14,6 @@ const deskCounts = deskList
   .map((desk) => ({ desk, count: wireItems.filter((i) => i.category === desk.name).length }))
   .filter((d) => d.count > 0);
 
-const regionCounts = activeRegions();
 ---
 
 <BaseLayout
@@ -57,27 +56,8 @@ const regionCounts = activeRegions();
           ))}
         </div>
 
-        <div class="mt-10 border-t-2 border-ink pt-7" aria-label="Wire index">
-          <SectionHead title="By region" tone="wire" href="/regions" moreLabel="Regions" />
-          <ul class="rule-list">
-            {regionCounts.map(({ region, count }) => {
-              const slug = regionSlugOf(region);
-              return (
-                <li class="flex items-baseline justify-between gap-3">
-                  {slug in regions ? (
-                    <a href={root(`/regions/${slug}`)} class="editorial-link font-sans text-[0.86rem] font-medium text-ink">
-                      {region}
-                    </a>
-                  ) : (
-                    <span class="font-sans text-[0.86rem] text-ink">{region}</span>
-                  )}
-                  <span class="meta tabular">{count}</span>
-                </li>
-              );
-            })}
-          </ul>
-
-          <div class="mt-8 border border-line bg-paper-soft p-5">
+        <div class="mt-10" aria-label="News sources">
+          <div class="border border-line bg-paper-soft p-5">
             <p class="kicker-ink">How the news feed works</p>
             <p class="mt-2 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
               Statevera reads the public feeds of {wirePublishers.length} newsrooms and
