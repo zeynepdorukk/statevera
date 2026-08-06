@@ -16,11 +16,6 @@ const stories = latest(7);
   hideTicker
 >
   <div class="live-page shell pt-0" data-tone="wire">
-    <header class="live-intro">
-      <p class="kicker-ink">LIVE</p>
-      <h1 class="t-lead mt-1.5">Watch the world as it moves.</h1>
-    </header>
-
     <div class="live-channel-switcher" role="tablist" aria-label="Live channels">
       {liveChannels.map((channel, index) => (
         <button
@@ -104,11 +99,6 @@ const stories = latest(7);
 </script>
 
 <style>
-  .live-intro {
-    padding: 2rem 0 1.5rem;
-    border-bottom: 2px solid var(--ink);
-  }
-
   .live-channel-switcher {
     display: flex;
     gap: 0.35rem;
