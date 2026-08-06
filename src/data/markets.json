@@ -1,0 +1,65 @@
+{
+  "updatedAt": "2026-08-06T04:03:35.000Z",
+  "quotes": [
+    {
+      "id": "spx",
+      "label": "SPX",
+      "symbol": "^GSPC",
+      "decimals": 2,
+      "price": 7723.55,
+      "change": -12.970000000000255,
+      "percent": -0.167646435348196,
+      "updatedAt": "2026-08-05T20:41:45.000Z"
+    },
+    {
+      "id": "ixic",
+      "label": "IXIC",
+      "symbol": "^IXIC",
+      "decimals": 2,
+      "price": 26363.44,
+      "change": -221.55199999999968,
+      "percent": -0.8333724531495051,
+      "updatedAt": "2026-08-05T21:15:59.000Z"
+    },
+    {
+      "id": "dji",
+      "label": "DJI",
+      "symbol": "^DJI",
+      "decimals": 2,
+      "price": 54349.12,
+      "change": 263.24000000000524,
+      "percent": 0.48670743639560876,
+      "updatedAt": "2026-08-05T21:22:16.000Z"
+    },
+    {
+      "id": "stoxx",
+      "label": "STOXX",
+      "symbol": "^STOXX50E",
+      "decimals": 2,
+      "price": 6476.98,
+      "change": -9.720000000000255,
+      "percent": -0.1498450675998621,
+      "updatedAt": "2026-08-05T16:00:00.000Z"
+    },
+    {
+      "id": "ftse",
+      "label": "FTSE",
+      "symbol": "^FTSE",
+      "decimals": 2,
+      "price": 10888.3,
+      "change": 8.920000000000073,
+      "percent": 0.08198996633999432,
+      "updatedAt": "2026-08-05T15:35:28.000Z"
+    },
+    {
+      "id": "n225",
+      "label": "N225",
+      "symbol": "^N225",
+      "decimals": 2,
+      "price": 65456.63,
+      "change": -843.810000000005,
+      "percent": -1.2727064858091515,
+      "updatedAt": "2026-08-06T04:03:35.000Z"
+    }
+  ]
+}

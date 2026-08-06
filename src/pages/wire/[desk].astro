@@ -6,6 +6,7 @@ import { getByCategory, root } from "../../utils/collection";
 import WireCard from "../../components/WireCard.astro";
 import JournalCard from "../../components/JournalCard.astro";
 import SectionHead from "../../components/SectionHead.astro";
+import MarketTicker from "../../components/MarketTicker.astro";
 
 export async function getStaticPaths() {
   return deskList.map((desk) => ({ params: { desk: desk.slug } }));
@@ -33,13 +34,16 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
   tone="wire"
 >
   <div class="shell pt-0" data-tone="wire">
-    <nav aria-label="Other desks" class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
-      <a href={root("/wire")} class="desk-pill">All</a>
-      <span class="desk-pill is-on">{desk.name}</span>
-      {otherDesks.map((other) => (
-        <a href={root(`/wire/${other.slug}`)} class="desk-pill">{other.name}</a>
-      ))}
-    </nav>
+    <div class="news-toolbar">
+      <nav aria-label="Other desks" class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
+        <a href={root("/wire")} class="desk-pill">All</a>
+        <span class="desk-pill is-on">{desk.name}</span>
+        {otherDesks.map((other) => (
+          <a href={root(`/wire/${other.slug}`)} class="desk-pill">{other.name}</a>
+        ))}
+      </nav>
+      <MarketTicker />
+    </div>
 
     {items.length === 0 ? (
       <p class="py-14 text-center font-serif text-[1.05rem] text-muted">

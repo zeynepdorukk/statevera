@@ -1,0 +1,141 @@
+---
+import marketData from "../data/markets.json";
+
+const quotes = marketData.quotes ?? [];
+const track = [...quotes, ...quotes];
+
+const formatPrice = (quote) =>
+  new Intl.NumberFormat("en-US", {
+    minimumFractionDigits: quote.decimals,
+    maximumFractionDigits: quote.decimals,
+  }).format(quote.price);
+
+const formatChange = (quote) => {
+  const sign = quote.change >= 0 ? "+" : "";
+  return `${sign}${quote.percent.toFixed(2)}%`;
+};
+---
+
+{quotes.length > 0 && (
+  <section class="market-ticker" aria-label="Market indices" title="Delayed market data">
+    <div class="market-viewport">
+      <div class="market-track">
+        {track.map((quote, index) => (
+          <span class="market-quote" aria-hidden={index >= quotes.length ? "true" : undefined}>
+            <span class:list={["market-arrow", quote.change >= 0 ? "is-up" : "is-down"]} aria-hidden="true"></span>
+            <span class="market-label">{quote.label}</span>
+            <span class="market-price">{formatPrice(quote)}</span>
+            <span class:list={["market-change", quote.change >= 0 ? "is-up" : "is-down"]}>
+              {formatChange(quote)}
+            </span>
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  :global(.news-toolbar) {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--line);
+  }
+
+  :global(.news-toolbar > nav) {
+    border-bottom: 0;
+  }
+
+  .market-ticker {
+    min-width: 0;
+    flex: 1;
+    align-self: stretch;
+    overflow: hidden;
+    border-left: 1px solid var(--line);
+    background: var(--paper-soft);
+  }
+
+  .market-viewport {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .market-track {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    animation: market-ticker 42s linear infinite;
+  }
+
+  .market-quote {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    min-height: 2.9rem;
+    padding: 0 0.85rem;
+    border-right: 1px solid var(--line);
+    font-family: var(--font-sans);
+    font-size: 0.66rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .market-label {
+    color: var(--ink-soft);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  .market-price {
+    color: var(--ink);
+  }
+
+  .market-change.is-up {
+    color: #5f9b5c;
+  }
+
+  .market-change.is-down {
+    color: var(--wire);
+  }
+
+  .market-arrow {
+    width: 0;
+    height: 0;
+    border-right: 0.32rem solid transparent;
+    border-left: 0.32rem solid transparent;
+  }
+
+  .market-arrow.is-up {
+    border-bottom: 0.48rem solid #5f9b5c;
+  }
+
+  .market-arrow.is-down {
+    border-top: 0.48rem solid var(--wire);
+  }
+
+  @keyframes market-ticker {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 1023px) {
+    :global(.news-toolbar) {
+      display: block;
+    }
+
+    .market-ticker {
+      border-top: 1px solid var(--line);
+      border-left: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .market-track {
+      animation: none;
+    }
+  }
+</style>

@@ -30,18 +30,21 @@ jobs:
       - name: Fetch the wire
         run: node scripts/fetch-wire.mjs
 
+      - name: Fetch market snapshot
+        run: node scripts/fetch-markets.mjs
+
       - name: Verify the snapshot
         run: node scripts/check-content.mjs
 
       - name: Commit if anything changed
         run: |
-          if git diff --quiet -- src/data/wire.json; then
-            echo "No new stories."
+          if git diff --quiet -- src/data/wire.json src/data/markets.json; then
+            echo "No new stories or market changes."
             exit 0
           fi
           git config user.name "statevera-wire[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           COUNT=$(node -e "console.log(require('./src/data/wire.json').items.length)")
-          git add src/data/wire.json
+          git add src/data/wire.json src/data/markets.json
           git commit -m "Wire: refresh snapshot (${COUNT} stories)"
           git push

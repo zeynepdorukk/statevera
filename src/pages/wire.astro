@@ -5,6 +5,7 @@ import { wireItems, leadStories } from "../data/wire";
 import { root } from "../utils/collection";
 import WireCard from "../components/WireCard.astro";
 import SectionHead from "../components/SectionHead.astro";
+import MarketTicker from "../components/MarketTicker.astro";
 
 const leads = leadStories(3);
 const leadIds = new Set(leads.map((i) => i.id));
@@ -25,14 +26,17 @@ const deskCounts = deskList
 >
   <div class="shell pt-0" data-tone="wire">
     <!-- Desk filter -->
-    <nav aria-label="Desks" class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
-      <span class="desk-pill is-on">All</span>
-      {deskCounts.map(({ desk }) => (
-        <a href={root(`/wire/${desk.slug}`)} class="desk-pill">
-          {desk.name}
-        </a>
-      ))}
-    </nav>
+    <div class="news-toolbar">
+      <nav aria-label="Desks" class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
+        <span class="desk-pill is-on">All</span>
+        {deskCounts.map(({ desk }) => (
+          <a href={root(`/wire/${desk.slug}`)} class="desk-pill">
+            {desk.name}
+          </a>
+        ))}
+      </nav>
+      <MarketTicker />
+    </div>
 
     <div class="grid gap-x-8 gap-y-8 py-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,4fr)]">
       <div class="contents lg:block">
