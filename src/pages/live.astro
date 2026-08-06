@@ -16,24 +16,6 @@ const stories = latest(7);
   hideTicker
 >
   <div class="live-page shell pt-0" data-tone="wire">
-    <div class="live-channel-switcher" role="tablist" aria-label="Live channels">
-      {liveChannels.map((channel, index) => (
-        <button
-          type="button"
-          class:list={["live-channel-tab", index === 0 && "is-selected"]}
-          data-channel-id={channel.id}
-          data-embed-url={liveEmbedUrl(channel.channelId)}
-          data-channel-name={channel.name}
-          data-channel-logo={root(channel.logo)}
-          role="tab"
-          aria-selected={index === 0 ? "true" : "false"}
-        >
-          <img src={root(channel.logo)} alt="" class="live-channel-logo" aria-hidden="true" />
-          {channel.shortName}
-        </button>
-      ))}
-    </div>
-
     <div class="live-grid">
       <section class="live-player-column" aria-label="Live player">
         <div class="live-player-frame">
@@ -64,6 +46,23 @@ const stories = latest(7);
       </section>
 
       <aside class="live-news-column" aria-label="Latest News">
+        <div class="live-channel-switcher" role="tablist" aria-label="Live channels">
+          {liveChannels.map((channel, index) => (
+            <button
+              type="button"
+              class:list={["live-channel-tab", index === 0 && "is-selected"]}
+              data-channel-id={channel.id}
+              data-embed-url={liveEmbedUrl(channel.channelId)}
+              data-channel-name={channel.name}
+              data-channel-logo={root(channel.logo)}
+              role="tab"
+              aria-selected={index === 0 ? "true" : "false"}
+            >
+              <img src={root(channel.logo)} alt="" class="live-channel-logo" aria-hidden="true" />
+              {channel.shortName}
+            </button>
+          ))}
+        </div>
         <div class="live-news-heading">
           <p class="kicker">Latest News</p>
           <a href={root("/wire")} class="kicker-ink">All news &rarr;</a>
@@ -107,18 +106,19 @@ const stories = latest(7);
 <style>
   .live-channel-switcher {
     display: flex;
+    flex-direction: column;
     gap: 0.35rem;
-    overflow-x: auto;
-    padding: 0.75rem 0;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     border-bottom: 1px solid var(--line);
-    scrollbar-width: thin;
   }
 
   .live-channel-tab {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    flex: 0 0 auto;
+    justify-content: flex-start;
+    width: 100%;
     padding: 0.55rem 0.75rem;
     border: 1px solid transparent;
     background: transparent;
@@ -279,6 +279,10 @@ const stories = latest(7);
       border-top: 1px solid var(--line);
       border-left: 0;
       padding: 1.5rem 0 0;
+    }
+
+    .live-channel-switcher {
+      margin-bottom: 1.25rem;
     }
   }
 </style>
