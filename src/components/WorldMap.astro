@@ -302,10 +302,16 @@ const borderPath = path(countryBorders);
   }
 
   .country-shape.is-mappable:hover,
-  .country-shape.is-mappable:focus-visible {
+  .country-shape.is-mappable:focus {
     fill: var(--journal);
     stroke: var(--journal);
-    outline: none;
+    outline: 0 !important;
+  }
+
+  .country-shape.is-mappable:focus-visible {
+    stroke: var(--journal);
+    stroke-width: 1.2;
+    outline: 0 !important;
   }
 
   .country-shape.is-selected {
