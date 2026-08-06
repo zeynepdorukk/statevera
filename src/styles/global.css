@@ -520,6 +520,13 @@ a:hover > .outbound::after,
   will-change: transform;
 }
 
+/* Fade the two edges so words dissolve into the bar instead of being
+   hard-clipped mid-letter by the viewport's overflow. */
+.ticker-viewport {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 2.5rem, #000 calc(100% - 2.5rem), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 2.5rem, #000 calc(100% - 2.5rem), transparent);
+}
+
 .ticker-viewport:hover .ticker-track,
 .ticker-viewport:focus-within .ticker-track {
   animation-play-state: paused;
