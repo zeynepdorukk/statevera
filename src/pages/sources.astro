@@ -187,6 +187,30 @@ const institutions = [
     outline: none;
   }
 
+  .primary-source-submit:disabled {
+    cursor: wait;
+    opacity: 0.9;
+  }
+
+  .primary-source-submit[data-state="loading"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    background: var(--wire);
+    border-color: var(--wire);
+  }
+
+  .primary-source-submit[data-state="loading"]::before {
+    width: 0.7rem;
+    height: 0.7rem;
+    border: 1px solid color-mix(in srgb, var(--paper) 45%, transparent);
+    border-top-color: var(--paper);
+    border-radius: 999px;
+    content: "";
+    animation: primary-source-spin 800ms linear infinite;
+  }
+
   .primary-source-filters {
     display: flex;
     flex-wrap: wrap;
@@ -222,6 +246,9 @@ const institutions = [
   }
 
   .primary-source-status {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
     min-height: 1.4rem;
     margin: 1rem 0 0;
     font-family: var(--font-sans);
@@ -229,8 +256,58 @@ const institutions = [
     color: var(--muted);
   }
 
+  .primary-source-status[data-state="loading"] {
+    color: var(--ink-soft);
+  }
+
+  .primary-source-status[data-state="loading"]::before {
+    width: 0.78rem;
+    height: 0.78rem;
+    flex: 0 0 auto;
+    border: 1px solid var(--line-strong);
+    border-top-color: var(--wire);
+    border-radius: 999px;
+    content: "";
+    animation: primary-source-spin 800ms linear infinite;
+  }
+
+  .primary-source-status[data-state="loading"]::after {
+    width: 3.2rem;
+    height: 2px;
+    flex: 0 0 auto;
+    background: linear-gradient(90deg, transparent, var(--wire), transparent);
+    content: "";
+    animation: primary-source-scan 1.4s ease-in-out infinite;
+  }
+
   .primary-source-status[data-state="error"] {
     color: var(--wire);
+  }
+
+  @keyframes primary-source-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes primary-source-scan {
+    0%,
+    100% {
+      opacity: 0.25;
+      transform: scaleX(0.55);
+    }
+    50% {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .primary-source-submit[data-state="loading"]::before,
+    .primary-source-status[data-state="loading"]::before,
+    .primary-source-status[data-state="loading"]::after {
+      animation: none;
+    }
   }
 
   :global(.primary-source-results) {

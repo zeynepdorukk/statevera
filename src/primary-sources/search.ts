@@ -14,6 +14,11 @@ interface CacheEntry {
 
 const CACHE_TTL = 60_000;
 const MAX_RESULTS = 48;
+// Official endpoints are queried in parallel, so one slow institution should
+// not hold the entire research desk open for the slowest network response.
+// Seven seconds keeps the result set useful while giving the UI a predictable
+// upper bound for a cold search.
+const ADAPTER_TIMEOUT_MS = 7_000;
 const CACHE = new Map<string, CacheEntry>();
 
 function tokensOf(value: string): string[] {
@@ -75,7 +80,7 @@ export async function searchPrimarySources(
 
   const settled = await Promise.all(SOURCE_ADAPTERS.map(async (adapter) => {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 18_000);
+    const timeout = setTimeout(() => controller.abort(), ADAPTER_TIMEOUT_MS);
     const onAbort = () => controller.abort();
     signal?.addEventListener("abort", onAbort, { once: true });
     try {

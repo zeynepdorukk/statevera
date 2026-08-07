@@ -25,6 +25,7 @@ if (root) {
   const results = root.querySelector<HTMLElement>("[data-primary-source-results]");
   const filters = [...root.querySelectorAll<HTMLButtonElement>("[data-source-filter]")];
   const endpoint = root.dataset.endpoint ?? "";
+  const defaultSubmitLabel = submit?.textContent?.trim() || "Search official sources";
   let activeType = "All";
   let lastQuery = "";
   let allResults: SourceResult[] = [];
@@ -70,6 +71,7 @@ if (root) {
     if (!status) return;
     status.textContent = message;
     status.dataset.state = state;
+    status.setAttribute("aria-busy", String(state === "loading"));
   };
 
   const render = (items: SourceResult[]) => {
@@ -128,8 +130,13 @@ if (root) {
     }
     lastQuery = query;
     allResults = [];
-    if (submit) submit.disabled = true;
-    setStatus("Searching official records across the source map…");
+    if (submit) {
+      submit.disabled = true;
+      submit.dataset.state = "loading";
+      submit.setAttribute("aria-busy", "true");
+      submit.textContent = "Checking official sources…";
+    }
+    setStatus("Checking official sources across 12 institutions…", "loading");
     try {
       const url = new URL(endpoint, window.location.origin);
       url.searchParams.set("q", query);
@@ -147,7 +154,12 @@ if (root) {
       if (results) results.innerHTML = "";
       setStatus(error instanceof Error ? error.message : "The source search is unavailable. Try again shortly.", "error");
     } finally {
-      if (submit) submit.disabled = false;
+      if (submit) {
+        submit.disabled = false;
+        submit.dataset.state = "";
+        submit.setAttribute("aria-busy", "false");
+        submit.textContent = defaultSubmitLabel;
+      }
     }
   };
 
