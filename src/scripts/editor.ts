@@ -990,15 +990,12 @@ function compose(args: ComposeArgs) {
             <option value="ui-monospace">Monospace</option>
           </select>
         </label>
-        <label class="ed-format-control">
+        <div class="ed-format-control ed-size-step" role="group" aria-label="Font size">
           <span>Size</span>
-          <select data-format-size aria-label="Font size">
-            <option value="3">Normal</option>
-            <option value="1">Small</option>
-            <option value="5">Large</option>
-            <option value="7">Extra large</option>
-          </select>
-        </label>
+          <button type="button" data-format-size="-1" title="Shrink text  Ctrl+Shift+," aria-label="Shrink text">A&minus;</button>
+          <span class="ed-size-value" data-format-size-value aria-live="polite">Normal</span>
+          <button type="button" data-format-size="1" title="Grow text  Ctrl+Shift+." aria-label="Grow text">A&plus;</button>
+        </div>
         <span class="ed-format-sep" aria-hidden="true"></span>
         <button type="button" data-format-cmd="bold" title="Bold  Ctrl+B"><strong>B</strong></button>
         <button type="button" data-format-cmd="italic" title="Italic  Ctrl+I"><em>I</em></button>
@@ -1369,6 +1366,11 @@ function compose(args: ComposeArgs) {
     }
     if (ghostNode) clearGhost();
 
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey) {
+      if (event.key === "." || event.key === ">") { event.preventDefault(); stepFontSize(1); return; }
+      if (event.key === "," || event.key === "<") { event.preventDefault(); stepFontSize(-1); return; }
+    }
+
     if ((event.ctrlKey || event.metaKey) && !event.shiftKey) {
       const key = event.key.toLowerCase();
       if (key === "b") { event.preventDefault(); runCommand("bold"); return; }
@@ -1502,6 +1504,7 @@ function compose(args: ComposeArgs) {
     // lines: headings, quotes and lists do not apply to them.
     if (!inBody && !titleEl.contains(node) && !standEl.contains(node)) return;
     savedRange = range.cloneRange();
+    syncSizeLabel();
     if (sel.isCollapsed) {
       if (!linkbar.classList.contains("is-open")) hideFloat();
       return;
@@ -1600,12 +1603,96 @@ function compose(args: ComposeArgs) {
   maybe<HTMLSelectElement>("[data-format-font]")?.addEventListener("change", (event) => {
     applyInlineFormat("fontName", (event.currentTarget as HTMLSelectElement).value);
   });
-  maybe<HTMLSelectElement>("[data-format-size]")?.addEventListener("change", (event) => {
-    applyInlineFormat("fontSize", (event.currentTarget as HTMLSelectElement).value);
-  });
   maybe<HTMLSelectElement>("[data-format-block]")?.addEventListener("change", (event) => {
     formatBlock((event.currentTarget as HTMLSelectElement).value);
   });
+
+  // ---------- grow / shrink text, one rung at a time ----------
+  // The rungs are the inline size vocabulary the published stylesheet knows.
+  const SIZE_LADDER = [
+    { cls: "sv-size-small", value: "1", label: "Small" },
+    { cls: "", value: "3", label: "Normal" },
+    { cls: "sv-size-large", value: "5", label: "Large" },
+    { cls: "sv-size-xlarge", value: "7", label: "Extra large" },
+  ];
+  const NORMAL_RUNG = 1;
+  const sizeValueEl = maybe<HTMLElement>("[data-format-size-value]");
+
+  /** A selection that starts on a block (Ctrl+A, triple click) still has to read the run inside it. */
+  const rangeStartLeaf = (range: Range): Node => {
+    let node: Node = range.startContainer;
+    let offset = range.startOffset;
+    while (node.nodeType === Node.ELEMENT_NODE && node.childNodes.length) {
+      node = node.childNodes[Math.min(offset, node.childNodes.length - 1)];
+      offset = 0;
+    }
+    return node;
+  };
+
+  const sizeRungAt = (range: Range): number => {
+    const leaf = rangeStartLeaf(range);
+    let elm: HTMLElement | null =
+      leaf instanceof HTMLElement ? leaf : leaf.parentElement;
+    while (elm && elm !== bodyEl && bodyEl.contains(elm)) {
+      const rung = SIZE_LADDER.findIndex((step) => step.cls && elm!.classList.contains(step.cls));
+      if (rung >= 0) return rung;
+      elm = elm.parentElement;
+    }
+    return NORMAL_RUNG;
+  };
+
+  const syncSizeLabel = () => {
+    if (!sizeValueEl) return;
+    const selection = window.getSelection();
+    const range = selection?.rangeCount ? selection.getRangeAt(0) : null;
+    if (!range || !bodyEl.contains(range.startContainer)) return;
+    sizeValueEl.textContent = SIZE_LADDER[sizeRungAt(range)].label;
+  };
+
+  /**
+   * execCommand splits the surrounding inline elements around the range, so the
+   * wrapper it leaves is exactly the affected run: strip the old size from it,
+   * otherwise the previous rung would keep winning.
+   */
+  const dropOuterSize = (fontEl: HTMLElement) => {
+    const chain: HTMLElement[] = [];
+    let parent = fontEl.parentElement;
+    while (parent && parent !== bodyEl && parent.textContent === fontEl.textContent) {
+      chain.push(parent);
+      parent = parent.parentElement;
+    }
+    for (const elm of chain) {
+      for (const step of SIZE_LADDER) if (step.cls) elm.classList.remove(step.cls);
+      if (elm.tagName === "SPAN" && !elm.getAttribute("class")?.trim()) {
+        elm.replaceWith(...Array.from(elm.childNodes));
+      }
+    }
+  };
+
+  const stepFontSize = (delta: number) => {
+    if (!restoreSavedBodyRange()) {
+      bodyEl.focus();
+      return;
+    }
+    const selection = window.getSelection();
+    if (!selection?.rangeCount) return;
+    const current = sizeRungAt(selection.getRangeAt(0));
+    const next = Math.min(SIZE_LADDER.length - 1, Math.max(0, current + delta));
+    if (next === current) return;
+    document.execCommand("fontSize", false, SIZE_LADDER[next].value);
+    bodyEl.querySelectorAll<HTMLElement>("font[size]").forEach(dropOuterSize);
+    normaliseEditorMarkup(bodyEl);
+    if (sizeValueEl) sizeValueEl.textContent = SIZE_LADDER[next].label;
+    touched();
+    syncFloatState();
+  };
+
+  root.querySelectorAll<HTMLButtonElement>("[data-format-size]").forEach((button) =>
+    button.addEventListener("mousedown", (event) => {
+      event.preventDefault();
+      stepFontSize(Number(button.dataset.formatSize));
+    })
+  );
 
   // ---------- insert menu ----------
   interface MenuItem { name: string; hint: string; run: (block: HTMLElement) => void; }
