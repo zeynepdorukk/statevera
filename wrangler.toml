@@ -1,0 +1,14 @@
+name = "statevera-desk"
+main = "worker/index.ts"
+compatibility_date = "2026-08-01"
+
+# Read counts are optional. Create the namespace and uncomment this to switch
+# them on; without it the API answers 501 and the desk says so plainly.
+#   npx wrangler kv namespace create VIEWS
+# [[kv_namespaces]]
+# binding = "VIEWS"
+# id = "paste-the-id-wrangler-prints"
+
+# GOVINFO_API_KEY, CONGRESS_API_KEY and OSCE_SEARCH_API_KEY are optional: each
+# adapter falls back to a public key. Add them with
+#   npx wrangler secret put GOVINFO_API_KEY

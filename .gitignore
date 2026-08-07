@@ -2,6 +2,8 @@
 dist/
 # generated types
 .astro/
+# Wrangler's local state for the API worker
+.wrangler/
 
 # dependencies
 node_modules/

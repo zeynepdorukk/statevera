@@ -1,6 +1,6 @@
 import type { PrimarySourceResult, PrimarySourceType } from "./types";
 
-export const SOURCE_AGENT = "Statevera primary-source index (https://statevera.netlify.app)";
+export const SOURCE_AGENT = "Statevera primary-source index (https://zeynepdorukk.github.io/statevera)";
 
 export function decodeEntities(value: string): string {
   return value

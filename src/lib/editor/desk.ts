@@ -11,6 +11,7 @@
 // ============================================================
 
 import { DEFAULT_MODEL, REPO, clearCredentials, forgetGithubToken, readCredentials, writeCredentials } from "./credentials";
+import { site } from "../../site";
 
 export class DeskError extends Error {
   constructor(
@@ -305,13 +306,24 @@ export async function readLibrary(): Promise<Library> {
 }
 
 /**
- * Read counts came from a store the old server half owned. Nothing keeps them
- * now, so this refuses rather than reporting a zero the desk cannot stand
- * behind; the story list already knows how to say the number is unavailable.
+ * Read counts live in the one small API the publication still runs. It is
+ * optional, so anything short of an answer means the desk shows no number
+ * rather than one it cannot stand behind.
  */
-export const readViewCounts = async (_slugs: string[]): Promise<Record<string, number>> => {
-  throw new DeskError("Read counts need a counter this desk no longer has.", 501);
-};
+export async function readViewCounts(slugs: string[]): Promise<Record<string, number>> {
+  const unique = [...new Set(slugs.filter(Boolean))];
+  if (!unique.length) return {};
+  if (!site.deskUrl) throw new DeskError("No counter is configured.", 501);
+  const response = await fetch(
+    `${site.deskUrl}/api/views?slugs=${encodeURIComponent(unique.join(","))}`
+  );
+  const data = (await response.json().catch(() => ({}))) as {
+    counts?: Record<string, number>;
+    error?: string;
+  };
+  if (!response.ok) throw new DeskError(data.error ?? "No counter answered.", response.status);
+  return data.counts ?? {};
+}
 
 export async function readFile(path: string): Promise<{ content: string; sha: string }> {
   if (!WRITEABLE.test(path)) throw new DeskError("That file is out of bounds.", 400);

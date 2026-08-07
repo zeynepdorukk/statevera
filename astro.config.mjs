@@ -7,9 +7,9 @@ import { unified } from "@astrojs/markdown-remark";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 
-// GitHub Pages serves the repository under /statevera/. Netlify and the local
-// dev server serve from the root, so links and assets follow the host/runtime.
-const BASE = process.env.NETLIFY || process.env.NODE_ENV === "development" ? "" : "/statevera";
+// GitHub Pages serves the repository under /statevera/. The local dev server
+// serves from the root, so links and assets follow the runtime.
+const BASE = process.env.NODE_ENV === "development" ? "" : "/statevera";
 
 /**
  * Reads one key out of the project's .env.
@@ -33,38 +33,37 @@ function readProjectEnv(name) {
 }
 
 /**
- * Runs the desk's API locally, using the same handler that Netlify runs in
- * production, so there is only one implementation to keep honest.
+ * Runs the public API locally, using the same handler the Cloudflare Worker
+ * runs in production, so there is only one implementation to keep honest.
  *
- * `apply: "serve"` means this plugin does not exist during a build. Secrets are
+ * `apply: "serve"` means this plugin does not exist during a build. Keys are
  * read from the gitignored .env at request time and never reach the bundler, so
  * they cannot end up in dist/.
  */
 
 /** @type {import("vite").Plugin} */
-const deskDevPlugin = {
-  name: "statevera-desk-api",
+const apiDevPlugin = {
+  name: "statevera-api",
   apply: "serve",
   configureServer(server) {
-    /** @returns {Record<string, string>} */
+    /** Stands in for the Worker's KV binding, so read counts work while writing. */
+    const viewKeys = new Set();
+    const views = {
+      /** @param {string} key */
+      put: async (key) => void viewKeys.add(key),
+      /** @param {{ prefix: string }} options */
+      list: async ({ prefix }) => ({
+        keys: [...viewKeys].filter((key) => key.startsWith(prefix)).map((name) => ({ name })),
+        list_complete: true,
+      }),
+    };
+
     const env = () => ({
-      EDITOR_USER: readProjectEnv("EDITOR_USER"),
-      EDITOR_PASSWORD: readProjectEnv("EDITOR_PASSWORD"),
-      SESSION_SECRET: readProjectEnv("SESSION_SECRET"),
-      OPENAI_KEY: readProjectEnv("OPENAI_KEY"),
-      GITHUB_TOKEN: readProjectEnv("GITHUB_TOKEN"),
-      GITHUB_REPO: readProjectEnv("GITHUB_REPO"),
       GOVINFO_API_KEY: readProjectEnv("GOVINFO_API_KEY"),
       CONGRESS_API_KEY: readProjectEnv("CONGRESS_API_KEY"),
       OSCE_SEARCH_API_KEY: readProjectEnv("OSCE_SEARCH_API_KEY"),
+      VIEWS: views,
     });
-
-    const ready = env();
-    console.log(
-      ready.EDITOR_PASSWORD && ready.SESSION_SECRET
-        ? `  desk: sign in as ${ready.EDITOR_USER || "zeynepdoruk"}${ready.OPENAI_KEY ? " — assistant ready" : " — no assistant key"}`
-        : "  desk: add EDITOR_PASSWORD and SESSION_SECRET to .env to sign in locally"
-    );
 
     server.middlewares.use((req, res, next) => {
       const url = req.url ?? "";
@@ -77,7 +76,7 @@ const deskDevPlugin = {
       req.on("end", () => {
         void (async () => {
           try {
-            const { handleDesk } = await server.ssrLoadModule("/src/server/desk.ts");
+            const { handleApi } = await server.ssrLoadModule("/src/server/api.ts");
             const headers = new Headers();
             for (const [name, value] of Object.entries(req.headers)) {
               if (typeof value === "string") headers.set(name, value);
@@ -88,7 +87,7 @@ const deskDevPlugin = {
               headers,
               body: chunks.length ? Buffer.concat(chunks) : undefined,
             });
-            const response = await handleDesk(request, env());
+            const response = await handleApi(request, env());
             res.statusCode = response.status;
             response.headers.forEach((/** @type {string} */ value, /** @type {string} */ name) =>
               res.setHeader(name, value)
@@ -171,6 +170,6 @@ export default defineConfig({
   markdown: { processor: unified({ rehypePlugins: [rehypeBaseImages] }) },
   integrations: [mdx(), sitemap({ filter: (page) => !page.includes("/editor") })],
   vite: {
-    plugins: [tailwindcss(), deskDevPlugin],
+    plugins: [tailwindcss(), apiDevPlugin],
   },
 });

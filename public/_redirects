@@ -1,6 +1,0 @@
-# Netlify only; GitHub Pages ignores this file.
-#
-# This deployment exists for the desk, so its front door goes there. The "!" is
-# required: a redirect whose source matches a file that exists — and "/" matches
-# index.html — is otherwise ignored in favour of the file.
-/     /editor     302!

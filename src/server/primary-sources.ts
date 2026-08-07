@@ -3,7 +3,6 @@ import { PRIMARY_SOURCE_TYPES, type PrimarySourceEnv, type PrimarySourceType } f
 
 const ALLOWED_ORIGINS = new Set([
   "https://zeynepdorukk.github.io",
-  "https://statevera.netlify.app",
   "http://localhost:4321",
   "http://127.0.0.1:4321",
 ]);

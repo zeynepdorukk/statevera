@@ -6,7 +6,7 @@ import { PRIMARY_SOURCE_TYPES } from "../primary-sources/types";
 
 const endpoint = import.meta.env.DEV
   ? root("/api/primary-sources")
-  : `${site.deskUrl}/api/primary-sources`;
+  : site.deskUrl && `${site.deskUrl}/api/primary-sources`;
 
 const institutions = [
   ["United Nations", "UN Official Document System"],

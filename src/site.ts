@@ -37,8 +37,12 @@ export const site = {
 
   // Technical ------------------------------------------------
   siteUrl: "https://zeynepdorukk.github.io/statevera",
-  /** The editorial desk. It needs a server, so it is not on GitHub Pages. */
-  deskUrl: "https://statevera.netlify.app",
+  /**
+   * The small API behind primary-source search and read counts. Set
+   * PUBLIC_DESK_URL to the deployed Worker; left empty, the pages that use it
+   * say so rather than calling a host that is not there.
+   */
+  deskUrl: (import.meta.env.PUBLIC_DESK_URL ?? "").replace(/\/$/, ""),
   defaultOgImage: "/images/branding/og-image.jpg",
   locale: "en",
   language: "en-US",

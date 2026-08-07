@@ -150,5 +150,5 @@ const jsonLd = [
     <RelatedStories article={article} count={3} />
   </div>
 
-  {!data.draft && <ArticleViewTracker slug={slugOf(article)} endpoint={`${site.deskUrl}/api/views`} />}
+  {!data.draft && site.deskUrl && <ArticleViewTracker slug={slugOf(article)} endpoint={`${site.deskUrl}/api/views`} />}
 </BaseLayout>
