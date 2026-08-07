@@ -227,6 +227,54 @@ async function listDirectory(env: DeskEnv, directory: string): Promise<Entry[]> 
   return Array.isArray(entries) ? entries.filter((e) => e.type === "file") : [];
 }
 
+interface ArticleMeta {
+  /** The content schema defaults an omitted draft flag to false. */
+  draft: boolean;
+  title?: string;
+  description?: string;
+  date?: string;
+  category?: string;
+  region?: string;
+}
+
+/** Read the small scalar subset of frontmatter the story list needs. */
+function readArticleMeta(raw: string): ArticleMeta {
+  const match = raw.match(/^---\s*\r?\n([\s\S]*?)\r?\n---\s*\r?\n?/);
+  const values: Record<string, string> = {};
+  for (const line of (match?.[1] ?? "").split(/\r?\n/)) {
+    if (!line.trim() || /^\s/.test(line)) continue;
+    const field = line.match(/^([A-Za-z_][\w-]*):\s*(.*)$/);
+    if (!field) continue;
+    let value = field[2].trim();
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1).replace(/\\([\\"])/g, "$1");
+    }
+    values[field[1]] = value;
+  }
+
+  return {
+    draft: /^true$/i.test(values.draft ?? "false"),
+    ...(values.title ? { title: values.title } : {}),
+    ...(values.description ? { description: values.description } : {}),
+    ...(values.date ? { date: values.date } : {}),
+    ...(values.category ? { category: values.category } : {}),
+    ...(values.region ? { region: values.region } : {}),
+  };
+}
+
+/**
+ * The desk must decide Published/Draft from the repository itself. The public
+ * Journal is a static Pages build, so using its search index here made a newly
+ * published piece look like a draft until that separate build finished.
+ */
+async function articleWithMeta(env: DeskEnv, entry: Entry): Promise<Entry & ArticleMeta> {
+  const file = await githubJson<{ content?: string }>(env, `/contents/${entry.path}?ref=HEAD`);
+  return { ...entry, ...readArticleMeta(fromBase64(file.content ?? "")) };
+}
+
 // ------------------------------------------------------------
 // OpenAI
 // ------------------------------------------------------------
@@ -536,9 +584,23 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
         listDirectory(env, "src/content/articles").catch(() => [] as Entry[]),
         listDirectory(env, "public/images/articles").catch(() => [] as Entry[]),
       ]);
-      const slim = (entries: Entry[]) => entries.map(({ name, path, sha }) => ({ name, path, sha }));
+      const articleFiles = articles.filter((f) => /\.mdx?$/.test(f.name));
+      const articleMeta = await Promise.all(articleFiles.map((entry) => articleWithMeta(env, entry)));
       return json({
-        articles: slim(articles.filter((f) => /\.mdx?$/.test(f.name))),
+        // Include frontmatter metadata with the file listing. The browser can
+        // now show the repository's real draft state without waiting for Pages
+        // to rebuild its public search index.
+        articles: articleMeta.map(({ name, path, sha, draft, title, description, date, category, region }) => ({
+          name,
+          path,
+          sha,
+          draft,
+          title,
+          description,
+          date,
+          category,
+          region,
+        })),
         images: images
           .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f.name))
           .map((f) => f.name),

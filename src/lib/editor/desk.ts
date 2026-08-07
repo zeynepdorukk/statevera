@@ -21,6 +21,13 @@ export interface FileEntry {
   name: string;
   path: string;
   sha: string;
+  /** Repository frontmatter, read from GitHub rather than a deployed index. */
+  draft?: boolean;
+  title?: string;
+  description?: string;
+  date?: string;
+  category?: string;
+  region?: string;
 }
 
 export interface Session {

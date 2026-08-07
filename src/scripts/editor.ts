@@ -15,9 +15,10 @@ import { site } from "../site";
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 setAssetBase(import.meta.env.BASE_URL);
 
-// Titles and dates come from the published site, not from this deployment's own
-// build, so a piece published a minute ago is named properly in the list even
-// if the desk itself has not been rebuilt since.
+// Titles and dates are normally read from the repository metadata returned by
+// the desk API. The public search index remains a fallback for older desk
+// deployments, but it must never decide whether a piece is Published: Pages
+// can be a minute behind the editor after a commit.
 const LIVE_INDEX = `${site.siteUrl}/search-index.json`;
 
 const K_DRAFT = "sv-draft:";
@@ -173,6 +174,35 @@ async function openStories(notice = "") {
     const library = await readLibrary();
     state.images = library.images;
 
+    // The metadata fields are returned by current desk servers. During a
+    // rolling deploy (or on an older server), read the same frontmatter through
+    // the already-authenticated file endpoint so the fallback is still based
+    // on GitHub HEAD rather than on a possibly stale Pages build.
+    const repositoryArticles = await Promise.all(
+      library.articles
+        .filter((f) => /\.mdx?$/.test(f.name))
+        .map(async (file) => {
+          if (typeof file.draft === "boolean") return file;
+          try {
+            const raw = await readFile(file.path);
+            const parsed = parseDocument(raw.content).frontmatter;
+            return {
+              ...file,
+              draft: String(parsed.draft ?? "false").trim().toLowerCase() === "true",
+              title: parsed.title,
+              description: parsed.description,
+              date: parsed.date,
+              category: parsed.category,
+              region: parsed.region,
+            };
+          } catch {
+            // Keep the public-index fallback for a transient read failure. It
+            // is better than losing a story card altogether.
+            return file;
+          }
+        })
+    );
+
     const index: { url: string; title: string; description: string; category: string; region: string; date: string }[] =
       await fetch(LIVE_INDEX)
         .then((r) => r.json())
@@ -186,17 +216,18 @@ async function openStories(notice = "") {
         slug,
         path: f.path,
         sha: f.sha,
-        title: meta?.title ?? slug.replace(/-/g, " "),
-        description: meta?.description ?? "",
-        date: meta?.date?.slice(0, 10) ?? "",
-        desk: meta?.category ?? "",
-        region: meta?.region ?? "",
-        live: Boolean(meta),
+        title: f.title ?? meta?.title ?? slug.replace(/-/g, " "),
+        description: f.description ?? meta?.description ?? "",
+        date: f.date?.slice(0, 10) ?? meta?.date?.slice(0, 10) ?? "",
+        desk: f.category ?? meta?.category ?? "",
+        region: f.region ?? meta?.region ?? "",
+        // This is the critical distinction: draft is a repository field, not
+        // an inference from whether the Pages search index has caught up.
+        live: typeof f.draft === "boolean" ? !f.draft : Boolean(meta),
       };
     };
 
-    state.stories = library.articles
-      .filter((f) => /\.mdx?$/.test(f.name))
+    state.stories = repositoryArticles
       .map(build("article"))
       .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
