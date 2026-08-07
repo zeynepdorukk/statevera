@@ -1,10 +1,56 @@
 {
-  "generatedAt": "2026-08-07T19:27:46.727Z",
+  "generatedAt": "2026-08-07T20:04:28.278Z",
   "sourceCount": 26,
   "failedSources": [
     "bbc-africa"
   ],
   "items": [
+    {
+      "id": "67b7572b6d47",
+      "title": "Japan's capital plans underground missile shelter near Tokyo Station",
+      "summary": "",
+      "url": "https://asia.nikkei.com/politics/defense/japan-s-capital-plans-underground-missile-shelter-near-tokyo-station",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-07T20:04:23.646Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "8b99d1567ca6",
+      "title": "Iran's Araghchi praises military, urges Muslim unity",
+      "summary": "Iran's Araghchi praises military, urges Muslim unity Iranian Foreign Minister Abbas Araghchi said on Friday that Iran's armed forces had demonstrated their readiness and strength in confronting what he called the world's most expensive military, and urged…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/irans-araqchi-praises-military-urges-muslim-unity",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-07T19:41:53.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "16256a2e15af",
+      "title": "US official: 'We expect a deal soon' between Iran and Oman on Strait of Hormuz",
+      "summary": "US official: 'We expect a deal soon' between Iran and Oman on Strait of Hormuz Progress is being made between Iran and Oman on the Strait of Hormuz and \"we expect a deal soon,\" a US official told Reuters on Friday. Once a deal is announced to restore…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-official-we-expect-deal-soon-between-iran-and-oman-strait-hormuz",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-07T19:40:21.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "b3353527542e",
       "title": "US Treasury targets crypto exchanges in new Iran sanctions",
@@ -487,6 +533,21 @@
       "weight": 2
     },
     {
+      "id": "cea45b3b8f09",
+      "title": "Iranian lawmaker criticises new 'Mecca Joint Defence Agreement'",
+      "summary": "Iranian lawmaker criticises new 'Mecca Joint Defence Agreement' Iranian lawmaker Ebrahim Rezaei says the new defence pact with Pakistan and Turkey will not bring security to Saudi Arabia, and that Riyadh should instead focus on changing its policies. سعودی‌ها…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iranian-lawmaker-criticises-new",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-07T13:15:40.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "d166840c48ee",
       "title": "Saudi Arabia, Pakistan and Turkey sign Nato-style defence pact amid deadly Houthi strikes in Yemen",
       "summary": "Mecca joint defence agreement says an attack on one country will be deemed an attack on all Who are the Houthis – explained in 30 seconds Saudi Arabia, Pakistan and Turkey have signed a mutual defence agreement, placing three of the Muslim world’s most…",
@@ -590,6 +651,36 @@
       "category": "Geopolitics",
       "region": "Asia-Pacific",
       "weight": 3
+    },
+    {
+      "id": "c83dc2535ef9",
+      "title": "Peacock party takes pride of place in nod to decades of turbulent history",
+      "summary": "In a new twist on panda diplomacy, UN Geneva welcomed five young peacocks to the Palace of Nations on Friday, a gift of India that preserves a tradition of keeping the stately birds in the grounds, that predates both the global body and its ill-fated…",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168099",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-07T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/08/07-08-2026-UN-Photo-peacocks-01.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "fe6d261e26c2",
+      "title": "Ebola in DR Congo: Childhood deaths rise; hopes raised over new vaccine",
+      "summary": "More than 300 children have died in the Ebola outbreak in the eastern Democratic Republic of the Congo (DRC), the UN said on Friday, as health experts urged trials of the only vaccine against the disease to halt further spread of the rare Bundibugyo species.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168100",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-07T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/06/19-06-2026-WHO-DR-Congo-ebola-01.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "region": "Africa",
+      "weight": 2
     },
     {
       "id": "bc1ae6f4e556",
@@ -730,21 +821,6 @@
       "weight": 3
     },
     {
-      "id": "0792c973a25e",
-      "title": "Trump says war ‘can’t go much longer’ – what’s the latest on talks?",
-      "summary": "Reports suggest that Tehran is discussing a bill barring US and Israeli vessels from passing the Strait of Hormuz.",
-      "url": "https://www.aljazeera.com/news/2026/8/7/trump-says-war-cant-go-much-longer-whats-the-latest-on?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-07T11:15:44.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "2639171f9189",
       "title": "Michigan race: El-Sayed victory shows progressive candidates can be highly competitive",
       "summary": "Delano D'Souza is pleased to welcome Ian Reifowitz, SUNY Distinguished Professor Historical Studies at SUNY Empire State University. The Michigan Democratic Senate primary illustrates a broader tension reshaping American politics: the contest is not simply…",
@@ -787,21 +863,6 @@
       "imageWidth": 0,
       "category": "Security",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "29e9f67e9020",
-      "title": "Saudi army won't 'stand idly by' amid Houthi attacks in Yemen, source says",
-      "summary": "Saudi army won't 'stand idly by' amid Houthi attacks in Yemen, source says A source close to the Saudi military said on Friday that the Saudi-led coalition supporting Yemen's government since 2015 would not \"stand idly by\" as the Houthi rebels escalated their…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/saudi-army-wont-stand-idly-houthi-attacks-yemen-source-says",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-07T10:48:52.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -867,7 +928,7 @@
     {
       "id": "d410130d2049",
       "title": "Germany news: Exports and factory data lift economic outlook",
-      "summary": "German exports hit a record high in June, while industrial production rose for a third month in a row. Meanwhile, more than 1,000 pigs have died in a fire at a farm in Bavaria. DW has the latest.",
+      "summary": "German exports hit a record high in June, while industrial production rose for a third month in a row. Meanwhile, more than 1,000 pigs have died in a fire at a farm in Bavaria.",
       "url": "https://www.dw.com/en/germany-news-exports-and-factory-data-lift-economic-outlook/live-78274476?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
@@ -2311,21 +2372,6 @@
       "weight": 2
     },
     {
-      "id": "ac2d78501092",
-      "title": "Strengthening El Niño to push 49 million more people into acute hunger",
-      "summary": "Nearly 50 million more people in highly vulnerable communities globally are set to be pushed into acute hunger because of the strengthening El Niño weather phenomenon, the UN World Food Programme (WFP) said on Wednesday.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168079",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-05T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/assets/2016/04/24255/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "6d275e1ac142",
       "title": "El-Sayed overcomes $30 million AIPAC spend, wins Michigan primary",
       "summary": "Abdul El-Sayed became the latest progressive insurgent to win a Democratic nomination contest on Tuesday, when he bested sitting House Rep. Haley Stevens to become the party’s nominee for Senate in Michigan. At the time of writing, with 95% of the votes…",
@@ -2579,21 +2625,6 @@
       "category": "Security",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "67fd20d75902",
-      "title": "Africans bear the brunt of biodiversity loss",
-      "summary": "For millions across Africa and the developing world, the biodiversity crisis is not an abstract problem – it’s the soil that no longer yields bountiful harvests and the fish that no longer return to coastal waters.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168078",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-04T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/07/29-07-26_UNDP_India_Mangroves.jpeg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "region": "Africa",
-      "weight": 2
     },
     {
       "id": "30c103f7f8e5",
