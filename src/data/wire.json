@@ -1,10 +1,25 @@
 {
-  "generatedAt": "2026-08-07T18:51:32.301Z",
+  "generatedAt": "2026-08-07T19:27:46.727Z",
   "sourceCount": 26,
   "failedSources": [
     "bbc-africa"
   ],
   "items": [
+    {
+      "id": "b3353527542e",
+      "title": "US Treasury targets crypto exchanges in new Iran sanctions",
+      "summary": "US Treasury targets crypto exchanges in new Iran sanctions The United States on Friday sanctioned an unlicensed multi-state cryptocurrency exchange, alleging it processed millions of dollars of crypto for Iran’s Islamic Revolutionary Guard Corps and other…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-treasury-targets-crypto-exchanges-new-iran-sanctions",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-07T18:58:21.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "3ae0fdc4cd1f",
       "title": "Chinese drone exports take off in Southeast Asia, other emerging markets",
@@ -19,6 +34,21 @@
       "imageWidth": 0,
       "category": "Security",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "f807f5a50b8b",
+      "title": "US Senate passes Russia sanctions bill championed by Lindsey Graham",
+      "summary": "Late senator spent final days of his life working to advance bill that will now head to the House after 86-11 Senate vote By a large, bipartisan margin, the US Senate on Friday approved a bill intended to punish Russia and countries that buy its petroleum…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/07/russia-sanctions-senate-passed-petroleum",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-07T18:46:22.000Z",
+      "image": "https://i.guim.co.uk/img/media/b07ebe52f4de74ae6efbbe234e88b72d2a0fc65c/250_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=2a81724806570a8a91ef3bd2d5825dbe",
+      "imageWidth": 700,
+      "category": "Politics",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -49,21 +79,6 @@
       "imageWidth": 0,
       "category": "Politics",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "f807f5a50b8b",
-      "title": "US Senate passes Russia sanctions bill championed by Lindsey Graham",
-      "summary": "Late senator spent final days of his life working to advance bill that will now head to the House after 86-11 Senate vote By a large, bipartisan margin, the US Senate on Friday approved a bill intended to punish Russia and countries that buy its petroleum…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/07/russia-sanctions-senate-passed-petroleum",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-07T17:39:39.000Z",
-      "image": "https://i.guim.co.uk/img/media/b07ebe52f4de74ae6efbbe234e88b72d2a0fc65c/250_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=2a81724806570a8a91ef3bd2d5825dbe",
-      "imageWidth": 700,
-      "category": "Politics",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -169,21 +184,6 @@
       "imageWidth": 240,
       "category": "Diplomacy",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "3d5963ddde53",
-      "title": "Kemi Badenoch’s weird week: defence of ex-neo-Nazi raises questions over Tory direction",
-      "summary": "Some in party are delighted by leader’s tack rightwards but opponents have savoured latest Conservative controversy There was a moment in the middle of this week when a news alert raised eyebrows among the politically committed. It read: “Kemi Badenoch:…",
-      "url": "https://www.theguardian.com/politics/2026/aug/07/kemi-badenoch-joshua-bonehill-paine-conservatives-weird-week",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-07T15:36:43.000Z",
-      "image": "https://i.guim.co.uk/img/media/8198daa65ce9edc1ed98eb92ecfa4589b3c7aadc/1985_0_2973_2378/master/2973.jpg?width=700&quality=85&auto=format&fit=max&s=7109ab5246fd0f012e81012cd3b4f6a0",
-      "imageWidth": 700,
-      "category": "Security",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -820,21 +820,6 @@
       "weight": 2
     },
     {
-      "id": "0819d72601e4",
-      "title": "Elon Musk is a race-war entrepreneur",
-      "summary": "Elon Musk is a race-war entrepreneur Submitted by Amina Shareef on Fri, 07/31/2026 - 20:28 The US trillionaire fans the flames of far-right hatred by amplifying racial antagonisms and myths of white dispossession US entrepreneur Elon Musk during an event…",
-      "url": "https://www.middleeasteye.net/opinion/elon-musk-race-war-entrepreneur",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-07T10:34:10.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "b0083b219a64",
       "title": "Musk says French Greens’ presidential candidate should be ‘shut down’",
       "summary": "The owner of X previously threw his support behind far-right leader Marine Le Pen to win the presidency.",
@@ -855,8 +840,8 @@
       "summary": "Move to raise levy on goods made with polysilicon aims to protect domestic US supply chains from China, the major producer Donald Trump has ordered a new 15% tariff on imported products made of polysilicon, an important ingredient in microchip manufacturing…",
       "url": "https://www.theguardian.com/us-news/2026/aug/07/trump-orders-tariff-solar-panels-microchips-manufacturing-ingredient",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
+      "publisherHome": "https://www.theguardian.com/business/economics",
+      "sourceId": "guardian-economics",
       "publishedAt": "2026-08-07T09:11:36.000Z",
       "image": "https://i.guim.co.uk/img/media/908237f4505e2ae1348ac9098ae93c4bd57241a4/427_0_4268_3414/master/4268.jpg?width=700&quality=85&auto=format&fit=max&s=e2501931101c710eb33578006438ee47",
       "imageWidth": 700,
@@ -952,21 +937,6 @@
       "imageWidth": 0,
       "category": "Security",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "bdf52410016d",
-      "title": "Argentina: Thousands protest private property legislation",
-      "summary": "Thousands took to the streets outside Argentina’s Senate on Thursday to protest a controversial private property bill, with demonstrations ending in scuffles, tear gas and rubber bullets. Javier Milei’s government has removed the most contentious part of the…",
-      "url": "https://www.france24.com/en/argentina-thousands-protest-private-property-legislation",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-07T08:05:09.000Z",
-      "image": "https://s.france24.com/media/display/72e04098-9235-11f1-bf48-005056bfb2b6/w:1024/p:16x9/EN-20260807-091252-091432-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -1243,6 +1213,21 @@
       "imageWidth": 700,
       "category": "Security",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "81fded00e317",
+      "title": "Argentina: Milei's property bill triggers protests, anger",
+      "summary": "Police clashed with protesters in Buenos Aires after thousands rallied against President Javier Milei's private property bill. The government had already dropped a provision on foreigners buying land in Argentina.",
+      "url": "https://www.dw.com/en/argentina-milei-s-property-bill-triggers-protests-anger/a-78272866?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-07T01:21:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "region": "Americas",
       "weight": 2
     },
     {
