@@ -1,137 +1,147 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site, pillars, deskList } from "../site";
-import { leadStories, byCategory, spread, wireItems } from "../data/wire";
+import { byCategory, spread, wireItems } from "../data/wire";
 import { getJournalStream, getFeaturedArticle, root } from "../utils/collection";
 import WireCard from "../components/WireCard.astro";
 import JournalCard from "../components/JournalCard.astro";
 import SectionHead from "../components/SectionHead.astro";
 
-// NEWS — the lead slots never repeat anywhere below
-const leads = leadStories(5);
-const leadIds = new Set(leads.map((i) => i.id));
-const [lead, ...secondary] = leads;
+// The homepage has one clear editorial order: Statevera first, then its signed
+// analysis, followed by the external reporting and research tool.
+const identityPillars = [
+  {
+    tone: "journal",
+    label: "The Journal",
+    title: "Original analysis",
+    description: "Essays and analysis by Zeynep Doruk.",
+  },
+  {
+    tone: "wire",
+    label: "World News",
+    title: "Curated reporting",
+    description: "Reporting gathered from international sources.",
+  },
+  {
+    tone: "risk",
+    label: "GLORISK",
+    title: "Research and risk",
+    description: "Data-driven geopolitical and country-risk research.",
+  },
+] as const;
 
-// NEWS — compact feed under the hero, deduped against the leads
-const usedIds = new Set(leadIds);
-const feed = spread(wireItems.filter((i) => !usedIds.has(i.id)), 30, 2).slice(0, 8);
+// NEWS — compact feed below the Journal, with a single source of truth for
+// exclusions so the desks and long tail never repeat a headline.
+const usedIds = new Set<string>();
+const feed = spread(wireItems, 30, 2).slice(0, 8);
 for (const item of feed) usedIds.add(item.id);
 
-// JOURNAL — signed analysis. The rail next to the hero shows the most
-// recent pieces, the band below shows the featured one plus the rest.
+// JOURNAL — signed analysis. The empty state is a deliberate launch message,
+// not a generic collection fallback.
 const journal = await getJournalStream(7);
 const featured = await getFeaturedArticle();
 const featuredId = featured?.id;
-const asideJournal = journal.filter((i) => i.entry.id !== featuredId).slice(0, 3);
-const asideIds = new Set(asideJournal.map((i) => i.entry.id));
-const mainJournal = journal
-  .filter((i) => i.entry.id !== featuredId && !asideIds.has(i.entry.id))
-  .slice(0, 4);
+const mainJournal = journal.filter((item) => item.entry.id !== featuredId).slice(0, 4);
 
-// DESKS — Security, Diplomacy, Economy without repeating the feed above
+// DESKS — Security, Diplomacy and Economy without repeating the news feed.
 const deskBlocks = deskList
+  .filter((desk) => ["security", "diplomacy", "economy"].includes(desk.slug))
   .map((desk) => ({
     desk,
     items: byCategory(desk.name, 8)
-      .filter((i) => !usedIds.has(i.id))
+      .filter((item) => !usedIds.has(item.id))
       .slice(0, 4),
   }))
-  .filter((block) => block.items.length >= 3)
-  .slice(0, 3);
+  .filter((block) => block.items.length >= 3);
 for (const block of deskBlocks) for (const item of block.items) usedIds.add(item.id);
 
-// NEWS — the long tail, everything above is off the table
-const rest = spread(wireItems.filter((i) => !usedIds.has(i.id)), 12, 2).slice(0, 12);
+// NEWS — the long tail, everything above is off the table.
+const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).slice(0, 12);
 ---
 
 <BaseLayout title="" description={site.publicationDescription} path="/">
-  <h1 class="sr-only">{site.publicationName} — {site.publicationTagline}</h1>
+  <!-- ============ EDITORIAL HERO ============ -->
+  <section class="home-hero relative isolate overflow-hidden border-b border-line" aria-labelledby="home-title">
+    <img
+      src={root("/images/previews/briefing-red-sea.jpg")}
+      alt="Aerial view of a strategic shipping route and port"
+      class="home-hero-image absolute inset-0 h-full w-full object-cover"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="home-hero-overlay absolute inset-0" aria-hidden="true"></div>
 
-  <!-- ============ LEAD ============ -->
-  <section class="shell pt-6 md:pt-8" aria-label="Top stories" data-tone="wire">
-    <div class="grid gap-x-8 gap-y-8 lg:grid-cols-[minmax(0,7.4fr)_minmax(0,2.6fr)]">
-      <div>
-        {lead && <WireCard item={lead} variant="lead" priority headingLevel="h2" />}
-
-        {secondary.length > 0 && (
-          <div class="mt-8 grid gap-x-7 gap-y-8 border-t border-line pt-7 sm:grid-cols-2 lg:grid-cols-4">
-            {secondary.map((item) => (
-              <WireCard item={item} variant="feature" showDek={false} priority />
-            ))}
-          </div>
-        )}
-      </div>
-
-      <aside class="lg:border-l lg:border-line lg:pl-8" aria-label="From the Journal" data-tone="journal">
-        <SectionHead title="From the Journal" tone="journal" href="/journal" moreLabel="Archive" />
-        {asideJournal.length > 0 ? (
-          <div class="rule-list">
-            {asideJournal.map((item) => (
-              <JournalCard item={{ kind: "article", entry: item.entry }} variant="text" />
-            ))}
-          </div>
-        ) : (
-          <div class="border-t border-line pt-4">
-            <p class="font-serif text-[0.97rem] leading-relaxed text-ink-soft">
-              Original analysis written for Statevera by{" "}
-              <a href={root("/about")} class="link-tone">{site.authorName}</a>.
-            </p>
-            <p class="mt-3 font-serif text-[0.97rem] leading-relaxed text-ink-soft">
-              <a href={root("/journal")} class="link-tone">Read the archive &rarr;</a>
-            </p>
-          </div>
-        )}
-      </aside>
-    </div>
-  </section>
-
-  <!-- ============ NEWS FEED ============ -->
-  <section class="shell mt-14" aria-label="News" data-tone="wire">
-    <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3 border-b-2 border-ink pb-5">
-      <div>
-        <p class="kicker">News</p>
-        <h2 class="t-headline mt-1">{pillars.wire.tagline}</h2>
-        <p class="mt-1 font-serif text-[0.98rem] italic text-muted">What is happening.</p>
-      </div>
-      <a href={root("/wire")} class="link-tone mb-1 font-sans text-[0.68rem] font-bold tracking-[0.11em] uppercase">
-        All news <span aria-hidden="true">&rarr;</span>
-      </a>
-    </div>
-    <div class="mt-1 grid gap-x-9 gap-y-4 sm:grid-cols-2">
-      {feed.map((item) => (
-        <div class="border-t border-line pt-4">
-          <WireCard item={item} variant="text" />
+    <div class="shell relative flex min-h-[clamp(34rem,calc(100vh-9.5rem),48rem)] items-end py-14 md:py-20">
+      <div class="home-hero-copy max-w-3xl" data-tone="journal">
+        <p class="kicker text-journal">STATEVERA</p>
+        <h1 id="home-title" class="mt-3 max-w-3xl font-serif text-[clamp(2.75rem,6vw,5.8rem)] font-semibold leading-[0.95] tracking-[-0.035em] text-white">
+          Understanding power beyond the headline.
+        </h1>
+        <p class="mt-6 max-w-2xl font-serif text-[clamp(1.14rem,1.4vw,1.45rem)] leading-relaxed text-white/90">
+          Statevera is an independent international affairs publication exploring geopolitics, diplomacy, political economy and the changing international order.
+        </p>
+        <p class="mt-4 max-w-2xl font-sans text-[0.86rem] leading-relaxed text-white/70">
+          Original analysis by <strong class="font-semibold text-white">Zeynep Doruk</strong>, alongside curated global reporting and data-driven geopolitical research.
+        </p>
+        <div class="home-hero-actions mt-8 flex flex-wrap gap-3">
+          <a href={root("/journal")} class="btn btn-tone">Read The Journal <span aria-hidden="true">&rarr;</span></a>
+          <a href={root("/wire")} class="btn home-hero-secondary">Explore World News <span aria-hidden="true">&rarr;</span></a>
         </div>
-      ))}
+      </div>
     </div>
   </section>
 
-  <!-- ============ JOURNAL ============ -->
+  <!-- ============ WHAT IS STATEVERA? ============ -->
+  <section class="shell border-b border-line py-8 md:py-10" aria-labelledby="what-is-statevera">
+    <div class="grid gap-6 lg:grid-cols-[minmax(14rem,2fr)_minmax(0,8fr)] lg:gap-10">
+      <div>
+        <p class="kicker-ink">What is Statevera?</p>
+        <h2 id="what-is-statevera" class="t-headline mt-2 max-w-sm">One publication. Three ways to read the world.</h2>
+      </div>
+      <div class="grid border-t border-line sm:grid-cols-3 sm:border-t-0">
+        {identityPillars.map((pillar, index) => (
+          <div class="border-b border-line py-5 sm:border-b-0 sm:border-l sm:px-5 sm:py-1 first:sm:border-l-0 first:sm:pl-0" data-tone={pillar.tone}>
+            <p class="kicker">0{index + 1} &middot; {pillar.label}</p>
+            <h3 class="mt-2 font-serif text-[1.25rem] font-semibold leading-tight text-ink">{pillar.title}</h3>
+            <p class="mt-2 max-w-xs font-serif text-[0.98rem] leading-relaxed text-ink-soft">{pillar.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE JOURNAL ============ -->
   <section
-    class="mt-14 border-y-2 border-t-journal border-ink bg-paper-soft"
-    aria-label="Journal"
+    class="home-journal mt-0 border-y-2 border-t-journal border-ink bg-paper-soft"
+    aria-labelledby="journal-title"
     data-tone="journal"
   >
-    <div class="shell py-9">
-      <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
+    <div class="shell py-12 md:py-16">
+      <div class="grid gap-7 lg:grid-cols-[minmax(0,6fr)_minmax(17rem,4fr)] lg:items-end">
         <div>
-          <p class="kicker">Journal</p>
-          <h2 class="t-headline mt-1">{pillars.journal.tagline}</h2>
-          <p class="mt-1 font-serif text-[0.98rem] italic text-muted">What does it mean.</p>
+          <p class="kicker">The Journal</p>
+          <h2 id="journal-title" class="t-display mt-2">{pillars.journal.tagline}</h2>
+          <p class="mt-3 font-serif text-[1.1rem] italic text-muted">What does it mean?</p>
         </div>
-        <p class="max-w-md pb-1 font-serif text-[0.98rem] leading-relaxed text-ink-soft">
-          Original analysis written for Statevera by{" "}
+        <p class="max-w-md font-serif text-[1.02rem] leading-relaxed text-ink-soft lg:pb-1">
+          Original essays and analysis written for Statevera by{" "}
           <a href={root("/about")} class="link-tone">{site.authorName}</a>.
-          <a href={root("/journal")} class="link-tone ml-1">Read the archive &rarr;</a>
+          <a href={root("/journal")} class="link-tone ml-1">Visit The Journal &rarr;</a>
         </p>
       </div>
 
       {journal.length === 0 ? (
-        <p class="border-t border-line py-14 text-center font-serif text-[1.05rem] text-muted">
-          Nothing published yet.
-        </p>
+        <div class="home-journal-launch mt-9 border-y border-journal/60 px-5 py-7 md:flex md:items-center md:justify-between md:gap-10 md:px-7 md:py-8">
+          <div>
+            <p class="kicker">A new editorial series</p>
+            <p class="mt-2 max-w-3xl font-serif text-[clamp(1.3rem,2vw,1.75rem)] leading-tight text-ink">
+              The Journal is launching soon. Essays and analysis on geopolitics, diplomacy, political economy and international order.
+            </p>
+          </div>
+          <a href={root("/journal")} class="btn btn-tone mt-6 shrink-0 md:mt-0">Explore The Journal <span aria-hidden="true">&rarr;</span></a>
+        </div>
       ) : (
-        <div class="grid gap-x-8 gap-y-9 border-t border-line pt-7 lg:grid-cols-[minmax(0,5fr)_minmax(0,5fr)]">
+        <div class="mt-9 grid gap-x-8 gap-y-9 border-t border-line pt-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,5fr)]">
           {featured && (
             <JournalCard item={{ kind: "article", entry: featured }} variant="lead" priority headingLevel="h3" />
           )}
@@ -148,12 +158,33 @@ const rest = spread(wireItems.filter((i) => !usedIds.has(i.id)), 12, 2).slice(0,
     </div>
   </section>
 
+  <!-- ============ WORLD NEWS ============ -->
+  <section class="shell mt-16" aria-labelledby="news-title" data-tone="wire">
+    <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3 border-b-2 border-ink pb-5">
+      <div>
+        <p class="kicker">World News</p>
+        <h2 id="news-title" class="t-headline mt-1">{pillars.wire.tagline}</h2>
+        <p class="mt-1 font-serif text-[0.98rem] italic text-muted">What is happening.</p>
+      </div>
+      <a href={root("/wire")} class="link-tone mb-1 font-sans text-[0.68rem] font-bold tracking-[0.11em] uppercase">
+        Explore all news <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+    <div class="mt-1 grid gap-x-9 gap-y-4 sm:grid-cols-2">
+      {feed.map((item) => (
+        <div class="border-t border-line pt-4">
+          <WireCard item={item} variant="text" />
+        </div>
+      ))}
+    </div>
+  </section>
+
   <!-- ============ DESKS ============ -->
-  <section class="shell mt-14" aria-label="Desks" data-tone="wire">
+  <section class="shell mt-16" aria-label="Desks" data-tone="wire">
     <div class="grid gap-x-8 gap-y-10 lg:grid-cols-3">
       {deskBlocks.map(({ desk, items }) => (
         <div>
-          <SectionHead title={desk.name} tone="wire" href={`/wire/${desk.slug}`} moreLabel="More" />
+          <SectionHead title={desk.name} tone="wire" href={"/wire/" + desk.slug} moreLabel="More" />
           <WireCard item={items[0]} variant="feature" />
           <div class="rule-list mt-4 border-t border-line pt-1">
             {items.slice(1).map((item) => (
@@ -165,28 +196,42 @@ const rest = spread(wireItems.filter((i) => !usedIds.has(i.id)), 12, 2).slice(0,
     </div>
   </section>
 
-  <!-- ============ GLORISK ============ -->
-  <section class="mt-14 border-y-2 border-ink bg-paper-soft" aria-label="GLORISK" data-tone="risk">
-    <div class="shell py-9">
-      <div>
-        <p class="kicker-ink">GLORISK</p>
-        <h2 class="t-headline mt-1.5">{pillars.risk.tagline}</h2>
-        <p class="mt-2 font-serif text-[1.02rem] italic text-muted">What does the data show.</p>
-        <p class="mt-3 max-w-xl font-serif text-[1.03rem] leading-relaxed text-ink-soft">
-          {pillars.risk.description}
-        </p>
-        <a href={root("/risk")} class="btn mt-5">
-          Open Glorisk
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
-            <path d="M5 12h14M13 6l6 6-6 6"></path>
-          </svg>
-        </a>
+  <!-- ============ STATEVERA RESEARCH / GLORISK ============ -->
+  <section class="home-research mt-16 border-y-2 border-ink bg-paper-soft" aria-labelledby="research-title" data-tone="risk">
+    <div class="shell py-12 md:py-16">
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:items-end">
+        <div>
+          <p class="kicker-ink">Statevera Research</p>
+          <h2 id="research-title" class="t-display mt-2">GLORISK</h2>
+          <p class="mt-3 font-serif text-[1.1rem] italic text-muted">What does the data show?</p>
+          <p class="mt-4 max-w-2xl font-serif text-[1.08rem] leading-relaxed text-ink-soft">
+            {pillars.risk.description}
+          </p>
+          <a href={root("/risk")} class="btn mt-7">Open GLORISK <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div class="home-research-grid grid border-t border-line sm:grid-cols-3 lg:border-l lg:border-t-0 lg:pl-8">
+          <div class="border-b border-line py-4 sm:border-b-0 sm:pr-5 lg:py-1">
+            <p class="kicker-ink">01</p>
+            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Country risk</p>
+            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">A structured view of political and strategic exposure.</p>
+          </div>
+          <div class="border-b border-line py-4 sm:border-b-0 sm:border-l sm:px-5 lg:py-1">
+            <p class="kicker-ink">02</p>
+            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Shock scenarios</p>
+            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">Signals for how disruption can travel across borders.</p>
+          </div>
+          <div class="py-4 sm:border-l sm:px-5 lg:py-1">
+            <p class="kicker-ink">03</p>
+            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Strategic exposure</p>
+            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">Research designed to make geopolitical risk legible.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ MORE FROM NEWS ============ -->
-  <section class="shell mt-14 pb-6" aria-label="More reporting" data-tone="wire">
+  <section class="shell mt-16 pb-8" aria-label="More reporting" data-tone="wire">
     <SectionHead title="More from News" tone="wire" href="/wire" moreLabel="All news" />
     <div class="grid gap-x-7 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
       {rest.map((item) => (
@@ -195,3 +240,50 @@ const rest = spread(wireItems.filter((i) => !usedIds.has(i.id)), 12, 2).slice(0,
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .home-hero {
+    min-height: clamp(34rem, calc(100vh - 9.5rem), 48rem);
+    background: #101315;
+  }
+
+  .home-hero-image {
+    filter: saturate(0.72) contrast(1.08);
+  }
+
+  .home-hero-overlay {
+    background:
+      linear-gradient(90deg, rgba(10, 12, 13, 0.97) 0%, rgba(10, 12, 13, 0.84) 42%, rgba(10, 12, 13, 0.38) 100%),
+      linear-gradient(0deg, rgba(10, 12, 13, 0.78) 0%, rgba(10, 12, 13, 0.1) 68%);
+  }
+
+  .home-hero-copy {
+    text-shadow: 0 1px 20px rgba(0, 0, 0, 0.28);
+  }
+
+  .home-hero-secondary {
+    background: transparent;
+    border-color: rgba(233, 229, 218, 0.56);
+    color: var(--paper-invert);
+  }
+
+  .home-hero-secondary:hover:not(:disabled) {
+    background: rgba(233, 229, 218, 0.12);
+    border-color: var(--paper-invert);
+    opacity: 1;
+  }
+
+  .home-journal-launch {
+    background: rgba(221, 188, 85, 0.07);
+  }
+
+  .home-research-grid > div {
+    min-height: 7.5rem;
+  }
+
+  @media (max-width: 639px) {
+    .home-research-grid > div:last-child {
+      border-top: 1px solid var(--line);
+    }
+  }
+</style>

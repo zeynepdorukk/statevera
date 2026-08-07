@@ -10,9 +10,9 @@ export const site = {
   // Identity -------------------------------------------------
   publicationName: "STATEVERA",
   publicationNameDisplay: "Statevera",
-  publicationTagline: "Politics, power and the forces shaping the international system.",
+  publicationTagline: "Understanding power beyond the headline.",
   publicationDescription:
-    "International affairs: live news reporting, signed analysis by Zeynep Doruk, and interactive geopolitical risk.",
+    "Statevera is an independent international affairs publication exploring geopolitics, diplomacy, political economy and the changing international order.",
   publicationType: "Independent international affairs publication",
   founded: "2026",
 
@@ -104,7 +104,7 @@ export type NavItem = {
 
 export const nav: { primary: NavItem[] } = {
   primary: [
-    { label: "Journal", url: "/journal" },
+    { label: "The Journal", url: "/journal" },
     {
       label: "News",
       url: "/wire",
@@ -119,6 +119,7 @@ export const nav: { primary: NavItem[] } = {
     },
     { label: "Regions", url: "/regions" },
     { label: "GLORISK", url: "/risk" },
+    { label: "About", url: "/about" },
     { label: "LIVE", url: "/live" },
     { label: "EDITOR LOGIN", url: "https://statevera.netlify.app/editor/" },
   ],
