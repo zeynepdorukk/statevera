@@ -216,7 +216,11 @@ function parseFeed(xml) {
 // ------------------------------------------------------------
 
 const compiled = (rules, key) =>
-  rules.map((rule) => ({ value: rule[key], re: compileTerms(rule.terms) }));
+  rules.map((rule) => ({
+    value: rule[key],
+    re: compileTerms(rule.terms),
+    strongRe: compileTerms(rule.strongTerms ?? rule.terms),
+  }));
 
 const CATEGORY_MATCHERS = compiled(categoryRules, "category");
 const REGION_MATCHERS = compiled(regionRules, "region");
@@ -228,28 +232,63 @@ const countMatches = (re, text) => {
 };
 
 /**
- * Score every rule and take the strongest, rather than the first match:
- * a headline that mentions one country in passing should not outrank the
- * country it is actually about. Title hits count double, and are reported
- * separately because the relevance gate cares where the evidence came from.
+ * Score every rule and take the strongest, rather than the first match. Title
+ * hits count double. A second, smaller vocabulary marks high-signal terms so a
+ * broad word such as “war”, “strategic” or “government” cannot assign a desk
+ * by itself. The margin keeps close calls out of the wire unless a source has a
+ * declared editorial desk we can safely use as a fallback.
  */
 function classify(matchers, title, summary) {
-  let best = null;
-  let bestScore = 0;
-  let inTitle = 0;
-  let inSummary = 0;
-  for (const { value, re } of matchers) {
+  const ranked = matchers.map(({ value, re, strongRe }) => {
     const titleHits = countMatches(re, title);
     const summaryHits = countMatches(re, summary);
-    const score = titleHits * 2 + summaryHits;
-    if (score > bestScore) {
-      bestScore = score;
-      best = value;
-      inTitle = titleHits;
-      inSummary = summaryHits;
-    }
+    const strongTitleHits = countMatches(strongRe, title);
+    const strongSummaryHits = countMatches(strongRe, summary);
+    // Strong matches count again, but title evidence still carries the most
+    // weight. This makes “tariff”, “summit” or “missile” decisive while a lone
+    // generic “minister”/“war” mention remains a low-confidence signal.
+    const score = titleHits * 2 + summaryHits + strongTitleHits * 2 + strongSummaryHits;
+    return { value, score, titleHits, summaryHits, strongTitleHits, strongSummaryHits };
+  }).sort((a, b) => b.score - a.score);
+
+  const [best, second] = ranked;
+  if (!best || best.score === 0) {
+    return {
+      value: null,
+      confidence: "low",
+      score: 0,
+      margin: 0,
+      inTitle: 0,
+      inSummary: 0,
+      strongInTitle: 0,
+      strongInSummary: 0,
+    };
   }
-  return { value: best, score: bestScore, inTitle, inSummary };
+
+  const margin = best.score - (second?.score ?? 0);
+  const hasTitleEvidence = best.titleHits >= 1;
+  const hasStrongEvidence = best.strongTitleHits >= 1 || best.strongSummaryHits >= 1;
+  const highConfidence =
+    (best.strongTitleHits >= 1 && margin >= 2) ||
+    (best.strongTitleHits >= 2 && margin >= 1) ||
+    (best.strongSummaryHits >= 2 && hasTitleEvidence && margin >= 2);
+  const mediumConfidence =
+    !highConfidence &&
+    best.score >= 3 &&
+    margin >= 1 &&
+    hasStrongEvidence &&
+    (hasTitleEvidence || best.summaryHits >= 2);
+
+  return {
+    value: highConfidence || mediumConfidence ? best.value : null,
+    confidence: highConfidence ? "high" : mediumConfidence ? "medium" : "low",
+    score: best.score,
+    margin,
+    inTitle: best.titleHits,
+    inSummary: best.summaryHits,
+    strongInTitle: best.strongTitleHits,
+    strongInSummary: best.strongSummaryHits,
+  };
 }
 
 // ------------------------------------------------------------
@@ -297,14 +336,12 @@ function toItems(source, xml, firstSeen) {
 
     const matched = classify(CATEGORY_MATCHERS, title, summary);
 
-    // Relevance gate: the HEADLINE has to read as international affairs. Evidence
-    // from the summary alone is not enough — "government" appearing twice in a
-    // blurb admitted a story about Danish exam rules — so a summary-only match
-    // needs to be emphatic. Only institutions and analysis desks, which publish
-    // nothing else, may fall back on their own category; a general newsroom's
-    // business or politics section also carries consumer and local copy.
-    const relevant = matched.inTitle >= 1 || matched.inSummary >= 3;
-    const category = relevant ? matched.value : source.alwaysOnTopic ? source.category : null;
+    // A low-confidence match is not allowed to invent a desk for a general
+    // newsroom. Specialist institutions and analysis feeds have an editorial
+    // prior, so they may use that prior as an explicit fallback rather than
+    // silently presenting an arbitrary category as fact.
+    const category = matched.value ?? (source.alwaysOnTopic ? source.category : null);
+    const categoryConfidence = matched.value ? matched.confidence : category ? "source" : "low";
     if (!category) {
       dropped++;
       continue;
@@ -333,6 +370,7 @@ function toItems(source, xml, firstSeen) {
       image: image.url,
       imageWidth: image.width,
       category,
+      categoryConfidence,
       region: classify(REGION_MATCHERS, title, summary).value ?? source.region ?? "Global",
       weight: source.weight,
     });
@@ -498,10 +536,14 @@ if (DRY) {
 
 const byCategory = {};
 const byRegion = {};
+const byCategoryConfidence = {};
 for (const i of items) {
   byCategory[i.category] = (byCategory[i.category] ?? 0) + 1;
   byRegion[i.region] = (byRegion[i.region] ?? 0) + 1;
+  byCategoryConfidence[i.categoryConfidence ?? "unknown"] =
+    (byCategoryConfidence[i.categoryConfidence ?? "unknown"] ?? 0) + 1;
 }
 console.log("categories:", byCategory);
+console.log("category confidence:", byCategoryConfidence);
 console.log("regions   :", byRegion);
 console.log("with image:", items.filter((i) => i.image).length, "/", items.length);

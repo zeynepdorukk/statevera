@@ -75,42 +75,32 @@ const jsonLd = [
       </div>
     </section>
 
-    <section class="grid gap-8 border-b border-line py-9 md:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]" aria-label="Editor and contact">
-      <div>
-        <p class="kicker-ink">Editor &amp; writer</p>
+    <section class="border-b border-line py-10 md:py-12" aria-label="Founder and editor">
+      <div class="max-w-4xl">
+        <p class="kicker-ink">Founder &amp; editor</p>
         <h2 class="t-headline mt-1.5">{site.authorName}</h2>
-        <p class="mt-2 max-w-2xl font-serif text-[1rem] leading-relaxed text-ink-soft">
-          Zeynep Doruk is the editor and sole writer of Statevera. She writes about international security, diplomacy and political economy.
+        <p class="mt-3 max-w-3xl font-serif text-[1.08rem] leading-relaxed text-ink-soft">
+          Zeynep Doruk is the founder, editor and sole writer of Statevera. Her work connects
+          international reporting with primary-source research, data-driven tools and original
+          analysis on security, diplomacy, political economy and the changing international order.
         </p>
-      </div>
-      <div class="md:border-l md:border-line md:pl-8">
-        <p class="kicker-ink">Contact</p>
-        {site.socialLinks.email ? (
-          <a href={`mailto:${site.socialLinks.email}`} class="mt-2 inline-block font-serif text-[1rem] text-ink hover:text-tone">
-            {site.socialLinks.email}
-          </a>
-        ) : (
-          <p class="mt-2 max-w-xs font-serif text-[1rem] leading-relaxed text-ink-soft">
-            Statevera does not have a public inbox yet. Corrections and story tips will get
-            an address here once one is set up.
-          </p>
-        )}
-        {profiles.length > 0 && (
-          <div class="mt-3 flex gap-4">
-            {site.socialLinks.x && (
-              <a href={site.socialLinks.x} target="_blank" rel="noopener" class="kicker-ink hover:text-tone">X</a>
-            )}
-            {site.socialLinks.linkedin && (
-              <a href={site.socialLinks.linkedin} target="_blank" rel="noopener" class="kicker-ink hover:text-tone">LinkedIn</a>
-            )}
-          </div>
-        )}
-        <a href={root(site.socialLinks.rss)} class="kicker-ink mt-3 inline-block hover:text-tone">RSS feed</a>
+        <p class="mt-3 max-w-3xl font-serif text-[1rem] leading-relaxed text-ink-soft">
+          Through The Journal, World News, Primary Sources and GLORISK, Statevera brings together
+          what is happening, what it means and what the underlying data shows.
+        </p>
+        <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+          {profiles.map((profile) => (
+            <a href={profile} target="_blank" rel="noopener" class="kicker-ink hover:text-tone">
+              {profile === site.socialLinks.x ? "X" : "LinkedIn"}
+            </a>
+          ))}
+          <a href={root(site.socialLinks.rss)} class="kicker-ink hover:text-tone">RSS feed</a>
+        </div>
       </div>
     </section>
 
     <p class="meta py-5">
-      News headlines and summaries link to their original publishers. Journal and GLORISK are Statevera's original work.
+      News headlines and summaries link to their original publishers. The Journal and GLORISK are original Statevera projects.
     </p>
   </div>
 </BaseLayout>

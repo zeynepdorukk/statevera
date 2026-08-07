@@ -82,6 +82,16 @@ if (!existsSync(wirePath)) {
   const bad = items.filter((item) => required.some((key) => !item[key]));
   if (bad.length) problems.push(`${bad.length} wire items are missing required fields`);
 
+  const categories = new Set(["Politics", "Diplomacy", "Security", "Economy", "Geopolitics"]);
+  const badCategories = items.filter((item) => !categories.has(item.category));
+  if (badCategories.length) problems.push(`${badCategories.length} wire items have an unknown category`);
+
+  const confidences = new Set(["high", "medium", "source"]);
+  const badConfidences = items.filter(
+    (item) => item.categoryConfidence && !confidences.has(item.categoryConfidence)
+  );
+  if (badConfidences.length) problems.push(`${badConfidences.length} wire items have an invalid category confidence`);
+
   const offsite = items.filter((item) => !/^https?:\/\//.test(item.url));
   if (offsite.length) problems.push(`${offsite.length} wire items do not link to a publisher`);
 

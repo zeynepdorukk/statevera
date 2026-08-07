@@ -54,9 +54,9 @@ const isEditorLogin = (label: string) => label === "EDITOR LOGIN";
   </div>
 
   <!-- Row 2: pillar navigation -->
-  <nav class="hidden md:block" aria-label="Sections">
+  <nav class="site-nav-scroll hidden md:block" aria-label="Sections">
     <div class="shell">
-      <ul class="flex items-stretch justify-center">
+      <ul class="flex min-w-max items-stretch justify-center">
         {nav.primary.map((item) => (
           <li class="group relative">
             <a
@@ -117,11 +117,12 @@ const isEditorLogin = (label: string) => label === "EDITOR LOGIN";
             href={root(item.url)}
             target={isExternal(item.url) ? "_blank" : undefined}
             rel={isExternal(item.url) ? "noopener noreferrer" : undefined}
+            aria-current={isActive(item.url) ? "page" : undefined}
             class:list={[
               "flex items-center gap-2 py-2 font-sans text-[0.78rem] font-bold tracking-[0.12em] uppercase transition-colors duration-150",
               isEditorLogin(item.label)
                 ? "mx-2 my-1 border border-[#C74A4D] bg-[#C74A4D] px-3 text-white hover:border-[#db5d60] hover:bg-[#db5d60]"
-                : "text-ink hover:text-ink-soft",
+                : isActive(item.url) ? "text-ink" : "text-ink-soft hover:text-ink",
             ]}
           >
             {item.label}

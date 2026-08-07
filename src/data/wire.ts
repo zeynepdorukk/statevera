@@ -25,6 +25,8 @@ export interface WireItem {
   /** Declared width of the picture in the feed. 0 means unknown. */
   imageWidth: number;
   category: string;
+  /** Confidence in the automatic desk assignment: model evidence or source prior. */
+  categoryConfidence?: "high" | "medium" | "source";
   region: string;
   weight: number;
 }

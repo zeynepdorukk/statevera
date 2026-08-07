@@ -294,6 +294,15 @@ body {
   padding-inline: 1rem;
 }
 
+.site-nav-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .shell {
     padding-inline: 2rem;
@@ -344,6 +353,17 @@ body {
 
 .section-head .more:hover {
   color: var(--tone);
+}
+
+@media (max-width: 639px) {
+  .section-head {
+    gap: 0.55rem;
+  }
+
+  .section-head .title {
+    font-size: 0.74rem;
+    letter-spacing: 0.13em;
+  }
 }
 
 /* Hairline column dividers, WSJ style */

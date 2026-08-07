@@ -20,6 +20,7 @@
  * @property {string} url        RSS/Atom endpoint
  * @property {string} home       publisher section homepage
  * @property {string} [category] the desk an item falls to when the vocabulary is quiet
+ * @property {string[]} [strongTerms] high-signal vocabulary used for confidence scoring
  * @property {boolean} [alwaysOnTopic] institution or analysis feed: skips the relevance gate
  * @property {string} [region]
  * @property {number} weight     1 = wire copy, 3 = considered analysis
@@ -83,8 +84,20 @@ export const categoryRules = [
       "drone*", "ceasefire", "cease-fire", "offensive", "deterrence", "deterrent",
       "rearm*", "weapon*", "arms control", "arms deal", "insurgen*", "militant*",
       "war", "warfare", "conscript*", "battalion*", "brigade*", "frigate*",
-      "submarine*", "artillery", "bombard*", "peacekeep*", "paramilitary",
+      "submarine*", "artillery", "bombard*", "peacekeep*", "paramilitary", "security forces",
       "ballistic", "cyberattack*", "espionage", "airspace", "warship*",
+    ],
+    // Terms that are difficult to misread without additional context. Softer
+    // words such as “war” and “defence” remain useful signals, but should not
+    // decide a desk on their own.
+    strongTerms: [
+      "nato", "military", "missile*", "nuclear", "warhead*", "troops", "army", "navy",
+      "naval", "airstrike*", "air strike*", "offensive", "deterrence", "deterrent",
+      "weapon*", "arms control", "arms deal", "insurgen*", "militant*", "warfare",
+      "conscript*", "battalion*", "brigade*", "frigate*", "submarine*", "artillery",
+      "bombard*", "peacekeep*", "paramilitary", "ballistic", "cyberattack*",
+      "espionage", "airspace", "warship*", "security forces", "drone strike*", "drone attack*", "armed drone*",
+      "combat drone*", "uav",
     ],
   },
   {
@@ -97,17 +110,33 @@ export const categoryRules = [
       "chipmaker*", "commodit*", "shipping", "freight", "pipeline*", "embargo*",
       "economic", "economy", "exchange rate*", "investment", "lng", "trade deal",
     ],
+    strongTerms: [
+      "sanction*", "tariff*", "trade", "trading", "export*", "import*", "inflation",
+      "central bank", "interest rate*", "gdp", "recession", "imf", "world bank",
+      "supply chain*", "oil price*", "energy price*", "gas price*", "opec", "currenc*",
+      "bond market", "sovereign debt", "budget", "subsid*", "semiconductor*", "chipmaker*",
+      "commodit*", "economic", "economy", "exchange rate*", "investment", "lng", "trade deal",
+      "business", "profit*", "financial",
+    ],
   },
   {
     category: "Diplomacy",
     terms: [
       "diplomat", "diplomats", "diplomatic", "diplomacy", "summit", "talks",
       "negotiation*", "negotiator*", "negotiate", "negotiating", "negotiated",
-      "treaty", "accord*", "united nations", "security council", "envoy*",
+      "treaty", "accord*", "agreement", "deal", "agree*", "foreign ministry", "united nations", "security council", "envoy*",
       "ambassador*", "foreign minister*", "foreign secretary", "peace deal",
       "peace plan", "mediation", "mediator*", "mediate", "mediated", "delegation*",
       "bilateral", "multilateral", "communique", "embassy", "consulate", "state visit",
       "normalisation", "normalization", "ratif*", "memorandum", "extradit*",
+    ],
+    strongTerms: [
+      "diplomat*", "diplomacy", "summit", "talks", "negotiation*", "negotiator*",
+      "treaty", "accord*", "agreement", "deal", "agree*", "foreign ministry", "united nations", "security council", "envoy*",
+      "ambassador*", "foreign minister*", "foreign secretary", "peace deal", "peace plan",
+      "mediation", "mediator*", "bilateral", "multilateral", "communique", "embassy",
+      "consulate", "state visit", "normalisation", "normalization", "ratif*", "memorandum",
+      "relations",
     ],
   },
   {
@@ -115,8 +144,15 @@ export const categoryRules = [
     terms: [
       "geopolitic*", "sphere of influence", "great power*", "balance of power",
       "alliance*", "hegemon*", "strategic", "chokepoint*", "strait", "corridor*",
-      "belt and road", "indo-pacific", "multipolar", "influence operation*", "proxy",
+      "belt and road", "indo-pacific", "multipolar", "influence operation*", "proxy", "asean",
       "sovereignty", "territorial", "border dispute*", "annex*", "realign*",
+    ],
+    strongTerms: [
+      "geopolitic*", "sphere of influence", "great power*", "balance of power", "alliance*",
+      "hegemon*", "chokepoint*", "strait", "corridor*", "belt and road", "indo-pacific",
+      "multipolar", "influence operation*", "proxy", "sovereignty", "territorial", "asean",
+      "border dispute*", "annex*", "realign*", "international order", "global governance",
+      "geostrategic",
     ],
   },
   {
@@ -125,8 +161,14 @@ export const categoryRules = [
       "election*", "parliament*", "president", "presidential", "prime minister",
       "chancellor", "coalition", "referendum", "ballot", "cabinet", "protest*", "coup",
       "impeach*", "ruling party", "legislat*", "senate", "congress", "opposition leader",
-      "government", "minister*", "lawmaker*", "constitution*", "autocra*", "democra*",
+      "government", "lawmaker*", "constitution*", "autocra*", "democra*",
       "primary", "foreign policy",
+    ],
+    strongTerms: [
+      "election*", "parliament*", "president", "presidential", "prime minister", "chancellor",
+      "coalition", "referendum", "ballot", "cabinet", "protest*", "coup", "impeach*",
+      "ruling party", "legislat*", "senate", "congress", "opposition leader",
+      "lawmaker*", "constitution*", "autocra*", "democra*", "foreign policy", "political",
     ],
   },
 ];
@@ -221,8 +263,9 @@ export const excludeTerms = [
   "football*", "soccer", "premier league", "olympic*", "world cup", "tennis",
   "cricket", "formula one", "nba", "nfl", "golf", "rugby", "athlete*",
   "fifa", "uefa", "infantino", "striker", "midfielder",
-  "recipe", "horoscope", "weather forecast", "heatwave warning", "wildfire*", "lottery",
+  "recipe", "horoscope", "weather forecast", "heatwave*", "heat wave*", "wildfire*", "lottery",
   "crossword", "obituar*", "royal family", "wedding", "divorce",
+  "testosterone", "fertility", "university", "world war ii", "icac", "squat eviction",
 ];
 
 /** Compile a term list into one word-boundary regex. */
