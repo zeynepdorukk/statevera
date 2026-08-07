@@ -158,6 +158,48 @@ const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).sl
     </div>
   </section>
 
+  <!-- ============ GLORISK PROMO ============ -->
+  <section class="home-research mt-16 border-y-2 border-ink bg-paper-soft" aria-labelledby="research-title" data-tone="risk">
+    <div class="shell py-12 md:py-16">
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:items-end">
+        <div>
+          <p class="kicker-ink">Statevera Research</p>
+          <h2 id="research-title" class="t-display mt-2">GLORISK</h2>
+          <p class="mt-3 font-serif text-[1.1rem] italic text-muted">What does the data show?</p>
+          <p class="mt-4 max-w-2xl font-serif text-[1.16rem] leading-relaxed text-ink">
+            GLORISK is Statevera's original research tool for reading country risk, geopolitical shocks and strategic exposure with more clarity.
+          </p>
+          <p class="mt-3 max-w-2xl font-sans text-[0.82rem] leading-relaxed text-muted">
+            Move beyond the headline and explore the signals, scores and scenarios that help explain how pressure travels through the international system.
+          </p>
+          <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <a href={root("/risk")} class="btn btn-tone">Explore GLORISK <span aria-hidden="true">&rarr;</span></a>
+            <a href={root("/about")} class="link-tone font-sans text-[0.68rem] font-bold tracking-[0.11em] uppercase">
+              About the research <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
+        <div class="home-research-grid grid border-t border-line sm:grid-cols-3 lg:border-l lg:border-t-0 lg:pl-8">
+          <div class="border-b border-line py-4 sm:border-b-0 sm:pr-5 lg:py-1">
+            <p class="kicker-ink">01</p>
+            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Country risk</p>
+            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">A structured view of political and strategic exposure.</p>
+          </div>
+          <div class="border-b border-line py-4 sm:border-b-0 sm:border-l sm:px-5 lg:py-1">
+            <p class="kicker-ink">02</p>
+            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Shock scenarios</p>
+            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">Signals for how disruption can travel across borders.</p>
+          </div>
+          <div class="py-4 sm:border-l sm:px-5 lg:py-1">
+            <p class="kicker-ink">03</p>
+            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Strategic exposure</p>
+            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">Research designed to make geopolitical risk legible.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ WORLD NEWS ============ -->
   <section class="shell mt-16" aria-labelledby="news-title" data-tone="wire">
     <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3 border-b-2 border-ink pb-5">
@@ -193,40 +235,6 @@ const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).sl
           </div>
         </div>
       ))}
-    </div>
-  </section>
-
-  <!-- ============ STATEVERA RESEARCH / GLORISK ============ -->
-  <section class="home-research mt-16 border-y-2 border-ink bg-paper-soft" aria-labelledby="research-title" data-tone="risk">
-    <div class="shell py-12 md:py-16">
-      <div class="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:items-end">
-        <div>
-          <p class="kicker-ink">Statevera Research</p>
-          <h2 id="research-title" class="t-display mt-2">GLORISK</h2>
-          <p class="mt-3 font-serif text-[1.1rem] italic text-muted">What does the data show?</p>
-          <p class="mt-4 max-w-2xl font-serif text-[1.08rem] leading-relaxed text-ink-soft">
-            {pillars.risk.description}
-          </p>
-          <a href={root("/risk")} class="btn mt-7">Open GLORISK <span aria-hidden="true">&rarr;</span></a>
-        </div>
-        <div class="home-research-grid grid border-t border-line sm:grid-cols-3 lg:border-l lg:border-t-0 lg:pl-8">
-          <div class="border-b border-line py-4 sm:border-b-0 sm:pr-5 lg:py-1">
-            <p class="kicker-ink">01</p>
-            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Country risk</p>
-            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">A structured view of political and strategic exposure.</p>
-          </div>
-          <div class="border-b border-line py-4 sm:border-b-0 sm:border-l sm:px-5 lg:py-1">
-            <p class="kicker-ink">02</p>
-            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Shock scenarios</p>
-            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">Signals for how disruption can travel across borders.</p>
-          </div>
-          <div class="py-4 sm:border-l sm:px-5 lg:py-1">
-            <p class="kicker-ink">03</p>
-            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Strategic exposure</p>
-            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">Research designed to make geopolitical risk legible.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 

@@ -105,6 +105,7 @@ export type NavItem = {
 export const nav: { primary: NavItem[] } = {
   primary: [
     { label: "The Journal", url: "/journal" },
+    { label: "GLORISK", url: "/risk" },
     {
       label: "News",
       url: "/wire",
@@ -118,7 +119,6 @@ export const nav: { primary: NavItem[] } = {
       ],
     },
     { label: "Regions", url: "/regions" },
-    { label: "GLORISK", url: "/risk" },
     { label: "About", url: "/about" },
     { label: "LIVE", url: "/live" },
     { label: "EDITOR LOGIN", url: "https://statevera.netlify.app/editor/" },
