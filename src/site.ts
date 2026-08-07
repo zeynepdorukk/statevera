@@ -23,7 +23,7 @@ export const site = {
   /** Empty until there is a real portrait; the byline drops the avatar when it is. */
   authorPhoto: "",
   authorBio:
-    "Zeynep Doruk is the editor and sole writer of Statevera. She covers international security, diplomacy and political economy, with reporting interests spanning Europe, the Middle East and the Eastern Mediterranean. Her work focuses on the intersection of strategy, economics and statecraft.",
+    "Zeynep Doruk is the founder, editor and sole writer of Statevera. Her work connects international reporting with primary-source research, data-driven tools and original analysis on security, diplomacy, political economy and the changing international order.",
 
   // Links ----------------------------------------------------
   // Empty means "no account yet": the footer and About page leave the link out

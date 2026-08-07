@@ -87,10 +87,14 @@ if (!existsSync(wirePath)) {
   if (badCategories.length) problems.push(`${badCategories.length} wire items have an unknown category`);
 
   const confidences = new Set(["high", "medium", "source"]);
+  const missingConfidences = items.filter((item) => !item.categoryConfidence);
+  if (missingConfidences.length) problems.push(`${missingConfidences.length} wire items are missing category confidence`);
   const badConfidences = items.filter(
     (item) => item.categoryConfidence && !confidences.has(item.categoryConfidence)
   );
   if (badConfidences.length) problems.push(`${badConfidences.length} wire items have an invalid category confidence`);
+  const lowConfidences = items.filter((item) => item.categoryConfidence === "low");
+  if (lowConfidences.length) problems.push(`${lowConfidences.length} wire items have unresolved category confidence`);
 
   const offsite = items.filter((item) => !/^https?:\/\//.test(item.url));
   if (offsite.length) problems.push(`${offsite.length} wire items do not link to a publisher`);
