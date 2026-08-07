@@ -204,9 +204,9 @@ async function openStories(notice = "") {
     );
 
     const index: { url: string; title: string; description: string; category: string; region: string; date: string }[] =
-      await fetch(LIVE_INDEX)
+      await fetch(`${LIVE_INDEX}?v=${Date.now()}`, { cache: "no-store" })
         .then((r) => r.json())
-        .catch(() => fetch(`${BASE}/search-index.json`).then((r) => r.json()).catch(() => []));
+        .catch(() => fetch(`${BASE}/search-index.json?v=${Date.now()}`, { cache: "no-store" }).then((r) => r.json()).catch(() => []));
 
     const build = (kind: Kind) => (f: FileEntry): Story => {
       const slug = f.name.replace(/\.mdx?$/, "");
