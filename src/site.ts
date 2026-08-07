@@ -106,6 +106,7 @@ export const nav: { primary: NavItem[] } = {
   primary: [
     { label: "The Journal", url: "/journal" },
     { label: "GLORISK", url: "/risk" },
+    { label: "Sources", url: "/sources" },
     {
       label: "News",
       url: "/wire",

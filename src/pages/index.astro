@@ -200,6 +200,26 @@ const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).sl
     </div>
   </section>
 
+  <!-- ============ PRIMARY SOURCES PROMO ============ -->
+  <section class="home-sources shell mt-16 border-y border-line" aria-labelledby="sources-title" data-tone="journal">
+    <div class="grid gap-8 py-10 md:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)] md:items-center md:py-12">
+      <div>
+        <p class="kicker-ink">Primary Sources · Statevera Research</p>
+        <h2 id="sources-title" class="t-display mt-2">Search the record.</h2>
+        <p class="mt-3 max-w-2xl font-serif text-[1.12rem] leading-relaxed text-ink">
+          Search official documents from governments and international institutions — not second-hand headlines.
+        </p>
+        <p class="mt-3 max-w-2xl font-sans text-[0.8rem] leading-relaxed text-muted">
+          One keyword, twelve source institutions, and a direct link to the document that was actually issued. Filter by statements, legislation, treaties, sanctions, speeches or official data.
+        </p>
+      </div>
+      <div class="border-t border-line pt-5 md:border-l md:border-t-0 md:pl-7 md:pt-0">
+        <p class="kicker">What does the record say?</p>
+        <a href={root("/sources")} class="btn btn-tone mt-4">Explore Primary Sources <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ WORLD NEWS ============ -->
   <section class="shell mt-16" aria-labelledby="news-title" data-tone="wire">
     <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3 border-b-2 border-ink pb-5">

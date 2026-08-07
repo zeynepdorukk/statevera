@@ -11,6 +11,8 @@
 // is only one implementation to reason about.
 // ============================================================
 
+import { handlePrimarySources } from "./primary-sources";
+
 export interface DeskEnv {
   EDITOR_USER?: string;
   EDITOR_PASSWORD?: string;
@@ -19,6 +21,9 @@ export interface DeskEnv {
   OPENAI_MODEL?: string;
   GITHUB_TOKEN?: string;
   GITHUB_REPO?: string;
+  GOVINFO_API_KEY?: string;
+  CONGRESS_API_KEY?: string;
+  OSCE_SEARCH_API_KEY?: string;
 }
 
 const DEFAULT_USER = "zeynepdoruk";
@@ -443,6 +448,11 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
   const url = new URL(request.url);
   const route = url.pathname.replace(/^.*\/api\//, "");
   const configured = Boolean(env.SESSION_SECRET && env.EDITOR_PASSWORD);
+
+  // Primary Sources is a public, read-only research endpoint. It deliberately
+  // lives before the editor session guard; the adapters keep credentials on
+  // the server and return only normalized official records.
+  if (route === "primary-sources") return handlePrimarySources(request, env);
 
   if (request.method !== "GET" && !sameOrigin(request)) return fail(403, "Cross-site request refused.");
 

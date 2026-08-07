@@ -54,6 +54,9 @@ const deskDevPlugin = {
       OPENAI_KEY: readProjectEnv("OPENAI_KEY"),
       GITHUB_TOKEN: readProjectEnv("GITHUB_TOKEN"),
       GITHUB_REPO: readProjectEnv("GITHUB_REPO"),
+      GOVINFO_API_KEY: readProjectEnv("GOVINFO_API_KEY"),
+      CONGRESS_API_KEY: readProjectEnv("CONGRESS_API_KEY"),
+      OSCE_SEARCH_API_KEY: readProjectEnv("OSCE_SEARCH_API_KEY"),
     });
 
     const ready = env();

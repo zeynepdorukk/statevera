@@ -1,0 +1,408 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../site";
+import { root } from "../utils/collection";
+import { PRIMARY_SOURCE_TYPES } from "../primary-sources/types";
+
+const endpoint = import.meta.env.DEV
+  ? root("/api/primary-sources")
+  : `${site.deskUrl}/api/primary-sources`;
+
+const institutions = [
+  ["United Nations", "UN Official Document System"],
+  ["EUR-Lex", "EU law and official documents"],
+  ["European Council / Consilium", "Council conclusions and statements"],
+  ["EEAS", "EU diplomatic statements and publications"],
+  ["NATO", "Official texts and transcripts"],
+  ["U.S. GovInfo", "U.S. government publications"],
+  ["Federal Register", "Rules, notices and presidential documents"],
+  ["Congress.gov", "Bills and congressional action"],
+  ["GOV.UK", "UK government publications and data"],
+  ["Türkiye Ministry of Foreign Affairs", "Foreign ministry statements"],
+  ["TBMM", "Parliamentary publications"],
+  ["OSCE", "Decisions, statements and documents"],
+] as const;
+---
+
+<BaseLayout
+  title="Primary Sources"
+  description="Search official documents from governments and international institutions — not second-hand headlines."
+  path="/sources"
+  hideTicker
+>
+  <div class="shell primary-sources-page" data-primary-sources data-endpoint={endpoint}>
+    <section class="primary-sources-intro border-b-2 border-ink" aria-labelledby="primary-sources-title">
+      <div class="max-w-3xl py-12 md:py-16">
+        <p class="kicker-ink">Statevera Research · Verification desk</p>
+        <h1 id="primary-sources-title" class="t-display mt-3">Primary Sources</h1>
+        <p class="primary-sources-dek mt-4">
+          Search the document, not the headline. Find statements, legislation, treaties and official data at the institution that issued them.
+        </p>
+        <p class="mt-4 max-w-2xl font-sans text-[0.84rem] leading-relaxed text-muted">
+          Statevera combines public APIs, RSS feeds and official document searches. Each result is normalized for comparison, then linked directly to the original source so you can verify it yourself.
+        </p>
+      </div>
+    </section>
+
+    <section class="primary-sources-tool" aria-labelledby="search-heading">
+      <div class="primary-sources-search-head">
+        <div>
+          <p class="kicker">Search the archive</p>
+          <h2 id="search-heading" class="t-headline mt-1">What are you researching?</h2>
+        </div>
+        <p class="primary-sources-note">Search terms are sent to the Statevera server, never to a browser-side API key.</p>
+      </div>
+
+      <form class="primary-source-form" data-primary-source-form>
+        <label class="sr-only" for="primary-source-query">Keyword or topic</label>
+        <input
+          id="primary-source-query"
+          name="q"
+          type="search"
+          minlength="2"
+          maxlength="160"
+          autocomplete="off"
+          placeholder="Try: sanctions, Ukraine, energy security…"
+          data-primary-source-input
+        />
+        <button type="submit" class="primary-source-submit" data-primary-source-submit>Search official sources</button>
+      </form>
+
+      <div class="primary-source-filters" role="group" aria-label="Filter by document type">
+        <button type="button" class="source-filter is-active" data-source-filter="All" aria-pressed="true">All</button>
+        {PRIMARY_SOURCE_TYPES.map((type) => (
+          <button type="button" class="source-filter" data-source-filter={type} aria-pressed="false">{type}</button>
+        ))}
+      </div>
+
+      <p class="primary-source-status" data-primary-source-status aria-live="polite">
+        Enter a keyword to search official records across 12 institutions.
+      </p>
+      <div class="primary-source-results" data-primary-source-results aria-live="polite"></div>
+    </section>
+
+    <section class="primary-source-directory border-t-2 border-ink" aria-labelledby="directory-heading">
+      <div class="primary-source-directory-head">
+        <div>
+          <p class="kicker-ink">The source map</p>
+          <h2 id="directory-heading" class="t-headline mt-1">Institutions in this first release</h2>
+        </div>
+        <p class="primary-sources-note">Adapters are independent, so new official sources can be added without changing the search interface.</p>
+      </div>
+      <ul class="primary-source-directory-list">
+        {institutions.map(([name, detail]) => (
+          <li>
+            <span class="primary-source-directory-name">{name}</span>
+            <span>{detail}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="primary-source-principle" aria-label="Primary source principle">
+      <p class="kicker-ink">A source-first workflow</p>
+      <p class="primary-source-principle-copy">News tells you what happened. The Journal asks what it means. Primary Sources let you read the record as it was issued.</p>
+    </section>
+  </div>
+</BaseLayout>
+
+<script src="../scripts/primary-sources.ts"></script>
+
+<style>
+  .primary-sources-page {
+    padding-bottom: 5rem;
+  }
+
+  .primary-sources-dek {
+    max-width: 48rem;
+    font-family: var(--font-serif);
+    font-size: clamp(1.3rem, 2vw, 1.75rem);
+    line-height: 1.35;
+    color: var(--ink-soft);
+  }
+
+  .primary-sources-tool {
+    padding: 2.4rem 0 3.6rem;
+  }
+
+  .primary-sources-search-head,
+  .primary-source-directory-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .primary-sources-note {
+    max-width: 24rem;
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 0.73rem;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .primary-source-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.6rem;
+    max-width: 58rem;
+  }
+
+  .primary-source-form input {
+    min-width: 0;
+    border: 1px solid var(--line-strong);
+    border-bottom: 2px solid var(--ink);
+    padding: 0.9rem 0.95rem;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 1.08rem;
+    outline: none;
+  }
+
+  .primary-source-form input:focus {
+    border-color: var(--wire);
+  }
+
+  .primary-source-submit {
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    padding: 0.9rem 1.1rem;
+    color: var(--paper);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 150ms ease, color 150ms ease;
+  }
+
+  .primary-source-submit:hover,
+  .primary-source-submit:focus-visible {
+    background: var(--wire);
+    border-color: var(--wire);
+    outline: none;
+  }
+
+  .primary-source-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .source-filter {
+    border: 1px solid var(--line);
+    background: transparent;
+    padding: 0.42rem 0.62rem;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .source-filter:hover,
+  .source-filter:focus-visible,
+  .source-filter.is-active {
+    border-color: var(--ink);
+    color: var(--ink);
+    outline: none;
+  }
+
+  .source-filter.is-active {
+    background: var(--paper-tint);
+  }
+
+  .primary-source-status {
+    min-height: 1.4rem;
+    margin: 1rem 0 0;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    color: var(--muted);
+  }
+
+  .primary-source-status[data-state="error"] {
+    color: var(--wire);
+  }
+
+  .primary-source-results {
+    margin-top: 0.5rem;
+  }
+
+  .primary-source-result {
+    display: grid;
+    grid-template-columns: minmax(9rem, 1.1fr) minmax(0, 3fr) auto;
+    gap: 1rem;
+    align-items: start;
+    border-top: 1px solid var(--line);
+    padding: 1.25rem 0;
+  }
+
+  .primary-source-result:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .primary-source-result-source,
+  .primary-source-result-meta,
+  .primary-source-result-id {
+    font-family: var(--font-sans);
+    font-size: 0.66rem;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+
+  .primary-source-result-source strong {
+    display: block;
+    color: var(--ink);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .primary-source-result-title {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.05rem, 1.65vw, 1.35rem);
+    line-height: 1.25;
+    color: var(--ink);
+  }
+
+  .primary-source-result-snippet {
+    max-width: 46rem;
+    margin: 0.45rem 0 0;
+    font-family: var(--font-serif);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  .primary-source-result-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+  }
+
+  .primary-source-result-type {
+    color: var(--tone, var(--ink));
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .primary-source-result-action {
+    align-self: center;
+    white-space: nowrap;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .primary-source-result-action:hover {
+    color: var(--wire);
+  }
+
+  .primary-source-result-id {
+    display: block;
+    margin-top: 0.25rem;
+    overflow-wrap: anywhere;
+  }
+
+  .primary-source-empty {
+    border-top: 1px solid var(--line);
+    padding: 2rem 0;
+    font-family: var(--font-serif);
+    color: var(--muted);
+  }
+
+  .primary-source-directory {
+    padding: 2.4rem 0 3rem;
+  }
+
+  .primary-source-directory-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin: 1.3rem 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+  }
+
+  .primary-source-directory-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-height: 5.2rem;
+    padding: 0.9rem 1rem 0.9rem 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    line-height: 1.4;
+    color: var(--muted);
+  }
+
+  .primary-source-directory-name {
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .primary-source-principle {
+    max-width: 48rem;
+    border-left: 3px solid var(--risk);
+    padding: 0.2rem 0 0.2rem 1rem;
+  }
+
+  .primary-source-principle-copy {
+    margin: 0.45rem 0 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    line-height: 1.4;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 760px) {
+    .primary-sources-search-head,
+    .primary-source-directory-head {
+      display: block;
+    }
+
+    .primary-sources-note {
+      margin-top: 0.7rem;
+    }
+
+    .primary-source-form {
+      grid-template-columns: 1fr;
+    }
+
+    .primary-source-result {
+      grid-template-columns: 1fr;
+      gap: 0.55rem;
+    }
+
+    .primary-source-result-action {
+      align-self: start;
+    }
+
+    .primary-source-directory-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 460px) {
+    .primary-source-directory-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
