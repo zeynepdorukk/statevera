@@ -1,10 +1,115 @@
 {
-  "generatedAt": "2026-08-07T12:09:22.102Z",
+  "generatedAt": "2026-08-07T13:35:06.377Z",
   "sourceCount": 26,
   "failedSources": [
     "bbc-africa"
   ],
   "items": [
+    {
+      "id": "bbf7acc68c56",
+      "title": "Video: Houthi strikes on Saudi-backed troops",
+      "summary": "Video: Houthi strikes on Saudi-backed troops Yemen's Houthi movement killed more than 60 Saudi-backed troops belonging to the internationally recognised Yemeni government between Thursday and Friday, marking the deadliest toll since the civil war stalled…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/video-houthi-strikes-saudi-backed-troops-0",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-07T13:26:33.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "6efa117516f3",
+      "title": "EU adds 5 people to Russia sanctions list after latest deadly attacks on Ukraine",
+      "summary": "Russia this week carried out one of its deadliest barrages on Kyiv, killing 17.",
+      "url": "https://www.politico.eu/article/eu-sanctions-russia-attacks-ukraine/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+      "publisher": "POLITICO Europe",
+      "publisherHome": "https://www.politico.eu",
+      "sourceId": "politico-eu",
+      "publishedAt": "2026-08-07T13:23:10.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "d166840c48ee",
+      "title": "Saudi Arabia, Pakistan and Turkey sign Nato-style defence pact amid deadly Houthi strikes in Yemen",
+      "summary": "Mecca Joint Defence agreement says an attack on one country will be deemed an attack on all Who are the Houthis – explained in 30 seconds Saudi Arabia, Pakistan and Turkey have signed a mutual defence agreement, placing three of the Muslim world’s most…",
+      "url": "https://www.theguardian.com/world/2026/aug/07/houthi-strikes-yemen-saudi-arabia-attacks-iran-war-middle-east-crisis",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
+      "publishedAt": "2026-08-07T13:00:30.000Z",
+      "image": "https://i.guim.co.uk/img/media/54f99ff60769d476cf501d37d79b51e1f0d8ef47/341_155_2022_1617/master/2022.jpg?width=700&quality=85&auto=format&fit=max&s=74975679dabc5d912190738e3f5ef5f7",
+      "imageWidth": 700,
+      "category": "Security",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "1be69932d3c7",
+      "title": "US airfares expected to stay high even if Iran ceasefire drops oil prices, experts say",
+      "summary": "Domestic flights cost 26.5% more than last year, data shows, amid demand for travel and reduced oil refining capacity Even if a lasting ceasefire between the US and Iran lowers oil prices , travelers hoping to snag cheaper airfare should buckle their…",
+      "url": "https://www.theguardian.com/business/2026/aug/07/flight-travel-costs-iran-war",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-07T13:00:18.000Z",
+      "image": "https://i.guim.co.uk/img/media/eb7f6b760c75b91a2876dd18dd8edebd0e0d05bc/624_0_6217_4977/master/6217.jpg?width=700&quality=85&auto=format&fit=max&s=cbafc231e9147cfadd35770ec03939a0",
+      "imageWidth": 700,
+      "category": "Security",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "837f925737cf",
+      "title": "Labour minister denies Burnham ‘too blokey’ – UK politics live",
+      "summary": "Home Office minister Anna Turley says PM is ‘authentic’ and praises video of him discussing bar snacks with John Healey Scottish Labour has “turned to rubble”, one of the party’s leadership contenders has claimed. Monica Lennon still does not have enough…",
+      "url": "https://www.theguardian.com/politics/blog/live/2026/aug/07/labour-government-people-working-illegally-arrested-deported-uk-andy-burnham-politics-latest",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-07T12:37:11.000Z",
+      "image": "https://i.guim.co.uk/img/media/3c5d6bc7f7f215301e67cc17c530b8d6c8055e42/778_0_5720_4576/master/5720.jpg?width=700&quality=85&auto=format&fit=max&s=7823a034f95c1c6652fce4eed544ed35",
+      "imageWidth": 700,
+      "category": "Politics",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "f25e86bc29ef",
+      "title": "UN chief condemns both Ukraine and Russia amid escalation in war",
+      "summary": "UN chief Guterres calls for de-escalation and a ceasefire as Russia-Ukraine attacks intensify.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/7/un-chief-condemns-both-ukraine-and-russia-amid-escalation-in-war?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-07T12:34:13.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "5e618533bb9d",
+      "title": "Iran’s grip on trade is a potent weapon, but it has an expiry date",
+      "summary": "Iran can exploit dependence on Hormuz today, but prolonged disruption will erode that leverage",
+      "url": "https://www.aljazeera.com/opinions/2026/8/7/irans-grip-on-trade-is-a-potent-weapon-but-it-has-an-expiry-date?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-07T12:28:52.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "bb467d3bff55",
       "title": "Exclusive: ICC judges order Taliban case split from Afghanistan probe that covers US troops",
@@ -22,8 +127,8 @@
     },
     {
       "id": "a39c4bb217fd",
-      "title": "Iran hopes to deal Trump a blow at midterms by keeping him entangled in war",
-      "summary": "By dragging out talks, Tehran aims to damage the US president politically, but some fear a bruised and weakened Trump could only prolong the conflict Tehran has set out a protracted negotiating timetable designed to keep Donald Trump embroiled in the Iran…",
+      "title": "Iran plots to deal Trump a blow in midterms by keeping him entangled in war",
+      "summary": "By dragging out talks, Tehran aims to damage the US president politically – but some fear a bruised and weakened Trump could lash back Tehran has set out a protracted negotiating timetable designed to keep Donald Trump embroiled in the Iran conflict until the…",
       "url": "https://www.theguardian.com/world/2026/aug/07/iran-war-trump-midterm-ballot",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -96,6 +201,21 @@
       "imageWidth": 0,
       "category": "Economy",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "d63c55f8935f",
+      "title": "Ghana inflation continues to ease in July as food prices fall",
+      "summary": "Ghana’s inflation is easing again. Consumer prices rose 4.6% in July, down from 5.3% in June, the first monthly decline since March.",
+      "url": "http://www.africanews.com/2026/08/07/ghana-inflation-continues-to-ease-in-july-as-food-prices-fall/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-07T11:25:50.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/86/57/95/640x360_cmsv2_e77e6b59-32df-517a-aaf4-f6fd462c3d0c-9865795.jpg?1786085247",
+      "imageWidth": 0,
+      "category": "Economy",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -284,28 +404,13 @@
       "summary": "Move to raise levy on goods made with polysilicon aims to protect domestic US supply chains from China, the major producer Donald Trump has ordered a new 15% tariff on imported products made of polysilicon, an important ingredient in microchip manufacturing…",
       "url": "https://www.theguardian.com/us-news/2026/aug/07/trump-orders-tariff-solar-panels-microchips-manufacturing-ingredient",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/business/economics",
+      "sourceId": "guardian-economics",
       "publishedAt": "2026-08-07T09:11:36.000Z",
       "image": "https://i.guim.co.uk/img/media/908237f4505e2ae1348ac9098ae93c4bd57241a4/427_0_4268_3414/master/4268.jpg?width=700&quality=85&auto=format&fit=max&s=e2501931101c710eb33578006438ee47",
       "imageWidth": 700,
       "category": "Economy",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "0a439ef9031e",
-      "title": "Trump faces calls for windfall tax on big oil’s profits from Iran war",
-      "summary": "US president’s complaint industry ‘making too much money’ comes after his policies boosted corporations Donald Trump’s statement that oil companies have made “too much money” from the Iran war has angered environmentalists, who say that his policies were…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/07/trump-windfall-tax-big-oil-iran-war",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-07T09:00:13.000Z",
-      "image": "https://i.guim.co.uk/img/media/43789218ac4189c69ff3f1456b402a451686a64f/678_0_3390_2712/master/3390.jpg?width=700&quality=85&auto=format&fit=max&s=55eeda0d3633dcd1815577ab02a0aab9",
-      "imageWidth": 700,
-      "category": "Security",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -456,21 +561,6 @@
       "imageWidth": 700,
       "category": "Security",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "f47b4f4af6dd",
-      "title": "Why Israel's opposition no longer wants Palestinian parties in government",
-      "summary": "Why Israel's opposition no longer wants Palestinian parties in government Submitted by Samah Watad on Thu, 08/06/2026 - 14:31 Anti-Netanyahu leaders who once defended cooperation with Palestinian parties now rule it out, reflecting a broader post-7 October…",
-      "url": "https://www.middleeasteye.net/news/why-israels-opposition-no-longer-wants-palestinian-parties-government",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-07T06:31:15.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -660,21 +750,6 @@
       "weight": 3
     },
     {
-      "id": "575999b0322a",
-      "title": "Anti-Muslim US Congressman Andy Ogles loses Republican primary",
-      "summary": "Trump's endorsement fails to save Tennessee legislator who recently said 'Muslims don't belong in American society'.",
-      "url": "https://www.aljazeera.com/news/2026/8/7/anti-muslim-us-congressman-andy-ogles-loses-congressional-primary?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-07T04:04:45.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "12a2a9727d37",
       "title": "Germany’s hot topic this summer: A chancellor swap",
       "summary": "Germany was once seen as Europe's anchor of stability. Now Friedrich Merz's own party is discussing whether the chancellor should go after little more than a year in office.",
@@ -705,21 +780,6 @@
       "weight": 2
     },
     {
-      "id": "ca547e548704",
-      "title": "Trump imposes 15% tariff on key chip material to counter China",
-      "summary": "The move aims to protect US firms as they face increasing competition from China's chip industry.",
-      "url": "https://www.bbc.co.uk/news/articles/cdrvn686dljo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/business",
-      "sourceId": "bbc-business",
-      "publishedAt": "2026-08-07T01:03:35.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/60dd/live/9a103bd0-91fb-11f1-952a-e58ebd1358f8.jpg",
-      "imageWidth": 240,
-      "category": "Economy",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "fec3820e7b50",
       "title": "Vietnam’s Top Leader To Lam to Pay State Visits to Australia and New Zealand",
       "summary": "The visits are likely to build on the momentum created by the Comprehensive Strategic Partnerships signed recently with both countries.",
@@ -733,21 +793,6 @@
       "category": "Geopolitics",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "19b375cc9693",
-      "title": "Mideast live: Saudi Arabia, Pakistan, Turkey sign defence pact stating attack on one is attack on all",
-      "summary": "Saudi Arabia, Pakistan and Turkey on Friday signed a mutual defence agreement stipulating that “any armed attack against any one of the three States shall be regarded as an attack against them all,\" said Pakistan’s foreign ministry. The pact between the three…",
-      "url": "https://www.france24.com/en/middle-east/20260807-middle-east-live-saudi-arabia-pakistan-turkey-to-sign-defence-pact",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-07T00:02:57.000Z",
-      "image": "https://s.france24.com/media/display/e4f5bcac-9254-11f1-b2a6-005056a97e36/w:1024/p:16x9/AP26201667127997-1.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "48d65e6d9929",
@@ -1169,21 +1214,6 @@
       "imageWidth": 240,
       "category": "Security",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "25ea43ab2fe1",
-      "title": "Ceuta residents ‘sad, helpless, anxious’ as up to 5,000 migrants remain in the city, president says – Europe live",
-      "summary": "Juan Jesús Vivas has been briefing EU lawmakers on the ‘humanitarian emergency’ and says updated death toll now lies at least 100 people The commission also got repeatedly asked about last week’s events in Ceuta and media reports that social media accounts…",
-      "url": "https://www.theguardian.com/world/live/2026/aug/06/ukraine-volodymyr-zelenskyy-russia-nato-germany-leipzig-wildfires-heatwaves-europe-live-news",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-06T14:18:55.000Z",
-      "image": "https://i.guim.co.uk/img/media/2cf34b7478c05ee188e29a66f1fdbf54f17f6f7f/244_0_1338_1070/master/1338.jpg?width=700&quality=85&auto=format&fit=max&s=8870a45ecc470f707751cd05ae08a663",
-      "imageWidth": 700,
-      "category": "Politics",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -1712,21 +1742,6 @@
       "weight": 2
     },
     {
-      "id": "62bea9624628",
-      "title": "South Africa: Government pushes for continent-wide talks on migration",
-      "summary": "As anti-immigration demonstrations have driven many migrants to leave South Africa, the country's government is pressing for continent-wide discussions.",
-      "url": "http://www.africanews.com/2026/08/05/south-africa-government-pushes-for-continent-wide-talks-on-migration/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-05T18:56:17.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/86/38/00/640x360_cmsv2_6a175046-82bb-5cc7-bc11-6e640f772cc4-9863800.jpg?1785942939",
-      "imageWidth": 0,
-      "category": "Politics",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "608dc4c033f6",
       "title": "Ex-French PM Attal targeted by Russian 'interference' ahead of 2027 vote",
       "summary": "Gabriel Attal, France’s former prime minister and Renaissance party leader, has been targeted by “foreign interference originating in Russia”, in the latest in a series of Kremlin‑linked operations aimed at destabilising the 2027 presidential election.",
@@ -1945,6 +1960,21 @@
       "publisherHome": "https://www.aa.com.tr/en",
       "sourceId": "anadolu-politics",
       "publishedAt": "2026-08-05T15:40:24.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "dfeffe575ad6",
+      "title": "Progressive El-Sayed scores upset in US Democratic Senate primary in Michigan",
+      "summary": "Abdul El-Sayed wins despite largest-ever spending by American Israel Public Affairs Committee in a single race",
+      "url": "https://www.aa.com.tr/en/politics/progressive-el-sayed-scores-upset-in-us-democratic-senate-primary-in-michigan/4019359",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-05T15:29:28.000Z",
       "image": "",
       "imageWidth": 0,
       "category": "Politics",
@@ -2192,21 +2222,6 @@
       "weight": 3
     },
     {
-      "id": "c4e7bcbebcd4",
-      "title": "US refunds $100bn of Donald Trump’s ‘liberation day’ tariffs",
-      "summary": "More than half of tariff income refunded after supreme court ruled Trump’s levies were illegal Business live – latest updates The Trump administration has refunded about $100bn from the tariffs it collected before the US supreme court ruled them illegal,…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/05/trump-administration-has-paid-back-100bn-of-165bn-tariff-refunds",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
-      "publishedAt": "2026-08-05T10:43:44.000Z",
-      "image": "https://i.guim.co.uk/img/media/ed2c3601a468df43f57e47e94309fd63d0d09547/0_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=b3d13cb20c147a549cc139716c921144",
-      "imageWidth": 700,
-      "category": "Economy",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "76bb3fcceef9",
       "title": "Let’s call Trump’s approach to Iran what it is: kindergarten diplomacy | Moustafa Bayoumi",
       "summary": "Amid stop-and-start threats and with a divided staff, it’s clear Trump has no idea how to end a war that shouldn’t have begun On Thursday, 23 July, after weeks of escalating attacks between the US and Iran, Donald Trump told a reporter that Iran hadn’t…",
@@ -2402,21 +2417,6 @@
       "weight": 3
     },
     {
-      "id": "716f57d203a4",
-      "title": "US stock market hits record highs as AI profits pile and oil prices ease",
-      "summary": "S&P 500 shot up 1.8% and the main measure of Wall Street’s health topped its prior all-time high set a few months ago The US stock market rallied to records on Tuesday as profits kept piling up for companies and as oil prices eased. The S&P 500 shot up 1.8%,…",
-      "url": "https://www.theguardian.com/business/2026/aug/04/stock-market-records-ai-profits-oil-prices-ease",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-04T20:56:59.000Z",
-      "image": "https://i.guim.co.uk/img/media/93edb9c87b7eb6a98a213cee3de3a24230ae3481/500_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=6f848f4a4834dfd1ed2a4d7282ae4a56",
-      "imageWidth": 700,
-      "category": "Economy",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "b0a74debf0c1",
       "title": "Ukrainian drones alone will not force Putin to the negotiating table",
       "summary": "Ukraine's escalating long-range drone strike campaign targeting military and industrial sites deep inside Russia is disrupting the Kremlin war machine but will not be enough to push Putin toward meaningful peace talks, writes Christopher Isajiw. The post…",
@@ -2445,21 +2445,6 @@
       "category": "Geopolitics",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "2cb581edfc67",
-      "title": "Seventh round of talks between Lebanon and Israel under way in Rome",
-      "summary": "Lebanon and Israel began a new round of United States-sponsored direct talks in Rome on Tuesday, as Beirut seeks Israel's phased withdrawal from the country's south. But critics, including Hezbollah, say the talks amount to a \"surrender\" by Lebanon.",
-      "url": "https://www.rfi.fr/en/international/20260804-seventh-round-of-talks-between-lebanon-and-israel-under-way-in-rome",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-04T20:06:58.000Z",
-      "image": "https://s.rfi.fr/media/display/72f0f3a8-7f79-11f1-b507-005056a97e36/w:1024/p:16x9/000-B8W838U.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "d9c8ab0553ef",
@@ -2535,21 +2520,6 @@
       "category": "Geopolitics",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "0d6f54886120",
-      "title": "EU ministers agree Schengen zone 'not the problem' in Ceuta migrant influx",
-      "summary": "Last week's deadly surge of migrants into Spain's North African enclave Ceuta did not \"compromise\" the European Union's visa-free Schengen travel zone, the Spanish interior minister said on Tuesday, following an emergency meeting at which member states…",
-      "url": "https://www.rfi.fr/en/international/20260804-eu-ministers-agree-schengen-zone-not-the-problem-in-ceuta-migrant-influx",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-04T15:23:43.000Z",
-      "image": "https://s.rfi.fr/media/display/08d841ec-8f4b-11f1-bc9e-005056a97e36/w:1024/p:16x9/AP26214565552543.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "region": "Europe",
-      "weight": 2
     },
     {
       "id": "57daf1d36132",
