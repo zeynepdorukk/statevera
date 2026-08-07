@@ -122,7 +122,8 @@ export const nav: { primary: NavItem[] } = {
     { label: "Regions", url: "/regions" },
     { label: "About", url: "/about" },
     { label: "LIVE", url: "/live" },
-    { label: "EDITOR LOGIN", url: "https://statevera.netlify.app/editor/" },
+    // The desk holds no keys of its own any more, so it ships with the site.
+    { label: "EDITOR LOGIN", url: "/editor" },
   ],
 };
 
