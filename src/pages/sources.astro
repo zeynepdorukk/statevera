@@ -32,14 +32,13 @@ const institutions = [
 >
   <div class="shell primary-sources-page" data-primary-sources data-endpoint={endpoint}>
     <section class="primary-sources-intro border-b-2 border-ink" aria-labelledby="primary-sources-title">
-      <div class="max-w-3xl py-12 md:py-16">
-        <p class="kicker-ink">Statevera Research · Verification desk</p>
-        <h1 id="primary-sources-title" class="t-display mt-3">Primary Sources</h1>
-        <p class="primary-sources-dek mt-4">
-          Search the document, not the headline. Find statements, legislation, treaties and official data at the institution that issued them.
-        </p>
-        <p class="mt-4 max-w-2xl font-sans text-[0.84rem] leading-relaxed text-muted">
-          Statevera combines public APIs, RSS feeds and official document searches. Each result is normalized for comparison, then linked directly to the original source so you can verify it yourself.
+      <div class="primary-sources-compact-intro">
+        <div>
+          <p class="kicker-ink">Statevera Research · Verification desk</p>
+          <h1 id="primary-sources-title" class="t-headline mt-1">Search official records</h1>
+        </div>
+        <p class="primary-sources-compact-copy">
+          Find the document behind the headline — statements, legislation, treaties and official data, linked to the institution that issued it.
         </p>
       </div>
     </section>
@@ -48,7 +47,7 @@ const institutions = [
       <div class="primary-sources-search-head">
         <div>
           <p class="kicker">Search the archive</p>
-          <h2 id="search-heading" class="t-headline mt-1">What are you researching?</h2>
+          <h2 id="search-heading" class="t-headline mt-1">Search by keyword</h2>
         </div>
         <p class="primary-sources-note">Search terms are sent to the Statevera server, never to a browser-side API key.</p>
       </div>
@@ -113,16 +112,28 @@ const institutions = [
     padding-bottom: 5rem;
   }
 
-  .primary-sources-dek {
-    max-width: 48rem;
+  .primary-sources-intro {
+    padding: 1.2rem 0 1.35rem;
+  }
+
+  .primary-sources-compact-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 28rem);
+    align-items: end;
+    gap: 2rem;
+  }
+
+  .primary-sources-compact-copy {
+    max-width: 28rem;
+    margin: 0;
     font-family: var(--font-serif);
-    font-size: clamp(1.3rem, 2vw, 1.75rem);
-    line-height: 1.35;
+    font-size: 1.02rem;
+    line-height: 1.45;
     color: var(--ink-soft);
   }
 
   .primary-sources-tool {
-    padding: 2.4rem 0 3.6rem;
+    padding: 1.8rem 0 3.6rem;
   }
 
   .primary-sources-search-head,
@@ -506,6 +517,14 @@ const institutions = [
   }
 
   @media (max-width: 760px) {
+    .primary-sources-compact-intro {
+      display: block;
+    }
+
+    .primary-sources-compact-copy {
+      margin-top: 0.65rem;
+    }
+
     .primary-sources-search-head,
     .primary-source-directory-head {
       display: block;

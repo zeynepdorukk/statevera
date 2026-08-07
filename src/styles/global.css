@@ -294,6 +294,14 @@ body {
   padding-inline: 1rem;
 }
 
+/* Keep the masthead and section navigation available while reading. */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  isolation: isolate;
+}
+
 .site-nav-scroll {
   overflow-x: auto;
   scrollbar-width: none;
