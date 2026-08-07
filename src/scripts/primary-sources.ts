@@ -130,6 +130,7 @@ if (root) {
     }
     lastQuery = query;
     allResults = [];
+    if (results) results.innerHTML = "";
     if (submit) {
       submit.disabled = true;
       submit.dataset.state = "loading";
