@@ -1,28 +1,32 @@
 ---
+import { readdirSync } from "node:fs";
+import { resolve } from "node:path";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../site";
 import { root } from "../utils/collection";
 import { PRIMARY_SOURCE_TYPES } from "../primary-sources/types";
+import { SOURCE_ADAPTERS } from "../primary-sources/adapters";
 
 const endpoint = import.meta.env.DEV
   ? root("/api/primary-sources")
   : site.deskUrl && `${site.deskUrl}/api/primary-sources`;
 
-const institutions = [
-  ["United Nations", "UN Official Document System"],
-  ["EUR-Lex", "EU law and official documents"],
-  ["European Council / Consilium", "Council conclusions and statements"],
-  ["EEAS", "EU diplomatic statements and publications"],
-  ["NATO", "Official texts and transcripts"],
-  ["U.S. GovInfo", "U.S. government publications"],
-  ["Federal Register", "Rules, notices and presidential documents"],
-  ["Congress.gov", "Bills and congressional action"],
-  ["GOV.UK", "UK government publications and data"],
-  ["Türkiye Ministry of Foreign Affairs", "Foreign ministry statements"],
-  ["TBMM", "Parliamentary publications"],
-  ["OSCE", "Decisions, statements and documents"],
-] as const;
+// The adapters are the list. Naming the institutions twice is how a source map
+// starts lying about what the desk actually queries.
+const logoFiles = readdirSync(resolve(process.cwd(), "public/images/sources"));
+const marks = SOURCE_ADAPTERS.map((adapter) => {
+  const file = logoFiles.find((name) => name.replace(/\.[^.]+$/, "") === adapter.id);
+  return {
+    id: adapter.id,
+    name: adapter.institution,
+    // An adapter names itself for the log; a tile has room for the institution.
+    short: adapter.institution.split(" / ")[0],
+    organization: adapter.organization,
+    logo: file ? root(`/images/sources/${file}`) : "",
+  };
+});
 ---
+
 
 <BaseLayout
   title="Primary Sources"
@@ -74,8 +78,17 @@ const institutions = [
         ))}
       </div>
 
+      <div class="source-poll" data-source-poll hidden>
+        {marks.map((mark, index) => (
+          <span class="source-poll-mark" data-poll-id={mark.id} data-state="waiting" style={`--i:${index}`}>
+            <img src={mark.logo} alt="" loading="lazy" decoding="async" width="24" height="24" />
+            <span class="source-poll-name">{mark.short}</span>
+          </span>
+        ))}
+      </div>
+
       <p class="primary-source-status" data-primary-source-status aria-live="polite">
-        Enter a keyword to search official records across 12 institutions.
+        Enter a keyword to search official records across {marks.length} institutions.
       </p>
       <div class="primary-source-results" data-primary-source-results aria-live="polite"></div>
     </section>
@@ -88,11 +101,14 @@ const institutions = [
         </div>
         <p class="primary-sources-note">Adapters are independent, so new official sources can be added without changing the search interface.</p>
       </div>
-      <ul class="primary-source-directory-list">
-        {institutions.map(([name, detail]) => (
-          <li>
-            <span class="primary-source-directory-name">{name}</span>
-            <span>{detail}</span>
+      <ul class="source-map">
+        {marks.map((mark) => (
+          <li class="source-map-item" title={mark.name}>
+            <span class="source-map-mark">
+              <img src={mark.logo} alt="" loading="lazy" decoding="async" width="52" height="52" />
+            </span>
+            <span class="source-map-name">{mark.short}</span>
+            <span class="sr-only">{mark.name} — {mark.organization}</span>
           </li>
         ))}
       </ul>
@@ -271,52 +287,117 @@ const institutions = [
     color: var(--ink-soft);
   }
 
-  .primary-source-status[data-state="loading"]::before {
-    width: 0.78rem;
-    height: 0.78rem;
-    flex: 0 0 auto;
-    border: 1px solid var(--line-strong);
-    border-top-color: var(--wire);
-    border-radius: 999px;
-    content: "";
-    animation: primary-source-spin 800ms linear infinite;
-  }
-
-  .primary-source-status[data-state="loading"]::after {
-    width: 3.2rem;
-    height: 2px;
-    flex: 0 0 auto;
-    background: linear-gradient(90deg, transparent, var(--wire), transparent);
-    content: "";
-    animation: primary-source-scan 1.4s ease-in-out infinite;
-  }
-
   .primary-source-status[data-state="error"] {
     color: var(--wire);
   }
 
-  @keyframes primary-source-spin {
-    to {
-      transform: rotate(360deg);
-    }
+  /* The wait is the search reaching twelve institutions, so it shows them. */
+  .source-poll {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: 1.15rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--line);
+    background: var(--paper-soft);
   }
 
-  @keyframes primary-source-scan {
+  .source-poll[hidden] {
+    display: none;
+  }
+
+  .source-poll-mark {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0.3rem;
+    border: 1px solid var(--line);
+    background: #f2f0e9;
+  }
+
+  .source-poll-mark img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.3;
+    transition: opacity 200ms ease, filter 200ms ease;
+  }
+
+  .source-poll-mark[data-state="waiting"] img {
+    animation: source-poll-pulse 1.5s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 90ms);
+  }
+
+  .source-poll-mark[data-state="ok"] {
+    border-color: var(--line-strong);
+  }
+
+  .source-poll-mark[data-state="ok"] img {
+    filter: none;
+    opacity: 1;
+  }
+
+  .source-poll-mark[data-state="silent"] img {
+    opacity: 0.18;
+  }
+
+  /* The count sits on the mark, so twelve institutions stay one glance wide. */
+  .source-poll-mark[data-count]::after {
+    position: absolute;
+    right: -0.3rem;
+    bottom: -0.4rem;
+    padding: 0 0.22rem;
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+    font-family: var(--font-sans);
+    font-size: 0.55rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--ink);
+    content: attr(data-count);
+  }
+
+  .source-poll-name {
+    position: absolute;
+    bottom: calc(100% + 0.35rem);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    padding: 0.15rem 0.4rem;
+    border: 1px solid var(--line-strong);
+    background: var(--paper);
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    white-space: nowrap;
+    color: var(--ink);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 120ms ease;
+  }
+
+  .source-poll-mark:hover .source-poll-name {
+    opacity: 1;
+  }
+
+  @keyframes source-poll-pulse {
     0%,
     100% {
-      opacity: 0.25;
-      transform: scaleX(0.55);
+      opacity: 0.2;
     }
     50% {
-      opacity: 1;
-      transform: scaleX(1);
+      opacity: 0.85;
+      filter: grayscale(0.25);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .primary-source-submit[data-state="loading"]::before,
-    .primary-source-status[data-state="loading"]::before,
-    .primary-source-status[data-state="loading"]::after {
+    .source-poll-mark[data-state="waiting"] img {
       animation: none;
     }
   }
@@ -474,32 +555,71 @@ const institutions = [
     padding: 2.4rem 0 3rem;
   }
 
-  .primary-source-directory-list {
+  /* Twelve marks drawn by twelve different design offices only look like a set
+     if they are held to one size and one colour until you point at them. */
+  .source-map {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0;
     margin: 1.3rem 0 0;
     padding: 0;
     list-style: none;
     border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
   }
 
-  .primary-source-directory-list li {
+  .source-map-item {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
-    min-height: 5.2rem;
-    padding: 0.9rem 1rem 0.9rem 0;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    min-height: 8.2rem;
+    padding: 1.35rem 0.65rem 1.1rem;
+    border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
-    font-family: var(--font-sans);
-    font-size: 0.72rem;
-    line-height: 1.4;
-    color: var(--muted);
+    text-align: center;
+    transition: background-color 160ms ease;
   }
 
-  .primary-source-directory-name {
+  .source-map-item:hover {
+    background: var(--paper-soft);
+  }
+
+  .source-map-mark {
+    display: grid;
+    place-items: center;
+    width: 4.1rem;
+    height: 4.1rem;
+    padding: 0.62rem;
+    /* Half these marks are dark on transparent and half are light on white, so
+       on a dark page they either vanish or glare. One plate settles both. */
+    background: #f2f0e9;
+    border: 1px solid var(--line);
+  }
+
+  .source-map-mark img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.82;
+    transition: filter 200ms ease, opacity 200ms ease, transform 200ms ease;
+  }
+
+  .source-map-item:hover .source-map-mark img {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.06);
+  }
+
+  .source-map-name {
+    font-family: var(--font-sans);
+    font-size: 0.66rem;
     font-weight: 700;
-    color: var(--ink);
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+    color: var(--ink-soft);
   }
 
   .primary-source-principle {
@@ -551,14 +671,14 @@ const institutions = [
       align-self: start;
     }
 
-    .primary-source-directory-list {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .source-map {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 
   @media (max-width: 460px) {
-    .primary-source-directory-list {
-      grid-template-columns: 1fr;
+    .source-map {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 </style>

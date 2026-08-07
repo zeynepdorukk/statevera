@@ -13,7 +13,7 @@ interface SourceResult {
 interface SourceResponse {
   query?: string;
   results?: SourceResult[];
-  sources?: { institution?: string; count?: number; ok?: boolean }[];
+  sources?: { id?: string; institution?: string; count?: number; ok?: boolean }[];
 }
 
 const root = document.querySelector<HTMLElement>("[data-primary-sources]");
@@ -72,6 +72,35 @@ if (root) {
     status.textContent = message;
     status.dataset.state = state;
     status.setAttribute("aria-busy", String(state === "loading"));
+  };
+
+  // The strip of institution marks doubles as the wait and the result: every
+  // mark lights up when its institution answers, and stays dim when it did not.
+  const poll = root.querySelector<HTMLElement>("[data-source-poll]");
+  const pollMarks = [...root.querySelectorAll<HTMLElement>("[data-poll-id]")];
+
+  const pollWaiting = () => {
+    if (poll) poll.hidden = false;
+    for (const mark of pollMarks) {
+      mark.dataset.state = "waiting";
+      delete mark.dataset.count;
+    }
+  };
+
+  const pollAnswered = (sources: SourceResponse["sources"]) => {
+    for (const mark of pollMarks) {
+      const source = (sources ?? []).find((item) => item.id === mark.dataset.pollId);
+      mark.dataset.state = source?.ok ? "ok" : "silent";
+      if (source?.ok && source.count) mark.dataset.count = String(source.count);
+      else delete mark.dataset.count;
+    }
+  };
+
+  const pollSilent = () => {
+    for (const mark of pollMarks) {
+      mark.dataset.state = "silent";
+      delete mark.dataset.count;
+    }
   };
 
   const render = (items: SourceResult[]) => {
@@ -137,7 +166,8 @@ if (root) {
       submit.setAttribute("aria-busy", "true");
       submit.textContent = "Checking official sources…";
     }
-    setStatus("Checking official sources across 12 institutions…", "loading");
+    setStatus(`Checking official sources across ${pollMarks.length} institutions\u{2026}`, "loading");
+    pollWaiting();
     try {
       const url = new URL(endpoint, window.location.origin);
       url.searchParams.set("q", query);
@@ -149,10 +179,12 @@ if (root) {
       if (!response.ok) throw new Error(data.error || "The source search is unavailable.");
       allResults = data.results ?? [];
       render(visibleResults());
+      pollAnswered(data.sources);
       const available = (data.sources ?? []).filter((source) => source.ok).length;
-      setStatus(`${visibleResults().length} records shown · ${allResults.length} total matches · ${available} of 12 source adapters responded.`);
+      setStatus(`${visibleResults().length} records shown \u{b7} ${allResults.length} total matches \u{b7} ${available} of ${pollMarks.length} institutions answered.`);
     } catch (error) {
       if (results) results.innerHTML = "";
+      pollSilent();
       setStatus(error instanceof Error ? error.message : "The source search is unavailable. Try again shortly.", "error");
     } finally {
       if (submit) {
