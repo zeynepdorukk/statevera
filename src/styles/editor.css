@@ -1245,6 +1245,75 @@
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
+button.ed-card-views {
+  position: relative;
+  z-index: 1;
+  border: 0;
+  border-bottom: 1px dotted currentColor;
+  background: transparent;
+  padding: 0 0 1px;
+  cursor: pointer;
+}
+button.ed-card-views:hover,
+button.ed-card-views[aria-expanded="true"] {
+  color: var(--ink);
+}
+.ed-card-views.is-off {
+  color: var(--muted);
+  font-weight: 500;
+}
+.ed-card-views-panel {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+.ed-views-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+.ed-views-label {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ed-spark {
+  display: block;
+  width: 100%;
+  height: 2.1rem;
+  color: var(--journal);
+  overflow: visible;
+}
+.ed-views-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.ed-views-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.16rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+}
+.ed-views-list li span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ed-views-list li b {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
 .ed-card-kill {
   position: relative;
   z-index: 1;

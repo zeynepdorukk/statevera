@@ -2,12 +2,11 @@ name = "statevera-desk"
 main = "worker/index.ts"
 compatibility_date = "2026-08-01"
 
-# Read counts are optional. Create the namespace and uncomment this to switch
-# them on; without it the API answers 501 and the desk says so plainly.
-#   npx wrangler kv namespace create VIEWS
-# [[kv_namespaces]]
-# binding = "VIEWS"
-# id = "paste-the-id-wrangler-prints"
+# Read counts. One key per device per article; the country, referring host and
+# date ride along as KV metadata, so a breakdown costs no extra reads.
+[[kv_namespaces]]
+binding = "VIEWS"
+id = "691d4b0743b242b197ba9b78acff41a5"
 
 # GOVINFO_API_KEY, CONGRESS_API_KEY and OSCE_SEARCH_API_KEY are optional: each
 # adapter falls back to a public key. Add them with

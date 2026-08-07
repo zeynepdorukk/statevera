@@ -4,7 +4,8 @@ import { type AiConfig,
   completeInline, suggestMeta, suggestPhotoQuery,
   chatAboutPiece, suggestSources, type ChatApply, type SourceSuggestion } from "../lib/editor/ai";
 import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
-  searchPhotos, importPhoto, uploadImage, readViewCounts, type FileEntry, type Photo } from "../lib/editor/desk";
+  searchPhotos, importPhoto, uploadImage, readViewCounts, readViewDetail,
+  type FileEntry, type Photo, type ViewDetail, type ViewShare } from "../lib/editor/desk";
 import { REPO, forgetAssistantKey, looksLikeGithubToken, looksLikeOpenAiKey, readCredentials } from "../lib/editor/credentials";
 import { TEMPLATES, templateById, type Template } from "../lib/editor/templates";
 import { parseDocument, serialiseArticle, slugify,
@@ -322,6 +323,47 @@ async function openStories(notice = "") {
   }
 }
 
+/** A country code the edge could not name is not worth dressing up. */
+const countryLabel = (code: string) => (code === "??" ? "Unknown" : code);
+
+/** Thirty days of first visits, drawn as one path so the shape reads at a glance. */
+function sparkline(days: { date: string; count: number }[]): string {
+  const peak = Math.max(1, ...days.map((d) => d.count));
+  const step = 100 / Math.max(1, days.length - 1);
+  const points = days.map((d, i) => `${(i * step).toFixed(2)},${(24 - (d.count / peak) * 22).toFixed(2)}`);
+  return `<svg class="ed-spark" viewBox="0 0 100 24" preserveAspectRatio="none" role="img" aria-label="Readers over the last ${days.length} days, peaking at ${peak}">
+      <polyline points="${points.join(" ")}" fill="none" stroke="currentColor" stroke-width="1.2" vector-effect="non-scaling-stroke" />
+    </svg>`;
+}
+
+function viewsPanel(detail: ViewDetail): string {
+  if (!detail.total) return '<p class="ed-note">No readers recorded yet.</p>';
+  const share = (rows: ViewShare[], label: (name: string) => string) =>
+    rows.length
+      ? `<ul class="ed-views-list">${rows
+          .map((row) => `<li><span>${esc(label(row.name))}</span><b>${row.count}</b></li>`)
+          .join("")}</ul>`
+      : '<p class="ed-note">Nothing recorded.</p>';
+
+  const active = detail.days.filter((d) => d.count > 0).length;
+  return `
+    <div class="ed-views-grid">
+      <div class="ed-views-block">
+        <p class="ed-views-label">Last 30 days</p>
+        ${sparkline(detail.days)}
+        <p class="ed-note">${detail.total} in all \u{b7} ${active} ${active === 1 ? "day" : "days"} with a reader</p>
+      </div>
+      <div class="ed-views-block">
+        <p class="ed-views-label">Where they are</p>
+        ${share(detail.countries, countryLabel)}
+      </div>
+      <div class="ed-views-block">
+        <p class="ed-views-label">How they arrived</p>
+        ${share(detail.referrers, (name) => name || "Direct or unknown")}
+      </div>
+    </div>`;
+}
+
 function storiesView(notice = "") {
   const card = (s: Story) => {
     const unsaved = Boolean(localStorage.getItem(K_DRAFT + s.path));
@@ -341,12 +383,13 @@ function storiesView(notice = "") {
         <div class="ed-card-foot">
           <span class="ed-card-meta">${foot || "Not filed yet"}</span>
           ${s.live
-            ? `<span class="ed-card-views" title="Unique devices that opened this article">${
-                state.viewCountsAvailable ? `${s.views} devices` : "Views unavailable"
-              }</span>`
+            ? state.viewCountsAvailable
+              ? `<button type="button" class="ed-card-views" data-views="${esc(s.slug)}" aria-expanded="false" title="Where these readers came from">${s.views} ${s.views === 1 ? "reader" : "readers"}</button>`
+              : '<span class="ed-card-views is-off" title="No counter is bound to the API">Readers unavailable</span>'
             : ""}
           <button type="button" class="ed-card-kill" data-kill aria-label="Delete ${esc(s.title)}">Delete</button>
         </div>
+        <div class="ed-card-views-panel" hidden></div>
         <div class="ed-card-ask" hidden>
           <p>Delete \u{201c}${esc(s.title)}\u{201d}? It leaves the site at the next build.</p>
           <div class="ed-card-ask-row">
@@ -390,6 +433,24 @@ function storiesView(notice = "") {
   root.querySelectorAll<HTMLButtonElement>("[data-open]").forEach((b) =>
     b.addEventListener("click", () => openStory(b.dataset.open!))
   );
+  root.querySelectorAll<HTMLButtonElement>("[data-views]").forEach((button) => {
+    const panel = button.closest("[data-card]")!.querySelector<HTMLElement>(".ed-card-views-panel")!;
+    button.addEventListener("click", async () => {
+      if (!panel.hidden) {
+        panel.hidden = true;
+        button.setAttribute("aria-expanded", "false");
+        return;
+      }
+      panel.hidden = false;
+      button.setAttribute("aria-expanded", "true");
+      panel.innerHTML = '<p class="ed-note">Reading\u{2026}</p>';
+      try {
+        panel.innerHTML = viewsPanel(await readViewDetail(button.dataset.views!));
+      } catch (error) {
+        panel.innerHTML = `<p class="ed-note" data-state="error">${esc((error as Error).message)}</p>`;
+      }
+    });
+  });
   root.querySelectorAll<HTMLElement>("[data-card]").forEach((cardEl) => {
     const ask = cardEl.querySelector<HTMLElement>(".ed-card-ask")!;
     const show = (open: boolean) => {

@@ -313,16 +313,36 @@ export async function readLibrary(): Promise<Library> {
 export async function readViewCounts(slugs: string[]): Promise<Record<string, number>> {
   const unique = [...new Set(slugs.filter(Boolean))];
   if (!unique.length) return {};
-  if (!site.deskUrl) throw new DeskError("No counter is configured.", 501);
-  const response = await fetch(
-    `${site.deskUrl}/api/views?slugs=${encodeURIComponent(unique.join(","))}`
+  const data = await views<{ counts?: Record<string, number> }>(
+    `slugs=${encodeURIComponent(unique.join(","))}`
   );
-  const data = (await response.json().catch(() => ({}))) as {
-    counts?: Record<string, number>;
-    error?: string;
-  };
-  if (!response.ok) throw new DeskError(data.error ?? "No counter answered.", response.status);
   return data.counts ?? {};
+}
+
+export interface ViewShare {
+  name: string;
+  count: number;
+}
+
+export interface ViewDetail {
+  slug: string;
+  total: number;
+  /** Two-letter codes, commonest first. "??" when the edge did not say. */
+  countries: ViewShare[];
+  /** Referring hosts, commonest first. "" means the reader arrived directly. */
+  referrers: ViewShare[];
+  days: { date: string; count: number }[];
+}
+
+export const readViewDetail = (slug: string): Promise<ViewDetail> =>
+  views<ViewDetail>(`slug=${encodeURIComponent(slug)}`);
+
+async function views<T>(query: string): Promise<T> {
+  if (!site.deskUrl) throw new DeskError("No counter is configured.", 501);
+  const response = await fetch(`${site.deskUrl}/api/views?${query}`);
+  const data = (await response.json().catch(() => ({}))) as T & { error?: string };
+  if (!response.ok) throw new DeskError(data.error ?? "No counter answered.", response.status);
+  return data;
 }
 
 export async function readFile(path: string): Promise<{ content: string; sha: string }> {

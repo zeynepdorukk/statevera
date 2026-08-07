@@ -47,13 +47,15 @@ const apiDevPlugin = {
   apply: "serve",
   configureServer(server) {
     /** Stands in for the Worker's KV binding, so read counts work while writing. */
-    const viewKeys = new Set();
+    const viewKeys = new Map();
     const views = {
-      /** @param {string} key */
-      put: async (key) => void viewKeys.add(key),
+      /** @param {string} key @param {string} _value @param {{ metadata?: unknown }} [options] */
+      put: async (key, _value, options) => void viewKeys.set(key, options?.metadata ?? {}),
       /** @param {{ prefix: string }} options */
       list: async ({ prefix }) => ({
-        keys: [...viewKeys].filter((key) => key.startsWith(prefix)).map((name) => ({ name })),
+        keys: [...viewKeys]
+          .filter(([name]) => name.startsWith(prefix))
+          .map(([name, metadata]) => ({ name, metadata })),
         list_complete: true,
       }),
     };

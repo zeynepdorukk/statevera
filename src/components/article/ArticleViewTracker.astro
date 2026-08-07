@@ -31,7 +31,9 @@ const { slug, endpoint } = Astro.props;
           mode: "cors",
           keepalive: true,
           headers: { "content-type": "application/json" },
-          body: JSON.stringify({ slug, deviceId }),
+          // Only the server can see the country; only the page can see where
+          // the reader came from. It keeps the host and drops the rest.
+          body: JSON.stringify({ slug, deviceId, referrer: document.referrer }),
         })
           .then((response) => {
             if (response.ok) localStorage.setItem(sentKey, "1");

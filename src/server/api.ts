@@ -20,14 +20,27 @@
 import { handlePrimarySources } from "./primary-sources";
 import type { PrimarySourceEnv } from "../primary-sources/types";
 
+/** What is remembered about one device's first visit to one article. */
+export interface ViewMark {
+  /** Two-letter country, from Cloudflare's own edge. */
+  c?: string;
+  /** Referring host only — never the full address someone arrived from. */
+  r?: string;
+  /** Date of that first visit, UTC. */
+  d?: string;
+}
+
 /**
  * The subset of a Cloudflare KV namespace this uses. Structural, so the project
  * needs no Workers types and the dev server can pass a plain in-memory stand-in.
+ *
+ * The mark rides along as KV metadata, which `list` hands back with the key. One
+ * write per device per article, and a breakdown that costs no extra reads.
  */
 export interface ViewStore {
-  put(key: string, value: string): Promise<void>;
+  put(key: string, value: string, options?: { metadata?: ViewMark }): Promise<void>;
   list(options: { prefix: string; cursor?: string }): Promise<{
-    keys: { name: string }[];
+    keys: { name: string; metadata?: ViewMark }[];
     list_complete: boolean;
     cursor?: string;
   }>;
@@ -47,6 +60,8 @@ const ALLOWED_ORIGINS = new Set([
 
 const VIEW_SLUG = /^[a-z0-9][a-z0-9-]{0,79}$/;
 const VIEW_DEVICE = /^[A-Za-z0-9_-]{16,160}$/;
+/** How much of the past the desk panel draws. */
+const SERIES_DAYS = 30;
 
 const encoder = new TextEncoder();
 
@@ -55,7 +70,18 @@ const hex = (buffer: ArrayBuffer): string =>
 
 /** A device is counted once per article, and never identifiably. */
 const deviceKey = async (slug: string, deviceId: string): Promise<string> =>
-  `devices/${slug}/${hex(await crypto.subtle.digest("SHA-256", encoder.encode(deviceId)))}`;
+  `v/${slug}/${hex(await crypto.subtle.digest("SHA-256", encoder.encode(deviceId)))}`;
+
+/** Only the host, and only when the reader came from somewhere else. */
+function referringHost(raw: string): string {
+  if (!raw) return "";
+  try {
+    const host = new URL(raw).hostname.replace(/^www\./, "").toLowerCase();
+    return host === "zeynepdorukk.github.io" || host === "localhost" ? "" : host.slice(0, 80);
+  } catch {
+    return "";
+  }
+}
 
 function corsHeaders(request: Request): Record<string, string> {
   const origin = request.headers.get("origin") ?? "";
@@ -77,34 +103,89 @@ const json = (request: Request, data: unknown, status = 200): Response =>
     },
   });
 
-async function countViews(store: ViewStore, slug: string): Promise<number> {
-  let total = 0;
+/** Every mark left on one article, read out of the key listing alone. */
+async function marksFor(store: ViewStore, slug: string): Promise<ViewMark[]> {
+  const marks: ViewMark[] = [];
   let cursor: string | undefined;
   do {
-    const page = await store.list({ prefix: `devices/${slug}/`, ...(cursor ? { cursor } : {}) });
-    total += page.keys.length;
+    const page = await store.list({ prefix: `v/${slug}/`, ...(cursor ? { cursor } : {}) });
+    for (const key of page.keys) marks.push(key.metadata ?? {});
     cursor = page.list_complete ? undefined : page.cursor;
   } while (cursor);
-  return total;
+  return marks;
+}
+
+const tally = (values: string[]): { name: string; count: number }[] => {
+  const counts = new Map<string, number>();
+  for (const value of values) counts.set(value, (counts.get(value) ?? 0) + 1);
+  return [...counts]
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name))
+    .slice(0, 8);
+};
+
+/** Zero-filled so the desk can draw a line without inventing the gaps. */
+function series(marks: ViewMark[]): { date: string; count: number }[] {
+  const byDay = new Map<string, number>();
+  for (const mark of marks) if (mark.d) byDay.set(mark.d, (byDay.get(mark.d) ?? 0) + 1);
+  const out: { date: string; count: number }[] = [];
+  const today = new Date();
+  for (let back = SERIES_DAYS - 1; back >= 0; back -= 1) {
+    const day = new Date(today);
+    day.setUTCDate(day.getUTCDate() - back);
+    const date = day.toISOString().slice(0, 10);
+    out.push({ date, count: byDay.get(date) ?? 0 });
+  }
+  return out;
 }
 
 async function recordView(request: Request, env: ApiEnv): Promise<Response> {
-  const body = (await request.json().catch(() => ({}))) as { slug?: string; deviceId?: string };
+  const body = (await request.json().catch(() => ({}))) as {
+    slug?: string;
+    deviceId?: string;
+    referrer?: string;
+  };
   const slug = (body.slug ?? "").trim().toLowerCase();
   const deviceId = (body.deviceId ?? "").trim();
   if (!VIEW_SLUG.test(slug) || !VIEW_DEVICE.test(deviceId)) {
     return json(request, { error: "That view could not be recorded." }, 400);
   }
   if (!env.VIEWS) return json(request, { error: "No counter is bound." }, 501);
-  await env.VIEWS.put(await deviceKey(slug, deviceId), "1");
+
+  const country = (request.headers.get("cf-ipcountry") ?? "").toUpperCase();
+  const mark: ViewMark = {
+    ...(/^[A-Z]{2}$/.test(country) ? { c: country } : {}),
+    ...((): { r?: string } => {
+      const host = referringHost((body.referrer ?? "").trim());
+      return host ? { r: host } : {};
+    })(),
+    d: new Date().toISOString().slice(0, 10),
+  };
+  await env.VIEWS.put(await deviceKey(slug, deviceId), "1", { metadata: mark });
   return json(request, { ok: true });
 }
 
 async function readViews(request: Request, env: ApiEnv): Promise<Response> {
   if (!env.VIEWS) return json(request, { error: "No counter is bound." }, 501);
+  const params = new URL(request.url).searchParams;
+
+  // One article, everything known about it: the desk's panel.
+  const single = (params.get("slug") ?? "").trim().toLowerCase();
+  if (single) {
+    if (!VIEW_SLUG.test(single)) return json(request, { error: "That is not an article." }, 400);
+    const marks = await marksFor(env.VIEWS, single);
+    return json(request, {
+      slug: single,
+      total: marks.length,
+      countries: tally(marks.map((m) => m.c ?? "??")),
+      referrers: tally(marks.map((m) => m.r ?? "")),
+      days: series(marks),
+    });
+  }
+
   const slugs = [
     ...new Set(
-      (new URL(request.url).searchParams.get("slugs") ?? "")
+      (params.get("slugs") ?? "")
         .split(",")
         .map((slug) => slug.trim().toLowerCase())
         .filter((slug) => VIEW_SLUG.test(slug))
@@ -112,7 +193,9 @@ async function readViews(request: Request, env: ApiEnv): Promise<Response> {
   ].slice(0, 100);
   if (!slugs.length) return json(request, { error: "No article slugs supplied." }, 400);
   const counts = Object.fromEntries(
-    await Promise.all(slugs.map(async (slug) => [slug, await countViews(env.VIEWS!, slug)] as const))
+    await Promise.all(
+      slugs.map(async (slug) => [slug, (await marksFor(env.VIEWS!, slug)).length] as const)
+    )
   );
   return json(request, { counts });
 }
