@@ -20,6 +20,52 @@ setAssetBase(import.meta.env.BASE_URL);
 // deployments, but it must never decide whether a piece is Published: Pages
 // can be a minute behind the editor after a commit.
 const LIVE_INDEX = `${site.siteUrl}/search-index.json`;
+const JOURNAL_POLL_MS = 1500;
+const JOURNAL_POLL_TIMEOUT_MS = 90_000;
+
+type LiveArticle = { ok: boolean; html: string };
+
+const wait = (ms: number) => new Promise<void>((resolve) => window.setTimeout(resolve, ms));
+
+/**
+ * Pages is static, so a GitHub commit is visible only after its next build.
+ * Use a unique query on every probe: otherwise the browser can keep serving
+ * the previous HTML for GitHub Pages' cache window.
+ */
+async function readLiveArticle(slug: string): Promise<LiveArticle | null> {
+  try {
+    const response = await fetch(`${site.siteUrl}/articles/${slug}/?sv=${Date.now()}`, {
+      cache: "no-store",
+    });
+    return { ok: response.ok, html: await response.text() };
+  } catch {
+    return null;
+  }
+}
+
+async function waitForLiveArticle(slug: string, title: string, previousHtml?: string | null): Promise<boolean> {
+  const deadline = Date.now() + JOURNAL_POLL_TIMEOUT_MS;
+  while (Date.now() < deadline) {
+    const live = await readLiveArticle(slug);
+    const titleVisible = live?.ok &&
+      (live.html.includes(title) || live.html.includes(esc(title))) &&
+      !live.html.includes("Draft — not published");
+    const changed = !previousHtml || live?.html !== previousHtml;
+    if (titleVisible && changed) return true;
+    await wait(JOURNAL_POLL_MS);
+  }
+  return false;
+}
+
+async function waitForRemovedArticle(slug: string): Promise<boolean> {
+  const deadline = Date.now() + JOURNAL_POLL_TIMEOUT_MS;
+  while (Date.now() < deadline) {
+    const live = await readLiveArticle(slug);
+    if (live && !live.ok) return true;
+    await wait(JOURNAL_POLL_MS);
+  }
+  return false;
+}
 
 const K_DRAFT = "sv-draft:";
 
@@ -321,14 +367,21 @@ async function removeStory(path: string, cardEl: HTMLElement) {
   const story = state.stories.find((s) => s.path === path);
   if (!story) return;
   const yes = cardEl.querySelector<HTMLButtonElement>("[data-kill-yes]")!;
+  const ask = cardEl.querySelector<HTMLElement>(".ed-card-ask p")!;
   yes.disabled = true;
   yes.textContent = "Deleting\u{2026}";
   try {
     await deleteFile(path, `Delete ${story.kind} "${story.title}"`, story.sha);
     localStorage.removeItem(K_DRAFT + path);
-    await openStories(`Deleted \u{201c}${story.title}\u{201d}.`);
+    yes.textContent = "Updating\u{2026}";
+    ask.textContent = "Saved. Removing it from The Journal\u{2026}";
+    const removed = await waitForRemovedArticle(story.slug);
+    await openStories(
+      removed
+        ? `Deleted \u{201c}${story.title}\u{201d} — The Journal is updated.`
+        : `Deleted \u{201c}${story.title}\u{201d}. The Journal is still rebuilding.`
+    );
   } catch (error) {
-    const ask = cardEl.querySelector<HTMLElement>(".ed-card-ask p")!;
     ask.textContent = (error as Error).message;
     yes.disabled = false;
     yes.textContent = "Delete";
@@ -1020,7 +1073,7 @@ function compose(args: ComposeArgs) {
         </div>` : ""}
       </div>
       <div class="ed-drawer-foot">
-        <p class="ed-note" data-publish-note></p>
+        <p class="ed-note" data-publish-note role="status" aria-live="polite"></p>
         <div class="ed-publish-actions">
           <button type="button" class="ed-btn" data-save-draft>Save draft</button>
           <button type="button" class="ed-btn ed-btn-primary" data-publish-live>Publish to site</button>
@@ -2469,7 +2522,12 @@ function compose(args: ComposeArgs) {
 
     button.disabled = true;
     note.dataset.state = "";
+    note.dataset.deploy = "";
     note.textContent = draft ? "Saving draft\u{2026}" : "Publishing\u{2026}";
+    const wasNew = isNew;
+    const previousHtml = !draft && !wasNew && slug
+      ? (await readLiveArticle(slug))?.html ?? null
+      : null;
     const oldDraftKey = draftKey();
     if (isNew) {
       const nextSlug = slugify(next.title);
@@ -2483,20 +2541,41 @@ function compose(args: ComposeArgs) {
       path = `src/content/articles/${slug}.mdx`;
       el<HTMLElement>("[data-slugline]").textContent = `${kind} \u{b7} ${slug}`;
     }
+    const publishedSlug = slug;
     try {
       const result = await writeFile(
         path, file,
-        `${isNew ? "Create" : "Edit"} ${kind} "${next.title}"`,
+        `${wasNew ? "Create" : "Edit"} ${kind} "${next.title}"`,
         sha || undefined
       );
       sha = result.sha;
       isNew = false;
       localStorage.removeItem(oldDraftKey);
       localStorage.removeItem(draftKey());
-      note.dataset.state = "ok";
-      note.textContent = next.draft ? "Saved as a draft." : "Live in a couple of minutes.";
-      setStatus(draft ? "Draft saved" : "Published", "ok");
+      if (next.draft) {
+        note.dataset.deploy = "";
+        note.dataset.state = "ok";
+        note.textContent = "Saved as a draft.";
+        setStatus("Draft saved", "ok");
+      } else {
+        note.dataset.deploy = "waiting";
+        note.dataset.state = "";
+        note.textContent = "Saved to GitHub \u{b7} The Journal is rebuilding\u{2026}";
+        setStatus("Publishing to The Journal\u{2026}");
+        const live = await waitForLiveArticle(publishedSlug, next.title, previousHtml);
+        note.dataset.deploy = "";
+        if (live) {
+          note.dataset.state = "ok";
+          note.textContent = "Published on The Journal.";
+          setStatus("Published on The Journal", "ok");
+        } else {
+          note.dataset.state = "";
+          note.textContent = "Saved to GitHub. The Journal is still rebuilding; it will update automatically.";
+          setStatus("Saved; The Journal is rebuilding");
+        }
+      }
     } catch (error) {
+      note.dataset.deploy = "";
       note.dataset.state = "error";
       note.textContent = (error as Error).message;
     } finally {

@@ -955,6 +955,28 @@
 .ed-note[data-state="ok"] {
   color: var(--journal-deep);
 }
+.ed-note[data-deploy="waiting"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--ink-soft);
+}
+.ed-note[data-deploy="waiting"]::before {
+  content: "";
+  width: 0.72rem;
+  height: 0.72rem;
+  flex: 0 0 auto;
+  border: 1px solid color-mix(in srgb, var(--journal) 35%, var(--line-strong));
+  border-top-color: var(--journal);
+  border-radius: 50%;
+  animation: ed-spin 0.85s linear infinite;
+}
+@keyframes ed-spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ed-note[data-deploy="waiting"]::before { animation: none; }
+}
 
 /* ---------- stories ---------- */
 .ed-bar-mark {
