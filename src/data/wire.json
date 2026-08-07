@@ -1,10 +1,55 @@
 {
-  "generatedAt": "2026-08-07T11:30:00.088Z",
+  "generatedAt": "2026-08-07T12:09:22.102Z",
   "sourceCount": 26,
   "failedSources": [
     "bbc-africa"
   ],
   "items": [
+    {
+      "id": "bb467d3bff55",
+      "title": "Exclusive: ICC judges order Taliban case split from Afghanistan probe that covers US troops",
+      "summary": "Exclusive: ICC judges order Taliban case split from Afghanistan probe that covers US troops Submitted by Sondos Asem on Fri, 08/07/2026 - 10:20 Decision by pre-trial chamber comes after the Trump administration threatened to 'dismantle' the ICC over the…",
+      "url": "https://www.middleeasteye.net/news/icc-judges-order-taliban-case-split-from-afghanistan-probe-that-covers-us-nationals",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-07T11:51:19.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "a39c4bb217fd",
+      "title": "Iran hopes to deal Trump a blow at midterms by keeping him entangled in war",
+      "summary": "By dragging out talks, Tehran aims to damage the US president politically, but some fear a bruised and weakened Trump could only prolong the conflict Tehran has set out a protracted negotiating timetable designed to keep Donald Trump embroiled in the Iran…",
+      "url": "https://www.theguardian.com/world/2026/aug/07/iran-war-trump-midterm-ballot",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-07T11:47:24.000Z",
+      "image": "https://i.guim.co.uk/img/media/fe90568bae6b49080ea2fa0e28e0e91286745f7d/325_0_3287_2632/master/3287.jpg?width=700&quality=85&auto=format&fit=max&s=7a9f349884c1f8d8239abf67158f9711",
+      "imageWidth": 700,
+      "category": "Security",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "ced3ff9c67d4",
+      "title": "Ex-Benin president Talon makes political comeback via newly founded Senate",
+      "summary": "Benin’s newly created Senate elected former president Patrice Talon as its leader on Thursday in Porto-Novo, less than three months after he left office. He will serve a five-year term at the head of the country’s new second chamber of Parliament.",
+      "url": "https://www.rfi.fr/en/africa/20260807-ex-benin-president-talon-makes-political-comeback-via-newly-founded-senate",
+      "publisher": "RFI",
+      "publisherHome": "https://www.rfi.fr/en",
+      "sourceId": "rfi-world",
+      "publishedAt": "2026-08-07T11:47:02.000Z",
+      "image": "https://s.rfi.fr/media/display/0d1ec63e-9213-11f1-8b41-005056bfb2b6/w:1024/p:16x9/2026-07-30T193143Z-1836495194-RC2BOMAX7QRY-RTRMADP-3-BENIN-POLITICS.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "1515af8dfe1b",
       "title": "South Korea, Taiwan top Japan in exports for first time on AI boom",
@@ -51,6 +96,21 @@
       "imageWidth": 0,
       "category": "Economy",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "6620a1fb95d8",
+      "title": "Northern Ethiopia’s shifting alliances explained",
+      "summary": "The TPLF, Fano militias and Eritrea are redrawing the battle lines in Ethiopia’s north.",
+      "url": "https://www.aljazeera.com/news/2026/8/7/northern-ethiopias-shifting-alliances-explained?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-07T11:19:01.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -126,21 +186,6 @@
       "imageWidth": 0,
       "category": "Security",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "837f925737cf",
-      "title": "Labour government says more people working illegally are being arrested and deported – UK politics live",
-      "summary": "More than double number of arrests made since 2024 compared with previous two-year period Conservative councillors have been told they “must not allow” Labour, Liberal Democrat and Green-led councils to disregard new guidance on single-sex spaces.…",
-      "url": "https://www.theguardian.com/politics/blog/live/2026/aug/07/labour-government-people-working-illegally-arrested-deported-uk-andy-burnham-politics-latest",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-07T10:48:50.000Z",
-      "image": "https://i.guim.co.uk/img/media/add7e484ae1911818a4b201fe35d3f79f8024174/185_0_2165_1733/master/2165.jpg?width=700&quality=85&auto=format&fit=max&s=c62931bdc31fe234201cdcb1caf154f7",
-      "imageWidth": 700,
-      "category": "Politics",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -459,21 +504,6 @@
       "weight": 2
     },
     {
-      "id": "f8052bafacf7",
-      "title": "Lebanese army clearing roads in Tyre to facilitate residents' return",
-      "summary": "Lebanese army clearing roads in Tyre to facilitate residents' return Lebanese military units overnight entered the town of al-Mansouri, in the southern city of Tyre, to begin clearing roads previously blocked as a result of recent Israeli attacks, state media…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/lebanese-army-clearing-roads-tyre-facilitate-residents-return",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-07T05:24:53.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "565d3b4a8d60",
       "title": "Philippine GDP growth slows further to 2.3% in Q2 as inflation bites",
       "summary": "",
@@ -680,8 +710,8 @@
       "summary": "The move aims to protect US firms as they face increasing competition from China's chip industry.",
       "url": "https://www.bbc.co.uk/news/articles/cdrvn686dljo?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
+      "publisherHome": "https://www.bbc.com/news/business",
+      "sourceId": "bbc-business",
       "publishedAt": "2026-08-07T01:03:35.000Z",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/60dd/live/9a103bd0-91fb-11f1-952a-e58ebd1358f8.jpg",
       "imageWidth": 240,
@@ -713,7 +743,7 @@
       "publisherHome": "https://www.france24.com/en",
       "sourceId": "france24",
       "publishedAt": "2026-08-07T00:02:57.000Z",
-      "image": "https://s.france24.com/media/display/4795ec38-86b6-11f1-bb3d-005056a97e36/w:1024/p:16x9/AP25323646360063.jpg",
+      "image": "https://s.france24.com/media/display/e4f5bcac-9254-11f1-b2a6-005056a97e36/w:1024/p:16x9/AP26201667127997-1.jpg",
       "imageWidth": 0,
       "category": "Security",
       "region": "Asia-Pacific",
@@ -1132,8 +1162,8 @@
       "summary": "Amal Khalil was killed and her colleague Zeinab Faraj wounded in an Israeli attack in April; Israel denied targeting the journalists.",
       "url": "https://www.bbc.co.uk/news/articles/cx2md67y3nlo?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
+      "publisherHome": "https://www.bbc.com/news/world/middle_east",
+      "sourceId": "bbc-mideast",
       "publishedAt": "2026-08-06T14:20:15.000Z",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8428/live/43975ca0-918f-11f1-a7ab-8b30adf0800a.jpg",
       "imageWidth": 240,
@@ -2507,21 +2537,6 @@
       "weight": 3
     },
     {
-      "id": "cf47a0110c94",
-      "title": "Ugandan military honours Netanyahu’s brother with Entebbe memorial statue",
-      "summary": "Uganda’s military has unveiled a monument to Israeli Prime Minister Benjamin Netanyahu’s older brother, who was killed during a hostage rescue operation in the East African country in 1976.",
-      "url": "https://www.rfi.fr/en/africa/20260804-ugandan-military-honours-netanyahu-s-brother-with-entebbe-memorial-statue",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-04T15:29:46.000Z",
-      "image": "https://s.rfi.fr/media/display/5b2a8386-8fe8-11f1-b226-005056a90284/w:1024/p:16x9/A-monument-honoring-the-late-Yoni-Netanyahu-AP26215390559044.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "0d6f54886120",
       "title": "EU ministers agree Schengen zone 'not the problem' in Ceuta migrant influx",
       "summary": "Last week's deadly surge of migrants into Spain's North African enclave Ceuta did not \"compromise\" the European Union's visa-free Schengen travel zone, the Spanish interior minister said on Tuesday, following an emergency meeting at which member states…",
@@ -2565,21 +2580,6 @@
       "category": "Security",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "97ee5b19df5d",
-      "title": "Jerusalem’s most important Muslim religious site facing ‘imminent’ threat of Israeli takeover, says Jordan",
-      "summary": "Country convenes emergency meeting of ministers from Arab and Islamic world, fearing such a move could ‘trigger a religious conflict’ Jordan is convening an emergency meeting of foreign ministers from the Arab and Islamic world over what it says is an…",
-      "url": "https://www.theguardian.com/world/2026/aug/04/jordan-convenes-emergency-meeting-israel-religious-conflict-jerusalem",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-04T13:15:34.000Z",
-      "image": "https://i.guim.co.uk/img/media/a6d444e9564511fa1a879b531aaff4271caaea93/326_0_6361_5088/master/6361.jpg?width=700&quality=85&auto=format&fit=max&s=8bd7345e3c14f9721ceeb7ef99ffe289",
-      "imageWidth": 700,
-      "category": "Economy",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "67fd20d75902",
@@ -2804,21 +2804,6 @@
       "imageWidth": 700,
       "category": "Economy",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "c61fbb43a0b0",
-      "title": "Poland: Prime Minister Tusk defies anti-Ukrainian violence",
-      "summary": "Anti-Ukrainian sentiment in Poland is on the rise, with numerous attacks against refugees from the war in Ukraine. Prime Minister Donald Tusk has spoken out against the violence and warned of the danger from Russia.",
-      "url": "https://www.dw.com/en/poland-prime-minister-tusk-defies-anti-ukrainian-violence/a-78203187?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-02T09:24:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "region": "Eurasia",
       "weight": 2
     },
     {
