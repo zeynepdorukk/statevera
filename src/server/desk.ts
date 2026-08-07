@@ -38,8 +38,14 @@ const modelOf = (env: DeskEnv): string => env.OPENAI_MODEL?.trim() || DEFAULT_MO
 /** A signed-in session may only touch the content folder. */
 const WRITEABLE = /^src\/content\/articles\/[a-z0-9][a-z0-9-]*\.mdx$/;
 /** Pictures imported from the web land here, and nowhere else. */
-const IMAGE_WRITEABLE = /^public\/images\/articles\/[a-z0-9][a-z0-9-]*\.(jpg|png)$/;
+const IMAGE_WRITEABLE = /^public\/images\/articles\/[a-z0-9][a-z0-9-]*\.(jpg|png|webp)$/;
 const READABLE_DIRS = new Set(["src/content/articles", "public/images/articles"]);
+const DEVICE_IMAGE_MAX_BYTES = 4 * 1024 * 1024;
+const DEVICE_IMAGE_TYPES: Record<string, "jpg" | "png" | "webp"> = {
+  "image/jpeg": "jpg",
+  "image/png": "png",
+  "image/webp": "webp",
+};
 
 const encoder = new TextEncoder();
 
@@ -105,6 +111,29 @@ const bytesToBase64 = (bytes: Uint8Array): string => {
   }
   return btoa(binary);
 };
+
+const bytesFromBase64 = (value: string): Uint8Array => {
+  const compact = value.replace(/\s/g, "");
+  if (!compact || !/^[A-Za-z0-9+/]*={0,2}$/.test(compact)) {
+    throw new Error("That picture could not be read.");
+  }
+  const binary = atob(compact);
+  if (binary.length > DEVICE_IMAGE_MAX_BYTES) throw new Error("That picture is too large to file (4 MB maximum).");
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i += 1) bytes[i] = binary.charCodeAt(i);
+  return bytes;
+};
+
+function isImageBytes(bytes: Uint8Array, type: string): boolean {
+  if (type === "image/jpeg") return bytes.length > 3 && bytes[0] === 0xff && bytes[1] === 0xd8 && bytes[2] === 0xff;
+  if (type === "image/png") return [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a].every((byte, i) => bytes[i] === byte);
+  if (type === "image/webp") {
+    return bytes.length > 12 &&
+      String.fromCharCode(...bytes.subarray(0, 4)) === "RIFF" &&
+      String.fromCharCode(...bytes.subarray(8, 12)) === "WEBP";
+  }
+  return false;
+}
 
 const fromBase64 = (value: string): string => {
   const binary = atob(value.replace(/\s/g, ""));
@@ -574,6 +603,47 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
       const query = (url.searchParams.get("q") ?? "").trim().slice(0, 120);
       if (!query) return fail(400, "Say what to look for.");
       return json({ photos: await searchPhotos(query, 24) });
+    }
+
+    // A device upload is deliberately a separate action from the Commons
+    // importer. The client sends a small, validated image payload; this server
+    // remains the only place allowed to write it into the repository.
+    if (route === "photos/upload" && request.method === "POST") {
+      if (!env.GITHUB_TOKEN) return fail(503, "This deployment cannot publish: no GitHub token on the server.");
+      const body = (await request.json().catch(() => ({}))) as {
+        data?: string;
+        name?: string;
+        type?: string;
+      };
+      const type = (body.type ?? "").trim().toLowerCase();
+      const extension = DEVICE_IMAGE_TYPES[type];
+      if (!extension) return fail(400, "Use a JPEG, PNG or WebP image.");
+      const name = (body.name ?? "").trim().toLowerCase();
+      if (!/^[a-z0-9][a-z0-9-]{0,79}$/.test(name)) return fail(400, "That is not a usable image name.");
+      const raw = (body.data ?? "").replace(/^data:[^;]+;base64,/, "");
+      if (!raw) return fail(400, "No picture was selected.");
+      let bytes: Uint8Array;
+      try {
+        bytes = bytesFromBase64(raw);
+      } catch (error) {
+        return fail(400, (error as Error).message);
+      }
+      if (!isImageBytes(bytes, type)) return fail(400, "That file is not a valid image.");
+
+      const path = `public/images/articles/${name}.${extension}`;
+      if (!IMAGE_WRITEABLE.test(path)) return fail(400, "That is not a usable file name.");
+      const existing = await githubJson<{ sha?: string }>(env, `/contents/${path}?ref=HEAD`).catch(
+        () => ({}) as { sha?: string }
+      );
+      await githubJson(env, `/contents/${path}`, {
+        method: "PUT",
+        body: JSON.stringify({
+          message: `Add device picture ${path.split("/").pop()}`,
+          content: bytesToBase64(bytes),
+          ...(existing.sha ? { sha: existing.sha } : {}),
+        }),
+      });
+      return json({ name: path.split("/").pop(), preview: "" });
     }
 
     // Filing a picture copies it into the repository: the publication then owns

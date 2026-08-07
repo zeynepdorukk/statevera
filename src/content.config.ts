@@ -25,7 +25,11 @@ const REGIONS = [
 const media = {
   heroImage: z.string(),
   heroImageAlt: z.string(),
+  imageCaption: z.string().optional(),
   imageCredit: z.string().optional(),
+  imageSource: z.string().optional(),
+  imageDate: z.string().optional(),
+  imageLicense: z.string().optional(),
   imageFocus: z.string().optional(),
 };
 

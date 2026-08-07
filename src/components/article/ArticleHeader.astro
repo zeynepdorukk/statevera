@@ -10,7 +10,13 @@ interface Props {
 
 const { article } = Astro.props;
 const { data } = article;
-const credit = creditFor(data.heroImage);
+const explicitCredit = data.imageCredit?.trim() ?? "";
+const credit = explicitCredit ? null : creditFor(data.heroImage);
+const imageCaption = data.imageCaption?.trim() ?? "";
+const imageSource = data.imageSource?.trim() ?? "";
+const imageDate = data.imageDate?.trim() ?? "";
+const imageLicense = data.imageLicense?.trim() ?? "";
+const sourceUrl = /^https?:\/\//i.test(imageSource) ? imageSource : "";
 const minutes = readingTime(article);
 const deskSlug = deskSlugOf(data.category);
 const regionSlug = regionSlugOf(data.region);
@@ -77,14 +83,18 @@ const regionSlug = regionSlugOf(data.region);
       class="img-frame border border-line/70"
       style={data.imageFocus ? `object-position: ${data.imageFocus}` : undefined}
     />
-    {credit && (
+    {(credit || explicitCredit || imageCaption || imageSource || imageDate || imageLicense) && (
       <figcaption class="mt-1.5 border-b border-line pb-2.5 font-sans text-[0.73rem] text-muted">
-        {credit.label}. {credit.credit}, {credit.license}.
-      </figcaption>
-    )}
-    {!credit && data.imageCredit && (
-      <figcaption class="mt-1.5 border-b border-line pb-2.5 font-sans text-[0.73rem] text-muted">
-        {data.imageCredit}
+        {imageCaption && <span class="block text-ink-soft">{imageCaption}</span>}
+        {credit && <span class="block">{credit.label}. {credit.credit}, {credit.license}.</span>}
+        {!credit && explicitCredit && <span class="block">Credit: {explicitCredit}</span>}
+        {imageSource && (
+          <span class="block">
+            Source: {sourceUrl ? <a href={sourceUrl} target="_blank" rel="noreferrer">{imageSource}</a> : imageSource}
+          </span>
+        )}
+        {imageDate && <span class="block">Photo date: {imageDate}</span>}
+        {imageLicense && <span class="block">Licence: {imageLicense}</span>}
       </figcaption>
     )}
   </figure>

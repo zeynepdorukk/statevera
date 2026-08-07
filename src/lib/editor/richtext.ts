@@ -36,6 +36,66 @@ const escapeHtml = (value: string): string =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
+const unescapeHtml = (value: string): string =>
+  value
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&amp;/g, "&");
+
+const storedAttribute = (attributes: string, name: string): string => {
+  const match = attributes.match(new RegExp(`${name}\\s*=\\s*["']([^"']*)["']`, "i"));
+  return unescapeHtml(match?.[1] ?? "");
+};
+
+interface FigureDetails {
+  credit: string;
+  source: string;
+  date: string;
+  license: string;
+}
+
+const figureDetailsLabel = ({ credit, source, date, license }: FigureDetails): string =>
+  [
+    credit ? `Credit: ${credit}` : "",
+    source ? `Source: ${source}` : "",
+    date ? `Photo date: ${date}` : "",
+    license ? `Licence: ${license}` : "",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
+const figureDetailsMarkup = (details: FigureDetails, editor = false): string => {
+  const label = figureDetailsLabel(details);
+  if (!label) return "";
+  if (editor) {
+    return `<div class="ed-figure-meta" contenteditable="false"><span>${escapeHtml(label)}</span><button type="button" class="ed-figure-edit" data-image-edit>Edit image details</button></div>`;
+  }
+  const source = SAFE_URL.test(details.source.trim())
+    ? `<a href="${escapeHtml(details.source.trim())}">${escapeHtml(details.source.trim())}</a>`
+    : escapeHtml(details.source);
+  const parts = [
+    details.credit ? `Credit: ${escapeHtml(details.credit)}` : "",
+    details.source ? `Source: ${source}` : "",
+    details.date ? `Photo date: ${escapeHtml(details.date)}` : "",
+    details.license ? `Licence: ${escapeHtml(details.license)}` : "",
+  ].filter(Boolean);
+  return `<small class="image-meta">${parts.join(" · ")}</small>`;
+};
+
+const renderStoredFigure = (
+  src: string,
+  alt: string,
+  caption: string,
+  details: FigureDetails
+): string =>
+  `<figure class="ed-figure" data-image data-credit="${escapeHtml(details.credit)}" data-source="${escapeHtml(details.source)}" data-date="${escapeHtml(details.date)}" data-license="${escapeHtml(details.license)}" contenteditable="false">` +
+  `<img src="${escapeHtml(displaySrc(src))}" data-src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" />` +
+  `<figcaption contenteditable="true" data-placeholder="Caption">${escapeHtml(caption)}</figcaption>` +
+  figureDetailsMarkup(details, true) +
+  `</figure>`;
+
 // ------------------------------------------------------------
 // Markdown -> editable DOM
 // ------------------------------------------------------------
@@ -89,7 +149,8 @@ export function markdownToHtml(markdown: string): string {
     closeQuote();
   };
 
-  for (const raw of lines) {
+  for (let i = 0; i < lines.length; i += 1) {
+    const raw = lines[i];
     const line = raw.trim();
 
     if (callout) {
@@ -113,6 +174,38 @@ export function markdownToHtml(markdown: string): string {
 
     if (!line) {
       closeAll();
+      continue;
+    }
+
+    // Device-uploaded body images are stored as a small, explicit HTML figure
+    // so attribution metadata survives the MDX round trip. Rebuild the same
+    // editable figure here when an existing piece is opened in the desk.
+    if (/^<figure\b[^>]*>$/i.test(line)) {
+      closeAll();
+      const figureLines = [raw];
+      let end = i;
+      while (end + 1 < lines.length && !/<\/figure>\s*$/i.test(lines[end])) {
+        end += 1;
+        figureLines.push(lines[end]);
+      }
+      const figureMarkup = figureLines.join("\n");
+      const figureAttrs = figureMarkup.match(/^<figure\b([^>]*)>/i)?.[1] ?? "";
+      const imageAttrs = figureMarkup.match(/<img\b([^>]*)\/?\s*>/i)?.[1] ?? "";
+      const src = storedAttribute(imageAttrs, "src");
+      if (SAFE_URL.test(src)) {
+        const caption = unescapeHtml(
+          figureMarkup.match(/<figcaption\b[^>]*>([\s\S]*?)<\/figcaption>/i)?.[1] ?? ""
+        ).replace(/<[^>]+>/g, "").trim();
+        out.push(
+          renderStoredFigure(src, storedAttribute(imageAttrs, "alt"), caption, {
+            credit: storedAttribute(figureAttrs, "data-credit"),
+            source: storedAttribute(figureAttrs, "data-source"),
+            date: storedAttribute(figureAttrs, "data-date"),
+            license: storedAttribute(figureAttrs, "data-license"),
+          })
+        );
+      }
+      i = end;
       continue;
     }
 
@@ -267,7 +360,34 @@ export function htmlToMarkdown(root: HTMLElement): string {
         const img = el.querySelector("img");
         const caption = el.querySelector("figcaption")?.textContent?.trim() ?? "";
         // data-src holds the repository path; src carries the site base for display.
-        if (img) blocks.push(`![${caption}](${img.getAttribute("data-src") ?? img.getAttribute("src") ?? ""})`);
+        if (img) {
+          const src = img.getAttribute("data-src") ?? img.getAttribute("src") ?? "";
+          const details: FigureDetails = {
+            credit: el.dataset.credit ?? "",
+            source: el.dataset.source ?? "",
+            date: el.dataset.date ?? "",
+            license: el.dataset.license ?? "",
+          };
+          if (Object.values(details).some(Boolean)) {
+            const attrs = [
+              'class="article-image"',
+              "data-image",
+              `data-credit="${escapeHtml(details.credit)}"`,
+              `data-source="${escapeHtml(details.source)}"`,
+              `data-date="${escapeHtml(details.date)}"`,
+              `data-license="${escapeHtml(details.license)}"`,
+            ].join(" ");
+            blocks.push(
+              `<figure ${attrs}>\n` +
+              `  <img src="${escapeHtml(src)}" alt="${escapeHtml(img.getAttribute("alt") ?? "")}" />\n` +
+              `  <figcaption>${escapeHtml(caption)}</figcaption>\n` +
+              `  ${figureDetailsMarkup(details)}\n` +
+              `</figure>`
+            );
+          } else {
+            blocks.push(`![${caption}](${src})`);
+          }
+        }
         break;
       }
       default: {

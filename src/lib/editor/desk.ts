@@ -98,3 +98,14 @@ export const searchPhotos = (query: string): Promise<{ photos: Photo[] }> =>
 /** Copies a Commons picture into the repository and returns its filename. */
 export const importPhoto = (file: string, name: string): Promise<{ name: string; preview: string }> =>
   call("photos", { method: "POST", body: JSON.stringify({ file, name }) });
+
+/**
+ * Files a picture selected on the writer's device. The bytes are sent only to
+ * the authenticated desk endpoint; the browser never needs a GitHub token.
+ */
+export const uploadImage = (
+  data: string,
+  name: string,
+  type: string
+): Promise<{ name: string; preview: string }> =>
+  call("photos/upload", { method: "POST", body: JSON.stringify({ data, name, type }) });

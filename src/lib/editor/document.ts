@@ -126,7 +126,11 @@ export interface ArticleFields {
   draft: boolean;
   heroImage: string;
   heroImageAlt: string;
+  imageCaption: string;
   imageCredit: string;
+  imageSource: string;
+  imageDate: string;
+  imageLicense: string;
   sources: { name: string; url: string }[];
 }
 
@@ -156,7 +160,11 @@ export function serialiseArticle(fields: ArticleFields, body: string): string {
     `draft: ${fields.draft}`,
     `heroImage: ${quote(fields.heroImage)}`,
     `heroImageAlt: ${quote(fields.heroImageAlt)}`,
+    ...(fields.imageCaption ? [`imageCaption: ${quote(fields.imageCaption)}`] : []),
     ...(fields.imageCredit ? [`imageCredit: ${quote(fields.imageCredit)}`] : []),
+    ...(fields.imageSource ? [`imageSource: ${quote(fields.imageSource)}`] : []),
+    ...(fields.imageDate ? [`imageDate: ${quote(fields.imageDate)}`] : []),
+    ...(fields.imageLicense ? [`imageLicense: ${quote(fields.imageLicense)}`] : []),
     ...sourcesBlock(fields.sources),
     "---",
     "",

@@ -4,7 +4,7 @@ import { type AiConfig,
   completeInline, suggestMeta, suggestPhotoQuery,
   chatAboutPiece, suggestSources, type ChatApply, type SourceSuggestion } from "../lib/editor/ai";
 import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
-  searchPhotos, importPhoto, type FileEntry, type Photo } from "../lib/editor/desk";
+  searchPhotos, importPhoto, uploadImage, type FileEntry, type Photo } from "../lib/editor/desk";
 import { TEMPLATES, templateById, type Template } from "../lib/editor/templates";
 import { parseDocument, serialiseArticle, slugify,
   findBrokenCharacters, type ArticleFields } from "../lib/editor/document";
@@ -431,7 +431,11 @@ function createStory(template?: Template) {
       draft: true,
       heroImage: "",
       heroImageAlt: "",
+      imageCaption: "",
       imageCredit: "",
+      imageSource: "",
+      imageDate: "",
+      imageLicense: "",
       sources: [],
     },
     body: template?.body ?? "",
@@ -472,7 +476,11 @@ async function openStory(path: string) {
         draft: bool("draft"),
         heroImage: fm.heroImage ?? "",
         heroImageAlt: fm.heroImageAlt ?? "",
+        imageCaption: fm.imageCaption ?? "",
         imageCredit: fm.imageCredit ?? "",
+        imageSource: fm.imageSource ?? "",
+        imageDate: fm.imageDate ?? "",
+        imageLicense: fm.imageLicense ?? "",
         sources: parsed.sources,
       },
       body: parsed.body,
@@ -492,6 +500,9 @@ interface FiledPhoto {
   credit: string;
   alt: string;
   source: string;
+  caption: string;
+  date: string;
+  license: string;
 }
 
 /**
@@ -566,6 +577,9 @@ function findPhoto(seed: {
           credit: photo.credit,
           alt: photo.title,
           source: photo.source,
+          caption: photo.title,
+          date: "",
+          license: photo.licence,
         });
       } catch (error) {
         busy = false;
@@ -630,6 +644,164 @@ function findPhoto(seed: {
     // A headline is almost never a good archive query, so only a short seed \u{2014}
     // something already shaped like a subject \u{2014} is searched unasked.
     if (seed.query.trim().split(/\s+/).length <= 5) run(seed.query);
+  });
+}
+
+// ==========================================================
+// A photograph from the writer's device
+// ==========================================================
+
+const DEVICE_IMAGE_LIMIT = 3_400_000;
+const DEVICE_IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
+
+const readDataUrl = (file: Blob): Promise<string> =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => resolve(String(reader.result ?? "")));
+    reader.addEventListener("error", () => reject(new Error("The picture could not be read.")));
+    reader.readAsDataURL(file);
+  });
+
+const dataUrlBytes = (dataUrl: string): number => {
+  const encoded = dataUrl.split(",", 2)[1] ?? "";
+  const padding = encoded.endsWith("==") ? 2 : encoded.endsWith("=") ? 1 : 0;
+  return Math.max(0, Math.floor(encoded.length * 0.75) - padding);
+};
+
+const loadImage = (src: string): Promise<HTMLImageElement> =>
+  new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(new Error("The picture could not be decoded."));
+    image.src = src;
+  });
+
+/** Keeps a camera original when it is small, otherwise makes a web-friendly copy. */
+async function prepareDeviceImage(file: File): Promise<{ dataUrl: string; type: string }> {
+  if (!DEVICE_IMAGE_TYPES.has(file.type)) throw new Error("Use a JPEG, PNG or WebP image.");
+  const original = await readDataUrl(file);
+  if (file.size <= DEVICE_IMAGE_LIMIT) return { dataUrl: original, type: file.type };
+
+  const image = await loadImage(original);
+  const longest = Math.max(image.naturalWidth || image.width, image.naturalHeight || image.height);
+  if (!longest) throw new Error("The picture has no usable dimensions.");
+
+  // Large phone originals are resized in the browser before crossing the
+  // serverless function's request-size limit. Photos become JPEGs; a small PNG
+  // remains untouched so a writer can still use a transparent graphic.
+  let edge = Math.min(longest, 2400);
+  let quality = 0.84;
+  for (let attempt = 0; attempt < 4; attempt += 1) {
+    const scale = Math.min(1, edge / longest);
+    const canvas = document.createElement("canvas");
+    canvas.width = Math.max(1, Math.round((image.naturalWidth || image.width) * scale));
+    canvas.height = Math.max(1, Math.round((image.naturalHeight || image.height) * scale));
+    const context = canvas.getContext("2d");
+    if (!context) throw new Error("This browser cannot prepare the picture.");
+    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    const dataUrl = canvas.toDataURL("image/jpeg", quality);
+    if (dataUrlBytes(dataUrl) <= DEVICE_IMAGE_LIMIT) return { dataUrl, type: "image/jpeg" };
+    edge = Math.round(edge * 0.78);
+    quality *= 0.86;
+  }
+  throw new Error("That picture is still too large. Choose a smaller image.");
+}
+
+function pickDeviceFile(): Promise<File | null> {
+  return new Promise((resolve) => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = "image/jpeg,image/png,image/webp";
+    input.setAttribute("aria-label", "Choose a picture from this device");
+    input.style.position = "fixed";
+    input.style.left = "-9999px";
+    document.body.append(input);
+    const finish = (file: File | null) => {
+      input.remove();
+      resolve(file);
+    };
+    input.addEventListener("change", () => finish(input.files?.[0] ?? null), { once: true });
+    input.click();
+  });
+}
+
+async function fileFromDevice(): Promise<FiledPhoto | null> {
+  const file = await pickDeviceFile();
+  if (!file) return null;
+  const { dataUrl, type } = await prepareDeviceImage(file);
+  const encoded = dataUrl.split(",", 2)[1] ?? "";
+  const base = slugify(file.name.replace(/\.[^.]+$/, "")).slice(0, 46) || "device-picture";
+  const name = `${base}-${Date.now().toString(36)}`.slice(0, 78);
+  const filed = await uploadImage(encoded, name, type);
+  freshPhotos.set(filed.name, dataUrl);
+  const label = file.name.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").trim();
+  return {
+    name: filed.name,
+    credit: "",
+    alt: label,
+    source: "",
+    caption: label,
+    date: "",
+    license: "",
+  };
+}
+
+function editImageDetails(seed: FiledPhoto): Promise<FiledPhoto | null> {
+  return new Promise((resolve) => {
+    const host = document.createElement("div");
+    host.className = "ed-modal";
+    host.innerHTML = `
+      <div class="ed-modal-box ed-image-meta-modal" role="dialog" aria-label="Image details">
+        <div class="ed-modal-head">
+          <p class="ed-legend" style="margin:0">Image details</p>
+          <button type="button" class="ed-btn ed-btn-quiet" data-shut>Close</button>
+        </div>
+        <p class="ed-note">Add the details that let readers identify the picture and its rights. A source or licence does not replace permission to use an image.</p>
+        <form class="ed-image-meta-form" data-form>
+          <div class="ed-field"><label for="image-alt">Alt text</label><input id="image-alt" class="ed-input" data-alt value="${esc(seed.alt)}" required /><p class="note">Describe what is visible, not what you want the picture to imply.</p></div>
+          <div class="ed-field"><label for="image-caption">Caption</label><input id="image-caption" class="ed-input" data-caption value="${esc(seed.caption)}" placeholder="Optional caption" /></div>
+          <div class="ed-field"><label for="image-credit">Creator / credit</label><input id="image-credit" class="ed-input" data-credit value="${esc(seed.credit)}" placeholder="Photographer, archive or author" /></div>
+          <div class="ed-field"><label for="image-source">Source or original URL</label><input id="image-source" class="ed-input" data-source value="${esc(seed.source)}" placeholder="https://… or Author's own photograph" /></div>
+          <div class="ed-field ed-pair"><div><label for="image-date">Photo date</label><input id="image-date" type="date" class="ed-input" data-date value="${esc(seed.date)}" /></div><div><label for="image-license">Rights / licence</label><input id="image-license" class="ed-input" data-license value="${esc(seed.license)}" placeholder="CC BY 4.0 / All rights reserved" /></div></div>
+          <div class="ed-image-meta-actions"><button type="button" class="ed-btn" data-cancel>Cancel</button><button type="submit" class="ed-btn ed-btn-primary">Use this image</button></div>
+        </form>
+      </div>`;
+    document.body.append(host);
+
+    const pick = <T extends HTMLElement>(selector: string) => host.querySelector<T>(selector)!;
+    let settled = false;
+    const shut = (value: FiledPhoto | null) => {
+      if (settled) return;
+      settled = true;
+      document.removeEventListener("keydown", onKey, true);
+      host.remove();
+      resolve(value);
+    };
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") { event.preventDefault(); shut(null); }
+    }
+    document.addEventListener("keydown", onKey, true);
+    host.addEventListener("mousedown", (event) => { if (event.target === host) shut(null); });
+    pick<HTMLButtonElement>("[data-shut]").addEventListener("click", () => shut(null));
+    pick<HTMLButtonElement>("[data-cancel]").addEventListener("click", () => shut(null));
+    pick<HTMLFormElement>("[data-form]").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const alt = pick<HTMLInputElement>("[data-alt]").value.trim();
+      if (!alt) {
+        pick<HTMLInputElement>("[data-alt]").focus();
+        return;
+      }
+      shut({
+        ...seed,
+        alt,
+        caption: pick<HTMLInputElement>("[data-caption]").value.trim(),
+        credit: pick<HTMLInputElement>("[data-credit]").value.trim(),
+        source: pick<HTMLInputElement>("[data-source]").value.trim(),
+        date: pick<HTMLInputElement>("[data-date]").value,
+        license: pick<HTMLInputElement>("[data-license]").value.trim(),
+      });
+    });
+    pick<HTMLInputElement>("[data-alt]").focus();
   });
 }
 
@@ -747,17 +919,34 @@ function compose(args: ComposeArgs) {
             <option value="">None</option>
             ${state.images.map((i) => `<option value="${esc(i)}" ${i === f.heroImage ? "selected" : ""}>${esc(i)}</option>`).join("")}
           </select>
-          <button type="button" class="ed-btn" style="width:100%;justify-content:center;margin-top:.5rem" data-hero-find>Search the web for a photograph</button>
+          <div class="ed-image-actions">
+            <button type="button" class="ed-btn" data-hero-find>Search the web</button>
+            <button type="button" class="ed-btn" data-hero-device>From this device</button>
+          </div>
+          <p class="note">JPEG, PNG or WebP · up to 4 MB after preparation. On a phone this opens your gallery or camera picker.</p>
         </div>
         <div class="ed-field">
-          <label for="alt">What the image shows</label>
+          <label for="alt">Alt text · what the image shows</label>
           <input id="alt" class="ed-input" data-alt value="${esc(f.heroImageAlt)}" />
           <p class="note">Read aloud to people who cannot see it.</p>
         </div>
         <div class="ed-field">
-          <label for="credit">Image credit</label>
+          <label for="image-caption">Caption</label>
+          <input id="image-caption" class="ed-input" data-caption value="${esc(f.imageCaption)}" placeholder="Optional caption" />
+        </div>
+        <div class="ed-field">
+          <label for="credit">Creator / image credit</label>
           <input id="credit" class="ed-input" data-credit value="${esc(f.imageCredit)}" />
         </div>
+        <div class="ed-field">
+          <label for="image-source">Source or original URL</label>
+          <input id="image-source" class="ed-input" data-source value="${esc(f.imageSource)}" placeholder="https://… or Author's own photograph" />
+        </div>
+        <div class="ed-field ed-pair">
+          <div><label for="image-date">Photo date</label><input id="image-date" type="date" class="ed-input" data-image-date value="${esc(f.imageDate)}" /></div>
+          <div><label for="image-license">Rights / licence</label><input id="image-license" class="ed-input" data-license value="${esc(f.imageLicense)}" placeholder="CC BY 4.0 / All rights reserved" /></div>
+        </div>
+        <p class="ed-image-rights-note">Keep the original source and licence with every image. This makes attribution visible and gives readers a path to verify it.</p>
 
         ${kind === "article" ? `
         <div class="ed-field ed-pair" style="margin-top:1.4rem">
@@ -1221,6 +1410,7 @@ function compose(args: ComposeArgs) {
     { name: "Quote", hint: ">", run: (b) => { const q = document.createElement("blockquote"); q.innerHTML = "<p><br></p>"; b.replaceWith(q); placeCaret(q.firstElementChild as HTMLElement); } },
     { name: "Divider", hint: "---", run: (b) => insertBlock(b, hrBlock()) },
     { name: "Image", hint: "", run: (b) => pickImage(b) },
+    { name: "Picture from this device", hint: "upload", run: (b) => { void deviceImage(b); } },
     { name: "Photograph from the web", hint: "search", run: (b) => webImage(b) },
     ...(Object.keys(CALLOUTS) as CalloutName[]).map((key) => ({
       name: CALLOUTS[key],
@@ -1390,18 +1580,89 @@ function compose(args: ComposeArgs) {
     });
   }
 
-  function placeFigure(block: HTMLElement, name: string, caption: string) {
+  const figureMetaText = (photo: FiledPhoto): string =>
+    [
+      photo.credit ? `Credit: ${photo.credit}` : "",
+      photo.source ? `Source: ${photo.source}` : "",
+      photo.date ? `Photo date: ${photo.date}` : "",
+      photo.license ? `Licence: ${photo.license}` : "",
+    ]
+      .filter(Boolean)
+      .join(" · ");
+
+  const updateFigureDetails = (figure: HTMLElement, photo: FiledPhoto) => {
+    figure.dataset.credit = photo.credit;
+    figure.dataset.source = photo.source;
+    figure.dataset.date = photo.date;
+    figure.dataset.license = photo.license;
+    const image = figure.querySelector<HTMLImageElement>("img");
+    if (image) image.alt = photo.alt;
+    const caption = figure.querySelector<HTMLElement>("figcaption");
+    if (caption) caption.textContent = photo.caption;
+    const label = figure.querySelector<HTMLElement>(".ed-figure-meta span");
+    if (label) label.textContent = figureMetaText(photo);
+    const details = figure.querySelector<HTMLElement>(".ed-figure-meta");
+    if (details) details.hidden = !figureMetaText(photo);
+  };
+
+  function placeFigure(block: HTMLElement, photo: FiledPhoto) {
     const figure = document.createElement("figure");
     figure.className = "ed-figure";
     figure.dataset.image = "";
     figure.setAttribute("contenteditable", "false");
     figure.innerHTML =
-      `<img src="${esc(freshPhotos.get(name) ?? BASE + inArticles(name))}" data-src="${esc(inArticles(name))}" alt="" />` +
-      `<figcaption contenteditable="true" data-placeholder="Caption">${esc(caption)}</figcaption>`;
+      `<img src="${esc(freshPhotos.get(photo.name) ?? BASE + inArticles(photo.name))}" data-src="${esc(inArticles(photo.name))}" alt="${esc(photo.alt)}" />` +
+      `<figcaption contenteditable="true" data-placeholder="Caption">${esc(photo.caption)}</figcaption>` +
+      `<div class="ed-figure-meta" contenteditable="false" ${figureMetaText(photo) ? "" : "hidden"}><span>${esc(figureMetaText(photo))}</span><button type="button" class="ed-figure-edit" data-image-edit>Edit image details</button></div>`;
+    updateFigureDetails(figure, photo);
+    figure.querySelector<HTMLButtonElement>("[data-image-edit]")?.addEventListener("click", async (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const current: FiledPhoto = {
+        ...photo,
+        alt: figure.querySelector<HTMLImageElement>("img")?.alt ?? photo.alt,
+        caption: figure.querySelector("figcaption")?.textContent?.trim() ?? photo.caption,
+        credit: figure.dataset.credit ?? "",
+        source: figure.dataset.source ?? "",
+        date: figure.dataset.date ?? "",
+        license: figure.dataset.license ?? "",
+      };
+      const updated = await editImageDetails(current);
+      if (updated) {
+        updateFigureDetails(figure, updated);
+        touched();
+      }
+    });
     insertBlock(block, figure);
     placeCaret(figure.querySelector("figcaption") as HTMLElement);
     touched();
   }
+
+  // Figures loaded from an existing MDX file get the same metadata editor as
+  // newly inserted ones. A delegated handler also keeps the DOM resilient when
+  // the assistant replaces a block of the canvas.
+  bodyEl.addEventListener("click", async (event) => {
+    const button = (event.target as HTMLElement).closest<HTMLButtonElement>("[data-image-edit]");
+    if (!button || !bodyEl.contains(button)) return;
+    event.preventDefault();
+    event.stopPropagation();
+    const figure = button.closest<HTMLElement>("figure");
+    if (!figure) return;
+    const current: FiledPhoto = {
+      name: figure.querySelector<HTMLImageElement>("img")?.getAttribute("data-src")?.split("/").pop() ?? "",
+      alt: figure.querySelector<HTMLImageElement>("img")?.alt ?? "",
+      caption: figure.querySelector("figcaption")?.textContent?.trim() ?? "",
+      credit: figure.dataset.credit ?? "",
+      source: figure.dataset.source ?? "",
+      date: figure.dataset.date ?? "",
+      license: figure.dataset.license ?? "",
+    };
+    const updated = await editImageDetails(current);
+    if (updated) {
+      updateFigureDetails(figure, updated);
+      touched();
+    }
+  });
 
   async function webImage(block: HTMLElement) {
     const filed = await findPhoto({
@@ -1417,7 +1678,22 @@ function compose(args: ComposeArgs) {
     });
     if (!filed) return;
     if (!state.images.includes(filed.name)) state.images.push(filed.name);
-    placeFigure(block, filed.name, filed.credit);
+    const detailed = await editImageDetails(filed);
+    if (detailed) placeFigure(block, detailed);
+  }
+
+  async function deviceImage(block: HTMLElement) {
+    setStatus("Uploading the picture…");
+    try {
+      const filed = await fileFromDevice();
+      if (!filed) return;
+      if (!state.images.includes(filed.name)) state.images.push(filed.name);
+      const detailed = await editImageDetails(filed);
+      if (detailed) placeFigure(block, detailed);
+      setStatus("Picture added with its attribution details", "ok");
+    } catch (error) {
+      setStatus((error as Error).message, "error");
+    }
   }
 
   async function pickImage(block: HTMLElement) {
@@ -1436,7 +1712,16 @@ function compose(args: ComposeArgs) {
     );
     const name = state.images[index];
     if (!name) return;
-    placeFigure(block, name, "");
+    const detailed = await editImageDetails({
+      name,
+      credit: "",
+      alt: "",
+      source: "",
+      caption: "",
+      date: "",
+      license: "",
+    });
+    if (detailed) placeFigure(block, detailed);
   }
 
   // ==========================================================
@@ -1976,9 +2261,38 @@ function compose(args: ComposeArgs) {
     if (alt && !alt.value.trim()) alt.value = filed.alt;
     const credit = maybe<HTMLInputElement>("[data-credit]");
     if (credit) credit.value = filed.credit;
+    const caption = maybe<HTMLInputElement>("[data-caption]");
+    if (caption && !caption.value.trim()) caption.value = filed.caption;
+    const source = maybe<HTMLInputElement>("[data-source]");
+    if (source && !source.value.trim()) source.value = filed.source;
+    const photoDate = maybe<HTMLInputElement>("[data-image-date]");
+    if (photoDate && !photoDate.value.trim()) photoDate.value = filed.date;
+    const license = maybe<HTMLInputElement>("[data-license]");
+    if (license && !license.value.trim()) license.value = filed.license;
     paintCover();
     touched();
     setStatus("Picture filed with its credit", "ok");
+  }
+
+  async function findCoverOnDevice() {
+    try {
+      const filed = await fileFromDevice();
+      if (!filed) return;
+      if (!state.images.includes(filed.name)) state.images.push(filed.name);
+      heroSelect.insertAdjacentHTML("beforeend", `<option value="${esc(filed.name)}">${esc(filed.name)}</option>`);
+      heroSelect.value = filed.name;
+      maybe<HTMLInputElement>("[data-alt]")!.value = filed.alt;
+      maybe<HTMLInputElement>("[data-caption]")!.value = filed.caption;
+      maybe<HTMLInputElement>("[data-credit]")!.value = filed.credit;
+      maybe<HTMLInputElement>("[data-source]")!.value = filed.source;
+      maybe<HTMLInputElement>("[data-image-date]")!.value = filed.date;
+      maybe<HTMLInputElement>("[data-license]")!.value = filed.license;
+      paintCover();
+      touched();
+      setStatus("Device picture added — complete its attribution details", "ok");
+    } catch (error) {
+      setStatus((error as Error).message, "error");
+    }
   }
 
   const paintCover = () => {
@@ -1991,16 +2305,19 @@ function compose(args: ComposeArgs) {
         '<span class="ed-cover-hint">+ Lead image</span>' +
         '<span class="ed-cover-ways">' +
         '<button type="button" class="ed-btn ed-btn-primary" data-cover-find>Search the web</button>' +
+        '<button type="button" class="ed-btn" data-cover-device>From this device</button>' +
         '<button type="button" class="ed-btn" data-cover-lib>From the library</button>' +
         "</span>";
       coverEl.classList.remove("has-image");
     }
     coverEl.querySelector("[data-cover-swap]")?.addEventListener("click", (e) => { e.stopPropagation(); openDrawer(); });
     coverEl.querySelector("[data-cover-find]")?.addEventListener("click", (e) => { e.stopPropagation(); findCover(); });
+    coverEl.querySelector("[data-cover-device]")?.addEventListener("click", (e) => { e.stopPropagation(); findCoverOnDevice(); });
     coverEl.querySelector("[data-cover-lib]")?.addEventListener("click", (e) => { e.stopPropagation(); openDrawer(); });
   };
   heroSelect.addEventListener("change", paintCover);
   maybe<HTMLButtonElement>("[data-hero-find]")?.addEventListener("click", findCover);
+  maybe<HTMLButtonElement>("[data-hero-device]")?.addEventListener("click", findCoverOnDevice);
   paintCover();
 
   maybe<HTMLButtonElement>("[data-fill]")?.addEventListener("click", async (event) => {
@@ -2079,7 +2396,11 @@ function compose(args: ComposeArgs) {
       draft: !el<HTMLInputElement>("[data-live]").checked,
       heroImage: heroSelect.value,
       heroImageAlt: (maybe<HTMLInputElement>("[data-alt]")?.value ?? "").trim(),
+      imageCaption: (maybe<HTMLInputElement>("[data-caption]")?.value ?? "").trim(),
       imageCredit: (maybe<HTMLInputElement>("[data-credit]")?.value ?? "").trim(),
+      imageSource: (maybe<HTMLInputElement>("[data-source]")?.value ?? "").trim(),
+      imageDate: (maybe<HTMLInputElement>("[data-image-date]")?.value ?? "").trim(),
+      imageLicense: (maybe<HTMLInputElement>("[data-license]")?.value ?? "").trim(),
       sources,
     };
   };

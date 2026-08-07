@@ -678,6 +678,19 @@ a:hover > .outbound::after,
   color: var(--muted);
 }
 
+.article-body .image-meta {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.article-body .image-meta a {
+  color: inherit;
+}
+
 .article-body hr {
   border: 0;
   border-top: 1px solid var(--line);
