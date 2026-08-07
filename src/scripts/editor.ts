@@ -904,11 +904,10 @@ function compose(args: ComposeArgs) {
         <button type="button" class="ed-btn ed-btn-quiet" data-drawer-close>Close</button>
       </div>
       <div class="ed-drawer-body">
-        <label class="ed-switch">
-          <input type="checkbox" data-live ${f.draft ? "" : "checked"} />
-          <span><span class="t">Visible on the site</span>
-            <span class="d">Off keeps it as a private draft.</span></span>
-        </label>
+        <div class="ed-publish-choice">
+          <p class="ed-legend" style="margin:0">Choose what happens next</p>
+          <p class="ed-note">Save a private draft while you are working, or publish the finished piece to the site.</p>
+        </div>
 
         ${aiReady() ? '<button type="button" class="ed-btn" style="width:100%;justify-content:center;margin-top:1rem" data-fill>Ask ' + esc(state.model) + ' to fill this in</button>' : ""}
         <p class="ed-note" data-fill-note style="margin-top:.5rem"></p>
@@ -991,7 +990,10 @@ function compose(args: ComposeArgs) {
       </div>
       <div class="ed-drawer-foot">
         <p class="ed-note" data-publish-note></p>
-        <button type="button" class="ed-btn ed-btn-primary" style="justify-content:center" data-save>${isNew ? "Create" : "Publish"}</button>
+        <div class="ed-publish-actions">
+          <button type="button" class="ed-btn" data-save-draft>Save draft</button>
+          <button type="button" class="ed-btn ed-btn-primary" data-publish-live>Publish to site</button>
+        </div>
       </div>
     </aside>
   `);
@@ -2369,7 +2371,7 @@ function compose(args: ComposeArgs) {
   });
 
   // ---------- publish ----------
-  const collect = (): ArticleFields => {
+  const collect = (draft: boolean): ArticleFields => {
     const list = (selector: string) =>
       (maybe<HTMLInputElement>(selector)?.value ?? "").split(",").map((s) => s.trim()).filter(Boolean);
     const sources = (maybe<HTMLTextAreaElement>("[data-sources]")?.value ?? "")
@@ -2394,7 +2396,7 @@ function compose(args: ComposeArgs) {
       type: maybe<HTMLSelectElement>("[data-type]")?.value ?? f.type,
       featured: maybe<HTMLInputElement>("[data-featured]")?.checked ?? false,
       editorsPick: maybe<HTMLInputElement>("[data-pick]")?.checked ?? false,
-      draft: !el<HTMLInputElement>("[data-live]").checked,
+      draft,
       heroImage: heroSelect.value,
       heroImageAlt: (maybe<HTMLInputElement>("[data-alt]")?.value ?? "").trim(),
       imageCaption: (maybe<HTMLInputElement>("[data-caption]")?.value ?? "").trim(),
@@ -2406,11 +2408,11 @@ function compose(args: ComposeArgs) {
     };
   };
 
-  async function publish() {
-    const button = el<HTMLButtonElement>("[data-save]");
+  async function publish(draft: boolean) {
+    const button = el<HTMLButtonElement>(draft ? "[data-save-draft]" : "[data-publish-live]");
     const note = el<HTMLElement>("[data-publish-note]");
     clearGhost();
-    const next = collect();
+    const next = collect(draft);
     const markdown = htmlToMarkdown(bodyEl);
 
     const missing: string[] = [];
@@ -2436,7 +2438,7 @@ function compose(args: ComposeArgs) {
 
     button.disabled = true;
     note.dataset.state = "";
-    note.textContent = "Publishing\u{2026}";
+    note.textContent = draft ? "Saving draft\u{2026}" : "Publishing\u{2026}";
     const oldDraftKey = draftKey();
     if (isNew) {
       const nextSlug = slugify(next.title);
@@ -2462,8 +2464,7 @@ function compose(args: ComposeArgs) {
       localStorage.removeItem(draftKey());
       note.dataset.state = "ok";
       note.textContent = next.draft ? "Saved as a draft." : "Live in a couple of minutes.";
-      button.textContent = "Publish";
-      setStatus("Published", "ok");
+      setStatus(draft ? "Draft saved" : "Published", "ok");
     } catch (error) {
       note.dataset.state = "error";
       note.textContent = (error as Error).message;
@@ -2472,7 +2473,8 @@ function compose(args: ComposeArgs) {
     }
   }
 
-  el<HTMLButtonElement>("[data-save]").addEventListener("click", publish);
+  el<HTMLButtonElement>("[data-save-draft]").addEventListener("click", () => publish(true));
+  el<HTMLButtonElement>("[data-publish-live]").addEventListener("click", () => publish(false));
   el<HTMLButtonElement>("[data-back]").addEventListener("click", () => openStories());
 
   document.addEventListener("keydown", function onKey(event) {

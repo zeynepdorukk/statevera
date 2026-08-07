@@ -831,6 +831,24 @@
   flex-direction: column;
   gap: 0.6rem;
 }
+.ed-publish-choice {
+  margin-bottom: 1.1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  background: var(--paper-soft);
+}
+.ed-publish-choice .ed-note {
+  margin-top: 0.3rem;
+  line-height: 1.45;
+}
+.ed-publish-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+}
+.ed-publish-actions .ed-btn {
+  justify-content: center;
+}
 
 .ed-field + .ed-field {
   margin-top: 1rem;
