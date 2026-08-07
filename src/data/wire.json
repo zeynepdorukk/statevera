@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T22:52:55.636Z",
+  "generatedAt": "2026-08-07T23:23:21.808Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -11,7 +11,7 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-07T22:27:57.000Z",
+      "publishedAt": "2026-08-07T22:51:21.000Z",
       "image": "https://i.guim.co.uk/img/media/5292ff0766733e690b2b74b35a987c061e302fe0/184_0_3331_2666/master/3331.jpg?width=700&quality=85&auto=format&fit=max&s=142e3d0358bd2aed527c8a05ae0d22a5",
       "imageWidth": 700,
       "category": "Politics",
@@ -3051,22 +3051,6 @@
       "imageWidth": 240,
       "category": "Security",
       "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "c82e9133681e",
-      "title": "UK faces ‘very difficult trade-offs’ in budget because of Iran war, say analysts",
-      "summary": "Leading thinktank says higher oil prices and inflation will give Andy Burnham a ‘challenging inheritance’ Andy Burnham has been warned by a leading thinktank of “very difficult trade-offs in the next autumn budget” if the Iran war keeps oil prices and…",
-      "url": "https://www.theguardian.com/business/2026/jul/29/uk-faces-trade-offs-because-of-iran-war-inflation",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
-      "publishedAt": "2026-07-28T23:01:15.000Z",
-      "image": "https://i.guim.co.uk/img/media/c6e08df6af64f071fa9033792b102a90f036f034/339_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=a993701846bc4570093505f34cf8aa76",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     }
