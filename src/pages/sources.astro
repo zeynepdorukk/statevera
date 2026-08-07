@@ -233,93 +233,149 @@ const institutions = [
     color: var(--wire);
   }
 
-  .primary-source-results {
-    margin-top: 0.5rem;
+  :global(.primary-source-results) {
+    margin-top: 1.35rem;
+    border-top: 1px solid var(--line-strong);
   }
 
-  .primary-source-result {
+  :global(.primary-source-result) {
     display: grid;
-    grid-template-columns: minmax(9rem, 1.1fr) minmax(0, 3fr) auto;
-    gap: 1rem;
+    grid-template-columns: minmax(10rem, 14rem) minmax(0, 1fr);
+    gap: 2.2rem;
     align-items: start;
-    border-top: 1px solid var(--line);
-    padding: 1.25rem 0;
-  }
-
-  .primary-source-result:last-child {
+    padding: 1.45rem 0 1.6rem;
     border-bottom: 1px solid var(--line);
   }
 
-  .primary-source-result-source,
-  .primary-source-result-meta,
-  .primary-source-result-id {
+  :global(.primary-source-result-source) {
+    position: relative;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+
+  :global(.primary-source-result-source strong),
+  :global(.primary-source-result-source > span:not(.primary-source-result-eyebrow):not(.primary-source-result-index)) {
+    display: block;
+  }
+
+  :global(.primary-source-result-source strong) {
+    margin-top: 0.35rem;
+    color: var(--ink);
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+    text-transform: uppercase;
+  }
+
+  :global(.primary-source-result-eyebrow) {
+    display: block;
+    color: var(--wire-deep);
+    font-size: 0.61rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  :global(.primary-source-result-index) {
+    display: block;
+    margin-top: 1.4rem;
+    color: var(--line-strong);
+    font-family: var(--font-serif);
+    font-size: 1.7rem;
+    line-height: 1;
+  }
+
+  :global(.primary-source-result-body) {
+    min-width: 0;
+  }
+
+  :global(.primary-source-result-title) {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: clamp(1.18rem, 1.8vw, 1.52rem);
+    line-height: 1.2;
+    color: var(--ink);
+  }
+
+  :global(.primary-source-result-title a) {
+    color: inherit;
+    text-decoration: none;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  :global(.primary-source-result-title a:hover),
+  :global(.primary-source-result-title a:focus-visible) {
+    color: var(--wire-deep);
+    text-decoration: underline;
+    outline: none;
+  }
+
+  :global(.primary-source-result-snippet) {
+    max-width: 52rem;
+    margin: 0.55rem 0 0;
+    font-family: var(--font-serif);
+    font-size: 0.94rem;
+    line-height: 1.52;
+    color: var(--ink-soft);
+  }
+
+  :global(.primary-source-result-meta) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.85rem;
+    margin-top: 0.75rem;
     font-family: var(--font-sans);
     font-size: 0.66rem;
     line-height: 1.45;
     color: var(--muted);
   }
 
-  .primary-source-result-source strong {
-    display: block;
+  :global(.primary-source-result-type) {
     color: var(--ink);
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .primary-source-result-title {
-    margin: 0;
-    font-family: var(--font-serif);
-    font-size: clamp(1.05rem, 1.65vw, 1.35rem);
-    line-height: 1.25;
-    color: var(--ink);
-  }
-
-  .primary-source-result-snippet {
-    max-width: 46rem;
-    margin: 0.45rem 0 0;
-    font-family: var(--font-serif);
-    font-size: 0.92rem;
-    line-height: 1.5;
-    color: var(--ink-soft);
-  }
-
-  .primary-source-result-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 0.6rem;
-  }
-
-  .primary-source-result-type {
-    color: var(--tone, var(--ink));
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 
-  .primary-source-result-action {
-    align-self: center;
-    white-space: nowrap;
-    font-family: var(--font-sans);
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink);
-  }
-
-  .primary-source-result-action:hover {
-    color: var(--wire);
-  }
-
-  .primary-source-result-id {
-    display: block;
-    margin-top: 0.25rem;
+  :global(.primary-source-result-id) {
     overflow-wrap: anywhere;
   }
 
-  .primary-source-empty {
+  :global(.primary-source-result-action) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--line-hair);
+    font-family: var(--font-sans);
+    font-size: 0.69rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  :global(.primary-source-result-action span) {
+    color: var(--wire-deep);
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+
+  :global(.primary-source-result-action:hover) {
+    color: var(--wire);
+  }
+
+  :global(.primary-source-result-action.is-unavailable) {
+    color: var(--muted);
+    cursor: not-allowed;
+  }
+
+  :global(.primary-source-empty) {
     border-top: 1px solid var(--line);
     padding: 2rem 0;
     font-family: var(--font-serif);
@@ -386,12 +442,16 @@ const institutions = [
       grid-template-columns: 1fr;
     }
 
-    .primary-source-result {
+    :global(.primary-source-result) {
       grid-template-columns: 1fr;
       gap: 0.55rem;
     }
 
-    .primary-source-result-action {
+    :global(.primary-source-result-index) {
+      margin-top: 0.9rem;
+    }
+
+    :global(.primary-source-result-action) {
       align-self: start;
     }
 

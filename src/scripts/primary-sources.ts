@@ -43,6 +43,29 @@ if (root) {
     return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(parsed);
   };
 
+  const officialUrl = (value: string | undefined): string => {
+    if (!value) return "";
+    try {
+      const url = new URL(value, window.location.origin);
+      return url.protocol === "https:" || url.protocol === "http:" ? url.toString() : "";
+    } catch {
+      return "";
+    }
+  };
+
+  const domain = (value: string): string => {
+    try {
+      return new URL(value).hostname.replace(/^www\./, "");
+    } catch {
+      return "Official institution website";
+    }
+  };
+
+  const shortSnippet = (value: string | undefined): string => {
+    const text = String(value || "Official record available at the source institution.").replace(/\s+/g, " ").trim();
+    return text.length > 260 ? `${text.slice(0, 257).trimEnd()}…` : text;
+  };
+
   const setStatus = (message: string, state = "") => {
     if (!status) return;
     status.textContent = message;
@@ -55,24 +78,37 @@ if (root) {
       results.innerHTML = "<p class=\"primary-source-empty\">No official records matched this search. Try a broader keyword or another document type.</p>";
       return;
     }
-    results.innerHTML = items.map((item) => `
+    results.innerHTML = items.map((item, index) => {
+      const url = officialUrl(item.url);
+      const title = item.title || "Official record";
+      const titleMarkup = url
+        ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHtml(title)} at the official source">${escapeHtml(title)}</a>`
+        : escapeHtml(title);
+      const actionMarkup = url
+        ? `<a class="primary-source-result-action" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Open official document <span aria-hidden="true">↗</span></a>`
+        : `<span class="primary-source-result-action is-unavailable">Official link unavailable</span>`;
+
+      return `
       <article class="primary-source-result">
         <div class="primary-source-result-source">
+          <span class="primary-source-result-eyebrow">Primary source · ${escapeHtml(domain(url))}</span>
           <strong>${escapeHtml(item.institution || "Official source")}</strong>
-          <span>${escapeHtml(item.organization || item.country || "")}</span>
+          <span>${escapeHtml(item.organization || item.country || "Issued by the institution above")}</span>
+          <span class="primary-source-result-index" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
         </div>
-        <div>
-          <h3 class="primary-source-result-title">${escapeHtml(item.title)}</h3>
-          <p class="primary-source-result-snippet">${escapeHtml(item.snippet || "Official record available at the source institution.")}</p>
+        <div class="primary-source-result-body">
+          <h3 class="primary-source-result-title">${titleMarkup}</h3>
+          <p class="primary-source-result-snippet">${escapeHtml(shortSnippet(item.snippet))}</p>
           <div class="primary-source-result-meta">
             <span class="primary-source-result-type">${escapeHtml(item.documentType || "Document")}</span>
             <span>${escapeHtml(date(item.publicationDate))}</span>
+            ${item.sourceIdentifier ? `<span class="primary-source-result-id">Record ID: ${escapeHtml(item.sourceIdentifier)}</span>` : ""}
           </div>
-          ${item.sourceIdentifier ? `<span class="primary-source-result-id">ID: ${escapeHtml(item.sourceIdentifier)}</span>` : ""}
+          ${actionMarkup}
         </div>
-        <a class="primary-source-result-action" href="${escapeHtml(item.url)}" target="_blank" rel="noopener noreferrer">View Original Source ↗</a>
       </article>
-    `).join("");
+    `;
+    }).join("");
   };
 
   const visibleResults = () => activeType === "All"
