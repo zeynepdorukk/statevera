@@ -16,6 +16,34 @@ interface GovInfoRow {
   collectionCode?: string;
 }
 
+function publicDetailsUrl(packageId?: string, granuleId?: string): string {
+  const packageValue = packageId?.trim();
+  if (!packageValue) return "";
+  const granuleValue = granuleId?.trim();
+  const path = [packageValue, granuleValue].filter((value): value is string => Boolean(value)).map((value) => encodeURIComponent(value)).join("/");
+  return cleanUrl(`https://www.govinfo.gov/app/details/${path}`);
+}
+
+function sourceUrl(row: GovInfoRow): string {
+  // GovInfo returns API links in some search responses. Those links require
+  // an API key when opened in a browser, so always prefer the public details
+  // permalink built from the package and granule identifiers.
+  const publicUrl = publicDetailsUrl(row.packageId, row.granuleId);
+  if (publicUrl) return publicUrl;
+
+  const candidate = row.resultLink || row.detailsLink || row.htmlLink || row.pdfLink || row.download?.pdfLink || "";
+  try {
+    const parsed = new URL(candidate);
+    if (parsed.hostname === "api.govinfo.gov") {
+      const match = parsed.pathname.match(/^\/packages\/([^/]+)(?:\/granules\/([^/]+))?/i);
+      if (match?.[1]) return publicDetailsUrl(match[1], match[2]);
+    }
+  } catch {
+    // Fall through to the shared URL sanitizer for malformed source data.
+  }
+  return cleanUrl(candidate);
+}
+
 export const govInfo: PrimarySourceAdapter = {
   id: "govinfo",
   institution: "U.S. GovInfo",
@@ -42,7 +70,7 @@ export const govInfo: PrimarySourceAdapter = {
     });
     return (data.results ?? []).flatMap((row) => {
       const title = row.title?.trim() ?? "";
-      const href = cleanUrl(row.resultLink || row.detailsLink || row.htmlLink || row.pdfLink || row.download?.pdfLink || "");
+      const href = sourceUrl(row);
       if (!title || !href) return [];
       const identifier = row.granuleId || row.packageId || href;
       return [{
