@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-07T22:05:48.133Z",
+  "generatedAt": "2026-08-07T22:52:55.636Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "5e4b5b475a15",
+      "title": "Key Republican says he will vote for Todd Blanche to become attorney general after other senators defect – live",
+      "summary": "Senator Bill Cassidy, who will not be returning to Congress after losing his Louisiana primary to a Trump-backed candidate, said he would support the AG nominee Murkowski won’t support Blanche’s attorney general bid Sign up for the Breaking News US email…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/07/donald-trump-ohio-republican-max-miller-domestic-abuse-allegations-birthright-citizenship-us-politics-latest",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-07T22:27:57.000Z",
+      "image": "https://i.guim.co.uk/img/media/5292ff0766733e690b2b74b35a987c061e302fe0/184_0_3331_2666/master/3331.jpg?width=700&quality=85&auto=format&fit=max&s=142e3d0358bd2aed527c8a05ae0d22a5",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "c997144f5e32",
+      "title": "Why Saudi Arabia, Pakistan, and Turkey just signed a defense pact",
+      "summary": "Each country pledged to defend the others, but each country also has its own motivations for joining the pact. The post Why Saudi Arabia, Pakistan, and Turkey just signed a defense pact appeared first on Atlantic Council .",
+      "url": "https://www.atlanticcouncil.org/dispatches/why-saudi-arabia-pakistan-and-turkey-just-signed-a-defense-pact/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-07T22:22:37.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Global",
+      "weight": 3
+    },
+    {
+      "id": "9093ca339a5a",
+      "title": "Democrats gain momentum in pivotal US Senate and governor’s races in Texas",
+      "summary": "James Talarico leads Ken Paxton in the Texas Senate race, signalling a potential shift in the Republican stronghold.",
+      "url": "https://www.aljazeera.com/news/2026/8/7/democrats-gain-momentum-in-pivotal-us-senate-and-governors-races-in-texas?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-07T22:08:49.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "4fcc3dd2ef76",
       "title": "The Senate just agreed to hand Trump a tariff weapon against Russia. Will he use it?",
@@ -18,22 +66,6 @@
       "categoryConfidence": "high",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "5e4b5b475a15",
-      "title": "Key Republican says he will vote for Todd Blanche to become attorney general after other senators defect – live",
-      "summary": "Senator Bill Cassidy, who will not be returning to Congress after losing his Louisiana primary to a Trump-backed candidate, said he would support the AG nominee Murkowski won’t support Blanche’s attorney general bid Sign up for the Breaking News US email…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/07/donald-trump-ohio-republican-max-miller-domestic-abuse-allegations-birthright-citizenship-us-politics-latest",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-07T21:43:43.000Z",
-      "image": "https://i.guim.co.uk/img/media/5292ff0766733e690b2b74b35a987c061e302fe0/184_0_3331_2666/master/3331.jpg?width=700&quality=85&auto=format&fit=max&s=142e3d0358bd2aed527c8a05ae0d22a5",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Global",
-      "weight": 2
     },
     {
       "id": "c17d7cf1231e",
@@ -745,22 +777,6 @@
       "weight": 2
     },
     {
-      "id": "d166840c48ee",
-      "title": "Saudi Arabia, Pakistan and Turkey sign Nato-style defence pact amid deadly Houthi strikes in Yemen",
-      "summary": "Mecca joint defence agreement says an attack on one country will be deemed an attack on all Who are the Houthis – explained in 30 seconds Saudi Arabia, Pakistan and Turkey have signed a mutual defence agreement, placing three of the Muslim world’s most…",
-      "url": "https://www.theguardian.com/world/2026/aug/07/houthi-strikes-yemen-saudi-arabia-attacks-iran-war-middle-east-crisis",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-07T13:00:30.000Z",
-      "image": "https://i.guim.co.uk/img/media/54f99ff60769d476cf501d37d79b51e1f0d8ef47/341_155_2022_1617/master/2022.jpg?width=700&quality=85&auto=format&fit=max&s=74975679dabc5d912190738e3f5ef5f7",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "1be69932d3c7",
       "title": "US airfares expected to stay high even if Iran ceasefire drops oil prices, experts say",
       "summary": "Domestic flights cost 26.5% more than last year, data shows, amid demand for travel and reduced oil refining capacity Even if a lasting ceasefire between the US and Iran lowers oil prices , travelers hoping to snag cheaper airfare should buckle their…",
@@ -1325,22 +1341,6 @@
       "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
-    },
-    {
-      "id": "ac756f63f6d7",
-      "title": "Braw in TRT World Now on Iran, Oman agreement on Strait of Hormuz",
-      "summary": "On August 6, Elisabeth Braw was interviewed by TRT World Now to discuss the reported agreement of a shipping route in the Strait of Hormuz between Iran and Oman, and the implications for negotiations with the US. The post Braw in TRT World Now on Iran, Oman…",
-      "url": "https://www.atlanticcouncil.org/commentary/braw-in-trt-world-now-on-iran-oman-agreement-on-strait-of-hormuz/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-06T21:22:17.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 3
     },
     {
       "id": "7cc3f146445e",
