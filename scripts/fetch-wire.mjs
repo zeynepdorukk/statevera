@@ -390,15 +390,31 @@ results.forEach((result, i) => {
 });
 
 collected.sort((a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt));
-const deduped = dedupeStories(collected);
-const items = deduped.items.slice(0, MAX_ITEMS);
+const firstPass = dedupeStories(collected);
+
+// The duplicate detector builds a small IDF index from the batch it receives.
+// Removing stories changes that index, so a single pass over the raw feed can
+// still leave a pair that is detected when the final snapshot is checked. Run
+// the same operation on the bounded set until it is stable; this keeps the
+// writer and the content check in agreement without making the similarity
+// thresholds more aggressive for unrelated stories.
+let items = firstPass.items.slice(0, MAX_ITEMS);
+let stabilizationPasses = 0;
+for (; stabilizationPasses < 4; stabilizationPasses += 1) {
+  const pass = dedupeStories(items);
+  items = pass.items.slice(0, MAX_ITEMS);
+  if (!pass.removed) break;
+}
+
+const finalRemoved = firstPass.items.length - items.length;
 
 console.log(
-  `\n${ok}/${sources.length} feeds ok, ${collected.length} raw -> ${deduped.items.length} distinct stories` +
-    ` (${deduped.removed} repeats of a story already covered)`
+  `\n${ok}/${sources.length} feeds ok, ${collected.length} raw -> ${items.length} distinct stories` +
+    ` (${firstPass.removed + finalRemoved} repeats of a story already covered)` +
+    (stabilizationPasses ? `; ${stabilizationPasses} stabilization pass${stabilizationPasses === 1 ? "" : "es"}` : "")
 );
 
-const repeated = deduped.clusters.filter((c) => c.duplicates.length).sort((a, b) => b.duplicates.length - a.duplicates.length);
+const repeated = firstPass.clusters.filter((c) => c.duplicates.length).sort((a, b) => b.duplicates.length - a.duplicates.length);
 if (repeated.length) {
   const shown = EXPLAIN ? repeated : repeated.slice(0, 5);
   console.log(`\nstories covered by more than one outlet (${repeated.length}):`);
