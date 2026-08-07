@@ -1,5 +1,9 @@
 [build]
   command = "npm run build"
+  # Wire refreshes commit data every 15 minutes for GitHub Pages. The Netlify
+  # desk only needs a build when code, templates or server adapters change.
+  # This command exits 0 (skip) for data-only wire commits and 1 otherwise.
+  ignore = "node ./scripts/netlify-ignore.mjs"
   publish = "dist"
   functions = "netlify/functions"
 
