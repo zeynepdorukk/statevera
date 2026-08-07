@@ -21,6 +21,7 @@ const kicker = data.type === "opinion" ? "Opinion" : data.category;
 const minutes = readingTime(item.entry);
 const loading = priority ? "eager" : "lazy";
 const isDraft = data.draft;
+const author = data.author?.trim() || "Zeynep Doruk";
 ---
 
 {variant === "lead" && (
@@ -48,7 +49,7 @@ const isDraft = data.draft;
       <p class="t-dek mt-3 max-w-2xl">{data.description}</p>
     )}
     <p class="meta mt-3 flex flex-wrap items-center gap-x-2">
-      <span class="meta-strong">Zeynep Doruk</span>
+      <span class="meta-strong">By {author}</span>
       <span aria-hidden="true">&middot;</span>
       <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time>
       <span aria-hidden="true">&middot;</span>
@@ -80,6 +81,8 @@ const isDraft = data.draft;
       </p>
     )}
     <p class="meta mt-2.5 flex flex-wrap items-center gap-x-2">
+      <span class="meta-strong">By {author}</span>
+      <span aria-hidden="true">&middot;</span>
       <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" })}</time>
       <span aria-hidden="true">&middot;</span>
       <span>{minutes} min</span>
@@ -95,6 +98,8 @@ const isDraft = data.draft;
         <a href={href} class="editorial-link">{data.title}</a>
       </Heading>
       <p class="meta mt-1.5">
+        <span class="meta-strong">By {author}</span>
+        <span aria-hidden="true"> &middot; </span>
         <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" })}</time>
         <span aria-hidden="true"> &middot; </span>{minutes} min
       </p>
@@ -125,6 +130,8 @@ const isDraft = data.draft;
       </p>
     )}
     <p class="meta mt-1.5">
+      <span class="meta-strong">By {author}</span>
+      <span aria-hidden="true"> &middot; </span>
       <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" })}</time>
       <span aria-hidden="true"> &middot; </span>{minutes} min
     </p>
