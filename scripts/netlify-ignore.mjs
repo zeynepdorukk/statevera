@@ -8,7 +8,7 @@ if (!base) {
   process.exitCode = 1;
 } else {
   try {
-    const changed = execFileSync("git", ["diff", "--name-only", "--diff-filter=ACMRTUXB", base, head], {
+    const changed = execFileSync("git", ["diff", "--name-only", "--diff-filter=ACDMRTUXB", base, head], {
       encoding: "utf8",
     })
       .split(/\r?\n/)
@@ -16,9 +16,17 @@ if (!base) {
       .filter(Boolean);
 
     const wireData = new Set(["src/data/wire.json", "src/data/markets.json"]);
-    const dataOnly = changed.length > 0 && changed.every((path) => wireData.has(path));
-    process.stdout.write(dataOnly ? "Wire/market snapshot only; skip the desk build.\n" : "Code or configuration changed; build the desk.\n");
-    process.exitCode = dataOnly ? 0 : 1;
+    const editorContentOnly = changed.length > 0 && changed.every((path) =>
+      wireData.has(path) ||
+      path.startsWith("src/content/articles/") ||
+      path.startsWith("public/images/articles/")
+    );
+    process.stdout.write(
+      editorContentOnly
+        ? "Wire/market or editor content only; skip the desk build.\n"
+        : "Code or configuration changed; build the desk.\n"
+    );
+    process.exitCode = editorContentOnly ? 0 : 1;
   } catch {
     // If the shallow clone does not contain the comparison ref, prefer a real
     // build over accidentally serving stale server code.
