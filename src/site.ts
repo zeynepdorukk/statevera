@@ -38,11 +38,11 @@ export const site = {
   // Technical ------------------------------------------------
   siteUrl: "https://zeynepdorukk.github.io/statevera",
   /**
-   * The small API behind primary-source search and read counts. Set
-   * PUBLIC_DESK_URL to the deployed Worker; left empty, the pages that use it
-   * say so rather than calling a host that is not there.
+   * The small API behind primary-source search and read counts. It is a public
+   * JSON endpoint, not a secret, so the deployed Worker is the default and
+   * PUBLIC_DESK_URL only has to be set when it moves.
    */
-  deskUrl: (import.meta.env.PUBLIC_DESK_URL ?? "").replace(/\/$/, ""),
+  deskUrl: (import.meta.env.PUBLIC_DESK_URL || "https://statevera-desk.onatozmen44.workers.dev").replace(/\/$/, ""),
   defaultOgImage: "/images/branding/og-image.jpg",
   locale: "en",
   language: "en-US",
