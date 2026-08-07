@@ -7,10 +7,9 @@ import { unified } from "@astrojs/markdown-remark";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 
-// GitHub Pages serves the repository under /statevera/. Netlify serves the desk
-// from the root, so the base has to follow the host or every link and asset on
-// the desk points at a path that does not exist there.
-const BASE = process.env.NETLIFY ? "" : "/statevera";
+// GitHub Pages serves the repository under /statevera/. Netlify and the local
+// dev server serve from the root, so links and assets follow the host/runtime.
+const BASE = process.env.NETLIFY || process.env.NODE_ENV === "development" ? "" : "/statevera";
 
 /**
  * Reads one key out of the project's .env.
