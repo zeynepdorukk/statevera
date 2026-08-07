@@ -5,6 +5,7 @@ import { type AiConfig,
   chatAboutPiece, suggestSources, type ChatApply, type SourceSuggestion } from "../lib/editor/ai";
 import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
   searchPhotos, importPhoto, uploadImage, readViewCounts, type FileEntry, type Photo } from "../lib/editor/desk";
+import { REPO, looksLikeGithubToken, looksLikeOpenAiKey } from "../lib/editor/credentials";
 import { TEMPLATES, templateById, type Template } from "../lib/editor/templates";
 import { parseDocument, serialiseArticle, slugify,
   findBrokenCharacters, type ArticleFields } from "../lib/editor/document";
@@ -156,42 +157,54 @@ function gate(card: string) {
 function signInView(message = "") {
   gate(`
     <p class="ed-legend">Sign in</p>
-    <p class="ed-gate-say">Two things, then you are writing.</p>
+    <p class="ed-gate-say">One key, and you are writing.</p>
     ${message ? `<p class="ed-warn" style="margin-bottom:1rem">${esc(message)}</p>` : ""}
     <form data-signin>
       <div class="ed-field">
-        <label for="who">Name</label>
-        <input id="who" type="text" class="ed-input" required autocomplete="username" autocapitalize="off" spellcheck="false" />
+        <label for="tok">GitHub token</label>
+        <div class="ed-gate-pw">
+          <input id="tok" type="password" class="ed-input" required autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_\u{2026}" />
+          <button type="button" class="ed-gate-reveal" data-reveal aria-label="Show token">Show</button>
+        </div>
+        <p class="ed-gate-hint">A fine-grained token on <b>${esc(REPO)}</b> with <b>Contents: read and write</b>.
+        <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Make one &rarr;</a></p>
       </div>
       <div class="ed-field">
-        <label for="pw">Password</label>
-        <div class="ed-gate-pw">
-          <input id="pw" type="password" class="ed-input" required autocomplete="current-password" />
-          <button type="button" class="ed-gate-reveal" data-reveal aria-label="Show password">Show</button>
-        </div>
+        <label for="aikey">Assistant key <span class="ed-gate-optional">optional</span></label>
+        <input id="aikey" type="password" class="ed-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sk-\u{2026}" />
+        <p class="ed-gate-hint">Leave this empty and the desk works exactly the same, only without the assistant.</p>
       </div>
       <button type="submit" class="ed-btn ed-btn-primary ed-gate-go" data-submit>Start writing</button>
     </form>
-    <p class="ed-gate-foot">Nothing else to enter. The keys live on the server.</p>
+    <p class="ed-gate-foot">Both keys stay in this browser. Nothing is sent anywhere but GitHub and OpenAI.</p>
   `);
 
-  const pw = el<HTMLInputElement>("#pw");
+  const tokenInput = el<HTMLInputElement>("#tok");
   const reveal = el<HTMLButtonElement>("[data-reveal]");
   reveal.addEventListener("click", () => {
-    const shown = pw.type === "text";
-    pw.type = shown ? "password" : "text";
+    const shown = tokenInput.type === "text";
+    tokenInput.type = shown ? "password" : "text";
     reveal.textContent = shown ? "Show" : "Hide";
-    reveal.setAttribute("aria-label", shown ? "Show password" : "Hide password");
-    pw.focus();
+    reveal.setAttribute("aria-label", shown ? "Show token" : "Hide token");
+    tokenInput.focus();
   });
 
   el<HTMLFormElement>("[data-signin]").addEventListener("submit", async (event) => {
     event.preventDefault();
     const button = el<HTMLButtonElement>("[data-submit]");
+    const assistantKey = el<HTMLInputElement>("#aikey").value.trim();
+    if (!looksLikeGithubToken(tokenInput.value)) {
+      signInView("That does not look like a GitHub token. It starts with github_pat_ or ghp_.");
+      return;
+    }
+    if (assistantKey && !looksLikeOpenAiKey(assistantKey)) {
+      signInView("That does not look like an OpenAI key. Leave it empty to write without the assistant.");
+      return;
+    }
     button.disabled = true;
     button.textContent = "Checking\u{2026}";
     try {
-      const session = await signIn(el<HTMLInputElement>("#who").value, pw.value);
+      const session = await signIn(tokenInput.value, assistantKey);
       state.user = session.user;
       state.assistant = session.assistant;
       state.canPublish = session.canPublish;
@@ -201,7 +214,7 @@ function signInView(message = "") {
       signInView((error as Error).message);
     }
   });
-  el<HTMLInputElement>("#who").focus();
+  tokenInput.focus();
 }
 
 async function signOut() {
@@ -347,7 +360,7 @@ function storiesView(notice = "") {
     </div>
     <div class="ed-stories">
       ${notice ? `<p class="ed-note" data-state="ok" style="margin-bottom:1rem">${esc(notice)}</p>` : ""}
-      ${state.canPublish ? "" : '<p class="ed-warn" style="margin-bottom:1rem">This deployment cannot publish \u{2014} no GitHub token on the server. You can read and draft, but not save.</p>'}
+      ${state.canPublish ? "" : '<p class="ed-warn" style="margin-bottom:1rem">This token can read but not write. You can open and draft, but not save. Give it Contents: read and write on the repository.</p>'}
       <div class="ed-stories-head">
         <h1>Your stories</h1>
         <p class="ed-note">${state.stories.length} pieces \u{b7} ${published} live</p>
@@ -2810,34 +2823,13 @@ function compose(args: ComposeArgs) {
 // Boot
 // ==========================================================
 
-// On the publication's own deployment there is no server behind this page, and
-// the writer is one build away from the desk. Say so before asking anything.
-if (root.dataset.desk !== "true") {
-  const desk = `${root.dataset.deskUrl ?? ""}/editor`;
-  gate(`
-    <p class="ed-legend">Wrong address</p>
-    <h2>The desk is not here</h2>
-    <p class="ed-note">This address is the published site, which is only files. Writing happens
-    where there is a server to hold the keys.</p>
-    <a class="ed-btn ed-btn-primary ed-gate-go" href="${esc(desk)}">Go to the desk &rarr;</a>
-    <p class="ed-gate-foot">${esc(desk)}</p>
-  `);
+const session = await readSession();
+if (session.signedIn) {
+  state.user = session.user;
+  state.assistant = session.assistant;
+  state.canPublish = session.canPublish;
+  state.model = session.model;
+  await openStories();
 } else {
-  const session = await readSession();
-  if (!session.configured) {
-    gate(`
-      <p class="ed-legend">Not ready</p>
-      <h2>The desk is not set up yet</h2>
-      <p class="ed-note">This page needs its server half. Add EDITOR_PASSWORD, SESSION_SECRET,
-      OPENAI_KEY and GITHUB_TOKEN to the deployment, then reload.</p>
-    `);
-  } else if (session.signedIn) {
-    state.user = session.user;
-    state.assistant = session.assistant;
-    state.canPublish = session.canPublish;
-    state.model = session.model;
-    await openStories();
-  } else {
-    signInView();
-  }
+  signInView(session.note ?? "");
 }

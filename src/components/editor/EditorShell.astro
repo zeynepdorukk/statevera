@@ -1,12 +1,8 @@
 ---
-import { site } from "../../site";
 import { root } from "../../utils/collection";
-
-// The static publication build has no desk server; local dev does.
-const hasServer = import.meta.env.DEV || Boolean(process.env.NETLIFY);
 ---
 
-<div data-editor-root data-desk={String(hasServer)} data-desk-url={site.deskUrl}>
+<div data-editor-root>
   <div class="ed-boot">
     <img src={root("/images/branding/logo-mark-light.svg")} alt="" width="34" height="34" />
     <span>Opening the desk</span>

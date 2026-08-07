@@ -1,14 +1,14 @@
 // ============================================================
 // EDITOR — AI assistance
 // ------------------------------------------------------------
-// The OpenAI key is never in the browser. Every request goes to
-// the desk's own /api/ai, which is the only place that holds the
-// key and which refuses anyone without a signed-in session.
+// The key belongs to the writer and lives in her browser, so the
+// call goes straight to OpenAI. Nothing about it is built into
+// the published bundle, and no server is asked to hold it.
 //
-// The model is chosen on the server too, so the browser never
-// needs to know or care which one is in use.
 // This module owns the prompts; the transport is one function.
 // ============================================================
+
+import { DEFAULT_MODEL, readCredentials } from "./credentials";
 
 /** Kept as a type so the call sites read the same; there is nothing in it. */
 export type AiConfig = Record<string, never>;
@@ -32,25 +32,104 @@ export class AiError extends Error {
   }
 }
 
-/** One-shot completion against the house model, by way of the desk's server. */
+const OPENAI_CHAT = "https://api.openai.com/v1/chat/completions";
+
+function readOpenAiError(raw: string): string {
+  try {
+    const parsed = JSON.parse(raw) as { error?: { message?: string } };
+    return parsed.error?.message ?? "The assistant refused that request.";
+  } catch {
+    return "The assistant refused that request.";
+  }
+}
+
+async function listModels(key: string): Promise<string[]> {
+  const response = await fetch("https://api.openai.com/v1/models", {
+    headers: { authorization: `Bearer ${key}` },
+  });
+  if (!response.ok) return [];
+  const listed = (await response.json()) as { data?: { id: string }[] };
+  return (listed.data ?? []).map((m) => m.id);
+}
+
+/** Model names get written with dots, capitals and underscores interchangeably. */
+const loosely = (id: string): string => id.toLowerCase().replace(/[._-]/g, "");
+
+/**
+ * One-shot completion against the house model.
+ *
+ * Model generations disagree about which parameters they accept, and the name a
+ * model is written with is not always the id the API answers to. Rather than
+ * guess at either, a rejection is read: a refused parameter is dropped and the
+ * call repeated, and a refused model is looked up in the account's real list.
+ */
 export async function ask(
   _config: AiConfig,
   prompt: string,
   options: AskOptions = {}
 ): Promise<string> {
   const { system, temperature = 0.5, maxTokens = 900, signal, json = false } = options;
+  const { openai: key, model } = readCredentials();
+  if (!key) throw new AiError("No assistant key on this desk.", 503);
+  if (!prompt.trim()) throw new AiError("Nothing to ask.", 400);
 
-  const res = await fetch("/api/ai", {
-    method: "POST",
-    signal,
-    credentials: "same-origin",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ prompt, system, temperature, maxTokens, jsonOnly: json }),
-  });
+  const payload: Record<string, unknown> = {
+    model: model || DEFAULT_MODEL,
+    messages: [
+      { role: "system", content: system ?? "" },
+      { role: "user", content: prompt },
+    ],
+    temperature,
+    // These are reasoning models: without this, a short budget is spent thinking
+    // and the reply comes back empty. Copy-editing does not need deliberation.
+    reasoning_effort: "none",
+    max_completion_tokens: Math.min(Math.max(maxTokens, 64), 4000),
+    ...(json ? { response_format: { type: "json_object" } } : {}),
+  };
 
-  const data = (await res.json().catch(() => ({}))) as { text?: string; error?: string };
-  if (!res.ok) throw new AiError(data.error ?? `The assistant failed (${res.status}).`, res.status);
-  return data.text ?? "";
+  const send = (data: Record<string, unknown>) =>
+    fetch(OPENAI_CHAT, {
+      method: "POST",
+      signal,
+      headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
+      body: JSON.stringify(data),
+    });
+
+  const OPTIONAL = ["reasoning_effort", "temperature", "max_completion_tokens", "response_format"];
+  let response = await send(payload);
+
+  // Each generation refuses a different set of knobs, and only names one at a
+  // time, so drop what it names and ask again rather than guessing up front.
+  for (let attempt = 0; attempt < OPTIONAL.length; attempt += 1) {
+    if (response.status !== 400 && response.status !== 404) break;
+    const detail = await response.text();
+
+    if (/model/i.test(detail) && /does not exist|not found|unsupported/i.test(detail)) {
+      const wanted = String(payload.model);
+      const available = await listModels(key);
+      const match = available.find((id) => loosely(id) === loosely(wanted));
+      if (!match) {
+        throw new AiError(
+          `No model called "${wanted}". This key can reach: ${available.slice(0, 40).join(", ") || "nothing"}.`,
+          404
+        );
+      }
+      payload.model = match;
+      response = await send(payload);
+      continue;
+    }
+
+    const named = OPTIONAL.find((param) => param in payload && detail.includes(param));
+    if (!named) throw new AiError(readOpenAiError(detail), response.status);
+    delete payload[named];
+    response = await send(payload);
+  }
+
+  const text = await response.text();
+  if (!response.ok) throw new AiError(readOpenAiError(text), response.status);
+
+  const parsed = JSON.parse(text) as { choices?: { message?: { content?: string } }[] };
+  return parsed.choices?.[0]?.message?.content?.trim() ?? "";
 }
 
 
@@ -482,24 +561,43 @@ export interface ChatResult {
   sources?: SourceSuggestion[];
 }
 
-/** Pull public headlines/pages the desk can show and feed to the model. */
+/**
+ * Pull public reference material the desk can show and feed to the model.
+ *
+ * Without a server this is what a browser is actually allowed to read:
+ * MediaWiki answers cross-origin requests when asked with `origin=*`, while a
+ * news feed or a search-results page does not. Narrower than the old
+ * server-side sweep, and honest about it — the model is told these are the only
+ * results, so it cites Wikipedia or it cites nothing.
+ */
 export async function fetchResearch(
   query: string,
   signal?: AbortSignal
 ): Promise<ResearchHit[]> {
-  const res = await fetch("/api/research", {
-    method: "POST",
-    signal,
-    credentials: "same-origin",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query }),
-  });
-  const data = (await res.json().catch(() => ({}))) as {
-    results?: ResearchHit[];
-    error?: string;
+  const wanted = query.trim().slice(0, 200);
+  if (wanted.length < 2) return [];
+  const api = new URL("https://en.wikipedia.org/w/api.php");
+  api.search = new URLSearchParams({
+    action: "query",
+    list: "search",
+    srsearch: wanted,
+    srlimit: "8",
+    format: "json",
+    formatversion: "2",
+    origin: "*",
+  }).toString();
+
+  const res = await fetch(api.toString(), { signal });
+  if (!res.ok) throw new AiError(`Research failed (${res.status}).`, res.status);
+  const data = (await res.json()) as {
+    query?: { search?: { title: string; snippet?: string }[] };
   };
-  if (!res.ok) throw new AiError(data.error ?? `Research failed (${res.status}).`, res.status);
-  return data.results ?? [];
+  return (data.query?.search ?? []).map((row) => ({
+    title: row.title,
+    url: `https://en.wikipedia.org/wiki/${encodeURIComponent(row.title.replace(/ /g, "_"))}`,
+    snippet: (row.snippet ?? "").replace(/<[^>]*>/g, "").replace(/&quot;/g, '"').replace(/&amp;/g, "&").slice(0, 280),
+    origin: "reference" as const,
+  }));
 }
 
 const packHits = (hits: ResearchHit[]): string =>
