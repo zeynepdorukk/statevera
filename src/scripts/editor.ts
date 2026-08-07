@@ -574,7 +574,7 @@ function findPhoto(seed: {
         freshPhotos.set(filed.name, filed.preview);
         shut({
           name: filed.name,
-          credit: photo.credit,
+          credit: photo.artist || photo.credit,
           alt: photo.title,
           source: photo.source,
           caption: photo.title,
