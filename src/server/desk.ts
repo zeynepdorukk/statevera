@@ -11,6 +11,7 @@
 // is only one implementation to reason about.
 // ============================================================
 
+import { getStore, type Store } from "@netlify/blobs";
 import { handlePrimarySources } from "./primary-sources";
 
 export interface DeskEnv {
@@ -47,6 +48,19 @@ const DEVICE_IMAGE_TYPES: Record<string, "jpg" | "png" | "webp"> = {
   "image/webp": "webp",
 };
 
+const VIEW_STORE_NAME = "statevera-article-views";
+const VIEW_SLUG = /^[a-z0-9][a-z0-9-]{0,79}$/;
+const VIEW_DEVICE = /^[A-Za-z0-9_-]{16,160}$/;
+const VIEW_ORIGINS = new Set([
+  "https://zeynepdorukk.github.io",
+  "https://statevera.netlify.app",
+  "http://localhost:4321",
+  "http://localhost:4322",
+]);
+
+let articleViewStore: Store | null | undefined;
+const localArticleViewDevices = new Map<string, Set<string>>();
+
 const encoder = new TextEncoder();
 
 // ------------------------------------------------------------
@@ -64,6 +78,83 @@ const json = (data: unknown, init: ResponseInit = {}): Response =>
   });
 
 const fail = (status: number, message: string): Response => json({ error: message }, { status });
+
+const viewCorsHeaders = (request: Request): Record<string, string> => {
+  const origin = request.headers.get("origin") ?? "";
+  return {
+    ...(origin && VIEW_ORIGINS.has(origin) ? { "access-control-allow-origin": origin } : {}),
+    "access-control-allow-methods": "POST, OPTIONS",
+    "access-control-allow-headers": "content-type",
+    vary: "Origin",
+  };
+};
+
+const viewJson = (request: Request, data: unknown, init: ResponseInit = {}): Response =>
+  json(data, { ...init, headers: { ...viewCorsHeaders(request), ...(init.headers ?? {}) } });
+
+const viewOptions = (request: Request): Response =>
+  new Response(null, { status: 204, headers: viewCorsHeaders(request) });
+
+const hexDigest = async (value: string): Promise<string> =>
+  hex(await crypto.subtle.digest("SHA-256", encoder.encode(value)));
+
+function getArticleViewStore(): Store | null {
+  if (articleViewStore !== undefined) return articleViewStore;
+  try {
+    articleViewStore = getStore(VIEW_STORE_NAME);
+  } catch {
+    articleViewStore = null;
+  }
+  return articleViewStore;
+}
+
+async function recordArticleView(slug: string, deviceId: string): Promise<void> {
+  const deviceHash = await hexDigest(deviceId);
+  const key = `devices/${slug}/${deviceHash}`;
+  const store = getArticleViewStore();
+  if (store) {
+    try {
+      await store.set(key, "1", { onlyIfNew: true });
+      return;
+    } catch {
+      // Local development has no Netlify Blobs context. Keep the same API
+      // useful there without pretending the in-memory fallback is durable.
+      articleViewStore = null;
+    }
+  }
+  const devices = localArticleViewDevices.get(slug) ?? new Set<string>();
+  devices.add(deviceHash);
+  localArticleViewDevices.set(slug, devices);
+}
+
+async function countArticleViews(slug: string): Promise<number> {
+  const store = getArticleViewStore();
+  if (store) {
+    try {
+      let total = 0;
+      for await (const page of store.list({ prefix: `devices/${slug}/`, paginate: true })) {
+        total += page.blobs.length;
+      }
+      return total;
+    } catch {
+      articleViewStore = null;
+    }
+  }
+  return localArticleViewDevices.get(slug)?.size ?? 0;
+}
+
+async function handlePublicArticleView(request: Request): Promise<Response> {
+  const origin = request.headers.get("origin") ?? "";
+  if (origin && !VIEW_ORIGINS.has(origin)) return viewJson(request, { error: "Origin not allowed." }, { status: 403 });
+  const body = (await request.json().catch(() => ({}))) as { slug?: string; deviceId?: string };
+  const slug = (body.slug ?? "").trim().toLowerCase();
+  const deviceId = (body.deviceId ?? "").trim();
+  if (!VIEW_SLUG.test(slug) || !VIEW_DEVICE.test(deviceId)) {
+    return viewJson(request, { error: "That view could not be recorded." }, { status: 400 });
+  }
+  await recordArticleView(slug, deviceId);
+  return viewJson(request, { ok: true });
+}
 
 const hex = (buffer: ArrayBuffer): string =>
   [...new Uint8Array(buffer)].map((b) => b.toString(16).padStart(2, "0")).join("");
@@ -531,6 +622,11 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
   // the server and return only normalized official records.
   if (route === "primary-sources") return handlePrimarySources(request, env);
 
+  // Public article pages send an anonymous, device-scoped event. Counts remain
+  // behind the editor session below; this route only acknowledges the event.
+  if (route === "views" && request.method === "OPTIONS") return viewOptions(request);
+  if (route === "views" && request.method === "POST") return handlePublicArticleView(request);
+
   if (request.method !== "GET" && !sameOrigin(request)) return fail(403, "Cross-site request refused.");
 
   // ---- who am I -------------------------------------------------
@@ -605,6 +701,20 @@ export async function handleDesk(request: Request, env: DeskEnv): Promise<Respon
           .filter((f) => /\.(jpe?g|png|webp|avif)$/i.test(f.name))
           .map((f) => f.name),
       });
+    }
+
+    if (route === "views" && request.method === "GET") {
+      const slugs = [...new Set(
+        (url.searchParams.get("slugs") ?? "")
+          .split(",")
+          .map((slug) => slug.trim().toLowerCase())
+          .filter((slug) => VIEW_SLUG.test(slug))
+      )].slice(0, 100);
+      if (!slugs.length) return fail(400, "No article slugs supplied.");
+      const counts = Object.fromEntries(
+        await Promise.all(slugs.map(async (slug) => [slug, await countArticleViews(slug)] as const))
+      );
+      return json({ counts });
     }
 
     if (route === "file" && request.method === "GET") {

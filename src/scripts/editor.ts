@@ -4,12 +4,12 @@ import { type AiConfig,
   completeInline, suggestMeta, suggestPhotoQuery,
   chatAboutPiece, suggestSources, type ChatApply, type SourceSuggestion } from "../lib/editor/ai";
 import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
-  searchPhotos, importPhoto, uploadImage, type FileEntry, type Photo } from "../lib/editor/desk";
+  searchPhotos, importPhoto, uploadImage, readViewCounts, type FileEntry, type Photo } from "../lib/editor/desk";
 import { TEMPLATES, templateById, type Template } from "../lib/editor/templates";
 import { parseDocument, serialiseArticle, slugify,
   findBrokenCharacters, type ArticleFields } from "../lib/editor/document";
 import { markdownToHtml, htmlToMarkdown, canvasText, countWords, readingMinutes,
-  setAssetBase, inlineToHtml, CALLOUTS, type CalloutName } from "../lib/editor/richtext";
+  setAssetBase, inlineToHtml, normaliseEditorMarkup, CALLOUTS, type CalloutName } from "../lib/editor/richtext";
 import { site } from "../site";
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -86,6 +86,7 @@ interface Story {
   desk: string;
   region: string;
   live: boolean;
+  views: number;
 }
 
 const root = document.querySelector<HTMLElement>("[data-editor-root]")!;
@@ -98,6 +99,7 @@ const state = {
   ai: {} as AiConfig,
   stories: [] as Story[],
   images: [] as string[],
+  viewCountsAvailable: false,
 };
 
 const aiReady = () => state.assistant;
@@ -270,12 +272,24 @@ async function openStories(notice = "") {
         // This is the critical distinction: draft is a repository field, not
         // an inference from whether the Pages search index has caught up.
         live: typeof f.draft === "boolean" ? !f.draft : Boolean(meta),
+        views: 0,
       };
     };
 
     state.stories = repositoryArticles
       .map(build("article"))
       .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+    const counts = await readViewCounts(state.stories.map((story) => story.slug))
+      .then((value) => {
+        state.viewCountsAvailable = true;
+        return value;
+      })
+      .catch(() => {
+        state.viewCountsAvailable = false;
+        return {} as Record<string, number>;
+      });
+    state.stories = state.stories.map((story) => ({ ...story, views: counts[story.slug] ?? 0 }));
 
     storiesView(notice);
   } catch (error) {
@@ -301,6 +315,11 @@ function storiesView(notice = "") {
         ${s.description ? `<p class="ed-card-desc">${esc(s.description)}</p>` : ""}
         <div class="ed-card-foot">
           <span class="ed-card-meta">${foot || "Not filed yet"}</span>
+          ${s.live
+            ? `<span class="ed-card-views" title="Unique devices that opened this article">${
+                state.viewCountsAvailable ? `${s.views} devices` : "Views unavailable"
+              }</span>`
+            : ""}
           <button type="button" class="ed-card-kill" data-kill aria-label="Delete ${esc(s.title)}">Delete</button>
         </div>
         <div class="ed-card-ask" hidden>
@@ -952,6 +971,42 @@ function compose(args: ComposeArgs) {
       <h1 class="ed-title" contenteditable="true" data-title data-placeholder="Headline">${esc(f.title)}</h1>
       <p class="ed-standfirst" contenteditable="true" data-standfirst data-placeholder="${esc(args.standfirstHint ?? "One line on what this argues, and why now")}">${esc(f.description)}</p>
 
+      <div class="ed-formatbar" data-formatbar role="toolbar" aria-label="Text formatting">
+        <span class="ed-formatbar-label">Format</span>
+        <label class="ed-format-control">
+          <span>Style</span>
+          <select data-format-block aria-label="Paragraph style">
+            <option value="p">Paragraph</option>
+            <option value="h2">Heading</option>
+            <option value="h3">Sub-heading</option>
+            <option value="blockquote">Quote</option>
+          </select>
+        </label>
+        <label class="ed-format-control">
+          <span>Font</span>
+          <select data-format-font aria-label="Font family">
+            <option value="Newsreader">Statevera Serif</option>
+            <option value="Inter">Sans</option>
+            <option value="ui-monospace">Monospace</option>
+          </select>
+        </label>
+        <label class="ed-format-control">
+          <span>Size</span>
+          <select data-format-size aria-label="Font size">
+            <option value="3">Normal</option>
+            <option value="1">Small</option>
+            <option value="5">Large</option>
+            <option value="7">Extra large</option>
+          </select>
+        </label>
+        <span class="ed-format-sep" aria-hidden="true"></span>
+        <button type="button" data-format-cmd="bold" title="Bold  Ctrl+B"><strong>B</strong></button>
+        <button type="button" data-format-cmd="italic" title="Italic  Ctrl+I"><em>I</em></button>
+        <button type="button" data-format-cmd="underline" title="Underline"><u>U</u></button>
+        <button type="button" data-format-cmd="strikeThrough" title="Strikethrough"><s>S</s></button>
+        <button type="button" data-format-cmd="link" title="Link  Ctrl+K">Link</button>
+      </div>
+
       <div class="ed-body" contenteditable="true" data-body spellcheck="true"></div>
     </div>
 
@@ -1363,6 +1418,8 @@ function compose(args: ComposeArgs) {
     switch (cmd) {
       case "bold":
       case "italic":
+      case "underline":
+      case "strikeThrough":
         document.execCommand(cmd);
         break;
       case "h2":
@@ -1434,7 +1491,7 @@ function compose(args: ComposeArgs) {
 
   document.addEventListener("selectionchange", () => {
     const sel = window.getSelection();
-    if (!sel || sel.isCollapsed || !sel.rangeCount) {
+    if (!sel || !sel.rangeCount) {
       if (!linkbar.classList.contains("is-open")) hideFloat();
       return;
     }
@@ -1444,8 +1501,12 @@ function compose(args: ComposeArgs) {
     // The headline and standfirst can be rewritten too, but they are single
     // lines: headings, quotes and lists do not apply to them.
     if (!inBody && !titleEl.contains(node) && !standEl.contains(node)) return;
-    floatEl.dataset.scope = inBody ? "body" : "line";
     savedRange = range.cloneRange();
+    if (sel.isCollapsed) {
+      if (!linkbar.classList.contains("is-open")) hideFloat();
+      return;
+    }
+    floatEl.dataset.scope = inBody ? "body" : "line";
     showFloat(floatEl, range.getBoundingClientRect());
     syncFloatState();
   });
@@ -1483,6 +1544,67 @@ function compose(args: ComposeArgs) {
   linkInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") { event.preventDefault(); applyLink(); }
     if (event.key === "Escape") { hideFloat(); bodyEl.focus(); }
+  });
+
+  // ---------- persistent Word-like formatting bar ----------
+  const restoreSavedBodyRange = (): boolean => {
+    if (!savedRange || !bodyEl.contains(savedRange.commonAncestorContainer)) return false;
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+    selection?.addRange(savedRange);
+    return true;
+  };
+
+  const applyInlineFormat = (command: string, value?: string) => {
+    if (!restoreSavedBodyRange()) {
+      bodyEl.focus();
+      return;
+    }
+    document.execCommand(command, false, value);
+    normaliseEditorMarkup(bodyEl);
+    touched();
+    syncFloatState();
+  };
+
+  const formatBlock = (tag: string) => {
+    if (!restoreSavedBodyRange()) {
+      bodyEl.focus();
+      return;
+    }
+    const block = currentBlock();
+    if (!block || !bodyEl.contains(block)) return;
+    if (tag === "blockquote") {
+      if (block.tagName !== "BLOCKQUOTE") runCommand("quote");
+      return;
+    }
+    if (!["P", "H2", "H3", "BLOCKQUOTE"].includes(block.tagName)) return;
+    const next = document.createElement(tag);
+    const source = block.tagName === "BLOCKQUOTE"
+      ? block.querySelector("p")?.innerHTML ?? block.innerHTML
+      : block.innerHTML;
+    next.innerHTML = source || "<br>";
+    block.replaceWith(next);
+    placeCaret(next, true);
+    touched();
+  };
+
+  root.querySelectorAll<HTMLButtonElement>("[data-format-cmd]").forEach((button) =>
+    button.addEventListener("mousedown", (event) => {
+      event.preventDefault();
+      const command = button.dataset.formatCmd!;
+      if (command === "link") openLinkBar();
+      else runCommand(command);
+    })
+  );
+
+  maybe<HTMLSelectElement>("[data-format-font]")?.addEventListener("change", (event) => {
+    applyInlineFormat("fontName", (event.currentTarget as HTMLSelectElement).value);
+  });
+  maybe<HTMLSelectElement>("[data-format-size]")?.addEventListener("change", (event) => {
+    applyInlineFormat("fontSize", (event.currentTarget as HTMLSelectElement).value);
+  });
+  maybe<HTMLSelectElement>("[data-format-block]")?.addEventListener("change", (event) => {
+    formatBlock((event.currentTarget as HTMLSelectElement).value);
   });
 
   // ---------- insert menu ----------

@@ -1,0 +1,47 @@
+---
+interface Props {
+  slug: string;
+  endpoint: string;
+}
+
+const { slug, endpoint } = Astro.props;
+---
+
+<span hidden data-article-view data-slug={slug} data-endpoint={endpoint}></span>
+
+<script>
+  const marker = document.querySelector<HTMLElement>("[data-article-view]");
+
+  if (marker) {
+    const slug = marker.dataset.slug ?? "";
+    const endpoint = marker.dataset.endpoint ?? "";
+    const deviceKey = "statevera:device-id";
+    const sentKey = `statevera:view-sent:${slug}`;
+
+    try {
+      let deviceId = localStorage.getItem(deviceKey);
+      if (!deviceId) {
+        deviceId = crypto.randomUUID();
+        localStorage.setItem(deviceKey, deviceId);
+      }
+
+      if (deviceId && slug && endpoint && !localStorage.getItem(sentKey)) {
+        void fetch(endpoint, {
+          method: "POST",
+          mode: "cors",
+          keepalive: true,
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({ slug, deviceId }),
+        })
+          .then((response) => {
+            if (response.ok) localStorage.setItem(sentKey, "1");
+          })
+          .catch(() => {
+            // A blocked analytics request must never affect reading the article.
+          });
+      }
+    } catch {
+      // Private browsing or a locked-down storage context: do not fingerprint.
+    }
+  }
+</script>

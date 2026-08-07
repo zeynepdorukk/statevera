@@ -198,6 +198,79 @@
   pointer-events: none;
 }
 
+/* ---------- writing toolbar ---------- */
+.ed-formatbar {
+  position: sticky;
+  top: 3.1rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.28rem;
+  margin: 0 0 1.15rem;
+  padding: 0.45rem 0.5rem;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 95%, transparent);
+  backdrop-filter: blur(8px);
+}
+.ed-formatbar-label,
+.ed-format-control span {
+  font-family: var(--font-sans);
+  font-size: 0.59rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ed-formatbar-label {
+  padding: 0 0.35rem 0 0.15rem;
+}
+.ed-format-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+}
+.ed-format-control select {
+  max-width: 9rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  background: var(--paper-soft);
+  color: var(--ink-soft);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  padding: 0.3rem 1.45rem 0.3rem 0.45rem;
+  outline: none;
+}
+.ed-format-control select:focus {
+  border-color: var(--journal);
+}
+.ed-formatbar button {
+  min-width: 1.9rem;
+  min-height: 1.85rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.45rem;
+}
+.ed-formatbar button:hover,
+.ed-formatbar button:focus-visible {
+  border-color: var(--line-strong);
+  background: var(--paper-soft);
+  color: var(--ink);
+  outline: none;
+}
+.ed-format-sep {
+  width: 1px;
+  height: 1.35rem;
+  margin: 0 0.2rem;
+  background: var(--line);
+}
+
 /* The body inherits the published article typography. */
 .ed-body {
   font-family: var(--font-serif);
@@ -1148,6 +1221,16 @@
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
+.ed-card-views {
+  margin-left: auto;
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--journal-deep);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
 .ed-card-kill {
   position: relative;
   z-index: 1;
@@ -1781,6 +1864,21 @@
 }
 
 @media (max-width: 700px) {
+  .ed-formatbar {
+    top: 3rem;
+    align-items: stretch;
+  }
+  .ed-formatbar-label {
+    width: 100%;
+  }
+  .ed-format-control {
+    flex: 1 1 8rem;
+    justify-content: space-between;
+  }
+  .ed-format-control select {
+    max-width: none;
+    flex: 1;
+  }
   .ed-add {
     left: -1.6rem;
   }

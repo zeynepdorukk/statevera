@@ -72,6 +72,16 @@ export const signOutRequest = (): Promise<unknown> => call("logout", { method: "
 
 export const readLibrary = (): Promise<Library> => call<Library>("library");
 
+/** Unique-device reads are returned only after the editor session is checked. */
+export const readViewCounts = async (slugs: string[]): Promise<Record<string, number>> => {
+  const unique = [...new Set(slugs.filter(Boolean))];
+  if (!unique.length) return {};
+  const result = await call<{ counts?: Record<string, number> }>(
+    `views?slugs=${encodeURIComponent(unique.join(","))}`
+  );
+  return result.counts ?? {};
+};
+
 export const readFile = (path: string): Promise<{ content: string; sha: string }> =>
   call(`file?path=${encodeURIComponent(path)}`);
 

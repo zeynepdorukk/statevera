@@ -16,6 +16,7 @@ import ArticleHeader from "../../components/article/ArticleHeader.astro";
 import ArticleSources from "../../components/article/ArticleSources.astro";
 import ArticleShare from "../../components/article/ArticleShare.astro";
 import RelatedStories from "../../components/article/RelatedStories.astro";
+import ArticleViewTracker from "../../components/article/ArticleViewTracker.astro";
 import WireCard from "../../components/WireCard.astro";
 import SectionHead from "../../components/SectionHead.astro";
 import KeyTakeaways from "../../components/mdx/KeyTakeaways.astro";
@@ -148,4 +149,6 @@ const jsonLd = [
   <div class="shell pb-4">
     <RelatedStories article={article} count={3} />
   </div>
+
+  {!data.draft && <ArticleViewTracker slug={slugOf(article)} endpoint={`${site.deskUrl}/api/views`} />}
 </BaseLayout>

@@ -673,6 +673,48 @@ a:hover > .outbound::after,
   font-style: italic;
 }
 
+/* Inline typography choices available in the editorial desk. */
+.article-body .sv-font-serif,
+.ed-body .sv-font-serif {
+  font-family: var(--font-serif);
+}
+
+.article-body .sv-font-sans,
+.ed-body .sv-font-sans {
+  font-family: var(--font-sans);
+}
+
+.article-body .sv-font-mono,
+.ed-body .sv-font-mono {
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+
+.article-body .sv-size-small,
+.ed-body .sv-size-small {
+  font-size: 0.86em;
+}
+
+.article-body .sv-size-large,
+.ed-body .sv-size-large {
+  font-size: 1.18em;
+}
+
+.article-body .sv-size-xlarge,
+.ed-body .sv-size-xlarge {
+  font-size: 1.38em;
+}
+
+.article-body u,
+.ed-body u {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.14em;
+}
+
+.article-body s,
+.ed-body s {
+  text-decoration-thickness: 0.08em;
+}
+
 .article-body blockquote {
   margin: 1.9rem 0;
   padding: 0.1rem 0 0.1rem 1.35rem;

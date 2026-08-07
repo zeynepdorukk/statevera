@@ -36,6 +36,65 @@ const escapeHtml = (value: string): string =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
+const EDITOR_INLINE_TOKEN = /^sv-(?:font-(?:serif|sans|mono)|size-(?:small|large|xlarge))$/;
+
+/** Keep only the small, documented inline vocabulary (including combinations). */
+const editorInlineClass = (value: string): string => {
+  const tokens = [...new Set(value.split(/\s+/).filter(Boolean))];
+  if (!tokens.length || tokens.some((token) => !EDITOR_INLINE_TOKEN.test(token))) return "";
+  return tokens.join(" ");
+};
+
+/** Restore only the explicit inline vocabulary written by the editor. */
+const restoreEditorInlineMarkup = (value: string): string =>
+  value
+    .replace(
+      /&lt;span class=&quot;([^&]*?)&quot;&gt;/g,
+      (whole, className: string) => {
+        const safeClass = editorInlineClass(className);
+        return safeClass ? `<span class="${safeClass}">` : whole;
+      }
+    )
+    .replace(/&lt;\/span&gt;/g, "</span>")
+    .replace(/&lt;(u|s)&gt;/g, "<$1>")
+    .replace(/&lt;\/(u|s)&gt;/g, "</$1>");
+
+/**
+ * Browsers implement fontName/fontSize through legacy <font> elements. Turn
+ * those into the small class vocabulary before the body is serialised, so a
+ * formatting choice remains present in the MDX file and on the site.
+ */
+export function normaliseEditorMarkup(root: HTMLElement): void {
+  const fontClass = (face: string): string => {
+    const value = face.toLowerCase();
+    if (/newsreader|georgia|times|serif/.test(value)) return "sv-font-serif";
+    if (/inter|arial|helvetica|sans/.test(value)) return "sv-font-sans";
+    if (/mono|courier|code/.test(value)) return "sv-font-mono";
+    return "";
+  };
+  const sizeClass = (size: string): string => {
+    if (["1", "2"].includes(size)) return "sv-size-small";
+    if (["4", "5"].includes(size)) return "sv-size-large";
+    if (["6", "7"].includes(size)) return "sv-size-xlarge";
+    return "";
+  };
+
+  root.querySelectorAll<HTMLFontElement>("font").forEach((font) => {
+    const classes = [
+      fontClass(font.getAttribute("face") ?? ""),
+      sizeClass(font.getAttribute("size") ?? ""),
+    ].filter(Boolean);
+    if (!classes.length) {
+      font.replaceWith(...Array.from(font.childNodes));
+      return;
+    }
+    const span = document.createElement("span");
+    span.className = classes.join(" ");
+    span.append(...Array.from(font.childNodes));
+    font.replaceWith(span);
+  });
+}
+
 const unescapeHtml = (value: string): string =>
   value
     .replace(/&quot;/g, '"')
@@ -102,7 +161,7 @@ const renderStoredFigure = (
 
 /** Inline markdown to HTML, for one line of text. */
 export function inlineToHtml(text: string): string {
-  let out = escapeHtml(text);
+  let out = restoreEditorInlineMarkup(escapeHtml(text));
   out = out.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   out = out.replace(/(^|[^*])\*([^*\n]+)\*/g, "$1<em>$2</em>");
   out = out.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (whole, label: string, href: string) =>
@@ -298,6 +357,33 @@ function inlineToMarkdown(node: Node): string {
     case "A": {
       const href = el.getAttribute("href") ?? "";
       return SAFE_URL.test(href) ? `[${inner}](${href})` : inner;
+    }
+    case "SPAN": {
+      const className = editorInlineClass(el.getAttribute("class") ?? "");
+      return className ? `<span class="${className}">${inner}</span>` : inner;
+    }
+    case "U":
+      return `<u>${inner}</u>`;
+    case "S":
+    case "STRIKE":
+      return `<s>${inner}</s>`;
+    case "FONT": {
+      const face = (el.getAttribute("face") ?? "").toLowerCase();
+      const size = el.getAttribute("size") ?? "";
+      const className = face.includes("newsreader") || face.includes("serif")
+        ? "sv-font-serif"
+        : face.includes("inter") || face.includes("sans")
+          ? "sv-font-sans"
+          : face.includes("mono") || face.includes("code")
+            ? "sv-font-mono"
+            : ["1", "2"].includes(size)
+              ? "sv-size-small"
+              : ["4", "5"].includes(size)
+                ? "sv-size-large"
+                : ["6", "7"].includes(size)
+                  ? "sv-size-xlarge"
+                  : "";
+      return className ? `<span class="${className}">${inner}</span>` : inner;
     }
     case "BR":
       return "\n";
