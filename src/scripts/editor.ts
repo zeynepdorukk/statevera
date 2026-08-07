@@ -2288,6 +2288,7 @@ function compose(args: ComposeArgs) {
       maybe<HTMLInputElement>("[data-image-date]")!.value = filed.date;
       maybe<HTMLInputElement>("[data-license]")!.value = filed.license;
       paintCover();
+      openDrawer();
       touched();
       setStatus("Device picture added — complete its attribution details", "ok");
     } catch (error) {
