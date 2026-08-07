@@ -303,12 +303,10 @@ body {
 }
 
 .site-nav-scroll {
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-
-.site-nav-scroll::-webkit-scrollbar {
-  display: none;
+  position: relative;
+  z-index: 1;
+  /* Keep dropdowns visible below the sticky nav instead of clipping them. */
+  overflow: visible;
 }
 
 @media (min-width: 768px) {
