@@ -35,25 +35,13 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
   hideTicker
 >
   <div class="shell primary-sources-page" data-primary-sources data-endpoint={endpoint}>
-    <section class="primary-sources-intro border-b-2 border-ink" aria-labelledby="primary-sources-title">
-      <div class="primary-sources-compact-intro">
-        <div>
-          <p class="kicker-ink">Statevera Research · Verification desk</p>
-          <h1 id="primary-sources-title" class="t-headline mt-1">Search official records</h1>
-        </div>
-        <p class="primary-sources-compact-copy">
-          Find the document behind the headline — statements, legislation, treaties and official data, linked to the institution that issued it.
-        </p>
-      </div>
-    </section>
-
     <section class="primary-sources-tool" aria-labelledby="search-heading">
       <div class="primary-sources-search-head">
         <div>
-          <p class="kicker">Search the archive</p>
-          <h2 id="search-heading" class="t-headline mt-1">Search by keyword</h2>
+          <p class="kicker-ink">Statevera Research · Verification desk</p>
+          <h1 id="search-heading" class="t-headline mt-1">Search official records</h1>
         </div>
-        <p class="primary-sources-note">Search terms are sent to the Statevera server, never to a browser-side API key.</p>
+        <p class="primary-sources-note">Find the document behind the headline — statements, legislation, treaties and official data, linked to the institution that issued it.</p>
       </div>
 
       <form class="primary-source-form" data-primary-source-form>
@@ -126,26 +114,6 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
 <style>
   .primary-sources-page {
     padding-bottom: 5rem;
-  }
-
-  .primary-sources-intro {
-    padding: 1.2rem 0 1.35rem;
-  }
-
-  .primary-sources-compact-intro {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(16rem, 28rem);
-    align-items: end;
-    gap: 2rem;
-  }
-
-  .primary-sources-compact-copy {
-    max-width: 28rem;
-    margin: 0;
-    font-family: var(--font-serif);
-    font-size: 1.02rem;
-    line-height: 1.45;
-    color: var(--ink-soft);
   }
 
   .primary-sources-tool {
@@ -297,8 +265,10 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.55rem;
+    width: fit-content;
+    max-width: 100%;
     margin-top: 1.15rem;
-    padding: 0.75rem 0.9rem;
+    padding: 0.7rem 0.8rem;
     border: 1px solid var(--line);
     background: var(--paper-soft);
   }
@@ -637,14 +607,6 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
   }
 
   @media (max-width: 760px) {
-    .primary-sources-compact-intro {
-      display: block;
-    }
-
-    .primary-sources-compact-copy {
-      margin-top: 0.65rem;
-    }
-
     .primary-sources-search-head,
     .primary-source-directory-head {
       display: block;
