@@ -10,7 +10,7 @@
 // Pushing to the default branch triggers the Pages rebuild.
 // ============================================================
 
-import { DEFAULT_MODEL, REPO, clearCredentials, readCredentials, writeCredentials } from "./credentials";
+import { DEFAULT_MODEL, REPO, clearCredentials, forgetGithubToken, readCredentials, writeCredentials } from "./credentials";
 
 export class DeskError extends Error {
   constructor(
@@ -249,18 +249,24 @@ export async function readSession(): Promise<Session> {
     return await inspectToken();
   } catch (error) {
     const status = error instanceof DeskError ? error.status : 0;
-    // A refused token is worth forgetting; a network hiccup is not.
+    // A refused token is worth forgetting; a network hiccup is not. The
+    // assistant key stays: a fine-grained token expires on its own schedule and
+    // that is no reason to make the writer find a second key again.
     if (status === 401 || status === 403 || status === 404) {
-      clearCredentials();
+      forgetGithubToken();
       return signedOut((error as Error).message);
     }
     return signedOut();
   }
 }
 
+/** An empty assistant key means "keep whatever this browser already holds". */
 export async function signIn(githubToken: string, openaiKey: string): Promise<Session> {
   const previous = readCredentials();
-  writeCredentials({ github: githubToken.trim(), openai: openaiKey.trim() });
+  writeCredentials({
+    github: githubToken.trim(),
+    ...(openaiKey.trim() ? { openai: openaiKey.trim() } : {}),
+  });
   try {
     return await inspectToken();
   } catch (error) {

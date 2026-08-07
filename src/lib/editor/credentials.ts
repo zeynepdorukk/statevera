@@ -74,3 +74,12 @@ export function clearCredentials(): void {
     /* nothing kept, nothing to clear */
   }
 }
+
+/** A GitHub token expires on its own; the assistant key it sat next to does not. */
+export const forgetGithubToken = (): void => {
+  writeCredentials({ github: "" });
+};
+
+export const forgetAssistantKey = (): void => {
+  writeCredentials({ openai: "" });
+};

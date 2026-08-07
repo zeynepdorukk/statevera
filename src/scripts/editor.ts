@@ -5,7 +5,7 @@ import { type AiConfig,
   chatAboutPiece, suggestSources, type ChatApply, type SourceSuggestion } from "../lib/editor/ai";
 import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
   searchPhotos, importPhoto, uploadImage, readViewCounts, type FileEntry, type Photo } from "../lib/editor/desk";
-import { REPO, looksLikeGithubToken, looksLikeOpenAiKey } from "../lib/editor/credentials";
+import { REPO, forgetAssistantKey, looksLikeGithubToken, looksLikeOpenAiKey, readCredentials } from "../lib/editor/credentials";
 import { TEMPLATES, templateById, type Template } from "../lib/editor/templates";
 import { parseDocument, serialiseArticle, slugify,
   findBrokenCharacters, type ArticleFields } from "../lib/editor/document";
@@ -155,6 +155,9 @@ function gate(card: string) {
 }
 
 function signInView(message = "") {
+  // A GitHub token expires long before the assistant key beside it does, so a
+  // return visit usually only needs the one field.
+  const remembered = Boolean(readCredentials().openai);
   gate(`
     <p class="ed-legend">Sign in</p>
     <p class="ed-gate-say">One key, and you are writing.</p>
@@ -171,8 +174,10 @@ function signInView(message = "") {
       </div>
       <div class="ed-field">
         <label for="aikey">Assistant key <span class="ed-gate-optional">optional</span></label>
-        <input id="aikey" type="password" class="ed-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="sk-\u{2026}" />
-        <p class="ed-gate-hint">Leave this empty and the desk works exactly the same, only without the assistant.</p>
+        <input id="aikey" type="password" class="ed-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${remembered ? "\u{2022}\u{2022}\u{2022}\u{2022} remembered" : "sk-\u{2026}"}" />
+        <p class="ed-gate-hint">${remembered
+          ? 'This browser still has one. Leave this empty to keep it, or type a new one to replace it. <button type="button" class="ed-gate-forget" data-forget-ai>Forget it</button>'
+          : "Leave this empty and the desk works exactly the same, only without the assistant."}</p>
       </div>
       <button type="submit" class="ed-btn ed-btn-primary ed-gate-go" data-submit>Start writing</button>
     </form>
@@ -187,6 +192,11 @@ function signInView(message = "") {
     reveal.textContent = shown ? "Show" : "Hide";
     reveal.setAttribute("aria-label", shown ? "Show token" : "Hide token");
     tokenInput.focus();
+  });
+
+  maybe<HTMLButtonElement>("[data-forget-ai]")?.addEventListener("click", () => {
+    forgetAssistantKey();
+    signInView("The assistant key has been forgotten.");
   });
 
   el<HTMLFormElement>("[data-signin]").addEventListener("submit", async (event) => {
