@@ -169,8 +169,10 @@ function signInView(message = "") {
           <input id="tok" type="password" class="ed-input" required autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_\u{2026}" />
           <button type="button" class="ed-gate-reveal" data-reveal aria-label="Show token">Show</button>
         </div>
-        <p class="ed-gate-hint">A fine-grained token on <b>${esc(REPO)}</b> with <b>Contents: read and write</b>.
-        <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Make one &rarr;</a></p>
+        <p class="ed-gate-hint">If you own <b>${esc(REPO)}</b>: a fine-grained token on it with <b>Contents: read and write</b>.
+        <a href="https://github.com/settings/personal-access-tokens/new?name=Statevera%20desk&contents=write" target="_blank" rel="noopener">Make one &rarr;</a><br>
+        If you are a collaborator on it: fine-grained tokens cannot reach another account's repository, so use a classic token with the <b>repo</b> scope.
+        <a href="https://github.com/settings/tokens/new?scopes=repo&description=Statevera%20desk" target="_blank" rel="noopener">Make one &rarr;</a></p>
       </div>
       <div class="ed-field">
         <label for="aikey">Assistant key <span class="ed-gate-optional">optional</span></label>
