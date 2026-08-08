@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-08T16:59:25.927Z",
+  "generatedAt": "2026-08-08T17:29:43.637Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "72b134bae59e",
+      "title": "Blanche confirmation allows Trump to continue ‘pervasive, breathtaking corruption’, says Schumer – US politics live",
+      "summary": "Senate minority leader condemns Republicans after Donald Trump’s former defense lawyer confirmed by 50 votes to 49 early on Saturday morning Joe Biden ’s prostate cancer has spread throughout his body, causing the former president great pain, his son Hunter…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/08/todd-blanche-attorney-general-senate-vote-republicans-save-voting-bill-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-08T17:05:58.000Z",
+      "image": "https://i.guim.co.uk/img/media/9929feb6f224df63c95a1032463f390dd8b086fb/680_0_7920_6336/master/7920.jpg?width=700&quality=85&auto=format&fit=max&s=b72910d328a8fb60bfa2cb5bc2a4b6b9",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "d12b18a3f096",
+      "title": "Serbia and Ukraine pledge closer economic ties, eye free trade deal",
+      "summary": "Serbia says it will help rebuild Ukrainian cities and provide aid as the two countries deepen cooperation.",
+      "url": "https://www.aljazeera.com/news/2026/8/8/serbia-and-ukraine-pledge-closer-economic-ties-eye-free-trade-deal?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-08T17:05:17.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "489180334d77",
       "title": "Japan's top 3 banks boost foreign currency liquidity buffers to $1.25tn",
@@ -18,22 +50,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "72b134bae59e",
-      "title": "Blanche confirmation allows Trump to continue ‘pervasive, breathtaking corruption’, says Schumer – US politics live",
-      "summary": "Senate minority leader condemns Republicans after Donald Trump’s former defense lawyer confirmed by 50 votes to 49 early on Saturday morning Joe Biden ’s prostate cancer has spread throughout his body, causing the former president great pain, his son Hunter…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/08/todd-blanche-attorney-general-senate-vote-republicans-save-voting-bill-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-08T16:51:56.000Z",
-      "image": "https://i.guim.co.uk/img/media/9929feb6f224df63c95a1032463f390dd8b086fb/680_0_7920_6336/master/7920.jpg?width=700&quality=85&auto=format&fit=max&s=b72910d328a8fb60bfa2cb5bc2a4b6b9",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
