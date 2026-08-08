@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-08T02:34:56.932Z",
+  "generatedAt": "2026-08-08T03:56:44.669Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "b7c76dc450fe",
+      "title": "US Senate passes Russia sanctions that could hurt India and China",
+      "summary": "The US Senate approved its strongest move against Russia under Trump.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/07-08-sv-us-sanctions-russia-us?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-08T03:20:41.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "7bbbb2014a97",
       "title": "CNN: Top general says US needs ‘off ramp’ from Iran war",
@@ -279,6 +295,22 @@
       "weight": 2
     },
     {
+      "id": "01a86fc2660d",
+      "title": "Turkey says new defence pact aligns with Nato commitments",
+      "summary": "Turkey says new defence pact aligns with Nato commitments Turkey said on Friday that its new defence agreement with Pakistan and Saudi Arabia did not contradict its commitments to the Nato alliance. \"The agreement is not in contradiction with the commitments…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkey-says-new-defense-pact-aligns-nato-commitments",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-07T20:49:33.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Turkey",
+      "weight": 2
+    },
+    {
       "id": "ecb7ce7c71e8",
       "title": "Can diplomacy end the conflict in Libya?",
       "summary": "The country has been divided since 2014, with rival governments in the east and west.",
@@ -474,22 +506,6 @@
       "weight": 3
     },
     {
-      "id": "20f3f2aff04c",
-      "title": "Inside the results: How redistricting shaped Tennessee’s primary election",
-      "summary": "Tennessee's party primaries saw incumbent Representative Andy Ogles ousted and set up a heated race for District 9.",
-      "url": "https://www.aljazeera.com/news/2026/8/7/inside-the-results-how-redistricting-shaped-tennessees-primary-election?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-07T18:00:05.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "f4c8ad330e75",
       "title": "Lebanon, Israel agree shortlist of countries that could send troops to verify Hezbollah disarmament",
       "summary": "Lebanon, Israel agree shortlist of countries that could send troops to verify Hezbollah disarmament Lebanon and Israel have agreed on a shortlist of countries that could send troops to verify the disarmament of Hezbollah under a US-brokered agreement, a…",
@@ -522,22 +538,6 @@
       "weight": 3
     },
     {
-      "id": "4b884a20e9c7",
-      "title": "Exclusive: ICC judges order Taliban case split from Afghanistan probe that covers US troops",
-      "summary": "Exclusive: ICC judges order Taliban case split from Afghanistan probe that covers US troops Judges at the International Criminal Court (ICC) have ordered prosecutors to open a standalone investigation into allegations of gender persecution by the Taliban,…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/exclusive-icc-judges-order-taliban-case-split-afghanistan-probe-covers",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-07T16:25:57.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "e1c152c0f716",
       "title": "Abelardo de la Espriella takes office in Colombia with a head start in Washington",
       "summary": "The new Colombian president and his US counterpart should seize the opportunity to reset the long-term bilateral relationship. The post Abelardo de la Espriella takes office in Colombia with a head start in Washington appeared first on Atlantic Council .",
@@ -552,22 +552,6 @@
       "categoryConfidence": "source",
       "region": "Americas",
       "weight": 3
-    },
-    {
-      "id": "40e393cbb0f7",
-      "title": "Anti-Muslim lawmaker Andy Ogles loses Republican primary",
-      "summary": "Anti-Muslim lawmaker Andy Ogles loses Republican primary Submitted by MEE staff on Fri, 08/07/2026 - 16:13 He was defeated by another pro-Trump candidate, but the results may suggest there is a limit to hateful rhetoric Tennessee Republican Congressman Andy…",
-      "url": "https://www.middleeasteye.net/news/anti-muslim-lawmaker-andy-ogles-loses-republican-primary",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-07T16:12:17.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "0a5365dc50f4",
