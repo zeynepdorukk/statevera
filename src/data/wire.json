@@ -1,12 +1,28 @@
 {
-  "generatedAt": "2026-08-08T04:48:15.462Z",
+  "generatedAt": "2026-08-08T05:33:57.422Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
+      "id": "d56edb344975",
+      "title": "Child among three killed in Russian missile attacks near Kyiv",
+      "summary": "Russia continued its overnight attacks after President Volodymyr Zelensky warned of Ukraine's dwindling supplies of missile interceptors.",
+      "url": "https://www.bbc.co.uk/news/articles/cz7dy8gq99eo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-08T05:15:51.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f243/live/91487a70-92dd-11f1-87f4-4f87722fb492.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "760e690714ef",
-      "title": "Two killed, 14 wounded as Houthis strike Marib again",
-      "summary": "Two killed, 14 wounded as Houthis strike Marib again Yemen's Houthis launched ballistic missiles and drones at displacement camps and residential neighbourhoods in the city of Marib on Friday, killing two people and wounding 14, Reuters reported, citing state…",
+      "title": "Two civilians killed in Houthi strike on Marib as UN warns of large-scale conflict",
+      "summary": "Two civilians killed in Houthi strike on Marib as UN warns of large-scale conflict Yemen's Houthis launched ballistic missiles and drones at displacement camps and residential neighbourhoods in the city of Marib on Friday, killing two people and wounding 14,…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/two-killed-14-wounded-houthis-strike-marib-again",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -17,22 +33,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "d56edb344975",
-      "title": "Child among three killed in Russian missile attacks near Kyiv",
-      "summary": "Russia continued its overnight attacks after President Volodymyr Zelensky warned of Ukraine's dwindling supplies of missile interceptors.",
-      "url": "https://www.bbc.co.uk/news/articles/cz7dy8gq99eo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-08T04:23:33.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f243/live/91487a70-92dd-11f1-87f4-4f87722fb492.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -129,23 +129,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "cf6b47c6483a",
-      "title": "US imposes 15% tariff on polysilicon in pushback against China",
-      "summary": "",
-      "url": "https://asia.nikkei.com/economy/trade-war/trump-tariffs/us-imposes-15-tariff-on-polysilicon-in-pushback-against-china",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-08T00:44:19.901Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -359,22 +342,6 @@
       "weight": 2
     },
     {
-      "id": "ecb7ce7c71e8",
-      "title": "Can diplomacy end the conflict in Libya?",
-      "summary": "The country has been divided since 2014, with rival governments in the east and west.",
-      "url": "https://www.aljazeera.com/video/inside-story/2026/8/7/can-diplomacy-end-the-conflict-in-libya?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-07T20:39:26.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "f807f5a50b8b",
       "title": "US Senate passes Russia sanctions bill championed by Lindsey Graham",
       "summary": "Late senator spent final days of his life working to advance bill that will now head to the House after 86-11 Senate vote By a large, bipartisan margin, the US Senate on Friday approved a bill intended to punish Russia and countries that buy its petroleum…",
@@ -452,22 +419,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "16256a2e15af",
-      "title": "US official: 'We expect a deal soon' between Iran and Oman on Strait of Hormuz",
-      "summary": "US official: 'We expect a deal soon' between Iran and Oman on Strait of Hormuz Progress is being made between Iran and Oman on the Strait of Hormuz and \"we expect a deal soon,\" a US official told Reuters on Friday. Once a deal is announced to restore…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-official-we-expect-deal-soon-between-iran-and-oman-strait-hormuz",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-07T19:40:21.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
