@@ -1,7 +1,9 @@
 {
-  "generatedAt": "2026-08-08T14:03:30.842Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-08T14:46:58.043Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
     {
       "id": "fe68f6b82817",
@@ -84,19 +86,19 @@
       "weight": 2
     },
     {
-      "id": "709810b92392",
-      "title": "Russian attacks kill several in Ukraine",
-      "summary": "At least four people, including a child, were killed in Russian drone and missile strikes on Kyiv and surrounding regions early Saturday. Moscow has been carrying out near-daily attacks, exploiting Ukraine’s strained air defences. Meanwhile, Ukraine struck…",
-      "url": "https://www.france24.com/en/russian-attacks-kill-several-in-ukraine",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-08T13:12:48.000Z",
-      "image": "https://s.france24.com/media/display/6609f260-932a-11f1-a372-005056bf30b7/w:1024/p:16x9/EN-20260808-150131-150501-CS.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
+      "id": "e842438c33cc",
+      "title": "Trump loyalist Todd Blanche confirmed by Senate as US attorney general",
+      "summary": "Major win for president as former personal lawyer wins approval despite outcry over $1.8bn slush fund The US Senate voted to narrowly confirm Todd Blanche as attorney general in a major win for Donald Trump, who will now have his one-time personal attorney…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/08/todd-blanche-attorney-general-confirmed",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-08T12:34:41.000Z",
+      "image": "https://i.guim.co.uk/img/media/6d18738f903273d07d91da4239cb4099cd2d11b3/432_0_5001_4000/master/5001.jpg?width=700&quality=85&auto=format&fit=max&s=86045526682fee85d3dc7d94cecb0e3b",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -244,38 +246,6 @@
       "weight": 2
     },
     {
-      "id": "08cda4b5676e",
-      "title": "Serbia’s Vucic attempts diplomatic ‘balancing act’ with Zelensky’s visit",
-      "summary": "Ukraine’s President Volodymyr Zelensky is making his first official visit to Serbia, in a notable move given Belgrade’s close ties with Moscow and its refusal to impose sanctions on Russia. Zelensky is seeking to shore up international support as Russian…",
-      "url": "https://www.france24.com/en/video/20260808-serbia-s-vucic-attempts-diplomatic-balancing-act-with-zelensky-s-visit",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-08T10:34:40.000Z",
-      "image": "https://s.france24.com/media/display/fd7e667c-9306-11f1-b9da-005056bf30b7/w:1024/p:16x9/EN-20260808-090345-091156-CS.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "fec61873998d",
-      "title": "India protesters face online backlash",
-      "summary": "Days after Gen Z protesters led by the Cockroach Janta Party brought down India’s education minister, dozens of women who took part in the demonstrations say they are facing a barrage of online threats. The protesters say that while the movement itself has…",
-      "url": "https://www.france24.com/en/india-protesters-face-online-backlash",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-08T10:29:39.000Z",
-      "image": "https://s.france24.com/media/display/51d3bc52-9313-11f1-b7b9-005056a90284/w:1024/p:16x9/EN-20260808-121030-121313-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "e3159a1d01e0",
       "title": "US Senate passes sweeping sanctions targeting Russian energy revenues",
       "summary": "US Senators have passed a punishing sanctions package against Russia targeting the country’s energy revenues that are helping to fuel its war against Ukraine.",
@@ -340,54 +310,6 @@
       "weight": 2
     },
     {
-      "id": "5b112a64339c",
-      "title": "US Senate narrowly confirms Trump loyalist Todd Blanche as attorney general",
-      "summary": "The US Senate on Saturday voted 50-49 to confirm President Donald Trump's former personal lawyer Todd Blanche as the country's attorney general. Blanche was serving as the top US law enforcement officer in an acting capacity after Trump fired another…",
-      "url": "https://www.france24.com/en/americas/20260808-us-senate-confirms-trump-s-ex-lawyer-as-attorney-general",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-08T08:51:10.000Z",
-      "image": "https://s.france24.com/media/display/4d6cd6ba-9306-11f1-8720-005056a97e36/w:1024/p:16x9/fa0494b897a3c535b3088b9f5a212ab0cd08821b.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "1dd6ca82fe89",
-      "title": "Trump vows appeal over ballroom halt",
-      "summary": "More headaches for US President Donald Trump over his planned White House ballroom: a federal appeals court has ruled that the administration must halt the $400 million construction project, saying it has not been approved by Congress. The ruling follows a…",
-      "url": "https://www.france24.com/en/trump-vows-appeal-over-ballroom-halt",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-08T08:49:36.000Z",
-      "image": "https://s.france24.com/media/display/c14cb17e-9304-11f1-87d5-005056bf30b7/w:1024/p:16x9/EN-20260808-101128-101321-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "300712e89174",
-      "title": "Cuba: No power, no fuel, no internet",
-      "summary": "Cuba's energy crisis is colliding with economic collapse, as Washington ramps up sanctions on the island. Caught between American pressure and crisis at home, Cubans are struggling just to get through the day. A France24 report from Havana.",
-      "url": "https://www.france24.com/en/cuba-no-power-no-fuel-no-internet",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-08T08:33:34.000Z",
-      "image": "https://s.france24.com/media/display/2afe88ca-9302-11f1-bbb1-005056bfb2b6/w:1024/p:16x9/EN-20260808-091737-092103-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "c8189419a866",
       "title": "India wary of potential 100% US tariffs over Russian oil",
       "summary": "The US Senate passed a sanctions bill that could result in tariffs on India as a major consumer of Russian oil. Follow DW for more.",
@@ -417,22 +339,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "f162c6925746",
-      "title": "US accused of meddling in British politics with $500,000 grant for ‘public education’ courses",
-      "summary": "Documents published on US embassy’s website prompt claims of attempt to export Maga propaganda to UK The US embassy in London is offering grants of up to half a million dollars for new “public education” programmes in what has been criticised as interference…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/08/us-accused-of-meddling-in-british-politics-with-500000-grant-scheme-promoting-shared-values",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-08T07:00:41.000Z",
-      "image": "https://i.guim.co.uk/img/media/75e81b6f235cd7ddaa9045da5ec7ca3df52b68b9/126_0_3779_3024/master/3779.jpg?width=700&quality=85&auto=format&fit=max&s=4c5812c6fd06a743f9feebbd342440d0",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -532,6 +438,22 @@
       "weight": 2
     },
     {
+      "id": "29c5698f63b5",
+      "title": "US promises $1bn in security aid to Colombia as new rightwing president pledges drugs crackdown",
+      "summary": "Trump ally Abelardo De La ‌Espriella vows to start ‘profound transformation’ of country’s destiny as he is sworn in The ​Trump administration plans to provide $1bn in security assistance to the ⁠government of Colombia’s new ​rightwing ‌president, the US state…",
+      "url": "https://www.theguardian.com/world/2026/aug/08/us-promises-1bn-in-security-aid-to-colombia-as-new-rightwing-president-pledges-drugs-crackdown",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-08T04:08:18.000Z",
+      "image": "https://i.guim.co.uk/img/media/82efa4a4cf17ca09e017aed4040101482b7e0198/403_0_2036_1629/master/2036.jpg?width=700&quality=85&auto=format&fit=max&s=ac0aecfd94cf40e9ce1c9ef81728dfa4",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "7d64c0fd18d4",
       "title": "Let them eat burritos: Out of touch influencers risk all for Trump war",
       "summary": "As the 2026 midterm elections near, polls show American voters’ top priority is the economy, including concerns that the unpopular U.S. war in Iran appears to be driving up prices at home . Might these voter concerns give Republican hawks pause? Apparently…",
@@ -559,22 +481,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "7e8fbe774b3e",
-      "title": "Turkish, Pakistani and Saudi flags shine in Kingdom's cities",
-      "summary": "Turkish, Pakistani and Saudi flags shine in Kingdom's cities Saudi Arabia lit up prominent landmarks and towers with the flags of Turkey, Pakistan and the Kingdom, following the signing of the Makkah Joint Defence Agreement, according to the Saudi Press…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkish-pakistani-and-saudi-flags-shine-kingdoms-cities",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-08T01:43:49.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
@@ -2108,22 +2014,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "b7681813d77b",
-      "title": "DR Congo: Government bans export of copper and cobalt concentrates",
-      "summary": "The decision is part of a move to increase local processing and hike revenue from the country's mineral wealth.",
-      "url": "http://www.africanews.com/2026/08/06/dr-congo-government-bans-export-of-copper-and-cobalt-concentrates/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-06T10:37:50.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/86/46/71/640x360_cmsv2_c0aca291-b01e-5f35-8a2e-adc4ca132d3e-9864671.jpg?1786008706",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Africa",
       "weight": 2
     },
     {
