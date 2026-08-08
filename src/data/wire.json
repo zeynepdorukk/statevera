@@ -1,11 +1,27 @@
 {
-  "generatedAt": "2026-08-08T07:26:46.893Z",
+  "generatedAt": "2026-08-08T08:05:28.486Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
+      "id": "c1e5db1661cd",
+      "title": "More than 300 children have died from Ebola since start of DRC outbreak",
+      "summary": "More than 300 children have died from Ebola since the outbreak began in the Democratic Republic of Congo, according to figures cited Friday by United Nations deputy spokesperson Farhan Haq.",
+      "url": "http://www.africanews.com/2026/08/08/more-than-300-children-have-died-from-ebola-since-start-of-drc-outbreak/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-08T07:58:02.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/86/70/27/640x360_cmsv2_9b236cd8-5362-504d-8bfe-f301bc175c4a-9867027.jpg?1786166585",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
       "id": "f162c6925746",
-      "title": "US accused of meddling in British politics with $500,000 grant scheme promoting ‘shared values’",
+      "title": "US accused of meddling in British politics with $500,000 grant for ‘public education’ courses",
       "summary": "Documents published on US embassy’s website prompt claims of attempt to export Maga propaganda to UK The US embassy in London is offering grants of up to half a million dollars for new “public education” programmes in what has been criticised as interference…",
       "url": "https://www.theguardian.com/us-news/2026/aug/08/us-accused-of-meddling-in-british-politics-with-500000-grant-scheme-promoting-shared-values",
       "publisher": "The Guardian",
@@ -164,22 +180,6 @@
       "weight": 3
     },
     {
-      "id": "b7c76dc450fe",
-      "title": "US Senate passes Russia sanctions that could hurt India and China",
-      "summary": "The US Senate approved its strongest move against Russia under Trump.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/07-08-sv-us-sanctions-russia-us?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-08T03:20:41.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "7bbbb2014a97",
       "title": "CNN: Top general says US needs ‘off ramp’ from Iran war",
       "summary": "CNN: Top general says US needs ‘off ramp’ from Iran war A top United States general has said that the country needs “an off-ramp” from the war with Iran, fearing that the military options currently being considered by the Trump administration could backfire,…",
@@ -225,22 +225,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "c26c3defb731",
-      "title": "US Senate passes sweeping Russian energy sanctions bill amid Ukraine war",
-      "summary": "Legislation implements aggressive economic sanctions, including 100 percent tariff on Russian oil and gas importers.",
-      "url": "https://www.aljazeera.com/economy/2026/8/8/us-senate-passes-sweeping-russian-energy-sanctions-bill-amid-ukraine-war?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-08T00:06:22.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
