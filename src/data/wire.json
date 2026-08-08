@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T22:53:18.647Z",
+  "generatedAt": "2026-08-08T23:16:36.765Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -357,22 +357,6 @@
       "weight": 2
     },
     {
-      "id": "fe68f6b82817",
-      "title": "Israel mulls Saudi, Turkiye, Pakistan pact as elections loom",
-      "summary": "Saudi Arabia, Turkiye, and Pakistan form a new defence pact, leaving Israel’s response and its implications uncertain.",
-      "url": "https://www.aljazeera.com/news/2026/8/8/netanyahu-mulls-saudi-turkiye-pakistan-pact-as-israeli-elections-loom?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-08T13:42:06.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "891878c6e5a9",
       "title": "Magyar’s party backs former supreme court head for Hungarian president",
       "summary": "Parliament is set to elect András Baka next week.",
@@ -725,22 +709,6 @@
       "weight": 2
     },
     {
-      "id": "1bed4ed97258",
-      "title": "Israeli shelling damages homes in Lebanese town",
-      "summary": "Israeli shelling damages homes in Lebanese town Israeli artillery shelled the vicinity of the town of al-Mansouri early Saturday morning, the country's National News Agency reported. The Israeli army continues to occupy swaths of land in southern Lebanon and…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-shelling-damages-homes-lebanese-town",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-08T05:48:13.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "1e8f5760acb3",
       "title": "Germany debates reintroducing mandatory civilian service",
       "summary": "Social organizations are skeptical about the government's ideas for a civilian service program that youths could choose as an alternative should Germany reinstate mandatory military conscription.",
@@ -787,22 +755,6 @@
       "categoryConfidence": "source",
       "region": "Americas",
       "weight": 3
-    },
-    {
-      "id": "77ca3b64e7fa",
-      "title": "David Brat bound for Australia as diplomat confirmed as next US ambassador",
-      "summary": "Former Republican state congressman, who once argued Christianity and capitalism should merge, confirmed by US Senate to fill long-vacant role Get our breaking news email , free app or daily news podcast Former Virginia congressman David Brat has been…",
-      "url": "https://www.theguardian.com/australia-news/2026/aug/08/david-brat-bound-for-australia-as-diplomat-confirmed-as-next-us-ambassador",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-07T23:50:39.000Z",
-      "image": "https://i.guim.co.uk/img/media/9da0bcae7ea865b7a38c61f71756377f8e83cadc/0_1184_3456_2765/master/3456.jpg?width=700&quality=85&auto=format&fit=max&s=758f67344e2e5ddd06d1c49ef16049c3",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "c997144f5e32",
