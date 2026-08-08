@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-08T19:08:30.494Z",
+  "generatedAt": "2026-08-08T19:41:55.680Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "639e1a78a571",
+      "title": "Hormuz talks positive, Oman says, as Iran warns deal would not open strait",
+      "summary": "Both sides suggest progress in talks to agree a new shipping route through the strait, but a breakthrough remains unclear.",
+      "url": "https://www.bbc.co.uk/news/articles/c934j5y2lq9o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-08T19:18:57.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/92dc/live/fa229770-934a-11f1-a35f-039358cea467.jpg",
+      "imageWidth": 240,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "d80a164983bd",
+      "title": "Lebanese soldiers injured while Israeli troops intrude on southern town",
+      "summary": "Soldiers disarm unexploded ordnance in Zawtar al-Gharbiyah, near where Israeli forces reportedly built an earth barrier.",
+      "url": "https://www.aljazeera.com/news/2026/8/8/lebanese-soldiers-injured-while-israeli-troops-intrude-on-southern-town?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-08T19:00:43.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "d56edb344975",
       "title": "Child among three killed in Russian missile attacks near Kyiv",
@@ -935,22 +967,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "d1b81182cfc5",
-      "title": "How viable is the potential Iran-Oman Hormuz shipping deal?",
-      "summary": "Iran says a shipping accord with Oman is in its final stages, but analysts warn sanctions, security concerns and rival US-Iran goals could limit its impact.",
-      "url": "https://www.dw.com/en/how-viable-is-the-potential-iran-oman-hormuz-shipping-deal/a-78283434?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-07T15:02:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
