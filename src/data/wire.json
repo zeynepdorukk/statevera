@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-08T22:16:06.484Z",
+  "generatedAt": "2026-08-08T22:53:18.647Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "7706eec6fb22",
+      "title": "Car bomb attack rattles Colombia after inauguration of hardline president",
+      "summary": "Government promises harsh response following explosives attack on Pan-American Highway in southwest of country.",
+      "url": "https://www.aljazeera.com/news/2026/8/8/car-bomb-attack-rattles-colombia-after-inauguration-of-hardline-president?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-08T22:22:36.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "3fc6c088bb1d",
       "title": "Pentagon orders arms production surge as Israeli-US war on Iran depletes missiles",
