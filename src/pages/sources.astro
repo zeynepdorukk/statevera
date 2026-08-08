@@ -75,9 +75,7 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
         ))}
       </div>
 
-      <p class="primary-source-status" data-primary-source-status aria-live="polite">
-        Enter a keyword to search official records across {marks.length} institutions.
-      </p>
+      <p class="primary-source-status" data-primary-source-status aria-live="polite"></p>
       <div class="primary-source-results" data-primary-source-results aria-live="polite"></div>
     </section>
 
@@ -102,10 +100,6 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
       </ul>
     </section>
 
-    <section class="primary-source-principle" aria-label="Primary source principle">
-      <p class="kicker-ink">A source-first workflow</p>
-      <p class="primary-source-principle-copy">News tells you what happened. The Journal asks what it means. Primary Sources let you read the record as it was issued.</p>
-    </section>
   </div>
 </BaseLayout>
 
@@ -211,8 +205,6 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
     flex-wrap: wrap;
     gap: 0.4rem;
     margin-top: 1.25rem;
-    padding-bottom: 0.85rem;
-    border-bottom: 1px solid var(--line);
   }
 
   .source-filter {
@@ -249,6 +241,11 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
     font-family: var(--font-sans);
     font-size: 0.76rem;
     color: var(--muted);
+  }
+
+  /* Nothing has been asked yet, so there is nothing to report and no rule to draw. */
+  .primary-source-status:empty {
+    display: none;
   }
 
   .primary-source-status[data-state="loading"] {
@@ -375,6 +372,11 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
   :global(.primary-source-results) {
     margin-top: 1.35rem;
     border-top: 1px solid var(--line-strong);
+  }
+
+  :global(.primary-source-results:empty) {
+    margin-top: 0;
+    border-top: 0;
   }
 
   :global(.primary-source-result) {
@@ -589,20 +591,6 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
     font-weight: 700;
     letter-spacing: 0.04em;
     line-height: 1.35;
-    color: var(--ink-soft);
-  }
-
-  .primary-source-principle {
-    max-width: 48rem;
-    border-left: 3px solid var(--risk);
-    padding: 0.2rem 0 0.2rem 1rem;
-  }
-
-  .primary-source-principle-copy {
-    margin: 0.45rem 0 0;
-    font-family: var(--font-serif);
-    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
-    line-height: 1.4;
     color: var(--ink-soft);
   }
 
