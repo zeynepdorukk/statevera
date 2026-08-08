@@ -69,9 +69,43 @@ if (root) {
 
   const setStatus = (message: string, state = "") => {
     if (!status) return;
+    stopTyping();
+    status.setAttribute("aria-live", "polite");
+    status.removeAttribute("aria-label");
     status.textContent = message;
     status.dataset.state = state;
     status.setAttribute("aria-busy", String(state === "loading"));
+  };
+
+  let typing = 0;
+  const stopTyping = () => {
+    window.clearInterval(typing);
+    typing = 0;
+  };
+
+  /**
+   * The wait is a real wait, so the line that describes it is written out rather
+   * than simply appearing. A reader hears the sentence once, from aria-label,
+   * instead of one announcement per letter.
+   */
+  const typeStatus = (message: string) => {
+    if (!status) return;
+    stopTyping();
+    status.dataset.state = "loading";
+    status.setAttribute("aria-busy", "true");
+    status.setAttribute("aria-live", "off");
+    status.setAttribute("aria-label", message);
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      status.textContent = message;
+      return;
+    }
+    let shown = 0;
+    status.textContent = "";
+    typing = window.setInterval(() => {
+      shown += 1;
+      status.textContent = message.slice(0, shown);
+      if (shown >= message.length) stopTyping();
+    }, 26);
   };
 
   // The strip of institution marks doubles as the wait and the result: every
@@ -166,7 +200,7 @@ if (root) {
       submit.setAttribute("aria-busy", "true");
       submit.textContent = "Checking official sources…";
     }
-    setStatus(`Checking official sources across ${pollMarks.length} institutions\u{2026}`, "loading");
+    typeStatus(`Checking official sources across ${pollMarks.length} institutions\u{2026}`);
     pollWaiting();
     try {
       const url = new URL(endpoint, window.location.origin);

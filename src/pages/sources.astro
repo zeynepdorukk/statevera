@@ -111,7 +111,7 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
   }
 
   .primary-sources-tool {
-    padding: 1.8rem 0 3.6rem;
+    padding: 1.8rem 0 2rem;
   }
 
   .primary-sources-search-head,
@@ -248,6 +248,31 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
     display: none;
   }
 
+  /* The typed line starts empty, so it must not blink out of existence first. */
+  .primary-source-status[data-state="loading"]:empty {
+    display: flex;
+  }
+
+  /* A caret, because the line is being written rather than shown. */
+  .primary-source-status[data-state="loading"]::after {
+    width: 0.42rem;
+    height: 0.95em;
+    flex: 0 0 auto;
+    margin-left: -0.35rem;
+    background: currentColor;
+    content: "";
+    animation: source-caret 900ms steps(2, jump-none) infinite;
+  }
+
+  @keyframes source-caret {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
   .primary-source-status[data-state="loading"] {
     color: var(--ink-soft);
   }
@@ -364,6 +389,7 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
 
   @media (prefers-reduced-motion: reduce) {
     .primary-source-submit[data-state="loading"]::before,
+    .primary-source-status[data-state="loading"]::after,
     .source-poll-mark[data-state="waiting"] img {
       animation: none;
     }
