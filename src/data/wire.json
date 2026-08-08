@@ -1,8 +1,42 @@
 {
-  "generatedAt": "2026-08-08T10:06:16.798Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-08T10:49:19.263Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "a069369bb087",
+      "title": "When German Catholics and Protestants share a church",
+      "summary": "Each year, dozens of churches are decommissioned, demolished or repurposed in Germany. But there is a new, unique development.",
+      "url": "https://www.dw.com/en/when-german-catholics-and-protestants-share-a-church/a-78276609?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-08T10:35:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "72b134bae59e",
+      "title": "Blanche ‘honored’ after Senate confirms him as US attorney general in narrow vote – US politics live",
+      "summary": "Donald Trump’s former defense lawyer confirmed by 50 votes to 49 early on Saturday morning, with senators deferring action on president’s voting bill until after recess Senator Bill Cassidy of Louisiana said he was undecided about whether to vote to confirm…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/08/todd-blanche-attorney-general-senate-vote-republicans-save-voting-bill-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-08T10:31:47.000Z",
+      "image": "https://i.guim.co.uk/img/media/9fae543c34f6f9a75db001757c800ee001016d3f/160_0_3336_2669/master/3336.jpg?width=700&quality=85&auto=format&fit=max&s=4dee104100f1370da1e39656e610d141",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "d39f8c890540",
       "title": "The GCC’s wartime borrowing machine is helping counter the Iran war",
@@ -49,38 +83,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "5b112a64339c",
-      "title": "US Senate narrowly confirms Trump loyalist Todd Blanche as attorney general",
-      "summary": "The US Senate on Saturday voted 50-49 to confirm President Donald Trump's former personal lawyer Todd Blanche as the country's attorney general. Blanche was serving as the top US law enforcement officer in an acting capacity after Trump fired another…",
-      "url": "https://www.france24.com/en/americas/20260808-us-senate-confirms-trump-s-ex-lawyer-as-attorney-general",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-08T08:51:10.000Z",
-      "image": "https://s.france24.com/media/display/4d6cd6ba-9306-11f1-8720-005056a97e36/w:1024/p:16x9/fa0494b897a3c535b3088b9f5a212ab0cd08821b.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "300712e89174",
-      "title": "Cuba: No power, no fuel, no internet",
-      "summary": "Cuba's energy crisis is colliding with economic collapse, as Washington ramps up sanctions on the island. Caught between American pressure and crisis at home, Cubans are struggling just to get through the day. A France24 report from Havana.",
-      "url": "https://www.france24.com/en/cuba-no-power-no-fuel-no-internet",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-08T08:33:34.000Z",
-      "image": "https://s.france24.com/media/display/2afe88ca-9302-11f1-bbb1-005056bfb2b6/w:1024/p:16x9/EN-20260808-091737-092103-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -276,6 +278,22 @@
       "weight": 3
     },
     {
+      "id": "b7c76dc450fe",
+      "title": "US Senate passes Russia sanctions that could hurt India and China",
+      "summary": "The US Senate approved its strongest move against Russia under Trump.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/07-08-sv-us-sanctions-russia-us?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-08T03:20:41.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
       "id": "7bbbb2014a97",
       "title": "CNN: Top general says US needs ‘off ramp’ from Iran war",
       "summary": "CNN: Top general says US needs ‘off ramp’ from Iran war A top United States general has said that the country needs “an off-ramp” from the war with Iran, fearing that the military options currently being considered by the Trump administration could backfire,…",
@@ -305,22 +323,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "624e7df7e9fe",
-      "title": "Colombia’s new president takes office vowing to ‘crush’ narco-terrorism",
-      "summary": "Right-wing politician Abelardo De La Espriella takes office after narrowly winning June’s presidential runoff.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/08-08-sv-de-la-espriella-co?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-08T01:15:53.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -420,22 +422,6 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "f807f5a50b8b",
-      "title": "US Senate passes Russia sanctions bill championed by Lindsey Graham",
-      "summary": "Late senator spent final days of his life working to advance bill that will now head to the House after 86-11 Senate vote By a large, bipartisan margin, the US Senate on Friday approved a bill intended to punish Russia and countries that buy its petroleum…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/07/russia-sanctions-senate-passed-petroleum",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-07T20:22:18.000Z",
-      "image": "https://i.guim.co.uk/img/media/b07ebe52f4de74ae6efbbe234e88b72d2a0fc65c/250_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=2a81724806570a8a91ef3bd2d5825dbe",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
     },
     {
       "id": "20638a16f605",
@@ -585,22 +571,6 @@
       "weight": 3
     },
     {
-      "id": "0a5365dc50f4",
-      "title": "US appeals court halts construction of Trump’s $400 million White House ballroom project",
-      "summary": "A federal appeals court on Friday ordered US President Donald Trump’s administration to stop construction of its $400 million ballroom on the site of the White House's demolished East Wing. The court added that a president cannot fundamentally reshape the…",
-      "url": "https://www.france24.com/en/americas/20260807-us-appeals-court-halts-construction-of-trump-400-million-white-house-ballroom-project",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-07T16:06:55.000Z",
-      "image": "https://s.france24.com/media/display/dae90eaa-9275-11f1-a479-005056bfb2b6/w:1024/p:16x9/AP26217654920197.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "cb6423d8c6aa",
       "title": "Colombia's new president vows to remake the country — and challenge rebel groups",
       "summary": "A new political era for Colombia: a hard-right president promises order, growth and confrontation.",
@@ -646,22 +616,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "85bcb4a2873a",
-      "title": "Concerts of pro-Assad singers cancelled after protests in Syria",
-      "summary": "The concerts of several musicians accused of supporting former Syrian president Bashar al-Assad have been cancelled this summer in towns across Syria. People in the city of Homs tore down posters announcing performances by singers Mohamad Iskandar and Hossam…",
-      "url": "https://www.france24.com/en/middle-east/20260807-concerts-pro-assad-singers-cancelled-syrian-public-protests",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-07T15:07:34.000Z",
-      "image": "https://s.france24.com/media/display/d2ae57bc-9000-11f1-983f-005056bfb2b6/w:1024/p:16x9/1-54.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -951,6 +905,38 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
+    },
+    {
+      "id": "74303f001223",
+      "title": "The Mediterranean’s own odyssey: An ecological treasure feels the strain",
+      "summary": "More than 2,500 years after Homer’s epic was first told, Christopher Nolan's blockbuster retelling of The Odyssey has brought the journey back to big screens worldwide. But, behind the sweeping plot is another character facing an odyssey of its own: the…",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168084",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-07T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/05-08-2026-Adobe-Stock-Temple-Apollo.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "b32df064668d",
+      "title": "‘Sudan is losing another generation’ to war, Mohammed warns",
+      "summary": "More than 1,000 days of war in Sudan have left millions of children out of school, displaced or exposed to grave violations, the UN Deputy Secretary-General said on Friday, calling for renewed action to end the conflict.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168101",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-07T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/06/12-11-2025-UNICEF-Sudan-02.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Africa",
+      "weight": 2
     },
     {
       "id": "c83dc2535ef9",
@@ -1661,22 +1647,6 @@
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "b391f830fbc2",
-      "title": "Livestreamer's murder raises questions over relations between Mexico's creators and cartels",
-      "summary": "The murder of content creator César Gastélum on Tuesday raises questions about why influencers are coming under attack.",
-      "url": "https://www.bbc.co.uk/news/articles/ckg9dwz8p30o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-06T13:46:27.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a54c/live/0dc4fc60-91ce-11f1-b2ab-0dd01740f9f6.png",
-      "imageWidth": 240,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "8a23503e6460",
@@ -2447,38 +2417,6 @@
       "weight": 2
     },
     {
-      "id": "fc5e7273aba3",
-      "title": "Security Council LIVE: Ambassadors briefed on continuing ISIL terror threat",
-      "summary": "The Security Council met on Wednesday to examine the persistent threat posed by the terrorist group ISIL, also known as Dae’sh, to international peace and security. At a conference in June, the acting head of the UN counter-terrorism office stated that Al…",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168080",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-05T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/UNHCR/Embargoed%202/04-06-2025_Unsplash_Baghdad.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "ac2d78501092",
-      "title": "Strengthening El Niño to push 49 million more people into acute hunger",
-      "summary": "Nearly 50 million more people in highly vulnerable communities globally are set to be pushed into acute hunger because of the strengthening El Niño weather phenomenon, the UN World Food Programme (WFP) said on Wednesday.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168079",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-05T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/assets/2016/04/24255/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "6d275e1ac142",
       "title": "El-Sayed overcomes $30 million AIPAC spend, wins Michigan primary",
       "summary": "Abdul El-Sayed became the latest progressive insurgent to win a Democratic nomination contest on Tuesday, when he bested sitting House Rep. Haley Stevens to become the party’s nominee for Senate in Michigan. At the time of writing, with 95% of the votes…",
@@ -2860,22 +2798,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "bf0cd8c06891",
-      "title": "Fact check: Russian disinformation targets German elections",
-      "summary": "Ahead of four elections in Germany this fall, dozens of fake posts are circulating online aimed at discrediting candidates and portraying Germany as divided. Analysts warn that Russia is now targeting local candidates.",
-      "url": "https://www.dw.com/en/fact-check-russian-disinformation-targets-german-elections/a-78193305?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-03T07:06:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
