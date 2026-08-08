@@ -1,8 +1,72 @@
 {
-  "generatedAt": "2026-08-08T03:56:44.669Z",
+  "generatedAt": "2026-08-08T04:48:15.462Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "760e690714ef",
+      "title": "Two killed, 14 wounded as Houthis strike Marib again",
+      "summary": "Two killed, 14 wounded as Houthis strike Marib again Yemen's Houthis launched ballistic missiles and drones at displacement camps and residential neighbourhoods in the city of Marib on Friday, killing two people and wounding 14, Reuters reported, citing state…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/two-killed-14-wounded-houthis-strike-marib-again",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-08T04:42:47.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "d56edb344975",
+      "title": "Child among three killed in Russian missile attacks near Kyiv",
+      "summary": "Russia continued its overnight attacks after President Volodymyr Zelensky warned of Ukraine's dwindling supplies of missile interceptors.",
+      "url": "https://www.bbc.co.uk/news/articles/cz7dy8gq99eo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-08T04:23:33.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f243/live/91487a70-92dd-11f1-87f4-4f87722fb492.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "29c5698f63b5",
+      "title": "US promises $1bn in security aid to Colombia as new rightwing president pledges drugs crackdown",
+      "summary": "Trump ally Abelardo De La ‌Espriella vows to start ‘profound transformation’ of country’s destiny as he is sworn in The ​Trump administration plans to provide $1bn in security assistance to the ⁠government of Colombia’s new ​rightwing ‌president, the US state…",
+      "url": "https://www.theguardian.com/world/2026/aug/08/us-promises-1bn-in-security-aid-to-colombia-as-new-rightwing-president-pledges-drugs-crackdown",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-08T04:08:18.000Z",
+      "image": "https://i.guim.co.uk/img/media/82efa4a4cf17ca09e017aed4040101482b7e0198/403_0_2036_1629/master/2036.jpg?width=700&quality=85&auto=format&fit=max&s=ac0aecfd94cf40e9ce1c9ef81728dfa4",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "7d64c0fd18d4",
+      "title": "Let them eat burritos: Out of touch influencers risk all for Trump war",
+      "summary": "As the 2026 midterm elections near, polls show American voters’ top priority is the economy, including concerns that the unpopular U.S. war in Iran appears to be driving up prices at home . Might these voter concerns give Republican hawks pause? Apparently…",
+      "url": "https://responsiblestatecraft.org/burrito-war-affordability/",
+      "publisher": "Responsible Statecraft",
+      "publisherHome": "https://responsiblestatecraft.org",
+      "sourceId": "responsible-statecraft",
+      "publishedAt": "2026-08-08T04:05:02.000Z",
+      "image": "https://responsiblestatecraft.org/media-library/ben-shapiro.png?id=67591804&width=980",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Americas",
+      "weight": 3
+    },
     {
       "id": "b7c76dc450fe",
       "title": "US Senate passes Russia sanctions that could hurt India and China",
@@ -295,22 +359,6 @@
       "weight": 2
     },
     {
-      "id": "01a86fc2660d",
-      "title": "Turkey says new defence pact aligns with Nato commitments",
-      "summary": "Turkey says new defence pact aligns with Nato commitments Turkey said on Friday that its new defence agreement with Pakistan and Saudi Arabia did not contradict its commitments to the Nato alliance. \"The agreement is not in contradiction with the commitments…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkey-says-new-defense-pact-aligns-nato-commitments",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-07T20:49:33.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Turkey",
-      "weight": 2
-    },
-    {
       "id": "ecb7ce7c71e8",
       "title": "Can diplomacy end the conflict in Libya?",
       "summary": "The country has been divided since 2014, with rival governments in the east and west.",
@@ -441,22 +489,6 @@
       "weight": 2
     },
     {
-      "id": "b3353527542e",
-      "title": "US Treasury targets crypto exchanges in new Iran sanctions",
-      "summary": "US Treasury targets crypto exchanges in new Iran sanctions The United States on Friday sanctioned an unlicensed multi-state cryptocurrency exchange, alleging it processed millions of dollars of crypto for Iran’s Islamic Revolutionary Guard Corps and other…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-treasury-targets-crypto-exchanges-new-iran-sanctions",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-07T18:58:21.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "3ae0fdc4cd1f",
       "title": "Chinese drone exports take off in Southeast Asia, other emerging markets",
       "summary": "",
@@ -504,22 +536,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "f4c8ad330e75",
-      "title": "Lebanon, Israel agree shortlist of countries that could send troops to verify Hezbollah disarmament",
-      "summary": "Lebanon, Israel agree shortlist of countries that could send troops to verify Hezbollah disarmament Lebanon and Israel have agreed on a shortlist of countries that could send troops to verify the disarmament of Hezbollah under a US-brokered agreement, a…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/lebanon-israel-agree-shortlist-countries-could-send-troops-verify",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-07T17:37:08.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "f61130c42327",
@@ -2272,22 +2288,6 @@
       "weight": 2
     },
     {
-      "id": "624f722f6d32",
-      "title": "El-Sayed's victory sends tremors through Democratic Party",
-      "summary": "His win in Michigan sets up a high-stakes contest in November, testing a left-wing candidate's popularity in a swing state.",
-      "url": "https://www.bbc.co.uk/news/articles/cp309ng0xq1o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-05T16:04:16.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8165/live/eb4b58d0-90da-11f1-9bd2-e326e95c9722.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "e5ae67c430c2",
       "title": "Bored of Peace: Why is Trump undermining his own Gaza plan?",
       "summary": "A lot can change in a week. Barely five days after President Donald Trump hailed the “historic agreement” on Hamas’s disarmament by the Board of Peace (BOP) — the body Trump created to oversee his Gaza Peace Plan — the very same Board of Peace has now…",
@@ -2750,22 +2750,6 @@
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
-    },
-    {
-      "id": "bf3e78ba3872",
-      "title": "Iran, Ukraine wars depleted 'virtually all' US long-range missiles: Report",
-      "summary": "Reuters reported this morning that the U.S. has used “virtually all” its long-range precision strike missiles during its war on Iran. Reuters’ sources would not say exactly how many of these surface to surface weapons, known as Army Tactical Missile Systems…",
-      "url": "https://responsiblestatecraft.org/munitions-iran-ukraine/",
-      "publisher": "Responsible Statecraft",
-      "publisherHome": "https://responsiblestatecraft.org",
-      "sourceId": "responsible-statecraft",
-      "publishedAt": "2026-08-04T13:57:13.000Z",
-      "image": "https://responsiblestatecraft.org/media-library/atacms.jpg?id=67571400&width=980",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 3
     },
     {
       "id": "30c103f7f8e5",
