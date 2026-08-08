@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-08T00:44:24.401Z",
+  "generatedAt": "2026-08-08T02:34:56.932Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "7bbbb2014a97",
+      "title": "CNN: Top general says US needs ‘off ramp’ from Iran war",
+      "summary": "CNN: Top general says US needs ‘off ramp’ from Iran war A top United States general has said that the country needs “an off-ramp” from the war with Iran, fearing that the military options currently being considered by the Trump administration could backfire,…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/cnn-top-general-says-us-needs-ramp-iran-war",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-08T02:01:50.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "7e8fbe774b3e",
+      "title": "Turkish, Pakistani and Saudi flags shine in Kingdom's cities",
+      "summary": "Turkish, Pakistani and Saudi flags shine in Kingdom's cities Saudi Arabia lit up prominent landmarks and towers with the flags of Turkey, Pakistan and the Kingdom, following the signing of the Makkah Joint Defence Agreement, according to the Saudi Press…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkish-pakistani-and-saudi-flags-shine-kingdoms-cities",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-08T01:43:49.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "624e7df7e9fe",
+      "title": "Colombia’s new president takes office vowing to ‘crush’ narco-terrorism",
+      "summary": "Right-wing politician Abelardo De La Espriella takes office after narrowly winning June’s presidential runoff.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/8/08-08-sv-de-la-espriella-co?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-08T01:15:53.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "cf6b47c6483a",
       "title": "US imposes 15% tariff on polysilicon in pushback against China",
@@ -297,6 +345,22 @@
       "weight": 2
     },
     {
+      "id": "dedd07994c20",
+      "title": "China’s Asian Affairs Reshuffle",
+      "summary": "The elevation of a former ambassador to Mongolia signals a shift in diplomatic execution – but the change can only go so far.",
+      "url": "https://thediplomat.com/2026/08/chinas-asian-affairs-reshuffle/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-07T20:04:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-08-050811.jpg",
+      "imageWidth": 600,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
       "id": "8b99d1567ca6",
       "title": "Iran's Araghchi praises military, urges Muslim unity",
       "summary": "Iran's Araghchi praises military, urges Muslim unity Iranian Foreign Minister Abbas Araghchi said on Friday that Iran's armed forces had demonstrated their readiness and strength in confronting what he called the world's most expensive military, and urged…",
@@ -392,6 +456,22 @@
       "categoryConfidence": "high",
       "region": "Africa",
       "weight": 2
+    },
+    {
+      "id": "cbc4718f843f",
+      "title": "Hopes for the North Korean Human Rights Act of 2026",
+      "summary": "The North Korean Human Rights Act of 2004 expired in 2022. An important bipartisan effort seeks to reauthorize it.",
+      "url": "https://thediplomat.com/2026/08/hopes-for-the-north-korean-human-rights-act-of-2026/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-07T18:02:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2022/10/thediplomat_2022-10-28-132008.jpg",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
     },
     {
       "id": "20f3f2aff04c",
@@ -551,22 +631,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "ad67f1356ec5",
-      "title": "Saudi Arabia's last major oil route comes under Houthi pressure",
-      "summary": "Saudi Arabia's last major oil route comes under Houthi pressure The Houthis said on Wednesday that they had fired ballistic missiles at the NCC Wafaa , a Saudi oil tanker, off the coast of Yanbu, a major Saudi port city in the northern Red Sea. It is the…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/saudi-arabias-last-major-oil-route-comes-under-houthi-pressure",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-07T15:18:46.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1312,22 +1376,6 @@
       "weight": 3
     },
     {
-      "id": "12a2a9727d37",
-      "title": "Germany’s hot topic this summer: A chancellor swap",
-      "summary": "Germany was once seen as Europe's anchor of stability. Now Friedrich Merz's own party is discussing whether the chancellor should go after little more than a year in office.",
-      "url": "https://www.politico.eu/article/friedrich-merz-chancellor-swap-cdu-afd-germany-political-crisis/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-07T02:00:00.000Z",
-      "image": "https://www.politico.eu/wp-content/uploads/2026/08/06/GettyImages-2284190881-1024x682.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "81fded00e317",
       "title": "Argentina: Milei's property bill triggers protests, anger",
       "summary": "Police clashed with protesters in Buenos Aires after thousands rallied against President Javier Milei's private property bill. The government had already dropped a provision on foreigners buying land in Argentina.",
@@ -1341,6 +1389,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "ca547e548704",
+      "title": "Trump imposes 15% tariff on key chip material to counter China",
+      "summary": "The move aims to protect US firms as they face increasing competition from China's chip industry.",
+      "url": "https://www.bbc.co.uk/news/articles/cdrvn686dljo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/business",
+      "sourceId": "bbc-business",
+      "publishedAt": "2026-08-07T01:03:35.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/60dd/live/9a103bd0-91fb-11f1-952a-e58ebd1358f8.jpg",
+      "imageWidth": 240,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -1520,22 +1584,6 @@
       "weight": 3
     },
     {
-      "id": "20a643089438",
-      "title": "How South Korea Can Survive the Unbundling of International Order",
-      "summary": "South Korea’s strategic challenges – and the potential solutions – make the case for democratic multilateralism.",
-      "url": "https://thediplomat.com/2026/08/how-south-korea-can-survive-the-unbundling-of-international-order/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-06T16:47:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-07-014936.jpg",
-      "imageWidth": 600,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
       "id": "e4ebc8ed942e",
       "title": "EasyJet agrees to £5.7bn takeover by US firm",
       "summary": "The no-frills carrier agrees to be bought by US firm Apollo after a rival suitor drops out.",
@@ -1566,22 +1614,6 @@
       "categoryConfidence": "high",
       "region": "Americas",
       "weight": 2
-    },
-    {
-      "id": "a8f145ef8d84",
-      "title": "The Rule of Law in Afghanistan Failed Long Before the Taliban’s Triumph",
-      "summary": "To be rightfully concerned about the present is not an excuse to distort the past.",
-      "url": "https://thediplomat.com/2026/08/the-rule-of-law-in-afghanistan-failed-long-before-the-talibans-triumph/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-06T16:14:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2025/11/thediplomat_2025-11-19-160320.jpg",
-      "imageWidth": 600,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Asia-Pacific",
-      "weight": 3
     },
     {
       "id": "ba83ebaebc44",
