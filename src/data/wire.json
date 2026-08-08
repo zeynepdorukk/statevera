@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-08T20:45:56.041Z",
+  "generatedAt": "2026-08-08T21:18:34.715Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "c1aa1d85dec2",
+      "title": "Iran issues tough demands to reopen strait of Hormuz as deal remains out of reach",
+      "summary": "Tehran urges US to ‘correct its behaviour’ as UAE says one of its ships targeted by Iranian missile Iran has issued tough new demands for reopening the strait of Hormuz, while the United Arab Emirates said one of its ships was targeted by an Iranian missile,…",
+      "url": "https://www.theguardian.com/world/2026/aug/08/iran-issues-tough-demands-to-reopen-strait-of-hormuz-as-deal-remains-out-of-reach",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-08T21:01:28.000Z",
+      "image": "https://i.guim.co.uk/img/media/9a2dd4d056c3cea5b1abce300c89805025bdd516/526_0_6002_4800/master/6002.jpg?width=700&quality=85&auto=format&fit=max&s=a590016d3b4892bbdc5dc399470f7c11",
+      "imageWidth": 700,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "1f7b443f9ad8",
       "title": "Iran sets conditions for reopening Strait of Hormuz",
@@ -2004,14 +2020,14 @@
       "summary": "Exclusive: Louisiana firm awarded tender to build rudimentary outpost to house Moroccan troops Donald Trump’s Board of Peace, which was set up in January to oversee the reconstruction of Gaza , has finally issued its first construction contract in the…",
       "url": "https://www.theguardian.com/world/2026/aug/06/trump-gaza-board-of-peace-first-building-contract-military-base",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
       "publishedAt": "2026-08-06T12:00:47.000Z",
       "image": "https://i.guim.co.uk/img/media/336922680316f19152956dc362d6b9478f4d14ad/254_0_5600_4480/master/5600.jpg?width=700&quality=85&auto=format&fit=max&s=e116cf73831f000c38e8cd0eedd8c7f7",
       "imageWidth": 700,
       "category": "Security",
       "categoryConfidence": "high",
-      "region": "Global",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -2812,22 +2828,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "05ada88f5052",
-      "title": "Rubio hopes US can reach Hormuz deal with Iran ‘very shortly’ as officials say progress has been made – as it happened",
-      "summary": "This live blog is now closed. US and Qatar report progress on Iran ceasefire and reopening Hormuz strait Iran and Oman have made progress toward a deal to reopen the strait of Hormuz, a potential breakthrough that could help end the war in the Middle East,…",
-      "url": "https://www.theguardian.com/world/live/2026/aug/04/middle-east-crisis-qatar-iran-us-israel-war-donald-trump-strait-hormuz-gaza-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-04T22:13:58.000Z",
-      "image": "https://i.guim.co.uk/img/media/72031e496c582f965cb485cc185a39b9a505cfb5/34_0_3251_2601/master/3251.jpg?width=700&quality=85&auto=format&fit=max&s=3bb139e0523f262ef2faf794b33c84ae",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
