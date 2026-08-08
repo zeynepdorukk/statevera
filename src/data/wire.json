@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-08T12:22:31.611Z",
+  "generatedAt": "2026-08-08T13:24:23.531Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "72b134bae59e",
+      "title": "Blanche confirmation allows Trump to continue ‘pervasive, breathtaking corruption’, says Schumer – US politics live",
+      "summary": "Senate minority leader condemns Republicans after Donald Trump’s former defense lawyer was confirmed by 50 votes to 49 early on Saturday morning The US Senate on Friday passed a government funding bill that will prevent a shutdown through the midterm…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/08/todd-blanche-attorney-general-senate-vote-republicans-save-voting-bill-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-08T12:41:17.000Z",
+      "image": "https://i.guim.co.uk/img/media/9929feb6f224df63c95a1032463f390dd8b086fb/680_0_7920_6336/master/7920.jpg?width=700&quality=85&auto=format&fit=max&s=b72910d328a8fb60bfa2cb5bc2a4b6b9",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "4961d884c506",
+      "title": "Drones spotted in Bulgaria and Germany raise concerns of Russian escalation",
+      "summary": "The drone incidents in Europe have ignited fears that Moscow's war on Kyiv is now entangling NATO nations.",
+      "url": "https://www.aljazeera.com/news/2026/8/8/drones-spotted-in-bulgaria-and-germany-raise-concerns-of-russian-escalation?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-08T12:30:52.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Europe",
+      "weight": 2
+    },
     {
       "id": "42a5e52745f1",
       "title": "Senate passes funding bill to prevent shutdown through US midterms",
@@ -86,7 +118,7 @@
     {
       "id": "2b59527c60bb",
       "title": "Nazi shipwrecks emerge from the depths as Europe’s Danube dries up",
-      "summary": "Unexploded ordnance and a military motorcycle also recovered owing to record heat and drought conditions Record-low water levels in the Danube have exposed remnants of Europe’s Nazi past, with dozens of second world war warships emerging from the riverbed…",
+      "summary": "Unexploded ordnance and a military motorcycle also recovered following record heat and drought conditions Record-low water levels in the Danube have exposed remnants of Europe’s Nazi past, with dozens of second world war ships emerging from the riverbed…",
       "url": "https://www.theguardian.com/environment/2026/aug/08/nazi-shipwrecks-emerge-europe-danube-dries-up-record-heat",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -224,6 +256,22 @@
       "imageWidth": 0,
       "category": "Politics",
       "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "1dd6ca82fe89",
+      "title": "Trump vows appeal over ballroom halt",
+      "summary": "More headaches for US President Donald Trump over his planned White House ballroom: a federal appeals court has ruled that the administration must halt the $400 million construction project, saying it has not been approved by Congress. The ruling follows a…",
+      "url": "https://www.france24.com/en/trump-vows-appeal-over-ballroom-halt",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-08T08:49:36.000Z",
+      "image": "https://s.france24.com/media/display/c14cb17e-9304-11f1-87d5-005056bf30b7/w:1024/p:16x9/EN-20260808-101128-101321-CS.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
       "region": "Americas",
       "weight": 2
     },
@@ -727,22 +775,6 @@
       "categoryConfidence": "source",
       "region": "Americas",
       "weight": 3
-    },
-    {
-      "id": "0a5365dc50f4",
-      "title": "US appeals court halts construction of Trump’s $400 million White House ballroom project",
-      "summary": "A federal appeals court on Friday ordered US President Donald Trump’s administration to stop construction of its $400 million ballroom on the site of the White House's demolished East Wing. The court added that a president cannot fundamentally reshape the…",
-      "url": "https://www.france24.com/en/americas/20260807-us-appeals-court-halts-construction-of-trump-400-million-white-house-ballroom-project",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-07T16:06:55.000Z",
-      "image": "https://s.france24.com/media/display/dae90eaa-9275-11f1-a479-005056bfb2b6/w:1024/p:16x9/AP26217654920197.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "cb6423d8c6aa",
@@ -1273,22 +1305,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "b0083b219a64",
-      "title": "Musk says French Greens’ presidential candidate should be ‘shut down’",
-      "summary": "The owner of X previously threw his support behind far-right leader Marine Le Pen to win the presidency.",
-      "url": "https://www.politico.eu/article/elon-musk-says-french-greens-marine-tondelier-shut-down/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-07T10:05:28.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -2252,22 +2268,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "fb421be38db9",
-      "title": "Student loan repayment rates an 'unsustainable burden', chancellor told",
-      "summary": "More than 120 MPs and peers have asked John Healey to carry out an \"urgent review\" of repayments.",
-      "url": "https://www.bbc.co.uk/news/articles/c5yed780epqo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/business",
-      "sourceId": "bbc-business",
-      "publishedAt": "2026-08-05T18:38:45.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5e8e/live/0a0f6920-90f7-11f1-b2ab-0dd01740f9f6.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
