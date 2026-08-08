@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T18:29:59.873Z",
+  "generatedAt": "2026-08-08T19:08:30.494Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -21,8 +21,8 @@
     },
     {
       "id": "72b134bae59e",
-      "title": "Blanche confirmation allows Trump to continue ‘pervasive, breathtaking corruption’, says Schumer – US politics live",
-      "summary": "Senate minority leader condemns Republicans after Donald Trump’s former defense lawyer confirmed by 50 votes to 49 early on Saturday morning Joe Biden ’s prostate cancer has spread throughout his body, causing the former president great pain, his son Hunter…",
+      "title": "Blanche confirmation allows Trump to continue ‘pervasive, breathtaking corruption’, says Schumer – as it happened",
+      "summary": "Senate minority leader condemns Republicans after Donald Trump’s former defense lawyer confirmed by 50 votes to 49 early on Saturday morning. This blog is now closed. Joe Biden ’s prostate cancer has spread throughout his body, causing the former president…",
       "url": "https://www.theguardian.com/us-news/live/2026/aug/08/todd-blanche-attorney-general-senate-vote-republicans-save-voting-bill-latest-news-updates",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -3068,22 +3068,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "3ea53c3cdf22",
-      "title": "Saudi Arabia's dilemma as it tries to stay out of US-Iran war",
-      "summary": "The kingdom faces a choice of whether to keep hitting back as a deterrent or to try to de-escalate the situation.",
-      "url": "https://www.bbc.co.uk/news/articles/clyx83l8jv8o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/middle_east",
-      "sourceId": "bbc-mideast",
-      "publishedAt": "2026-07-29T18:41:31.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0138/live/d922f0a0-8b7b-11f1-843a-4d201c635cc1.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     }
   ]
