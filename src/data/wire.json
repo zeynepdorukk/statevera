@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-09T16:19:50.276Z",
+  "generatedAt": "2026-08-09T17:02:02.106Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "85d9fc253534",
+      "title": "Middle East crisis live: Netanyahu rejects Trump’s Gaza plan and vows no withdrawal until Hamas disarms",
+      "summary": "Israeli prime minister says he will not support 15-point plan hailed by Donald Trump Israeli prime minister Benjamin Netanyahu rejected a Gaza plan hailed by US president Donald Trump, vowing no military pullout of Gaza until Hamas is “genuinely” disarmed.…",
+      "url": "https://www.theguardian.com/world/live/2026/aug/09/iran-us-irgc-strait-of-hormuz-israel-netanyahu-trump-gaza-plan-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-09T16:46:47.000Z",
+      "image": "https://i.guim.co.uk/img/media/4361ca7b7d37038576268118c7fbbc57ea38669a/506_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=7e564ca789e54a8205a7e4187345a1be",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "c842ed40eb3f",
       "title": "Tesla to open more delivery sites in Japan to deal with sales surge",
@@ -34,22 +50,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "85d9fc253534",
-      "title": "Middle East crisis live: Netanyahu rejects Trump’s Gaza plan and vows no withdrawal until Hamas disarms",
-      "summary": "Israeli prime minister says he will not support 15-point plan hailed by Donald Trump Israeli prime minister Benjamin Netanyahu rejected a Gaza plan hailed by US president Donald Trump, vowing no military pullout of Gaza until Hamas is “genuinely” disarmed.…",
-      "url": "https://www.theguardian.com/world/live/2026/aug/09/iran-us-irgc-strait-of-hormuz-israel-netanyahu-trump-gaza-plan-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-09T16:18:10.000Z",
-      "image": "https://i.guim.co.uk/img/media/4361ca7b7d37038576268118c7fbbc57ea38669a/506_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=7e564ca789e54a8205a7e4187345a1be",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -325,22 +325,6 @@
       "weight": 2
     },
     {
-      "id": "383f5f7fa708",
-      "title": "‘US and Iran are talking past each other’ in indirect negotiations",
-      "summary": "",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/9/us-and-iran-are-talking-past-each-other-in-indirect-negotiations?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-09T11:53:03.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "a9756de264c6",
       "title": "Ukraine and Russia exchange attacks as Kyiv buys new ATACMS",
       "summary": "Overnight drone and missile attacks killed several and injured dozens more in both Ukraine and Russia. As Kyiv seeks to defend itself it has now reportedly finalized a deal to buy US missile systems from Turkey.",
@@ -386,22 +370,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "ad1feb03589f",
-      "title": "Yemeni army warns Houthis after attacks heighten escalation risk",
-      "summary": "",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/9/yemeni-army-warns-houthis-after-attacks-heighten-escalation-risk?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-09T10:45:57.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
