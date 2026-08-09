@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T17:02:02.106Z",
+  "generatedAt": "2026-08-09T17:45:21.925Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -11,12 +11,44 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-09T16:46:47.000Z",
+      "publishedAt": "2026-08-09T17:36:02.000Z",
       "image": "https://i.guim.co.uk/img/media/4361ca7b7d37038576268118c7fbbc57ea38669a/506_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=7e564ca789e54a8205a7e4187345a1be",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "d423a70e6729",
+      "title": "Trump could declare victory if Iran reopens Strait of Hormuz: Report",
+      "summary": "Trump could declare victory if Iran reopens Strait of Hormuz: Report US President Donald Trump is prepared to declare victory in the war with Iran if Tehran restores shipping through the Strait of Hormuz, according to The Wall Street Journal. US officials…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-could-declare-victory-if-iran-reopens-strait-hormuz-report",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-09T17:29:12.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "4f18ac1671ed",
+      "title": "Abdul El-Sayed embraces Trump claim he represents ‘very different’ America",
+      "summary": "Michigan nominee, who spoke to Obama after primary win, vows to fight inequality as president ‘makes billions off you’ Abdul El-Sayed, the Democratic nominee for US Senate in Michigan, embraced Donald Trump’s suggestion that the two represent “VERY DIFFERENT”…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/09/abdul-el-sayed-michigan-senate-trump",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-09T17:22:17.000Z",
+      "image": "https://i.guim.co.uk/img/media/3c0a96b07e7327fd463e06429b1c05913941e765/850_0_4415_3533/master/4415.jpg?width=700&quality=85&auto=format&fit=max&s=839fa45aed4c9a136c9391d4b734cbeb",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -245,22 +277,6 @@
       "weight": 2
     },
     {
-      "id": "0e7b64d75253",
-      "title": "Syria says it reached deal with Moscow on future of Russian bases",
-      "summary": "Hmeimim airbase and Tartus naval base will become joint training and capacity-building centres under the agreement.",
-      "url": "https://www.aljazeera.com/news/2026/8/9/syria-says-it-reached-deal-with-moscow-on-future-of-russian-bases?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-09T14:20:51.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "a7302c84e4ab",
       "title": "Moderate Democrat Ed Case defies progressive challenge in Hawaii primary",
       "summary": "Case, who has represented island state’s first district in US Congress since 2019, beat state senator Jarrett Keohokalole The moderate Democratic representative Ed Case has seen off a progressive challenge to retain his party’s nomination for the US House of…",
@@ -338,6 +354,22 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "7f70f08efaf1",
+      "title": "Saudi Aramco refinery erupts in flames in Jizan as Houthis claim drone attack",
+      "summary": "Saudi Aramco refinery erupts in flames in Jizan as Houthis claim drone attack Submitted by MEE staff on Sun, 08/09/2026 - 11:27 The Saudi energy ministry did not give a cause for the fire, while Yemen’s Houthis claimed they had targeted the site Wreckage of…",
+      "url": "https://www.middleeasteye.net/news/saudi-aramco-refinery-erupts-flames-jizan-houthis-claim-drone-attack",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-09T11:47:26.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -535,7 +567,7 @@
     {
       "id": "bbf71569d1cf",
       "title": "India: Ex-Education Minister Pradhan says Gen Z 'misled'",
-      "summary": "Dharmendra Pradhan spoke for the first time since his resignation as education minister following mass protests against him. He said he \"suffered\" because of Gen Z, who led the protests. Follow DW for more.",
+      "summary": "Dharmendra Pradhan spoke for the first time since his resignation as education minister following mass protests against him. He said he \"suffered\" because of Gen Z, who led the protests.",
       "url": "https://www.dw.com/en/india-ex-education-minister-pradhan-says-gen-z-misled/live-78293276?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
@@ -787,22 +819,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "e79c213de47b",
-      "title": "War, terror, diplomacy: What if Israel takes Al-Aqsa Mosque?",
-      "summary": "Reports from Jerusalem suggest that Israeli authorities are taking over one of Islam's holiest sites, the Al-Aqsa Mosque. If they do, experts say anything could happen, from war to terrorism to ending diplomatic ties.",
-      "url": "https://www.dw.com/en/war-terror-diplomacy-what-if-israel-takes-al-aqsa-mosque/a-78284016?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-08T13:31:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
