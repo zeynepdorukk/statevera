@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:28:25.004Z",
+  "generatedAt": "2026-08-09T14:06:01.581Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -367,22 +367,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "ca5c55b98d4c",
-      "title": "Iran issues new demands as Pezeshkian seeks deal",
-      "summary": "Senior Iranian security official sets broader conditions for reopening Hormuz.",
-      "url": "https://www.aljazeera.com/news/2026/8/9/iran-issues-new-demands-as-pezeshkian-seeks-deal?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-09T05:06:02.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -834,22 +818,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "c8189419a866",
-      "title": "India wary of potential 100% US tariffs over Russian oil",
-      "summary": "The US Senate passed a sanctions bill that could result in tariffs on India as a major consumer of Russian oil.",
-      "url": "https://www.dw.com/en/india-wary-of-potential-100-us-tariffs-over-russian-oil/live-78287317?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-08T08:25:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -1526,22 +1494,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "ced3ff9c67d4",
-      "title": "Ex-Benin president Talon makes political comeback via newly founded Senate",
-      "summary": "Benin’s newly created Senate elected former president Patrice Talon as its leader on Thursday in Porto-Novo, less than three months after he left office. He will serve a five-year term at the head of the country’s new second chamber of Parliament.",
-      "url": "https://www.rfi.fr/en/africa/20260807-ex-benin-president-talon-makes-political-comeback-via-newly-founded-senate",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-07T11:47:02.000Z",
-      "image": "https://s.rfi.fr/media/display/0d1ec63e-9213-11f1-8b41-005056bfb2b6/w:1024/p:16x9/2026-07-30T193143Z-1836495194-RC2BOMAX7QRY-RTRMADP-3-BENIN-POLITICS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -2731,6 +2683,22 @@
       "weight": 2
     },
     {
+      "id": "98bad0341a9f",
+      "title": "AI ecosystem's 'circular' investment: risk or advantage?",
+      "summary": "Amid talk of an AI sector bubble, one aspect is under scrutiny. Many big AI players are invested in smaller ones, who then buy the bigger firm's products. This brings risks and advantages.",
+      "url": "https://www.dw.com/en/ai-ecosystem-s-circular-investment-risk-or-advantage/a-78186917?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-05T06:57:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
       "id": "1e1575cdfac2",
       "title": "Trump's quick hits allow for AFRICOM comeback on continent",
       "summary": "Donald Trump’s foreign policy features chaotic decision-making and bombastic rhetoric. But some of his half-baked ideas could have lasting consequences, creating escalation pathways that his successors may be unwilling to close. West Africa provides a crucial…",
@@ -2792,6 +2760,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "bbcb0836a134",
+      "title": "Ukrainian vegetable seller targeted in 'human safari' drone attack",
+      "summary": "A video shows a Russian drone pursuing a street vendor in the Kherson region before exploding.",
+      "url": "https://www.bbc.co.uk/news/videos/clye173d533o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/europe",
+      "sourceId": "bbc-europe",
+      "publishedAt": "2026-08-04T19:07:19.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6bb4/live/1636a630-9036-11f1-b2ab-0dd01740f9f6.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -3019,15 +3003,15 @@
       "weight": 2
     },
     {
-      "id": "9a32e15d81ea",
-      "title": "Bank of England holds interest rates despite Iran war inflation threat - as it happened",
-      "summary": "Live, rolling coverage of business, economics and financial markets as three members of monetary policy committee vote to raise rates That German GDP reading has indeed contributed to the wider eurozone hitting expectations – and then some. The eurozone…",
-      "url": "https://www.theguardian.com/business/live/2026/jul/30/ftse-100-record-federal-reserve-hold-kevin-warsh-iran-attacks-donald-trump-rolls-royce-shell-lloyds-bank-of-england-interest-rates-business-live-latest-updates",
+      "id": "1ac0bcab9885",
+      "title": "Bank of England holds interest rates at 3.75% as inflation fears mount",
+      "summary": "Split vote comes as Iran war is rekindled and oil price climbs close to $90 a barrel Business live – latest updates Only Middle East crisis is preventing drop in UK interest rates The Bank of England has kept UK interest rates on hold as it warned that a…",
+      "url": "https://www.theguardian.com/business/2026/jul/30/bank-of-england-holds-interest-rates-inflation-fears-mount",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/business/economics",
       "sourceId": "guardian-economics",
-      "publishedAt": "2026-07-30T13:59:40.000Z",
-      "image": "https://i.guim.co.uk/img/media/77a644f7ea87a8276f3869fd239566acfe9548f6/218_0_4879_3905/master/4879.jpg?width=700&quality=85&auto=format&fit=max&s=dcf99611f69778bf5e20e538d223872c",
+      "publishedAt": "2026-07-30T15:47:35.000Z",
+      "image": "https://i.guim.co.uk/img/media/53cf458a65df5b5937800d8d1b053a84f8abfbbf/698_0_6432_5147/master/6432.jpg?width=700&quality=85&auto=format&fit=max&s=fe70fe7d060bf7bba5317bcd32eb7295",
       "imageWidth": 700,
       "category": "Economy",
       "categoryConfidence": "high",
