@@ -1,8 +1,42 @@
 {
-  "generatedAt": "2026-08-09T09:38:19.147Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-09T10:09:10.859Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "11da768b5776",
+      "title": "From autonomy to 'settler colonialism': How India redrew Kashmir's demographic and political landscape",
+      "summary": "From autonomy to 'settler colonialism': How India redrew Kashmir's demographic and political landscape Submitted by MEE correspondent on Fri, 08/07/2026 - 15:49 New domicile rules, electoral gerrymandering and changing land laws have fuelled debate over…",
+      "url": "https://www.middleeasteye.net/news/autonomy-settler-colonialism-how-india-redrew-kashmirs-demographic-and-political-landscape",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-09T10:02:53.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "85d1317e6b00",
+      "title": "Yemen's Houthis claim attack on Aramco oil facility in Saudi Arabia, and other Middle East news",
+      "summary": "Meanwhile, Iran has made new demands about the restart of negotiations and the reopening of the Strait of Hormuz, and the Pentagon is pressing the U.S. defense industry to accelerate production of weapons.",
+      "url": "https://www.npr.org/2026/08/09/nx-s1-5926387/yemens-houthis-claim-attack-on-aramco-oil-facility-in-saudi-arabia-and-other-middle-east-news",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-09T09:44:02.000Z",
+      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7546x5030+0+0/resize/7546x5030!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F08%2Fa7%2F0c3e597543328966471ba4f606fd%2Fap26220552236900.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "94912cd8b143",
       "title": "Germany battling “daily” hybrid warfare attacks, minister warns",
@@ -33,22 +67,6 @@
       "category": "Geopolitics",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "2e628dbfa69b",
-      "title": "Ukraine denies targeting Bulgaria, after drone exploded near a gas pipeline",
-      "summary": "Ukraine says it did not target Bulgaria after a drone crashed near a gas pipeline in the country on Saturday. Bulgarian authorities said the drone appeared to be a type used by Ukraine’s military. It came down in a field near the Romanian border, not far from…",
-      "url": "https://www.france24.com/en/ukraine-denies-targeting-bulgaria-after-drone-exploded-near-a-gas-pipeline",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-09T09:04:07.000Z",
-      "image": "https://s.france24.com/media/display/d5f9a508-93ce-11f1-a0d2-005056a90284/w:1024/p:16x9/EN-20260809-090702-090843-CS.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -116,22 +134,6 @@
       "weight": 2
     },
     {
-      "id": "6a2d110c7821",
-      "title": "Many of Iran’s demands ‘already agreed to’ by the US in June MoU",
-      "summary": "Iran on Saturday issued a list of demands for the reopening of the Strait of Hormuz, which have been characterised as “new” preconditions. Reporting from Washington, FRANCE 24’s Fraser Jackson notes that many of the demands were “already agreed to by the US…",
-      "url": "https://www.france24.com/en/many-of-iran-s-demands-already-agreed-to-by-us-in-june-mou",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-09T07:06:50.000Z",
-      "image": "https://s.france24.com/media/display/84ae071a-937a-11f1-88fb-005056a97e36/w:1024/p:16x9/NW208583-O-01-20260808-01.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "5fc8e8059fd8",
       "title": "Costa Rican diplomat emerges as strong contender to be first female head of UN",
       "summary": "Rebeca Grynspan seen as continuity candidate with tacit support from current secretary general, António Guterres A Costa Rican diplomat and former vice-president whose parents were refugees from the Holocaust has become the surprise frontrunner to lead the…",
@@ -145,22 +147,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "caa0e305fead",
-      "title": "Houthis claim attack on Saudi Aramco's Jizan refinery",
-      "summary": "Houthis claim attack on Saudi Aramco's Jizan refinery Yemen's Houthis have claimed a drone attack on Saudi Aramco's refinery in Jizan, saying the attack was in response to Saudi drone attacks on Yemen’s Saada and Hajjah provinces, according to Al Masirah TV.…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/houthis-claim-they-attacked-saudi-aramcos-jizan-refinery",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-09T06:49:10.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -257,6 +243,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "e4468c104fa0",
+      "title": "Israeli troops enter Lebanese village, erect earthen barrier overnight",
+      "summary": "Israeli troops enter Lebanese village, erect earthen barrier overnight Israeli troops infiltrated a Lebanese village placed under the control of Lebanon's army as part of a June agreement, building an earthen barrier there overnight. An AFP correspondent saw…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-troops-enter-lebanese-village-erect-earthen-barrier-overnight",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-09T02:30:28.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -372,22 +374,6 @@
       "weight": 2
     },
     {
-      "id": "3fc6c088bb1d",
-      "title": "Pentagon orders arms production surge as Israeli-US war on Iran depletes missiles",
-      "summary": "Pentagon orders arms production surge as Israeli-US war on Iran depletes missiles The Pentagon has ordered US arms manufacturers to accelerate weapons production as the Israeli-US war on Iran depletes American munition stockpiles. In a memo obtained by The…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/pentagon-orders-arms-surge-israeli-us-war-iran-depletes-missiles",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-08T22:04:14.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "40905cad8f9a",
       "title": "Tanker sailors still face danger in the Strait of Hormuz",
       "summary": "An agreement over the Strait of Hormuz is still far away. Tim Wilkins, who works for a tanker industry group, says the ships stuck around the waterway are in limbo, and transiting is still dangerous.",
@@ -433,22 +419,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "9ffdb1437e2d",
-      "title": "What are the challenges facing the Mecca agreement?",
-      "summary": "Saudi Arabia turns to Turkiye and Pakistan for defence ties, raising questions overreliance on the US.",
-      "url": "https://www.aljazeera.com/video/inside-story/2026/8/8/challenges-facing-mecca-agreement?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-08T20:25:43.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -533,22 +503,6 @@
       "weight": 2
     },
     {
-      "id": "d2c1c7d919ab",
-      "title": "Israeli troops infiltrate Lebanese army-held village and build roadblock, mayor says",
-      "summary": "A Lebanese village held by the country's army was infiltrated by Israeli forces, who built a roadblock near the town square overnight, the mayor and state media said Saturday. The Lebanese army was deployed to Zawtar al-Gharbiya more than two weeks ago within…",
-      "url": "https://www.france24.com/en/middle-east/20260808-israeli-troops-infiltrate-lebanese-army-held-village-and-build-roadblock-mayor-says",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-08T16:05:27.000Z",
-      "image": "https://s.france24.com/media/display/47a2dfd2-9337-11f1-af5a-005056a97e36/w:1024/p:16x9/000-C3DG6T3.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "ed762ddf1f1f",
       "title": "Watch: Moment opposition MP throws eggs at Kosovo's acting PM",
       "summary": "Lawmakers and police officers had to intervene after Alliance party MP Time Kadrijaj hurled at least four eggs towards Kosovo's acting prime minister Albin Kurti.",
@@ -562,22 +516,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "ac54a69a6ba8",
-      "title": "Russian strikes kill four as Kyiv hits oil refinery",
-      "summary": "At least four people, including a child, were killed in Russian attacks on Kyiv and surrounding regions early Saturday. Moscow has been exploiting Ukraine’s depleted air defences to launch waves of drone and missile strikes, while Kyiv has hit another oil…",
-      "url": "https://www.france24.com/en/russian-strikes-kill-four-as-kyiv-hits-oil-refinery",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-08T15:29:49.000Z",
-      "image": "https://s.france24.com/media/display/4c676578-933d-11f1-bc5a-005056a90284/w:1024/p:16x9/EN-20260808-170128-170322-CS.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -597,19 +535,19 @@
       "weight": 2
     },
     {
-      "id": "8c8143f5a9a7",
-      "title": "Iran war: Houthis claim attack on Saudi oil facility",
-      "summary": "The Iran-backed Yemeni rebels said their strike was in response to Saudi drones breaching Yemeni airspace. Follow DW for more.",
-      "url": "https://www.dw.com/en/iran-war-houthis-claim-attack-on-saudi-oil-facility/live-78289364?maca=en-rss-en-all-1573-rdf",
+      "id": "33e4445700d2",
+      "title": "US Senate confirms Trump loyalist Todd Blanche as new AG",
+      "summary": "Republicans dropped their opposition and confirmed President Donald Trump's former defense lawyer to a Cabinet position. Now, Todd Blanche will act as the nation's top law enforcement officer.",
+      "url": "https://www.dw.com/en/us-senate-confirms-trump-loyalist-todd-blanche-as-new-ag/a-78289397?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
       "sourceId": "dw",
-      "publishedAt": "2026-08-08T13:33:00.000Z",
+      "publishedAt": "2026-08-08T14:25:00.000Z",
       "image": "",
       "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -645,22 +583,6 @@
       "weight": 2
     },
     {
-      "id": "e132a2c73840",
-      "title": "Senate confirms Todd Blanche, Trump's former lawyer, as Attorney General",
-      "summary": "The US Senate has confirmed Donald Trump’s former personal lawyer, Todd Blanche, as attorney general, despite opposition from Democrats who accused the president of politicising the Department of Justice. Blanche previously represented Trump as his private…",
-      "url": "https://www.france24.com/en/senate-confirms-todd-blanche-trump-s-former-lawyer-as-attorney-general",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-08T12:54:24.000Z",
-      "image": "https://s.france24.com/media/display/ffd447cc-9327-11f1-a096-005056a90284/w:1024/p:16x9/EN-20260808-140701-140845-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "42a5e52745f1",
       "title": "Senate passes funding bill to prevent shutdown through US midterms",
       "summary": "Bill must still be approved by House but would keep government running at current funding levels The US Senate on Friday passed a government funding bill that will prevent a shutdown through the midterm elections, though it still must be approved by the House…",
@@ -690,6 +612,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "e1b0477bff8c",
+      "title": "Bulgaria: Unknown drone explodes near Romanian border",
+      "summary": "A drone that entered Bulgaria's airspace exploded near the Romanian border and the Trans-Balkan gas pipeline, the Bulgarian prime minister said. Bulgaria summoned the Ukrainian ambassador for consultations.",
+      "url": "https://www.dw.com/en/bulgaria-unknown-drone-explodes-near-romanian-border/a-78288825?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-08T11:58:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -1094,22 +1032,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "d970e2443e3d",
-      "title": "DR Congo hands first prisoners back to M23 rebels under peace deal",
-      "summary": "In a long-awaited operation, Democratic Republic of Congo authorities released 15 prisoners and handed them over to rebels from the AFC/M23 movement on Friday. It marks the first known prisoner transfer under a peace deal signed last year to end fighting in…",
-      "url": "https://www.rfi.fr/en/africa/20260807-dr-congo-hands-first-prisoners-back-to-m23-rebels-under-peace-deal",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-07T18:17:08.000Z",
-      "image": "https://s.rfi.fr/media/display/bf38ab10-7557-11f1-8fb2-005056bf30b7/w:1024/p:16x9/000-B3C393L.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Africa",
       "weight": 2
     },
     {
@@ -1611,6 +1533,22 @@
       "weight": 3
     },
     {
+      "id": "ed3dc058ec78",
+      "title": "Trump targets birthright citizenship. And, Iran aims to ban U.S. from Strait of Hormuz",
+      "summary": "President Trump says he has signed two new orders targeting birthright citizenship. And, Iran is aiming to ban U.S. ships from the Strait of Hormuz.",
+      "url": "https://www.npr.org/2026/08/07/g-s1-137730/up-first-newsletter-trump-birthright-citizenship-iran-oman-strait-of-hormuz-anthony-fauci-mitch-mcconnell",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-07T10:56:19.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "16c5253101b4",
       "title": "Senegal jails three TikTok influencers over posts criticising president Faye",
       "summary": "A Senegalese court has sentenced three TikTok influencers to prison for posts that allegedly insulted President Bassirou Diomaye Faye.",
@@ -1815,22 +1753,6 @@
       "imageWidth": 240,
       "category": "Security",
       "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "7cc3f146445e",
-      "title": "Iran aims to ban U.S. and Israeli ships from Strait of Hormuz and charge others a toll",
-      "summary": "Iran's parliament is reviewing a plan to ban ships linked to the U.S., Israel and other \"hostile countries\" from transiting the Strait of Hormuz. The Trump administration has rejected the plan.",
-      "url": "https://www.npr.org/2026/08/06/nx-s1-5923623/iran-strait-hormuz-us-israel-ban",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-06T20:58:56.000Z",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6225x4150+0+0/resize/6225x4150!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fd9%2Ff1%2F67b397cf481581c0afcdd0a68ca1%2Fgettyimages-2288126828.jpg",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     },
