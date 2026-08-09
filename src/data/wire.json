@@ -1,10 +1,40 @@
 {
-  "generatedAt": "2026-08-09T07:13:04.840Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-09T08:00:34.233Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
+    {
+      "id": "6a2d110c7821",
+      "title": "Many of Iran’s demands ‘already agreed to’ by the US in June MoU",
+      "summary": "Iran on Saturday issued a list of demands for the reopening of the Strait of Hormuz, which have been characterised as “new” preconditions. Reporting from Washington, FRANCE 24’s Fraser Jackson notes that many of the demands were “already agreed to by the US…",
+      "url": "https://www.france24.com/en/many-of-iran-s-demands-already-agreed-to-by-us-in-june-mou",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-09T07:06:50.000Z",
+      "image": "https://s.france24.com/media/display/84ae071a-937a-11f1-88fb-005056a97e36/w:1024/p:16x9/NW208583-O-01-20260808-01.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "5fc8e8059fd8",
+      "title": "Costa Rican diplomat emerges as strong contender to be first female head of UN",
+      "summary": "Rebeca Grynspan seen as continuity candidate with tacit support from current secretary general, António Guterres A Costa Rican diplomat and former vice-president whose parents were refugees from the Holocaust has become the surprise frontrunner to lead the…",
+      "url": "https://www.theguardian.com/world/2026/aug/09/costa-rican-diplomat-rebeca-grynspan-contender-first-female-head-of-un",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-09T07:00:08.000Z",
+      "image": "https://i.guim.co.uk/img/media/cf6e5500a73b1c6d7beda2064a865f481d67eb3b/1333_0_6667_5334/master/6667.jpg?width=700&quality=85&auto=format&fit=max&s=05143855b48c8eb8e7f51d95ce0b9c39",
+      "imageWidth": 700,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "caa0e305fead",
       "title": "Houthis claim attack on Saudi Aramco's Jizan refinery",
@@ -115,22 +145,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "e4468c104fa0",
-      "title": "Israeli troops enter Lebanese village, erect earthen barrier overnight",
-      "summary": "Israeli troops enter Lebanese village, erect earthen barrier overnight Israeli troops infiltrated a Lebanese village placed under the control of Lebanon's army as part of a June agreement, building an earthen barrier there overnight. An AFP correspondent saw…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-troops-enter-lebanese-village-erect-earthen-barrier-overnight",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-09T02:30:28.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -439,6 +453,22 @@
       "weight": 2
     },
     {
+      "id": "d2c1c7d919ab",
+      "title": "Israeli troops infiltrate Lebanese army-held village and build roadblock, mayor says",
+      "summary": "A Lebanese village held by the country's army was infiltrated by Israeli forces, who built a roadblock near the town square overnight, the mayor and state media said Saturday. The Lebanese army was deployed to Zawtar al-Gharbiya more than two weeks ago within…",
+      "url": "https://www.france24.com/en/middle-east/20260808-israeli-troops-infiltrate-lebanese-army-held-village-and-build-roadblock-mayor-says",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-08T16:05:27.000Z",
+      "image": "https://s.france24.com/media/display/47a2dfd2-9337-11f1-af5a-005056a97e36/w:1024/p:16x9/000-C3DG6T3.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "ed762ddf1f1f",
       "title": "Watch: Moment opposition MP throws eggs at Kosovo's acting PM",
       "summary": "Lawmakers and police officers had to intervene after Alliance party MP Time Kadrijaj hurled at least four eggs towards Kosovo's acting prime minister Albin Kurti.",
@@ -455,6 +485,22 @@
       "weight": 2
     },
     {
+      "id": "ac54a69a6ba8",
+      "title": "Russian strikes kill four as Kyiv hits oil refinery",
+      "summary": "At least four people, including a child, were killed in Russian attacks on Kyiv and surrounding regions early Saturday. Moscow has been exploiting Ukraine’s depleted air defences to launch waves of drone and missile strikes, while Kyiv has hit another oil…",
+      "url": "https://www.france24.com/en/russian-strikes-kill-four-as-kyiv-hits-oil-refinery",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-08T15:29:49.000Z",
+      "image": "https://s.france24.com/media/display/4c676578-933d-11f1-bc5a-005056a90284/w:1024/p:16x9/EN-20260808-170128-170322-CS.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "66520018ff46",
       "title": "Private pensions are a publicly subsidised gift to the wealthy | Phillip Inman",
       "summary": "John Healey should equalise the tax break on pension savings to stop inequalities from widening Private pensions are a privilege for the lucky few and a curse for everyone else. Sold as a saviour for what would otherwise be a ruinous old age, they have become…",
@@ -468,22 +514,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "33e4445700d2",
-      "title": "US Senate confirms Trump loyalist Todd Blanche as new AG",
-      "summary": "Republicans dropped their opposition and confirmed President Donald Trump's former defense lawyer to a Cabinet position. Now, Todd Blanche will act as the nation's top law enforcement officer.",
-      "url": "https://www.dw.com/en/us-senate-confirms-trump-loyalist-todd-blanche-as-new-ag/a-78289397?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-08T14:25:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -647,6 +677,38 @@
       "weight": 2
     },
     {
+      "id": "08cda4b5676e",
+      "title": "Serbia’s Vucic attempts diplomatic ‘balancing act’ with Zelensky’s visit",
+      "summary": "Ukraine’s President Volodymyr Zelensky is making his first official visit to Serbia, in a notable move given Belgrade’s close ties with Moscow and its refusal to impose sanctions on Russia. Zelensky is seeking to shore up international support as Russian…",
+      "url": "https://www.france24.com/en/video/20260808-serbia-s-vucic-attempts-diplomatic-balancing-act-with-zelensky-s-visit",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-08T10:34:40.000Z",
+      "image": "https://s.france24.com/media/display/fd7e667c-9306-11f1-b9da-005056bf30b7/w:1024/p:16x9/EN-20260808-090345-091156-CS.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "fec61873998d",
+      "title": "India protesters face online backlash",
+      "summary": "Days after Gen Z protesters led by the Cockroach Janta Party brought down India’s education minister, dozens of women who took part in the demonstrations say they are facing a barrage of online threats. The protesters say that while the movement itself has…",
+      "url": "https://www.france24.com/en/india-protesters-face-online-backlash",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-08T10:29:39.000Z",
+      "image": "https://s.france24.com/media/display/51d3bc52-9313-11f1-b7b9-005056a90284/w:1024/p:16x9/EN-20260808-121030-121313-CS.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
       "id": "e3159a1d01e0",
       "title": "US Senate passes sweeping sanctions targeting Russian energy revenues",
       "summary": "US Senators have passed a punishing sanctions package against Russia targeting the country’s energy revenues that are helping to fuel its war against Ukraine.",
@@ -692,6 +754,54 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "5b112a64339c",
+      "title": "US Senate narrowly confirms Trump loyalist Todd Blanche as attorney general",
+      "summary": "The US Senate on Saturday voted 50-49 to confirm President Donald Trump's former personal lawyer Todd Blanche as the country's attorney general. Blanche was serving as the top US law enforcement officer in an acting capacity after Trump fired another…",
+      "url": "https://www.france24.com/en/americas/20260808-us-senate-confirms-trump-s-ex-lawyer-as-attorney-general",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-08T08:51:10.000Z",
+      "image": "https://s.france24.com/media/display/4d6cd6ba-9306-11f1-8720-005056a97e36/w:1024/p:16x9/fa0494b897a3c535b3088b9f5a212ab0cd08821b.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "1dd6ca82fe89",
+      "title": "Trump vows appeal over ballroom halt",
+      "summary": "More headaches for US President Donald Trump over his planned White House ballroom: a federal appeals court has ruled that the administration must halt the $400 million construction project, saying it has not been approved by Congress. The ruling follows a…",
+      "url": "https://www.france24.com/en/trump-vows-appeal-over-ballroom-halt",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-08T08:49:36.000Z",
+      "image": "https://s.france24.com/media/display/c14cb17e-9304-11f1-87d5-005056bf30b7/w:1024/p:16x9/EN-20260808-101128-101321-CS.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "300712e89174",
+      "title": "Cuba: No power, no fuel, no internet",
+      "summary": "Cuba's energy crisis is colliding with economic collapse, as Washington ramps up sanctions on the island. Caught between American pressure and crisis at home, Cubans are struggling just to get through the day. A France24 report from Havana.",
+      "url": "https://www.france24.com/en/cuba-no-power-no-fuel-no-internet",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-08T08:33:34.000Z",
+      "image": "https://s.france24.com/media/display/2afe88ca-9302-11f1-bbb1-005056bfb2b6/w:1024/p:16x9/EN-20260808-091737-092103-CS.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "medium",
+      "region": "Americas",
       "weight": 2
     },
     {
