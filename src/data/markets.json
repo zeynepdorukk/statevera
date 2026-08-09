@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T17:00:31.000Z",
+  "updatedAt": "2026-08-09T15:16:03.000Z",
   "quotes": [
     {
       "id": "spx",
@@ -146,10 +146,10 @@
       "label": "USD/TRY",
       "symbol": "USDTRY=X",
       "decimals": 2,
-      "price": 47.6905,
-      "change": 0.09259999999999735,
-      "percent": 0.19454639805537083,
-      "updatedAt": "2026-08-08T17:00:31.000Z"
+      "price": 47.6937,
+      "change": 0.095799999999997,
+      "percent": 0.20126938373330963,
+      "updatedAt": "2026-08-09T15:16:03.000Z"
     },
     {
       "id": "eurusd",
