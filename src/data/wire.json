@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T17:45:21.925Z",
+  "generatedAt": "2026-08-09T18:22:15.955Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -9,9 +9,9 @@
       "summary": "Israeli prime minister says he will not support 15-point plan hailed by Donald Trump Israeli prime minister Benjamin Netanyahu rejected a Gaza plan hailed by US president Donald Trump, vowing no military pullout of Gaza until Hamas is “genuinely” disarmed.…",
       "url": "https://www.theguardian.com/world/live/2026/aug/09/iran-us-irgc-strait-of-hormuz-israel-netanyahu-trump-gaza-plan-latest-news-updates",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-09T17:36:02.000Z",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
+      "publishedAt": "2026-08-09T18:12:27.000Z",
       "image": "https://i.guim.co.uk/img/media/4361ca7b7d37038576268118c7fbbc57ea38669a/506_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=7e564ca789e54a8205a7e4187345a1be",
       "imageWidth": 700,
       "category": "Politics",
@@ -899,22 +899,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "2b59527c60bb",
-      "title": "Nazi shipwrecks emerge from the depths as Europe’s Danube dries up",
-      "summary": "Unexploded ordnance and a military motorcycle also recovered following record heat and drought conditions Record-low water levels in the Danube have exposed remnants of Europe’s Nazi past, with dozens of second world war ships emerging from the riverbed…",
-      "url": "https://www.theguardian.com/environment/2026/aug/08/nazi-shipwrecks-emerge-europe-danube-dries-up-record-heat",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-08T10:55:15.000Z",
-      "image": "https://i.guim.co.uk/img/media/8027c1fdddf706a9e01ebcddb107c82840683794/264_0_2638_2111/master/2638.jpg?width=700&quality=85&auto=format&fit=max&s=14c30265e01bd324060fc385e3e07608",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Europe",
       "weight": 2
     },
     {
