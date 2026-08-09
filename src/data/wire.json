@@ -1,10 +1,42 @@
 {
-  "generatedAt": "2026-08-09T02:55:44.315Z",
+  "generatedAt": "2026-08-09T04:10:28.259Z",
   "sourceCount": 26,
   "failedSources": [
     "france24"
   ],
   "items": [
+    {
+      "id": "6585f9798d0e",
+      "title": "Pakistani defence minister calls for 'united military front' against Israel",
+      "summary": "Pakistani defence minister calls for 'united military front' against Israel Pakistan’s defence minister Khawaja Asif has called for a “united military front” against Israel, calling it “a threat to the entire Muslim world”. In an interview with Pakistan’s Geo…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/pakistani-defence-minister-calls-united-military-front-against-israel-0",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-09T04:06:15.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "b7585e8a068f",
+      "title": "Australia news live: Labor open to ‘sensible amendments’ on gambling reforms, minister says",
+      "summary": "Wagering inducements in focus after explosive Senate hearings last week. Follow updates Get our breaking news email , free app or daily news podcast Coalition demands NDIS changes focus on fraud, corruption Liberal frontbencher Tim Wilson also called on the…",
+      "url": "https://www.theguardian.com/australia-news/live/2026/aug/09/bird-flu-updates-politics-reactions-sarah-hanson-young-insiders-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-09T03:50:46.000Z",
+      "image": "https://i.guim.co.uk/img/media/7c3b78419036cc98e3db08bd5ba0c29092c07220/840_544_6201_4960/master/6201.jpg?width=700&quality=85&auto=format&fit=max&s=ddd73ad8fa2df1d03027f4428d1f1d0e",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "e4468c104fa0",
       "title": "Israeli troops enter Lebanese village, erect earthen barrier overnight",
@@ -822,23 +854,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "20638a16f605",
-      "title": "Weak yen boosts Japan automaker profits, easing Middle East, China stress",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/automobiles/weak-yen-boosts-japan-automaker-profits-easing-middle-east-china-stress",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-07T20:06:17.211Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
