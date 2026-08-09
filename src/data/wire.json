@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T18:22:15.955Z",
+  "generatedAt": "2026-08-09T19:09:34.842Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -11,7 +11,7 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world/middleeast",
       "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-09T18:12:27.000Z",
+      "publishedAt": "2026-08-09T18:55:42.000Z",
       "image": "https://i.guim.co.uk/img/media/4361ca7b7d37038576268118c7fbbc57ea38669a/506_0_4583_3667/master/4583.jpg?width=700&quality=85&auto=format&fit=max&s=7e564ca789e54a8205a7e4187345a1be",
       "imageWidth": 700,
       "category": "Politics",
@@ -1258,22 +1258,6 @@
       "weight": 3
     },
     {
-      "id": "cb6423d8c6aa",
-      "title": "Colombia's new president vows to remake the country — and challenge rebel groups",
-      "summary": "A new political era for Colombia: a hard-right president promises order, growth and confrontation.",
-      "url": "https://www.npr.org/2026/08/07/nx-s1-5924775/colombias-new-president-vows-to-remake-the-country-and-challenge-its-fragile-peace",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-07T15:41:45.000Z",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5354x3569+0+0/resize/5354x3569!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F67%2F62%2F236596a742b9aeb9e6756a792986%2Fap26211714668382.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "e8c4c457f90a",
       "title": "Goodwin considers selling part of defence business",
       "summary": "The firm is a key supplier of components to UK and US frigate and submarine programmes.",
@@ -1432,22 +1416,6 @@
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "0374a7333ec4",
-      "title": "Colombia on the brink: ELN guerrilla group prepares for return to war",
-      "summary": "As Abelardo de la Espriella takes office as president vowing a new military offensive, the country’s last leftwing rebels are getting ready to fight back As the boat approached the riverbank, camouflaged figures watched from the tree line. Behind them, in the…",
-      "url": "https://www.theguardian.com/world/ng-interactive/2026/aug/07/colombia-on-the-brink-eln-guerrilla-group-prepares-for-return-to-war",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-07T14:00:32.000Z",
-      "image": "https://i.guim.co.uk/img/media/17daec3a063bfb18f9e3f7b656db205ba96b1529/679_0_5200_4160/master/5200.jpg?width=700&quality=85&auto=format&fit=max&s=1f225312dc04fe69f4ae3aabe7e41a43",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "1a40a2e30e19",
@@ -2521,22 +2489,6 @@
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "85dd0c8daffa",
-      "title": "Israel strikes southern Lebanon killing one and injuring 11",
-      "summary": "Hits on two towns among deadliest bombings since start of June ceasefire An Israeli airstrike in south Lebanon killed one person and injured 11, the Lebanese ministry of health said, in one of Israel’s deadliest bombings since the start of the June ceasefire.…",
-      "url": "https://www.theguardian.com/world/2026/aug/05/israel-strikes-southern-lebanon-deadliest-ceasefire",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-05T16:34:58.000Z",
-      "image": "https://i.guim.co.uk/img/media/64d8991f49e1d23d8c6b1a18d0295b0069f950d8/1000_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=06fee0ab5b3c416f5ed520e316617502",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "b1a7d3ba908b",
