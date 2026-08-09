@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-09T21:30:29.368Z",
+  "generatedAt": "2026-08-09T22:02:29.791Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "0b522404a9cf",
+      "title": "Burnham vows crackdown on ‘rip-off’ business practices to ease cost of living",
+      "summary": "First of PM’s ‘everyday fixes’ to be banning fake discounts and making it easier to cancel unwanted subscriptions Andy Burnham: I’ll end the rip-offs that people hate Andy Burnham has promised a series of measures to tackle the cost of living, including a ban…",
+      "url": "https://www.theguardian.com/business/2026/aug/09/burnham-vows-crackdown-on-rip-off-business-practices-to-ease-cost-of-living",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-09T21:30:26.000Z",
+      "image": "https://i.guim.co.uk/img/media/68e1035be26c62f377ad067d6b2c6b2d23a92f96/274_0_3393_2714/master/3393.jpg?width=700&quality=85&auto=format&fit=max&s=e1523eddc1f909d74fd3a7b8c95e3436",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "401880cb363b",
       "title": "Trump shares Clinton defence of Gaza plan after Netanyahu rejects roadmap",
@@ -915,22 +931,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "8313e6823b48",
-      "title": "Switzerland is a neutral nation but has more nuclear bunkers than any country in the world",
-      "summary": "Instead of scrapping its network of bomb shelters after the Cold War, Switzerland kept building them. The country has more than 370,000 nuclear bomb shelters. Some are now used to house migrants.",
-      "url": "https://www.npr.org/2026/08/08/g-s1-137635/switzerland-nuclear-bunkers",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-08T11:01:00.000Z",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4032x3024+0+0/resize/4032x3024!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F62%2Fd3%2Ffa2b574942dd82a935fd88994115%2F5.jpeg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
