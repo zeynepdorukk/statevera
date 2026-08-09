@@ -1,10 +1,24 @@
 {
-  "generatedAt": "2026-08-09T10:50:39.956Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "anadolu-politics"
-  ],
+  "generatedAt": "2026-08-09T11:19:19.596Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
+    {
+      "id": "58da4a8d6b8c",
+      "title": "Pakistan's top diplomat says Mecca defense pact 'purely' defensive in nature, remains open to other regional countries",
+      "summary": "Trilateral defense agreement was signed in the holy city on Friday by Pakistan, Saudi Arabia, and Türkiye",
+      "url": "https://www.aa.com.tr/en/middle-east/pakistans-top-diplomat-says-mecca-defense-pact-purely-defensive-in-nature-remains-open-to-other-regional-countries/4022424",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-09T11:00:29.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "26a2308fb508",
       "title": "Houthis say they targeted 'Saudi enemy' forces and equipment in Yemen",
@@ -19,6 +33,22 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "074c281c5d6f",
+      "title": "Japan marks 81st anniversary of the atomic bombing of Nagasaki",
+      "summary": "The city's Mayor Shiro Suzuki denounced growing support for nuclear deterrence in the global community, including Japan .",
+      "url": "http://www.africanews.com/2026/08/09/japan-marks-81st-anniversary-of-the-atomic-bombing-of-nagasaki/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-09T10:11:02.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/86/75/37/640x360_cmsv2_49672358-1841-5c71-a64e-be7ba6800c25-9867537.jpg?1786254553",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -118,6 +148,22 @@
       "weight": 2
     },
     {
+      "id": "74e087910448",
+      "title": "Turkish foreign minister warns Russia-Ukraine war could push Moscow toward ‘last option’",
+      "summary": "Hakan Fidan says expanding ‘war of destruction’ could lead Russia to use ‘last option available to it’",
+      "url": "https://www.aa.com.tr/en/politics/turkish-foreign-minister-warns-russia-ukraine-war-could-push-moscow-toward-last-option-/4022342",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-09T09:02:49.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "28eb937202ce",
       "title": "Talks with US won't happen while interim deal is breached, says Araghchi",
       "summary": "Talks with US won't happen while interim deal is breached, says Araghchi Iran and the US are not engaged in talks and Tehran will not start them as long as Washington breaches the interim deal signed in June, Foreign Minister Abbas Araghchi said on Sunday,…",
@@ -147,22 +193,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "4976cd3c61e1",
-      "title": "Nagasaki mayor says ‘humanity and nuclear weapons cannot coexist’",
-      "summary": "Nagasaki Mayor says ‘humanity and nuclear weapons can't coexist’ as Japan marks anniversary of the US atomic bombing.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/9/nagasaki-mayor-says-humanity-and-nuclear-weapons-cannot?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-09T07:56:47.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -243,6 +273,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "2af58be66cb4",
+      "title": "Car bomb hits Colombia highway day after new president sworn in",
+      "summary": "A car bomb destroyed a toll booth on a highway in Colombia a day after President Abelardo de la Espriella was sworn in.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/9/08-09-2026-colombia-car-bomb-sv-mp4?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-09T04:32:32.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -390,22 +436,6 @@
       "weight": 2
     },
     {
-      "id": "7706eec6fb22",
-      "title": "Car bomb attack rattles Colombia after inauguration of hardline president",
-      "summary": "Government promises harsh response following explosives attack on Pan-American Highway in southwest of country.",
-      "url": "https://www.aljazeera.com/news/2026/8/8/car-bomb-attack-rattles-colombia-after-inauguration-of-hardline-president?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-08T22:22:36.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "40905cad8f9a",
       "title": "Tanker sailors still face danger in the Strait of Hormuz",
       "summary": "An agreement over the Strait of Hormuz is still far away. Tim Wilkins, who works for a tanker industry group, says the ships stuck around the waterway are in limbo, and transiting is still dangerous.",
@@ -507,8 +537,8 @@
       "summary": "Senate minority leader condemns Republicans after Donald Trump’s former defense lawyer confirmed by 50 votes to 49 early on Saturday morning. This blog is now closed. Joe Biden ’s prostate cancer has spread throughout his body, causing the former president…",
       "url": "https://www.theguardian.com/us-news/live/2026/aug/08/todd-blanche-attorney-general-senate-vote-republicans-save-voting-bill-latest-news-updates",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-08T17:05:58.000Z",
       "image": "https://i.guim.co.uk/img/media/9929feb6f224df63c95a1032463f390dd8b086fb/680_0_7920_6336/master/7920.jpg?width=700&quality=85&auto=format&fit=max&s=b72910d328a8fb60bfa2cb5bc2a4b6b9",
       "imageWidth": 700,
@@ -871,6 +901,22 @@
       "weight": 2
     },
     {
+      "id": "e67efe093f65",
+      "title": "Colombia's new government announces plans for Israel economic panel after rupture over Gaza genocide",
+      "summary": "New government under now-President De la Espriella plans October visit as Bogota restores ties severed by predecessor Petro over Israel's genocide in Gaza that has claimed tens of thousands of lives",
+      "url": "https://www.aa.com.tr/en/americas/colombias-new-government-announces-plans-for-israel-economic-panel-after-rupture-over-gaza-genocide/4021595",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-08T05:39:33.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "29c5698f63b5",
       "title": "US promises $1bn in security aid to Colombia as new rightwing president pledges drugs crackdown",
       "summary": "Trump ally Abelardo De La ‌Espriella vows to start ‘profound transformation’ of country’s destiny as he is sworn in The ​Trump administration plans to provide $1bn in security assistance to the ⁠government of Colombia’s new ​rightwing ‌president, the US state…",
@@ -1179,6 +1225,22 @@
       "weight": 2
     },
     {
+      "id": "ebfef20914d7",
+      "title": "Turkish president says Mecca Joint Defense Agreement targets no country, open to other friendly nations",
+      "summary": "Recep Tayyip Erdogan says agreement will strengthen defense cooperation, counterterrorism efforts",
+      "url": "https://www.aa.com.tr/en/politics/turkish-president-says-mecca-joint-defense-agreement-targets-no-country-open-to-other-friendly-nations/4021327",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-07T14:36:20.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Turkey",
+      "weight": 2
+    },
+    {
       "id": "1d9c78ec9904",
       "title": "Lichfield interviewed on Global Dispatches to discuss the widening deficit in Russia",
       "summary": "Listen to the full interview here The post Lichfield interviewed on Global Dispatches to discuss the widening deficit in Russia appeared first on Atlantic Council .",
@@ -1288,6 +1350,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "1a40a2e30e19",
+      "title": "Saudi foreign minister says defense pact with Türkiye, Pakistan reflects deep strategic ties",
+      "summary": "Defense minister says agreement establishes long-term partnership to enhance deterrence, coordination and integration",
+      "url": "https://www.aa.com.tr/en/politics/saudi-foreign-minister-says-defense-pact-with-turkiye-pakistan-reflects-deep-strategic-ties/4021264",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-07T13:53:56.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Turkey",
       "weight": 2
     },
     {
@@ -1757,6 +1835,22 @@
       "weight": 2
     },
     {
+      "id": "f3e2350f2238",
+      "title": "Venezuela’s interim government, opposition launch face-to-face talks",
+      "summary": "Delegations hold 1st formal meeting in Caracas, no statements expected",
+      "url": "https://www.aa.com.tr/en/americas/venezuela-s-interim-government-opposition-launch-face-to-face-talks/4020615",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-06T20:37:42.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "a4a7c3a341d1",
       "title": "Talon returns to frontline politics as Benin's first Senate president",
       "summary": "Former Benin president Patrice Talon has been elected the country's first Senate president, months after leaving office. The new upper chamber, created under a constitutional reform, places Talon at the helm of a key institution despite stepping down after…",
@@ -1770,6 +1864,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "41102b2d1bea",
+      "title": "US welcomes Caracas talks on Venezuela's political transition",
+      "summary": "State Department says direct talks between 2015 National Assembly delegation, interim government present 'unique opportunity'",
+      "url": "https://www.aa.com.tr/en/americas/us-welcomes-caracas-talks-on-venezuelas-political-transition/4020564",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-06T19:24:14.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -1896,22 +2006,6 @@
       "image": "http://images.euronews.com/articles/stories/09/86/52/87/640x360_cmsv2_c1e9c596-4417-54e0-993d-cafe61a0ec28-9865287.jpg?1786028295",
       "imageWidth": 0,
       "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "71a63276823f",
-      "title": "Decoding Nigeria’s crypto shift and transforming diaspora cash into capital {Business Africa}",
-      "summary": "Nigeria’s new Virtual Asset Council could reshape Africa’s digital economy and transform cross-border payments and how Africa’s $100 billion diaspora remittances could move from family support to long-term investment.",
-      "url": "http://www.africanews.com/2026/08/06/decoding-nigerias-crypto-shift-and-transforming-diaspora-cash-into-capital-business-africa/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-06T15:15:52.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/84/23/36/640x360_cmsv2_3394aaa7-65fc-5060-8401-2ff26a9fda45-9842336.jpg?1784303551",
-      "imageWidth": 0,
-      "category": "Economy",
       "categoryConfidence": "high",
       "region": "Africa",
       "weight": 2
@@ -2093,6 +2187,22 @@
       "weight": 2
     },
     {
+      "id": "d13277063610",
+      "title": "Belarus, Algeria push to expand economic cooperation ahead of Tebboune visit",
+      "summary": "Belarusian President Alexander Lukashenko meets Algerian Foreign Minister Ahmed Attaf in Minsk",
+      "url": "https://www.aa.com.tr/en/politics/belarus-algeria-push-to-expand-economic-cooperation-ahead-of-tebboune-visit/4020154",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-06T11:55:54.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "8b48f93b0aae",
       "title": "‘Mamma mia!’: Trump tariffs refund ignites 53% profit spike at Nintendo",
       "summary": "Profit jump fuelled largely by unknown US refund amount as Japanese video game firm records quarterly sales drop Nintendo has reported a jump in profits, as the Japanese game maker’s earnings were buoyed up by a long-awaited refund on Donald Trump’s tariffs.…",
@@ -2154,6 +2264,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "e62729403817",
+      "title": "New Zealand premier vows referendum on electoral system if re-elected",
+      "summary": "'I actually think it's quite right to check in constitutionally and say, is this the system New Zealanders still want ... is it still where you want to be?' Luxon says",
+      "url": "https://www.aa.com.tr/en/asia-pacific/new-zealand-premier-vows-referendum-on-electoral-system-if-re-elected/4019874",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-06T08:59:26.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -2317,6 +2443,38 @@
       "weight": 2
     },
     {
+      "id": "bdb879f5fcb1",
+      "title": "PROFILE - Abdul El-Sayed to vie for midterm Senate seat amid wave of pro-Palestinian wins in Democrat primaries",
+      "summary": "Progressive physician defeats establishment-backed Haley Stevens, setting up November contest against Republican Mike Rogers",
+      "url": "https://www.aa.com.tr/en/politics/profile-abdul-el-sayed-to-vie-for-midterm-senate-seat-amid-wave-of-pro-palestinian-wins-in-democrat-primaries/4019506",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-05T18:37:07.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "4e7a6765b3ec",
+      "title": "Turkish foreign minister received by Jordan’s King Abdullah II in Amman",
+      "summary": "Earlier, Hakan Fidan attended ministerial meeting on Jerusalem hosted by Jordan",
+      "url": "https://www.aa.com.tr/en/turkiye/turkish-foreign-minister-received-by-jordan-s-king-abdullah-ii-in-amman/4019490",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-05T18:20:29.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "5cf9270effb5",
       "title": "Beyond Hormuz: The Future of Maritime Chokepoints",
       "summary": "Iran’s closure of the Strait of Hormuz and efforts to extract payments for safe passage — plus, more recently, the Houthis’ move to attack Saudi shipping through the Bab el-Mandeb Strait — have highlighted the risks of maritime chokepoints to global shipping…",
@@ -2345,6 +2503,38 @@
       "imageWidth": 700,
       "category": "Security",
       "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "b1a7d3ba908b",
+      "title": "Canada, UAE conclude 'successful' negotiations on comprehensive economic partnership",
+      "summary": "Canadian Premier Carney, UAE President Sheikh Mohamed discuss trade, Mideast tensions over phone",
+      "url": "https://www.aa.com.tr/en/americas/canada-uae-conclude-successful-negotiations-on-comprehensive-economic-partnership/4019435",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-05T16:31:06.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Turkey",
+      "weight": 2
+    },
+    {
+      "id": "0dbd2ca81acb",
+      "title": "2nd day of Lebanon-Israel Rome talks concludes amid continued Israeli attacks",
+      "summary": "Lebanese source says negotiations focused on political, military and border issues",
+      "url": "https://www.aa.com.tr/en/middle-east/2nd-day-of-lebanon-israel-rome-talks-concludes-amid-continued-israeli-attacks/4019415",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-05T16:19:57.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     },
