@@ -1,10 +1,26 @@
 {
-  "generatedAt": "2026-08-09T10:09:10.859Z",
+  "generatedAt": "2026-08-09T10:50:39.956Z",
   "sourceCount": 26,
   "failedSources": [
-    "france24"
+    "anadolu-politics"
   ],
   "items": [
+    {
+      "id": "26a2308fb508",
+      "title": "Houthis say they targeted 'Saudi enemy' forces and equipment in Yemen",
+      "summary": "Houthis say they targeted 'Saudi enemy' forces and equipment in Yemen Yemen's Houthi said they had targeted \"Saudi enemy\" troops and equipment on Yemen's Red Sea coast city of Mokha after residents there said they heard blasts. The group's military spokesman…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/houthis-say-they-targeted-saudi-enemy-forces-and-equipment-yemen",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-09T10:36:56.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "11da768b5776",
       "title": "From autonomy to 'settler colonialism': How India redrew Kashmir's demographic and political landscape",
@@ -19,6 +35,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "d3494b88bc14",
+      "title": "The Democratic party needs to do more than represent wealthy progressives | Dustin Guastella",
+      "summary": "New research shows that a class gap on the left threatens any winning coalition – but there are ways to address it Debates on the left are typically framed as a division between moderates and progressives, with the two sides wrestling over how best to form a…",
+      "url": "https://www.theguardian.com/commentisfree/2026/aug/09/democrats-class-wealth-gap",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-09T10:00:12.000Z",
+      "image": "https://i.guim.co.uk/img/media/9c5fca1e87a2dae47889ba6cca1fce32b27fd222/782_0_5854_4686/master/5854.jpg?width=700&quality=85&auto=format&fit=max&s=e5c62d505fc7abe95e4bcdf668962610",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -70,19 +102,19 @@
       "weight": 2
     },
     {
-      "id": "74e087910448",
-      "title": "Turkish foreign minister warns Russia-Ukraine war could push Moscow toward ‘last option’",
-      "summary": "Hakan Fidan says expanding ‘war of destruction’ could lead Russia to use ‘last option available to it’",
-      "url": "https://www.aa.com.tr/en/politics/turkish-foreign-minister-warns-russia-ukraine-war-could-push-moscow-toward-last-option-/4022342",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-09T09:02:49.000Z",
-      "image": "",
+      "id": "2e628dbfa69b",
+      "title": "Ukraine denies targeting Bulgaria, after drone exploded near a gas pipeline",
+      "summary": "Ukraine says it did not target Bulgaria after a drone crashed near a gas pipeline in the country on Saturday. Bulgarian authorities said the drone appeared to be a type used by Ukraine’s military. It came down in a field near the Romanian border, not far from…",
+      "url": "https://www.france24.com/en/ukraine-denies-targeting-bulgaria-after-drone-exploded-near-a-gas-pipeline",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-09T09:04:07.000Z",
+      "image": "https://s.france24.com/media/display/d5f9a508-93ce-11f1-a0d2-005056a90284/w:1024/p:16x9/EN-20260809-090702-090843-CS.jpg",
       "imageWidth": 0,
-      "category": "Diplomacy",
+      "category": "Security",
       "categoryConfidence": "medium",
-      "region": "Eurasia",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -131,6 +163,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "6a2d110c7821",
+      "title": "Many of Iran’s demands ‘already agreed to’ by the US in June MoU",
+      "summary": "Iran on Saturday issued a list of demands for the reopening of the Strait of Hormuz, which have been characterised as “new” preconditions. Reporting from Washington, FRANCE 24’s Fraser Jackson notes that many of the demands were “already agreed to by the US…",
+      "url": "https://www.france24.com/en/many-of-iran-s-demands-already-agreed-to-by-us-in-june-mou",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-09T07:06:50.000Z",
+      "image": "https://s.france24.com/media/display/84ae071a-937a-11f1-88fb-005056a97e36/w:1024/p:16x9/NW208583-O-01-20260808-01.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -243,22 +291,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "e4468c104fa0",
-      "title": "Israeli troops enter Lebanese village, erect earthen barrier overnight",
-      "summary": "Israeli troops enter Lebanese village, erect earthen barrier overnight Israeli troops infiltrated a Lebanese village placed under the control of Lebanon's army as part of a June agreement, building an earthen barrier there overnight. An AFP correspondent saw…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-troops-enter-lebanese-village-erect-earthen-barrier-overnight",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-09T02:30:28.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -503,6 +535,22 @@
       "weight": 2
     },
     {
+      "id": "d2c1c7d919ab",
+      "title": "Israeli troops infiltrate Lebanese army-held village and build roadblock, mayor says",
+      "summary": "A Lebanese village held by the country's army was infiltrated by Israeli forces, who built a roadblock near the town square overnight, the mayor and state media said Saturday. The Lebanese army was deployed to Zawtar al-Gharbiya more than two weeks ago within…",
+      "url": "https://www.france24.com/en/middle-east/20260808-israeli-troops-infiltrate-lebanese-army-held-village-and-build-roadblock-mayor-says",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-08T16:05:27.000Z",
+      "image": "https://s.france24.com/media/display/47a2dfd2-9337-11f1-af5a-005056a97e36/w:1024/p:16x9/000-C3DG6T3.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "ed762ddf1f1f",
       "title": "Watch: Moment opposition MP throws eggs at Kosovo's acting PM",
       "summary": "Lawmakers and police officers had to intervene after Alliance party MP Time Kadrijaj hurled at least four eggs towards Kosovo's acting prime minister Albin Kurti.",
@@ -519,6 +567,22 @@
       "weight": 2
     },
     {
+      "id": "ac54a69a6ba8",
+      "title": "Russian strikes kill four as Kyiv hits oil refinery",
+      "summary": "At least four people, including a child, were killed in Russian attacks on Kyiv and surrounding regions early Saturday. Moscow has been exploiting Ukraine’s depleted air defences to launch waves of drone and missile strikes, while Kyiv has hit another oil…",
+      "url": "https://www.france24.com/en/russian-strikes-kill-four-as-kyiv-hits-oil-refinery",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-08T15:29:49.000Z",
+      "image": "https://s.france24.com/media/display/4c676578-933d-11f1-bc5a-005056a90284/w:1024/p:16x9/EN-20260808-170128-170322-CS.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "66520018ff46",
       "title": "Private pensions are a publicly subsidised gift to the wealthy | Phillip Inman",
       "summary": "John Healey should equalise the tax break on pension savings to stop inequalities from widening Private pensions are a privilege for the lucky few and a curse for everyone else. Sold as a saviour for what would otherwise be a ruinous old age, they have become…",
@@ -532,22 +596,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "33e4445700d2",
-      "title": "US Senate confirms Trump loyalist Todd Blanche as new AG",
-      "summary": "Republicans dropped their opposition and confirmed President Donald Trump's former defense lawyer to a Cabinet position. Now, Todd Blanche will act as the nation's top law enforcement officer.",
-      "url": "https://www.dw.com/en/us-senate-confirms-trump-loyalist-todd-blanche-as-new-ag/a-78289397?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-08T14:25:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -583,6 +631,22 @@
       "weight": 2
     },
     {
+      "id": "e132a2c73840",
+      "title": "Senate confirms Todd Blanche, Trump's former lawyer, as Attorney General",
+      "summary": "The US Senate has confirmed Donald Trump’s former personal lawyer, Todd Blanche, as attorney general, despite opposition from Democrats who accused the president of politicising the Department of Justice. Blanche previously represented Trump as his private…",
+      "url": "https://www.france24.com/en/senate-confirms-todd-blanche-trump-s-former-lawyer-as-attorney-general",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-08T12:54:24.000Z",
+      "image": "https://s.france24.com/media/display/ffd447cc-9327-11f1-a096-005056a90284/w:1024/p:16x9/EN-20260808-140701-140845-CS.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "42a5e52745f1",
       "title": "Senate passes funding bill to prevent shutdown through US midterms",
       "summary": "Bill must still be approved by House but would keep government running at current funding levels The US Senate on Friday passed a government funding bill that will prevent a shutdown through the midterm elections, though it still must be approved by the House…",
@@ -612,22 +676,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "e1b0477bff8c",
-      "title": "Bulgaria: Unknown drone explodes near Romanian border",
-      "summary": "A drone that entered Bulgaria's airspace exploded near the Romanian border and the Trans-Balkan gas pipeline, the Bulgarian prime minister said. Bulgaria summoned the Ukrainian ambassador for consultations.",
-      "url": "https://www.dw.com/en/bulgaria-unknown-drone-explodes-near-romanian-border/a-78288825?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-08T11:58:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -820,22 +868,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "e67efe093f65",
-      "title": "Colombia's new government announces plans for Israel economic panel after rupture over Gaza genocide",
-      "summary": "New government under now-President De la Espriella plans October visit as Bogota restores ties severed by predecessor Petro over Israel's genocide in Gaza that has claimed tens of thousands of lives",
-      "url": "https://www.aa.com.tr/en/americas/colombias-new-government-announces-plans-for-israel-economic-panel-after-rupture-over-gaza-genocide/4021595",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-08T05:39:33.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1147,22 +1179,6 @@
       "weight": 2
     },
     {
-      "id": "ebfef20914d7",
-      "title": "Turkish president says Mecca Joint Defense Agreement targets no country, open to other friendly nations",
-      "summary": "Recep Tayyip Erdogan says agreement will strengthen defense cooperation, counterterrorism efforts",
-      "url": "https://www.aa.com.tr/en/politics/turkish-president-says-mecca-joint-defense-agreement-targets-no-country-open-to-other-friendly-nations/4021327",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-07T14:36:20.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Turkey",
-      "weight": 2
-    },
-    {
       "id": "1d9c78ec9904",
       "title": "Lichfield interviewed on Global Dispatches to discuss the widening deficit in Russia",
       "summary": "Listen to the full interview here The post Lichfield interviewed on Global Dispatches to discuss the widening deficit in Russia appeared first on Atlantic Council .",
@@ -1272,22 +1288,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "1a40a2e30e19",
-      "title": "Saudi foreign minister says defense pact with Türkiye, Pakistan reflects deep strategic ties",
-      "summary": "Defense minister says agreement establishes long-term partnership to enhance deterrence, coordination and integration",
-      "url": "https://www.aa.com.tr/en/politics/saudi-foreign-minister-says-defense-pact-with-turkiye-pakistan-reflects-deep-strategic-ties/4021264",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-07T13:53:56.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Turkey",
       "weight": 2
     },
     {
@@ -1757,22 +1757,6 @@
       "weight": 2
     },
     {
-      "id": "f3e2350f2238",
-      "title": "Venezuela’s interim government, opposition launch face-to-face talks",
-      "summary": "Delegations hold 1st formal meeting in Caracas, no statements expected",
-      "url": "https://www.aa.com.tr/en/americas/venezuela-s-interim-government-opposition-launch-face-to-face-talks/4020615",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-06T20:37:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "a4a7c3a341d1",
       "title": "Talon returns to frontline politics as Benin's first Senate president",
       "summary": "Former Benin president Patrice Talon has been elected the country's first Senate president, months after leaving office. The new upper chamber, created under a constitutional reform, places Talon at the helm of a key institution despite stepping down after…",
@@ -1786,22 +1770,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "41102b2d1bea",
-      "title": "US welcomes Caracas talks on Venezuela's political transition",
-      "summary": "State Department says direct talks between 2015 National Assembly delegation, interim government present 'unique opportunity'",
-      "url": "https://www.aa.com.tr/en/americas/us-welcomes-caracas-talks-on-venezuelas-political-transition/4020564",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-06T19:24:14.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -2125,22 +2093,6 @@
       "weight": 2
     },
     {
-      "id": "d13277063610",
-      "title": "Belarus, Algeria push to expand economic cooperation ahead of Tebboune visit",
-      "summary": "Belarusian President Alexander Lukashenko meets Algerian Foreign Minister Ahmed Attaf in Minsk",
-      "url": "https://www.aa.com.tr/en/politics/belarus-algeria-push-to-expand-economic-cooperation-ahead-of-tebboune-visit/4020154",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-06T11:55:54.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "8b48f93b0aae",
       "title": "‘Mamma mia!’: Trump tariffs refund ignites 53% profit spike at Nintendo",
       "summary": "Profit jump fuelled largely by unknown US refund amount as Japanese video game firm records quarterly sales drop Nintendo has reported a jump in profits, as the Japanese game maker’s earnings were buoyed up by a long-awaited refund on Donald Trump’s tariffs.…",
@@ -2202,22 +2154,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "e62729403817",
-      "title": "New Zealand premier vows referendum on electoral system if re-elected",
-      "summary": "'I actually think it's quite right to check in constitutionally and say, is this the system New Zealanders still want ... is it still where you want to be?' Luxon says",
-      "url": "https://www.aa.com.tr/en/asia-pacific/new-zealand-premier-vows-referendum-on-electoral-system-if-re-elected/4019874",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-06T08:59:26.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -2381,38 +2317,6 @@
       "weight": 2
     },
     {
-      "id": "bdb879f5fcb1",
-      "title": "PROFILE - Abdul El-Sayed to vie for midterm Senate seat amid wave of pro-Palestinian wins in Democrat primaries",
-      "summary": "Progressive physician defeats establishment-backed Haley Stevens, setting up November contest against Republican Mike Rogers",
-      "url": "https://www.aa.com.tr/en/politics/profile-abdul-el-sayed-to-vie-for-midterm-senate-seat-amid-wave-of-pro-palestinian-wins-in-democrat-primaries/4019506",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-05T18:37:07.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "4e7a6765b3ec",
-      "title": "Turkish foreign minister received by Jordan’s King Abdullah II in Amman",
-      "summary": "Earlier, Hakan Fidan attended ministerial meeting on Jerusalem hosted by Jordan",
-      "url": "https://www.aa.com.tr/en/turkiye/turkish-foreign-minister-received-by-jordan-s-king-abdullah-ii-in-amman/4019490",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-05T18:20:29.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "5cf9270effb5",
       "title": "Beyond Hormuz: The Future of Maritime Chokepoints",
       "summary": "Iran’s closure of the Strait of Hormuz and efforts to extract payments for safe passage — plus, more recently, the Houthis’ move to attack Saudi shipping through the Bab el-Mandeb Strait — have highlighted the risks of maritime chokepoints to global shipping…",
@@ -2445,54 +2349,6 @@
       "weight": 2
     },
     {
-      "id": "b1a7d3ba908b",
-      "title": "Canada, UAE conclude 'successful' negotiations on comprehensive economic partnership",
-      "summary": "Canadian Premier Carney, UAE President Sheikh Mohamed discuss trade, Mideast tensions over phone",
-      "url": "https://www.aa.com.tr/en/americas/canada-uae-conclude-successful-negotiations-on-comprehensive-economic-partnership/4019435",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-05T16:31:06.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "0dbd2ca81acb",
-      "title": "2nd day of Lebanon-Israel Rome talks concludes amid continued Israeli attacks",
-      "summary": "Lebanese source says negotiations focused on political, military and border issues",
-      "url": "https://www.aa.com.tr/en/middle-east/2nd-day-of-lebanon-israel-rome-talks-concludes-amid-continued-israeli-attacks/4019415",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-05T16:19:57.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "29c32462046c",
-      "title": "Abdul El-Sayed offers a template for Democrats to defeat Trumpism | Peter Beinart",
-      "summary": "The candidate has crafted a progressive nationalism and shown his party how to turn Republicans’ financial advantage against them Every now and then, a Senate race sets the direction for an entire party. In 1991, a state official named Harris Wofford –…",
-      "url": "https://www.theguardian.com/commentisfree/2026/aug/05/abdul-el-sayed-democrats-trump",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-05T16:15:10.000Z",
-      "image": "https://i.guim.co.uk/img/media/a16adc81f642b031428d0104675e89a91fce96fd/277_0_2766_2213/master/2766.jpg?width=700&quality=85&auto=format&fit=max&s=1ef19b21ce9d3d3f864b5daad40e0ac1",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "e5ae67c430c2",
       "title": "Bored of Peace: Why is Trump undermining his own Gaza plan?",
       "summary": "A lot can change in a week. Barely five days after President Donald Trump hailed the “historic agreement” on Hamas’s disarmament by the Board of Peace (BOP) — the body Trump created to oversee his Gaza Peace Plan — the very same Board of Peace has now…",
@@ -2507,22 +2363,6 @@
       "categoryConfidence": "medium",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "c149fbb8dfcf",
-      "title": "Türkiye urges EU to include Ankara in new trade, industrial policies",
-      "summary": "Trade Minister Omer Bolat says Türkiye’s inclusion would strengthen EU competitiveness and Europe’s economic security",
-      "url": "https://www.aa.com.tr/en/turkiye/turkiye-urges-eu-to-include-ankara-in-new-trade-industrial-policies/4019308",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-05T14:18:53.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Turkey",
-      "weight": 2
     },
     {
       "id": "832b203154cd",
