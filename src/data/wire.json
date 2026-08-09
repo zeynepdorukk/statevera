@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T22:47:05.035Z",
+  "generatedAt": "2026-08-09T23:19:02.968Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -17,22 +17,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "401880cb363b",
-      "title": "Trump shares Clinton defence of Gaza plan after Netanyahu rejects roadmap",
-      "summary": "Trump shares Clinton defence of Gaza plan after Netanyahu rejects roadmap US President Donald Trump has shared an opinion piece by former Secretary of State Hillary Clinton backing his proposal for Gaza, after Israeli Prime Minister Benjamin Netanyahu…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-shares-clinton-defence-gaza-plan-after-netanyahu-rejects-roadmap",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-09T21:13:16.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1770,22 +1754,6 @@
       "weight": 3
     },
     {
-      "id": "947b8a4cd1fd",
-      "title": "DRC president claims Trump deal requires he seize another term",
-      "summary": "Last week, the Constitutional Court of the Democratic Republic of the Congo (DRC) opened the door for the country’s sitting president, Felix Tshisekedi, to seek a third term. In a widely expected but nonetheless dramatic decision, the court ruled that the…",
-      "url": "https://responsiblestatecraft.org/congo-minerals-deal/",
-      "publisher": "Responsible Statecraft",
-      "publisherHome": "https://responsiblestatecraft.org",
-      "sourceId": "responsible-statecraft",
-      "publishedAt": "2026-08-07T04:05:01.000Z",
-      "image": "https://responsiblestatecraft.org/media-library/president-donald-trump-greets-president-felix-tshisekedi-of-the-democratic-republic-of-the-congo-in-the-oval-office.jpg?id=67583718&width=980",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 3
-    },
-    {
       "id": "c7f00fbafc9d",
       "title": "The rise or fail of middle powers will determine Middle East peace",
       "summary": "For more than two decades, endless wars have destabilized the Middle East, creating huge amounts of human suffering, displacement and trauma. The region is exhausted, with little faith in the possibility of peace and few structures to enable it. The region is…",
@@ -1799,6 +1767,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Middle East",
+      "weight": 3
+    },
+    {
+      "id": "947b8a4cd1fd",
+      "title": "DRC president claims Trump deal requires he seize another term",
+      "summary": "Last week, the Constitutional Court of the Democratic Republic of the Congo (DRC) opened the door for the country’s sitting president, Felix Tshisekedi, to seek a third term. In a widely expected but nonetheless dramatic decision, the court ruled that the…",
+      "url": "https://responsiblestatecraft.org/congo-minerals-deal/",
+      "publisher": "Responsible Statecraft",
+      "publisherHome": "https://responsiblestatecraft.org",
+      "sourceId": "responsible-statecraft",
+      "publishedAt": "2026-08-07T04:05:01.000Z",
+      "image": "https://responsiblestatecraft.org/media-library/president-donald-trump-greets-president-felix-tshisekedi-of-the-democratic-republic-of-the-congo-in-the-oval-office.jpg?id=67583718&width=980",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 3
     },
     {
