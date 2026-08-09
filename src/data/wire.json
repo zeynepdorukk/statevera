@@ -1,10 +1,42 @@
 {
-  "generatedAt": "2026-08-09T06:04:59.029Z",
+  "generatedAt": "2026-08-09T07:13:04.840Z",
   "sourceCount": 26,
   "failedSources": [
     "france24"
   ],
   "items": [
+    {
+      "id": "caa0e305fead",
+      "title": "Houthis claim attack on Saudi Aramco's Jizan refinery",
+      "summary": "Houthis claim attack on Saudi Aramco's Jizan refinery Yemen's Houthis have claimed a drone attack on Saudi Aramco's refinery in Jizan, saying the attack was in response to Saudi drone attacks on Yemen’s Saada and Hajjah provinces, according to Al Masirah TV.…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/houthis-claim-they-attacked-saudi-aramcos-jizan-refinery",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-09T06:49:10.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "a5de5978467d",
+      "title": "Israeli media says Netanyahu okayed reconstruction in southern Gaza",
+      "summary": "Israeli media says Netanyahu okayed reconstruction in southern Gaza Israeli prime minister Benjamin Netanyahu and defence minister Israel Katz quietly authorised rehabilitation work in southern Gaza two weeks ago, Israeli Army Radio has reported. Netanyahu’s…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-media-says-netanyahu-okayed-reconstruction-southern-gaza",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-09T06:06:25.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "0ae0e59f65a3",
       "title": "Former Syrian army general arrested in Lebanon",
@@ -1432,23 +1464,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "6d17539d8b9e",
-      "title": "Singapore banks report strong profits amid interest rate uncertainty",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/finance/singapore-banks-report-strong-profits-amid-interest-rate-uncertainty",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-07T11:29:55.053Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
