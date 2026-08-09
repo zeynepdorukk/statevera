@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T22:02:29.791Z",
+  "generatedAt": "2026-08-09T22:47:05.035Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -530,22 +530,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "26a2308fb508",
-      "title": "Houthis say they targeted 'Saudi enemy' forces and equipment in Yemen",
-      "summary": "Houthis say they targeted 'Saudi enemy' forces and equipment in Yemen Yemen's Houthi said they had targeted \"Saudi enemy\" troops and equipment on Yemen's Red Sea coast city of Mokha after residents there said they heard blasts. The group's military spokesman…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/houthis-say-they-targeted-saudi-enemy-forces-and-equipment-yemen",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-09T10:36:56.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
