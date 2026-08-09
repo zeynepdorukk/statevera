@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-09T20:59:08.164Z",
+  "generatedAt": "2026-08-09T21:30:29.368Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "401880cb363b",
+      "title": "Trump shares Clinton defence of Gaza plan after Netanyahu rejects roadmap",
+      "summary": "Trump shares Clinton defence of Gaza plan after Netanyahu rejects roadmap US President Donald Trump has shared an opinion piece by former Secretary of State Hillary Clinton backing his proposal for Gaza, after Israeli Prime Minister Benjamin Netanyahu…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-shares-clinton-defence-gaza-plan-after-netanyahu-rejects-roadmap",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-09T21:13:16.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "8ec4a5123421",
       "title": "Board of Peace envoy says Israel not required to withdraw from Gaza",
@@ -85,8 +101,8 @@
     },
     {
       "id": "85d9fc253534",
-      "title": "Middle East crisis live: Netanyahu rejects Trump’s Gaza plan and vows no withdrawal until Hamas disarms",
-      "summary": "Israeli prime minister says he will not support 15-point plan hailed by Donald Trump Israel rejects US-led 15-point Gaza peace plan, says Netanyahu Israeli prime minister Benjamin Netanyahu rejected a Gaza plan hailed by US president Donald Trump, vowing no…",
+      "title": "Netanyahu rejects Trump’s Gaza plan and vows no withdrawal until Hamas disarms – as it happened",
+      "summary": "This live blog is now closed. Israel rejects US-led 15-point Gaza peace plan, says Netanyahu Israeli prime minister Benjamin Netanyahu rejected a Gaza plan hailed by US president Donald Trump, vowing no military pullout of Gaza until Hamas is “genuinely”…",
       "url": "https://www.theguardian.com/world/live/2026/aug/09/iran-us-irgc-strait-of-hormuz-israel-netanyahu-trump-gaza-plan-latest-news-updates",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -529,22 +545,6 @@
       "imageWidth": 0,
       "category": "Security",
       "categoryConfidence": "medium",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "11da768b5776",
-      "title": "From autonomy to 'settler colonialism': How India redrew Kashmir's demographic and political landscape",
-      "summary": "From autonomy to 'settler colonialism': How India redrew Kashmir's demographic and political landscape Submitted by MEE correspondent on Fri, 08/07/2026 - 15:49 New domicile rules, electoral gerrymandering and changing land laws have fuelled debate over…",
-      "url": "https://www.middleeasteye.net/news/autonomy-settler-colonialism-how-india-redrew-kashmirs-demographic-and-political-landscape",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-09T10:02:53.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
     },
