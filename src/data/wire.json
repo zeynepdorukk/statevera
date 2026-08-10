@@ -1,22 +1,38 @@
 {
-  "generatedAt": "2026-08-10T23:03:04.595Z",
+  "generatedAt": "2026-08-10T23:48:15.630Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
       "id": "d3779fc92fed",
-      "title": "Australia politics live: gambling lobby talking points ‘coming out the PM’s mouth’, Chaney says; RBA tipped to hold interest rates",
+      "title": "Australia politics live: Coalition to work with Hanson on migration bill; Greens fear PM ‘under the thumb’ of gambling lobby",
       "summary": "Labor looks to negotiate with the Coalition to get several pieces of legislation through parliament. Follow today’s news live Get our breaking news email , free app or daily news podcast Ted O’Brien says that just because the Japanese government has…",
       "url": "https://www.theguardian.com/australia-news/live/2026/aug/11/australia-politics-live-rba-interest-rates-question-time-anthony-albanese-angus-taylor-one-nation-pauline-hanson-ndis-gambling-ads-ntwnfb",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-10T22:51:23.000Z",
-      "image": "https://i.guim.co.uk/img/media/5ea138a0a9b2f3954ca5581a4e655c902b58860e/714_279_5510_4409/master/5510.jpg?width=700&quality=85&auto=format&fit=max&s=36b5daf49229e38dd8f25fd9e7e36910",
+      "publishedAt": "2026-08-10T23:41:27.000Z",
+      "image": "https://i.guim.co.uk/img/media/36a565b19f869516fe1cc78413fac1e62c44e87c/0_0_6880_5504/master/6880.jpg?width=700&quality=85&auto=format&fit=max&s=a4e46722ff14e977d802be999663b2f1",
       "imageWidth": 700,
       "category": "Politics",
-      "categoryConfidence": "medium",
+      "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "059d9366732f",
+      "title": "Live: Russian missiles strike Kyiv, triggering fires in city centre",
+      "summary": "Russian forces launched missile attacks on Kyiv and Zaporizhzhia early Tuesday, triggering fires in the Ukrainian capital and damaging buildings in the southeastern city, officials said. At least three people were injured in the attacks. Follow our liveblog…",
+      "url": "https://www.france24.com/en/europe/20260810-live-russian-missiles-strike-kyiv-triggering-fires-in-city-centre",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-10T23:03:04.000Z",
+      "image": "https://s.france24.com/media/display/131ef16e-9234-11f1-a905-005056a90284/w:1024/p:16x9/2026-08-05T023914Z-1006963943-RC21SMA0C6YF-RTRMADP-3-UKRAINE-CRISIS-ATTACK-KYIV.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -436,22 +452,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "96db3e64eec8",
-      "title": "‘They need each other’: What’s behind the new Syria-Russia accord?",
-      "summary": "The Syrian-Russian agreement reflects a pragmatic approach redefining past alliances amid shifting geopolitics.",
-      "url": "https://www.aljazeera.com/news/2026/8/10/they-need-each-other-whats-behind-the-new-syria-russia-accord?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-10T16:01:06.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
