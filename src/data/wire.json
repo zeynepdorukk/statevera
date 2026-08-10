@@ -1,22 +1,54 @@
 {
-  "generatedAt": "2026-08-10T11:41:34.383Z",
+  "generatedAt": "2026-08-10T12:30:35.496Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
       "id": "434a42e42d19",
       "title": "Ukraine launches drone attack on Russian oil refining facilities – Europe live",
-      "summary": "Volodymyr Zelenskyy says that strikes on such facilities were directly linked with putting more pressure on Moscow The World Health Organization chief, Tedros Adhanom Ghebreyesus, said a WHO warehouse stocking medical supplies in the Ukrainian city of Dnipro…",
+      "summary": "Volodymyr Zelenskyy says that strikes on such facilities were directly linked with putting more pressure on Moscow A fire ⁠broke ⁠out ​at an ⁠industrial facility in ⁠Russia’s ​Tyumen ‌region ‌in Siberia ‌after several drones fell on it, ‌ Tyumen region…",
       "url": "https://www.theguardian.com/world/live/2026/aug/10/ukraine-drones-russia-oil-facilities-europe-heat-drought-latest-updates-news",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-10T10:53:05.000Z",
+      "publisherHome": "https://www.theguardian.com/world/europe-news",
+      "sourceId": "guardian-europe",
+      "publishedAt": "2026-08-10T12:08:36.000Z",
       "image": "https://i.guim.co.uk/img/media/2cf40033b1b09e572bb9fb2c0776339e039a5b88/0_613_1214_970/master/1214.jpg?width=700&quality=85&auto=format&fit=max&s=59b9f235cb5f5b9402db05156993967b",
       "imageWidth": 700,
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "187b9ee10b32",
+      "title": "‘Long-range sanctions’: Ukraine hopes strikes cause Russia fear and losses",
+      "summary": "Al Jazeera is given rare access to one of Ukraine's long-range drone units tasked with targeting Russia.",
+      "url": "https://www.aljazeera.com/news/2026/8/10/long-range-sanctions-ukraine-hopes-strikes-cause-russia-fear-and-losses?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-10T11:51:28.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "1bc44a22a26d",
+      "title": "What’s behind Trump’s shift to economic pressure on Iran? Will it work?",
+      "summary": "Months into the war, Trump is returning to squeezing Iran's economy rather than military offensive for now.",
+      "url": "https://www.aljazeera.com/news/2026/8/10/whats-behind-trumps-shift-to-economic-pressure-on-iran-will-it-work?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-10T11:11:33.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "medium",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -49,22 +81,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "ffd72580b029",
-      "title": "Mother of Briton fatally shot by father in Texas urges Miliband to press US for new inquiry",
-      "summary": "Jane Coates says foreign secretary should draw attention to coroner’s finding that Lucy Harrison was unlawfully killed The UK foreign secretary, Ed Miliband, is being urged to push US authorities to reopen an investigation into a man who shot dead his…",
-      "url": "https://www.theguardian.com/politics/2026/aug/10/mother-of-briton-lucy-harrison-fatally-shot-by-father-ed-miliband",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-10T10:15:41.000Z",
-      "image": "https://i.guim.co.uk/img/media/c7a74a8518c1e43567c5cdbabffaacf1423fcfa7/43_51_1135_908/master/1135.jpg?width=700&quality=85&auto=format&fit=max&s=afc3f0b5e22d32c7626294a01b7348a7",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -230,10 +246,10 @@
       "weight": 3
     },
     {
-      "id": "5982b92b6489",
-      "title": "India news: Kerala arrest highlights online harassment of women at CJP protest",
-      "summary": "A right-wing activist was arrested over alleged remarks that women attending the CJP protests \"enjoy\" sexual assault as female demonstrators face a wider online harassment campaign. DW has more.",
-      "url": "https://www.dw.com/en/india-news-kerala-arrest-highlights-online-harassment-of-women-at-cjp-protest/live-78299334?maca=en-rss-en-all-1573-rdf",
+      "id": "b8ac80c2063e",
+      "title": "India news: Jharkhand police use water cannons to disperse student protesters",
+      "summary": "Police used water cannons to disperse students marching towards the Jharkhand assembly, as protests over alleged irregularities in government recruitment exams entered their third week. DW has more.",
+      "url": "https://www.dw.com/en/india-news-jharkhand-police-use-water-cannons-to-disperse-student-protesters/live-78299334?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
       "sourceId": "dw",
@@ -470,22 +486,6 @@
       "weight": 3
     },
     {
-      "id": "0a4c58727150",
-      "title": "Trump signals shift to economic pressure on Iran over new military strikes",
-      "summary": "US relying on sanctions and naval blockade as oil prices stabilise, easing economic strain on American consumers.",
-      "url": "https://www.aljazeera.com/economy/2026/8/10/trump-signals-shift-to-economic-pressure-on-iran-over-new-military-strikes?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-10T03:48:19.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "8e1d26301914",
       "title": "Bandai Namco bets big on 'crane games' to build arcade business",
       "summary": "",
@@ -500,22 +500,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "55fc290b4084",
-      "title": "Clashes in Iraq’s Kut city during protests over power shortages",
-      "summary": "Protests over power shortages escalated in Kut, Iraq, as demonstrators demanded more electricity amid soaring heat.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/10/aje-onl-nf_kut-protests-escalate-over-iraqs-electricity-crisis-090826?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-10T03:03:59.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -904,22 +888,6 @@
       "weight": 2
     },
     {
-      "id": "40905cad8f9a",
-      "title": "Tanker sailors still face danger in the Strait of Hormuz",
-      "summary": "An agreement over the Strait of Hormuz is still far away. Tim Wilkins, who works for a tanker industry group, says the ships stuck around the waterway are in limbo, and transiting is still dangerous.",
-      "url": "https://www.npr.org/2026/08/08/nx-s1-5923592/tanker-sailors-still-face-danger-in-the-strait-of-hormuz",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-08T21:19:54.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "c1aa1d85dec2",
       "title": "Iran issues tough demands to reopen strait of Hormuz as deal still out of reach",
       "summary": "Tehran urges US to ‘correct its behaviour’ as UAE says one of its ships targeted by Iranian missile Iran has issued tough new demands for reopening the strait of Hormuz, while the United Arab Emirates said one of its ships was targeted by an Iranian missile,…",
@@ -1014,22 +982,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "891878c6e5a9",
-      "title": "Magyar’s party backs former supreme court head for Hungarian president",
-      "summary": "Parliament is set to elect András Baka next week.",
-      "url": "https://www.politico.eu/article/peter-magyar-tisza-party-nominates-andras-baka-hungary-president/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-08T13:31:46.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
