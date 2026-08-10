@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-10T10:56:02.982Z",
+  "generatedAt": "2026-08-10T11:41:34.383Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "434a42e42d19",
+      "title": "Ukraine launches drone attack on Russian oil refining facilities – Europe live",
+      "summary": "Volodymyr Zelenskyy says that strikes on such facilities were directly linked with putting more pressure on Moscow The World Health Organization chief, Tedros Adhanom Ghebreyesus, said a WHO warehouse stocking medical supplies in the Ukrainian city of Dnipro…",
+      "url": "https://www.theguardian.com/world/live/2026/aug/10/ukraine-drones-russia-oil-facilities-europe-heat-drought-latest-updates-news",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-10T10:53:05.000Z",
+      "image": "https://i.guim.co.uk/img/media/2cf40033b1b09e572bb9fb2c0776339e039a5b88/0_613_1214_970/master/1214.jpg?width=700&quality=85&auto=format&fit=max&s=59b9f235cb5f5b9402db05156993967b",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "3ba67f3d99d7",
       "title": "Zionism has warped the lexicon, so words are now convenient weapons",
@@ -68,38 +84,6 @@
       "weight": 2
     },
     {
-      "id": "434a42e42d19",
-      "title": "Ukraine launches drone attack on Russian oil refining facilities – Europe live",
-      "summary": "Volodymyr Zelenskyy says that strikes on such facilities were directly linked with putting more pressure on Moscow Meanwhile, Ukraine’s ⁠military ⁠has confirmed it ⁠hit ⁠the ​Taneko ‌oil ‌refinery in ‌Russia’s Tatarstan region overnight, ‌ adding that a ​fire…",
-      "url": "https://www.theguardian.com/world/live/2026/aug/10/ukraine-drones-russia-oil-facilities-europe-heat-drought-latest-updates-news",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-10T10:08:55.000Z",
-      "image": "https://i.guim.co.uk/img/media/2cf40033b1b09e572bb9fb2c0776339e039a5b88/0_613_1214_970/master/1214.jpg?width=700&quality=85&auto=format&fit=max&s=59b9f235cb5f5b9402db05156993967b",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "91024385e6ab",
-      "title": "At least 13 killed in Ukrainian strike on Russia's Tatarstan region, officials say",
-      "summary": "It is one of the deadliest Ukrainian drone attacks on Russia since the start of Moscow's war on Ukraine.",
-      "url": "https://www.bbc.co.uk/news/articles/cvgjvgv926po?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-10T10:03:58.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cc11/live/b8002050-9495-11f1-9ade-bb7c8a2b6bc0.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "fdbfe1ee4023",
       "title": "New head of Australian trade union movement named after Sally McManus steps down",
       "summary": "Melissa Donnelly, the national secretary of the Community and Public Sector Union, will replace the outgoing ACTU head Get our breaking news email , free app or daily news podcast Melissa Donnelly, the national secretary of the Community and Public Sector…",
@@ -113,22 +97,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "da900dc72885",
-      "title": "Harvey Nichols warns it could collapse without rescue deal, as bidders circle",
-      "summary": "Mike Ashley’s Frasers Group is frontrunner to buy Knightsbridge-headquartered department store chain Can Harvey Nichols find its way back to being Ab Fab again? Business live – latest updates Harvey Nichols has warned that it will not be able to survive…",
-      "url": "https://www.theguardian.com/business/2026/aug/10/harvey-nichols-rescue-deal-bidders-mike-ashley-frasers-group",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-10T09:45:26.000Z",
-      "image": "https://i.guim.co.uk/img/media/cc4ad1643be6551a712e46e5af8b1aec70cc7415/457_0_2646_2117/master/2646.jpg?width=700&quality=85&auto=format&fit=max&s=2f918019df7fb6223f55aa5fe3c28705",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -631,22 +599,6 @@
       "weight": 2
     },
     {
-      "id": "8ec4a5123421",
-      "title": "Board of Peace envoy says Israel not required to withdraw from Gaza",
-      "summary": "Board of Peace envoy says Israel not required to withdraw from Gaza Israel will not have to withdraw its forces from Gaza until Palestinian groups surrender their weapons under the Board of Peace’s plan, its senior envoy has said contradicting his earlier…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/board-peace-envoy-says-israel-not-required-withdraw-gaza",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-09T20:52:30.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "36c18cb29c5e",
       "title": "Iran vows to keep Strait of Hormuz closed until US meets demands",
       "summary": "Iran’s Revolutionary Guards said Sunday that the Strait of Hormuz would remain closed until the US meets Tehran’s demands, including an end to sanctions and compensation for war damage. The blockade of the crucial energy route has rattled markets and pushed…",
@@ -692,22 +644,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "4f18ac1671ed",
-      "title": "Abdul El-Sayed embraces Trump claim he represents ‘very different’ America",
-      "summary": "Michigan nominee, who spoke to Obama after primary win, vows to fight inequality as president ‘makes billions off you’ Abdul El-Sayed, the Democratic nominee for US Senate in Michigan, embraced Donald Trump’s suggestion that the two represent “VERY DIFFERENT”…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/09/abdul-el-sayed-michigan-senate-trump",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-09T17:22:17.000Z",
-      "image": "https://i.guim.co.uk/img/media/3c0a96b07e7327fd463e06429b1c05913941e765/850_0_4415_3533/master/4415.jpg?width=700&quality=85&auto=format&fit=max&s=839fa45aed4c9a136c9391d4b734cbeb",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -789,22 +725,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "ec320b99012a",
-      "title": "North Korea may deploy up to 50,000 troops to Russia, Zelensky claims",
-      "summary": "Ukrainian President Volodymyr Zelensky said Saturday that as many as 50,000 North Korean soldiers could be deployed to Russia, reflecting growing military cooperation between the two countries. He did not elaborate on his sources for this information, but…",
-      "url": "https://www.france24.com/en/europe/20260809-zelensky-claims-north-korea-may-deploy-50-000-troops-russia",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-09T14:58:11.000Z",
-      "image": "https://s.france24.com/media/display/33771678-93fe-11f1-8eb9-005056a90284/w:1024/p:16x9/000-98YT8CQ.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -2729,6 +2649,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "bbcb0836a134",
+      "title": "Ukrainian vegetable seller targeted in 'human safari' drone attack",
+      "summary": "A video shows a Russian drone pursuing a street vendor in the Kherson region before exploding.",
+      "url": "https://www.bbc.co.uk/news/videos/clye173d533o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/europe",
+      "sourceId": "bbc-europe",
+      "publishedAt": "2026-08-04T19:07:19.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6bb4/live/1636a630-9036-11f1-b2ab-0dd01740f9f6.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
       "weight": 2
     },
     {
