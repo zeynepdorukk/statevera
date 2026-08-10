@@ -32,7 +32,7 @@ export const site = {
     x: "",
     linkedin: "https://www.linkedin.com/in/zeynep-doruk/",
     rss: "/rss.xml",
-    email: "",
+    email: "zeynepdoruk07@gmail.com",
   },
 
   // Technical ------------------------------------------------
