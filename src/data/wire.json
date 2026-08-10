@@ -1,8 +1,41 @@
 {
-  "generatedAt": "2026-08-10T21:39:05.845Z",
+  "generatedAt": "2026-08-10T22:18:15.903Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "041284bea016",
+      "title": "Japan Inc.'s quarterly profit jumps 70% on weak yen and AI spending",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/business-trends/japan-inc.-s-quarterly-profit-jumps-70-on-weak-yen-and-ai-spending",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-10T22:18:08.341Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "d3779fc92fed",
+      "title": "Australia politics live: gambling lobby talking points ‘coming out the PM’s mouth’, Chaney says; RBA tipped to hold interest rates",
+      "summary": "Labor looks to negotiate with the Coalition to get several pieces of legislation through parliament. Follow today’s news live Get our breaking news email , free app or daily news podcast What happened to Tony Burke’s migration speech? We’re all still pretty…",
+      "url": "https://www.theguardian.com/australia-news/live/2026/aug/11/australia-politics-live-rba-interest-rates-question-time-anthony-albanese-angus-taylor-one-nation-pauline-hanson-ndis-gambling-ads-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-10T22:01:07.000Z",
+      "image": "https://i.guim.co.uk/img/media/5ea138a0a9b2f3954ca5581a4e655c902b58860e/714_279_5510_4409/master/5510.jpg?width=700&quality=85&auto=format&fit=max&s=36b5daf49229e38dd8f25fd9e7e36910",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "0dc99bcd8bfa",
       "title": "Turkey's parliament passes limited amnesty law for Kurdish PKK militants",
@@ -17,22 +50,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "d3779fc92fed",
-      "title": "Australia politics live: parliament returns as Labor seeks deals on NDIS, gambling ads and news bargaining reforms",
-      "summary": "Labor looks to negotiate with the Coalition to get several pieces of legislation through parliament. Follow today’s news live Get our breaking news email , free app or daily news podcast Government listening to ‘money and power’ on gambling says independent…",
-      "url": "https://www.theguardian.com/australia-news/live/2026/aug/11/australia-politics-live-rba-interest-rates-question-time-anthony-albanese-angus-taylor-one-nation-pauline-hanson-ndis-gambling-ads-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-10T21:19:46.000Z",
-      "image": "https://i.guim.co.uk/img/media/bcf063712f0da2dff69170e11683e7f70cdcdd44/815_871_5791_4633/master/5791.jpg?width=700&quality=85&auto=format&fit=max&s=f41d58e977977b1f2b7d70dc41a8e053",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -98,23 +115,6 @@
       "categoryConfidence": "source",
       "region": "Africa",
       "weight": 3
-    },
-    {
-      "id": "06a290ca6977",
-      "title": "Japan Inc's quarterly profit jumps 70% on weak yen and AI spending",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/business-trends/japan-inc-s-quarterly-profit-jumps-70-on-weak-yen-and-ai-spending",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-10T19:13:18.229Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "5830f3a18d0b",
@@ -246,8 +246,8 @@
     },
     {
       "id": "62ab943427f9",
-      "title": "Benjamin Netanyahu’s rejection of US deal for Gaza is risky move",
-      "summary": "Israeli prime minister’s unexpected comments blindsided IDF commanders and could alienate Trump, his main ally Benjamin Netanyahu’s public rejection of a US-backed deal for Gaza drew scepticism in Israel, amid reports he was personally hammering out details…",
+      "title": "Flip-flopping Netanyahu rejects Gaza plan but cannot placate all his allies",
+      "summary": "Israeli prime minister faces incompatible demands from his far-right government ministers and from Donald Trump Benjamin Netanyahu’s public rejection of a US-backed deal for Gaza drew scepticism in Israel, amid reports he was personally hammering out details…",
       "url": "https://www.theguardian.com/world/2026/aug/10/benjamin-netanyahu-rejection-us-deal-gaza-risky-gamble",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -255,8 +255,8 @@
       "publishedAt": "2026-08-10T17:27:54.000Z",
       "image": "https://i.guim.co.uk/img/media/07ad89ff90892a48b970c5fa6a92f4cffe3f882b/386_8_3595_2877/master/3595.jpg?width=700&quality=85&auto=format&fit=max&s=5ba451e39a9ee0d467ee72e474cf8771",
       "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
+      "category": "Politics",
+      "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
     },
@@ -423,22 +423,6 @@
       "weight": 2
     },
     {
-      "id": "b3f22d9b0633",
-      "title": "Oil prices, stocks surge as Hormuz closure drags on",
-      "summary": "US petrol prices dropped nine cents last week but could again surge if the strait closure continues, analysts warn.",
-      "url": "https://www.aljazeera.com/economy/2026/8/10/oil-prices-stocks-surge-as-hormuz-closure-drags-on?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-10T15:45:39.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "9178520fec89",
       "title": "When a few stocks become the market",
       "summary": "Stock market concentration is rising as a small group of companies increasingly drives major indexes. South Korea’s KOSPI shows how quickly strong returns can become a market vulnerability. The post When a few stocks become the market appeared first on…",
@@ -516,6 +500,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "457c7b8c1b81",
+      "title": "Netanyahu's rejection of Trump's 15-point Gaza plan unlikely to be final word",
+      "summary": "The Trump administration is said to be unbothered by the Israeli prime minister's rejection of the deal, viewing it as campaign rhetoric ahead of a general election.",
+      "url": "https://www.bbc.co.uk/news/articles/ce3q5282ep3o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-10T14:43:08.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1688/live/5a6f2b30-94c1-11f1-adb5-bd19050a74a5.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -663,22 +663,6 @@
       "weight": 2
     },
     {
-      "id": "61ffca9d3deb",
-      "title": "Russian forces in Syria will give up control of two strategic bases on the Mediterranean coast",
-      "summary": "After 18 month talks, Russian forces in Syria will give up control of two strategic bases on the Mediterranean coast, which will be used as joint Russia-Syrian training centers under a new agreement between the two countries.",
-      "url": "https://www.france24.com/en/video/20260810-russian-forces-in-syria-will-give-up-control-of-two-strategic-bases-on-the-mediterranean-coast",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-10T13:18:44.000Z",
-      "image": "https://s.france24.com/media/display/f3cad004-94bc-11f1-8de6-005056bf30b7/w:1024/p:16x9/capture-1122241506a79cdec85a193-85566542.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "9ff7bb8bddfd",
       "title": "Madagascar moves to reclaim colonial-era land in sovereignty push",
       "summary": "Madagascar’s High Constitutional Court has validated a law allowing the state to reclaim land still registered in the names of foreign settlers from the colonial era, reviving a long-running land dispute while putting sovereignty and access to property…",
@@ -709,22 +693,6 @@
       "categoryConfidence": "source",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "17de251eb5b2",
-      "title": "Will democratic socialist Francesca Hong shake up the establishment – or help Republicans win Wisconsin?",
-      "summary": "Hong, whose grassroots campaign has made her a frontrunner, aims for primary win after public skepticism from top Democrats and a last-minute shake-up As Francesca Hong surged ahead in the final weeks of the chaotic Democratic primary to be Wisconsin ’s next…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/10/francesca-hong-democratic-socialist-wisconsin-governor-race",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-10T13:00:44.000Z",
-      "image": "https://i.guim.co.uk/img/media/bcbdc44c090a82986bf89bafe108cf0ea941be49/0_486_3200_2560/master/3200.jpg?width=700&quality=85&auto=format&fit=max&s=a8119c289e025a308f34560f97aa7236",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "65bad73b3806",
