@@ -30,7 +30,7 @@ export const site = {
   // rather than publishing an address that 404s.
   socialLinks: {
     x: "",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/zeynep-doruk/",
     rss: "/rss.xml",
     email: "",
   },

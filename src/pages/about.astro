@@ -15,7 +15,6 @@ const organisation = {
   description: site.publicationDescription,
   founder: { "@type": "Person", "@id": `${absoluteUrl("/about/")}#author` },
   logo: absoluteUrl("/images/branding/logo-512.png"),
-  ...(profiles.length ? { sameAs: profiles } : {}),
 };
 
 // The pieces are signed by one person, so search engines are told who she is here
