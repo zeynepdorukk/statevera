@@ -1,8 +1,42 @@
 {
-  "generatedAt": "2026-08-10T19:13:26.276Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-10T20:01:10.797Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "6007df3bf5f1",
+      "title": "Gaza 'Board of Peace' official says plan is still operative",
+      "summary": "Gaza 'Board of Peace' official says plan is still operative US President Donald Trump's Gaza plan is still operative, and discussions with Israel are continuing, a \"Board of Peace\" official said on Monday after Prime Minister Benjamin Netanyahu rejected an…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/gaza-board-peace-official-says-plan-still-operative",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-10T19:55:49.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "7a562888a38e",
+      "title": "How to push back against Mali’s propagandists? Help factual creators go viral.",
+      "summary": "Mali’s information space is now dominated by livestreaming “videomen” pushing misinformation. The West needs to respond by funding fact-based creators. The post How to push back against Mali’s propagandists? Help factual creators go viral. appeared first on…",
+      "url": "https://www.atlanticcouncil.org/blogs/africasource/how-to-push-back-against-malis-propagandists-help-factual-creators-go-viral/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-10T19:43:12.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Africa",
+      "weight": 3
+    },
     {
       "id": "06a290ca6977",
       "title": "Japan Inc's quarterly profit jumps 70% on weak yen and AI spending",
@@ -85,22 +119,6 @@
       "weight": 2
     },
     {
-      "id": "46b2fc8dc1cb",
-      "title": "Russia bars only anti-war party 'Yabloko' from September parliamentary elections",
-      "summary": "Russia's Supreme Court on Monday barred the country's only anti-war party, Yabloko (Apple), from running in September's parliamentary elections. About a hundred protesters gathered outside the courthouse chanting, \"Shame! Shame!\" after the ruling was…",
-      "url": "https://www.france24.com/en/europe/20260810-russia-bars-only-anti-war-party-from-elections",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-10T17:49:13.000Z",
-      "image": "https://s.france24.com/media/display/cc04344e-94e3-11f1-ae29-005056a97e36/w:1024/p:16x9/ade7a1f5ee3866cf50e0bf6ccb218c5acfd06224.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "8a3b9b17e8ea",
       "title": "The Guardian view on the failed Gaza peace plan: Trump’s hollow claims are ignored in Jerusalem | Editorial",
       "summary": "Israel’s prime minister, Benjamin Netanyahu, has no interest in agreeing to a deal. For relief to come to Gaza, real US pressure must be exerted At the end of July, Donald Trump announced that a “monumental” US-backed deal had been struck on Gaza, securing…",
@@ -114,22 +132,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "79adb0860660",
-      "title": "Tensions in the Arctic: Greenland issues sharp rebuke to Trump-linked oil company",
-      "summary": "Greenland’s government issued a “strong warning” last week after a new Texas oil company linked to US President Donald Trump moved equipment intended for exploratory drilling ashore without the required approval. Nuuk’s authorities must now walk a tightrope…",
-      "url": "https://www.france24.com/en/europe/20260810-tensions-in-the-arctic-greenland-issues-sharp-rebuke-to-trump-linked-oil-company",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-10T17:47:25.000Z",
-      "image": "https://s.france24.com/media/display/42623fae-94d6-11f1-b3d4-005056bfb2b6/w:1024/p:16x9/000-994M3G3.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -359,10 +361,10 @@
       "weight": 3
     },
     {
-      "id": "85ab61ea8a09",
+      "id": "3c5e8492d50f",
       "title": "Austrian chancellor praises Türkiye's efforts to end Russia-Ukraine war, regional role",
       "summary": "Stocker highlights President Erdogan's personal efforts, says Türkiye's voice 'carries weight' in Middle East",
-      "url": "https://www.aa.com.tr/en/turkiye/austrian-chancellor-praises-turkiyes-efforts-to-end-russia-ukraine-war-regional-role/4023416",
+      "url": "https://www.aa.com.tr/en/politics/austrian-chancellor-praises-turkiyes-efforts-to-end-russia-ukraine-war-regional-role/4023416",
       "publisher": "Anadolu Agency",
       "publisherHome": "https://www.aa.com.tr/en",
       "sourceId": "anadolu-politics",
@@ -436,22 +438,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "164d2efe105a",
-      "title": "Ocasio-Cortez says she's freezing her eggs as she decides her next political moves",
-      "summary": "Rep. Alexandria Ocasio-Cortez says she is freezing her eggs as she decides her next political moves ahead of the 2028 presidential election campaign. “This is a choice that I am making to feel more in control of my life,” Ocasio-Cortez, 36, said on Instagram…",
-      "url": "https://www.france24.com/en/video/20260810-ocasio-cortez-says-she-s-freezing-her-eggs-as-she-decides-her-next-political-moves",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-10T14:37:15.000Z",
-      "image": "https://s.france24.com/media/display/10266b36-94be-11f1-a1bb-005056a97e36/w:1024/p:16x9/EN-20260810-132508-132713-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -535,22 +521,6 @@
       "weight": 2
     },
     {
-      "id": "2ef852b2410c",
-      "title": "Why Netanyahu’s ‘coup’ against Gaza plan risks endless war",
-      "summary": "The Israeli leader’s rejection of a US-led roadmap threatens to entrench a state of conflict, analysts say.",
-      "url": "https://www.aljazeera.com/news/2026/8/10/why-netanyahus-coup-against-gaza-plan-risks-endless-war?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-10T13:59:58.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "bd3cae4045ce",
       "title": "Turkish President Erdogan meets Austrian chancellor",
       "summary": "Multifaceted bilateral ties, steps to further develop existing cooperation to be discussed during Stocker's visit",
@@ -631,22 +601,6 @@
       "weight": 2
     },
     {
-      "id": "61ffca9d3deb",
-      "title": "Russian forces in Syria will give up control of two strategic bases on the Mediterranean coast",
-      "summary": "After 18 month talks, Russian forces in Syria will give up control of two strategic bases on the Mediterranean coast, which will be used as joint Russia-Syrian training centers under a new agreement between the two countries.",
-      "url": "https://www.france24.com/en/video/20260810-russian-forces-in-syria-will-give-up-control-of-two-strategic-bases-on-the-mediterranean-coast",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-10T13:18:44.000Z",
-      "image": "https://s.france24.com/media/display/f3cad004-94bc-11f1-8de6-005056bf30b7/w:1024/p:16x9/capture-1122241506a79cdec85a193-85566542.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "9ff7bb8bddfd",
       "title": "Madagascar moves to reclaim colonial-era land in sovereignty push",
       "summary": "Madagascar’s High Constitutional Court has validated a law allowing the state to reclaim land still registered in the names of foreign settlers from the colonial era, reviving a long-running land dispute while putting sovereignty and access to property…",
@@ -660,22 +614,6 @@
       "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "4c1764b189df",
-      "title": "Ukraine drone strike on Russian oil-refining city kills 12 people",
-      "summary": "A Ukrainian drone strike on the central Russian region of Tatarstan killed at least 12 people in one of the deadliest attacks carried out by Kyiv since the war began more than four years ago. The strikes are also directly impacting Russian's economy. Our…",
-      "url": "https://www.france24.com/en/video/20260810-ukraine-drone-strike-on-russian-oil-refining-city-kills-12-people",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-10T13:09:16.000Z",
-      "image": "https://s.france24.com/media/display/5e6dae20-94ba-11f1-91eb-005056bf30b7/w:1024/p:16x9/capture-20328942416a79c99706f398-83181920.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -789,22 +727,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "bfa7e669ab4b",
-      "title": "Alleged rebel leader killed in Colombia as president targets armed groups",
-      "summary": "The military operation against Hernando Forero Mosquera was carried out just days after Colombia's new president was sworn in.",
-      "url": "https://www.bbc.co.uk/news/articles/c5yrljp9x9eo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-10T12:23:21.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/29af/live/fe349030-949d-11f1-9ade-bb7c8a2b6bc0.png",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "2d406e5a721c",
@@ -1884,23 +1806,6 @@
       "weight": 3
     },
     {
-      "id": "56571f16a827",
-      "title": "Japan's inflation rate dips 0.1 point after CPI revision",
-      "summary": "",
-      "url": "https://asia.nikkei.com/economy/japan-s-inflation-rate-dips-0.1-point-after-cpi-revision",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-07T21:28:28.367Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "2df239a17146",
       "title": "Braw in New York Times on disrupting Russian sea routes to Crimea",
       "summary": "On July 15, Elisabeth Braw was quoted in a New York Times article on the small Russian vessels bringing supplies to Crimea and their likely contents. The post Braw in New York Times on disrupting Russian sea routes to Crimea appeared first on Atlantic Council…",
@@ -2109,22 +2014,6 @@
       "weight": 3
     },
     {
-      "id": "d9866fb08b6b",
-      "title": "Chhangani cited in Foreign Policy on e-CNY transaction volumes",
-      "summary": "Read the full article here The post Chhangani cited in Foreign Policy on e-CNY transaction volumes appeared first on Atlantic Council .",
-      "url": "https://www.atlanticcouncil.org/insight-impact/in-the-news/chhangani-cited-in-foreign-policy-on-e-cny-transaction-volumes/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-07T14:17:09.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 3
-    },
-    {
       "id": "1a40a2e30e19",
       "title": "Saudi foreign minister says defense pact with Türkiye, Pakistan reflects deep strategic ties",
       "summary": "Defense minister says agreement establishes long-term partnership to enhance deterrence, coordination and integration",
@@ -2315,6 +2204,22 @@
       "categoryConfidence": "source",
       "region": "Middle East",
       "weight": 3
+    },
+    {
+      "id": "ca547e548704",
+      "title": "Trump imposes 15% tariff on key chip material to counter China",
+      "summary": "The move aims to protect US firms as they face increasing competition from China's chip industry.",
+      "url": "https://www.bbc.co.uk/news/articles/cdrvn686dljo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/business",
+      "sourceId": "bbc-business",
+      "publishedAt": "2026-08-07T01:03:35.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/60dd/live/9a103bd0-91fb-11f1-952a-e58ebd1358f8.jpg",
+      "imageWidth": 240,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
     },
     {
       "id": "3ab3d5e995b6",
@@ -3016,22 +2921,6 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b913/live/403e8040-8e03-11f1-8f5c-bb464f752049.jpg",
       "imageWidth": 240,
       "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "9e43305a43ec",
-      "title": "Influx of migrants to Ceuta gives Spain diplomatic headache",
-      "summary": "The incident has sparked concern in Europe while Spain also faces a challenge in balancing its relations with neighbouring Morocco and Algeria.",
-      "url": "https://www.bbc.co.uk/news/articles/cr7k49p7enjo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/europe",
-      "sourceId": "bbc-europe",
-      "publishedAt": "2026-07-31T19:17:09.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ec22/live/08351c40-8d04-11f1-9a29-416a24547568.jpg",
-      "imageWidth": 240,
-      "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Europe",
       "weight": 2
