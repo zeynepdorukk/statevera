@@ -172,7 +172,12 @@ export default defineConfig({
   trailingSlash: "ignore",
   redirects: legacyRedirects,
   markdown: { processor: unified({ rehypePlugins: [rehypeBaseImages] }) },
-  integrations: [mdx(), sitemap({ filter: (page) => !page.includes("/editor") })],
+  // The wire and the live page carry other newsrooms' headlines, not this
+  // publication's writing, so they stay out of the index and out of the sitemap.
+  integrations: [
+    mdx(),
+    sitemap({ filter: (page) => !/\/(editor|wire|live)\//.test(page) }),
+  ],
   vite: {
     plugins: [tailwindcss(), apiDevPlugin],
   },

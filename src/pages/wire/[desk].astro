@@ -32,6 +32,7 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
   description={desk.description}
   path={`/wire/${desk.slug}`}
   tone="wire"
+  noindex
 >
   <div class="shell pt-0" data-tone="wire">
     <h1 class="sr-only">{desk.name} — {desk.tagline}</h1>
