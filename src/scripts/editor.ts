@@ -1275,6 +1275,100 @@ function compose(args: ComposeArgs) {
 
   const touched = () => { ensureTrailingParagraph(); recount(); stash(); };
 
+  /**
+   * Insert a multi-paragraph paste as sibling blocks. `execCommand("insertHTML")`
+   * is unsafe inside contenteditable: when the caret is inside a <p>, browsers
+   * can place the pasted <p> elements inside that paragraph. The resulting DOM
+   * looks acceptable in the desk but loses paragraph boundaries when it is
+   * serialised back to Markdown.
+   */
+  const pasteBlocks = (text: string): boolean => {
+    const selection = window.getSelection();
+    if (!selection?.rangeCount) return false;
+    const range = selection.getRangeAt(0);
+    const block = currentBlock();
+    if (!block || !bodyEl.contains(block) || !block.contains(range.startContainer) || !block.contains(range.endContainer)) {
+      return false;
+    }
+    if (!["P", "H2", "H3"].includes(block.tagName)) return false;
+
+    const beforeRange = document.createRange();
+    beforeRange.selectNodeContents(block);
+    beforeRange.setEnd(range.startContainer, range.startOffset);
+    const before = beforeRange.cloneContents();
+
+    const afterRange = document.createRange();
+    afterRange.selectNodeContents(block);
+    afterRange.setStart(range.endContainer, range.endOffset);
+    const after = afterRange.cloneContents();
+
+    const parsed = document.createElement("div");
+    parsed.innerHTML = markdownToHtml(text);
+    const nodes = [...parsed.childNodes].filter((node) =>
+      node.nodeType !== Node.TEXT_NODE || Boolean(node.textContent?.trim())
+    );
+    if (!nodes.length) return false;
+
+    const beforeHasContent = Boolean(before.textContent?.trim()) ||
+      [...before.childNodes].some((node) => node.nodeType === Node.ELEMENT_NODE && (node as HTMLElement).tagName !== "BR");
+    block.replaceChildren(...(beforeHasContent ? Array.from(before.childNodes) : []));
+
+    const isBlock = (node: Node): node is HTMLElement =>
+      node.nodeType === Node.ELEMENT_NODE &&
+      ["P", "H2", "H3", "BLOCKQUOTE", "UL", "OL", "HR", "FIGURE", "ASIDE"].includes(
+        (node as HTMLElement).tagName
+      );
+    const isInline = (node: Node): boolean => !isBlock(node);
+    const first = nodes.shift()!;
+    let anchor: HTMLElement = block;
+    if (!beforeHasContent && isBlock(first) && (first as HTMLElement).tagName !== "P") {
+      block.replaceWith(first);
+      anchor = first;
+    } else if (beforeHasContent || !isBlock(first)) {
+      const target = beforeHasContent
+        ? document.createElement("p")
+        : block;
+      if (beforeHasContent) {
+        block.after(target);
+        anchor = target;
+      }
+      if (first.nodeType === Node.ELEMENT_NODE && (first as HTMLElement).tagName === "P") {
+        target.append(...Array.from(first.childNodes));
+      } else if (isInline(first)) {
+        target.append(first);
+      } else {
+        target.append(first.textContent ?? "");
+      }
+    } else if (first.nodeType === Node.ELEMENT_NODE && (first as HTMLElement).tagName === "P") {
+      block.append(...Array.from(first.childNodes));
+    } else {
+      block.append(first);
+    }
+
+    for (const node of nodes) {
+      if (isBlock(node)) {
+        anchor.after(node);
+        anchor = node;
+      } else {
+        anchor.append(node);
+      }
+    }
+
+    if (after.childNodes.length) {
+      if (["P", "H2", "H3"].includes(anchor.tagName)) {
+        anchor.append(...Array.from(after.childNodes));
+      } else {
+        const tail = document.createElement("p");
+        tail.append(...Array.from(after.childNodes));
+        anchor.after(tail);
+        anchor = tail;
+      }
+    }
+
+    placeCaret(anchor, true);
+    return true;
+  };
+
   // ---------- paste as plain text ----------
   for (const surface of [titleEl, standEl, bodyEl]) {
     surface.addEventListener("paste", (event) => {
@@ -1282,8 +1376,9 @@ function compose(args: ComposeArgs) {
       const text = event.clipboardData?.getData("text/plain") ?? "";
       if (!text) return;
       if (surface === bodyEl && /\n\s*\n/.test(text)) {
-        // Multi-paragraph paste rebuilds blocks rather than one long line.
-        document.execCommand("insertHTML", false, markdownToHtml(text));
+        // Multi-paragraph paste rebuilds sibling blocks rather than nesting
+        // HTML paragraphs at the caret.
+        if (!pasteBlocks(text)) document.execCommand("insertText", false, text);
       } else {
         document.execCommand("insertText", false, text.replace(/\s+/g, " "));
       }
@@ -1345,7 +1440,10 @@ function compose(args: ComposeArgs) {
 
   const replaceBlock = (block: HTMLElement, tag: string, keepText = true) => {
     const next = document.createElement(tag);
-    if (keepText) next.innerHTML = block.innerHTML || "<br>";
+    const source = block.tagName === "BLOCKQUOTE"
+      ? block.querySelector(":scope > p")?.innerHTML ?? block.innerHTML
+      : block.innerHTML;
+    if (keepText) next.innerHTML = source || "<br>";
     else next.innerHTML = "<br>";
     block.replaceWith(next);
     placeCaret(next, true);
