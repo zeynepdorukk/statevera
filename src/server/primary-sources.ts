@@ -2,6 +2,8 @@ import { searchPrimarySources } from "../primary-sources/search";
 import { PRIMARY_SOURCE_TYPES, type PrimarySourceEnv, type PrimarySourceType } from "../primary-sources/types";
 
 const ALLOWED_ORIGINS = new Set([
+  "https://statevera.org",
+  "https://www.statevera.org",
   "https://zeynepdorukk.github.io",
   "http://localhost:4321",
   "http://127.0.0.1:4321",

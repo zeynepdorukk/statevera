@@ -7,9 +7,9 @@ import { unified } from "@astrojs/markdown-remark";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
 
-// GitHub Pages serves the repository under /statevera/. The local dev server
-// serves from the root, so links and assets follow the runtime.
-const BASE = process.env.NODE_ENV === "development" ? "" : "/statevera";
+// statevera.org serves the site from its root, in production as in development.
+// Kept as a constant because the helpers below still ask where the root is.
+const BASE = "";
 
 /**
  * Reads one key out of the project's .env.
@@ -164,7 +164,7 @@ const legacyRedirects = Object.fromEntries(
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://zeynepdorukk.github.io",
+  site: "https://statevera.org",
   base: `${BASE}/`,
   output: "static",
   trailingSlash: "ignore",

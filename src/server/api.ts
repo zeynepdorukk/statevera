@@ -53,10 +53,15 @@ export interface ApiEnv extends PrimarySourceEnv {
 
 /** Who may call this API from a browser. */
 const ALLOWED_ORIGINS = new Set([
+  "https://statevera.org",
+  "https://www.statevera.org",
   "https://zeynepdorukk.github.io",
   "http://localhost:4321",
   "http://127.0.0.1:4321",
 ]);
+
+/** Traffic from these is the site's own, not a referral worth recording. */
+const SELF_HOSTS = new Set(["statevera.org", "zeynepdorukk.github.io", "localhost"]);
 
 const VIEW_SLUG = /^[a-z0-9][a-z0-9-]{0,79}$/;
 const VIEW_DEVICE = /^[A-Za-z0-9_-]{16,160}$/;
@@ -77,7 +82,7 @@ function referringHost(raw: string): string {
   if (!raw) return "";
   try {
     const host = new URL(raw).hostname.replace(/^www\./, "").toLowerCase();
-    return host === "zeynepdorukk.github.io" || host === "localhost" ? "" : host.slice(0, 80);
+    return SELF_HOSTS.has(host) ? "" : host.slice(0, 80);
   } catch {
     return "";
   }

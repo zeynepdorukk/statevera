@@ -36,7 +36,7 @@ export const site = {
   },
 
   // Technical ------------------------------------------------
-  siteUrl: "https://zeynepdorukk.github.io/statevera",
+  siteUrl: "https://statevera.org",
   /**
    * The small API behind primary-source search and read counts. It is a public
    * JSON endpoint, not a secret, so the deployed Worker is the default and
