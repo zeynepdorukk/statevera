@@ -158,8 +158,10 @@ const legacy = {
   "/explainers": "/journal",
 };;
 
+// Targets carry the trailing slash the pages are served at, so an old address
+// costs one redirect instead of two.
 const legacyRedirects = Object.fromEntries(
-  Object.entries(legacy).map(([from, to]) => [from, `${BASE}${to}`])
+  Object.entries(legacy).map(([from, to]) => [from, `${BASE}${to}/`])
 );
 
 // https://astro.build/config

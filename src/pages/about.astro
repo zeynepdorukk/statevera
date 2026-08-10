@@ -5,19 +5,41 @@ import { absoluteUrl, root } from "../utils/collection";
 
 const profiles = [site.socialLinks.x, site.socialLinks.linkedin].filter(Boolean);
 
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: site.publicationName,
-    url: site.siteUrl,
-    foundingDate: site.founded,
-    description: site.publicationDescription,
-    founder: { "@type": "Person", name: site.authorName },
-    logo: absoluteUrl("/images/branding/logo-mark-light.svg"),
-    ...(profiles.length ? { sameAs: profiles } : {}),
-  },
-];
+const organisation = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${site.siteUrl}/#organisation`,
+  name: site.publicationName,
+  url: site.siteUrl,
+  foundingDate: site.founded,
+  description: site.publicationDescription,
+  founder: { "@type": "Person", "@id": `${absoluteUrl("/about/")}#author` },
+  logo: absoluteUrl("/images/branding/logo-512.png"),
+  ...(profiles.length ? { sameAs: profiles } : {}),
+};
+
+// The pieces are signed by one person, so search engines are told who she is here
+// and every article points its author at this same identifier.
+const author = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${absoluteUrl("/about/")}#author`,
+  name: site.authorName,
+  url: absoluteUrl("/about/"),
+  jobTitle: site.authorRole,
+  description: site.authorBio,
+  knowsAbout: [
+    "Geopolitics",
+    "International relations",
+    "Diplomacy",
+    "Political economy",
+    "International security",
+  ],
+  worksFor: { "@id": `${site.siteUrl}/#organisation` },
+  ...(profiles.length ? { sameAs: profiles } : {}),
+};
+
+const jsonLd = [organisation, author];
 ---
 
 <BaseLayout

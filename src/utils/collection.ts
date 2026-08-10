@@ -17,7 +17,12 @@ const IS_DEV = import.meta.env.DEV;
 // ------------------------------------------------------------
 
 /**
- * Prefix a site-absolute path with the deployment base path.
+ * Prefix a site-absolute path with the deployment base path, and give pages the
+ * trailing slash they are actually served at.
+ *
+ * Without the slash every internal link costs a 301 (/about -> /about/), which is
+ * crawl budget spent on nothing. A last segment carrying an extension is a file,
+ * not a page, so it is left alone.
  *
  * Idempotent on purpose: callers pass around values that are sometimes already
  * prefixed (an article's href, a hero image path), and prefixing twice produced
@@ -26,9 +31,17 @@ const IS_DEV = import.meta.env.DEV;
 export const root = (p: string): string => {
   if (p.startsWith("http")) return p;
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-  if (!base) return p;
-  return p === base || p.startsWith(`${base}/`) ? p : base + p;
+  const based = !base || p === base || p.startsWith(`${base}/`) ? p : base + p;
+  return withTrailingSlash(based);
 };
+
+/** Pages end in a slash; files, fragments and queries are left as they are. */
+function withTrailingSlash(p: string): string {
+  if (!p.startsWith("/") || p.endsWith("/")) return p;
+  if (/[#?]/.test(p)) return p;
+  const last = p.slice(p.lastIndexOf("/") + 1);
+  return last.includes(".") ? p : `${p}/`;
+}
 
 /** Strip the deployment base path back off, giving the publication-relative path. */
 export const unroot = (p: string): string => {

@@ -142,9 +142,12 @@ for (const dir of ["src/content/articles"]) {
 // public. This walks dist/ (when it exists) looking for credential shapes.
 // It reports the file and the kind of token only — never the value.
 
+// \b counts a hyphen as a word boundary, so a headline URL such as
+// .../samsung-sk-hynix-supply-deal reads as an OpenAI key. A real key is never
+// glued to a preceding word character, so the lookbehind is what \b should have been.
 const SECRET_PATTERNS = [
-  [/\bsk-[A-Za-z0-9_-]{20,}/g, "OpenAI key"],
-  [/\bsk-ant-[A-Za-z0-9_-]{20,}/g, "Anthropic key"],
+  [/(?<![A-Za-z0-9_-])sk-[A-Za-z0-9_-]{20,}/g, "OpenAI key"],
+  [/(?<![A-Za-z0-9_-])sk-ant-[A-Za-z0-9_-]{20,}/g, "Anthropic key"],
   [/\bgithub_pat_[A-Za-z0-9_]{20,}/g, "GitHub fine-grained token"],
   [/\bghp_[A-Za-z0-9]{30,}/g, "GitHub classic token"],
   [/\bAIza[A-Za-z0-9_-]{30,}/g, "Google API key"],

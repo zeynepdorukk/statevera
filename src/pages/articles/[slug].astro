@@ -49,21 +49,39 @@ const jsonLd = [
     headline: data.title,
     description: data.description,
     datePublished: data.date.toISOString(),
-    ...(data.updated ? { dateModified: data.updated.toISOString() } : {}),
-    author: { "@type": "Person", name: data.author, url: absoluteUrl("/about") },
+    // Google reads a missing dateModified as "never checked since publication",
+    // so an unrevised piece says its publication date twice rather than nothing.
+    dateModified: (data.updated ?? data.date).toISOString(),
+    author: {
+      "@type": "Person",
+      "@id": `${absoluteUrl("/about/")}#author`,
+      name: data.author,
+      url: absoluteUrl("/about/"),
+    },
     publisher: {
       "@type": "Organization",
       name: site.publicationName,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/images/branding/logo-mark-light.svg"),
+        url: absoluteUrl("/images/branding/logo-512.png"),
       },
     },
     image: [absoluteUrl(heroImageOf(data.heroImage))],
     articleSection: data.category,
     keywords: [...data.tags, data.region, ...data.country].join(", "),
+    inLanguage: site.language,
+    wordCount: (article.body ?? "").trim().split(/\s+/).filter(Boolean).length,
     isAccessibleForFree: true,
     mainEntityOfPage: canonical,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "Journal", item: absoluteUrl(root("/journal")) },
+      { "@type": "ListItem", position: 3, name: data.title, item: canonical },
+    ],
   },
 ];
 ---
