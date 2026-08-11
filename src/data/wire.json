@@ -1,19 +1,17 @@
 {
-  "generatedAt": "2026-08-11T22:01:53.225Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-11T22:59:13.059Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
     {
       "id": "b6ca34f0d7b8",
       "title": "Australia politics live: Coalition to heavily cut net migration and shred 96% of house construction code; CBA posts bumper $11bn profit",
-      "summary": "Policy comes as debate continues over causes of and solutions to housing issues. Follow today’s news live Get our breaking news email , free app or daily news podcast ‘Some people call it putting on a jumper’: Should energy efficiency standards in housing be…",
+      "summary": "Policy comes as debate continues over causes of and solutions to housing issues. Follow today’s news live Get our breaking news email , free app or daily news podcast Education minister says funding agreement with Victoria ‘very close’ The education minister,…",
       "url": "https://www.theguardian.com/australia-news/live/2026/aug/12/australia-politics-live-question-time-anthony-albanese-angus-taylor-coalition-andrew-bragg-housing-construction-immigration-one-nation-pauline-hanson-gambling-melon-gift-japan-ndis-ntwnfb",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-11T22:00:31.000Z",
+      "publishedAt": "2026-08-11T22:43:08.000Z",
       "image": "https://i.guim.co.uk/img/media/85f15695a556ae3f012ac83591fe6ed73e6d5e01/0_0_5794_4638/master/5794.jpg?width=700&quality=85&auto=format&fit=max&s=fe90495f7d2373a2e07097f140695313",
       "imageWidth": 700,
       "category": "Politics",
@@ -231,6 +229,22 @@
       "weight": 2
     },
     {
+      "id": "bcd7774da244",
+      "title": "Fast and fearless: Baltic defence startups innovate to counter Russian threat",
+      "summary": "As the nature of Russia’s war in Ukraine evolves, Baltic startups are seeking new ways to respond to the hybrid threat from Russia, hoping rapid innovation can have a deterrent effect on Moscow.",
+      "url": "https://www.france24.com/en/europe/20260811-fast-and-fearless-baltic-defence-startups-innovate-to-counter-russian-threat",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-11T17:48:28.000Z",
+      "image": "https://s.france24.com/media/display/69862240-95a2-11f1-9580-005056a97e36/w:1024/p:16x9/000-72KV7XN.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "6fbff40d98f7",
       "title": "Hiroshi Okuda, Toyota president who led global expansion, dead at 93",
       "summary": "",
@@ -278,22 +292,6 @@
       "categoryConfidence": "source",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "ab563eb385f2",
-      "title": "Russia using North Korean missiles to strike Ukraine, Zelensky says",
-      "summary": "Ukraine's president says strikes in Zaporizhzhia - which killed seven people - involved ballistic missiles from Russia's ally.",
-      "url": "https://www.bbc.co.uk/news/articles/c151dpzwnvxo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-11T16:19:44.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7862/live/6d64a760-953e-11f1-ba5b-b1a600ddfa74.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
     },
     {
       "id": "30b75d64ef4f",
@@ -504,22 +502,6 @@
       "weight": 2
     },
     {
-      "id": "284c919865af",
-      "title": "Syria and Saudi Arabia condemn Colombia's recognition of Israeli sovereignty over Golan Heights",
-      "summary": "Syria and Saudi Arabia condemn Colombia's recognition of Israeli sovereignty over Golan Heights The Syrian foreign ministry said on Tuesday that it \"categorically rejects and condemns\" Colombia's recognition of Israeli sovereignty over the Golan Heights and…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/syria-and-saudi-arabia-condemn-colombias-recognition-israeli-sovereignty",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-11T13:52:36.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "11fbd869a797",
       "title": "Key issues in Zambia's 2026 general election",
       "summary": "Economic recovery, youth turnout, women's representation and judicial independence are among the issues shaping Zambia's vote on Thursday.",
@@ -552,6 +534,22 @@
       "weight": 3
     },
     {
+      "id": "16e9f071dbbf",
+      "title": "Civilian casualties climb as Russia and Ukraine exchange fresh strikes",
+      "summary": "Russia and Ukraine traded fresh strikes overnight, with Moscow targeting Kyiv, Zaporizhzhia and Dnipropetrovsk. Ukraine retaliated with a drone attack on Russia’s Voronezh region. Falling debris set fire to a Wildberries warehouse. Ukraine’s military said it…",
+      "url": "https://www.france24.com/en/video/20260811-civilian-casualties-climb-as-russia-and-ukraine-exchange-fresh-strikes",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-11T13:03:09.000Z",
+      "image": "https://s.france24.com/media/display/fb8e3632-957f-11f1-84f9-005056bf30b7/w:1024/p:16x9/Sequence-12-00-00-05-03-Still001.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "8e221ac7c7f3",
       "title": "Symbolic Concessions, No Implementation: Myanmar’s Promises of Rohingya Repatriation",
       "summary": "Myanmar’s latest pledge to repatriate 300,000 Rohingya refugees cannot be viewed as a credible commitment. It’s yet another iteration of a well-established diplomatic pattern.",
@@ -581,6 +579,22 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "6ffd128a3ade",
+      "title": "Syria condemns Colombia’s recognition of Israeli sovereignty over occupied Golan Heights",
+      "summary": "Damascus says move violates international law, UN Charter and Security Council resolutions",
+      "url": "https://www.aa.com.tr/en/middle-east/syria-condemns-colombia-s-recognition-of-israeli-sovereignty-over-occupied-golan-heights/4024226",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-11T12:30:59.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -777,6 +791,22 @@
       "weight": 2
     },
     {
+      "id": "08c5a86a08dc",
+      "title": "Turkey MPs back law on reintegrating Kurdish PKK militants",
+      "summary": "Turkish lawmakers on Monday (August 10) voted through a bill offering limited amnesty for Kurdish PKK militants, a key step in the peace process that seeks to end decades of deadly violence.",
+      "url": "https://www.france24.com/en/turkey-mps-back-law-on-reintegrating-kurdish-pkk-militants",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-11T10:18:08.000Z",
+      "image": "https://s.france24.com/media/display/c7238374-956c-11f1-8167-005056bf30b7/w:1024/p:16x9/EN-20260811-083624-083808-CS.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Turkey",
+      "weight": 2
+    },
+    {
       "id": "9bea0a92fd04",
       "title": "Minnesota primaries could mark change of path for Democrats and Republicans",
       "summary": "From progressive and moderate to election deniers, state sees wide spectrum of candidates in test of direction for both parties Minnesota voters on both sides of the aisle are weighing the direction of their parties – and their chances of winning over the…",
@@ -786,6 +816,22 @@
       "sourceId": "guardian-us",
       "publishedAt": "2026-08-11T10:00:58.000Z",
       "image": "https://i.guim.co.uk/img/media/1ad8ba008d874d16ab5b8e1361fd3dd235eca1f4/494_0_4979_3984/master/4979.jpg?width=700&quality=85&auto=format&fit=max&s=e2d9244b7ea84507a142fe7fdc3fee00",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "028c31d2a4c6",
+      "title": "‘Fiercely independent’ South Carolina votes on Lindsey Graham’s Senate successor",
+      "summary": "Republicans, including Graham’s sister, Darline, expedite campaigns to replace late senator in special primary race US politics live – latest updates In the race to replace the late US senator Lindsey Graham, 10 candidates have been barnstorming South…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/11/south-carolina-special-primary-election-lindsey-graham-senate-seat",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-11T10:00:58.000Z",
+      "image": "https://i.guim.co.uk/img/media/ecb2fd7d8643da44a89a07d3646d14474d201aac/0_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=9ba9686304123ce3bbb25c0031076565",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
@@ -1096,22 +1142,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "52acebdf5046",
-      "title": "Turkey MPs back historic law on reintegrating PKK militants",
-      "summary": "Turkey's parliament has taken a major step toward ending four decades of conflict with the PKK. The new law sets out how some militants can return to civilian life, but leaves Abdullah Ocalan's future unresolved.",
-      "url": "https://www.dw.com/en/turkey-mps-back-historic-law-on-reintegrating-pkk-militants/a-78313397?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-10T22:22:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Turkey",
       "weight": 2
     },
     {
