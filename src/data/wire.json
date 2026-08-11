@@ -1,10 +1,40 @@
 {
-  "generatedAt": "2026-08-11T19:43:12.565Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-11T20:23:36.963Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
+    {
+      "id": "7c092bf88f6a",
+      "title": "US military fires on cargo vessel it said sought to break Iran blockade",
+      "summary": "CENTCOM says helicopter fired at engine room of Panama-flagged Vela Nova as US-Iran diplomacy remains stalled.",
+      "url": "https://www.aljazeera.com/news/2026/8/11/us-military-fires-on-cargo-vessel-it-said-sought-to-break-iran-blockade?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-11T19:58:12.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "935156be073b",
+      "title": "Libya oil company says blazes contained after drone attacks on complex",
+      "summary": "A major gasoline reservoir in Libya's Zawiya, west of Tripoli, caught fire and collapsed on Monday after what authorities said was an attack by unknown perpetrators.",
+      "url": "http://www.africanews.com/2026/08/11/fire-breaks-out-after-attack-on-major-libya-gasoline-tank/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-11T19:36:59.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/87/07/62/640x360_cmsv2_202a2577-7d5b-5002-9c24-5093eeee9345-9870762.jpg?1786464371",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
     {
       "id": "24e94659b6cb",
       "title": "Houthis reportedly kill six in first deadly attack since start of Iran war",
@@ -19,22 +49,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "d52b88ac38d2",
-      "title": "Officials monitoring polling sites in Minnesota’s two largest counties, says Trump’s justice department – live",
-      "summary": "Approximately 20 staff sent to polling sites in Hennepin and Ramsey counties during Minnesota’s primary elections Sign up to the US Breaking News email Pete Hegseth ’s appointments to a key Pentagon advisory body include two men with ties to the venture…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/11/donald-trump-democrats-primaries-wisconsin-minnesota-south-carolina-vaccines-max-miller-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-11T19:17:28.000Z",
-      "image": "https://i.guim.co.uk/img/media/8b238551217a05be33f18d4cf7eb6773da5fae8a/366_0_4500_3600/master/4500.jpg?width=700&quality=85&auto=format&fit=max&s=a47ecec39194c67e66cc75366adc0deb",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -118,6 +132,22 @@
       "weight": 2
     },
     {
+      "id": "bcd7774da244",
+      "title": "Fast and fearless: Baltic defence startups innovate to counter Russian threat",
+      "summary": "As the nature of Russia’s war in Ukraine evolves, Baltic startups are seeking new ways to respond to the hybrid threat from Russia, hoping rapid innovation can have a deterrent effect on Moscow.",
+      "url": "https://www.france24.com/en/europe/20260811-fast-and-fearless-baltic-defence-startups-innovate-to-counter-russian-threat",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-11T17:48:28.000Z",
+      "image": "https://s.france24.com/media/display/69862240-95a2-11f1-9580-005056a97e36/w:1024/p:16x9/000-72KV7XN.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "6fbff40d98f7",
       "title": "Hiroshi Okuda, Toyota president who led global expansion, dead at 93",
       "summary": "",
@@ -165,22 +195,6 @@
       "categoryConfidence": "source",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "ab563eb385f2",
-      "title": "Russia using North Korean missiles to strike Ukraine, Zelensky says",
-      "summary": "Ukraine's president says strikes in Zaporizhzhia - which killed seven people - involved ballistic missiles from Russia's ally.",
-      "url": "https://www.bbc.co.uk/news/articles/c151dpzwnvxo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-11T16:19:44.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7862/live/6d64a760-953e-11f1-ba5b-b1a600ddfa74.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
     },
     {
       "id": "30b75d64ef4f",
@@ -407,22 +421,6 @@
       "weight": 2
     },
     {
-      "id": "768c906c8501",
-      "title": "What are Saudi Arabia, Turkiye and Pakistan’s joint military capabilities?",
-      "summary": "The Mecca defence pact combines a top oil exporter, NATO's second-largest army and the only Muslim nuclear arsenal.",
-      "url": "https://www.aljazeera.com/news/2026/8/11/what-are-saudi-arabia-turkiye-and-pakistans-joint-military-capabilities?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-11T13:47:50.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "11fbd869a797",
       "title": "Key issues in Zambia's 2026 general election",
       "summary": "Economic recovery, youth turnout, women's representation and judicial independence are among the issues shaping Zambia's vote on Thursday.",
@@ -468,6 +466,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "16e9f071dbbf",
+      "title": "Civilian casualties climb as Russia and Ukraine exchange fresh strikes",
+      "summary": "Russia and Ukraine traded fresh strikes overnight, with Moscow targeting Kyiv, Zaporizhzhia and Dnipropetrovsk. Ukraine retaliated with a drone attack on Russia’s Voronezh region. Falling debris set fire to a Wildberries warehouse. Ukraine’s military said it…",
+      "url": "https://www.france24.com/en/video/20260811-civilian-casualties-climb-as-russia-and-ukraine-exchange-fresh-strikes",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-11T13:03:09.000Z",
+      "image": "https://s.france24.com/media/display/fb8e3632-957f-11f1-84f9-005056bf30b7/w:1024/p:16x9/Sequence-12-00-00-05-03-Still001.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -632,6 +646,22 @@
       "weight": 2
     },
     {
+      "id": "08c5a86a08dc",
+      "title": "Turkey MPs back law on reintegrating Kurdish PKK militants",
+      "summary": "Turkish lawmakers on Monday (August 10) voted through a bill offering limited amnesty for Kurdish PKK militants, a key step in the peace process that seeks to end decades of deadly violence.",
+      "url": "https://www.france24.com/en/turkey-mps-back-law-on-reintegrating-kurdish-pkk-militants",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-11T10:18:08.000Z",
+      "image": "https://s.france24.com/media/display/c7238374-956c-11f1-8167-005056bf30b7/w:1024/p:16x9/EN-20260811-083624-083808-CS.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Turkey",
+      "weight": 2
+    },
+    {
       "id": "9bea0a92fd04",
       "title": "Minnesota primaries could mark change of path for Democrats and Republicans",
       "summary": "From progressive and moderate to election deniers, state sees wide spectrum of candidates in test of direction for both parties Minnesota voters on both sides of the aisle are weighing the direction of their parties – and their chances of winning over the…",
@@ -650,7 +680,7 @@
     {
       "id": "028c31d2a4c6",
       "title": "‘Fiercely independent’ South Carolina votes on Lindsey Graham’s Senate successor",
-      "summary": "Republicans, including Graham’s sister Darline, expedite campaigns to replace late senator in special primary race In the race to replace the late US senator Lindsey Graham, 10 candidates have been barnstorming South Carolina diners, church halls and…",
+      "summary": "Republicans, including Graham’s sister, Darline, expedite campaigns to replace late senator in special primary race US politics live – latest updates In the race to replace the late US senator Lindsey Graham, 10 candidates have been barnstorming South…",
       "url": "https://www.theguardian.com/us-news/2026/aug/11/south-carolina-special-primary-election-lindsey-graham-senate-seat",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/us-news",
@@ -983,22 +1013,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "52acebdf5046",
-      "title": "Turkey MPs back historic law on reintegrating PKK militants",
-      "summary": "Turkey's parliament has taken a major step toward ending four decades of conflict with the PKK. The new law sets out how some militants can return to civilian life, but leaves Abdullah Ocalan's future unresolved.",
-      "url": "https://www.dw.com/en/turkey-mps-back-historic-law-on-reintegrating-pkk-militants/a-78313397?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-10T22:22:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Turkey",
       "weight": 2
     },
     {
@@ -2606,22 +2620,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "e4ebc8ed942e",
-      "title": "EasyJet agrees to £5.7bn takeover by US firm",
-      "summary": "The no-frills carrier agrees to be bought by US firm Apollo after a rival suitor drops out.",
-      "url": "https://www.bbc.co.uk/news/articles/cjejzjpy98wo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/business",
-      "sourceId": "bbc-business",
-      "publishedAt": "2026-08-06T16:35:32.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4ef0/live/b3519660-91b6-11f1-a7ab-8b30adf0800a.jpg",
-      "imageWidth": 240,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
     },
     {
       "id": "ba83ebaebc44",
