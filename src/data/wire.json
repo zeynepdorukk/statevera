@@ -1,24 +1,54 @@
 {
-  "generatedAt": "2026-08-11T04:16:47.980Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-11T05:34:38.262Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
     {
       "id": "d3779fc92fed",
-      "title": "Australia news live: RBA interest rates decision due today; Taylor mounts parliamentary attack on Labor’s ‘wicked’ widow tax",
+      "title": "Australia news live: RBA holds cash rate at 4.35%; PM defends Japan relationship after Coalition question over ‘classless’ melon comment",
       "summary": "Follow today’s news live Get our breaking news email , free app or daily news podcast Ted O’Brien says that just because the Japanese government has downplayed melon-gate, doesn’t mean Anthony Albanese ’s gaffe isn’t a “national embarrassment”. We’ve seen…",
       "url": "https://www.theguardian.com/australia-news/live/2026/aug/11/australia-politics-live-rba-interest-rates-question-time-anthony-albanese-angus-taylor-one-nation-pauline-hanson-ndis-gambling-ads-ntwnfb",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-11T04:13:53.000Z",
+      "publishedAt": "2026-08-11T05:29:54.000Z",
       "image": "https://i.guim.co.uk/img/media/29dd6a722af5dda5f582e1c3162e11d24a4a5735/375_0_3748_2999/master/3748.jpg?width=700&quality=85&auto=format&fit=max&s=938c24e09ecbd784feed74d7ef1c12d7",
       "imageWidth": 700,
       "category": "Politics",
-      "categoryConfidence": "medium",
+      "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "98dea4d99136",
+      "title": "A burial row over Zambia's late president has turned its election into a hot contest",
+      "summary": "Hakainde Hichilema was a shoo-in for a second term but the controversy following Edgar Lungu's death has dented his chances.",
+      "url": "https://www.bbc.co.uk/news/articles/clye05m3vd3o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/africa",
+      "sourceId": "bbc-africa",
+      "publishedAt": "2026-08-11T05:02:22.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6cf0/live/e14a5fa0-9276-11f1-a7ab-8b30adf0800a.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "7c2e7038ec59",
+      "title": "Huge fire breaks out at Libya’s Zawiya refinery after drone attack",
+      "summary": "National oil company warns it may halt operations at the country's largest operating refinery if drone attacks continue.",
+      "url": "https://www.aljazeera.com/news/2026/8/11/huge-fire-breaks-out-at-libyas-zawiya-refinery-after-drone-attack?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-11T04:37:27.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -137,7 +167,7 @@
     {
       "id": "965561c723dd",
       "title": "Trump hid in catering cart to board secret flight in Turkey amid Iran threat – reports",
-      "summary": "Elaborate ruse was used to transport president to military flight from Air Force One to return from Nato meet Prompted by an Iranian assassination threat, Donald Trump departed on a secret military flight from Turkey last month when the White House said he…",
+      "summary": "Elaborate ruse was used to transport president to military flight from Air Force One to return from Nato meet Prompted by an Iranian assassination threat, Donald Trump departed on a secret military flight from Turkey to Britain last month when the White House…",
       "url": "https://www.theguardian.com/us-news/2026/aug/10/trump-secret-flight-nato-return",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -248,6 +278,22 @@
       "weight": 2
     },
     {
+      "id": "059d9366732f",
+      "title": "Ukraine war live: Deadly Russian missiles strike Kyiv and Zaporizhzhia",
+      "summary": "Russian forces launched missile attacks on Kyiv and Zaporizhzhia early Tuesday, triggering fires in the Ukrainian capital and damaging buildings in the southeastern city, officials said. At least five people were killed and 20 injured in the attacks. Follow…",
+      "url": "https://www.france24.com/en/europe/20260810-live-russian-missiles-strike-kyiv-triggering-fires-in-city-centre",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-10T23:03:04.000Z",
+      "image": "https://s.france24.com/media/display/131ef16e-9234-11f1-a905-005056a90284/w:1024/p:16x9/2026-08-05T023914Z-1006963943-RC21SMA0C6YF-RTRMADP-3-UKRAINE-CRISIS-ATTACK-KYIV.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "68838b40941b",
       "title": "Opinion: Why the Mecca Agreement is a necessary show of force",
       "summary": "Opinion: Why the Mecca Agreement is a necessary show of force It will be three years in October since Israe l started its genocide in Gaza , a war crime it has repeated in the Occupied West Bank , South Lebanon , and Iran . For much of that time, Turkey and…",
@@ -280,22 +326,6 @@
       "weight": 2
     },
     {
-      "id": "52acebdf5046",
-      "title": "Turkey MPs back historic law on reintegrating PKK militants",
-      "summary": "Turkey's parliament has taken a major step toward ending four decades of conflict with the PKK. The new law sets out how some militants can return to civilian life, but leaves Abdullah Ocalan's future unresolved.",
-      "url": "https://www.dw.com/en/turkey-mps-back-historic-law-on-reintegrating-pkk-militants/a-78313397?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-10T22:22:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Turkey",
-      "weight": 2
-    },
-    {
       "id": "041284bea016",
       "title": "Japan Inc.'s quarterly profit jumps 70% on weak yen and AI spending",
       "summary": "",
@@ -310,6 +340,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "0dc99bcd8bfa",
+      "title": "Turkey MPs back historic law on reintegrating Kurdish PKK militants",
+      "summary": "Turkey's parliament approved limited amnesty for Kurdish PKK militants on Monday, a key step in a peace process aimed at ending decades of conflict. However, the legislation excludes jailed PKK founder Abdullah Ocalan, whose release the group has made a…",
+      "url": "https://www.france24.com/en/middle-east/20260810-turkey-parliament-passes-limited-amnesty-law-for-kurdish-pkk-militants",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-10T21:36:10.000Z",
+      "image": "https://s.france24.com/media/display/cb2eb242-9501-11f1-a08b-005056a90284/w:1024/p:16x9/000-C4CQ7NR.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Turkey",
       "weight": 2
     },
     {
@@ -342,22 +388,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "0cdb358acf29",
-      "title": "Russia bars only party opposing war in Ukraine from parliamentary vote",
-      "summary": "The pro-Kremlin nationalist party Rodina accused the Yabloko party of receiving undeclared campaign support.",
-      "url": "https://www.aljazeera.com/news/2026/8/10/russia-bars-only-party-opposing-war-in-ukraine-from-parliamentary-vote?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-10T19:47:13.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -425,6 +455,22 @@
       "weight": 2
     },
     {
+      "id": "46b2fc8dc1cb",
+      "title": "Russia bars only anti-war party 'Yabloko' from September parliamentary elections",
+      "summary": "Russia's Supreme Court on Monday barred the country's only anti-war party, Yabloko (Apple), from running in September's parliamentary elections. About a hundred protesters gathered outside the courthouse chanting, \"Shame! Shame!\" after the ruling was…",
+      "url": "https://www.france24.com/en/europe/20260810-russia-bars-only-anti-war-party-from-elections",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-10T17:49:13.000Z",
+      "image": "https://s.france24.com/media/display/cc04344e-94e3-11f1-ae29-005056a97e36/w:1024/p:16x9/ade7a1f5ee3866cf50e0bf6ccb218c5acfd06224.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "8a3b9b17e8ea",
       "title": "The Guardian view on the failed Gaza peace plan: Trump’s hollow claims are ignored in Jerusalem | Editorial",
       "summary": "Israel’s prime minister, Benjamin Netanyahu, has no interest in agreeing to a deal. For relief to come to Gaza, real US pressure must be exerted At the end of July, Donald Trump announced that a “monumental” US-backed deal had been struck on Gaza, securing…",
@@ -438,6 +484,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "79adb0860660",
+      "title": "Tensions in the Arctic: Greenland issues sharp rebuke to Trump-linked oil company",
+      "summary": "Greenland’s government issued a “strong warning” last week after a new Texas oil company linked to US President Donald Trump moved equipment intended for exploratory drilling ashore without the required approval. Nuuk’s authorities must now walk a tightrope…",
+      "url": "https://www.france24.com/en/europe/20260810-tensions-in-the-arctic-greenland-issues-sharp-rebuke-to-trump-linked-oil-company",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-10T17:47:25.000Z",
+      "image": "https://s.france24.com/media/display/42623fae-94d6-11f1-b3d4-005056bfb2b6/w:1024/p:16x9/000-994M3G3.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -711,6 +773,22 @@
       "imageWidth": 240,
       "category": "Politics",
       "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "164d2efe105a",
+      "title": "Ocasio-Cortez says she's freezing her eggs as she decides her next political moves",
+      "summary": "Rep. Alexandria Ocasio-Cortez says she is freezing her eggs as she decides her next political moves ahead of the 2028 presidential election campaign. “This is a choice that I am making to feel more in control of my life,” Ocasio-Cortez, 36, said on Instagram…",
+      "url": "https://www.france24.com/en/video/20260810-ocasio-cortez-says-she-s-freezing-her-eggs-as-she-decides-her-next-political-moves",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-10T14:37:15.000Z",
+      "image": "https://s.france24.com/media/display/10266b36-94be-11f1-a1bb-005056a97e36/w:1024/p:16x9/EN-20260810-132508-132713-CS.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
       "region": "Global",
       "weight": 2
     },
@@ -1468,22 +1546,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "a2055b0b979b",
-      "title": "Nigerian army says it safely rescued 33 people kidnapped by gunmen",
-      "summary": "The people were abducted while travelling through the country's north-western Zamfara state on Saturday.",
-      "url": "https://www.bbc.co.uk/news/articles/c89nkkvx2veo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/africa",
-      "sourceId": "bbc-africa",
-      "publishedAt": "2026-08-09T19:57:28.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8796/live/272fe5e0-9424-11f1-aa3c-4fd5547f7539.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
     },
     {
       "id": "85d9fc253534",
@@ -2365,6 +2427,22 @@
       "categoryConfidence": "source",
       "region": "Middle East",
       "weight": 3
+    },
+    {
+      "id": "ca547e548704",
+      "title": "Trump imposes 15% tariff on key chip material to counter China",
+      "summary": "The move aims to protect US firms as they face increasing competition from China's chip industry.",
+      "url": "https://www.bbc.co.uk/news/articles/cdrvn686dljo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/business",
+      "sourceId": "bbc-business",
+      "publishedAt": "2026-08-07T01:03:35.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/60dd/live/9a103bd0-91fb-11f1-952a-e58ebd1358f8.jpg",
+      "imageWidth": 240,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
     },
     {
       "id": "3ab3d5e995b6",
