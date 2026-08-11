@@ -1,8 +1,9 @@
 // Client runtime for the editorial desk. The Astro page owns only the shell markup.
 
 import { type AiConfig,
-  completeInline, suggestMeta, suggestPhotoQuery,
-  chatAboutPiece, suggestSources, type ChatApply, type SourceSuggestion } from "../lib/editor/ai";
+  completeInline, suggestMeta, suggestPhotoQuery } from "../lib/editor/ai";
+import { runEdit, judgePassage, sourceClaim, diffWords, describeChange, EDIT_JOBS,
+  type AgentStep, type EditJobId, type PassageContext, type SourceCandidate } from "../lib/editor/agent";
 import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
   searchPhotos, importPhoto, uploadImage, readViewCounts, readViewDetail,
   type FileEntry, type Photo, type ViewDetail, type ViewShare } from "../lib/editor/desk";
@@ -87,6 +88,8 @@ interface Story {
   date: string;
   desk: string;
   region: string;
+  heroImage: string;
+  heroImageAlt: string;
   live: boolean;
   views: number;
 }
@@ -268,6 +271,8 @@ async function openStories(notice = "") {
               date: parsed.date,
               category: parsed.category,
               region: parsed.region,
+              heroImage: parsed.heroImage,
+              heroImageAlt: parsed.heroImageAlt,
             };
           } catch {
             // Keep the public-index fallback for a transient read failure. It
@@ -295,6 +300,8 @@ async function openStories(notice = "") {
         date: f.date?.slice(0, 10) ?? meta?.date?.slice(0, 10) ?? "",
         desk: f.category ?? meta?.category ?? "",
         region: f.region ?? meta?.region ?? "",
+        heroImage: f.heroImage ?? "",
+        heroImageAlt: f.heroImageAlt ?? "",
         // This is the critical distinction: draft is a repository field, not
         // an inference from whether the Pages search index has caught up.
         live: typeof f.draft === "boolean" ? !f.draft : Boolean(meta),
@@ -370,8 +377,12 @@ function storiesView(notice = "") {
     const stateLabel = unsaved ? "Unsaved" : s.live ? "Published" : "Draft";
     const stateKind = unsaved ? "edit" : s.live ? "live" : "draft";
     const foot = [s.region, s.date].filter(Boolean).map(esc).join(" \u{b7} ");
+    const cover = s.heroImage
+      ? `<img src="${esc(photoSrc(s.heroImage))}" alt="${esc(s.heroImageAlt)}" loading="lazy" decoding="async" />`
+      : `<span class="ed-card-cover-empty">No lead image</span>`;
     return `
       <article class="ed-card" data-card="${esc(s.path)}">
+        <div class="ed-card-cover" data-empty="${s.heroImage ? "false" : "true"}">${cover}</div>
         <div class="ed-card-top">
           <span class="ed-pill" data-kind="${stateKind}">${stateLabel}</span>
           <span class="ed-card-desk">${esc(s.desk || "Journal")}</span>
@@ -391,7 +402,7 @@ function storiesView(notice = "") {
         </div>
         <div class="ed-card-views-panel" hidden></div>
         <div class="ed-card-ask" hidden>
-          <p>Delete \u{201c}${esc(s.title)}\u{201d}? It leaves the site at the next build.</p>
+          <p>Do you really want to delete this? \u{201c}${esc(s.title)}\u{201d} leaves the site at the next build.</p>
           <div class="ed-card-ask-row">
             <button type="button" class="ed-btn ed-btn-quiet" data-keep>Keep</button>
             <button type="button" class="ed-btn ed-btn-danger" data-kill-yes>Delete</button>
@@ -700,6 +711,17 @@ interface FiledPhoto {
  * where it came from.
  */
 const freshPhotos = new Map<string, string>();
+
+/** Frontmatter keeps a bare filename; the desk has to resolve it to something a browser can load. */
+function photoSrc(name: string): string {
+  if (!name) return "";
+  return (
+    freshPhotos.get(name) ??
+    (name.startsWith("http") || name.startsWith("data:")
+      ? name
+      : BASE + (name.startsWith("/") ? name : `/images/articles/${name}`))
+  );
+}
 
 /**
  * Searches Wikimedia Commons, then files the chosen picture into the
@@ -1037,7 +1059,6 @@ function compose(args: ComposeArgs) {
       </div>
       <div class="ed-bar-right">
         <span class="ed-bar-meta" data-count></span>
-        ${aiReady() ? '<button type="button" class="ed-btn ed-btn-quiet ed-float-ai" data-bar-ask title="Ask the assistant  Ctrl+J">Ask</button>' : ""}
         <button type="button" class="ed-btn ed-btn-primary" data-publish>Publish</button>
       </div>
     </div>
@@ -1105,13 +1126,17 @@ function compose(args: ComposeArgs) {
       <button type="button" class="block-only" data-cmd="quote" title="Quote">&ldquo;</button>
       <span class="sep"></span>
       <button type="button" data-cmd="clear" title="Plain text">Clear</button>
-      ${aiReady() ? '<span class="sep"></span><button type="button" class="ed-float-ai" data-cmd="ask" title="Tell the assistant what to do  Ctrl+J">Ask</button>' : ""}
     </div>
 
     <div class="ed-float" data-linkbar>
       <input type="url" data-linkinput placeholder="https://\u{2026}  then Enter" />
       <button type="button" data-linkgo>Apply</button>
       <button type="button" data-linkoff title="Remove link">&times;</button>
+    </div>
+
+    <div class="ed-sel" data-sel>
+      <div class="ed-sel-pill" data-sel-pill data-typing="false" data-expanded="false"></div>
+      <div class="ed-sel-note" data-sel-note hidden></div>
     </div>
 
     <div class="ed-menu" data-menu></div>
@@ -1230,6 +1255,9 @@ function compose(args: ComposeArgs) {
   const linkbar = el<HTMLElement>("[data-linkbar]");
   const linkInput = el<HTMLInputElement>("[data-linkinput]");
   const menuEl = el<HTMLElement>("[data-menu]");
+  const selEl = el<HTMLElement>("[data-sel]");
+  const selPill = el<HTMLElement>("[data-sel-pill]");
+  const selNote = el<HTMLElement>("[data-sel-note]");
   const addBtn = el<HTMLButtonElement>("[data-add]");
   const drawer = el<HTMLElement>("[data-drawer]");
   const scrim = el<HTMLElement>("[data-scrim]");
@@ -1391,7 +1419,7 @@ function compose(args: ComposeArgs) {
     oneLine.addEventListener("keydown", (event) => {
       if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "j") {
         event.preventDefault();
-        openAsk();
+        askOnSelection();
         return;
       }
       if (event.key === "Enter") {
@@ -1458,6 +1486,16 @@ function compose(args: ComposeArgs) {
     sel?.removeAllRanges();
     sel?.addRange(range);
     node.focus?.();
+  }
+
+  /** True when there is nothing between the start of the block and the caret. */
+  function caretAtStart(block: HTMLElement): boolean {
+    const sel = window.getSelection();
+    if (!sel?.rangeCount || !sel.isCollapsed) return false;
+    const probe = document.createRange();
+    probe.selectNodeContents(block);
+    probe.setEnd(sel.getRangeAt(0).startContainer, sel.getRangeAt(0).startOffset);
+    return probe.toString().length === 0;
   }
 
   // ---------- markdown-style input rules ----------
@@ -1550,6 +1588,37 @@ function compose(args: ComposeArgs) {
     }
     if (ghostNode) clearGhost();
 
+    if (event.key === "Backspace" || event.key === "Delete") {
+      const selection = window.getSelection();
+      const at = selection?.anchorNode ?? null;
+      const holder = at instanceof Element ? at : at?.parentElement ?? null;
+
+      // An empty box has nothing left to delete but itself.
+      const insideBox = holder?.closest<HTMLElement>(".ed-callout-body");
+      if (insideBox && selection?.isCollapsed && !insideBox.textContent?.trim()) {
+        const aside = insideBox.closest<HTMLElement>(".ed-callout");
+        if (aside) {
+          event.preventDefault();
+          removeCallout(aside);
+          return;
+        }
+      }
+
+      // Backspacing into a box, a picture or a rule takes it away, the way it
+      // does with a paragraph. Without this they can only be typed around.
+      if (event.key === "Backspace" && selection?.isCollapsed) {
+        const block = currentBlock();
+        const before = block?.previousElementSibling as HTMLElement | null;
+        const solid = before && (!before.isContentEditable || before.tagName === "HR");
+        if (block && before && solid && bodyEl.contains(before) && caretAtStart(block)) {
+          event.preventDefault();
+          before.remove();
+          touched();
+          return;
+        }
+      }
+    }
+
     if ((event.ctrlKey || event.metaKey) && event.shiftKey) {
       if (event.key === "." || event.key === ">") { event.preventDefault(); stepFontSize(1); return; }
       if (event.key === "," || event.key === "<") { event.preventDefault(); stepFontSize(-1); return; }
@@ -1560,7 +1629,7 @@ function compose(args: ComposeArgs) {
       if (key === "b") { event.preventDefault(); runCommand("bold"); return; }
       if (key === "i") { event.preventDefault(); runCommand("italic"); return; }
       if (key === "k") { event.preventDefault(); openLinkBar(); return; }
-      if (key === "j") { event.preventDefault(); openAsk(); return; }
+      if (key === "j") { event.preventDefault(); askOnSelection(); return; }
       if (key === " ") { event.preventDefault(); requestSuggestion(true); return; }
       if (key === "s") { event.preventDefault(); openDrawer(); return; }
     }
@@ -1635,9 +1704,6 @@ function compose(args: ComposeArgs) {
       case "link":
         openLinkBar();
         return;
-      case "ask":
-        openAsk();
-        return;
     }
     hideFloat();
     touched();
@@ -1691,11 +1757,13 @@ function compose(args: ComposeArgs) {
     syncSizeLabel();
     if (sel.isCollapsed) {
       if (!linkbar.classList.contains("is-open")) hideFloat();
+      if (selMode === "idle" && !selTarget && !selBlocks.length) closeSel();
       return;
     }
     floatEl.dataset.scope = inBody ? "body" : "line";
     showFloat(floatEl, range.getBoundingClientRect());
     syncFloatState();
+    openSel();
   });
 
   function openLinkBar() {
@@ -1732,6 +1800,732 @@ function compose(args: ComposeArgs) {
     if (event.key === "Enter") { event.preventDefault(); applyLink(); }
     if (event.key === "Escape") { hideFloat(); bodyEl.focus(); }
   });
+
+  // ---------- the assistant, on the selected words ----------
+  // A pill that hangs under the selection: type an instruction, or take one of
+  // the standing jobs. The answer is written into the passage as it arrives,
+  // and stays provisional until it is kept.
+  type SelMode = "idle" | "busy" | "result" | "note" | "sources";
+  type SelAction = { id: "explain" | "sources" | EditJobId; label: string; icon: string };
+
+  const selIcon = {
+    explain: '<path d="M8 9h8M8 13h5" /><path d="M21 12a8 8 0 1 1-3.2-6.4" /><path d="M12 20l-4 2v-3" />',
+    sources: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v14H6.5A2.5 2.5 0 0 0 4 19.5Z" /><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H19v4H6.5A2.5 2.5 0 0 1 4 19.5Z" /><path d="M9 7h6" />',
+    improve: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4" /><path d="M12 8l1.6 2.4L16 12l-2.4 1.6L12 16l-1.6-2.4L8 12l2.4-1.6Z" />',
+    shorten: '<circle cx="6" cy="6" r="2.5" /><circle cx="6" cy="18" r="2.5" /><path d="M8 7.5 20 18M8 16.5 20 6" />',
+    expand: '<path d="M4 9V4h5M20 15v5h-5M15 4h5v5M9 20H4v-5" />',
+    plainer: '<circle cx="12" cy="12" r="9" /><path d="M9 10h.01M15 10h.01M8.5 14.5a4.5 4.5 0 0 0 7 0" />',
+    grammar: '<rect x="3" y="4" width="18" height="16" rx="2" /><path d="M7 9h10M7 13h7" />',
+    send: '<path d="M12 19V5M6 11l6-6 6 6" />',
+    chevron: '<path d="M9 6l6 6-6 6" />',
+    caret: '<path d="M6 9l6 6 6-6" />',
+    spark: '<path d="M12 2.5l2.3 6.9 6.9 2.3-6.9 2.3L12 21.5l-2.3-6.5-6.9-2.3 6.9-2.3z" />',
+    check: '<path d="M5 13l4 4L19 7" />',
+    close: '<path d="M6 6l12 12M18 6L6 18" />',
+    retry: '<path d="M20 12a8 8 0 1 1-2.6-5.9" /><path d="M20 4v5h-5" />',
+  };
+
+  const svg = (path: string) =>
+    `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${path}</svg>`;
+
+  const SEL_ACTIONS: SelAction[] = [
+    { id: "explain", label: "Explain", icon: selIcon.explain },
+    { id: "improve", label: "Improve", icon: selIcon.improve },
+    { id: "sources", label: "Sources", icon: selIcon.sources },
+    { id: "shorten", label: "Shorten", icon: selIcon.shorten },
+    { id: "expand", label: "Expand", icon: selIcon.expand },
+    { id: "plainer", label: "Plainer", icon: selIcon.plainer },
+    { id: "grammar", label: "Grammar", icon: selIcon.grammar },
+  ];
+
+  const busyLabel = (action: SelAction) =>
+    action.id === "explain"
+      ? "Reading"
+      : action.id === "sources"
+        ? "Searching the archives"
+        : EDIT_JOBS[action.id].verb;
+
+  /** Nine cells, lit by a chevron wavefront driving right. */
+  const pixelGrid = () =>
+    Array.from({ length: 9 }, (_, i) => {
+      const delay = ((i % 3) + Math.abs(Math.floor(i / 3) - 1)) * 90;
+      return `<i style="animation-delay:${delay}ms"></i>`;
+    }).join("");
+
+  let selClock: number | null = null;
+
+  const stopClock = () => {
+    if (selClock !== null) window.clearInterval(selClock);
+    selClock = null;
+  };
+
+  /** How long the agent has been at it, because a long wait deserves a number. */
+  const startClock = () => {
+    stopClock();
+    const face = selPill.querySelector<HTMLElement>("[data-sel-clock]");
+    if (!face) return;
+    const started = Date.now();
+    const tick = () => {
+      const total = (Date.now() - started) / 1000;
+      face.textContent =
+        total < 60
+          ? `${total.toFixed(1)}s`
+          : `${Math.floor(total / 60)}m ${(total % 60).toFixed(1)}s`;
+    };
+    tick();
+    selClock = window.setInterval(tick, 100);
+  };
+
+  let selMode: SelMode = "idle";
+  let selPrompt = "";
+  let selAction: SelAction = SEL_ACTIONS[1];
+  /** The passage under the bar, marked in the document so the writer can see it. */
+  let selTarget: HTMLElement | null = null;
+  /** Block mode: the paragraphs, headings and lists the selection covers. */
+  let selBlocks: HTMLElement[] = [];
+  /** What was there before the assistant answered, kept for Discard. */
+  let selOriginal: DocumentFragment | null = null;
+  let selSummary = "";
+  /** Lets Discard and Escape stop a call that is still running. */
+  let selAbort: AbortController | null = null;
+
+  const selOpen = () => selEl.classList.contains("is-open");
+
+  const placeSel = (scrollIntoView = false) => {
+    const anchor: Range | HTMLElement | null = selAnchor();
+    if (!anchor) return;
+    const bounds = anchor.getBoundingClientRect();
+    const rects = [...anchor.getClientRects()];
+    const last = rects.at(-1) ?? bounds;
+    const half = selPill.offsetWidth / 2;
+
+    // Where it wants to sit: under the last line of the passage.
+    const wanted = last.bottom + 8;
+    const roof = 12;
+    const floor = window.innerHeight - selEl.offsetHeight - 28;
+
+    // A passage taller than the window has no "underneath" anyone can see —
+    // select the whole piece and the bar would sit a thousand pixels below the
+    // fold. Then it stays in the window instead, over the part in view.
+    const pinned = wanted > floor || wanted < roof;
+    selEl.classList.toggle("is-pinned", pinned);
+
+    const seen = rects.filter((rect) => rect.bottom > 0 && rect.top < window.innerHeight);
+    const middle = seen.length
+      ? seen.reduce((sum, rect) => sum + rect.left + rect.width / 2, 0) / seen.length
+      : bounds.left + bounds.width / 2;
+
+    const x = Math.min(Math.max(middle, half + 10), window.innerWidth - half - 10);
+    const top = pinned ? Math.min(floor, Math.max(roof, wanted)) : wanted;
+    selEl.style.top = `${pinned ? top : window.scrollY + top}px`;
+    selEl.style.left = `${pinned ? x : window.scrollX + x}px`;
+
+    if (!scrollIntoView || pinned) return;
+    // An answer can push the bar past the fold; bring it back with the passage.
+    const foot = wanted + selEl.offsetHeight;
+    if (foot > window.innerHeight - 16) {
+      window.scrollBy({ top: foot - window.innerHeight + 24, behavior: "smooth" });
+    } else if (bounds.top < 16) {
+      window.scrollBy({ top: bounds.top - 24, behavior: "smooth" });
+    }
+  };
+
+  /** Blocks whose shape is lost the moment they are treated as a run of words. */
+  const STRUCTURAL = new Set(["UL", "OL", "ASIDE", "BLOCKQUOTE", "FIGURE", "HR", "TABLE"]);
+
+  /** Marks the selected run so it stays visible once focus leaves the text. */
+  const markSelection = (): boolean => {
+    if (!savedRange || savedRange.collapsed) return false;
+    const range = savedRange;
+
+    // A selection is a run of words only while it stays inside one paragraph of
+    // ordinary prose. Anything wider is a piece of the document, and editing
+    // that as text is what flattens an article into one paragraph.
+    const scope =
+      (range.commonAncestorContainer instanceof Element
+        ? range.commonAncestorContainer
+        : range.commonAncestorContainer.parentElement
+      )?.closest<HTMLElement>(".ed-callout-body") ?? bodyEl;
+
+    const blocks = [...scope.children].filter(
+      (block) => range.intersectsNode(block) && (block.textContent?.trim() || STRUCTURAL.has(block.tagName))
+    ) as HTMLElement[];
+
+    const shaped = blocks.some((block) => STRUCTURAL.has(block.tagName));
+    if (blocks.length > 1 || (blocks.length === 1 && shaped)) {
+      selBlocks = blocks;
+      for (const block of blocks) block.classList.add("ed-ai-block");
+      return true;
+    }
+
+    const span = document.createElement("span");
+    span.className = "ed-ai-target";
+    try {
+      range.surroundContents(span);
+    } catch {
+      // A selection that crosses element boundaries cannot be surrounded.
+      span.append(range.extractContents());
+      range.insertNode(span);
+    }
+    selTarget = span;
+    return true;
+  };
+
+  const unmark = (span: HTMLElement) => {
+    const parent = span.parentNode;
+    if (!parent) return;
+    while (span.firstChild) parent.insertBefore(span.firstChild, span);
+    parent.removeChild(span);
+    (parent as HTMLElement).normalize?.();
+  };
+
+  /** Whatever the bar is currently working on, for measuring and for reading. */
+  const selAnchor = (): Range | HTMLElement | null =>
+    selTarget ?? selBlocks.at(-1) ?? (savedRange && !savedRange.collapsed ? savedRange : null);
+
+  const selMarked = () => (selTarget ? [selTarget] : selBlocks);
+
+  const resetSel = () => {
+    stopClock();
+    selMode = "idle";
+    selPrompt = "";
+    selTarget = null;
+    selBlocks = [];
+    selOriginal = null;
+    selSummary = "";
+    selCandidates = [];
+    selAbort = null;
+    selPill.dataset.typing = "false";
+    selPill.dataset.expanded = "false";
+    selNote.hidden = true;
+    selNote.textContent = "";
+  };
+
+  /** Puts the passage back the way it was and packs the bar away. */
+  const closeSel = () => {
+    selAbort?.abort();
+    if (selTarget) {
+      if (selOriginal) {
+        selTarget.textContent = "";
+        selTarget.append(selOriginal);
+      }
+      unmark(selTarget);
+    } else if (selBlocks.length) {
+      if (selOriginal) {
+        selBlocks[0].before(selOriginal);
+        for (const block of selBlocks) block.remove();
+      } else {
+        for (const block of selBlocks) block.classList.remove("ed-ai-block", "is-answered", "is-working");
+      }
+    }
+    selEl.classList.remove("is-open");
+    resetSel();
+  };
+
+  const keepSel = () => {
+    if (selTarget) unmark(selTarget);
+    for (const block of selBlocks) block.classList.remove("ed-ai-block", "is-answered", "is-working");
+    selEl.classList.remove("is-open");
+    resetSel();
+    touched();
+    setStatus("Applied to the piece", "ok");
+  };
+
+  const fieldOf = (node: Node): "headline" | "standfirst" | "body" =>
+    titleEl.contains(node) ? "headline" : standEl.contains(node) ? "standfirst" : "body";
+
+  const blockText = (block: Element | null | undefined) =>
+    (block?.textContent ?? "").replace(/\s+/g, " ").trim();
+
+  /**
+   * Where the passage sits, which is most of what the agent needs. A paragraph
+   * edited in isolation comes back reading like it was written in isolation.
+   */
+  const passageContext = (): PassageContext => {
+    const first = selBlocks[0] ?? selTarget;
+    const field = first ? fieldOf(first) : "body";
+    const context: PassageContext = {
+      title: titleEl.textContent ?? "",
+      standfirst: standEl.textContent ?? "",
+      field,
+    };
+    if (field !== "body" || !first) return context;
+
+    context.multiBlock = selBlocks.length > 0;
+    const block = selBlocks.length
+      ? selBlocks[0]
+      : (first.closest<HTMLElement>("p,h2,h3,h4,blockquote,li") ?? first);
+    const lastBlock = selBlocks.at(-1) ?? block;
+
+    context.before = blockText(block.previousElementSibling);
+    context.after = blockText(lastBlock.nextElementSibling);
+
+    const headings = [...bodyEl.querySelectorAll<HTMLElement>("h2,h3")];
+    context.outline = headings.map((h) => blockText(h)).filter(Boolean).slice(0, 12);
+    const above = headings.filter(
+      (h) => h.compareDocumentPosition(block) & Node.DOCUMENT_POSITION_FOLLOWING
+    );
+    const section = blockText(above.at(-1));
+    if (section) context.section = section;
+    return context;
+  };
+
+  /** The answer, with the words the agent actually changed marked. */
+  const answerHtml = (before: string, after: string): string => {
+    const diff = diffWords(before, after);
+    selSummary = describeChange(before, after, diff);
+    // Marking words means owning the markup, so leave inline markdown alone.
+    if (/[*_`[\]]/.test(after)) return inlineToHtml(after);
+    return diff.runs
+      .map((run) => (run.added ? `<mark class="ed-ai-new">${esc(run.text)}</mark>` : esc(run.text)))
+      .join(" ");
+  };
+
+  /** Block work is measured, not marked: the shape matters more than the words. */
+  const diffSummary = (before: string, after: string) => {
+    selSummary = describeChange(before, after, diffWords(before, after));
+  };
+
+  /** The marked blocks in a holder, so they can be read back as markdown. */
+  const blocksHolder = (blocks: HTMLElement[]): HTMLElement => {
+    const holder = document.createElement("div");
+    for (const block of blocks) {
+      const copy = block.cloneNode(true) as HTMLElement;
+      copy.classList.remove("ed-ai-block", "is-answered", "is-working");
+      holder.append(copy);
+    }
+    return holder;
+  };
+
+  /** Everything the piece already cites, which the researcher may reuse. */
+  const knownUrls = (): string[] => {
+    const urls = new Set<string>();
+    const box = maybe<HTMLTextAreaElement>("[data-sources]");
+    for (const line of (box?.value ?? "").split("\n")) {
+      const url = line.split("|").pop()?.trim() ?? "";
+      if (/^https?:\/\//.test(url)) urls.add(url);
+    }
+    bodyEl.querySelectorAll<HTMLAnchorElement>("a[href^='http']").forEach((a) => urls.add(a.href));
+    return [...urls];
+  };
+
+  let selCandidates: SourceCandidate[] = [];
+
+  /**
+   * The trace of what the agent did: it runs, settles into one line, and stays
+   * openable. A writer who is going to file these documents deserves to see
+   * where they came from.
+   */
+  const traceHtml = (steps: AgentStep[], working: boolean, took: string): string => {
+    const rows = steps
+      .map((entry, i) => {
+        const last = i === steps.length - 1;
+        const mark =
+          working && last
+            ? '<span class="ed-trace-spin" aria-hidden="true"></span>'
+            : svg(entry.kind === "propose" ? selIcon.sources : selIcon.check);
+        return `
+          <div class="ed-trace-row${last ? " is-new" : ""}">
+            <span class="ed-trace-mark">${mark}</span>
+            <span class="ed-trace-said">${esc(entry.text)}</span>
+            ${entry.detail ? `<span class="ed-trace-detail">${esc(entry.detail)}</span>` : ""}
+          </div>`;
+      })
+      .join("");
+
+    const searches = steps.filter((entry) => entry.kind !== "propose").length;
+    const label = `Searched the archives \u{b7} ${searches} ${
+      searches === 1 ? "query" : "queries"
+    }${took ? ` \u{b7} ${took}` : ""}`;
+
+    // While it runs, the pill above is the header; there is no sense in saying
+    // "searching" twice. It grows one when it settles.
+    if (working) return `<div class="ed-trace" data-trace data-open="true"><div class="ed-trace-body"><div class="ed-trace-rail">${rows}</div></div></div>`;
+
+    return `
+      <div class="ed-trace" data-trace data-open="false">
+        <button type="button" class="ed-trace-head" data-trace-toggle aria-expanded="false">
+          ${svg(selIcon.spark)}
+          <span>${esc(label)}</span>
+          ${svg(selIcon.caret)}
+        </button>
+        <div class="ed-trace-body"><div class="ed-trace-rail">${rows}</div></div>
+      </div>`;
+  };
+
+  const sourcesHtml = (note: string, candidates: SourceCandidate[], steps: AgentStep[], took: string): string => {
+    const rows = candidates
+      .map(
+        (source, i) => `
+          <li class="ed-src">
+            <label>
+              <input type="checkbox" data-src="${i}" checked />
+              <span>
+                <span class="name">${esc(source.name)}</span>
+                <span class="why">${esc(
+                  [source.why, source.institution, source.date].filter(Boolean).join(" \u{b7} ")
+                )}</span>
+              </span>
+            </label>
+            <a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">Open</a>
+          </li>`
+      )
+      .join("");
+    return `
+      ${steps.length ? traceHtml(steps, false, took) : ""}
+      ${note ? `<p class="ed-sel-said">${esc(note)}</p>` : ""}
+      ${rows ? `<ul class="ed-src-list">${rows}</ul>` : ""}`;
+  };
+
+  /** Files the ticked sources in the Publish drawer, without duplicating one. */
+  const fileSources = () => {
+    const box = maybe<HTMLTextAreaElement>("[data-sources]");
+    if (!box) return;
+    const lines = box.value.split("\n").map((line) => line.trim()).filter(Boolean);
+    const already = new Set(
+      lines.map((line) => (line.split("|").pop() ?? "").trim().replace(/\/+$/, "").toLowerCase())
+    );
+    let added = 0;
+    selNote.querySelectorAll<HTMLInputElement>("[data-src]").forEach((box2) => {
+      if (!box2.checked) return;
+      const source = selCandidates[Number(box2.dataset.src)];
+      if (!source) return;
+      const key = source.url.replace(/\/+$/, "").toLowerCase();
+      if (already.has(key)) return;
+      already.add(key);
+      lines.push(`${source.name} | ${source.url}`);
+      added += 1;
+    });
+    box.value = lines.join("\n");
+    touched();
+    setStatus(
+      added ? `Filed ${added} source${added === 1 ? "" : "s"} under Publish` : "Those are already filed",
+      added ? "ok" : "error"
+    );
+    closeSel();
+  };
+
+  async function runSel(action: SelAction, instruction: string) {
+    if (!selTarget && !selBlocks.length && !markSelection()) return;
+    selAction = action;
+    selPrompt = instruction;
+
+    // Inline work is a run of words; block work is a piece of the document, and
+    // markdown is the only form in which its shape survives the round trip.
+    const marked = selMarked();
+    const passage = selTarget
+      ? (selTarget.textContent ?? "").trim()
+      : htmlToMarkdown(blocksHolder(selBlocks)).trim();
+    if (!passage) { closeSel(); return; }
+
+    selSummary = "";
+    selMode = "busy";
+    selAbort = new AbortController();
+    paintSel();
+    placeSel();
+
+    try {
+      if (action.id === "explain") {
+        selNote.hidden = false;
+        selNote.textContent = "";
+        await judgePassage(
+          state.ai,
+          { passage, question: instruction, context: passageContext() },
+          (whole) => {
+            selNote.textContent = whole;
+            placeSel();
+          },
+          selAbort.signal
+        );
+        if (!selNote.textContent) selNote.textContent = "Nothing came back.";
+        selMode = "note";
+      } else if (action.id === "sources") {
+        selNote.hidden = false;
+        selNote.textContent = "";
+        const started = Date.now();
+        const steps: AgentStep[] = [];
+        const found = await sourceClaim(
+          state.ai,
+          { claim: passage, context: passageContext(), known: knownUrls() },
+          (entry) => {
+            steps.push(entry);
+            selNote.innerHTML = traceHtml(steps, true, "");
+            placeSel();
+          },
+          selAbort.signal
+        );
+        selCandidates = found.candidates;
+        selNote.innerHTML = sourcesHtml(
+          found.answer || (found.candidates.length ? "" : "The archives had nothing for this claim."),
+          found.candidates,
+          found.transcript,
+          `${Math.round((Date.now() - started) / 1000)}s`
+        );
+        selMode = "sources";
+      } else if (selTarget) {
+        const target = selTarget;
+        // The passage is emptied only once the first words are in, so a slow
+        // call never leaves a hole where the writing was.
+        selOriginal = document.createDocumentFragment();
+        while (target.firstChild) selOriginal.append(target.firstChild);
+        target.textContent = passage;
+        target.classList.add("is-streaming");
+
+        const outcome = await runEdit(
+          state.ai,
+          { job: action.id, instruction, passage, context: passageContext() },
+          (whole) => {
+            target.textContent = whole;
+            placeSel();
+          },
+          selAbort.signal
+        );
+
+        target.classList.remove("is-streaming");
+        target.innerHTML = answerHtml(passage, outcome.text);
+        target.classList.add("is-answered");
+        if (outcome.unchanged) setStatus("The assistant left it as it was.", "ok");
+        selMode = "result";
+      } else {
+        for (const block of marked) block.classList.add("is-working");
+        const context = passageContext();
+
+        const outcome = await runEdit(
+          state.ai,
+          { job: action.id, instruction, passage, context },
+          undefined,
+          selAbort.signal
+        );
+
+        const holder = document.createElement("div");
+        holder.innerHTML = markdownToHtml(outcome.text);
+        const fresh = [...holder.children] as HTMLElement[];
+        if (!fresh.length) throw new Error("The assistant returned nothing usable.");
+
+        // The old blocks are moved out rather than dropped: Discard puts the
+        // writer's own paragraphs back, not a re-parse of them.
+        selBlocks[0].before(...fresh);
+        selOriginal = document.createDocumentFragment();
+        for (const block of selBlocks) {
+          block.classList.remove("ed-ai-block", "is-working");
+          selOriginal.append(block);
+        }
+        selBlocks = fresh;
+        for (const block of fresh) block.classList.add("ed-ai-block", "is-answered");
+        diffSummary(passage, outcome.text);
+        if (outcome.unchanged) setStatus("The assistant left it as it was.", "ok");
+        selMode = "result";
+      }
+    } catch (error) {
+      if ((error as Error).name === "AbortError") return;
+      setStatus((error as Error).message, "error");
+      closeSel();
+      return;
+    }
+
+    selAbort = null;
+    paintSel();
+    placeSel(true);
+  }
+
+  /** Restores the passage, then asks again with the same instruction. */
+  const retrySel = () => {
+    if (!selTarget && !selBlocks.length) return;
+    if (selOriginal) {
+      if (selTarget) {
+        selTarget.textContent = "";
+        selTarget.append(selOriginal);
+      } else {
+        const restored = [...selOriginal.children] as HTMLElement[];
+        selBlocks[0].before(selOriginal);
+        for (const block of selBlocks) block.remove();
+        selBlocks = restored;
+        for (const block of restored) block.classList.add("ed-ai-block");
+      }
+      selOriginal = null;
+    }
+    selTarget?.classList.remove("is-answered");
+    for (const block of selBlocks) block.classList.remove("is-answered");
+    selNote.hidden = true;
+    void runSel(selAction, selPrompt);
+  };
+
+  function paintSel() {
+    const control = (a: SelAction) =>
+      `<button type="button" class="ed-sel-btn" data-sel-run="${a.id}">${svg(a.icon)}<span>${a.label}</span></button>`;
+
+    if (selMode === "busy") {
+      selPill.innerHTML = `
+        <span class="ed-sel-busy">
+          <span class="ed-pixels" aria-hidden="true">${pixelGrid()}</span>
+          <span class="ed-working">${esc(busyLabel(selAction))}</span>
+          <span class="ed-sel-clock" data-sel-clock>0.0s</span>
+        </span>
+        <button type="button" class="ed-sel-icon" data-sel-discard aria-label="Stop">${svg(selIcon.close)}</button>`;
+    } else if (selMode === "result") {
+      selPill.innerHTML = `
+        <button type="button" class="ed-sel-btn is-primary" data-sel-keep>${svg(selIcon.check)}<span>Keep</span></button>
+        <button type="button" class="ed-sel-btn" data-sel-discard>${svg(selIcon.close)}<span>Discard</span></button>
+        ${selSummary ? `<span class="ed-sel-summary">${esc(selSummary)}</span>` : ""}
+        <span class="ed-sel-sep"></span>
+        <button type="button" class="ed-sel-icon" data-sel-retry aria-label="Try again">${svg(selIcon.retry)}</button>`;
+    } else if (selMode === "note") {
+      selPill.innerHTML = `
+        <button type="button" class="ed-sel-btn is-primary" data-sel-discard>${svg(selIcon.check)}<span>Done</span></button>
+        <span class="ed-sel-sep"></span>
+        <button type="button" class="ed-sel-icon" data-sel-retry aria-label="Ask again">${svg(selIcon.retry)}</button>`;
+    } else if (selMode === "sources") {
+      const n = selCandidates.length;
+      selPill.innerHTML = `
+        ${n
+          ? `<button type="button" class="ed-sel-btn is-primary" data-sel-file>${svg(selIcon.sources)}<span>File ${n} source${n === 1 ? "" : "s"}</span></button>`
+          : ""}
+        <button type="button" class="ed-sel-btn" data-sel-discard>${svg(selIcon.close)}<span>${n ? "Dismiss" : "Done"}</span></button>
+        <span class="ed-sel-sep"></span>
+        <button type="button" class="ed-sel-icon" data-sel-retry aria-label="Search again">${svg(selIcon.retry)}</button>`;
+    } else {
+      selPill.innerHTML = `
+        <form class="ed-sel-form" data-sel-form>
+          <input class="ed-sel-input" data-sel-input aria-label="Describe edits" placeholder="Describe edits"
+            autocomplete="off" spellcheck="false" value="${esc(selPrompt)}" />
+        </form>
+        <div class="ed-sel-jobs">
+          <span class="ed-sel-sep"></span>
+          ${control(SEL_ACTIONS[0])}
+          ${control(SEL_ACTIONS[1])}
+          <span class="ed-sel-more">${SEL_ACTIONS.slice(2).map(control).join("")}</span>
+          <span class="ed-sel-sep"></span>
+          <button type="button" class="ed-sel-icon ed-sel-chevron" data-sel-expand
+            aria-label="More actions" aria-expanded="${selPill.dataset.expanded === "true"}">${svg(selIcon.chevron)}</button>
+        </div>
+        <span class="ed-sel-send-wrap">
+          <button type="button" class="ed-sel-send" data-sel-send aria-label="Send instruction">${svg(selIcon.send)}</button>
+        </span>`;
+    }
+    if (selMode === "busy") startClock();
+    else stopClock();
+    bindSel();
+  }
+
+  function bindSel() {
+    // The words stay selected only while the mouse never takes focus away.
+    selPill.querySelectorAll<HTMLButtonElement>("button").forEach((button) =>
+      button.addEventListener("mousedown", (event) => event.preventDefault())
+    );
+
+    selPill.querySelectorAll<HTMLButtonElement>("[data-sel-run]").forEach((button) =>
+      button.addEventListener("click", () => {
+        const action = SEL_ACTIONS.find((a) => a.id === button.dataset.selRun);
+        if (action) void runSel(action, selPrompt.trim());
+      })
+    );
+    selPill.querySelector<HTMLButtonElement>("[data-sel-keep]")?.addEventListener("click", keepSel);
+    selPill.querySelector<HTMLButtonElement>("[data-sel-file]")?.addEventListener("click", fileSources);
+    selPill.querySelector<HTMLButtonElement>("[data-sel-discard]")?.addEventListener("click", closeSel);
+    selPill.querySelector<HTMLButtonElement>("[data-sel-retry]")?.addEventListener("click", retrySel);
+
+    selPill.querySelector<HTMLButtonElement>("[data-sel-expand]")?.addEventListener("click", () => {
+      const open = selPill.dataset.expanded !== "true";
+      selPill.dataset.expanded = String(open);
+      selPill
+        .querySelector<HTMLButtonElement>("[data-sel-expand]")
+        ?.setAttribute("aria-expanded", String(open));
+      window.setTimeout(placeSel, 220);
+    });
+
+    const send = () => {
+      const text = selPrompt.trim();
+      // Free text is its own job: the writer's words replace the standing brief.
+      void runSel(text ? { id: "custom", label: "Edit", icon: selIcon.improve } : SEL_ACTIONS[1], text);
+    };
+    selPill.querySelector<HTMLButtonElement>("[data-sel-send]")?.addEventListener("click", send);
+
+    const form = selPill.querySelector<HTMLFormElement>("[data-sel-form]");
+    const input = selPill.querySelector<HTMLInputElement>("[data-sel-input]");
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      send();
+    });
+    input?.addEventListener("input", () => {
+      selPrompt = input.value;
+      selPill.dataset.typing = String(Boolean(selPrompt.trim()));
+      window.setTimeout(placeSel, 220);
+    });
+    // Focus leaves the text, so the passage has to be marked to stay visible.
+    input?.addEventListener("focus", () => {
+      if (!selTarget && !selBlocks.length) markSelection();
+    });
+    input?.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      closeSel();
+      bodyEl.focus();
+    });
+  }
+
+  const openSel = () => {
+    if (!aiReady() || selMode !== "idle" || selTarget || selBlocks.length) return;
+    selEl.classList.add("is-open");
+    paintSel();
+    placeSel();
+  };
+
+  /** Ctrl+J: the same bar, reached from the keyboard. */
+  function askOnSelection() {
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed || !aiReady()) {
+      setStatus(
+        aiReady() ? "Select the words you want help with." : "The assistant is not available on this desk.",
+        "error"
+      );
+      return;
+    }
+    openSel();
+    selPill.querySelector<HTMLInputElement>("[data-sel-input]")?.focus();
+  }
+
+  document.addEventListener(
+    "mousedown",
+    (event) => {
+      if (!selOpen() || selEl.contains(event.target as Node)) return;
+      // A finished answer waits for Keep or Discard rather than vanishing.
+      if (selMode === "idle") closeSel();
+    },
+    true
+  );
+
+  selNote.addEventListener("click", (event) => {
+    const head = (event.target as HTMLElement).closest("[data-trace-toggle]");
+    const trace = selNote.querySelector<HTMLElement>("[data-trace]");
+    if (!head || !trace) return;
+    const open = trace.dataset.open !== "true";
+    trace.dataset.open = String(open);
+    head.setAttribute("aria-expanded", String(open));
+    window.setTimeout(placeSel, 260);
+  });
+
+  // Escape is the way out of anything: a running call, an answer, the bar.
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || !selOpen()) return;
+    event.preventDefault();
+    closeSel();
+  });
+
+  window.addEventListener("resize", () => { if (selOpen()) placeSel(); });
+
+  // The bar follows the passage while the page moves under it.
+  let placing = 0;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!selOpen() || placing) return;
+      placing = requestAnimationFrame(() => {
+        placing = 0;
+        placeSel();
+      });
+    },
+    { passive: true }
+  );
 
   // ---------- persistent Word-like formatting bar ----------
   const restoreSavedBodyRange = (): boolean => {
@@ -2007,14 +2801,41 @@ function compose(args: ComposeArgs) {
     const label = document.createElement("span");
     label.className = "ed-callout-label";
     label.textContent = CALLOUTS[name];
+    const kill = document.createElement("button");
+    kill.type = "button";
+    kill.className = "ed-callout-kill";
+    kill.setAttribute("data-callout-remove", "");
+    kill.setAttribute("aria-label", "Remove this box");
+    kill.innerHTML = "&times;";
     const body = document.createElement("div");
     body.className = "ed-callout-body";
     body.setAttribute("contenteditable", "true");
     body.innerHTML = name === "KeyTakeaways" ? "<ul><li><br></li></ul>" : "<p><br></p>";
-    aside.append(label, body);
+    aside.append(label, kill, body);
     insertBlock(block, aside);
     placeCaret((body.querySelector("li") ?? body.firstElementChild) as HTMLElement);
   }
+
+  /** A box the writer no longer wants, and the caret left somewhere sensible. */
+  function removeCallout(aside: HTMLElement) {
+    const prev = aside.previousElementSibling as HTMLElement | null;
+    const next = aside.nextElementSibling as HTMLElement | null;
+    aside.remove();
+    const home =
+      (prev?.isContentEditable ? prev : null) ??
+      (next?.isContentEditable ? next : null) ??
+      ensureTrailingParagraph();
+    placeCaret(home, true);
+    touched();
+  }
+
+  bodyEl.addEventListener("mousedown", (event) => {
+    const kill = (event.target as HTMLElement).closest<HTMLElement>("[data-callout-remove]");
+    if (!kill) return;
+    event.preventDefault();
+    const aside = kill.closest<HTMLElement>(".ed-callout");
+    if (aside) removeCallout(aside);
+  });
 
   /**
    * A small popup that offers a list of choices and resolves with the index
@@ -2231,20 +3052,47 @@ function compose(args: ComposeArgs) {
     if (!aiReady()) return;
     // Never chase a suggestion while one is already on screen.
     if (ghostNode && !force) return;
+    // The bar owns the passage while it is open; two assistants at once is one
+    // too many, and a ghost inside a marked passage would be edited with it.
+    if (selOpen() || selMode !== "idle") return;
+    const selection = window.getSelection();
+    if (!selection || !selection.isCollapsed) return;
     const block = currentBlock();
     if (!block || block.tagName !== "P") return;
     clearGhost();
     const text = block.textContent ?? "";
     if (!force && text.trim().length < 30) return;
 
-    const before = htmlToMarkdown(bodyEl);
+    // What the caret actually sits between. Sending the whole draft as "before"
+    // makes the model finish the end of the piece rather than this sentence.
+    const range = selection.getRangeAt(0);
+    const head = document.createRange();
+    head.selectNodeContents(block);
+    head.setEnd(range.endContainer, range.endOffset);
+    const tail = document.createRange();
+    tail.selectNodeContents(block);
+    tail.setStart(range.endContainer, range.endOffset);
+
+    const earlier: HTMLElement[] = [];
+    for (let el = block.previousElementSibling; el; el = el.previousElementSibling) {
+      earlier.unshift(el as HTMLElement);
+    }
+    const later = [...bodyEl.children]
+      .slice([...bodyEl.children].indexOf(block) + 1)
+      .map((el) => (el.textContent ?? "").trim())
+      .filter(Boolean)
+      .join("\n\n");
+
+    const before = `${earlier.length ? `${htmlToMarkdown(blocksHolder(earlier))}\n\n` : ""}${head.toString()}`;
+    const after = [tail.toString().trim(), later].filter(Boolean).join("\n\n");
+
     inflight?.abort();
     inflight = new AbortController();
     setStatus("Thinking\u{2026}");
     try {
       const suggestion = await completeInline(
         state.ai,
-        { before, after: "", title: titleEl.textContent ?? "" },
+        { before, after, title: titleEl.textContent ?? "" },
         inflight.signal
       );
       if (!suggestion) { setStatus(""); return; }
@@ -2262,442 +3110,6 @@ function compose(args: ComposeArgs) {
 
   const scheduleSuggestion = debounce(() => requestSuggestion(false), 1400);
 
-  function openAsk(
-    forceMode?: "chat" | "research" | "sources",
-    contextTarget?: HTMLElement
-  ) {
-    if (!aiReady()) {
-      setStatus("The assistant is not available on this desk.", "error");
-      return;
-    }
-
-    const contextSelection = window.getSelection();
-    if (contextTarget && bodyEl.contains(contextTarget)) {
-      const caret = document.createRange();
-      caret.selectNodeContents(contextTarget);
-      caret.collapse(true);
-      contextSelection?.removeAllRanges();
-      contextSelection?.addRange(caret);
-    }
-
-    const sel = window.getSelection();
-    const selected = sel && !sel.isCollapsed ? sel.toString().trim() : "";
-    const anchorNode = sel?.anchorNode ?? null;
-    const inTitle = !!(anchorNode && titleEl.contains(anchorNode));
-    const inStand = !!(anchorNode && standEl.contains(anchorNode));
-    const inBody = !!(anchorNode && bodyEl.contains(anchorNode));
-    const block = inBody && !inTitle && !inStand ? currentBlock() : null;
-    const range = selected && sel ? sel.getRangeAt(0).cloneRange() : null;
-
-    type AskJob = "chat" | "research" | "sources";
-    let job: AskJob = forceMode ?? "chat";
-
-    const passage = inTitle
-      ? (selected || titleEl.textContent || "").trim()
-      : inStand
-        ? (selected || standEl.textContent || "").trim()
-        : selected || "";
-
-    const anchorEl = inTitle
-      ? titleEl
-      : inStand
-        ? standEl
-        : block ?? bodyEl;
-    const anchorRect = (range ?? anchorEl).getBoundingClientRect();
-
-    const scopeLabel = selected
-      ? "Selection"
-      : inTitle
-        ? "Headline"
-        : inStand
-          ? "Standfirst"
-          : contextTarget && block && !block.textContent?.trim()
-            ? "Empty paragraph"
-          : "Whole piece";
-
-    const previewText = (passage || htmlToMarkdown(bodyEl) || titleEl.textContent || "")
-      .replace(/\s+/g, " ")
-      .trim();
-    const preview =
-      previewText.slice(0, 110) + (previewText.length > 110 ? "\u{2026}" : "");
-
-    const pieceCtx = () => ({
-      title: titleEl.textContent ?? "",
-      description: standEl.textContent ?? "",
-      draft: htmlToMarkdown(bodyEl),
-      selection: passage,
-    });
-
-    const modeMeta: Record<AskJob, { label: string; placeholder: string; go: string }> = {
-      chat: {
-        label: "Chat",
-        placeholder:
-          "Ask anything \u{2014} outline the next section, stress-test the argument, suggest angles\u{2026}",
-        go: "Ask",
-      },
-      research: {
-        label: "Research",
-        placeholder:
-          "What should I look up? e.g. NATO 2% spending compliance 2025, Red Sea insurance clauses\u{2026}",
-        go: "Research",
-      },
-      sources: {
-        label: "Sources",
-        placeholder:
-          "Optional focus \u{2014} leave blank to source the whole piece, or name a topic/document.",
-        go: "Find sources",
-      },
-    };
-
-    let lastApply: ChatApply | null = null;
-    let lastSources: SourceSuggestion[] = [];
-    let busy = false;
-    let prevText = "";
-
-    const close = () => {
-      menuEl.classList.remove("is-open", "is-ask");
-      menuEl.style.width = "";
-      document.removeEventListener("mousedown", away, true);
-    };
-    const away = (event: MouseEvent) => {
-      if (!menuEl.contains(event.target as Node)) close();
-    };
-    window.setTimeout(() => document.addEventListener("mousedown", away, true), 0);
-
-    menuEl.style.top = `${window.scrollY + Math.min(anchorRect.bottom + 10, window.innerHeight - 40)}px`;
-    menuEl.style.left = `${Math.max(12, Math.min(window.scrollX + anchorRect.left, window.innerWidth - 480))}px`;
-
-    const setBusy = (on: boolean, label = "Working\u{2026}") => {
-      busy = on;
-      const b = maybe<HTMLElement>("[data-ask-busy]");
-      const go = maybe<HTMLButtonElement>("[data-ask-go]");
-      if (b) {
-        b.hidden = !on;
-        b.textContent = label;
-      }
-      if (go) go.disabled = on;
-    };
-
-    const showAnswer = (text: string) => {
-      const host = maybe<HTMLElement>("[data-ask-result]");
-      if (!host) return;
-      const html = text
-        .split(/\n{2,}/)
-        .map((para) => {
-          const lines = para.split("\n");
-          if (lines.every((l) => /^\s*[-*]\s+/.test(l) || !l.trim())) {
-            const items = lines
-              .filter((l) => l.trim())
-              .map((l) => `<li>${esc(l.replace(/^\s*[-*]\s+/, ""))}</li>`)
-              .join("");
-            return items ? `<ul>${items}</ul>` : "";
-          }
-          return `<p>${esc(para).replace(/\n/g, "<br>")}</p>`;
-        })
-        .join("");
-      const sourcesHtml = lastSources.length
-        ? `<div class="ed-ask-sources" data-source-list>${lastSources
-            .map(
-              (s, i) => `<label class="ed-ask-source">
-                <input type="checkbox" data-src="${i}" checked />
-                <span><span class="name">${esc(s.name)}</span><span class="why">${esc(s.why || s.url)}</span></span>
-                <a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">Open</a>
-              </label>`
-            )
-            .join("")}</div>`
-        : "";
-      host.innerHTML =
-        (text.trim() ? `<div class="ed-ask-answer">${html}</div>` : "") + sourcesHtml;
-
-      const applyBtn = maybe<HTMLButtonElement>("[data-ask-apply]");
-      const addBtn = maybe<HTMLButtonElement>("[data-ask-add-sources]");
-      const canApply = Boolean(
-        lastApply?.text.trim() &&
-          (lastApply.action === "insert" || Boolean(passage.trim()))
-      );
-      if (applyBtn) applyBtn.hidden = !canApply;
-      if (addBtn) addBtn.hidden = !lastSources.length;
-    };
-
-    const mergeSourcesIntoDrawer = (picked: SourceSuggestion[]) => {
-      const box = maybe<HTMLTextAreaElement>("[data-sources]");
-      if (!box || !picked.length) return 0;
-      const existing = new Set(
-        box.value
-          .split("\n")
-          .map((l) => l.trim())
-          .filter(Boolean)
-          .map((l) => {
-            const url = l.split("|").pop()?.trim().toLowerCase() ?? "";
-            return url.replace(/\/$/, "");
-          })
-      );
-      const lines = [...box.value.split("\n").map((l) => l.trim()).filter(Boolean)];
-      let added = 0;
-      for (const s of picked) {
-        const key = s.url.replace(/\/$/, "").toLowerCase();
-        if (existing.has(key)) continue;
-        existing.add(key);
-        lines.push(`${s.name} | ${s.url}`);
-        added += 1;
-      }
-      box.value = lines.join("\n");
-      touched();
-      return added;
-    };
-
-    const insertMarkdown = (md: string) => {
-      const html = markdownToHtml(md);
-      const holder = document.createElement("div");
-      holder.innerHTML = html;
-      const nodes = [...holder.children] as HTMLElement[];
-      if (!nodes.length) return;
-      const at = block && bodyEl.contains(block) ? block : currentBlock() || bodyEl.lastElementChild;
-      if (at && bodyEl.contains(at)) at.after(...nodes);
-      else bodyEl.append(...nodes);
-      nodes[0]?.scrollIntoView({ block: "center", behavior: "smooth" });
-      nodes.forEach((n, i) => {
-        n.style.animationDelay = `${i * 60}ms`;
-        n.classList.add("ed-arrived");
-      });
-      window.setTimeout(
-        () => nodes.forEach((n) => { n.classList.remove("ed-arrived"); n.style.animationDelay = ""; }),
-        1000
-      );
-      ensureTrailingParagraph();
-      touched();
-    };
-
-    const applyChatDraft = (proposal: ChatApply) => {
-      const text = proposal.text.trim();
-      if (!text) return;
-
-      if (proposal.action === "insert") {
-        insertMarkdown(text);
-        setStatus("Applied to the piece", "ok");
-        return;
-      }
-
-      if (inTitle || inStand) {
-        const target = inTitle ? titleEl : standEl;
-        if (range && target.contains(range.commonAncestorContainer)) {
-          range.deleteContents();
-          range.insertNode(document.createTextNode(text));
-          target.normalize();
-        } else {
-          target.textContent = text;
-        }
-        target.classList.add("ed-arrived");
-        window.setTimeout(() => target.classList.remove("ed-arrived"), 900);
-        touched();
-        setStatus("Applied to the piece", "ok");
-        return;
-      }
-
-      if (!range || !bodyEl.contains(range.commonAncestorContainer)) {
-        setStatus("Select the passage you want to replace first.", "error");
-        return;
-      }
-
-      const holder = document.createElement("div");
-      holder.innerHTML = inlineToHtml(text.replace(/\s*\n\s*/g, " "));
-      const fragment = document.createDocumentFragment();
-      while (holder.firstChild) fragment.append(holder.firstChild);
-      range.deleteContents();
-      range.insertNode(fragment);
-      bodyEl.classList.add("ed-arrived");
-      window.setTimeout(() => bodyEl.classList.remove("ed-arrived"), 900);
-      ensureTrailingParagraph();
-      touched();
-      setStatus("Applied to the piece", "ok");
-    };
-
-    const runChat = async (question: string, withResearch: boolean) => {
-      setBusy(true, withResearch ? "Researching\u{2026}" : "Thinking\u{2026}");
-      lastApply = null;
-      lastSources = [];
-      showAnswer("");
-      try {
-        const ctx = pieceCtx();
-        const result = await chatAboutPiece(state.ai, {
-          question,
-          title: ctx.title,
-          description: ctx.description,
-          draft: ctx.draft,
-          selection: ctx.selection,
-          withResearch,
-        });
-        lastApply = result.apply ?? null;
-        lastSources = result.sources ?? [];
-        showAnswer(result.answer || "Nothing came back.");
-        setStatus(withResearch ? "Research in." : "Answer in.", "ok");
-      } catch (error) {
-        showAnswer((error as Error).message);
-        setStatus((error as Error).message, "error");
-      } finally {
-        setBusy(false);
-      }
-    };
-
-    const runSources = async (focus: string) => {
-      setBusy(true, "Finding sources\u{2026}");
-      lastApply = null;
-      lastSources = [];
-      showAnswer("");
-      try {
-        const ctx = pieceCtx();
-        lastSources = await suggestSources(state.ai, {
-          title: ctx.title,
-          description: ctx.description,
-          draft: ctx.draft,
-          query: focus,
-        });
-        showAnswer(
-          lastSources.length
-            ? `${lastSources.length} sources worth filing. Tick the ones you want, then Add sources.`
-            : "No solid public sources came back for that. Try a sharper query."
-        );
-        setStatus(
-          lastSources.length ? `${lastSources.length} sources` : "No sources",
-          lastSources.length ? "ok" : "error"
-        );
-      } catch (error) {
-        showAnswer((error as Error).message);
-        setStatus((error as Error).message, "error");
-      } finally {
-        setBusy(false);
-      }
-    };
-
-    const bind = () => {
-      const input = el<HTMLTextAreaElement>("[data-ask-input]");
-
-      menuEl.querySelectorAll<HTMLButtonElement>("[data-mode]").forEach((btn) => {
-        btn.addEventListener("mousedown", (e) => e.preventDefault());
-        btn.addEventListener("click", () => {
-          if (busy) return;
-          prevText = input.value;
-          job = btn.dataset.mode as AskJob;
-          paint();
-        });
-      });
-
-      input.addEventListener("input", () => {
-        prevText = input.value;
-      });
-
-      input.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
-          event.preventDefault();
-          close();
-          (inTitle ? titleEl : inStand ? standEl : bodyEl).focus();
-          return;
-        }
-        if (event.key === "Enter" && !event.shiftKey) {
-          event.preventDefault();
-          if (!busy) el<HTMLFormElement>("[data-ask]").requestSubmit();
-        }
-      });
-
-      maybe<HTMLButtonElement>("[data-ask-apply]")?.addEventListener("click", () => {
-        if (!lastApply?.text.trim()) return;
-        const proposal = lastApply;
-        applyChatDraft(proposal);
-        lastApply = null;
-        const button = maybe<HTMLButtonElement>("[data-ask-apply]");
-        if (button) button.hidden = true;
-      });
-
-      maybe<HTMLButtonElement>("[data-ask-add-sources]")?.addEventListener("click", () => {
-        const boxes = menuEl.querySelectorAll<HTMLInputElement>("[data-src]");
-        const picked: SourceSuggestion[] = [];
-        boxes.forEach((box) => {
-          if (!box.checked) return;
-          const row = lastSources[Number(box.dataset.src)];
-          if (row) picked.push(row);
-        });
-        const n = mergeSourcesIntoDrawer(picked);
-        setStatus(
-          n ? `Added ${n} source${n === 1 ? "" : "s"} to Publish` : "Those sources are already filed",
-          n ? "ok" : "error"
-        );
-      });
-
-      el<HTMLFormElement>("[data-ask]").addEventListener("submit", async (event) => {
-        event.preventDefault();
-        if (busy) return;
-        const text = input.value.trim();
-        if (job === "chat") {
-          if (!text) { input.focus(); return; }
-          await runChat(text, false);
-          return;
-        }
-        if (job === "research") {
-          if (!text) { input.focus(); return; }
-          await runChat(text, true);
-          return;
-        }
-        await runSources(text);
-      });
-    };
-
-    const paint = () => {
-      const meta = modeMeta[job];
-      menuEl.classList.add("is-ask", "is-open");
-      menuEl.innerHTML = `
-        <div class="ed-menu-head">
-          <span class="ed-ask-kicker">
-            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1" />
-              <circle cx="12" cy="12" r="3.2" />
-            </svg>
-            Ask
-          </span>
-          <span class="ed-ask-scope">${esc(scopeLabel)}</span>
-        </div>
-        <form class="ed-ask" data-ask>
-          <div class="ed-ask-modes" data-modes>
-            ${(["chat", "research", "sources"] as AskJob[])
-              .map(
-                (m) =>
-                  `<button type="button" class="ed-ask-mode ${job === m ? "is-on" : ""}" data-mode="${m}">${modeMeta[m].label}</button>`
-              )
-              .join("")}
-          </div>
-          <div class="ed-ask-field">
-            <textarea data-ask-input rows="3" autocomplete="off" spellcheck="true"
-              placeholder="${esc(meta.placeholder)}"></textarea>
-          </div>
-          <p class="ed-ask-target"><strong>${
-            job === "sources" ? "Sourcing" : "Context"
-          }</strong>${esc(preview || "Untitled piece")}</p>
-          <div data-ask-result></div>
-          <p class="ed-ask-busy" data-ask-busy hidden>Working\u{2026}</p>
-          <div class="ed-ask-row">
-            <button type="submit" class="ed-btn ed-btn-primary" data-ask-go>${esc(meta.go)}</button>
-            <button type="button" class="ed-btn ed-btn-primary" data-ask-apply hidden>Apply</button>
-            <button type="button" class="ed-btn ed-btn-quiet" data-ask-add-sources hidden>Add sources</button>
-            <span class="ed-ask-hint"><kbd>Enter</kbd> go \u{b7} <kbd>Esc</kbd> close</span>
-          </div>
-        </form>`;
-
-      const input = el<HTMLTextAreaElement>("[data-ask-input]");
-      if (prevText) input.value = prevText;
-      input.focus();
-      bind();
-    };
-
-    paint();
-  }
-
-  bodyEl.addEventListener("contextmenu", (event) => {
-    const target = event.target as HTMLElement;
-    const block = target.closest<HTMLElement>("p");
-    if (!block || !bodyEl.contains(block) || block.textContent?.trim()) return;
-    event.preventDefault();
-    openAsk("chat", block);
-  });
-
   // ==========================================================
   // Publish drawer
   // ==========================================================
@@ -2712,7 +3124,6 @@ function compose(args: ComposeArgs) {
   };
 
   el<HTMLButtonElement>("[data-publish]").addEventListener("click", openDrawer);
-  maybe<HTMLButtonElement>("[data-bar-ask]")?.addEventListener("click", () => openAsk("chat"));
   el<HTMLButtonElement>("[data-drawer-close]").addEventListener("click", closeDrawer);
   scrim.addEventListener("click", closeDrawer);
 

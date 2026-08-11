@@ -175,6 +175,7 @@ export function inlineToHtml(text: string): string {
 const calloutOpen = (name: CalloutName) =>
   `<aside class="ed-callout" data-callout="${name}" contenteditable="false">` +
   `<span class="ed-callout-label" contenteditable="false">${CALLOUTS[name]}</span>` +
+  `<button type="button" class="ed-callout-kill" data-callout-remove contenteditable="false" aria-label="Remove this box">&times;</button>` +
   `<div class="ed-callout-body" contenteditable="true">`;
 
 /**

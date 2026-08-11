@@ -34,6 +34,8 @@ export interface FileEntry {
   date?: string;
   category?: string;
   region?: string;
+  heroImage?: string;
+  heroImageAlt?: string;
 }
 
 export interface Session {
@@ -183,6 +185,8 @@ interface ArticleMeta {
   date?: string;
   category?: string;
   region?: string;
+  heroImage?: string;
+  heroImageAlt?: string;
 }
 
 /** Read the small scalar subset of frontmatter the story list needs. */
@@ -210,6 +214,8 @@ function readArticleMeta(raw: string): ArticleMeta {
     ...(values.date ? { date: values.date } : {}),
     ...(values.category ? { category: values.category } : {}),
     ...(values.region ? { region: values.region } : {}),
+    ...(values.heroImage ? { heroImage: values.heroImage } : {}),
+    ...(values.heroImageAlt ? { heroImageAlt: values.heroImageAlt } : {}),
   };
 }
 
@@ -343,6 +349,46 @@ async function views<T>(query: string): Promise<T> {
   const data = (await response.json().catch(() => ({}))) as T & { error?: string };
   if (!response.ok) throw new DeskError(data.error ?? "No counter answered.", response.status);
   return data;
+}
+
+/** One official document, as the primary-source adapters return it. */
+export interface PrimaryHit {
+  title: string;
+  institution: string;
+  organization: string;
+  country: string;
+  documentType: string;
+  publicationDate: string;
+  snippet: string;
+  url: string;
+}
+
+/**
+ * The institutions themselves — EUR-Lex, the Council, the EEAS, NATO, the UN,
+ * GovInfo, the Turkish foreign ministry, the TBMM archive and the rest. They
+ * send no CORS headers, so this is one of the two things the publication still
+ * runs a server for.
+ */
+export async function searchPrimarySources(
+  query: string,
+  type = "All",
+  signal?: AbortSignal
+): Promise<PrimaryHit[]> {
+  const wanted = query.trim().replace(/\s+/g, " ").slice(0, 160);
+  if (wanted.length < 2) return [];
+  if (!site.deskUrl) throw new DeskError("No primary-source search is configured.", 501);
+
+  const url = new URL(`${site.deskUrl}/api/primary-sources`);
+  url.searchParams.set("q", wanted);
+  if (type && type !== "All") url.searchParams.set("type", type);
+
+  const response = await fetch(url.toString(), { signal });
+  const data = (await response.json().catch(() => ({}))) as {
+    results?: PrimaryHit[];
+    error?: string;
+  };
+  if (!response.ok) throw new DeskError(data.error ?? "The archives did not answer.", response.status);
+  return data.results ?? [];
 }
 
 export async function readFile(path: string): Promise<{ content: string; sha: string }> {
