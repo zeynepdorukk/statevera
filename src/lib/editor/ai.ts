@@ -74,13 +74,16 @@ export interface Turn {
 const OPENAI_CHAT = "https://api.openai.com/v1/chat/completions";
 
 /**
- * Whether the publication's own service holds a key. Asked once, at sign-in,
- * because the answer decides whether the desk needs to ask the writer for one.
+ * Whether the publication's own service holds a key, and which model it means
+ * to use. Asked once, at sign-in: the answer decides whether the desk needs to
+ * ask the writer for a key, and which model her browser should name.
  */
 let deskAssistant = false;
+let deskModel = "";
 
-export const setDeskAssistant = (available: boolean): void => {
+export const setDeskAssistant = (available: boolean, model = ""): void => {
   deskAssistant = available;
+  deskModel = model;
 };
 
 /**
@@ -295,8 +298,9 @@ function buildTurnPayload(
   if (!messages.some((m) => m.content.trim() || m.tool_calls?.length)) {
     throw new AiError("Nothing to ask.", 400);
   }
-  const { model } = readCredentials();
-  const name = model || DEFAULT_MODEL;
+  const { model, openai } = readCredentials();
+  // A writer with no key of her own is served by the desk, which names the model.
+  const name = (openai ? model : deskModel || model) || DEFAULT_MODEL;
   const payload: Record<string, unknown> = {
     model: name,
     messages,
@@ -415,6 +419,8 @@ async function postChat(
     // model", which reads exactly like a missing model if you only grep.
     if (complaint.param === "model" || complaint.code === "model_not_found") {
       const wanted = String(payload.model);
+      // Only the holder of the key can be asked what it may reach.
+      if (throughDesk) throw new AiError(complaint.message, response.status);
       const available = await listModels(key);
       const match = available.find((id) => loosely(id) === loosely(wanted));
       if (!match) {

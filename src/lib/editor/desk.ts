@@ -251,13 +251,14 @@ async function inspectToken(): Promise<Session> {
     .catch(() => "");
 
   // The desk may hold a key of its own, in which case the writer needs none.
-  const desks = site.deskUrl
+  const offer = site.deskUrl
     ? await fetch(`${site.deskUrl}/api/assistant`)
-        .then((response) => (response.ok ? response.json() : { available: false }))
-        .then((data) => Boolean((data as { available?: boolean }).available))
-        .catch(() => false)
-    : false;
-  setDeskAssistant(desks);
+        .then((response) => (response.ok ? response.json() : null))
+        .then((data) => (data as { available?: boolean; model?: string } | null) ?? null)
+        .catch(() => null)
+    : null;
+  const desks = Boolean(offer?.available);
+  setDeskAssistant(desks, offer?.model ?? "");
 
   return {
     signedIn: true,

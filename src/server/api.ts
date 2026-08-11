@@ -59,6 +59,8 @@ export interface ApiEnv extends PrimarySourceEnv {
   DESK_LOGINS?: string;
   /** Bind this and the writer never has to hold an OpenAI key of her own. */
   OPENAI_KEY?: string;
+  /** Which model that key should use. Left unset, the desk finds one it can reach. */
+  OPENAI_MODEL?: string;
 }
 
 /**
@@ -116,7 +118,9 @@ function corsHeaders(request: Request): Record<string, string> {
   return {
     ...(ALLOWED_ORIGINS.has(origin) ? { "access-control-allow-origin": origin } : {}),
     "access-control-allow-methods": "GET, POST, OPTIONS",
-    "access-control-allow-headers": "content-type",
+    // The assistant is called with the sign-in on it, and a preflight that does
+    // not allow that header is a request the browser never sends.
+    "access-control-allow-headers": "content-type, authorization",
     vary: "Origin",
   };
 }
@@ -359,10 +363,15 @@ async function handleAssistant(request: Request, env: ApiEnv): Promise<Response>
     return json(request, { error: "This assistant belongs to someone else." }, 403);
   }
 
+  // The model belongs to whoever holds the key, not to whoever is typing.
+  const payload = (await request.json().catch(() => ({}))) as Record<string, unknown>;
+  const model = await assistantModel(env);
+  if (model) payload.model = model;
+
   const upstream = await fetch(OPENAI_CHAT, {
     method: "POST",
     headers: { "content-type": "application/json", authorization: `Bearer ${env.OPENAI_KEY}` },
-    body: await request.text(),
+    body: JSON.stringify(payload),
   });
 
   // The body is passed through as it arrives, so a streamed answer stays streamed.
@@ -372,13 +381,54 @@ async function handleAssistant(request: Request, env: ApiEnv): Promise<Response>
   return new Response(upstream.body, { status: upstream.status, headers });
 }
 
+/** Which model this key can actually reach, asked once and remembered. */
+let chosenModel = "";
+/** Why it could not be asked, when it could not. */
+let modelTrouble = "";
+
+async function assistantModel(env: ApiEnv): Promise<string> {
+  if (env.OPENAI_MODEL) return env.OPENAI_MODEL;
+  if (chosenModel) return chosenModel;
+
+  const response = await fetch("https://api.openai.com/v1/models", {
+    headers: { authorization: `Bearer ${env.OPENAI_KEY}` },
+  });
+  const body = await response.text();
+  if (!response.ok) {
+    modelTrouble = readOpenAiError(body);
+    return "";
+  }
+  const ids = ((JSON.parse(body) as { data?: { id: string }[] }).data ?? [])
+    .map((model) => model.id)
+    .filter((id) => id.startsWith("gpt-"));
+
+  // The house model first, then whatever this key does have.
+  for (const wanted of [/^gpt-5\.6/, /^gpt-5/, /^gpt-4\.1/, /^gpt-4o/, /^gpt-/]) {
+    const found = ids.find((id) => wanted.test(id));
+    if (found) {
+      chosenModel = found;
+      break;
+    }
+  }
+  if (!chosenModel) modelTrouble = `This key reaches no chat model. It offers: ${ids.slice(0, 10).join(", ") || "nothing"}.`;
+  return chosenModel;
+}
+
+/** OpenAI's own words, which are the only useful ones when a key is refused. */
+function readOpenAiError(raw: string): string {
+  try {
+    return (JSON.parse(raw) as { error?: { message?: string } }).error?.message ?? "The assistant key was refused.";
+  } catch {
+    return "The assistant key was refused.";
+  }
+}
+
 export async function handleApi(request: Request, env: ApiEnv): Promise<Response> {
   const route = new URL(request.url).pathname.replace(/^.*\/api\//, "");
 
   if (request.method === "OPTIONS") {
     return new Response(null, { status: 204, headers: corsHeaders(request) });
   }
-
   try {
     if (route === "primary-sources") return await handlePrimarySources(request, env);
     if (route === "views" && request.method === "POST") return await recordView(request, env);
@@ -386,7 +436,12 @@ export async function handleApi(request: Request, env: ApiEnv): Promise<Response
     if (route === "sign-in" && request.method === "POST") return await startDeviceLogin(request, env);
     if (route === "sign-in/finish" && request.method === "POST") return await finishDeviceLogin(request, env);
     if (route === "assistant" && request.method === "GET") {
-      return json(request, { available: Boolean(env.OPENAI_KEY) });
+      if (!env.OPENAI_KEY) return json(request, { available: false });
+      const model = await assistantModel(env);
+      return json(request, {
+        available: Boolean(model),
+        ...(model ? { model } : { note: modelTrouble }),
+      });
     }
     if (route === "assistant" && request.method === "POST") return await handleAssistant(request, env);
   } catch (error) {
