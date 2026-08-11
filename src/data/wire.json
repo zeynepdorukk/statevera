@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-08-11T22:59:13.059Z",
+  "generatedAt": "2026-08-11T23:38:39.071Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
-      "id": "b6ca34f0d7b8",
-      "title": "Australia politics live: Coalition to heavily cut net migration and shred 96% of house construction code; CBA posts bumper $11bn profit",
-      "summary": "Policy comes as debate continues over causes of and solutions to housing issues. Follow today’s news live Get our breaking news email , free app or daily news podcast Education minister says funding agreement with Victoria ‘very close’ The education minister,…",
-      "url": "https://www.theguardian.com/australia-news/live/2026/aug/12/australia-politics-live-question-time-anthony-albanese-angus-taylor-coalition-andrew-bragg-housing-construction-immigration-one-nation-pauline-hanson-gambling-melon-gift-japan-ndis-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-11T22:43:08.000Z",
-      "image": "https://i.guim.co.uk/img/media/85f15695a556ae3f012ac83591fe6ed73e6d5e01/0_0_5794_4638/master/5794.jpg?width=700&quality=85&auto=format&fit=max&s=fe90495f7d2373a2e07097f140695313",
-      "imageWidth": 700,
-      "category": "Politics",
+      "id": "13d35178c774",
+      "title": "Libyan military intelligence chief assassinated in car bombing",
+      "summary": "Libya's eastern-based army said Tuesday that a car bomb killed its military intelligence chief, Fawzi al-Mansouri, in Benghazi. The assassination raises fresh questions over security in the stronghold of military commander Khalifa Haftar as efforts continue…",
+      "url": "https://www.france24.com/en/africa/20260811-libyan-military-intelligence-chief-assassinated-in-car-bombing",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-11T23:33:37.000Z",
+      "image": "https://s.france24.com/media/display/37eaa960-0fcb-11ed-9230-005056bf30b7/w:1024/p:16x9/000_9RR4EU%20%281%29.jpg",
+      "imageWidth": 0,
+      "category": "Security",
       "categoryConfidence": "high",
-      "region": "Asia-Pacific",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -27,7 +27,7 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-11T21:46:34.000Z",
+      "publishedAt": "2026-08-11T23:17:07.000Z",
       "image": "https://i.guim.co.uk/img/media/23ebfe0c82fd31d0d8992c386988982a50f04133/328_0_1981_1585/master/1981.jpg?width=700&quality=85&auto=format&fit=max&s=f3b3db66e6005048160a5586281a5f30",
       "imageWidth": 700,
       "category": "Politics",
@@ -455,8 +455,8 @@
     },
     {
       "id": "855c2134a72e",
-      "title": "Coalition to back One Nation policy barring overseas Australians with terrorist links from returning home",
-      "summary": "Angus Taylor and Matt Canavan will support Pauline Hanson’s migration bill despite vowing to fight her rightwing party Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast The Coalition will back…",
+      "title": "Coalition to back Hanson’s migration policy despite pledging to fight One Nation",
+      "summary": "Angus Taylor and Matt Canavan to support bill barring overseas Australians with terrorist links from returning home Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast The Coalition will back a…",
       "url": "https://www.theguardian.com/australia-news/2026/aug/12/coalition-to-back-one-nation-policy-barring-overseas-australians-with-terrorist-links-from-returning-home",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -467,22 +467,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "c78cea55e0d7",
-      "title": "Turkey suspects Israel fabricated Trump Air Force One assassination plot to derail US-Iran deal",
-      "summary": "Turkey suspects Israel fabricated Trump Air Force One assassination plot to derail US-Iran deal Turkish officials suspect that an Israeli intelligence report that said Iran planned to assasinate US President Donald Trump during the Ankara Nato summit last…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkey-suspects-israel-fabricated-trump-air-force-one-assassination-plot",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-11T14:20:07.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -788,22 +772,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "08c5a86a08dc",
-      "title": "Turkey MPs back law on reintegrating Kurdish PKK militants",
-      "summary": "Turkish lawmakers on Monday (August 10) voted through a bill offering limited amnesty for Kurdish PKK militants, a key step in the peace process that seeks to end decades of deadly violence.",
-      "url": "https://www.france24.com/en/turkey-mps-back-law-on-reintegrating-kurdish-pkk-militants",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-11T10:18:08.000Z",
-      "image": "https://s.france24.com/media/display/c7238374-956c-11f1-8167-005056bf30b7/w:1024/p:16x9/EN-20260811-083624-083808-CS.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Turkey",
       "weight": 2
     },
     {
@@ -1142,6 +1110,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "52acebdf5046",
+      "title": "Turkey MPs back historic law on reintegrating PKK militants",
+      "summary": "Turkey's parliament has taken a major step toward ending four decades of conflict with the PKK. The new law sets out how some militants can return to civilian life, but leaves Abdullah Ocalan's future unresolved.",
+      "url": "https://www.dw.com/en/turkey-mps-back-historic-law-on-reintegrating-pkk-militants/a-78313397?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-10T22:22:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Turkey",
       "weight": 2
     },
     {
@@ -2588,22 +2572,6 @@
       "categoryConfidence": "source",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "ca547e548704",
-      "title": "Trump imposes 15% tariff on key chip material to counter China",
-      "summary": "The move aims to protect US firms as they face increasing competition from China's chip industry.",
-      "url": "https://www.bbc.co.uk/news/articles/cdrvn686dljo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/business",
-      "sourceId": "bbc-business",
-      "publishedAt": "2026-08-07T01:03:35.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/60dd/live/9a103bd0-91fb-11f1-952a-e58ebd1358f8.jpg",
-      "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "3ab3d5e995b6",
