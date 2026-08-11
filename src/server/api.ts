@@ -49,7 +49,16 @@ export interface ViewStore {
 export interface ApiEnv extends PrimarySourceEnv {
   /** Bind a KV namespace to switch read counts on. Without one they stay off. */
   VIEWS?: ViewStore;
+  /** The GitHub app behind "Sign in with GitHub". Without it, tokens only. */
+  GITHUB_CLIENT_ID?: string;
+  /** Only an OAuth App needs this; a GitHub App's device flow does not. */
+  GITHUB_CLIENT_SECRET?: string;
+  /** Likewise the scope: a GitHub App is told its permissions when it is made. */
+  GITHUB_OAUTH_SCOPE?: string;
 }
+
+/** The one GitHub account this desk will hand a token to. */
+const DESK_OWNER = "zeynepdorukk";
 
 /** Who may call this API from a browser. */
 const ALLOWED_ORIGINS = new Set([
@@ -205,6 +214,90 @@ async function readViews(request: Request, env: ApiEnv): Promise<Response> {
   return json(request, { counts });
 }
 
+// ------------------------------------------------------------
+// Signing in without a token to copy
+// ------------------------------------------------------------
+// GitHub's device flow, proxied. The browser cannot call it directly
+// — those endpoints send no CORS headers — and this is the only
+// reason the desk touches a server to sign in.
+//
+// The gate is here rather than in the browser: the token is handed
+// back only when it belongs to the account this publication is
+// written by. Anyone else can complete the approval on GitHub and
+// still get nothing.
+// ------------------------------------------------------------
+
+const DEVICE_CODE = "https://github.com/login/device/code";
+const DEVICE_TOKEN = "https://github.com/login/oauth/access_token";
+
+const github = (env: ApiEnv, url: string, body: Record<string, string>) =>
+  fetch(url, {
+    method: "POST",
+    headers: { accept: "application/json", "content-type": "application/json" },
+    body: JSON.stringify({ client_id: env.GITHUB_CLIENT_ID, ...body }),
+  });
+
+/** Starts the flow: GitHub returns the code the writer types into github.com. */
+async function startDeviceLogin(request: Request, env: ApiEnv): Promise<Response> {
+  if (!env.GITHUB_CLIENT_ID) {
+    return json(request, { error: "No GitHub app is configured on this desk." }, 501);
+  }
+  const response = await github(env, DEVICE_CODE, {
+    // A GitHub App carries its own permissions; only an OAuth App wants a scope.
+    ...(env.GITHUB_OAUTH_SCOPE ? { scope: env.GITHUB_OAUTH_SCOPE } : {}),
+  });
+  const data = (await response.json().catch(() => ({}))) as Record<string, unknown>;
+  if (!response.ok || !data.device_code) {
+    return json(request, { error: String(data.error_description ?? "GitHub refused to start the sign-in.") }, 502);
+  }
+  return json(request, {
+    deviceCode: data.device_code,
+    userCode: data.user_code,
+    verificationUri: data.verification_uri,
+    interval: Number(data.interval ?? 5),
+    expiresIn: Number(data.expires_in ?? 900),
+  });
+}
+
+/** Finishes it, once the writer has approved — and only for the writer. */
+async function finishDeviceLogin(request: Request, env: ApiEnv): Promise<Response> {
+  if (!env.GITHUB_CLIENT_ID) {
+    return json(request, { error: "No GitHub app is configured on this desk." }, 501);
+  }
+  const body = (await request.json().catch(() => ({}))) as { deviceCode?: string };
+  const deviceCode = typeof body.deviceCode === "string" ? body.deviceCode : "";
+  if (!/^[\w-]{10,120}$/.test(deviceCode)) return json(request, { error: "No device code." }, 400);
+
+  const response = await github(env, DEVICE_TOKEN, {
+    device_code: deviceCode,
+    grant_type: "urn:ietf:params:oauth:grant-type:device_code",
+    ...(env.GITHUB_CLIENT_SECRET ? { client_secret: env.GITHUB_CLIENT_SECRET } : {}),
+  });
+  const data = (await response.json().catch(() => ({}))) as Record<string, unknown>;
+
+  // Still waiting, or being told to slow down: not an error, just not yet.
+  if (typeof data.error === "string") {
+    return json(request, { pending: data.error === "authorization_pending" || data.error === "slow_down", error: String(data.error_description ?? data.error) }, data.error === "authorization_pending" || data.error === "slow_down" ? 200 : 400);
+  }
+
+  const accessToken = typeof data.access_token === "string" ? data.access_token : "";
+  if (!accessToken) return json(request, { error: "GitHub returned no token." }, 502);
+
+  const who = await fetch("https://api.github.com/user", {
+    headers: {
+      accept: "application/vnd.github+json",
+      authorization: `Bearer ${accessToken}`,
+      "user-agent": "statevera-desk",
+    },
+  });
+  const login = String(((await who.json().catch(() => ({}))) as { login?: string }).login ?? "");
+  if (login.toLowerCase() !== DESK_OWNER) {
+    return json(request, { error: "This desk belongs to someone else." }, 403);
+  }
+
+  return json(request, { token: accessToken, login });
+}
+
 export async function handleApi(request: Request, env: ApiEnv): Promise<Response> {
   const route = new URL(request.url).pathname.replace(/^.*\/api\//, "");
 
@@ -216,6 +309,8 @@ export async function handleApi(request: Request, env: ApiEnv): Promise<Response
     if (route === "primary-sources") return await handlePrimarySources(request, env);
     if (route === "views" && request.method === "POST") return await recordView(request, env);
     if (route === "views" && request.method === "GET") return await readViews(request, env);
+    if (route === "sign-in" && request.method === "POST") return await startDeviceLogin(request, env);
+    if (route === "sign-in/finish" && request.method === "POST") return await finishDeviceLogin(request, env);
   } catch (error) {
     return json(request, { error: (error as Error).message }, 502);
   }

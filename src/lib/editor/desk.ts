@@ -10,7 +10,7 @@
 // Pushing to the default branch triggers the Pages rebuild.
 // ============================================================
 
-import { DEFAULT_MODEL, REPO, clearCredentials, forgetGithubToken, readCredentials, writeCredentials } from "./credentials";
+import { DEFAULT_MODEL, REPO, forgetGithubToken, readCredentials, writeCredentials } from "./credentials";
 import { site } from "../../site";
 
 export class DeskError extends Error {
@@ -46,6 +46,8 @@ export interface Session {
   model: string;
   /** Why a stored token stopped working, when it did. */
   note?: string;
+  /** When this token stops working, for tokens that say so. */
+  expires?: string;
 }
 
 export interface Library {
@@ -132,6 +134,9 @@ function isImageBytes(bytes: Uint8Array, type: string): boolean {
 
 const token = (): string => readCredentials().github;
 
+/** GitHub says when a fine-grained token dies; it is worth passing on. */
+let tokenExpiry = "";
+
 async function github<T>(path: string, init: RequestInit = {}): Promise<T> {
   const bearer = token();
   const response = await fetch(`https://api.github.com${path}`, {
@@ -145,6 +150,8 @@ async function github<T>(path: string, init: RequestInit = {}): Promise<T> {
     },
   });
 
+  tokenExpiry = response.headers.get("github-authentication-token-expiration") ?? tokenExpiry;
+
   const text = await response.text();
   if (!response.ok) {
     let detail = `GitHub answered ${response.status}.`;
@@ -154,7 +161,9 @@ async function github<T>(path: string, init: RequestInit = {}): Promise<T> {
     } catch {
       /* keep the status */
     }
-    if (response.status === 401) detail = "That token was refused. Create a new one and sign in again.";
+    if (response.status === 401) {
+      detail = "That GitHub token has expired or been revoked. Make a new one and paste it here \u{2014} the assistant key stays where it is.";
+    }
     if (response.status === 403 && /rate limit/i.test(detail)) {
       detail = "GitHub is rate-limiting this token. Try again shortly.";
     }
@@ -247,6 +256,7 @@ async function inspectToken(): Promise<Session> {
     // refusing the desk outright.
     canPublish: repo.permissions?.push !== false,
     model: credentials.model || DEFAULT_MODEL,
+    ...(tokenExpiry ? { expires: tokenExpiry } : {}),
   };
 }
 
@@ -282,8 +292,83 @@ export async function signIn(githubToken: string, openaiKey: string): Promise<Se
   }
 }
 
+// ------------------------------------------------------------
+// Signing in without a token to copy
+// ------------------------------------------------------------
+
+export interface DeviceLogin {
+  /** The six characters the writer types into github.com. */
+  userCode: string;
+  verificationUri: string;
+  /** Resolves with the session once GitHub says she approved it. */
+  approved: Promise<Session>;
+}
+
+interface DeviceStart {
+  deviceCode: string;
+  userCode: string;
+  verificationUri: string;
+  interval: number;
+  expiresIn: number;
+  error?: string;
+}
+
+const deskPost = async <T>(path: string, body: unknown): Promise<T> => {
+  if (!site.deskUrl) throw new DeskError("This desk has no sign-in service.", 501);
+  const response = await fetch(`${site.deskUrl}${path}`, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(body ?? {}),
+  });
+  const data = (await response.json().catch(() => ({}))) as T & { error?: string };
+  if (!response.ok) {
+    // A desk whose service has not been taught this yet should say so plainly.
+    if (response.status === 404 || response.status === 501) {
+      throw new DeskError("Signing in with GitHub is not switched on yet. Paste a token below.", response.status);
+    }
+    throw new DeskError(data.error ?? "The sign-in service did not answer.", response.status);
+  }
+  return data;
+};
+
+/**
+ * The device flow: GitHub gives a short code, the writer approves it on
+ * github.com, and the token arrives here. No token to create, none to paste,
+ * and nothing to expire in thirty days.
+ */
+export async function beginDeviceLogin(openaiKey = ""): Promise<DeviceLogin> {
+  const start = await deskPost<DeviceStart>("/api/sign-in", {});
+
+  const approved = (async (): Promise<Session> => {
+    const deadline = Date.now() + Math.min(start.expiresIn, 900) * 1000;
+    let wait = Math.max(start.interval, 5) * 1000;
+
+    for (;;) {
+      if (Date.now() > deadline) throw new DeskError("The sign-in code expired. Try again.", 408);
+      await new Promise((resolve) => setTimeout(resolve, wait));
+
+      const answer = await deskPost<{ token?: string; pending?: boolean; error?: string }>(
+        "/api/sign-in/finish",
+        { deviceCode: start.deviceCode }
+      );
+      if (answer.token) return signIn(answer.token, openaiKey);
+      // "slow_down" means exactly that, and GitHub means it.
+      if (answer.error === "slow_down") wait += 5000;
+      if (!answer.pending) throw new DeskError(answer.error ?? "GitHub refused the sign-in.", 403);
+    }
+  })();
+
+  return { userCode: start.userCode, verificationUri: start.verificationUri, approved };
+}
+
+/**
+ * Signing out is about the sign-in, which is the GitHub token. The assistant
+ * key is a second key from a second company that expires on nobody's schedule;
+ * throwing it away too only means finding it again. The sign-in screen offers
+ * to forget it for anyone who wants that.
+ */
 export const signOutRequest = async (): Promise<void> => {
-  clearCredentials();
+  forgetGithubToken();
 };
 
 // ------------------------------------------------------------

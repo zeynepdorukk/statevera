@@ -2,6 +2,13 @@ name = "statevera-desk"
 main = "worker/index.ts"
 compatibility_date = "2026-08-01"
 
+# "Sign in with GitHub" on the desk. The client id of a GitHub App with the
+# device flow enabled, installed on this repository only. It is public — the
+# gate is that the API hands the token back for one account and no other.
+# Leave it empty and the desk asks for a token instead.
+[vars]
+GITHUB_CLIENT_ID = ""
+
 # Read counts. One key per device per article; the country, referring host and
 # date ride along as KV metadata, so a breakdown costs no extra reads.
 [[kv_namespaces]]
@@ -11,3 +18,5 @@ id = "691d4b0743b242b197ba9b78acff41a5"
 # GOVINFO_API_KEY, CONGRESS_API_KEY and OSCE_SEARCH_API_KEY are optional: each
 # adapter falls back to a public key. Add them with
 #   npx wrangler secret put GOVINFO_API_KEY
+# GITHUB_CLIENT_SECRET is only needed for an OAuth App; a GitHub App's device
+# flow does not use one.

@@ -5,7 +5,7 @@ import { type AiConfig,
 import { runEdit, judgePassage, sourceClaim, diffWords, describeChange, EDIT_JOBS,
   type AgentStep, type EditJobId, type PassageContext, type SourceCandidate } from "../lib/editor/agent";
 import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
-  searchPhotos, importPhoto, uploadImage, readViewCounts, readViewDetail,
+  beginDeviceLogin, searchPhotos, importPhoto, uploadImage, readViewCounts, readViewDetail,
   type FileEntry, type Photo, type ViewDetail, type ViewShare } from "../lib/editor/desk";
 import { REPO, forgetAssistantKey, looksLikeGithubToken, looksLikeOpenAiKey, readCredentials } from "../lib/editor/credentials";
 import { TEMPLATES, templateById, type Template } from "../lib/editor/templates";
@@ -101,6 +101,8 @@ const state = {
   assistant: false,
   canPublish: false,
   model: "",
+  /** When the GitHub token stops working, when GitHub says so. */
+  expires: "",
   ai: {} as AiConfig,
   stories: [] as Story[],
   images: [] as string[],
@@ -166,6 +168,12 @@ function signInView(message = "") {
     <p class="ed-legend">Sign in</p>
     <p class="ed-gate-say">One key, and you are writing.</p>
     ${message ? `<p class="ed-warn" style="margin-bottom:1rem">${esc(message)}</p>` : ""}
+    <button type="button" class="ed-btn ed-gate-github" data-device>
+      <svg viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.49-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.23 1.89.87 2.35.67.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.19c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+      <span>Sign in with GitHub</span>
+    </button>
+    <div class="ed-gate-device" data-device-panel hidden></div>
+    <p class="ed-gate-or"><span>or paste a token</span></p>
     <form data-signin>
       <div class="ed-field">
         <label for="tok">GitHub token</label>
@@ -200,6 +208,51 @@ function signInView(message = "") {
     tokenInput.focus();
   });
 
+  const enter = async (session: Awaited<ReturnType<typeof signIn>>) => {
+    state.user = session.user;
+    state.assistant = session.assistant;
+    state.canPublish = session.canPublish;
+    state.model = session.model;
+    state.expires = session.expires ?? "";
+    await openStories();
+  };
+
+  // ---------- sign in with GitHub ----------
+  const deviceButton = el<HTMLButtonElement>("[data-device]");
+  const devicePanel = el<HTMLElement>("[data-device-panel]");
+
+  deviceButton.addEventListener("click", async () => {
+    deviceButton.disabled = true;
+    deviceButton.querySelector("span")!.textContent = "Asking GitHub\u{2026}";
+    try {
+      const login = await beginDeviceLogin(el<HTMLInputElement>("#aikey").value.trim());
+      devicePanel.hidden = false;
+      devicePanel.innerHTML = `
+        <p class="ed-gate-hint">Type this code into GitHub, and the desk opens by itself.</p>
+        <p class="ed-gate-code" data-code>${esc(login.userCode)}</p>
+        <div class="ed-gate-device-row">
+          <a class="ed-btn ed-btn-primary" href="${esc(login.verificationUri)}" target="_blank" rel="noopener">Open GitHub &rarr;</a>
+          <button type="button" class="ed-btn" data-copy-code>Copy code</button>
+        </div>
+        <p class="ed-gate-hint" data-device-state>Waiting for you to approve it\u{2026}</p>`;
+
+      maybe<HTMLButtonElement>("[data-copy-code]")?.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(login.userCode).catch(() => {});
+        const button = maybe<HTMLButtonElement>("[data-copy-code]");
+        if (button) button.textContent = "Copied";
+      });
+
+      window.open(login.verificationUri, "_blank", "noopener");
+      await enter(await login.approved);
+    } catch (error) {
+      // Keep the form and whatever is typed into it; only say what happened.
+      devicePanel.hidden = false;
+      devicePanel.innerHTML = `<p class="ed-gate-hint" data-state="error">${esc((error as Error).message)}</p>`;
+      deviceButton.disabled = false;
+      deviceButton.querySelector("span")!.textContent = "Sign in with GitHub";
+    }
+  });
+
   maybe<HTMLButtonElement>("[data-forget-ai]")?.addEventListener("click", () => {
     forgetAssistantKey();
     signInView("The assistant key has been forgotten.");
@@ -220,12 +273,7 @@ function signInView(message = "") {
     button.disabled = true;
     button.textContent = "Checking\u{2026}";
     try {
-      const session = await signIn(tokenInput.value, assistantKey);
-      state.user = session.user;
-      state.assistant = session.assistant;
-      state.canPublish = session.canPublish;
-      state.model = session.model;
-      await openStories();
+      await enter(await signIn(tokenInput.value, assistantKey));
     } catch (error) {
       signInView((error as Error).message);
     }
@@ -413,6 +461,15 @@ function storiesView(notice = "") {
 
   const published = state.stories.filter((s) => s.live).length;
 
+  // A token that dies without warning locks the writer out mid-sentence.
+  const daysLeft = state.expires
+    ? Math.ceil((Date.parse(state.expires) - Date.now()) / 86_400_000)
+    : NaN;
+  const expiring =
+    Number.isFinite(daysLeft) && daysLeft <= 10
+      ? `This GitHub token ${daysLeft <= 0 ? "has expired" : `expires in ${daysLeft} ${daysLeft === 1 ? "day" : "days"}`} \u{b7} ${new Date(state.expires).toLocaleDateString("en-GB", { day: "numeric", month: "long" })}. Make a new one before it does — the assistant key stays where it is.`
+      : "";
+
   view(`
     <div class="ed-bar">
       <div class="ed-bar-left">
@@ -426,6 +483,7 @@ function storiesView(notice = "") {
     </div>
     <div class="ed-stories">
       ${notice ? `<p class="ed-note" data-state="ok" style="margin-bottom:1rem">${esc(notice)}</p>` : ""}
+      ${expiring ? `<p class="ed-warn" style="margin-bottom:1rem">${esc(expiring)} <a href="https://github.com/settings/personal-access-tokens/new?name=Statevera%20desk&contents=write" target="_blank" rel="noopener">Make one &rarr;</a></p>` : ""}
       ${state.canPublish ? "" : '<p class="ed-warn" style="margin-bottom:1rem">This token can read but not write. You can open and draft, but not save. Give it Contents: read and write on the repository.</p>'}
       <div class="ed-stories-head">
         <h1>Your stories</h1>
@@ -3411,6 +3469,7 @@ if (session.signedIn) {
   state.assistant = session.assistant;
   state.canPublish = session.canPublish;
   state.model = session.model;
+  state.expires = session.expires ?? "";
   await openStories();
 } else {
   signInView(session.note ?? "");
