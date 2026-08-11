@@ -57,6 +57,8 @@ export interface ApiEnv extends PrimarySourceEnv {
   GITHUB_OAUTH_SCOPE?: string;
   /** Who may sign in, comma separated. Defaults to the account that owns the publication. */
   DESK_LOGINS?: string;
+  /** Bind this and the writer never has to hold an OpenAI key of her own. */
+  OPENAI_KEY?: string;
 }
 
 /**
@@ -310,6 +312,66 @@ async function finishDeviceLogin(request: Request, env: ApiEnv): Promise<Respons
   return json(request, { token: accessToken, login });
 }
 
+// ------------------------------------------------------------
+// The assistant, when the desk keeps the key
+// ------------------------------------------------------------
+// A writer should not have to hold an API key to be helped with her
+// own sentences. Bind OPENAI_KEY here and the desk stops asking:
+// calls come through this endpoint instead, with the same gate as
+// the sign-in — the caller proves she is the writer by presenting
+// the GitHub token she signed in with.
+//
+// Bind nothing and none of this exists; the desk asks for a key and
+// talks to OpenAI directly, as it always has.
+// ------------------------------------------------------------
+
+const OPENAI_CHAT = "https://api.openai.com/v1/chat/completions";
+
+/** Who a GitHub token belongs to, remembered briefly so every keystroke is not a round trip. */
+const knownTokens = new Map<string, { login: string; at: number }>();
+const TOKEN_MEMORY_MS = 10 * 60_000;
+
+async function loginFor(token: string): Promise<string> {
+  const key = hex(await crypto.subtle.digest("SHA-256", encoder.encode(token)));
+  const remembered = knownTokens.get(key);
+  if (remembered && Date.now() - remembered.at < TOKEN_MEMORY_MS) return remembered.login;
+
+  const who = await fetch("https://api.github.com/user", {
+    headers: {
+      accept: "application/vnd.github+json",
+      authorization: `Bearer ${token}`,
+      "user-agent": "statevera-desk",
+    },
+  });
+  const login = String(((await who.json().catch(() => ({}))) as { login?: string }).login ?? "");
+  knownTokens.set(key, { login, at: Date.now() });
+  if (knownTokens.size > 50) knownTokens.clear();
+  return login;
+}
+
+async function handleAssistant(request: Request, env: ApiEnv): Promise<Response> {
+  if (!env.OPENAI_KEY) return json(request, { error: "This desk holds no assistant key." }, 501);
+
+  const bearer = (request.headers.get("authorization") ?? "").replace(/^Bearer\s+/i, "").trim();
+  if (!bearer) return json(request, { error: "Sign in first." }, 401);
+  const login = await loginFor(bearer);
+  if (!login || !deskLogins(env).has(login.toLowerCase())) {
+    return json(request, { error: "This assistant belongs to someone else." }, 403);
+  }
+
+  const upstream = await fetch(OPENAI_CHAT, {
+    method: "POST",
+    headers: { "content-type": "application/json", authorization: `Bearer ${env.OPENAI_KEY}` },
+    body: await request.text(),
+  });
+
+  // The body is passed through as it arrives, so a streamed answer stays streamed.
+  const headers = new Headers(corsHeaders(request));
+  headers.set("content-type", upstream.headers.get("content-type") ?? "application/json");
+  headers.set("cache-control", "no-store");
+  return new Response(upstream.body, { status: upstream.status, headers });
+}
+
 export async function handleApi(request: Request, env: ApiEnv): Promise<Response> {
   const route = new URL(request.url).pathname.replace(/^.*\/api\//, "");
 
@@ -323,6 +385,10 @@ export async function handleApi(request: Request, env: ApiEnv): Promise<Response
     if (route === "views" && request.method === "GET") return await readViews(request, env);
     if (route === "sign-in" && request.method === "POST") return await startDeviceLogin(request, env);
     if (route === "sign-in/finish" && request.method === "POST") return await finishDeviceLogin(request, env);
+    if (route === "assistant" && request.method === "GET") {
+      return json(request, { available: Boolean(env.OPENAI_KEY) });
+    }
+    if (route === "assistant" && request.method === "POST") return await handleAssistant(request, env);
   } catch (error) {
     return json(request, { error: (error as Error).message }, 502);
   }

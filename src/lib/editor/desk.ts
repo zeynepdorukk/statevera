@@ -11,6 +11,7 @@
 // ============================================================
 
 import { DEFAULT_MODEL, REPO, forgetGithubToken, readCredentials, writeCredentials } from "./credentials";
+import { setDeskAssistant } from "./ai";
 import { site } from "../../site";
 
 export class DeskError extends Error {
@@ -248,10 +249,20 @@ async function inspectToken(): Promise<Session> {
   const login = await github<{ login?: string }>("/user")
     .then((user) => user.login ?? "")
     .catch(() => "");
+
+  // The desk may hold a key of its own, in which case the writer needs none.
+  const desks = site.deskUrl
+    ? await fetch(`${site.deskUrl}/api/assistant`)
+        .then((response) => (response.ok ? response.json() : { available: false }))
+        .then((data) => Boolean((data as { available?: boolean }).available))
+        .catch(() => false)
+    : false;
+  setDeskAssistant(desks);
+
   return {
     signedIn: true,
     user: login || repo.owner?.login || "Editor",
-    assistant: Boolean(credentials.openai),
+    assistant: Boolean(credentials.openai) || desks,
     // A read-only token can still open and draft, so say so rather than
     // refusing the desk outright.
     canPublish: repo.permissions?.push !== false,

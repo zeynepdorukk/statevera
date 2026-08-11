@@ -9,6 +9,7 @@
 // ============================================================
 
 import { DEFAULT_MODEL, readCredentials } from "./credentials";
+import { site } from "../../site";
 
 /** Kept as a type so the call sites read the same; there is nothing in it. */
 export type AiConfig = Record<string, never>;
@@ -71,6 +72,16 @@ export interface Turn {
 }
 
 const OPENAI_CHAT = "https://api.openai.com/v1/chat/completions";
+
+/**
+ * Whether the publication's own service holds a key. Asked once, at sign-in,
+ * because the answer decides whether the desk needs to ask the writer for one.
+ */
+let deskAssistant = false;
+
+export const setDeskAssistant = (available: boolean): void => {
+  deskAssistant = available;
+};
 
 /**
  * What this model has already refused.
@@ -358,22 +369,36 @@ export async function askTurn(
 /**
  * Sends the payload, negotiating the parameters and the model name the way this
  * key's generation of the API actually accepts them.
+ *
+ * Two ways to reach the model: the writer's own key, straight to OpenAI, or the
+ * desk's, through the publication's own service. The second exists so that
+ * being helped with your sentences does not require holding an API key.
  */
 async function postChat(
   payload: Record<string, unknown>,
   signal?: AbortSignal,
   variant = ""
 ): Promise<Response> {
-  const { openai: key } = readCredentials();
-  if (!key) throw new AiError("No assistant key on this desk.", 503);
+  const { openai: key, github } = readCredentials();
+  const throughDesk = !key;
+  if (throughDesk && !(github && site.deskUrl && deskAssistant)) {
+    throw new AiError("No assistant key on this desk.", 503);
+  }
 
   const send = (data: Record<string, unknown>) =>
-    fetch(OPENAI_CHAT, {
-      method: "POST",
-      signal,
-      headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
-      body: JSON.stringify(data),
-    });
+    throughDesk
+      ? fetch(`${site.deskUrl}/api/assistant`, {
+          method: "POST",
+          signal,
+          headers: { "content-type": "application/json", authorization: `Bearer ${github}` },
+          body: JSON.stringify(data),
+        })
+      : fetch(OPENAI_CHAT, {
+          method: "POST",
+          signal,
+          headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
+          body: JSON.stringify(data),
+        });
 
   const OPTIONAL = ["reasoning_effort", "temperature", "max_completion_tokens", "response_format", "stream"];
   let response = await send(payload);
