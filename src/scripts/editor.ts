@@ -241,11 +241,14 @@ function signInView(message = "") {
   const deviceButton = el<HTMLButtonElement>("[data-device]");
   const devicePanel = el<HTMLElement>("[data-device-panel]");
 
+  // The field is gone when the desk holds its own key, so nothing may assume it.
+  const assistantKey = () => maybe<HTMLInputElement>("#aikey")?.value.trim() ?? "";
+
   deviceButton.addEventListener("click", async () => {
     deviceButton.disabled = true;
     deviceButton.querySelector("span")!.textContent = "Asking GitHub\u{2026}";
     try {
-      const login = await beginDeviceLogin(el<HTMLInputElement>("#aikey").value.trim());
+      const login = await beginDeviceLogin(assistantKey());
       devicePanel.hidden = false;
       devicePanel.innerHTML = `
         <p class="ed-gate-hint">Type this code into GitHub, and the desk opens by itself.</p>
@@ -281,19 +284,19 @@ function signInView(message = "") {
   el<HTMLFormElement>("[data-signin]").addEventListener("submit", async (event) => {
     event.preventDefault();
     const button = el<HTMLButtonElement>("[data-submit]");
-    const assistantKey = el<HTMLInputElement>("#aikey").value.trim();
+    const key = assistantKey();
     if (!looksLikeGithubToken(tokenInput.value)) {
       signInView("That does not look like a GitHub token. It starts with github_pat_ or ghp_.");
       return;
     }
-    if (assistantKey && !looksLikeOpenAiKey(assistantKey)) {
+    if (key && !looksLikeOpenAiKey(key)) {
       signInView("That does not look like an OpenAI key. Leave it empty to write without the assistant.");
       return;
     }
     button.disabled = true;
     button.textContent = "Checking\u{2026}";
     try {
-      await enter(await signIn(tokenInput.value, assistantKey));
+      await enter(await signIn(tokenInput.value, key));
     } catch (error) {
       signInView((error as Error).message);
     }
