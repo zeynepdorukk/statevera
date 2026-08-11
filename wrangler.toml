@@ -8,6 +8,8 @@ compatibility_date = "2026-08-01"
 # Leave it empty and the desk asks for a token instead.
 [vars]
 GITHUB_CLIENT_ID = ""
+# Who may sign in. The publication's account by default; add others with commas.
+DESK_LOGINS = "zeynepdorukk"
 
 # Read counts. One key per device per article; the country, referring host and
 # date ride along as KV metadata, so a breakdown costs no extra reads.

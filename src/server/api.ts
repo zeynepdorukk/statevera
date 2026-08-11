@@ -55,10 +55,22 @@ export interface ApiEnv extends PrimarySourceEnv {
   GITHUB_CLIENT_SECRET?: string;
   /** Likewise the scope: a GitHub App is told its permissions when it is made. */
   GITHUB_OAUTH_SCOPE?: string;
+  /** Who may sign in, comma separated. Defaults to the account that owns the publication. */
+  DESK_LOGINS?: string;
 }
 
-/** The one GitHub account this desk will hand a token to. */
-const DESK_OWNER = "zeynepdorukk";
+/**
+ * The GitHub accounts this desk will hand a token to. The repository belongs to
+ * the writer, not to whoever keeps the worker running, so this is a setting and
+ * not a name in the source.
+ */
+const deskLogins = (env: ApiEnv): Set<string> =>
+  new Set(
+    (env.DESK_LOGINS ?? "zeynepdorukk")
+      .split(",")
+      .map((login) => login.trim().toLowerCase())
+      .filter(Boolean)
+  );
 
 /** Who may call this API from a browser. */
 const ALLOWED_ORIGINS = new Set([
@@ -291,7 +303,7 @@ async function finishDeviceLogin(request: Request, env: ApiEnv): Promise<Respons
     },
   });
   const login = String(((await who.json().catch(() => ({}))) as { login?: string }).login ?? "");
-  if (login.toLowerCase() !== DESK_OWNER) {
+  if (!deskLogins(env).has(login.toLowerCase())) {
     return json(request, { error: "This desk belongs to someone else." }, 403);
   }
 
