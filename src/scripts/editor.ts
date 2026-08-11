@@ -7,7 +7,7 @@ import { runEdit, judgePassage, sourceClaim, diffWords, describeChange, EDIT_JOB
 import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
   beginDeviceLogin, searchPhotos, importPhoto, uploadImage, readViewCounts, readViewDetail,
   type FileEntry, type Photo, type ViewDetail, type ViewShare } from "../lib/editor/desk";
-import { REPO, forgetAssistantKey, looksLikeGithubToken, looksLikeOpenAiKey, readCredentials } from "../lib/editor/credentials";
+import { REPO, forgetAssistantKey, looksLikeGithubToken, looksLikeOpenAiKey, readCredentials, writeCredentials } from "../lib/editor/credentials";
 import { TEMPLATES, templateById, type Template } from "../lib/editor/templates";
 import { parseDocument, serialiseArticle, slugify,
   findBrokenCharacters, type ArticleFields } from "../lib/editor/document";
@@ -477,12 +477,20 @@ function storiesView(notice = "") {
         <span class="ed-legend" style="margin:0">Statevera</span>
       </div>
       <div class="ed-bar-right">
+        ${state.assistant ? "" : '<button type="button" class="ed-btn ed-btn-quiet" data-ai-add>Add assistant key</button>'}
         <button type="button" class="ed-btn ed-btn-quiet" data-out>Sign out</button>
         <button type="button" class="ed-btn ed-btn-primary" data-new>New piece</button>
       </div>
     </div>
     <div class="ed-stories">
       ${notice ? `<p class="ed-note" data-state="ok" style="margin-bottom:1rem">${esc(notice)}</p>` : ""}
+      <form class="ed-ai-key" data-ai-panel hidden>
+        <label for="aik">Assistant key</label>
+        <input id="aik" type="password" class="ed-input" autocomplete="off" spellcheck="false" placeholder="sk-\u{2026}" />
+        <button type="submit" class="ed-btn ed-btn-primary">Save</button>
+        <button type="button" class="ed-btn ed-btn-quiet" data-ai-cancel>Cancel</button>
+        <p class="ed-note">Your OpenAI key. It stays in this browser and is sent nowhere but OpenAI.</p>
+      </form>
       ${expiring ? `<p class="ed-warn" style="margin-bottom:1rem">${esc(expiring)} <a href="https://github.com/settings/personal-access-tokens/new?name=Statevera%20desk&contents=write" target="_blank" rel="noopener">Make one &rarr;</a></p>` : ""}
       ${state.canPublish ? "" : '<p class="ed-warn" style="margin-bottom:1rem">This token can read but not write. You can open and draft, but not save. Give it Contents: read and write on the repository.</p>'}
       <div class="ed-stories-head">
@@ -535,6 +543,28 @@ function storiesView(notice = "") {
   el<HTMLButtonElement>("[data-new]").addEventListener("click", templatesView);
   maybe<HTMLButtonElement>("[data-new-empty]")?.addEventListener("click", templatesView);
   el<HTMLButtonElement>("[data-out]").addEventListener("click", signOut);
+
+  // The assistant key is the one thing signing in with GitHub cannot fetch.
+  const aiPanel = maybe<HTMLFormElement>("[data-ai-panel]");
+  maybe<HTMLButtonElement>("[data-ai-add]")?.addEventListener("click", () => {
+    if (!aiPanel) return;
+    aiPanel.hidden = false;
+    el<HTMLInputElement>("#aik").focus();
+  });
+  maybe<HTMLButtonElement>("[data-ai-cancel]")?.addEventListener("click", () => {
+    if (aiPanel) aiPanel.hidden = true;
+  });
+  aiPanel?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const value = el<HTMLInputElement>("#aik").value.trim();
+    if (!looksLikeOpenAiKey(value)) {
+      storiesView("That does not look like an OpenAI key. It starts with sk-.");
+      return;
+    }
+    writeCredentials({ openai: value });
+    state.assistant = true;
+    storiesView("The assistant is on.");
+  });
 }
 
 async function removeStory(path: string, cardEl: HTMLElement) {
