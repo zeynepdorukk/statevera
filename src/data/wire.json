@@ -1,8 +1,57 @@
 {
-  "generatedAt": "2026-08-11T16:31:51.883Z",
+  "generatedAt": "2026-08-11T17:37:22.549Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "6fbff40d98f7",
+      "title": "Hiroshi Okuda, Toyota president who led global expansion, dead at 93",
+      "summary": "",
+      "url": "https://asia.nikkei.com/life-arts/obituaries/hiroshi-okuda-toyota-president-who-led-global-expansion-dead-at-93",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-11T17:37:16.075Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "251f45d67e1d",
+      "title": "UK Foreign Secretary Miliband calls for Israeli withdrawal from Gaza in first call with Saar",
+      "summary": "UK Foreign Secretary Miliband calls for Israeli withdrawal from Gaza in first call with Saar The UK Foreign Secretary Ed Miliband has called on Israel to withdraw from Gaza and curb its settlements in the occupied West Bank in his first meeting with his…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/uk-foreign-secretary-miliband-calls-israeli-withdrawal-gaza-first-call",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-11T17:30:39.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "d52b88ac38d2",
+      "title": "Press corps traveling with Trump kept in dark about president’s catering container switch to secret plane – live",
+      "summary": "Reporter says media got no extra guidance about president’s movements amid questions over secretive plane swap Sign up to the US Breaking News email Pete Hegseth ’s appointments to a key Pentagon advisory body include two men with ties to the venture capital…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/11/donald-trump-democrats-primaries-wisconsin-minnesota-south-carolina-vaccines-max-miller-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-11T17:21:56.000Z",
+      "image": "https://i.guim.co.uk/img/media/23c8dd7d33aae91f65362f90f010c3ea9c473e10/181_0_2635_2109/master/2635.jpg?width=700&quality=85&auto=format&fit=max&s=558d015832d82166217d00bf6b1aeb88",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "341ba8cd621a",
       "title": "Mapeo de la inversión estadounidense en América Latina y el Caribe",
@@ -18,22 +67,6 @@
       "categoryConfidence": "source",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "d52b88ac38d2",
-      "title": "Press corps traveling with Trump kept in dark about president’s catering container switch to secret plane – live",
-      "summary": "Reporter says media got no extra guidance about president’s movements amid questions over secretive plane swap Sign up to the US Breaking News email Pete Hegseth ’s appointments to a key Pentagon advisory body include two men with ties to the venture capital…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/11/donald-trump-democrats-primaries-wisconsin-minnesota-south-carolina-vaccines-max-miller-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-11T16:19:20.000Z",
-      "image": "https://i.guim.co.uk/img/media/23c8dd7d33aae91f65362f90f010c3ea9c473e10/181_0_2635_2109/master/2635.jpg?width=700&quality=85&auto=format&fit=max&s=558d015832d82166217d00bf6b1aeb88",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "30b75d64ef4f",
@@ -516,22 +549,6 @@
       "weight": 2
     },
     {
-      "id": "6446283322ee",
-      "title": "Future of southern Lebanon peacekeeping uncertain ahead of UNIFIL phase-out",
-      "summary": "Future peacekeeping missions may shrink significantly, risking security gaps, as political solutions remain elusive.",
-      "url": "https://www.aljazeera.com/news/2026/8/11/future-southern-lebanon-peacekeeping-uncertain-amid-unifil-phase-out?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-11T11:28:53.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "75850a70a109",
       "title": "Zambia heads to the polls as economy dominates election campaign",
       "summary": "With nearly 70 percent of Zambia's population under the age of 30, the youth vote is expected to play a decisive role in determining the country's next government.",
@@ -545,22 +562,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "7e62f073e9ab",
-      "title": "Israel pursuing ‘undeclared annexation’ of West Bank, Peace Now says",
-      "summary": "Israel pursuing ‘undeclared annexation’ of West Bank, Peace Now says Submitted by MEE staff on Tue, 08/11/2026 - 11:06 Group says expanded Israeli civilian powers, settlement growth and pressure on Palestinian Authority are eroding Oslo framework Israeli…",
-      "url": "https://www.middleeasteye.net/news/israel-pursuing-undeclared-annexation-west-bank-peace-now-says",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-11T11:03:11.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1914,23 +1915,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "c842ed40eb3f",
-      "title": "Tesla to open more delivery sites in Japan to deal with sales surge",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/automobiles/tesla-to-open-more-delivery-sites-in-japan-to-deal-with-sales-surge",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-09T16:19:43.239Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
