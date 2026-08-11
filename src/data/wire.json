@@ -1,10 +1,26 @@
 {
-  "generatedAt": "2026-08-11T18:32:06.121Z",
+  "generatedAt": "2026-08-11T19:43:12.565Z",
   "sourceCount": 26,
   "failedSources": [
     "france24"
   ],
   "items": [
+    {
+      "id": "24e94659b6cb",
+      "title": "Houthis reportedly kill six in first deadly attack since start of Iran war",
+      "summary": "Iran's proxy says it hit a ship with Saudi military equipment in the Red Sea, as tensions over the US-Iran war remain high.",
+      "url": "https://www.bbc.co.uk/news/articles/ckg9wpmzmlno?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-11T19:27:17.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/24a4/live/92d8c9e0-95bb-11f1-a556-013790f38050.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "d52b88ac38d2",
       "title": "Officials monitoring polling sites in Minnesota’s two largest counties, says Trump’s justice department – live",
@@ -13,10 +29,58 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-11T18:29:14.000Z",
+      "publishedAt": "2026-08-11T19:17:28.000Z",
       "image": "https://i.guim.co.uk/img/media/8b238551217a05be33f18d4cf7eb6773da5fae8a/366_0_4500_3600/master/4500.jpg?width=700&quality=85&auto=format&fit=max&s=a47ecec39194c67e66cc75366adc0deb",
       "imageWidth": 700,
       "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "ead10882e4cd",
+      "title": "Venezuela and Israel restore consular ties as relations warm",
+      "summary": "Despite cutting diplomatic ties with Israel in 2009, Caracas has shifted alignment in wake of Maduro abduction.",
+      "url": "https://www.aljazeera.com/news/2026/8/11/venezuela-and-israel-restore-consular-ties-as-relations-warm?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-11T18:58:33.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "36dd75888d60",
+      "title": "Israel cannot afford to miss the IMEC moment",
+      "summary": "For the next Israeli government, the economic gains of investing in the corridor are worth the political costs. The post Israel cannot afford to miss the IMEC moment appeared first on Atlantic Council .",
+      "url": "https://www.atlanticcouncil.org/blogs/menasource/israel-cannot-afford-to-miss-the-imec-moment/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-11T18:45:57.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Middle East",
+      "weight": 3
+    },
+    {
+      "id": "7490fbb5ba3b",
+      "title": "Paramount CEO may remove operations from California over stalled merger",
+      "summary": "Paramount's CEO David Ellison warns of a California exit if the US state does not agree to talks, according to reports.",
+      "url": "https://www.aljazeera.com/economy/2026/8/11/paramount-ceo-may-remove-operations-from-california-over-stalled-merger?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-11T18:34:31.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Americas",
       "weight": 2
@@ -54,22 +118,6 @@
       "weight": 2
     },
     {
-      "id": "f39366eb0fe8",
-      "title": "Israel and Venezuela renew diplomatic relations",
-      "summary": "Israel and Venezuela renew diplomatic relations Israel and Venezuela have announced the restoration of their diplomatic relations after 17 years of severed ties. In a stateme nt posted on X, Israeli Foreign Minister Gideon Saar said the two countries had…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israel-and-venezuela-renew-dip",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-11T18:01:56.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "6fbff40d98f7",
       "title": "Hiroshi Okuda, Toyota president who led global expansion, dead at 93",
       "summary": "",
@@ -88,8 +136,8 @@
     },
     {
       "id": "251f45d67e1d",
-      "title": "UK Foreign Secretary Miliband calls for Israeli withdrawal from Gaza in first call with Saar",
-      "summary": "UK Foreign Secretary Miliband calls for Israeli withdrawal from Gaza in first call with Saar UK Foreign Secretary Ed Miliband has called on Israel to withdraw from Gaza and curb its settlements in the occupied West Bank, in his first meeting with his Israeli…",
+      "title": "UK Foreign Secretary Miliband calls for Israeli withdrawal from Gaza in first talks with Saar",
+      "summary": "UK Foreign Secretary Miliband calls for Israeli withdrawal from Gaza in first talks with Saar UK Foreign Secretary Ed Miliband has called on Israel to withdraw from Gaza and curb its settlements in the occupied West Bank, in his first call with his Israeli…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/uk-foreign-secretary-miliband-calls-israeli-withdrawal-gaza-first-call",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -100,22 +148,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "6867c8893a58",
-      "title": "Will Andy Burnham’s everyday fixes be enough to get the public on his side?",
-      "summary": "The prime minister’s money-saving policies are popular but they are yet to convince voters he can take on the big things It was last year that Martin Lewis, the money-saving guru, advised the government to find “100 small things that piss people off” and set…",
-      "url": "https://www.theguardian.com/politics/2026/aug/11/will-andy-burnhams-everyday-fixes-be-enough-to-get-the-public-on-his-side",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-11T17:30:14.000Z",
-      "image": "https://i.guim.co.uk/img/media/276bdf0382448039607759f705ce7361882187d5/1184_140_2758_2206/master/2758.jpg?width=700&quality=85&auto=format&fit=max&s=3937261f08a94a05bed826d71f5de41b",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -407,22 +439,6 @@
       "weight": 2
     },
     {
-      "id": "15181e9fc1e4",
-      "title": "What’s behind Iran’s new military appointments and what do they indicate?",
-      "summary": "Observers say the nominations empower the hardline old guard, prioritise loyalty over military innovation.",
-      "url": "https://www.aljazeera.com/news/2026/8/11/whats-behind-irans-new-military-appointments-and-what-do-they-indicate?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-11T13:28:53.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "2c8dc1b0af83",
       "title": "Why the Pacific Islands Forum Should Watch Taiwan’s East Coast",
       "summary": "The waters east of Taiwan sit within a strategically integrated maritime space stretching from Northeast Asia, through Micronesia and Melanesia, to Polynesia.",
@@ -455,22 +471,6 @@
       "weight": 2
     },
     {
-      "id": "fba9fc45bd5a",
-      "title": "What to know about the US primary election in Minnesota",
-      "summary": "Immigration is at the centre of another closely watched Democratic Senate race.",
-      "url": "https://www.aljazeera.com/news/2026/8/11/what-to-know-about-us-primary-election-in-minnesota?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-11T12:56:41.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "8e221ac7c7f3",
       "title": "Symbolic Concessions, No Implementation: Myanmar’s Promises of Rohingya Repatriation",
       "summary": "Myanmar’s latest pledge to repatriate 300,000 Rohingya refugees cannot be viewed as a credible commitment. It’s yet another iteration of a well-established diplomatic pattern.",
@@ -485,22 +485,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "3191898d9b4d",
-      "title": "US fires on ship breaking its Iran blockade",
-      "summary": "US fires on ship breaking its Iran blockade The US military fired on a Panama-flagged ship that attempted to break the American blockade of Iranian ports on Tuesday, the Wall Street Journal reported citing an official source. The official said a US military…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-fires-ship-breaking-its-iran-blockade",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-11T12:34:44.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "f39c7315b44f",
@@ -1389,22 +1373,6 @@
       "weight": 2
     },
     {
-      "id": "9178f1ed3704",
-      "title": "Liverpool owners close to £1.35bn sale of 30% stake to consortium including Jeff Bezos",
-      "summary": "Group including Amazon founder has held talks with FSG Bhatia and Facebook co-founder Saverin also involved A consortium including the Amazon founder, Jeff Bezos, is close to completing a deal for a 30% stake in Liverpool after months of talks with Fenway…",
-      "url": "https://www.theguardian.com/football/2026/aug/10/liverpool-sale-stake-consortium-jeff-bezos-amazon-fenway-sports-group",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-10T13:49:05.000Z",
-      "image": "https://i.guim.co.uk/img/media/7708ab103463381d94ba71070765d78ebc7c193e/70_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=b684531a559adb63ef0118350047e757",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "1d4aab72f6aa",
       "title": "The Mecca Pact Extends Pakistan’s Security Role Westward",
       "summary": "Six months ago, it was unclear whether trilateral discussions between Pakistan, Saudi Arabia, and Turkiye would produce a formal agreement. They now have.",
@@ -1434,6 +1402,22 @@
       "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "73892c222554",
+      "title": "Consortium advances talks for stake in Liverpool",
+      "summary": "A group including Amazon founder Jeff Bezos advances its talks to buy about a 30% stake in Liverpool, BBC Sport has been told.",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cgljd4kny9eo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/business",
+      "sourceId": "bbc-business",
+      "publishedAt": "2026-08-10T13:16:51.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/bf9e/live/650f8d00-94b7-11f1-a7ab-8b30adf0800a.png",
+      "imageWidth": 240,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -1643,22 +1627,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "b223f0a368c4",
-      "title": "Sierra Leone president presses lawmakers to back contested election reforms",
-      "summary": "Sierra Leone’s President Julius Maada Bio has urged Parliament to pass disputed electoral reforms that would lower the presidential victory threshold, introduce proportional representation and reserve 30 percent of political leadership positions for women.",
-      "url": "http://www.africanews.com/2026/08/10/sierra-leone-president-presses-lawmakers-to-back-contested-election-reforms/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-10T10:10:06.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/86/84/57/640x360_cmsv2_50dda018-7a98-5f8a-b65c-fa6319208147-9868457.jpg?1786349947",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
     },
     {
       "id": "659e3e71c36f",
@@ -2382,22 +2350,6 @@
       "categoryConfidence": "high",
       "region": "Turkey",
       "weight": 2
-    },
-    {
-      "id": "1d9c78ec9904",
-      "title": "Lichfield interviewed on Global Dispatches to discuss the widening deficit in Russia",
-      "summary": "Listen to the full interview here The post Lichfield interviewed on Global Dispatches to discuss the widening deficit in Russia appeared first on Atlantic Council .",
-      "url": "https://www.atlanticcouncil.org/insight-impact/in-the-news/lichfield-interviewed-on-global-dispatches-to-discuss-the-widening-deficit-in-russia/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-07T14:18:23.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Eurasia",
-      "weight": 3
     },
     {
       "id": "1a40a2e30e19",
