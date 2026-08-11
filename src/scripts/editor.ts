@@ -186,7 +186,7 @@ function signInView(message = "") {
         If you are a collaborator on it: fine-grained tokens cannot reach another account's repository, so use a classic token with the <b>repo</b> scope.
         <a href="https://github.com/settings/tokens/new?scopes=repo&description=Statevera%20desk" target="_blank" rel="noopener">Make one &rarr;</a></p>
       </div>
-      <div class="ed-field">
+      <div class="ed-field" data-ai-field>
         <label for="aikey">Assistant key <span class="ed-gate-optional">optional</span></label>
         <input id="aikey" type="password" class="ed-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${remembered ? "\u{2022}\u{2022}\u{2022}\u{2022} remembered" : "sk-\u{2026}"}" />
         <p class="ed-gate-hint">${remembered
@@ -200,6 +200,26 @@ function signInView(message = "") {
 
   const tokenInput = el<HTMLInputElement>("#tok");
   const reveal = el<HTMLButtonElement>("[data-reveal]");
+
+  // A desk that holds its own key should not be asking for one.
+  if (!remembered && site.deskUrl) {
+    void fetch(`${site.deskUrl}/api/assistant`)
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data) => {
+        if (!(data as { available?: boolean } | null)?.available) return;
+        const field = maybe<HTMLElement>("[data-ai-field]");
+        if (field) {
+          field.innerHTML =
+            '<p class="ed-gate-hint">The assistant is already on this desk. You do not need a key of your own.</p>';
+        }
+        const foot = maybe<HTMLElement>(".ed-gate-foot");
+        if (foot) {
+          foot.textContent =
+            "Your sign-in stays in this browser. The assistant runs on the publication's own service, and answers only to it.";
+        }
+      })
+      .catch(() => {});
+  }
   reveal.addEventListener("click", () => {
     const shown = tokenInput.type === "text";
     tokenInput.type = shown ? "password" : "text";
