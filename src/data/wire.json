@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-12T04:58:29.462Z",
+  "generatedAt": "2026-08-12T06:11:01.857Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "0aed0ec2d082",
+      "title": "Why have several nations raised red flags over Indian farm exports?",
+      "summary": "As Tokyo turns back mangoes, Beijing blocks rice, and European inspectors flag spices, Indian growers ask what's wrong.",
+      "url": "https://www.aljazeera.com/news/2026/8/12/why-have-several-nations-raised-red-flags-over-indian-farm-exports?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-12T05:34:14.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "6490a0b8a37f",
+      "title": "Zelenskyy says Ukraine has sent proposals to US to end war with Russia",
+      "summary": "Ukraine's president also says Russia will use its election next month as a pretext to declare a new mobilisation.",
+      "url": "https://www.aljazeera.com/news/2026/8/12/zelenskyy-says-ukraine-has-sent-proposals-to-us-to-end-war-with-russia?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-12T05:26:26.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "d0ca6ef14132",
+      "title": "Houthi attacks in Yemen's Marib, Mocha left 'dozens killed and injured', military spokesman says",
+      "summary": "Houthi attacks in Yemen's Marib, Mocha left 'dozens killed and injured', military spokesman says Houthi military spokesperson Yahya Saree said that missile and drone strikes targeting military sites in Marib and Mocha killed and injured dozens of people. In a…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/houthi-attacks-yemens-marib-mocha-left-dozens-killed-and-injured",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-12T05:05:42.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "2d2bdb66e715",
       "title": "Indonesian banks face tighter liquidity after strong profits",
@@ -470,22 +518,6 @@
       "weight": 2
     },
     {
-      "id": "dd3d6df9f0dd",
-      "title": "Trump warns of ‘jihadists’ ruling in Washington as Democrats show momentum",
-      "summary": "Donald Trump labels US Democratic nominees 'jihadists' in inflammatory remarks made in the Oval Office.",
-      "url": "https://www.aljazeera.com/news/2026/8/11/trump-warns-of-jihadists-ruling-in-washington-as-democrats-show-momentum?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-11T20:11:53.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "935156be073b",
       "title": "Libya oil company says blazes contained after drone attacks on complex",
       "summary": "A major gasoline reservoir in Libya's Zawiya, west of Tripoli, caught fire and collapsed on Monday after what authorities said was an attack by unknown perpetrators.",
@@ -628,22 +660,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "251f45d67e1d",
-      "title": "UK Foreign Secretary Miliband calls for Israeli withdrawal from Gaza in first talks with Saar",
-      "summary": "UK Foreign Secretary Miliband calls for Israeli withdrawal from Gaza in first talks with Saar UK Foreign Secretary Ed Miliband has called on Israel to withdraw from Gaza and curb its settlements in the occupied West Bank, in his first call with his Israeli…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/uk-foreign-secretary-miliband-calls-israeli-withdrawal-gaza-first-call",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-11T17:30:39.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -885,6 +901,22 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
+    },
+    {
+      "id": "47dca6569dbe",
+      "title": "Trump secretly switched planes amid reported Iran assassination threat",
+      "summary": "President Donald Trump secretly switched from Air Force One to a smaller military aircraft after last month’s NATO summit in Ankara, according to The Washington Post, in an elaborate security operation reportedly prompted by an Iranian threat against him.",
+      "url": "http://www.africanews.com/2026/08/11/trump-secretly-switched-planes-amid-reported-iran-assassination-threat/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-11T12:52:44.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/87/02/06/640x360_cmsv2_ff74957a-7e81-5ba5-adfd-153273626b1c-9870206.jpg?1786447842",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
     },
     {
       "id": "6ffd128a3ade",
@@ -1773,22 +1805,6 @@
       "weight": 3
     },
     {
-      "id": "9ff7bb8bddfd",
-      "title": "Madagascar moves to reclaim colonial-era land in sovereignty push",
-      "summary": "Madagascar’s High Constitutional Court has validated a law allowing the state to reclaim land still registered in the names of foreign settlers from the colonial era, reviving a long-running land dispute while putting sovereignty and access to property…",
-      "url": "http://www.africanews.com/2026/08/10/madagascar-moves-to-reclaim-colonial-era-land-in-sovereignty-push/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-10T13:18:40.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/86/88/21/640x360_cmsv2_5da9c9f2-ea80-5f83-ba86-6f71944a6380-9868821.jpg?1786362693",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "73892c222554",
       "title": "Consortium advances talks for stake in Liverpool",
       "summary": "A group including Amazon founder Jeff Bezos advances its talks to buy about a 30% stake in Liverpool, BBC Sport has been told.",
@@ -1993,23 +2009,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "a32d606d94b3",
-      "title": "South Korea, US to hold annual military exercises",
-      "summary": "",
-      "url": "https://asia.nikkei.com/politics/defense/south-korea-us-to-hold-annual-military-exercises",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-10T08:01:39.938Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
@@ -2605,22 +2604,6 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "e8c4c457f90a",
-      "title": "Goodwin considers selling part of defence business",
-      "summary": "The firm is a key supplier of components to UK and US frigate and submarine programmes.",
-      "url": "https://www.bbc.co.uk/news/articles/c20dgpl0z4jo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/business",
-      "sourceId": "bbc-business",
-      "publishedAt": "2026-08-07T15:22:51.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1769/live/f8457c70-926d-11f1-9f0c-8d4ddef91df6.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
     },
     {
       "id": "ebfef20914d7",
