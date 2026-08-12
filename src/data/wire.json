@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-12T23:09:35.596Z",
+  "generatedAt": "2026-08-12T23:55:43.442Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "78ff4fec1301",
+      "title": "'If you're not conservative, don't come here': The town making missiles for Trump",
+      "summary": "Trump's poll numbers appear to be down, but in this town, his support is as strong as ever.",
+      "url": "https://www.bbc.co.uk/news/articles/cn0n8nd6645o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-12T23:26:21.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/fd7d/live/e8bc0e50-95af-11f1-969e-eb6036cb8925.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "5853ee8f1836",
+      "title": "Members of Trump's cabinet remained on decoy plane, after president's quiet exit",
+      "summary": "Trump boarded a different plane in Turkey during a Nato summit for security reasons involving Iran.",
+      "url": "https://www.bbc.co.uk/news/articles/c4g306eln8wo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-12T23:19:57.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/69ce/live/3ac23d60-9659-11f1-b2ab-0dd01740f9f6.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "6e6c739d412a",
+      "title": "Trump’s press secretary Karoline Leavitt leaving role, president says – US politics live",
+      "summary": "Donald Trump says Leavitt is leaving to spend more time with her family and would become one of his ‘top outside advisors’ Karoline Leavitt will step down as White House press secretary Sign up for the Breaking News US email Core inflation, which measures…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/12/donald-trump-air-force-one-switch-politics-primaries-midterm-elections-results-latest-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-12T23:11:53.000Z",
+      "image": "https://i.guim.co.uk/img/media/e72190fa6c6cbe2ef36856c6905d0f5d7dff6f8f/451_0_4521_3616/master/4521.jpg?width=700&quality=85&auto=format&fit=max&s=e327e445a9f87c00004ea1063a06c6db",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "65e2c412d5cd",
       "title": "Thousands of Canadians call for US ambassador's expulsion",
@@ -17,22 +65,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "6e6c739d412a",
-      "title": "Trump’s press secretary Karoline Leavitt leaving role, president says – US politics live",
-      "summary": "Donald Trump says Leavitt is leaving to spend more time with her family and would become one of his ‘top outside advisors’ Karoline Leavitt will step down as White House press secretary Sign up for the Breaking News US email Core inflation, which measures…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/12/donald-trump-air-force-one-switch-politics-primaries-midterm-elections-results-latest-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-12T22:29:44.000Z",
-      "image": "https://i.guim.co.uk/img/media/e72190fa6c6cbe2ef36856c6905d0f5d7dff6f8f/451_0_4521_3616/master/4521.jpg?width=700&quality=85&auto=format&fit=max&s=e327e445a9f87c00004ea1063a06c6db",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -81,22 +113,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "5853ee8f1836",
-      "title": "Members of Trump's cabinet remained on decoy plane, after president's quiet exit",
-      "summary": "Trump boarded a different plane in Turkey during a Nato summit for security reasons involving Iran.",
-      "url": "https://www.bbc.co.uk/news/articles/c4g306eln8wo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-12T20:58:39.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/69ce/live/3ac23d60-9659-11f1-b2ab-0dd01740f9f6.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
