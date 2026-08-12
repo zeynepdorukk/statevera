@@ -1,6 +1,7 @@
 ---
 import { root } from "../utils/collection";
 import type { PillarId } from "../site";
+import { getLanguage, localizePath, siteText } from "../i18n";
 
 interface Props {
   title: string;
@@ -10,7 +11,8 @@ interface Props {
   class?: string;
 }
 
-const { title, tone, href, moreLabel = "See all", class: className = "" } = Astro.props;
+const language = getLanguage(Astro.currentLocale);
+const { title, tone, href, moreLabel = siteText[language].seeAll, class: className = "" } = Astro.props;
 ---
 
 <div class:list={["section-head", className]} data-tone={tone}>
@@ -18,7 +20,7 @@ const { title, tone, href, moreLabel = "See all", class: className = "" } = Astr
   <h2 class="title">{title}</h2>
   <span class="rule" aria-hidden="true"></span>
   {href && (
-    <a href={root(href)} class="more">
+    <a href={root(localizePath(href, language))} class="more">
       {moreLabel} <span aria-hidden="true">&rarr;</span>
     </a>
   )}

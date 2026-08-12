@@ -6,46 +6,81 @@ import { getLatestArticles, root } from "../utils/collection";
 import WireCard from "../components/WireCard.astro";
 import JournalCard from "../components/JournalCard.astro";
 import SectionHead from "../components/SectionHead.astro";
+import { getLanguage, localizePath } from "../i18n";
 
+const language = getLanguage(Astro.currentLocale);
+const hrefFor = (path: string) => root(localizePath(path, language));
+const copy = language === "tr"
+  ? {
+      title: "Sayfa bulunamadı",
+      description: "Bu sayfa mevcut değil.",
+      error: "Hata 404",
+      heading: "Bu sayfa kayıtlarda yok.",
+      detail: "Adres değişmiş veya sayfa hiç var olmamış olabilir. Yayının üç bölümü hâlâ burada.",
+      latest: "Son haberler",
+      news: "Haberler",
+      fromJournal: "Journal'dan",
+      journal: "Journal",
+      pillars: {
+        wire: ["Haberler", "Dünyadan gelişmeler, ulaştığı anda"],
+        journal: ["Journal", "İmzalı analiz ve başvuru yazıları"],
+        risk: ["GLORISK", "Jeopolitik risk, puanlanmış"],
+      },
+    }
+  : {
+      title: "Page not found",
+      description: "That page does not exist.",
+      error: "Error 404",
+      heading: "This page is not on file.",
+      detail: "The address may have changed, or the page may never have existed. The three sections of the publication are all still here.",
+      latest: "Latest news",
+      news: "News",
+      fromJournal: "From Journal",
+      journal: "Journal",
+      pillars: {
+        wire: ["News", "World reporting, as it lands"],
+        journal: ["Journal", "Signed analysis and reference"],
+        risk: ["GLORISK", "Geopolitical risk, scored"],
+      },
+    };
 const wire = spread(wireItems, 5, 1);
-const journal = await getLatestArticles(3);
+const journal = await getLatestArticles(3, language);
 ---
 
 <BaseLayout
-  title="Page not found"
-  description="That page does not exist."
+  title={copy.title}
+  description={copy.description}
   path="/404"
   noindex
 >
   <div class="shell max-w-[1100px] py-14">
-    <p class="kicker-ink">Error 404</p>
-    <h1 class="t-display mt-2">This page is not on file.</h1>
+    <p class="kicker-ink">{copy.error}</p>
+    <h1 class="t-display mt-2">{copy.heading}</h1>
     <p class="mt-4 max-w-2xl font-serif text-[1.14rem] leading-relaxed text-ink-soft">
-      The address may have changed, or the page may never have existed. The three
-      sections of the publication are all still here.
+      {copy.detail}
     </p>
 
     <div class="mt-8 grid gap-px border border-line-strong bg-line-strong sm:grid-cols-3">
       {pillarList.map((pillar) => (
-        <a href={root(pillar.url)} class="group bg-paper p-5 transition-colors hover:bg-paper-soft" data-tone={pillar.tone}>
+        <a href={hrefFor(pillar.url)} class="group bg-paper p-5 transition-colors hover:bg-paper-soft" data-tone={pillar.tone}>
           <p class="kicker flex items-center gap-2">
             <span class="inline-block h-2 w-2 bg-tone" aria-hidden="true"></span>
-            {pillar.name}
+            {copy.pillars[pillar.id][0]}
           </p>
-          <p class="mt-1.5 font-serif text-[1.05rem] leading-snug text-ink">{pillar.tagline}</p>
+          <p class="mt-1.5 font-serif text-[1.05rem] leading-snug text-ink">{copy.pillars[pillar.id][1]}</p>
         </a>
       ))}
     </div>
 
     <div class="mt-12 grid gap-x-9 gap-y-10 lg:grid-cols-2">
       <div data-tone="wire">
-        <SectionHead title="Latest news" tone="wire" href="/wire" moreLabel="News" />
+        <SectionHead title={copy.latest} tone="wire" href="/wire" moreLabel={copy.news} />
         <div class="rule-list">
           {wire.map((item) => <WireCard item={item} variant="text" />)}
         </div>
       </div>
       <div data-tone="journal">
-        <SectionHead title="From Journal" tone="journal" href="/journal" moreLabel="Journal" />
+        <SectionHead title={copy.fromJournal} tone="journal" href="/journal" moreLabel={copy.journal} />
         <div class="rule-list">
           {journal.map((entry) => (
             <JournalCard item={{ kind: "article", entry }} variant="compact" />

@@ -1,34 +1,119 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { site, pillars, deskList } from "../site";
+import { site, deskList } from "../site";
 import { byCategory, spread, wireItems } from "../data/wire";
 import { getJournalStream, getFeaturedArticle, root } from "../utils/collection";
 import WireCard from "../components/WireCard.astro";
 import JournalCard from "../components/JournalCard.astro";
 import SectionHead from "../components/SectionHead.astro";
+import { deskText, getLanguage, localizePath, siteText } from "../i18n";
+
+const language = getLanguage(Astro.currentLocale);
+const globalCopy = siteText[language];
+const hrefFor = (path: string) => root(localizePath(path, language));
+const copy = language === "tr"
+  ? {
+      heroAlt: "Stratejik bir deniz yolu ve limanın havadan görünümü",
+      heroTitle: "Manşetin ötesindeki gücü anlamak.",
+      heroDescription: globalCopy.publicationDescription,
+      heroByline: "Zeynep Doruk'un özgün analizleri; seçilmiş küresel haberler ve veriye dayalı jeopolitik araştırmalarla birlikte.",
+      readJournal: "Journal'ı oku",
+      exploreNews: "Dünya haberlerini keşfet",
+      whatIs: "Statevera nedir?",
+      threeWays: "Tek yayın. Dünyayı okumanın üç yolu.",
+      identity: [
+        { tone: "journal", label: "Journal", title: "Özgün analiz", description: "Zeynep Doruk'un deneme ve analizleri." },
+        { tone: "wire", label: "Dünya Haberleri", title: "Seçilmiş habercilik", description: "Uluslararası kaynaklardan derlenen haberler." },
+        { tone: "risk", label: "GLORISK", title: "Araştırma ve risk", description: "Veriye dayalı jeopolitik ve ülke riski araştırmaları." },
+      ],
+      journal: "Journal",
+      journalTagline: "İmzalı analiz ve başvuru yazıları",
+      whatMeans: "Ne anlama geliyor?",
+      journalIntro: "Statevera için yazılan özgün deneme ve analizler; yazar:",
+      visitJournal: "Journal'a git",
+      newSeries: "Yeni bir yayın dizisi",
+      launch: "Journal yakında yayında. Jeopolitik, diplomasi, siyasi ekonomi ve uluslararası düzen üzerine deneme ve analizler.",
+      exploreJournal: "Journal'ı keşfet",
+      research: "Statevera Araştırma",
+      whatData: "Veriler ne söylüyor?",
+      gloriskIntro: "GLORISK, ülke riskini, jeopolitik şokları ve stratejik maruziyeti daha açık okumak için Statevera'nın geliştirdiği özgün araştırma aracıdır.",
+      gloriskDetail: "Manşetin ötesine geçin; baskının uluslararası sistem boyunca nasıl yayıldığını açıklayan sinyalleri, puanları ve senaryoları inceleyin.",
+      exploreGlorisk: "GLORISK'i keşfet",
+      aboutResearch: "Araştırma hakkında",
+      riskFeatures: [
+        ["Ülke riski", "Siyasi ve stratejik maruziyetin yapılandırılmış görünümü."],
+        ["Şok senaryoları", "Bozulmanın sınırlar ötesine nasıl yayılabileceğine ilişkin sinyaller."],
+        ["Stratejik maruziyet", "Jeopolitik riski anlaşılır kılmak için tasarlanmış araştırma."],
+      ],
+      verification: "Birincil Kaynaklar · Doğrulama masası",
+      findSource: "Haberin arkasındaki kaynağı bulun.",
+      sourceIntro: "İkinci el başlıklar yerine hükümetlerin ve uluslararası kurumların resmî belgelerinde doğrudan arama yapın.",
+      sourceDetail: "Tek anahtar kelime, on iki kaynak kurum ve yayımlanmış kayda doğrudan bağlantı. Açıklama, mevzuat, antlaşma, yaptırım, konuşma veya resmî veri türüne göre filtreleyin.",
+      keyword: "Anahtar kelimeyle ara",
+      searchSources: "Birincil Kaynaklarda Ara",
+      worldNews: "Dünya Haberleri",
+      wireTagline: "Dünyadan gelişmeler, ulaştığı anda",
+      happening: "Neler oluyor?",
+      exploreAll: "Tüm haberleri keşfet",
+      desks: "Masalar",
+      more: "Daha fazla",
+      moreReporting: "Daha fazla haber",
+      moreFromNews: "Haberlerden daha fazlası",
+      allNews: "Tüm haberler",
+    }
+  : {
+      heroAlt: "Aerial view of a strategic shipping route and port",
+      heroTitle: "Understanding power beyond the headline.",
+      heroDescription: globalCopy.publicationDescription,
+      heroByline: "Original analysis by Zeynep Doruk, alongside curated global reporting and data-driven geopolitical research.",
+      readJournal: "Read The Journal",
+      exploreNews: "Explore World News",
+      whatIs: "What is Statevera?",
+      threeWays: "One publication. Three ways to read the world.",
+      identity: [
+        { tone: "journal", label: "The Journal", title: "Original analysis", description: "Essays and analysis by Zeynep Doruk." },
+        { tone: "wire", label: "World News", title: "Curated reporting", description: "Reporting gathered from international sources." },
+        { tone: "risk", label: "GLORISK", title: "Research and risk", description: "Data-driven geopolitical and country-risk research." },
+      ],
+      journal: "The Journal",
+      journalTagline: "Signed analysis and reference",
+      whatMeans: "What does it mean?",
+      journalIntro: "Original essays and analysis written for Statevera by",
+      visitJournal: "Visit The Journal",
+      newSeries: "A new editorial series",
+      launch: "The Journal is launching soon. Essays and analysis on geopolitics, diplomacy, political economy and international order.",
+      exploreJournal: "Explore The Journal",
+      research: "Statevera Research",
+      whatData: "What does the data show?",
+      gloriskIntro: "GLORISK is Statevera's original research tool for reading country risk, geopolitical shocks and strategic exposure with more clarity.",
+      gloriskDetail: "Move beyond the headline and explore the signals, scores and scenarios that help explain how pressure travels through the international system.",
+      exploreGlorisk: "Explore GLORISK",
+      aboutResearch: "About the research",
+      riskFeatures: [
+        ["Country risk", "A structured view of political and strategic exposure."],
+        ["Shock scenarios", "Signals for how disruption can travel across borders."],
+        ["Strategic exposure", "Research designed to make geopolitical risk legible."],
+      ],
+      verification: "Primary Sources · Verification desk",
+      findSource: "Find the source behind the story.",
+      sourceIntro: "Search official documents directly from governments and international institutions — not second-hand headlines.",
+      sourceDetail: "One keyword, twelve source institutions, and a direct link to the record that was actually issued. Filter by statements, legislation, treaties, sanctions, speeches or official data.",
+      keyword: "Search by keyword",
+      searchSources: "Search Primary Sources",
+      worldNews: "World News",
+      wireTagline: "World reporting, as it lands",
+      happening: "What is happening.",
+      exploreAll: "Explore all news",
+      desks: "Desks",
+      more: "More",
+      moreReporting: "More reporting",
+      moreFromNews: "More from News",
+      allNews: "All news",
+    };
 
 // The homepage has one clear editorial order: Statevera first, then its signed
 // analysis, followed by the external reporting and research tool.
-const identityPillars = [
-  {
-    tone: "journal",
-    label: "The Journal",
-    title: "Original analysis",
-    description: "Essays and analysis by Zeynep Doruk.",
-  },
-  {
-    tone: "wire",
-    label: "World News",
-    title: "Curated reporting",
-    description: "Reporting gathered from international sources.",
-  },
-  {
-    tone: "risk",
-    label: "GLORISK",
-    title: "Research and risk",
-    description: "Data-driven geopolitical and country-risk research.",
-  },
-] as const;
+const identityPillars = copy.identity;
 
 // NEWS — compact feed below the Journal, with a single source of truth for
 // exclusions so the desks and long tail never repeat a headline.
@@ -38,8 +123,8 @@ for (const item of feed) usedIds.add(item.id);
 
 // JOURNAL — signed analysis. The empty state is a deliberate launch message,
 // not a generic collection fallback.
-const journal = await getJournalStream(7);
-const featured = await getFeaturedArticle();
+const journal = await getJournalStream(7, language);
+const featured = await getFeaturedArticle(language);
 const featuredId = featured?.id;
 const mainJournal = journal.filter((item) => item.entry.id !== featuredId).slice(0, 4);
 
@@ -59,12 +144,12 @@ for (const block of deskBlocks) for (const item of block.items) usedIds.add(item
 const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).slice(0, 12);
 ---
 
-<BaseLayout title="" description={site.publicationDescription} path="/">
+<BaseLayout title="" description={copy.heroDescription} path="/">
   <!-- ============ EDITORIAL HERO ============ -->
   <section class="home-hero relative isolate overflow-hidden border-b border-line" aria-labelledby="home-title">
     <img
       src={root("/images/previews/briefing-red-sea.jpg")}
-      alt="Aerial view of a strategic shipping route and port"
+      alt={copy.heroAlt}
       class="home-hero-image absolute inset-0 h-full w-full object-cover"
       loading="eager"
       decoding="async"
@@ -75,17 +160,17 @@ const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).sl
       <div class="home-hero-copy max-w-3xl" data-tone="journal">
         <p class="kicker text-journal">STATEVERA</p>
         <h1 id="home-title" class="mt-3 max-w-3xl font-serif text-[clamp(2.75rem,6vw,5.8rem)] font-semibold leading-[0.95] tracking-[-0.035em] text-white">
-          Understanding power beyond the headline.
+          {copy.heroTitle}
         </h1>
         <p class="mt-6 max-w-2xl font-serif text-[clamp(1.14rem,1.4vw,1.45rem)] leading-relaxed text-white/90">
-          Statevera is an independent international affairs publication exploring geopolitics, diplomacy, political economy and the changing international order.
+          {copy.heroDescription}
         </p>
         <p class="mt-4 max-w-2xl font-sans text-[0.86rem] leading-relaxed text-white/70">
-          Original analysis by <strong class="font-semibold text-white">Zeynep Doruk</strong>, alongside curated global reporting and data-driven geopolitical research.
+          {copy.heroByline}
         </p>
         <div class="home-hero-actions mt-8 flex flex-wrap gap-3">
-          <a href={root("/journal")} class="btn btn-tone">Read The Journal <span aria-hidden="true">&rarr;</span></a>
-          <a href={root("/wire")} class="btn home-hero-secondary">Explore World News <span aria-hidden="true">&rarr;</span></a>
+          <a href={hrefFor("/journal")} class="btn btn-tone">{copy.readJournal} <span aria-hidden="true">&rarr;</span></a>
+          <a href={hrefFor("/wire")} class="btn home-hero-secondary">{copy.exploreNews} <span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -95,8 +180,8 @@ const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).sl
   <section class="shell border-b border-line py-8 md:py-10" aria-labelledby="what-is-statevera">
     <div class="grid gap-6 lg:grid-cols-[minmax(14rem,2fr)_minmax(0,8fr)] lg:gap-10">
       <div>
-        <p class="kicker-ink">What is Statevera?</p>
-        <h2 id="what-is-statevera" class="t-headline mt-2 max-w-sm">One publication. Three ways to read the world.</h2>
+        <p class="kicker-ink">{copy.whatIs}</p>
+        <h2 id="what-is-statevera" class="t-headline mt-2 max-w-sm">{copy.threeWays}</h2>
       </div>
       <div class="grid border-t border-line sm:grid-cols-3 sm:border-t-0">
         {identityPillars.map((pillar, index) => (
@@ -119,26 +204,26 @@ const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).sl
     <div class="shell py-12 md:py-16">
       <div class="grid gap-7 lg:grid-cols-[minmax(0,6fr)_minmax(17rem,4fr)] lg:items-end">
         <div>
-          <p class="kicker">The Journal</p>
-          <h2 id="journal-title" class="t-display mt-2">{pillars.journal.tagline}</h2>
-          <p class="mt-3 font-serif text-[1.1rem] italic text-muted">What does it mean?</p>
+          <p class="kicker">{copy.journal}</p>
+          <h2 id="journal-title" class="t-display mt-2">{copy.journalTagline}</h2>
+          <p class="mt-3 font-serif text-[1.1rem] italic text-muted">{copy.whatMeans}</p>
         </div>
         <p class="max-w-md font-serif text-[1.02rem] leading-relaxed text-ink-soft lg:pb-1">
-          Original essays and analysis written for Statevera by{" "}
-          <a href={root("/about")} class="link-tone">{site.authorName}</a>.
-          <a href={root("/journal")} class="link-tone ml-1">Visit The Journal &rarr;</a>
+          {copy.journalIntro}{" "}
+          <a href={hrefFor("/about")} class="link-tone">{site.authorName}</a>.
+          <a href={hrefFor("/journal")} class="link-tone ml-1">{copy.visitJournal} &rarr;</a>
         </p>
       </div>
 
       {journal.length === 0 ? (
         <div class="home-journal-launch mt-9 border-y border-journal/60 px-5 py-7 md:flex md:items-center md:justify-between md:gap-10 md:px-7 md:py-8">
           <div>
-            <p class="kicker">A new editorial series</p>
+            <p class="kicker">{copy.newSeries}</p>
             <p class="mt-2 max-w-3xl font-serif text-[clamp(1.3rem,2vw,1.75rem)] leading-tight text-ink">
-              The Journal is launching soon. Essays and analysis on geopolitics, diplomacy, political economy and international order.
+              {copy.launch}
             </p>
           </div>
-          <a href={root("/journal")} class="btn btn-tone mt-6 shrink-0 md:mt-0">Explore The Journal <span aria-hidden="true">&rarr;</span></a>
+          <a href={hrefFor("/journal")} class="btn btn-tone mt-6 shrink-0 md:mt-0">{copy.exploreJournal} <span aria-hidden="true">&rarr;</span></a>
         </div>
       ) : (
         <div class="mt-9 grid gap-x-8 gap-y-9 border-t border-line pt-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,5fr)]">
@@ -163,37 +248,37 @@ const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).sl
     <div class="shell py-12 md:py-16">
       <div class="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(20rem,0.85fr)] lg:items-end">
         <div>
-          <p class="kicker-ink">Statevera Research</p>
+          <p class="kicker-ink">{copy.research}</p>
           <h2 id="research-title" class="t-display mt-2">GLORISK</h2>
-          <p class="mt-3 font-serif text-[1.1rem] italic text-muted">What does the data show?</p>
+          <p class="mt-3 font-serif text-[1.1rem] italic text-muted">{copy.whatData}</p>
           <p class="mt-4 max-w-2xl font-serif text-[1.16rem] leading-relaxed text-ink">
-            GLORISK is Statevera's original research tool for reading country risk, geopolitical shocks and strategic exposure with more clarity.
+            {copy.gloriskIntro}
           </p>
           <p class="mt-3 max-w-2xl font-sans text-[0.82rem] leading-relaxed text-muted">
-            Move beyond the headline and explore the signals, scores and scenarios that help explain how pressure travels through the international system.
+            {copy.gloriskDetail}
           </p>
           <div class="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-            <a href={root("/risk")} class="btn btn-tone">Explore GLORISK <span aria-hidden="true">&rarr;</span></a>
-            <a href={root("/about")} class="link-tone font-sans text-[0.68rem] font-bold tracking-[0.11em] uppercase">
-              About the research <span aria-hidden="true">&rarr;</span>
+            <a href={hrefFor("/risk")} class="btn btn-tone">{copy.exploreGlorisk} <span aria-hidden="true">&rarr;</span></a>
+            <a href={hrefFor("/about")} class="link-tone font-sans text-[0.68rem] font-bold tracking-[0.11em] uppercase">
+              {copy.aboutResearch} <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
         </div>
         <div class="home-research-grid grid border-t border-line sm:grid-cols-3 lg:border-l lg:border-t-0 lg:pl-8">
           <div class="border-b border-line py-4 sm:border-b-0 sm:pr-5 lg:py-1">
             <p class="kicker-ink">01</p>
-            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Country risk</p>
-            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">A structured view of political and strategic exposure.</p>
+            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">{copy.riskFeatures[0][0]}</p>
+            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">{copy.riskFeatures[0][1]}</p>
           </div>
           <div class="border-b border-line py-4 sm:border-b-0 sm:border-l sm:px-5 lg:py-1">
             <p class="kicker-ink">02</p>
-            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Shock scenarios</p>
-            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">Signals for how disruption can travel across borders.</p>
+            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">{copy.riskFeatures[1][0]}</p>
+            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">{copy.riskFeatures[1][1]}</p>
           </div>
           <div class="py-4 sm:border-l sm:px-5 lg:py-1">
             <p class="kicker-ink">03</p>
-            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">Strategic exposure</p>
-            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">Research designed to make geopolitical risk legible.</p>
+            <p class="mt-2 font-serif text-[1.08rem] leading-tight text-ink">{copy.riskFeatures[2][0]}</p>
+            <p class="mt-2 font-sans text-[0.75rem] leading-relaxed text-muted">{copy.riskFeatures[2][1]}</p>
           </div>
         </div>
       </div>
@@ -204,18 +289,18 @@ const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).sl
   <section class="home-sources shell mt-16 border-y border-line" aria-labelledby="sources-title" data-tone="journal">
     <div class="grid gap-8 py-10 md:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.65fr)] md:items-center md:py-12">
       <div>
-        <p class="kicker-ink">Primary Sources · Verification desk</p>
-        <h2 id="sources-title" class="t-display mt-2">Find the source behind the story.</h2>
+        <p class="kicker-ink">{copy.verification}</p>
+        <h2 id="sources-title" class="t-display mt-2">{copy.findSource}</h2>
         <p class="mt-3 max-w-2xl font-serif text-[1.12rem] leading-relaxed text-ink">
-          Search official documents directly from governments and international institutions — not second-hand headlines.
+          {copy.sourceIntro}
         </p>
         <p class="mt-3 max-w-2xl font-sans text-[0.8rem] leading-relaxed text-muted">
-          One keyword, twelve source institutions, and a direct link to the record that was actually issued. Filter by statements, legislation, treaties, sanctions, speeches or official data.
+          {copy.sourceDetail}
         </p>
       </div>
       <div class="border-t border-line pt-5 md:border-l md:border-t-0 md:pl-7 md:pt-0">
-        <p class="kicker">Search by keyword</p>
-        <a href={root("/sources")} class="btn btn-tone mt-4">Search Primary Sources <span aria-hidden="true">&rarr;</span></a>
+        <p class="kicker">{copy.keyword}</p>
+        <a href={hrefFor("/sources")} class="btn btn-tone mt-4">{copy.searchSources} <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -224,12 +309,12 @@ const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).sl
   <section class="shell mt-16" aria-labelledby="news-title" data-tone="wire">
     <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3 border-b-2 border-ink pb-5">
       <div>
-        <p class="kicker">World News</p>
-        <h2 id="news-title" class="t-headline mt-1">{pillars.wire.tagline}</h2>
-        <p class="mt-1 font-serif text-[0.98rem] italic text-muted">What is happening.</p>
+        <p class="kicker">{copy.worldNews}</p>
+        <h2 id="news-title" class="t-headline mt-1">{copy.wireTagline}</h2>
+        <p class="mt-1 font-serif text-[0.98rem] italic text-muted">{copy.happening}</p>
       </div>
-      <a href={root("/wire")} class="link-tone mb-1 font-sans text-[0.68rem] font-bold tracking-[0.11em] uppercase">
-        Explore all news <span aria-hidden="true">&rarr;</span>
+      <a href={hrefFor("/wire")} class="link-tone mb-1 font-sans text-[0.68rem] font-bold tracking-[0.11em] uppercase">
+        {copy.exploreAll} <span aria-hidden="true">&rarr;</span>
       </a>
     </div>
     <div class="mt-1 grid gap-x-9 gap-y-4 sm:grid-cols-2">
@@ -242,11 +327,11 @@ const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).sl
   </section>
 
   <!-- ============ DESKS ============ -->
-  <section class="shell mt-16" aria-label="Desks" data-tone="wire">
+  <section class="shell mt-16" aria-label={copy.desks} data-tone="wire">
     <div class="grid gap-x-8 gap-y-10 lg:grid-cols-3">
       {deskBlocks.map(({ desk, items }) => (
         <div>
-          <SectionHead title={desk.name} tone="wire" href={"/wire/" + desk.slug} moreLabel="More" />
+          <SectionHead title={deskText(desk.slug, language).name} tone="wire" href={"/wire/" + desk.slug} moreLabel={copy.more} />
           <WireCard item={items[0]} variant="feature" />
           <div class="rule-list mt-4 border-t border-line pt-1">
             {items.slice(1).map((item) => (
@@ -259,8 +344,8 @@ const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).sl
   </section>
 
   <!-- ============ MORE FROM NEWS ============ -->
-  <section class="shell mt-16 pb-8" aria-label="More reporting" data-tone="wire">
-    <SectionHead title="More from News" tone="wire" href="/wire" moreLabel="All news" />
+  <section class="shell mt-16 pb-8" aria-label={copy.moreReporting} data-tone="wire">
+    <SectionHead title={copy.moreFromNews} tone="wire" href="/wire" moreLabel={copy.allNews} />
     <div class="grid gap-x-7 gap-y-7 sm:grid-cols-2 lg:grid-cols-4">
       {rest.map((item) => (
         <WireCard item={item} variant="compact" />

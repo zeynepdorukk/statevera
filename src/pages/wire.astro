@@ -6,6 +6,33 @@ import { root } from "../utils/collection";
 import WireCard from "../components/WireCard.astro";
 import SectionHead from "../components/SectionHead.astro";
 import MarketTicker from "../components/MarketTicker.astro";
+import { deskText, getLanguage, localizePath } from "../i18n";
+
+const language = getLanguage(Astro.currentLocale);
+const copy = language === "tr"
+  ? {
+      title: "Haberler",
+      description: "Yerleşik haber merkezleri ve kurumlardan canlı uluslararası gelişmeler.",
+      heading: "Haberler — dünyadan gelişmeler, ulaştığı anda",
+      desks: "Masalar",
+      all: "Tümü",
+      leading: "Öne çıkan haberler",
+      reporting: "Tüm haberler",
+      every: "Her haber",
+      more: "Daha fazla haber",
+    }
+  : {
+      title: "News",
+      description: "Live international affairs reporting from established newsrooms and institutions.",
+      heading: "News — world reporting, as it lands",
+      desks: "Desks",
+      all: "All",
+      leading: "Leading stories",
+      reporting: "All reporting",
+      every: "Every story",
+      more: "More news",
+    };
+const hrefFor = (path: string) => root(localizePath(path, language));
 
 const leads = leadStories(3);
 const leadIds = new Set(leads.map((i) => i.id));
@@ -19,21 +46,21 @@ const deskCounts = deskList
 ---
 
 <BaseLayout
-  title="News"
-  description="Live international affairs reporting from established newsrooms and institutions."
+  title={copy.title}
+  description={copy.description}
   path="/wire"
   noindex
   tone="wire"
 >
   <div class="shell pt-0" data-tone="wire">
-    <h1 class="sr-only">News — world reporting, as it lands</h1>
+    <h1 class="sr-only">{copy.heading}</h1>
     <!-- Desk filter -->
     <div class="news-toolbar">
-      <nav aria-label="Desks" class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
-        <span class="desk-pill is-on">All</span>
+      <nav aria-label={copy.desks} class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
+        <span class="desk-pill is-on">{copy.all}</span>
         {deskCounts.map(({ desk }) => (
-          <a href={root(`/wire/${desk.slug}`)} class="desk-pill">
-            {desk.name}
+          <a href={hrefFor(`/wire/${desk.slug}`)} class="desk-pill">
+            {deskText(desk.slug, language).name}
           </a>
         ))}
       </nav>
@@ -42,12 +69,12 @@ const deskCounts = deskList
 
     <div class="grid gap-x-8 gap-y-8 py-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,4fr)]">
       <div class="contents lg:block">
-        <section class="order-1" aria-label="Leading stories">
+        <section class="order-1" aria-label={copy.leading}>
           {leads[0] && <WireCard item={leads[0]} variant="lead" priority headingLevel="h2" />}
         </section>
 
-        <section class="order-3 border-t-2 border-ink pt-7 pb-6 lg:order-none lg:mt-8" aria-label="All reporting">
-          <SectionHead title="Every story" tone="wire" />
+        <section class="order-3 border-t-2 border-ink pt-7 pb-6 lg:order-none lg:mt-8" aria-label={copy.reporting}>
+          <SectionHead title={copy.every} tone="wire" />
           <div class="grid gap-x-7 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">
             {stream.slice(0, 45).map((item, i) => (
               <WireCard item={item} variant={item.image && i < 12 ? "feature" : "compact"} showDek={i < 12} />
@@ -56,7 +83,7 @@ const deskCounts = deskList
         </section>
       </div>
 
-      <aside class="order-2 lg:order-none lg:border-l lg:border-line lg:pl-8" aria-label="More news">
+      <aside class="order-2 lg:order-none lg:border-l lg:border-line lg:pl-8" aria-label={copy.more}>
         <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-1">
           {leads.slice(1).map((item) => (
             <WireCard item={item} variant="feature" priority />
@@ -65,7 +92,7 @@ const deskCounts = deskList
 
         {rail.length > 0 && (
           <div class="mt-10 border-t-2 border-ink pt-7">
-            <SectionHead title="More news" tone="wire" href="/wire" moreLabel="All" />
+            <SectionHead title={copy.more} tone="wire" href="/wire" moreLabel={copy.all} />
             <div class="rule-list">
               {rail.map((item) => (
                 <WireCard item={item} variant="compact" />

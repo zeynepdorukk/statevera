@@ -2,7 +2,46 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site, regions } from "../site";
 import { absoluteUrl, root } from "../utils/collection";
+import { getLanguage, localizePath, regionText, siteText } from "../i18n";
 
+const language = getLanguage(Astro.currentLocale);
+const globalCopy = siteText[language];
+const hrefFor = (path: string) => root(localizePath(path, language));
+const copy = language === "tr"
+  ? {
+      title: "Hakkında",
+      description: "Statevera hakkında: Haberler, Journal ve risk aracının nasıl bir araya geldiği ve yayının yazarı.",
+      kicker: "Statevera Hakkında",
+      heading: "Uluslararası ilişkiler, anlaşılır hale getirildi.",
+      intro: "Statevera; güç, siyaset ve uluslararası sistemi şekillendiren dinamikler üzerine bağımsız bir yayındır.",
+      includes: "Statevera'nın kapsamı",
+      news: ["Haberler", "Gelişmeler yaşandığı anda.", "Kamuya açık kaynaklardan alınan, her 15 dakikada yenilenen ve beş uluslararası ilişkiler masasında düzenlenen haberler."],
+      journal: ["Journal", "Zeynep Doruk'un yazıları.", "Strateji, güç ve uluslararası sistem üzerine özgün analiz, deneme ve teori yazıları."],
+      risk: ["GLORISK", "Jeopolitik risk platformu.", "Ülke ve bölge riskini puanlar, kategoriler ve senaryolar üzerinden incelemenin pratik yolu."],
+      regions: ["Bölgeler", "Dünya, coğrafyaya göre.", "Avrupa ve Orta Doğu'dan Asya-Pasifik, Afrika ve Amerika'ya kadar haberleri bölgelere göre inceleyin."],
+      founderSection: "Kurucu ve editör",
+      founder: "Kurucu ve editör",
+      combined: "Statevera; Journal, Dünya Haberleri, Birincil Kaynaklar ve GLORISK aracılığıyla neler olduğunu, bunun ne anlama geldiğini ve temel verilerin ne söylediğini bir araya getirir.",
+      rss: "RSS akışı",
+      disclaimer: "Haber başlıkları ve özetleri özgün yayıncılarına bağlanır. Journal ve GLORISK, Statevera'nın özgün projeleridir.",
+    }
+  : {
+      title: "About",
+      description: `About ${site.publicationNameDisplay}: how News, Journal and the risk tool fit together, and who writes it.`,
+      kicker: "About Statevera",
+      heading: "International affairs, made readable.",
+      intro: "Statevera is an independent publication about power, politics and the forces shaping the international system.",
+      includes: "What Statevera includes",
+      news: ["News", "Reporting as it happens.", "News from public sources, refreshed every 15 minutes and organized across five international-affairs categories."],
+      journal: ["Journal", "Zeynep Doruk's writing.", "Original analysis, essays and theory about strategy, power and the international system."],
+      risk: ["GLORISK", "A geopolitical risk platform.", "A practical way to explore country and regional risk through scores, categories and scenarios."],
+      regions: ["Regions", "The world, by place.", "Browse coverage by region, from Europe and the Middle East to Asia-Pacific, Africa and the Americas."],
+      founderSection: "Founder and editor",
+      founder: "Founder & editor",
+      combined: "Through The Journal, World News, Primary Sources and GLORISK, Statevera brings together what is happening, what it means and what the underlying data shows.",
+      rss: "RSS feed",
+      disclaimer: "News headlines and summaries link to their original publishers. The Journal and GLORISK are original Statevera projects.",
+    };
 const profiles = [site.socialLinks.x, site.socialLinks.linkedin].filter(Boolean);
 
 const organisation = {
@@ -12,7 +51,7 @@ const organisation = {
   name: site.publicationName,
   url: site.siteUrl,
   foundingDate: site.founded,
-  description: site.publicationDescription,
+  description: globalCopy.publicationDescription,
   founder: { "@type": "Person", "@id": `${absoluteUrl("/about/")}#author` },
   logo: absoluteUrl("/images/branding/logo-512.png"),
 };
@@ -25,8 +64,8 @@ const author = {
   "@id": `${absoluteUrl("/about/")}#author`,
   name: site.authorName,
   url: absoluteUrl("/about/"),
-  jobTitle: site.authorRole,
-  description: site.authorBio,
+  jobTitle: globalCopy.authorRole,
+  description: globalCopy.authorBio,
   knowsAbout: [
     "Geopolitics",
     "International relations",
@@ -42,70 +81,68 @@ const jsonLd = [organisation, author];
 ---
 
 <BaseLayout
-  title="About"
-  description={`About ${site.publicationNameDisplay}: how News, Journal and the risk tool fit together, and who writes it.`}
+  title={copy.title}
+  description={copy.description}
   path="/about"
   jsonLd={jsonLd}
 >
   <div class="shell max-w-[1180px] pt-0" data-tone="journal">
     <header class="border-b-2 border-ink py-10 md:py-14">
-      <p class="kicker-ink">About Statevera</p>
-      <h1 class="t-lead mt-1.5">International affairs, made readable.</h1>
+      <p class="kicker-ink">{copy.kicker}</p>
+      <h1 class="t-lead mt-1.5">{copy.heading}</h1>
       <p class="mt-3 max-w-2xl font-serif text-[1.08rem] leading-relaxed text-ink-soft">
-        Statevera is an independent publication about power, politics and the forces shaping
-        the international system.
+        {copy.intro}
       </p>
     </header>
 
-    <section class="grid gap-x-8 gap-y-9 border-b border-line py-9 sm:grid-cols-2 xl:grid-cols-4" aria-label="What Statevera includes">
-      <a href={root("/wire")} class="block border-t-2 border-tone pt-3 transition-colors hover:text-tone" data-tone="wire">
-        <p class="kicker">News</p>
-        <h2 class="t-headline-sm mt-2">Reporting as it happens.</h2>
+    <section class="grid gap-x-8 gap-y-9 border-b border-line py-9 sm:grid-cols-2 xl:grid-cols-4" aria-label={copy.includes}>
+      <a href={hrefFor("/wire")} class="block border-t-2 border-tone pt-3 transition-colors hover:text-tone" data-tone="wire">
+        <p class="kicker">{copy.news[0]}</p>
+        <h2 class="t-headline-sm mt-2">{copy.news[1]}</h2>
         <p class="mt-2 font-serif text-[0.96rem] leading-relaxed text-ink-soft">
-          News from public sources, refreshed every 15 minutes and organized across five international-affairs categories.
+          {copy.news[2]}
         </p>
       </a>
 
-      <a href={root("/journal")} class="block border-t-2 border-tone pt-3 transition-colors hover:text-tone" data-tone="journal">
-        <p class="kicker">Journal</p>
-        <h2 class="t-headline-sm mt-2">Zeynep Doruk's writing.</h2>
+      <a href={hrefFor("/journal")} class="block border-t-2 border-tone pt-3 transition-colors hover:text-tone" data-tone="journal">
+        <p class="kicker">{copy.journal[0]}</p>
+        <h2 class="t-headline-sm mt-2">{copy.journal[1]}</h2>
         <p class="mt-2 font-serif text-[0.96rem] leading-relaxed text-ink-soft">
-          Original analysis, essays and theory about strategy, power and the international system.
+          {copy.journal[2]}
         </p>
       </a>
 
-      <a href={root("/risk")} class="block border-t-2 border-tone pt-3 transition-colors hover:text-tone" data-tone="risk">
-        <p class="kicker">GLORISK</p>
-        <h2 class="t-headline-sm mt-2">A geopolitical risk platform.</h2>
+      <a href={hrefFor("/risk")} class="block border-t-2 border-tone pt-3 transition-colors hover:text-tone" data-tone="risk">
+        <p class="kicker">{copy.risk[0]}</p>
+        <h2 class="t-headline-sm mt-2">{copy.risk[1]}</h2>
         <p class="mt-2 font-serif text-[0.96rem] leading-relaxed text-ink-soft">
-          A practical way to explore country and regional risk through scores, categories and scenarios.
+          {copy.risk[2]}
         </p>
       </a>
 
       <div class="border-t-2 border-ink pt-3">
-        <p class="kicker-ink">Regions</p>
-        <h2 class="t-headline-sm mt-2">The world, by place.</h2>
+        <p class="kicker-ink">{copy.regions[0]}</p>
+        <h2 class="t-headline-sm mt-2">{copy.regions[1]}</h2>
         <p class="mt-2 font-serif text-[0.96rem] leading-relaxed text-ink-soft">
-          Browse coverage by region, from Europe and the Middle East to Asia-Pacific, Africa and the Americas.
+          {copy.regions[2]}
         </p>
         <ul class="mt-3 flex flex-wrap gap-x-3 gap-y-1">
-          {Object.entries(regions).map(([slug, region]) => (
-            <li><a href={root(`/regions/${slug}`)} class="link-tone text-[0.78rem]">{region.short}</a></li>
+          {Object.keys(regions).map((slug) => (
+            <li><a href={hrefFor(`/regions/${slug}`)} class="link-tone text-[0.78rem]">{regionText(slug as keyof typeof regions, language).short}</a></li>
           ))}
         </ul>
       </div>
     </section>
 
-    <section class="border-b border-line py-10 md:py-12" aria-label="Founder and editor">
+    <section class="border-b border-line py-10 md:py-12" aria-label={copy.founderSection}>
       <div class="max-w-4xl">
-        <p class="kicker-ink">Founder &amp; editor</p>
+        <p class="kicker-ink">{copy.founder}</p>
         <h2 class="t-headline mt-1.5">{site.authorName}</h2>
         <p class="mt-3 max-w-3xl font-serif text-[1.08rem] leading-relaxed text-ink-soft">
-          {site.authorBio}
+          {globalCopy.authorBio}
         </p>
         <p class="mt-3 max-w-3xl font-serif text-[1rem] leading-relaxed text-ink-soft">
-          Through The Journal, World News, Primary Sources and GLORISK, Statevera brings together
-          what is happening, what it means and what the underlying data shows.
+          {copy.combined}
         </p>
         <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
           {profiles.map((profile) => (
@@ -113,13 +150,13 @@ const jsonLd = [organisation, author];
               {profile === site.socialLinks.x ? "X" : "LinkedIn"}
             </a>
           ))}
-          <a href={root(site.socialLinks.rss)} class="kicker-ink hover:text-tone">RSS feed</a>
+          <a href={hrefFor(site.socialLinks.rss)} class="kicker-ink hover:text-tone">{copy.rss}</a>
         </div>
       </div>
     </section>
 
     <p class="meta py-5">
-      News headlines and summaries link to their original publishers. The Journal and GLORISK are original Statevera projects.
+      {copy.disclaimer}
     </p>
   </div>
 </BaseLayout>

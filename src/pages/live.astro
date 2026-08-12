@@ -4,27 +4,55 @@ import { liveChannels, liveEmbedUrl } from "../data/live";
 import { spread, wireItems } from "../data/wire";
 import { relativeTime, wireDate } from "../data/wire";
 import { root } from "../utils/collection";
+import { getLanguage, localizePath } from "../i18n";
 
+const language = getLanguage(Astro.currentLocale);
+const hrefFor = (path: string) => root(localizePath(path, language));
+const copy = language === "tr"
+  ? {
+      description: "Uluslararası haber kanallarını izleyin ve son Statevera Haberleri başlıklarını takip edin.",
+      heading: "CANLI — uluslararası haber kanalları",
+      player: "Canlı yayın oynatıcısı",
+      stream: "canlı yayını",
+      watching: "Şimdi izleniyor",
+      latest: "Son Haberler",
+      channels: "Kanallar",
+      liveChannels: "Canlı kanallar",
+      allNews: "Tüm haberler",
+      fallback: "Canlı kanal",
+    }
+  : {
+      description: "Watch international news channels and follow the latest Statevera News headlines.",
+      heading: "LIVE — international news channels",
+      player: "Live player",
+      stream: "live stream",
+      watching: "Now watching",
+      latest: "Latest News",
+      channels: "Channels",
+      liveChannels: "Live channels",
+      allNews: "All news",
+      fallback: "Live channel",
+    };
 const selectedChannel = liveChannels[0];
 const stories = spread(wireItems, 4, 1);
 ---
 
 <BaseLayout
   title="LIVE"
-  description="Watch international news channels and follow the latest Statevera News headlines."
+  description={copy.description}
   path="/live"
   noindex
   hideTicker
 >
-  <div class="live-page shell pt-0" data-tone="wire">
-    <h1 class="sr-only">LIVE — international news channels</h1>
+  <div class="live-page shell pt-0" data-tone="wire" data-live-fallback={copy.fallback} data-live-stream-label={copy.stream}>
+    <h1 class="sr-only">{copy.heading}</h1>
     <div class="live-grid">
-      <section class="live-player-column" aria-label="Live player">
+      <section class="live-player-column" aria-label={copy.player}>
         <div class="live-player-frame">
           <iframe
             data-live-player
             src={liveEmbedUrl(selectedChannel.channelId)}
-            title={`${selectedChannel.name} live stream`}
+            title={`${selectedChannel.name} ${copy.stream}`}
             loading="eager"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
@@ -32,7 +60,7 @@ const stories = spread(wireItems, 4, 1);
         </div>
         <div class="live-player-caption">
           <div>
-            <p class="kicker-ink">Now watching</p>
+            <p class="kicker-ink">{copy.watching}</p>
             <div class="live-now-title">
               <img
                 data-live-channel-logo
@@ -49,9 +77,9 @@ const stories = spread(wireItems, 4, 1);
         </div>
       </section>
 
-      <aside class="live-news-column" aria-label="Latest News">
-        <p class="kicker-ink live-channels-heading">Channels</p>
-        <div class="live-channel-switcher" role="tablist" aria-label="Live channels">
+      <aside class="live-news-column" aria-label={copy.latest}>
+        <p class="kicker-ink live-channels-heading">{copy.channels}</p>
+        <div class="live-channel-switcher" role="tablist" aria-label={copy.liveChannels}>
           {liveChannels.map((channel, index) => (
             <button
               type="button"
@@ -69,14 +97,14 @@ const stories = spread(wireItems, 4, 1);
           ))}
         </div>
         <div class="live-news-heading">
-          <p class="kicker">Latest News</p>
-          <a href={root("/wire")} class="kicker-ink">All news &rarr;</a>
+          <p class="kicker">{copy.latest}</p>
+          <a href={hrefFor("/wire")} class="kicker-ink">{copy.allNews} &rarr;</a>
         </div>
         <ul class="live-story-list">
           {stories.map((item) => (
             <li>
               <a href={item.url} target="_blank" rel="noopener noreferrer nofollow">{item.title}</a>
-              <span>{item.publisher} &middot; {relativeTime(wireDate(item))}</span>
+              <span>{item.publisher} &middot; {relativeTime(wireDate(item), new Date(), language)}</span>
             </li>
           ))}
         </ul>
@@ -87,6 +115,9 @@ const stories = spread(wireItems, 4, 1);
 
 <script>
   const player = document.querySelector<HTMLIFrameElement>("[data-live-player]");
+  const liveRoot = document.querySelector<HTMLElement>("[data-live-fallback]");
+  const fallback = liveRoot?.dataset.liveFallback ?? "Live channel";
+  const streamLabel = liveRoot?.dataset.liveStreamLabel ?? "live stream";
   const title = document.querySelector<HTMLElement>("[data-live-channel-title]");
   const logo = document.querySelector<HTMLImageElement>("[data-live-channel-logo]");
   const tabs = [...document.querySelectorAll<HTMLButtonElement>("[data-channel-id]")];
@@ -100,9 +131,9 @@ const stories = spread(wireItems, 4, 1);
         item.classList.toggle("is-selected", selected);
         item.setAttribute("aria-selected", String(selected));
       });
-      player.title = `${tab.dataset.channelName ?? "Live channel"} live stream`;
+      player.title = `${tab.dataset.channelName ?? fallback} ${streamLabel}`;
       player.src = embedUrl;
-      if (title) title.textContent = tab.dataset.channelName ?? "Live channel";
+      if (title) title.textContent = tab.dataset.channelName ?? fallback;
       if (logo && tab.dataset.channelLogo) logo.src = tab.dataset.channelLogo;
     });
   });

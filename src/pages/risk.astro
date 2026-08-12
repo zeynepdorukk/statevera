@@ -1,21 +1,37 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getLanguage } from "../i18n";
 
 const GLORISK_URL = "https://zeynepdorukk.github.io/Glorisk/";
+const language = getLanguage(Astro.currentLocale);
+const gloriskUrl = language === "tr" ? `${GLORISK_URL}?lang=tr` : GLORISK_URL;
+const copy = language === "tr"
+  ? {
+      description: "Etkileşimli jeopolitik risk analizi.",
+      heading: "GLORISK — jeopolitik risk, puanlanmış",
+      fallback: "Araç yüklenmezse",
+      open: "GLORISK'i yeni sekmede açın",
+    }
+  : {
+      description: "Interactive geopolitical risk analysis.",
+      heading: "GLORISK — geopolitical risk, scored",
+      fallback: "If the tool does not load",
+      open: "open GLORISK in a new tab",
+    };
 ---
 
 <BaseLayout
   title="GLORISK"
-  description="Interactive geopolitical risk analysis."
+  description={copy.description}
   path="/risk"
   tone="risk"
   hideTicker
   hideFooter
 >
   <div class="w-full bg-paper">
-    <h1 class="sr-only">GLORISK — geopolitical risk, scored</h1>
+    <h1 class="sr-only">{copy.heading}</h1>
     <iframe
-      src={GLORISK_URL}
+      src={gloriskUrl}
       title="GLORISK"
       class="block h-[calc(100dvh-7rem)] min-h-[560px] w-full border-0 bg-white"
       loading="eager"
@@ -23,8 +39,8 @@ const GLORISK_URL = "https://zeynepdorukk.github.io/Glorisk/";
       referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
     <p class="shell py-4 text-center font-serif text-[0.95rem] text-ink-soft">
-      If the tool does not load,{" "}
-      <a href={GLORISK_URL} class="link-tone" target="_blank" rel="noopener">open GLORISK in a new tab</a>.
+      {copy.fallback},{" "}
+      <a href={gloriskUrl} class="link-tone" target="_blank" rel="noopener">{copy.open}</a>.
     </p>
   </div>
 </BaseLayout>

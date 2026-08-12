@@ -3,18 +3,30 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import { journalSections } from "../../site";
 import { getByCategory, root } from "../../utils/collection";
 import JournalCard from "../../components/JournalCard.astro";
+import { getLanguage, localizePath } from "../../i18n";
 
-const meta = journalSections.theory;
-const articles = await getByCategory("Theory");
+const language = getLanguage(Astro.currentLocale);
+const hrefFor = (path: string) => root(localizePath(path, language));
+const meta = language === "tr"
+  ? {
+      name: "Teori",
+      tagline: "Sistemi açıklayan kavramlar",
+      description: "Uluslararası ilişkiler ve ekonomi üzerine akademik özetler ile kuramsal denemeler.",
+      url: "/journal/theory",
+      breadcrumb: "Sayfa yolu",
+      empty: "Henüz burada içerik yok.",
+    }
+  : { ...journalSections.theory, breadcrumb: "Breadcrumb", empty: "Nothing here yet." };
+const articles = await getByCategory("Theory", undefined, language);
 const [lead, ...rest] = articles;
 ---
 
 <BaseLayout title={meta.name} description={meta.description} path={meta.url} tone="journal">
   <div class="shell pt-7 md:pt-9" data-tone="journal">
     <header class="border-b-2 border-ink pb-5">
-      <nav aria-label="Breadcrumb" class="mb-3">
+      <nav aria-label={meta.breadcrumb} class="mb-3">
         <ol class="flex items-center gap-2 font-sans text-[0.68rem] font-bold tracking-[0.12em] uppercase">
-          <li><a href={root("/journal")} class="text-muted transition-colors hover:text-tone">Journal</a></li>
+          <li><a href={hrefFor("/journal")} class="text-muted transition-colors hover:text-tone">Journal</a></li>
           <li aria-hidden="true" class="text-line-strong">/</li>
           <li class="text-tone">{meta.name}</li>
         </ol>
@@ -29,7 +41,7 @@ const [lead, ...rest] = articles;
     </header>
 
     {articles.length === 0 ? (
-      <p class="py-16 text-center font-serif text-[1.05rem] text-muted">Nothing here yet.</p>
+      <p class="py-16 text-center font-serif text-[1.05rem] text-muted">{meta.empty}</p>
     ) : (
       <section class="py-9">
         {lead && <JournalCard item={{ kind: "article", entry: lead }} variant="lead" priority headingLevel="h2" />}

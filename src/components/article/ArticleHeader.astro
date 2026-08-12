@@ -1,21 +1,21 @@
 ---
 import { site, regionSlugOf, deskSlugOf } from "../../site";
 import type { Article } from "../../utils/collection";
-import { articleHref, formatDate, heroImageOf, readingTime, root } from "../../utils/collection";
+import { formatDate, heroImageOf, readingTime, root } from "../../utils/collection";
 import {
   journalCategoryLabel,
   journalCopy,
   journalLanguage,
   journalRegionLabel,
 } from "../../journal-i18n";
+import { localizePath } from "../../i18n";
 import { creditFor } from "../../data/imageCredits";
 
 interface Props {
   article: Article;
-  translations?: Article[];
 }
 
-const { article, translations = [article] } = Astro.props;
+const { article } = Astro.props;
 const { data } = article;
 const copy = journalCopy[data.language];
 const categoryLabel = journalCategoryLabel(data.category, data.language);
@@ -30,11 +30,12 @@ const sourceUrl = /^https?:\/\//i.test(imageSource) ? imageSource : "";
 const minutes = readingTime(article);
 const deskSlug = deskSlugOf(data.category);
 const regionSlug = regionSlugOf(data.region);
+const hrefFor = (path: string) => root(localizePath(path, data.language));
 ---
 
 <header class="shell max-w-[900px] pt-8 md:pt-12" data-tone="journal">
   <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
-    <nav aria-label="Breadcrumb">
+    <nav aria-label={copy.breadcrumb}>
       <ol class="flex flex-wrap items-center gap-2 font-sans text-[0.68rem] font-bold tracking-[0.12em] uppercase">
         <li>
           <a href={root(journalLanguage[data.language].journalPath)} class="text-muted transition-colors hover:text-tone">
@@ -43,8 +44,8 @@ const regionSlug = regionSlugOf(data.region);
         </li>
         <li aria-hidden="true" class="text-line-strong">/</li>
         <li>
-          {deskSlug && data.language === "en" ? (
-            <a href={root(`/wire/${deskSlug}`)} class="text-tone">{data.category}</a>
+          {deskSlug ? (
+            <a href={hrefFor(`/wire/${deskSlug}`)} class="text-tone">{categoryLabel}</a>
           ) : (
             <span class="text-tone">{categoryLabel}</span>
           )}
@@ -52,29 +53,6 @@ const regionSlug = regionSlugOf(data.region);
       </ol>
     </nav>
 
-    {translations.length > 1 && (
-      <nav aria-label={copy.articleLanguageNav}>
-        <div class="inline-flex border border-line p-0.5">
-          {translations.map((translation) => {
-            const item = translation.data.language;
-            return (
-              <a
-                href={articleHref(translation)}
-                hreflang={journalLanguage[item].html}
-                lang={journalLanguage[item].html}
-                aria-current={item === data.language ? "page" : undefined}
-                class:list={[
-                  "px-3 py-1 font-sans text-[0.7rem] font-bold uppercase transition-colors",
-                  item === data.language ? "bg-ink text-paper" : "text-muted hover:text-ink",
-                ]}
-              >
-                {journalLanguage[item].label}
-              </a>
-            );
-          })}
-        </div>
-      </nav>
-    )}
   </div>
 
   {data.draft && (
@@ -109,7 +87,7 @@ const regionSlug = regionSlugOf(data.region);
       <span class="meta">{copy.updated(formatDate(data.updated, {}, data.language))}</span>
     )}
     <span class="meta">{copy.minutesLong(minutes)}</span>
-    <a href={root(`/regions/${regionSlug}`)} class="kicker ml-auto">{regionLabel}</a>
+    <a href={hrefFor(`/regions/${regionSlug}`)} class="kicker ml-auto">{regionLabel}</a>
   </div>
 
   <figure class="mt-7">

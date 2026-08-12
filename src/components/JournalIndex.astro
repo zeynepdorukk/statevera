@@ -7,7 +7,6 @@ import {
 } from "../journal-i18n";
 import { getFeaturedArticle, getJournalStream } from "../utils/collection";
 import JournalCard from "./JournalCard.astro";
-import JournalLanguageSwitch from "./JournalLanguageSwitch.astro";
 import SectionHead from "./SectionHead.astro";
 
 interface Props {
@@ -35,7 +34,6 @@ const alternates = [
   alternates={alternates}
 >
   <div class="shell pt-0" data-tone="journal">
-    <JournalLanguageSwitch language={language} />
     <h1 class="sr-only">{copy.title} — {copy.tagline}</h1>
     {stream.length === 0 ? (
       <div class="mx-auto max-w-xl py-20 text-center">

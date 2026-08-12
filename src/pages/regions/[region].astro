@@ -6,17 +6,47 @@ import { getByRegionSlug, root } from "../../utils/collection";
 import WireCard from "../../components/WireCard.astro";
 import JournalCard from "../../components/JournalCard.astro";
 import SectionHead from "../../components/SectionHead.astro";
+import { deskText, getLanguage, localizePath, regionText } from "../../i18n";
 
 export async function getStaticPaths() {
   return Object.keys(regions).map((region) => ({ params: { region } }));
 }
 
 const slug = Astro.params.region as RegionSlug;
-const region = regions[slug];
+const language = getLanguage(Astro.currentLocale);
+const localizedRegion = regionText(slug, language);
+const copy = language === "tr"
+  ? {
+      regions: "Bölgeler",
+      breadcrumb: "Sayfa yolu",
+      newsCount: (count: number) => `${count} haber`,
+      journalCount: (count: number) => `${count} Journal yazısı`,
+      noNews: "Mevcut akışta bu bölgeden haber bulunmuyor.",
+      seeAll: "Tüm haberleri gör",
+      fromJournal: "Journal'dan",
+      archive: "Arşiv",
+      byDesk: "Masalara göre",
+      news: "Haberler",
+      otherRegions: "Diğer bölgeler",
+    }
+  : {
+      regions: "Regions",
+      breadcrumb: "Breadcrumb",
+      newsCount: (count: number) => `${count} news stories`,
+      journalCount: (count: number) => `${count} journal pieces`,
+      noNews: "No news from this desk in the current feed.",
+      seeAll: "See all news",
+      fromJournal: "From Journal",
+      archive: "Archive",
+      byDesk: "By desk",
+      news: "News",
+      otherRegions: "Other regions",
+    };
+const hrefFor = (path: string) => root(localizePath(path, language));
 
 const wire = byRegionSlug(slug);
 const [lead, ...rest] = wire;
-const journal = await getByRegionSlug(slug);
+const journal = await getByRegionSlug(slug, undefined, language);
 
 const deskCounts = deskList
   .map((desk) => ({ desk, count: wire.filter((i) => i.category === desk.name).length }))
@@ -26,31 +56,31 @@ const others = Object.entries(regions).filter(([key]) => key !== slug);
 ---
 
 <BaseLayout
-  title={region.name}
-  description={region.description}
+  title={localizedRegion.name}
+  description={localizedRegion.description}
   path={`/regions/${slug}`}
 >
   <div class="shell pt-7 md:pt-9">
     <header class="border-b-2 border-ink pb-5">
-      <nav aria-label="Breadcrumb" class="mb-3">
+      <nav aria-label={copy.breadcrumb} class="mb-3">
         <ol class="flex items-center gap-2 font-sans text-[0.68rem] font-bold tracking-[0.12em] uppercase">
-          <li><a href={root("/regions")} class="text-muted transition-colors hover:text-ink">Regions</a></li>
+          <li><a href={hrefFor("/regions")} class="text-muted transition-colors hover:text-ink">{copy.regions}</a></li>
           <li aria-hidden="true" class="text-line-strong">/</li>
-          <li class="text-ink">{region.name}</li>
+          <li class="text-ink">{localizedRegion.name}</li>
         </ol>
       </nav>
-      <h1 class="t-lead">{region.name}</h1>
+      <h1 class="t-lead">{localizedRegion.name}</h1>
       <p class="mt-3 max-w-3xl font-serif text-[1.06rem] leading-relaxed text-ink-soft">
-        {region.description}
+        {localizedRegion.description}
       </p>
       <p class="meta mt-3 flex flex-wrap gap-x-4">
         <span data-tone="wire" class="inline-flex items-center gap-1.5">
           <span class="inline-block h-1.5 w-1.5 bg-tone" aria-hidden="true"></span>
-            {wire.length} news stories
+            {copy.newsCount(wire.length)}
         </span>
         <span data-tone="journal" class="inline-flex items-center gap-1.5">
           <span class="inline-block h-1.5 w-1.5 bg-tone" aria-hidden="true"></span>
-          {journal.length} journal pieces
+          {copy.journalCount(journal.length)}
         </span>
       </p>
     </header>
@@ -59,8 +89,8 @@ const others = Object.entries(regions).filter(([key]) => key !== slug);
       <div data-tone="wire">
         {wire.length === 0 ? (
           <p class="py-10 font-serif text-[1.02rem] text-muted">
-            No news from this desk in the current feed.
-            <a href={root("/wire")} class="link-tone">See all news &rarr;</a>
+            {copy.noNews}{" "}
+            <a href={hrefFor("/wire")} class="link-tone">{copy.seeAll} &rarr;</a>
           </p>
         ) : (
           <>
@@ -77,7 +107,7 @@ const others = Object.entries(regions).filter(([key]) => key !== slug);
       <aside class="lg:border-l lg:border-line lg:pl-8">
         {journal.length > 0 && (
           <div class="mb-9" data-tone="journal">
-            <SectionHead title="From Journal" tone="journal" href="/journal" moreLabel="Archive" />
+            <SectionHead title={copy.fromJournal} tone="journal" href="/journal" moreLabel={copy.archive} />
             <div class="rule-list">
               {journal.map((entry) => (
                 <JournalCard item={{ kind: "article", entry }} variant="compact" />
@@ -88,12 +118,12 @@ const others = Object.entries(regions).filter(([key]) => key !== slug);
 
         {deskCounts.length > 0 && (
           <div class="mb-9" data-tone="wire">
-            <SectionHead title="By desk" tone="wire" href="/wire" moreLabel="News" />
+            <SectionHead title={copy.byDesk} tone="wire" href="/wire" moreLabel={copy.news} />
             <ul class="rule-list">
               {deskCounts.map(({ desk, count }) => (
                 <li class="flex items-baseline justify-between gap-3">
-                  <a href={root(`/wire/${desk.slug}`)} class="editorial-link font-sans text-[0.86rem] font-medium text-ink">
-                    {desk.name}
+                  <a href={hrefFor(`/wire/${desk.slug}`)} class="editorial-link font-sans text-[0.86rem] font-medium text-ink">
+                    {deskText(desk.slug, language).name}
                   </a>
                   <span class="meta tabular">{count}</span>
                 </li>
@@ -103,12 +133,12 @@ const others = Object.entries(regions).filter(([key]) => key !== slug);
         )}
 
         <div>
-          <p class="kicker-ink mb-2.5">Other regions</p>
+          <p class="kicker-ink mb-2.5">{copy.otherRegions}</p>
           <ul class="grid grid-cols-2 gap-x-4 gap-y-1.5">
             {others.map(([key, other]) => (
               <li>
-                <a href={root(`/regions/${key}`)} class="editorial-link font-sans text-[0.84rem] text-ink-soft">
-                  {other.short}
+                <a href={hrefFor(`/regions/${key}`)} class="editorial-link font-sans text-[0.84rem] text-ink-soft">
+                  {regionText(key as RegionSlug, language).short}
                 </a>
               </li>
             ))}

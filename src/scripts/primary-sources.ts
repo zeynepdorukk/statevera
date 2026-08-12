@@ -16,6 +16,30 @@ interface SourceResponse {
   sources?: { id?: string; institution?: string; count?: number; ok?: boolean }[];
 }
 
+interface SourceCopy {
+  dateMissing: string;
+  officialWebsite: string;
+  defaultSnippet: string;
+  officialRecord: string;
+  openAtSource: string;
+  openDocument: string;
+  linkUnavailable: string;
+  primarySource: string;
+  officialSource: string;
+  issuedBy: string;
+  document: string;
+  recordId: string;
+  empty: string;
+  minQuery: string;
+  endpointMissing: string;
+  checking: string;
+  checkingAcross: string;
+  unavailable: string;
+  recordsShown: string;
+  totalMatches: string;
+  institutionsAnswered: string;
+}
+
 const root = document.querySelector<HTMLElement>("[data-primary-sources]");
 if (root) {
   const form = root.querySelector<HTMLFormElement>("[data-primary-source-form]");
@@ -25,6 +49,9 @@ if (root) {
   const results = root.querySelector<HTMLElement>("[data-primary-source-results]");
   const filters = [...root.querySelectorAll<HTMLButtonElement>("[data-source-filter]")];
   const endpoint = root.dataset.endpoint ?? "";
+  const language = root.dataset.language === "tr" ? "tr" : "en";
+  const copy = JSON.parse(root.dataset.sourceCopy ?? "{}") as SourceCopy;
+  const typeLabels = JSON.parse(root.dataset.sourceTypes ?? "{}") as Record<string, string>;
   const defaultSubmitLabel = submit?.textContent?.trim() || "Search official sources";
   let activeType = "All";
   let lastQuery = "";
@@ -38,10 +65,10 @@ if (root) {
     .replace(/'/g, "&#39;");
 
   const date = (value: string | undefined): string => {
-    if (!value) return "Date not listed";
+    if (!value) return copy.dateMissing;
     const parsed = new Date(value);
-    if (Number.isNaN(parsed.getTime())) return "Date not listed";
-    return new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(parsed);
+    if (Number.isNaN(parsed.getTime())) return copy.dateMissing;
+    return new Intl.DateTimeFormat(language === "tr" ? "tr-TR" : "en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(parsed);
   };
 
   const officialUrl = (value: string | undefined): string => {
@@ -58,12 +85,12 @@ if (root) {
     try {
       return new URL(value).hostname.replace(/^www\./, "");
     } catch {
-      return "Official institution website";
+      return copy.officialWebsite;
     }
   };
 
   const shortSnippet = (value: string | undefined): string => {
-    const text = String(value || "Official record available at the source institution.").replace(/\s+/g, " ").trim();
+    const text = String(value || copy.defaultSnippet).replace(/\s+/g, " ").trim();
     return text.length > 260 ? `${text.slice(0, 257).trimEnd()}…` : text;
   };
 
@@ -140,34 +167,34 @@ if (root) {
   const render = (items: SourceResult[]) => {
     if (!results) return;
     if (!items.length) {
-      results.innerHTML = "<p class=\"primary-source-empty\">No official records matched this search. Try a broader keyword or another document type.</p>";
+      results.innerHTML = `<p class="primary-source-empty">${escapeHtml(copy.empty)}</p>`;
       return;
     }
     results.innerHTML = items.map((item, index) => {
       const url = officialUrl(item.url);
-      const title = item.title || "Official record";
+      const title = item.title || copy.officialRecord;
       const titleMarkup = url
-        ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHtml(title)} at the official source">${escapeHtml(title)}</a>`
+        ? `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(copy.openAtSource)} ${escapeHtml(title)}">${escapeHtml(title)}</a>`
         : escapeHtml(title);
       const actionMarkup = url
-        ? `<a class="primary-source-result-action" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">Open official document <span aria-hidden="true">↗</span></a>`
-        : `<span class="primary-source-result-action is-unavailable">Official link unavailable</span>`;
+        ? `<a class="primary-source-result-action" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(copy.openDocument)} <span aria-hidden="true">↗</span></a>`
+        : `<span class="primary-source-result-action is-unavailable">${escapeHtml(copy.linkUnavailable)}</span>`;
 
       return `
       <article class="primary-source-result">
         <div class="primary-source-result-source">
-          <span class="primary-source-result-eyebrow">Primary source · ${escapeHtml(domain(url))}</span>
-          <strong>${escapeHtml(item.institution || "Official source")}</strong>
-          <span>${escapeHtml(item.organization || item.country || "Issued by the institution above")}</span>
+          <span class="primary-source-result-eyebrow">${escapeHtml(copy.primarySource)} · ${escapeHtml(domain(url))}</span>
+          <strong>${escapeHtml(item.institution || copy.officialSource)}</strong>
+          <span>${escapeHtml(item.organization || item.country || copy.issuedBy)}</span>
           <span class="primary-source-result-index" aria-hidden="true">${String(index + 1).padStart(2, "0")}</span>
         </div>
         <div class="primary-source-result-body">
           <h3 class="primary-source-result-title">${titleMarkup}</h3>
           <p class="primary-source-result-snippet">${escapeHtml(shortSnippet(item.snippet))}</p>
           <div class="primary-source-result-meta">
-            <span class="primary-source-result-type">${escapeHtml(item.documentType || "Document")}</span>
+            <span class="primary-source-result-type">${escapeHtml(typeLabels[item.documentType ?? ""] ?? item.documentType ?? copy.document)}</span>
             <span>${escapeHtml(date(item.publicationDate))}</span>
-            ${item.sourceIdentifier ? `<span class="primary-source-result-id">Record ID: ${escapeHtml(item.sourceIdentifier)}</span>` : ""}
+            ${item.sourceIdentifier ? `<span class="primary-source-result-id">${escapeHtml(copy.recordId)}: ${escapeHtml(item.sourceIdentifier)}</span>` : ""}
           </div>
           ${actionMarkup}
         </div>
@@ -183,12 +210,12 @@ if (root) {
   const search = async () => {
     const query = input?.value.trim() ?? "";
     if (query.length < 2) {
-      setStatus("Enter at least two characters to search official records.", "error");
+      setStatus(copy.minQuery, "error");
       if (results) results.innerHTML = "";
       return;
     }
     if (!endpoint) {
-      setStatus("The official-source endpoint is not configured.", "error");
+      setStatus(copy.endpointMissing, "error");
       return;
     }
     lastQuery = query;
@@ -198,9 +225,9 @@ if (root) {
       submit.disabled = true;
       submit.dataset.state = "loading";
       submit.setAttribute("aria-busy", "true");
-      submit.textContent = "Checking official sources…";
+      submit.textContent = copy.checking;
     }
-    typeStatus(`Checking official sources across ${pollMarks.length} institutions\u{2026}`);
+    typeStatus(`${pollMarks.length} ${copy.checkingAcross}\u{2026}`);
     pollWaiting();
     try {
       const url = new URL(endpoint, window.location.origin);
@@ -210,16 +237,16 @@ if (root) {
       url.searchParams.set("type", "All");
       const response = await fetch(url.toString(), { headers: { accept: "application/json" } });
       const data = (await response.json()) as SourceResponse & { error?: string };
-      if (!response.ok) throw new Error(data.error || "The source search is unavailable.");
+      if (!response.ok) throw new Error(language === "tr" ? copy.unavailable : data.error || copy.unavailable);
       allResults = data.results ?? [];
       render(visibleResults());
       pollAnswered(data.sources);
       const available = (data.sources ?? []).filter((source) => source.ok).length;
-      setStatus(`${visibleResults().length} records shown \u{b7} ${allResults.length} total matches \u{b7} ${available} of ${pollMarks.length} institutions answered.`);
+      setStatus(`${visibleResults().length} ${copy.recordsShown} \u{b7} ${allResults.length} ${copy.totalMatches} \u{b7} ${available}/${pollMarks.length} ${copy.institutionsAnswered}.`);
     } catch (error) {
       if (results) results.innerHTML = "";
       pollSilent();
-      setStatus(error instanceof Error ? error.message : "The source search is unavailable. Try again shortly.", "error");
+      setStatus(error instanceof Error ? error.message : copy.unavailable, "error");
     } finally {
       if (submit) {
         submit.disabled = false;
@@ -244,7 +271,7 @@ if (root) {
     });
     if (lastQuery && allResults.length) {
       render(visibleResults());
-      setStatus(`${visibleResults().length} records shown · ${allResults.length} total matches.`);
+      setStatus(`${visibleResults().length} ${copy.recordsShown} · ${allResults.length} ${copy.totalMatches}.`);
     }
   }));
 }

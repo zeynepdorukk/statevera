@@ -173,7 +173,8 @@ export default defineConfig({
   i18n: {
     locales: ["en", "tr"],
     defaultLocale: "en",
-    routing: { prefixDefaultLocale: false },
+    fallback: { tr: "en" },
+    routing: { prefixDefaultLocale: false, fallbackType: "rewrite" },
   },
   redirects: legacyRedirects,
   markdown: { processor: unified({ rehypePlugins: [rehypeBaseImages] }) },
@@ -181,7 +182,7 @@ export default defineConfig({
   // publication's writing, so they stay out of the index and out of the sitemap.
   integrations: [
     mdx(),
-    sitemap({ filter: (page) => !/\/(editor|wire|live)\//.test(page) }),
+    sitemap({ filter: (page) => !/\/(404|editor|wire|live)\//.test(page) }),
   ],
   vite: {
     plugins: [tailwindcss(), apiDevPlugin],

@@ -1,4 +1,8 @@
 ---
+import { getLanguage, searchText } from "../i18n";
+
+const language = getLanguage(Astro.currentLocale);
+const copy = searchText[language];
 ---
 
 <div
@@ -6,9 +10,11 @@
   class="fixed inset-0 z-50 hidden no-print"
   role="dialog"
   aria-modal="true"
-  aria-label="Search Statevera"
+  aria-label={copy.dialog}
   data-tone="risk"
   data-search-overlay
+  data-language={language}
+  data-search-copy={JSON.stringify(copy)}
 >
   <div class="absolute inset-0 bg-ink/50 backdrop-blur-[3px]" data-search-backdrop></div>
   <div class="relative mx-auto mt-[5vh] flex max-h-[90vh] w-[min(960px,calc(100%-1.5rem))] flex-col border border-line-strong bg-paper shadow-2xl">
@@ -20,19 +26,19 @@
       <input
         type="search"
         id="search-input"
-        placeholder="Search news, journal, countries, regions…"
+        placeholder={copy.placeholder}
         autocomplete="off"
-        aria-label="Search"
+        aria-label={copy.inputLabel}
         aria-controls="search-results"
         class="w-full border-none bg-transparent py-5 font-sans text-[1.08rem] text-ink placeholder:text-muted"
       />
       <kbd class="shrink-0 border border-line px-1.5 py-0.5 font-sans text-[0.62rem] font-medium text-muted">esc</kbd>
     </div>
 
-    <div class="flex gap-1 border-b border-line px-4 py-2.5" role="group" aria-label="Filter results">
-      <button type="button" data-filter="all" class="filter-pill is-on">All</button>
-      <button type="button" data-filter="wire" class="filter-pill">News</button>
-      <button type="button" data-filter="journal" class="filter-pill">Journal</button>
+    <div class="flex gap-1 border-b border-line px-4 py-2.5" role="group" aria-label={copy.filterResults}>
+      <button type="button" data-filter="all" class="filter-pill is-on">{copy.all}</button>
+      <button type="button" data-filter="wire" class="filter-pill">{copy.news}</button>
+      <button type="button" data-filter="journal" class="filter-pill">{copy.journal}</button>
     </div>
 
     <div id="search-results" class="min-h-[18rem] flex-1 overflow-y-auto" aria-live="polite" data-search-results></div>
@@ -40,9 +46,9 @@
     <div class="border-t border-line px-5 py-3">
       <p class="meta">
         <kbd class="border border-line px-1 py-px font-sans text-[0.6rem]">&uarr;</kbd>
-        <kbd class="border border-line px-1 py-px font-sans text-[0.6rem]">&darr;</kbd> to navigate
-        &middot; <kbd class="border border-line px-1 py-px font-sans text-[0.6rem]">Enter</kbd> to open
-        &middot; press <kbd class="border border-line px-1 py-px font-sans text-[0.6rem]">/</kbd> anywhere to search
+        <kbd class="border border-line px-1 py-px font-sans text-[0.6rem]">&darr;</kbd> {copy.navigate}
+        &middot; <kbd class="border border-line px-1 py-px font-sans text-[0.6rem]">Enter</kbd> {copy.open}
+        &middot; {copy.press} <kbd class="border border-line px-1 py-px font-sans text-[0.6rem]">/</kbd> {copy.anywhere}
       </p>
     </div>
   </div>
@@ -101,7 +107,17 @@
     description: string;
     source: string;
     date: string;
+    language?: "en" | "tr";
     external: boolean;
+  };
+
+  type SearchCopy = {
+    prompt: string;
+    noResults: string;
+    unavailable: string;
+    kinds: Record<string, string>;
+    categories: Record<string, string>;
+    regions: Record<string, string>;
   };
 
   const overlay = document.querySelector<HTMLElement>("[data-search-overlay]")!;
@@ -109,6 +125,9 @@
   const resultsEl = document.querySelector<HTMLElement>("[data-search-results]")!;
   const backdrop = document.querySelector<HTMLElement>("[data-search-backdrop]")!;
   const filters = [...document.querySelectorAll<HTMLButtonElement>("[data-filter]")];
+  const language = overlay.dataset.language === "tr" ? "tr" : "en";
+  const copy = JSON.parse(overlay.dataset.searchCopy ?? "{}") as SearchCopy;
+  const localized = (values: Record<string, string>, value: string) => values[value] ?? value;
 
   let index: SearchItem[] = [];
   let loaded = false;
@@ -140,11 +159,12 @@
     const query = raw.trim().toLowerCase();
     if (!query) {
       resultsEl.innerHTML =
-        '<p class="px-5 py-10 meta">Search news and journal analysis — by headline, country, region or source.</p>';
+        `<p class="px-5 py-10 meta">${escapeHtml(copy.prompt)}</p>`;
       return;
     }
 
     const matches = index
+      .filter((item) => item.pillar !== "journal" || (item.language ?? "en") === language)
       .filter((item) => pillar === "all" || item.pillar === pillar)
       .map((item) => ({ item, s: score(item, query) }))
       .filter((r) => r.s > 0)
@@ -154,7 +174,7 @@
     activeIndex = -1;
 
     if (matches.length === 0) {
-      resultsEl.innerHTML = `<p class="px-5 py-10 meta">No results for &ldquo;${escapeHtml(raw.trim())}&rdquo;.</p>`;
+      resultsEl.innerHTML = `<p class="px-5 py-10 meta">${escapeHtml(copy.noResults)} &ldquo;${escapeHtml(raw.trim())}&rdquo;.</p>`;
       return;
     }
 
@@ -166,11 +186,11 @@
            class="search-result block border-b border-line px-5 py-3.5 transition-colors duration-150 hover:bg-paper-soft focus:bg-paper-soft focus:outline-none">
           <span class="flex items-baseline justify-between gap-4">
             <span class="font-serif text-[1.1rem] font-semibold leading-snug text-ink">${highlight(item.title, query)}</span>
-            <span class="kicker shrink-0">${escapeHtml(item.kind)}</span>
+            <span class="kicker shrink-0">${escapeHtml(localized(copy.kinds, item.kind))}</span>
           </span>
           ${item.description ? `<span class="mt-1 block truncate font-sans text-[0.82rem] text-muted">${highlight(item.description, query)}</span>` : ""}
           <span class="mt-1.5 block font-sans text-[0.68rem] font-semibold tracking-[0.1em] uppercase text-muted">
-            ${escapeHtml(item.source)} &middot; ${escapeHtml(item.category)} &middot; ${escapeHtml(item.region)}
+            ${escapeHtml(item.source)} &middot; ${escapeHtml(localized(copy.categories, item.category))} &middot; ${escapeHtml(localized(copy.regions, item.region))}
           </span>
         </a>`
       )
@@ -203,7 +223,7 @@
           render(input.value);
         })
         .catch(() => {
-          resultsEl.innerHTML = '<p class="px-5 py-10 meta">Search index unavailable.</p>';
+          resultsEl.innerHTML = `<p class="px-5 py-10 meta">${escapeHtml(copy.unavailable)}</p>`;
         });
     }
     setTimeout(() => input.focus(), 20);

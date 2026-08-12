@@ -1,6 +1,8 @@
 ---
 import marketData from "../data/markets.json";
+import { getLanguage } from "../i18n";
 
+const language = getLanguage(Astro.currentLocale);
 const quotes = marketData.quotes ?? [];
 const track = [...quotes, ...quotes];
 
@@ -10,7 +12,7 @@ const takenAt = new Date(marketData.updatedAt);
 const ageHours = (Date.now() - takenAt.getTime()) / 3600000;
 const stale = !Number.isFinite(ageHours) || ageHours > 24;
 const stamp = Number.isFinite(takenAt.getTime())
-  ? new Intl.DateTimeFormat("en-GB", {
+  ? new Intl.DateTimeFormat(language === "tr" ? "tr-TR" : "en-GB", {
       day: "numeric",
       month: "short",
       hour: "2-digit",
@@ -21,7 +23,7 @@ const stamp = Number.isFinite(takenAt.getTime())
   : "";
 
 const formatPrice = (quote) =>
-  new Intl.NumberFormat("en-US", {
+  new Intl.NumberFormat(language === "tr" ? "tr-TR" : "en-US", {
     minimumFractionDigits: quote.decimals,
     maximumFractionDigits: quote.decimals,
   }).format(quote.price);
@@ -33,9 +35,9 @@ const formatChange = (quote) => {
 ---
 
 {quotes.length > 0 && (
-  <section class="market-ticker" aria-label="Market indices">
+  <section class="market-ticker" aria-label={language === "tr" ? "Piyasa endeksleri" : "Market indices"}>
     <p class:list={["market-stamp", stale && "is-stale"]}>
-      {stale ? "Last close" : "Close"}
+      {stale ? (language === "tr" ? "Son kapanış" : "Last close") : (language === "tr" ? "Kapanış" : "Close")}
       {stamp && <span class="market-stamp-time">{stamp}</span>}
     </p>
     <div class="market-viewport">

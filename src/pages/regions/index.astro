@@ -4,12 +4,25 @@ import { regions, regionSlugOf, type RegionSlug } from "../../site";
 import { activeRegions, wireItems } from "../../data/wire";
 import { getArticlesByLanguage } from "../../utils/collection";
 import WorldMap from "../../components/WorldMap.astro";
+import { getLanguage, regionText } from "../../i18n";
 
-const articles = await getArticlesByLanguage("en");
+const language = getLanguage(Astro.currentLocale);
+const copy = language === "tr"
+  ? {
+      title: "Bölgeler",
+      description: "Canlı Haberler, Journal analizleri ve GLORISK bağlamıyla uluslararası gelişmeleri bölgelere göre keşfedin.",
+      heading: "Bölgeler — uluslararası gelişmelerin coğrafyası",
+    }
+  : {
+      title: "Regions",
+      description: "Explore international affairs by region through live News, Journal analysis and GLORISK context.",
+      heading: "Regions — international affairs by place",
+    };
+const articles = await getArticlesByLanguage(language);
 const rows = (Object.entries(regions) as [RegionSlug, (typeof regions)[RegionSlug]][]).map(
   ([slug, region]) => ({
     slug,
-    region,
+    region: regionText(slug, language),
     wire: wireItems.filter((item) => item.region === region.name),
     journal: articles.filter((article) => article.data.region === region.name),
   })
@@ -24,12 +37,12 @@ const initialSlug = rows.some((row) => row.slug === "global")
 ---
 
 <BaseLayout
-  title="Regions"
-  description="Explore international affairs by region through live News, Journal analysis and GLORISK context."
+  title={copy.title}
+  description={copy.description}
   path="/regions"
 >
   <div class="shell pt-0" data-tone="wire">
-    <h1 class="sr-only">Regions — international affairs by place</h1>
+    <h1 class="sr-only">{copy.heading}</h1>
     <WorldMap rows={rows} initialSlug={initialSlug} />
   </div>
 </BaseLayout>

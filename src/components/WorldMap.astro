@@ -4,6 +4,8 @@ import { geoGraticule10, geoNaturalEarth1, geoPath } from "d3-geo";
 import { feature, mesh } from "topojson-client";
 import { relativeTime, wireDate, type WireItem } from "../data/wire";
 import { articleHref, type Article } from "../utils/collection";
+import { getLanguage } from "../i18n";
+import { journalCategoryLabel } from "../journal-i18n";
 
 interface RegionRow {
   slug: string;
@@ -22,6 +24,32 @@ interface Props {
 }
 
 const { rows, initialSlug } = Astro.props;
+const language = getLanguage(Astro.currentLocale);
+const copy = language === "tr"
+  ? {
+      map: "Bölgelere göre etkileşimli dünya haritası",
+      country: "Ülke",
+      region: "bölge",
+      worldRegions: "Dünya bölgeleri",
+      products: "Haberler, Journal, GLORISK",
+      choose: "Bir bölge seçin",
+      latest: "Son haberler",
+      noNews: "Bu bölgede güncel haber bulunmuyor.",
+      journal: "Journal'dan",
+      noJournal: "Bu bölgede henüz Journal yazısı yok.",
+    }
+  : {
+      map: "Interactive world map by region",
+      country: "Country",
+      region: "region",
+      worldRegions: "World regions",
+      products: "News, Journal, GLORISK",
+      choose: "Choose a region",
+      latest: "Latest news",
+      noNews: "No current news in this region.",
+      journal: "From Journal",
+      noJournal: "No Journal piece in this region yet.",
+    };
 const width = 960;
 const height = 520;
 const topology = world as any;
@@ -56,7 +84,7 @@ const borderPath = path(countryBorders);
       class="region-map"
       viewBox={`0 0 ${width} ${height}`}
       role="img"
-      aria-label="Interactive world map by region"
+      aria-label={copy.map}
       preserveAspectRatio="xMidYMid meet"
     >
       <rect class="map-ocean" x="0" y="0" width={width} height={height}></rect>
@@ -76,7 +104,7 @@ const borderPath = path(countryBorders);
               data-country-name={country.properties?.name ?? id}
               tabindex={regionSlug ? 0 : undefined}
               role={regionSlug ? "button" : undefined}
-              aria-label={regionSlug ? `${country.properties?.name ?? "Country"}, ${regionBySlug[regionSlug]?.region.short ?? "region"}` : undefined}
+              aria-label={regionSlug ? `${country.properties?.name ?? copy.country}, ${regionBySlug[regionSlug]?.region.short ?? copy.region}` : undefined}
             ></path>
           );
         })}
@@ -84,13 +112,13 @@ const borderPath = path(countryBorders);
       {borderPath && <path class="map-borders" d={borderPath}></path>}
     </svg>
     <div class="map-caption">
-      <span>World regions</span>
+      <span>{copy.worldRegions}</span>
       <span class="map-caption-rule"></span>
-      <span>News, Journal, GLORISK</span>
+      <span>{copy.products}</span>
     </div>
   </div>
 
-  <div class="region-switcher" role="tablist" aria-label="Choose a region">
+  <div class="region-switcher" role="tablist" aria-label={copy.choose}>
     {rows.map((row) => (
       <button
         type="button"
@@ -117,33 +145,33 @@ const borderPath = path(countryBorders);
         <h2 class="region-detail-title">{row.region.name}</h2>
         <div class="region-detail-columns">
           <div data-tone="wire">
-            <p class="kicker">Latest news</p>
+            <p class="kicker">{copy.latest}</p>
             {row.wire.length > 0 ? (
               <ul class="region-story-list">
                 {row.wire.slice(0, 5).map((item) => (
                   <li>
                     <a href={item.url} target="_blank" rel="noopener noreferrer nofollow">{item.title}</a>
-                    <span>{item.publisher} &middot; {relativeTime(wireDate(item))}</span>
+                    <span>{item.publisher} &middot; {relativeTime(wireDate(item), new Date(), language)}</span>
                   </li>
                 ))}
               </ul>
             ) : (
-              <p class="region-empty">No current news in this region.</p>
+              <p class="region-empty">{copy.noNews}</p>
             )}
           </div>
           <div data-tone="journal">
-            <p class="kicker">From Journal</p>
+            <p class="kicker">{copy.journal}</p>
             {row.journal.length > 0 ? (
               <ul class="region-story-list journal-list">
                 {row.journal.slice(0, 3).map((entry) => (
                   <li>
                     <a href={articleHref(entry)}>{entry.data.title}</a>
-                    <span>{entry.data.category}</span>
+                    <span>{journalCategoryLabel(entry.data.category, language)}</span>
                   </li>
                 ))}
               </ul>
             ) : (
-              <p class="region-empty">No Journal piece in this region yet.</p>
+              <p class="region-empty">{copy.noJournal}</p>
             )}
           </div>
         </div>

@@ -6,6 +6,96 @@ import { site } from "../site";
 import { root } from "../utils/collection";
 import { PRIMARY_SOURCE_TYPES } from "../primary-sources/types";
 import { SOURCE_ADAPTERS } from "../primary-sources/adapters";
+import { getLanguage } from "../i18n";
+
+const language = getLanguage(Astro.currentLocale);
+const copy = language === "tr"
+  ? {
+      title: "Birincil Kaynaklar",
+      description: "İkinci el başlıklar yerine hükümetlerin ve uluslararası kurumların resmî belgelerinde arama yapın.",
+      kicker: "Statevera Araştırma · Doğrulama masası",
+      heading: "Resmî kayıtlarda ara",
+      note: "Haberin arkasındaki belgeyi bulun: açıklamalar, mevzuat, antlaşmalar ve resmî veriler, yayımlayan kuruma doğrudan bağlı.",
+      queryLabel: "Anahtar kelime veya konu",
+      placeholder: "Örnek: yaptırımlar, Ukrayna, enerji güvenliği…",
+      submit: "Resmî kaynaklarda ara",
+      filterLabel: "Belge türüne göre filtrele",
+      all: "Tümü",
+      types: {
+        Documents: "Belgeler",
+        Statements: "Açıklamalar",
+        Legislation: "Mevzuat",
+        Treaties: "Antlaşmalar",
+        Sanctions: "Yaptırımlar",
+        Speeches: "Konuşmalar",
+        "Official Data": "Resmî Veriler",
+      },
+      map: "Kaynak haritası",
+      institutions: "İlk sürümdeki kurumlar",
+      adapters: "Bağdaştırıcılar birbirinden bağımsızdır; böylece arama arayüzü değiştirilmeden yeni resmî kaynaklar eklenebilir.",
+      runtime: {
+        dateMissing: "Tarih belirtilmemiş",
+        officialWebsite: "Resmî kurum sitesi",
+        defaultSnippet: "Resmî kayıt kaynak kurumda mevcuttur.",
+        officialRecord: "Resmî kayıt",
+        openAtSource: "Resmî kaynakta aç:",
+        openDocument: "Resmî belgeyi aç",
+        linkUnavailable: "Resmî bağlantı kullanılamıyor",
+        primarySource: "Birincil kaynak",
+        officialSource: "Resmî kaynak",
+        issuedBy: "Yukarıdaki kurum tarafından yayımlandı",
+        document: "Belge",
+        recordId: "Kayıt No",
+        empty: "Bu aramayla eşleşen resmî kayıt bulunamadı. Daha geniş bir anahtar kelime veya başka bir belge türü deneyin.",
+        minQuery: "Resmî kayıtlarda arama yapmak için en az iki karakter girin.",
+        endpointMissing: "Resmî kaynak arama uç noktası yapılandırılmamış.",
+        checking: "Resmî kaynaklar kontrol ediliyor…",
+        checkingAcross: "kurumda resmî kaynaklar kontrol ediliyor",
+        unavailable: "Kaynak araması şu anda kullanılamıyor. Lütfen kısa süre sonra yeniden deneyin.",
+        recordsShown: "kayıt gösteriliyor",
+        totalMatches: "toplam eşleşme",
+        institutionsAnswered: "kurum yanıt verdi",
+      },
+    }
+  : {
+      title: "Primary Sources",
+      description: "Search official documents from governments and international institutions — not second-hand headlines.",
+      kicker: "Statevera Research · Verification desk",
+      heading: "Search official records",
+      note: "Find the document behind the headline — statements, legislation, treaties and official data, linked to the institution that issued it.",
+      queryLabel: "Keyword or topic",
+      placeholder: "Try: sanctions, Ukraine, energy security…",
+      submit: "Search official sources",
+      filterLabel: "Filter by document type",
+      all: "All",
+      types: Object.fromEntries(PRIMARY_SOURCE_TYPES.map((type) => [type, type])),
+      map: "The source map",
+      institutions: "Institutions in this first release",
+      adapters: "Adapters are independent, so new official sources can be added without changing the search interface.",
+      runtime: {
+        dateMissing: "Date not listed",
+        officialWebsite: "Official institution website",
+        defaultSnippet: "Official record available at the source institution.",
+        officialRecord: "Official record",
+        openAtSource: "Open at the official source:",
+        openDocument: "Open official document",
+        linkUnavailable: "Official link unavailable",
+        primarySource: "Primary source",
+        officialSource: "Official source",
+        issuedBy: "Issued by the institution above",
+        document: "Document",
+        recordId: "Record ID",
+        empty: "No official records matched this search. Try a broader keyword or another document type.",
+        minQuery: "Enter at least two characters to search official records.",
+        endpointMissing: "The official-source endpoint is not configured.",
+        checking: "Checking official sources…",
+        checkingAcross: "institutions are being checked",
+        unavailable: "The source search is unavailable. Try again shortly.",
+        recordsShown: "records shown",
+        totalMatches: "total matches",
+        institutionsAnswered: "institutions answered",
+      },
+    };
 
 const endpoint = import.meta.env.DEV
   ? root("/api/primary-sources")
@@ -29,23 +119,23 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
 
 
 <BaseLayout
-  title="Primary Sources"
-  description="Search official documents from governments and international institutions — not second-hand headlines."
+  title={copy.title}
+  description={copy.description}
   path="/sources"
   hideTicker
 >
-  <div class="shell primary-sources-page" data-primary-sources data-endpoint={endpoint}>
+  <div class="shell primary-sources-page" data-primary-sources data-endpoint={endpoint} data-language={language} data-source-copy={JSON.stringify(copy.runtime)} data-source-types={JSON.stringify(copy.types)}>
     <section class="primary-sources-tool" aria-labelledby="search-heading">
       <div class="primary-sources-search-head">
         <div>
-          <p class="kicker-ink">Statevera Research · Verification desk</p>
-          <h1 id="search-heading" class="t-headline mt-1">Search official records</h1>
+          <p class="kicker-ink">{copy.kicker}</p>
+          <h1 id="search-heading" class="t-headline mt-1">{copy.heading}</h1>
         </div>
-        <p class="primary-sources-note">Find the document behind the headline — statements, legislation, treaties and official data, linked to the institution that issued it.</p>
+        <p class="primary-sources-note">{copy.note}</p>
       </div>
 
       <form class="primary-source-form" data-primary-source-form>
-        <label class="sr-only" for="primary-source-query">Keyword or topic</label>
+        <label class="sr-only" for="primary-source-query">{copy.queryLabel}</label>
         <input
           id="primary-source-query"
           name="q"
@@ -53,16 +143,16 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
           minlength="2"
           maxlength="160"
           autocomplete="off"
-          placeholder="Try: sanctions, Ukraine, energy security…"
+          placeholder={copy.placeholder}
           data-primary-source-input
         />
-        <button type="submit" class="primary-source-submit" data-primary-source-submit>Search official sources</button>
+        <button type="submit" class="primary-source-submit" data-primary-source-submit>{copy.submit}</button>
       </form>
 
-      <div class="primary-source-filters" role="group" aria-label="Filter by document type">
-        <button type="button" class="source-filter is-active" data-source-filter="All" aria-pressed="true">All</button>
+      <div class="primary-source-filters" role="group" aria-label={copy.filterLabel}>
+        <button type="button" class="source-filter is-active" data-source-filter="All" aria-pressed="true">{copy.all}</button>
         {PRIMARY_SOURCE_TYPES.map((type) => (
-          <button type="button" class="source-filter" data-source-filter={type} aria-pressed="false">{type}</button>
+          <button type="button" class="source-filter" data-source-filter={type} aria-pressed="false">{copy.types[type]}</button>
         ))}
       </div>
 
@@ -82,10 +172,10 @@ const marks = SOURCE_ADAPTERS.map((adapter) => {
     <section class="primary-source-directory border-t-2 border-ink" aria-labelledby="directory-heading">
       <div class="primary-source-directory-head">
         <div>
-          <p class="kicker-ink">The source map</p>
-          <h2 id="directory-heading" class="t-headline mt-1">Institutions in this first release</h2>
+          <p class="kicker-ink">{copy.map}</p>
+          <h2 id="directory-heading" class="t-headline mt-1">{copy.institutions}</h2>
         </div>
-        <p class="primary-sources-note">Adapters are independent, so new official sources can be added without changing the search interface.</p>
+        <p class="primary-sources-note">{copy.adapters}</p>
       </div>
       <ul class="source-map">
         {marks.map((mark) => (

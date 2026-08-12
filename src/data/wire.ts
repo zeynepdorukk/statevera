@@ -141,12 +141,13 @@ export function activeRegions(): { region: string; count: number }[] {
     .sort((a, b) => b.count - a.count);
 }
 
-export function relativeTime(date: Date, now: Date = new Date()): string {
+export function relativeTime(date: Date, now: Date = new Date(), language: "en" | "tr" = "en"): string {
   const mins = Math.floor((now.getTime() - date.getTime()) / 60000);
-  if (mins < 1) return "just now";
-  if (mins < 60) return `${mins}m ago`;
+  if (mins < 1) return language === "tr" ? "az önce" : "just now";
+  if (mins < 60) return language === "tr" ? `${mins} dk önce` : `${mins}m ago`;
   const hours = Math.floor(mins / 60);
-  if (hours < 24) return `${hours}h ago`;
+  if (hours < 24) return language === "tr" ? `${hours} sa önce` : `${hours}h ago`;
   const days = Math.floor(hours / 24);
+  if (language === "tr") return days === 1 ? "dün" : `${days} gün önce`;
   return days === 1 ? "yesterday" : `${days}d ago`;
 }

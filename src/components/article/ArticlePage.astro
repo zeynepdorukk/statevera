@@ -16,6 +16,7 @@ import {
   journalLanguage,
   journalRegionLabel,
 } from "../../journal-i18n";
+import { localizePath } from "../../i18n";
 import { byRegion } from "../../data/wire";
 import ArticleHeader from "./ArticleHeader.astro";
 import ArticleSources from "./ArticleSources.astro";
@@ -50,6 +51,7 @@ const alternates = translations.map((translation) => ({
   language: translation.data.language,
   path: articleHref(translation),
 }));
+const hrefFor = (path: string) => root(localizePath(path, language));
 
 const jsonLd = [
   {
@@ -111,7 +113,7 @@ const jsonLd = [
     section: data.category,
   }}
 >
-  <ArticleHeader article={article} translations={translations} />
+  <ArticleHeader article={article} />
 
   <div class="shell flex max-w-[1400px] gap-10" data-tone="journal">
     <div class="hidden shrink-0 pt-10 xl:block xl:w-12 no-print">
@@ -145,7 +147,7 @@ const jsonLd = [
 
         <p class="mt-8 border-t border-line pt-4 font-sans text-[0.74rem] leading-relaxed text-muted">
           {copy.by(data.author)} &middot; {site.publicationNameDisplay}.{" "}
-          <a href={root(`/regions/${regionSlug}`)} class="link-tone">{regionLabel}</a>{" "}
+          <a href={hrefFor(`/regions/${regionSlug}`)} class="link-tone">{regionLabel}</a>{" "}
           {copy.deskSuffix}
           {data.country.length > 0 && ` ${copy.focus(data.country)}`}
         </p>
@@ -170,7 +172,7 @@ const jsonLd = [
           <p class="meta">{copy.noReporting}</p>
         )}
         <p class="mt-5 border-t border-line pt-3">
-          <a href={root("/wire")} class="kicker-ink hover:text-tone">{copy.seeAllNews}</a>
+          <a href={hrefFor("/wire")} class="kicker-ink hover:text-tone">{copy.seeAllNews}</a>
         </p>
       </div>
     </aside>

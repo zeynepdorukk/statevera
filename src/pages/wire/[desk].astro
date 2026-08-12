@@ -7,6 +7,7 @@ import WireCard from "../../components/WireCard.astro";
 import JournalCard from "../../components/JournalCard.astro";
 import SectionHead from "../../components/SectionHead.astro";
 import MarketTicker from "../../components/MarketTicker.astro";
+import { deskText, getLanguage, localizePath } from "../../i18n";
 
 export async function getStaticPaths() {
   return deskList.map((desk) => ({ params: { desk: desk.slug } }));
@@ -14,6 +15,30 @@ export async function getStaticPaths() {
 
 const deskSlug = Astro.params.desk as DeskSlug;
 const desk = desks[deskSlug];
+const language = getLanguage(Astro.currentLocale);
+const localizedDesk = deskText(deskSlug, language);
+const copy = language === "tr"
+  ? {
+      news: "Haberler",
+      otherDesks: "Diğer masalar",
+      all: "Tümü",
+      empty: "Bu masada mevcut haber aralığında içerik bulunmuyor.",
+      seeEverything: "Tümünü gör",
+      more: `${localizedDesk.name} haberleri`,
+      inJournal: "Journal'da",
+      archive: "Arşiv",
+    }
+  : {
+      news: "News",
+      otherDesks: "Other desks",
+      all: "All",
+      empty: "Nothing on this desk in the current news window.",
+      seeEverything: "See everything",
+      more: `More ${localizedDesk.name}`,
+      inJournal: "In Journal",
+      archive: "Archive",
+    };
+const hrefFor = (path: string) => root(localizePath(path, language));
 
 const items = byCategory(desk.name);
 const leadIndex = Math.max(items.findIndex(canLead), 0);
@@ -21,27 +46,27 @@ const lead = items[leadIndex];
 const rest = items.filter((_, index) => index !== leadIndex);
 const railNews = rest.slice(0, 6);
 const mainNews = rest.slice(6);
-const journalOnDesk = await getByCategory(desk.name, 3);
+const journalOnDesk = await getByCategory(desk.name, 3, language);
 const hasSidebar = railNews.length > 0 || journalOnDesk.length > 0;
 
 const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
 ---
 
 <BaseLayout
-  title={`${desk.name} — News`}
-  description={desk.description}
+  title={`${localizedDesk.name} — ${copy.news}`}
+  description={localizedDesk.description}
   path={`/wire/${desk.slug}`}
   tone="wire"
   noindex
 >
   <div class="shell pt-0" data-tone="wire">
-    <h1 class="sr-only">{desk.name} — {desk.tagline}</h1>
+    <h1 class="sr-only">{localizedDesk.name} — {localizedDesk.tagline}</h1>
     <div class="news-toolbar">
-      <nav aria-label="Other desks" class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
-        <a href={root("/wire")} class="desk-pill">All</a>
-        <span class="desk-pill is-on">{desk.name}</span>
+      <nav aria-label={copy.otherDesks} class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
+        <a href={hrefFor("/wire")} class="desk-pill">{copy.all}</a>
+        <span class="desk-pill is-on">{localizedDesk.name}</span>
         {otherDesks.map((other) => (
-          <a href={root(`/wire/${other.slug}`)} class="desk-pill">{other.name}</a>
+          <a href={hrefFor(`/wire/${other.slug}`)} class="desk-pill">{deskText(other.slug, language).name}</a>
         ))}
       </nav>
       <MarketTicker />
@@ -49,8 +74,8 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
 
     {items.length === 0 ? (
       <p class="py-14 text-center font-serif text-[1.05rem] text-muted">
-        Nothing on this desk in the current news window.
-        <a href={root("/wire")} class="link-tone">See everything &rarr;</a>
+        {copy.empty}{" "}
+        <a href={hrefFor("/wire")} class="link-tone">{copy.seeEverything} &rarr;</a>
       </p>
     ) : (
       <section
@@ -74,7 +99,7 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
           <aside class="lg:border-l lg:border-line lg:pl-8">
             {railNews.length > 0 && (
               <div class="mb-9" data-tone="wire">
-                <SectionHead title={`More ${desk.name}`} tone="wire" href={`/wire/${desk.slug}`} moreLabel="All" />
+                <SectionHead title={copy.more} tone="wire" href={`/wire/${desk.slug}`} moreLabel={copy.all} />
                 <div class="rule-list">
                   {railNews.map((item) => (
                     <WireCard item={item} variant="compact" />
@@ -85,7 +110,7 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
 
             {journalOnDesk.length > 0 && (
               <div data-tone="journal">
-              <SectionHead title="In Journal" tone="journal" href="/journal" moreLabel="Archive" />
+              <SectionHead title={copy.inJournal} tone="journal" href="/journal" moreLabel={copy.archive} />
               <div class="rule-list">
                 {journalOnDesk.map((entry) => (
                   <JournalCard item={{ kind: "article", entry }} variant="text" />

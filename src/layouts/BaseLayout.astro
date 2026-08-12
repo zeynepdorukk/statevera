@@ -7,6 +7,7 @@ import {
   journalLanguage,
   type JournalLanguage,
 } from "../journal-i18n";
+import { getLanguage, localeAlternates, localizePath, siteText } from "../i18n";
 import Header from "../components/Header.astro";
 import WireTicker from "../components/WireTicker.astro";
 import Footer from "../components/Footer.astro";
@@ -48,7 +49,7 @@ interface Props {
 
 const {
   title,
-  description = site.publicationDescription,
+  description: descriptionProp,
   image = site.defaultOgImage,
   type = "website",
   tone,
@@ -58,16 +59,21 @@ const {
   hideFooter = false,
   path = "/",
   jsonLd = [],
-  language = "en",
+  language = getLanguage(Astro.currentLocale),
   alternates = [],
 } = Astro.props;
 
+const globalCopy = siteText[language];
+const description = descriptionProp ?? globalCopy.publicationDescription;
+const localizedPath = localizePath(path, language);
+const effectiveAlternates = alternates.length > 0 ? alternates : localeAlternates(localizedPath);
+
 // The sitemap emits directory URLs with a trailing slash, so the canonical has to
 // agree with it or the two send Google different addresses for the same page.
-const url = absoluteUrl(path.replace(/\/?$/, "/"));
+const url = absoluteUrl(localizedPath.replace(/\/?$/, "/"));
 const absoluteImage = absoluteUrl(image);
 const isDefaultImage = image === site.defaultOgImage;
-const fullTitle = path === "/" ? site.publicationName : `${title} — ${site.publicationName}`;
+const fullTitle = localizedPath === "/" || localizedPath === "/tr" ? site.publicationName : `${title} — ${site.publicationName}`;
 const languageMeta = journalLanguage[language];
 const copy = journalCopy[language];
 const localizedUrl = (localizedPath: string) => absoluteUrl(localizedPath.replace(/\/?$/, "/"));
@@ -77,7 +83,7 @@ const webJsonLd = {
   "@type": "WebSite",
   name: site.publicationName,
   alternateName: site.publicationNameDisplay,
-  description: site.publicationDescription,
+  description,
   url: site.siteUrl,
   inLanguage: languageMeta.html,
   publisher: {
@@ -108,18 +114,18 @@ const webJsonLd = {
     <meta name="generator" content={Astro.generator} />
     <meta name="color-scheme" content="dark" />
     <link rel="canonical" href={url.toString()} />
-    {alternates.map((alternate) => (
+    {effectiveAlternates.map((alternate) => (
       <link
         rel="alternate"
         hreflang={journalLanguage[alternate.language].html}
         href={localizedUrl(alternate.path)}
       />
     ))}
-    {alternates.some((alternate) => alternate.language === "en") && (
+    {effectiveAlternates.some((alternate) => alternate.language === "en") && (
       <link
         rel="alternate"
         hreflang="x-default"
-        href={localizedUrl(alternates.find((alternate) => alternate.language === "en")!.path)}
+        href={localizedUrl(effectiveAlternates.find((alternate) => alternate.language === "en")!.path)}
       />
     )}
     {/* Without max-image-preview a news result gets a thumbnail instead of a full-width picture. */}
@@ -138,7 +144,7 @@ const webJsonLd = {
     <link rel="icon" type="image/png" sizes="64x64" href={root("/images/branding/favicon-v2-64.png")} />
     <link rel="icon" href={root("/images/branding/favicon-v2.ico")} sizes="16x16 32x32 48x48 64x64" />
     <link rel="apple-touch-icon" sizes="180x180" href={root("/images/branding/apple-touch-icon-v2.png")} />
-    <link rel="alternate" type="application/rss+xml" title={`${site.publicationName} RSS`} href={root("/rss.xml")} />
+    <link rel="alternate" type="application/rss+xml" title={`${site.publicationName} RSS`} href={root(localizePath("/rss.xml", language))} />
     <link rel="sitemap" href={root("/sitemap-index.xml")} />
 
     <meta property="og:site_name" content={site.publicationName} />
@@ -148,7 +154,7 @@ const webJsonLd = {
     <meta property="og:url" content={url.toString()} />
     <meta property="og:image" content={absoluteImage} />
     <meta property="og:image:secure_url" content={absoluteImage} />
-    <meta property="og:image:alt" content={`${site.publicationName} logo`} />
+    <meta property="og:image:alt" content={globalCopy.logoAlt} />
     {isDefaultImage && (
       <>
         <meta property="og:image:type" content="image/png" />
@@ -157,7 +163,7 @@ const webJsonLd = {
       </>
     )}
     <meta property="og:locale" content={languageMeta.og} />
-    {alternates
+    {effectiveAlternates
       .filter((alternate) => alternate.language !== language)
       .map((alternate) => (
         <meta property="og:locale:alternate" content={journalLanguage[alternate.language].og} />
@@ -167,7 +173,7 @@ const webJsonLd = {
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={absoluteImage} />
-    <meta name="twitter:image:alt" content={`${site.publicationName} logo`} />
+    <meta name="twitter:image:alt" content={globalCopy.logoAlt} />
 
     {article && (
       <>
@@ -188,7 +194,7 @@ const webJsonLd = {
   <body class="min-h-screen">
     <a href="#main-content" class="skip-link">{copy.skipToContent}</a>
     {!hideTicker && <WireTicker />}
-    <Header currentPath={path} />
+    <Header currentPath={localizedPath} language={language} alternates={effectiveAlternates} />
     <main id="main-content" class="flex-1">
       <slot />
     </main>

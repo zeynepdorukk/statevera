@@ -3,6 +3,7 @@ import type { WireItem } from "../data/wire";
 import { wireDate, relativeTime, canLead } from "../data/wire";
 import { deskSlugOf, regionSlugOf, regions } from "../site";
 import { root } from "../utils/collection";
+import { deskText, getLanguage, localizePath, regionText } from "../i18n";
 
 interface Props {
   item: WireItem;
@@ -34,11 +35,16 @@ const variant =
       : "text"
     : requested;
 
+const language = getLanguage(Astro.currentLocale);
 const stamp = wireDate(item);
-const ago = relativeTime(stamp);
+const ago = relativeTime(stamp, new Date(), language);
 const deskSlug = deskSlugOf(item.category);
 const regionSlug = regionSlugOf(item.region);
 const regionKnown = regionSlug in regions;
+const categoryLabel = deskSlug ? deskText(deskSlug, language).name : item.category;
+const regionLabel = regionKnown ? regionText(regionSlug as keyof typeof regions, language).name : item.region;
+const publisherNotice = language === "tr" ? "yayıncının sitesinde açılır" : "opens at the publisher";
+const hrefFor = (path: string) => root(localizePath(path, language));
 const loading = priority ? "eager" : "lazy";
 ---
 
@@ -64,9 +70,9 @@ const loading = priority ? "eager" : "lazy";
         <div class="absolute inset-x-0 bottom-0 z-10 p-4 text-white sm:p-6 lg:p-7">
           <p class="mb-2 flex items-center gap-2 font-sans text-[0.66rem] font-bold tracking-[0.15em] uppercase">
             <span class="live-dot inline-block" aria-hidden="true"></span>
-            <span class="text-white/95">{item.category}</span>
+            <span class="text-white/95">{categoryLabel}</span>
             <span class="text-white/45" aria-hidden="true">/</span>
-            <span class="text-white/70">{item.region}</span>
+            <span class="text-white/70">{regionLabel}</span>
           </p>
           <Heading class="t-lead text-white">
             <span>{item.title}</span>
@@ -81,7 +87,7 @@ const loading = priority ? "eager" : "lazy";
             <span aria-hidden="true">&middot;</span>
             <time datetime={stamp.toISOString()}>{ago}</time>
             <span class="outbound" aria-hidden="true"></span>
-            <span class="sr-only">(opens at the publisher)</span>
+            <span class="sr-only">({publisherNotice})</span>
           </p>
         </div>
       </div>
@@ -113,7 +119,7 @@ const loading = priority ? "eager" : "lazy";
         />
       </a>
     )}
-    <p class="kicker">{item.category}</p>
+    <p class="kicker">{categoryLabel}</p>
     <Heading class="t-headline-sm mt-1.5">
       <a href={item.url} target="_blank" rel="noopener noreferrer nofollow" class="editorial-link">
         {item.title}
@@ -131,7 +137,7 @@ const loading = priority ? "eager" : "lazy";
       {regionKnown && (
         <>
           <span aria-hidden="true">&middot;</span>
-          <a href={root(`/regions/${regionSlug}`)} class="link-tone">{item.region}</a>
+          <a href={hrefFor(`/regions/${regionSlug}`)} class="link-tone">{regionLabel}</a>
         </>
       )}
     </p>
@@ -192,7 +198,7 @@ const loading = priority ? "eager" : "lazy";
           {deskSlug && (
             <>
               <span aria-hidden="true">&middot;</span>
-              <a href={root(`/wire/${deskSlug}`)} class="link-tone">{item.category}</a>
+              <a href={hrefFor(`/wire/${deskSlug}`)} class="link-tone">{categoryLabel}</a>
             </>
           )}
         </p>
