@@ -33,6 +33,7 @@ export interface FileEntry {
   title?: string;
   description?: string;
   date?: string;
+  language?: "en" | "tr";
   category?: string;
   region?: string;
   heroImage?: string;
@@ -193,6 +194,7 @@ interface ArticleMeta {
   title?: string;
   description?: string;
   date?: string;
+  language: "en" | "tr";
   category?: string;
   region?: string;
   heroImage?: string;
@@ -222,6 +224,7 @@ function readArticleMeta(raw: string): ArticleMeta {
     ...(values.title ? { title: values.title } : {}),
     ...(values.description ? { description: values.description } : {}),
     ...(values.date ? { date: values.date } : {}),
+    language: values.language === "tr" ? "tr" : "en",
     ...(values.category ? { category: values.category } : {}),
     ...(values.region ? { region: values.region } : {}),
     ...(values.heroImage ? { heroImage: values.heroImage } : {}),

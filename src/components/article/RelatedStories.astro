@@ -3,6 +3,7 @@ import type { Article } from "../../utils/collection";
 import { getRelated } from "../../utils/collection";
 import JournalCard from "../JournalCard.astro";
 import SectionHead from "../SectionHead.astro";
+import { journalCopy, journalLanguage } from "../../journal-i18n";
 
 interface Props {
   article: Article;
@@ -10,12 +11,18 @@ interface Props {
 }
 
 const { article, count = 3 } = Astro.props;
+const copy = journalCopy[article.data.language];
 const related = await getRelated(article, count);
 ---
 
 {related.length > 0 && (
-  <section class="mt-12 pb-4" aria-label="More from Journal" data-tone="journal">
-    <SectionHead title="More from Journal" tone="journal" href="/journal" moreLabel="All analysis" />
+  <section class="mt-12 pb-4" aria-label={copy.moreFromJournal} data-tone="journal">
+    <SectionHead
+      title={copy.moreFromJournal}
+      tone="journal"
+      href={journalLanguage[article.data.language].journalPath}
+      moreLabel={copy.allAnalysis}
+    />
     <div class="grid gap-x-7 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
       {related.map((entry) => (
         <JournalCard item={{ kind: "article", entry }} variant="feature" />

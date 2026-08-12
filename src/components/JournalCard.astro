@@ -1,6 +1,7 @@
 ---
 import type { Article } from "../utils/collection";
 import { articleHref, formatDate, heroImageOf, readingTime } from "../utils/collection";
+import { journalCategoryLabel, journalCopy } from "../journal-i18n";
 
 type Entry = { kind: "article"; entry: Article };
 
@@ -16,8 +17,9 @@ const { item, variant = "feature", showDek = true, priority = false, headingLeve
   Astro.props;
 
 const data = item.entry.data;
+const copy = journalCopy[data.language];
 const href = articleHref(item.entry);
-const kicker = data.type === "opinion" ? "Opinion" : data.category;
+const kicker = data.type === "opinion" ? copy.opinion : journalCategoryLabel(data.category, data.language);
 const minutes = readingTime(item.entry);
 const loading = priority ? "eager" : "lazy";
 const isDraft = data.draft;
@@ -40,7 +42,7 @@ const author = data.author?.trim() || "Zeynep Doruk";
     </a>
     <p class="kicker flex items-center gap-2">
       <span>{kicker}</span>
-      {isDraft && <span class="text-muted">&middot; Draft</span>}
+      {isDraft && <span class="text-muted">&middot; {copy.draft}</span>}
     </p>
     <Heading class="t-headline mt-2">
       <a href={href} class="editorial-link">{data.title}</a>
@@ -49,11 +51,11 @@ const author = data.author?.trim() || "Zeynep Doruk";
       <p class="t-dek mt-3 max-w-2xl">{data.description}</p>
     )}
     <p class="meta mt-3 flex flex-wrap items-center gap-x-2">
-      <span class="meta-strong">By {author}</span>
+      <span class="meta-strong">{copy.by(author)}</span>
       <span aria-hidden="true">&middot;</span>
-      <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time>
+      <time datetime={data.date.toISOString()}>{formatDate(data.date, {}, data.language)}</time>
       <span aria-hidden="true">&middot;</span>
-      <span>{minutes} min read</span>
+      <span>{copy.minutesLong(minutes)}</span>
     </p>
   </article>
 )}
@@ -81,11 +83,11 @@ const author = data.author?.trim() || "Zeynep Doruk";
       </p>
     )}
     <p class="meta mt-2.5 flex flex-wrap items-center gap-x-2">
-      <span class="meta-strong">By {author}</span>
+      <span class="meta-strong">{copy.by(author)}</span>
       <span aria-hidden="true">&middot;</span>
-      <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" })}</time>
+      <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" }, data.language)}</time>
       <span aria-hidden="true">&middot;</span>
-      <span>{minutes} min</span>
+      <span>{copy.minutesShort(minutes)}</span>
     </p>
   </article>
 )}
@@ -98,10 +100,10 @@ const author = data.author?.trim() || "Zeynep Doruk";
         <a href={href} class="editorial-link">{data.title}</a>
       </Heading>
       <p class="meta mt-1.5">
-        <span class="meta-strong">By {author}</span>
+        <span class="meta-strong">{copy.by(author)}</span>
         <span aria-hidden="true"> &middot; </span>
-        <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" })}</time>
-        <span aria-hidden="true"> &middot; </span>{minutes} min
+        <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" }, data.language)}</time>
+        <span aria-hidden="true"> &middot; </span>{copy.minutesShort(minutes)}
       </p>
     </div>
     <a href={href} tabindex="-1" aria-hidden="true" class="img-zoom h-[4.2rem] w-[5.6rem] shrink-0 border border-line/70">
@@ -130,10 +132,10 @@ const author = data.author?.trim() || "Zeynep Doruk";
       </p>
     )}
     <p class="meta mt-1.5">
-      <span class="meta-strong">By {author}</span>
+      <span class="meta-strong">{copy.by(author)}</span>
       <span aria-hidden="true"> &middot; </span>
-      <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" })}</time>
-      <span aria-hidden="true"> &middot; </span>{minutes} min
+      <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" }, data.language)}</time>
+      <span aria-hidden="true"> &middot; </span>{copy.minutesShort(minutes)}
     </p>
   </article>
 )}

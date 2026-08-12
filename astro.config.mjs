@@ -170,6 +170,11 @@ export default defineConfig({
   base: `${BASE}/`,
   output: "static",
   trailingSlash: "ignore",
+  i18n: {
+    locales: ["en", "tr"],
+    defaultLocale: "en",
+    routing: { prefixDefaultLocale: false },
+  },
   redirects: legacyRedirects,
   markdown: { processor: unified({ rehypePlugins: [rehypeBaseImages] }) },
   // The wire and the live page carry other newsrooms' headlines, not this

@@ -1,19 +1,19 @@
 ---
-import ArticlePage from "../../components/article/ArticlePage.astro";
+import ArticlePage from "../../../components/article/ArticlePage.astro";
 import {
   getArticleBySlug,
   getArticlesByLanguage,
   root,
   slugOf,
-} from "../../utils/collection";
+} from "../../../utils/collection";
 
 export async function getStaticPaths() {
-  const articles = await getArticlesByLanguage("en");
+  const articles = await getArticlesByLanguage("tr");
   return articles.map((entry) => ({ params: { slug: slugOf(entry) }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
-const article = entry ?? (await getArticleBySlug(Astro.params.slug ?? "", "en"));
+const article = entry ?? (await getArticleBySlug(Astro.params.slug ?? "", "tr"));
 if (!article) return Astro.redirect(root("/404"));
 ---
 

@@ -2,10 +2,10 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { regions, regionSlugOf, type RegionSlug } from "../../site";
 import { activeRegions, wireItems } from "../../data/wire";
-import { getAllArticles } from "../../utils/collection";
+import { getArticlesByLanguage } from "../../utils/collection";
 import WorldMap from "../../components/WorldMap.astro";
 
-const articles = await getAllArticles();
+const articles = await getArticlesByLanguage("en");
 const rows = (Object.entries(regions) as [RegionSlug, (typeof regions)[RegionSlug]][]).map(
   ([slug, region]) => ({
     slug,

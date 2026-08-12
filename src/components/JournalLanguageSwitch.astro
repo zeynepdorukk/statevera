@@ -1,0 +1,36 @@
+---
+import {
+  JOURNAL_LANGUAGES,
+  journalCopy,
+  journalLanguage,
+  type JournalLanguage,
+} from "../journal-i18n";
+import { root } from "../utils/collection";
+
+interface Props {
+  language: JournalLanguage;
+}
+
+const { language } = Astro.props;
+const copy = journalCopy[language];
+---
+
+<nav class="flex items-center justify-end border-b border-line py-3" aria-label={copy.languageNav}>
+  <span class="kicker-ink mr-3 hidden sm:inline">{copy.languageNav}</span>
+  <div class="inline-flex border border-line p-0.5">
+    {JOURNAL_LANGUAGES.map((item) => (
+      <a
+        href={root(journalLanguage[item].journalPath)}
+        hreflang={journalLanguage[item].html}
+        lang={journalLanguage[item].html}
+        aria-current={item === language ? "page" : undefined}
+        class:list={[
+          "px-3 py-1 font-sans text-[0.7rem] font-bold uppercase transition-colors",
+          item === language ? "bg-ink text-paper" : "text-muted hover:text-ink",
+        ]}
+      >
+        {journalLanguage[item].label}
+      </a>
+    ))}
+  </div>
+</nav>

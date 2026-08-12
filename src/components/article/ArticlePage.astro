@@ -1,0 +1,187 @@
+---
+import { render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site, regionSlugOf } from "../../site";
+import {
+  absoluteUrl,
+  articleHref,
+  getArticleTranslations,
+  heroImageOf,
+  root,
+  slugOf,
+  type Article,
+} from "../../utils/collection";
+import {
+  journalCopy,
+  journalLanguage,
+  journalRegionLabel,
+} from "../../journal-i18n";
+import { byRegion } from "../../data/wire";
+import ArticleHeader from "./ArticleHeader.astro";
+import ArticleSources from "./ArticleSources.astro";
+import ArticleShare from "./ArticleShare.astro";
+import RelatedStories from "./RelatedStories.astro";
+import ArticleViewTracker from "./ArticleViewTracker.astro";
+import WireCard from "../WireCard.astro";
+import SectionHead from "../SectionHead.astro";
+import KeyTakeaways from "../mdx/KeyTakeaways.astro";
+import WhyItMatters from "../mdx/WhyItMatters.astro";
+import TheBigPicture from "../mdx/TheBigPicture.astro";
+import AnalysisSection from "../mdx/AnalysisSection.astro";
+
+interface Props {
+  article: Article;
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+const { data } = article;
+const language = data.language;
+const copy = journalCopy[language];
+const languageMeta = journalLanguage[language];
+const href = articleHref(article);
+const canonical = absoluteUrl(href.replace(/\/?$/, "/"));
+const regionSlug = regionSlugOf(data.region);
+const regionLabel = journalRegionLabel(data.region, language);
+const journalPath = journalLanguage[language].journalPath;
+const wireContext = byRegion(data.region, 5);
+const translations = await getArticleTranslations(article);
+const alternates = translations.map((translation) => ({
+  language: translation.data.language,
+  path: articleHref(translation),
+}));
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": data.type === "opinion" ? "OpinionNewsArticle" : "AnalysisNewsArticle",
+    headline: data.title,
+    description: data.description,
+    datePublished: data.date.toISOString(),
+    dateModified: (data.updated ?? data.date).toISOString(),
+    author: {
+      "@type": "Person",
+      "@id": `${absoluteUrl("/about/")}#author`,
+      name: data.author,
+      url: absoluteUrl("/about/"),
+    },
+    publisher: {
+      "@type": "Organization",
+      name: site.publicationName,
+      logo: {
+        "@type": "ImageObject",
+        url: absoluteUrl("/images/branding/logo-512.png"),
+      },
+    },
+    image: [absoluteUrl(heroImageOf(data.heroImage))],
+    articleSection: data.category,
+    keywords: [...data.tags, data.region, ...data.country].join(", "),
+    inLanguage: languageMeta.html,
+    wordCount: (article.body ?? "").trim().split(/\s+/).filter(Boolean).length,
+    isAccessibleForFree: true,
+    mainEntityOfPage: canonical,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: copy.home, item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: copy.journal, item: absoluteUrl(root(journalPath)) },
+      { "@type": "ListItem", position: 3, name: data.title, item: canonical },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  image={heroImageOf(data.heroImage)}
+  type="article"
+  tone="journal"
+  path={href}
+  noindex={data.draft}
+  jsonLd={jsonLd}
+  language={language}
+  alternates={alternates}
+  article={{
+    publishedTime: data.date.toISOString(),
+    modifiedTime: data.updated?.toISOString(),
+    authors: [data.author],
+    tags: data.tags,
+    section: data.category,
+  }}
+>
+  <ArticleHeader article={article} translations={translations} />
+
+  <div class="shell flex max-w-[1400px] gap-10" data-tone="journal">
+    <div class="hidden shrink-0 pt-10 xl:block xl:w-12 no-print">
+      <div class="sticky top-32">
+        <ArticleShare title={data.title} url={canonical} language={language} />
+      </div>
+    </div>
+
+    <article class="min-w-0 flex-1 py-8 md:py-10">
+      <div class="mx-auto max-w-[720px]">
+        <div class="article-body">
+          <Content components={{ KeyTakeaways, WhyItMatters, TheBigPicture, AnalysisSection }} />
+        </div>
+
+        <ArticleSources sources={data.sources} label={copy.sources} language={language} />
+
+        {data.tags.length > 0 && (
+          <div class="mt-8 flex flex-wrap items-center gap-2">
+            <span class="kicker-ink">{copy.filedUnder}</span>
+            {data.tags.map((tag) => (
+              <span class="border border-line px-2 py-0.5 font-sans text-[0.72rem] text-ink-soft">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div class="mt-6 xl:hidden no-print">
+          <ArticleShare title={data.title} url={canonical} layout="row" language={language} />
+        </div>
+
+        <p class="mt-8 border-t border-line pt-4 font-sans text-[0.74rem] leading-relaxed text-muted">
+          {copy.by(data.author)} &middot; {site.publicationNameDisplay}.{" "}
+          <a href={root(`/regions/${regionSlug}`)} class="link-tone">{regionLabel}</a>{" "}
+          {copy.deskSuffix}
+          {data.country.length > 0 && ` ${copy.focus(data.country)}`}
+        </p>
+      </div>
+    </article>
+
+    <aside class="hidden w-72 shrink-0 pt-10 lg:block no-print" aria-label={copy.relatedReporting}>
+      <div class="sticky top-32 border-l border-line pl-8" data-tone="wire">
+        <SectionHead
+          title={copy.regionWire(regionLabel)}
+          tone="wire"
+          href={`/regions/${regionSlug}`}
+          moreLabel={copy.region}
+        />
+        {wireContext.length > 0 ? (
+          <div class="rule-list">
+            {wireContext.map((item) => (
+              <WireCard item={item} variant="text" />
+            ))}
+          </div>
+        ) : (
+          <p class="meta">{copy.noReporting}</p>
+        )}
+        <p class="mt-5 border-t border-line pt-3">
+          <a href={root("/wire")} class="kicker-ink hover:text-tone">{copy.seeAllNews}</a>
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <div class="shell pb-4">
+    <RelatedStories article={article} count={3} />
+  </div>
+
+  {!data.draft && site.deskUrl && (
+    <ArticleViewTracker slug={slugOf(article)} endpoint={`${site.deskUrl}/api/views`} />
+  )}
+</BaseLayout>

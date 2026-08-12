@@ -2,6 +2,11 @@
 import "../styles/global.css";
 import { site, type PillarId } from "../site";
 import { absoluteUrl, root } from "../utils/collection";
+import {
+  journalCopy,
+  journalLanguage,
+  type JournalLanguage,
+} from "../journal-i18n";
 import Header from "../components/Header.astro";
 import WireTicker from "../components/WireTicker.astro";
 import Footer from "../components/Footer.astro";
@@ -37,6 +42,8 @@ interface Props {
   hideFooter?: boolean;
   path?: string;
   jsonLd?: Record<string, unknown>[];
+  language?: JournalLanguage;
+  alternates?: { language: JournalLanguage; path: string }[];
 }
 
 const {
@@ -51,6 +58,8 @@ const {
   hideFooter = false,
   path = "/",
   jsonLd = [],
+  language = "en",
+  alternates = [],
 } = Astro.props;
 
 // The sitemap emits directory URLs with a trailing slash, so the canonical has to
@@ -59,6 +68,9 @@ const url = absoluteUrl(path.replace(/\/?$/, "/"));
 const absoluteImage = absoluteUrl(image);
 const isDefaultImage = image === site.defaultOgImage;
 const fullTitle = path === "/" ? site.publicationName : `${title} — ${site.publicationName}`;
+const languageMeta = journalLanguage[language];
+const copy = journalCopy[language];
+const localizedUrl = (localizedPath: string) => absoluteUrl(localizedPath.replace(/\/?$/, "/"));
 
 const webJsonLd = {
   "@context": "https://schema.org",
@@ -67,7 +79,7 @@ const webJsonLd = {
   alternateName: site.publicationNameDisplay,
   description: site.publicationDescription,
   url: site.siteUrl,
-  inLanguage: site.language,
+  inLanguage: languageMeta.html,
   publisher: {
     "@type": "Organization",
     name: site.publicationName,
@@ -81,7 +93,7 @@ const webJsonLd = {
 ---
 
 <!doctype html>
-<html lang={site.language} class="dark-scrollbar" data-tone={tone}>
+<html lang={languageMeta.html} class="dark-scrollbar" data-tone={tone}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -96,6 +108,20 @@ const webJsonLd = {
     <meta name="generator" content={Astro.generator} />
     <meta name="color-scheme" content="dark" />
     <link rel="canonical" href={url.toString()} />
+    {alternates.map((alternate) => (
+      <link
+        rel="alternate"
+        hreflang={journalLanguage[alternate.language].html}
+        href={localizedUrl(alternate.path)}
+      />
+    ))}
+    {alternates.some((alternate) => alternate.language === "en") && (
+      <link
+        rel="alternate"
+        hreflang="x-default"
+        href={localizedUrl(alternates.find((alternate) => alternate.language === "en")!.path)}
+      />
+    )}
     {/* Without max-image-preview a news result gets a thumbnail instead of a full-width picture. */}
     <meta
       name="robots"
@@ -126,7 +152,12 @@ const webJsonLd = {
         <meta property="og:image:height" content="630" />
       </>
     )}
-    <meta property="og:locale" content={site.locale} />
+    <meta property="og:locale" content={languageMeta.og} />
+    {alternates
+      .filter((alternate) => alternate.language !== language)
+      .map((alternate) => (
+        <meta property="og:locale:alternate" content={journalLanguage[alternate.language].og} />
+      ))}
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
@@ -150,7 +181,7 @@ const webJsonLd = {
     ></script>
   </head>
   <body class="min-h-screen">
-    <a href="#main-content" class="skip-link">Skip to content</a>
+    <a href="#main-content" class="skip-link">{copy.skipToContent}</a>
     {!hideTicker && <WireTicker />}
     <Header currentPath={path} />
     <main id="main-content" class="flex-1">

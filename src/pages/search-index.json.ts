@@ -11,6 +11,7 @@ interface SearchItem {
   description: string;
   source: string;
   date: string;
+  language?: "en" | "tr";
   external: boolean;
 }
 
@@ -28,6 +29,7 @@ export async function GET() {
       description: a.data.description,
       source: "Statevera",
       date: a.data.date.toISOString(),
+      language: a.data.language,
       external: false,
     })),
     ...wireItems.map((w) => ({

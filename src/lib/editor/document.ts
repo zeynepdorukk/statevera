@@ -116,6 +116,8 @@ export interface ArticleFields {
   date: string;
   updated: string;
   author: string;
+  language: "en" | "tr";
+  translationKey: string;
   category: string;
   region: string;
   country: string[];
@@ -150,6 +152,8 @@ export function serialiseArticle(fields: ArticleFields, body: string): string {
     `date: ${fields.date}`,
     ...(fields.updated ? [`updated: ${fields.updated}`] : []),
     `author: ${quote(fields.author || "Zeynep Doruk")}`,
+    `language: ${quote(fields.language)}`,
+    ...(fields.translationKey ? [`translationKey: ${quote(fields.translationKey)}`] : []),
     `category: ${quote(fields.category)}`,
     `region: ${quote(fields.region)}`,
     `country: ${flowList(fields.country)}`,

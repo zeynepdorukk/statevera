@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  journalCopy,
+  journalLanguage,
+  type JournalLanguage,
+} from "../journal-i18n";
+import { getFeaturedArticle, getJournalStream } from "../utils/collection";
+import JournalCard from "./JournalCard.astro";
+import JournalLanguageSwitch from "./JournalLanguageSwitch.astro";
+import SectionHead from "./SectionHead.astro";
+
+interface Props {
+  language: JournalLanguage;
+}
+
+const { language } = Astro.props;
+const copy = journalCopy[language];
+const path = journalLanguage[language].journalPath;
+const featured = await getFeaturedArticle(language);
+const stream = await getJournalStream(undefined, language);
+const rest = stream.filter((item) => item.entry.id !== featured?.id);
+const alternates = [
+  { language: "en" as const, path: journalLanguage.en.journalPath },
+  { language: "tr" as const, path: journalLanguage.tr.journalPath },
+];
+---
+
+<BaseLayout
+  title={copy.title}
+  description={copy.description}
+  path={path}
+  tone="journal"
+  language={language}
+  alternates={alternates}
+>
+  <div class="shell pt-0" data-tone="journal">
+    <JournalLanguageSwitch language={language} />
+    <h1 class="sr-only">{copy.title} — {copy.tagline}</h1>
+    {stream.length === 0 ? (
+      <div class="mx-auto max-w-xl py-20 text-center">
+        <p class="kicker-ink">{copy.emptyKicker}</p>
+        <p class="t-headline mt-2">{copy.tagline}</p>
+        <p class="mt-3 font-serif text-[1.02rem] leading-relaxed text-ink-soft">
+          {copy.emptyDescription}
+        </p>
+        <p class="mt-5 font-serif text-[0.98rem] leading-relaxed text-muted">
+          {copy.emptyAuthor}
+        </p>
+      </div>
+    ) : (
+      <>
+        <section
+          class="grid gap-x-9 gap-y-9 py-9 lg:grid-cols-[minmax(0,6fr)_minmax(0,4fr)]"
+          aria-label={copy.featured}
+        >
+          {featured && (
+            <JournalCard
+              item={{ kind: "article", entry: featured }}
+              variant="lead"
+              priority
+              headingLevel="h2"
+            />
+          )}
+          <div class="lg:border-l lg:border-line lg:pl-8">
+            <SectionHead title={copy.latest} tone="journal" />
+            <div class="rule-list">
+              {rest.slice(0, 6).map((item) => (
+                <JournalCard item={{ kind: "article", entry: item.entry }} variant="text" />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="border-t-2 border-ink pt-7" aria-label={copy.archive}>
+          <SectionHead title={copy.archive} tone="journal" />
+          <div class="grid gap-x-8 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
+            {rest.map((item) => (
+              <JournalCard item={{ kind: "article", entry: item.entry }} variant="feature" />
+            ))}
+          </div>
+        </section>
+      </>
+    )}
+  </div>
+</BaseLayout>

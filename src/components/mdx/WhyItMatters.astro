@@ -2,7 +2,7 @@
 interface Props {
   label?: string;
 }
-const { label = "Why it matters" } = Astro.props;
+const { label = Astro.currentLocale === "tr" ? "Neden önemli" : "Why it matters" } = Astro.props;
 ---
 
 <aside class="callout" aria-label={label}>

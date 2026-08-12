@@ -9,6 +9,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import { regionSlugOf, site } from "../site";
 
 export type Article = CollectionEntry<"articles">;
+export type ArticleLanguage = Article["data"]["language"];
 
 const IS_DEV = import.meta.env.DEV;
 
@@ -65,7 +66,8 @@ export const absoluteUrl = (p: string): string => {
 
 export const slugOf = (entry: { id: string }): string => entry.id.replace(/\.mdx?$/, "");
 
-export const articleHref = (entry: Article): string => root(`/articles/${slugOf(entry)}`);
+export const articleHref = (entry: Article): string =>
+  root(`${entry.data.language === "tr" ? "/tr" : ""}/articles/${slugOf(entry)}`);
 
 export function heroImageOf(heroImage: string): string {
   if (heroImage.startsWith("http")) return heroImage;
@@ -82,8 +84,12 @@ export function readingTime(entry: { body?: string; data: { readingTime?: number
   return readingTimeOf(entry.body, entry.data.readingTime);
 }
 
-export function formatDate(date: Date, opts: Intl.DateTimeFormatOptions = {}): string {
-  return new Intl.DateTimeFormat("en-GB", {
+export function formatDate(
+  date: Date,
+  opts: Intl.DateTimeFormatOptions = {},
+  language: ArticleLanguage = "en"
+): string {
+  return new Intl.DateTimeFormat(language === "tr" ? "tr-TR" : "en-GB", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -120,42 +126,72 @@ export async function getAllArticles(): Promise<Article[]> {
   return articlesCache;
 }
 
-export async function getArticleBySlug(slug: string): Promise<Article | undefined> {
-  return (await getAllArticles()).find((a) => slugOf(a) === slug);
+export async function getArticlesByLanguage(language: ArticleLanguage): Promise<Article[]> {
+  return (await getAllArticles()).filter((article) => article.data.language === language);
 }
 
-export async function getLatestArticles(count = 8): Promise<Article[]> {
-  return (await getAllArticles()).slice(0, count);
+export async function getArticleBySlug(
+  slug: string,
+  language: ArticleLanguage = "en"
+): Promise<Article | undefined> {
+  return (await getArticlesByLanguage(language)).find((article) => slugOf(article) === slug);
 }
 
-export async function getFeaturedArticle(): Promise<Article | undefined> {
-  const all = await getAllArticles();
+export async function getArticleTranslations(article: Article): Promise<Article[]> {
+  const key = article.data.translationKey?.trim();
+  if (!key) return [article];
+  return (await getAllArticles())
+    .filter((candidate) => candidate.data.translationKey === key)
+    .sort((left, right) => left.data.language.localeCompare(right.data.language));
+}
+
+export async function getLatestArticles(
+  count = 8,
+  language: ArticleLanguage = "en"
+): Promise<Article[]> {
+  return (await getArticlesByLanguage(language)).slice(0, count);
+}
+
+export async function getFeaturedArticle(language: ArticleLanguage = "en"): Promise<Article | undefined> {
+  const all = await getArticlesByLanguage(language);
   return all.find((a) => a.data.featured) ?? all[0];
 }
 
-export async function getEditorsPick(): Promise<Article | undefined> {
-  const all = await getAllArticles();
+export async function getEditorsPick(language: ArticleLanguage = "en"): Promise<Article | undefined> {
+  const all = await getArticlesByLanguage(language);
   return all.find((a) => a.data.editorsPick) ?? all[1] ?? all[0];
 }
 
-export async function getByCategory(category: string, count?: number): Promise<Article[]> {
-  const list = (await getAllArticles()).filter((a) => a.data.category === category);
+export async function getByCategory(
+  category: string,
+  count?: number,
+  language: ArticleLanguage = "en"
+): Promise<Article[]> {
+  const list = (await getArticlesByLanguage(language)).filter((a) => a.data.category === category);
   return count ? list.slice(0, count) : list;
 }
 
-export async function getByType(type: string, count?: number): Promise<Article[]> {
-  const list = (await getAllArticles()).filter((a) => a.data.type === type);
+export async function getByType(
+  type: string,
+  count?: number,
+  language: ArticleLanguage = "en"
+): Promise<Article[]> {
+  const list = (await getArticlesByLanguage(language)).filter((a) => a.data.type === type);
   return count ? list.slice(0, count) : list;
 }
 
-export async function getByRegionSlug(slug: string, count?: number): Promise<Article[]> {
-  const list = (await getAllArticles()).filter((a) => regionSlugOf(a.data.region) === slug);
+export async function getByRegionSlug(
+  slug: string,
+  count?: number,
+  language: ArticleLanguage = "en"
+): Promise<Article[]> {
+  const list = (await getArticlesByLanguage(language)).filter((a) => regionSlugOf(a.data.region) === slug);
   return count ? list.slice(0, count) : list;
 }
 
 /** Region first, then shared tags, then anything recent. Never repeats. */
 export async function getRelated(article: Article, count = 3): Promise<Article[]> {
-  const all = await getAllArticles();
+  const all = await getArticlesByLanguage(article.data.language);
   const others = all.filter((a) => a.id !== article.id);
   const ranked = [
     ...others.filter((a) => a.data.region === article.data.region),
@@ -185,8 +221,11 @@ export type JournalItem = {
   title: string;
 };
 
-export async function getJournalStream(count?: number): Promise<JournalItem[]> {
-  const items: JournalItem[] = (await getAllArticles()).map((entry) => ({
+export async function getJournalStream(
+  count?: number,
+  language: ArticleLanguage = "en"
+): Promise<JournalItem[]> {
+  const items: JournalItem[] = (await getArticlesByLanguage(language)).map((entry) => ({
     kind: "article" as const,
     entry,
     date: entry.data.date,

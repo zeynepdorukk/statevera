@@ -1,15 +1,25 @@
 ---
 import { site, regionSlugOf, deskSlugOf } from "../../site";
 import type { Article } from "../../utils/collection";
-import { formatDate, heroImageOf, readingTime, root } from "../../utils/collection";
+import { articleHref, formatDate, heroImageOf, readingTime, root } from "../../utils/collection";
+import {
+  journalCategoryLabel,
+  journalCopy,
+  journalLanguage,
+  journalRegionLabel,
+} from "../../journal-i18n";
 import { creditFor } from "../../data/imageCredits";
 
 interface Props {
   article: Article;
+  translations?: Article[];
 }
 
-const { article } = Astro.props;
+const { article, translations = [article] } = Astro.props;
 const { data } = article;
+const copy = journalCopy[data.language];
+const categoryLabel = journalCategoryLabel(data.category, data.language);
+const regionLabel = journalRegionLabel(data.region, data.language);
 const explicitCredit = data.imageCredit?.trim() ?? "";
 const credit = explicitCredit ? null : creditFor(data.heroImage);
 const imageCaption = data.imageCaption?.trim() ?? "";
@@ -23,23 +33,53 @@ const regionSlug = regionSlugOf(data.region);
 ---
 
 <header class="shell max-w-[900px] pt-8 md:pt-12" data-tone="journal">
-  <nav aria-label="Breadcrumb" class="mb-5">
-    <ol class="flex flex-wrap items-center gap-2 font-sans text-[0.68rem] font-bold tracking-[0.12em] uppercase">
-      <li><a href={root("/journal")} class="text-muted transition-colors hover:text-tone">Journal</a></li>
-      <li aria-hidden="true" class="text-line-strong">/</li>
-      <li>
-        {deskSlug ? (
-          <a href={root(`/wire/${deskSlug}`)} class="text-tone">{data.category}</a>
-        ) : (
-          <span class="text-tone">{data.category}</span>
-        )}
-      </li>
-    </ol>
-  </nav>
+  <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+    <nav aria-label="Breadcrumb">
+      <ol class="flex flex-wrap items-center gap-2 font-sans text-[0.68rem] font-bold tracking-[0.12em] uppercase">
+        <li>
+          <a href={root(journalLanguage[data.language].journalPath)} class="text-muted transition-colors hover:text-tone">
+            {copy.journal}
+          </a>
+        </li>
+        <li aria-hidden="true" class="text-line-strong">/</li>
+        <li>
+          {deskSlug && data.language === "en" ? (
+            <a href={root(`/wire/${deskSlug}`)} class="text-tone">{data.category}</a>
+          ) : (
+            <span class="text-tone">{categoryLabel}</span>
+          )}
+        </li>
+      </ol>
+    </nav>
+
+    {translations.length > 1 && (
+      <nav aria-label={copy.articleLanguageNav}>
+        <div class="inline-flex border border-line p-0.5">
+          {translations.map((translation) => {
+            const item = translation.data.language;
+            return (
+              <a
+                href={articleHref(translation)}
+                hreflang={journalLanguage[item].html}
+                lang={journalLanguage[item].html}
+                aria-current={item === data.language ? "page" : undefined}
+                class:list={[
+                  "px-3 py-1 font-sans text-[0.7rem] font-bold uppercase transition-colors",
+                  item === data.language ? "bg-ink text-paper" : "text-muted hover:text-ink",
+                ]}
+              >
+                {journalLanguage[item].label}
+              </a>
+            );
+          })}
+        </div>
+      </nav>
+    )}
+  </div>
 
   {data.draft && (
     <p class="mb-4 inline-flex items-center gap-2 border border-line-strong bg-paper-soft px-2.5 py-1 font-sans text-[0.64rem] font-bold tracking-[0.14em] uppercase text-muted">
-      Draft — not published
+      {copy.draftNotice}
     </p>
   )}
 
@@ -62,14 +102,14 @@ const regionSlug = regionSlugOf(data.region);
           class="h-8 w-8 rounded-full border border-line object-cover"
         />
       )}
-      <p class="font-sans text-[0.8rem] font-semibold text-ink">By {data.author}</p>
+      <p class="font-sans text-[0.8rem] font-semibold text-ink">{copy.by(data.author)}</p>
     </div>
-    <time class="meta" datetime={data.date.toISOString()}>{formatDate(data.date)}</time>
+    <time class="meta" datetime={data.date.toISOString()}>{formatDate(data.date, {}, data.language)}</time>
     {data.updated && (
-      <span class="meta">Updated {formatDate(data.updated)}</span>
+      <span class="meta">{copy.updated(formatDate(data.updated, {}, data.language))}</span>
     )}
-    <span class="meta">{minutes} min read</span>
-    <a href={root(`/regions/${regionSlug}`)} class="kicker ml-auto">{data.region}</a>
+    <span class="meta">{copy.minutesLong(minutes)}</span>
+    <a href={root(`/regions/${regionSlug}`)} class="kicker ml-auto">{regionLabel}</a>
   </div>
 
   <figure class="mt-7">
@@ -87,14 +127,14 @@ const regionSlug = regionSlugOf(data.region);
       <figcaption class="mt-1.5 border-b border-line pb-2.5 font-sans text-[0.73rem] text-muted">
         {imageCaption && <span class="block text-ink-soft">{imageCaption}</span>}
         {credit && <span class="block">{credit.label}. {credit.credit}, {credit.license}.</span>}
-        {!credit && explicitCredit && <span class="block">Credit: {explicitCredit}</span>}
+        {!credit && explicitCredit && <span class="block">{copy.credit}: {explicitCredit}</span>}
         {imageSource && (
           <span class="block">
-            Source: {sourceUrl ? <a href={sourceUrl} target="_blank" rel="noreferrer">{imageSource}</a> : imageSource}
+            {copy.source}: {sourceUrl ? <a href={sourceUrl} target="_blank" rel="noreferrer" class="break-all">{imageSource}</a> : imageSource}
           </span>
         )}
-        {imageDate && <span class="block">Photo date: {imageDate}</span>}
-        {imageLicense && <span class="block">Licence: {imageLicense}</span>}
+        {imageDate && <span class="block">{copy.photoDate}: {imageDate}</span>}
+        {imageLicense && <span class="block">{copy.licence}: {imageLicense}</span>}
       </figcaption>
     )}
   </figure>

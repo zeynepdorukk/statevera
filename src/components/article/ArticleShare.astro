@@ -1,29 +1,33 @@
 ---
+import { journalCopy, type JournalLanguage } from "../../journal-i18n";
+
 interface Props {
   title: string;
   url: string;
   layout?: "rail" | "row";
+  language?: JournalLanguage;
 }
 
-const { title, url, layout = "rail" } = Astro.props;
+const { title, url, layout = "rail", language = "en" } = Astro.props;
+const copy = journalCopy[language];
 const encodedUrl = encodeURIComponent(url);
 const encodedTitle = encodeURIComponent(title);
 
 const links = [
   {
-    label: "Share on X",
+    label: copy.shareX,
     short: "X",
     href: `https://x.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
     path: "M18.9 2H22l-7 8 8.2 12H16l-5-7.3L5.2 22H2l7.5-8.6L1.6 2h7.3l4.6 6.7L18.9 2Zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20Z",
   },
   {
-    label: "Share on LinkedIn",
+    label: copy.shareLinkedIn,
     short: "in",
     href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
     path: "M6.9 8.5v11H3.4v-11h3.5ZM5.2 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm4.3 5.5h3.3v1.5a3.7 3.7 0 0 1 3.3-1.8c2.4 0 4.2 1.6 4.2 4.9v6.4h-3.5v-5.8c0-1.5-.6-2.4-1.9-2.4-1.1 0-1.7.7-2 1.4v6.8H9.5v-11Z",
   },
   {
-    label: "Share by email",
+    label: copy.shareEmail,
     short: "@",
     href: `mailto:?subject=${encodedTitle}&body=${encodedUrl}`,
     path: "M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1.6 2L12 12.3 19.4 7H4.6Z",
@@ -38,7 +42,7 @@ const links = [
   ]}
 >
   <p class:list={["kicker-ink", layout === "rail" ? "mb-1 [writing-mode:vertical-rl] rotate-180" : "mr-1"]}>
-    Share
+    {copy.share}
   </p>
   {links.map((link) => (
     <a
@@ -58,8 +62,9 @@ const links = [
     type="button"
     data-copy-link
     data-url={url}
-    aria-label="Copy link"
-    title="Copy link"
+    data-copy-prompt={copy.copyPrompt}
+    aria-label={copy.copyLink}
+    title={copy.copyLink}
     class="inline-flex h-9 w-9 cursor-pointer items-center justify-center border border-line bg-transparent text-ink-soft transition-colors duration-150 hover:border-tone hover:text-tone"
   >
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
@@ -67,7 +72,7 @@ const links = [
       <path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1.7-1.7"></path>
     </svg>
   </button>
-  <span data-copy-status role="status" class="meta hidden">Copied</span>
+  <span data-copy-status role="status" class="meta hidden">{copy.copied}</span>
 </div>
 
 <script>
@@ -82,7 +87,7 @@ const links = [
           setTimeout(() => status.classList.add("hidden"), 1800);
         }
       } catch {
-        window.prompt("Copy this link", url);
+        window.prompt(button.dataset.copyPrompt ?? "Copy this link", url);
       }
     });
   });

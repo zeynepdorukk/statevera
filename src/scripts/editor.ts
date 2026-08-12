@@ -35,9 +35,12 @@ const wait = (ms: number) => new Promise<void>((resolve) => window.setTimeout(re
  * Use a unique query on every probe: otherwise the browser can keep serving
  * the previous HTML for GitHub Pages' cache window.
  */
-async function readLiveArticle(slug: string): Promise<LiveArticle | null> {
+const liveArticleUrl = (slug: string, language: "en" | "tr") =>
+  `${site.siteUrl}${language === "tr" ? "/tr" : ""}/articles/${slug}/`;
+
+async function readLiveArticle(slug: string, language: "en" | "tr"): Promise<LiveArticle | null> {
   try {
-    const response = await fetch(`${site.siteUrl}/articles/${slug}/?sv=${Date.now()}`, {
+    const response = await fetch(`${liveArticleUrl(slug, language)}?sv=${Date.now()}`, {
       cache: "no-store",
     });
     return { ok: response.ok, html: await response.text() };
@@ -46,13 +49,19 @@ async function readLiveArticle(slug: string): Promise<LiveArticle | null> {
   }
 }
 
-async function waitForLiveArticle(slug: string, title: string, previousHtml?: string | null): Promise<boolean> {
+async function waitForLiveArticle(
+  slug: string,
+  language: "en" | "tr",
+  title: string,
+  previousHtml?: string | null
+): Promise<boolean> {
   const deadline = Date.now() + JOURNAL_POLL_TIMEOUT_MS;
   while (Date.now() < deadline) {
-    const live = await readLiveArticle(slug);
+    const live = await readLiveArticle(slug, language);
     const titleVisible = live?.ok &&
       (live.html.includes(title) || live.html.includes(esc(title))) &&
-      !live.html.includes("Draft — not published");
+      !live.html.includes("Draft — not published") &&
+      !live.html.includes("Taslak — yayımlanmadı");
     const changed = !previousHtml || live?.html !== previousHtml;
     if (titleVisible && changed) return true;
     await wait(JOURNAL_POLL_MS);
@@ -60,10 +69,10 @@ async function waitForLiveArticle(slug: string, title: string, previousHtml?: st
   return false;
 }
 
-async function waitForRemovedArticle(slug: string): Promise<boolean> {
+async function waitForRemovedArticle(slug: string, language: "en" | "tr"): Promise<boolean> {
   const deadline = Date.now() + JOURNAL_POLL_TIMEOUT_MS;
   while (Date.now() < deadline) {
-    const live = await readLiveArticle(slug);
+    const live = await readLiveArticle(slug, language);
     if (live && !live.ok) return true;
     await wait(JOURNAL_POLL_MS);
   }
@@ -75,6 +84,10 @@ const K_DRAFT = "sv-draft:";
 const DESKS = ["Politics", "Geopolitics", "Economy", "Security", "Diplomacy", "Theory", "Opinion"];
 const REGIONS = ["Europe", "Middle East", "Americas", "Asia-Pacific", "Africa", "Eurasia", "Turkey", "Global"];
 const TYPES = ["analysis", "news", "opinion"];
+const LANGUAGES = [
+  { value: "en", label: "English" },
+  { value: "tr", label: "Türkçe" },
+] as const;
 
 type Kind = "article";
 
@@ -86,6 +99,7 @@ interface Story {
   title: string;
   description: string;
   date: string;
+  language: "en" | "tr";
   desk: string;
   region: string;
   heroImage: string;
@@ -340,6 +354,7 @@ async function openStories(notice = "") {
               title: parsed.title,
               description: parsed.description,
               date: parsed.date,
+              language: parsed.language === "tr" ? "tr" : "en",
               category: parsed.category,
               region: parsed.region,
               heroImage: parsed.heroImage,
@@ -353,7 +368,7 @@ async function openStories(notice = "") {
         })
     );
 
-    const index: { url: string; title: string; description: string; category: string; region: string; date: string }[] =
+    const index: { url: string; title: string; description: string; category: string; region: string; date: string; language?: "en" | "tr" }[] =
       await fetch(`${LIVE_INDEX}?v=${Date.now()}`, { cache: "no-store" })
         .then((r) => r.json())
         .catch(() => fetch(`${BASE}/search-index.json?v=${Date.now()}`, { cache: "no-store" }).then((r) => r.json()).catch(() => []));
@@ -369,6 +384,7 @@ async function openStories(notice = "") {
         title: f.title ?? meta?.title ?? slug.replace(/-/g, " "),
         description: f.description ?? meta?.description ?? "",
         date: f.date?.slice(0, 10) ?? meta?.date?.slice(0, 10) ?? "",
+        language: f.language ?? meta?.language ?? "en",
         desk: f.category ?? meta?.category ?? "",
         region: f.region ?? meta?.region ?? "",
         heroImage: f.heroImage ?? "",
@@ -447,7 +463,7 @@ function storiesView(notice = "") {
     const unsaved = Boolean(localStorage.getItem(K_DRAFT + s.path));
     const stateLabel = unsaved ? "Unsaved" : s.live ? "Published" : "Draft";
     const stateKind = unsaved ? "edit" : s.live ? "live" : "draft";
-    const foot = [s.region, s.date].filter(Boolean).map(esc).join(" \u{b7} ");
+    const foot = [s.language.toUpperCase(), s.region, s.date].filter(Boolean).map(esc).join(" \u{b7} ");
     const cover = s.heroImage
       ? `<img src="${esc(photoSrc(s.heroImage))}" alt="${esc(s.heroImageAlt)}" loading="lazy" decoding="async" />`
       : `<span class="ed-card-cover-empty">No lead image</span>`;
@@ -602,7 +618,7 @@ async function removeStory(path: string, cardEl: HTMLElement) {
     localStorage.removeItem(K_DRAFT + path);
     yes.textContent = "Updating\u{2026}";
     ask.textContent = "Saved. Removing it from The Journal\u{2026}";
-    const removed = await waitForRemovedArticle(story.slug);
+    const removed = await waitForRemovedArticle(story.slug, story.language);
     await openStories(
       removed
         ? `Deleted \u{201c}${story.title}\u{201d} — The Journal is updated.`
@@ -732,6 +748,8 @@ function createStory(template?: Template) {
       date: today(),
       updated: "",
       author: "Zeynep Doruk",
+      language: "en",
+      translationKey: "",
       category: template?.category ?? "Geopolitics",
       region: "Global",
       country: [],
@@ -777,6 +795,8 @@ async function openStory(path: string) {
         date: (fm.date ?? today()).slice(0, 10),
         updated: (fm.updated ?? "").slice(0, 10),
         author: fm.author || "Zeynep Doruk",
+        language: fm.language === "tr" ? "tr" : "en",
+        translationKey: fm.translationKey ?? "",
         category: fm.category || "Geopolitics",
         region: fm.region || "Global",
         country: parsed.lists.country ?? [],
@@ -1313,10 +1333,18 @@ function compose(args: ComposeArgs) {
             <select id="region" class="ed-select" data-region>${REGIONS.map((r) => `<option ${r === f.region ? "selected" : ""}>${r}</option>`).join("")}</select></div>
         </div>
         <div class="ed-field ed-pair">
+          <div><label for="language">Language</label>
+            <select id="language" class="ed-select" data-language>${LANGUAGES.map((item) => `<option value="${item.value}" ${item.value === f.language ? "selected" : ""}>${item.label}</option>`).join("")}</select></div>
           <div><label for="type">Kind</label>
             <select id="type" class="ed-select" data-type>${TYPES.map((t) => `<option ${t === f.type ? "selected" : ""}>${t}</option>`).join("")}</select></div>
-          <div><label for="date">Date</label>
-            <input id="date" type="date" class="ed-input" data-date value="${esc(f.date)}" /></div>
+        </div>
+        <div class="ed-field">
+          <label for="translation-key">Translation key</label>
+          <input id="translation-key" class="ed-input" data-translation-key value="${esc(f.translationKey)}" placeholder="Same key on each language version" />
+        </div>
+        <div class="ed-field">
+          <label for="date">Date</label>
+          <input id="date" type="date" class="ed-input" data-date value="${esc(f.date)}" />
         </div>
         <div class="ed-field">
           <label for="countries">Countries</label>
@@ -3388,6 +3416,8 @@ function compose(args: ComposeArgs) {
       date: maybe<HTMLInputElement>("[data-date]")?.value || today(),
       updated: f.updated,
       author: "Zeynep Doruk",
+      language: (maybe<HTMLSelectElement>("[data-language]")?.value === "tr" ? "tr" : "en"),
+      translationKey: (maybe<HTMLInputElement>("[data-translation-key]")?.value ?? "").trim(),
       category: maybe<HTMLSelectElement>("[data-desk]")?.value ?? f.category,
       region: maybe<HTMLSelectElement>("[data-region]")?.value ?? f.region,
       country: list("[data-countries]"),
@@ -3441,7 +3471,7 @@ function compose(args: ComposeArgs) {
     note.textContent = draft ? "Saving draft\u{2026}" : "Publishing\u{2026}";
     const wasNew = isNew;
     const previousHtml = !draft && !wasNew && slug
-      ? (await readLiveArticle(slug))?.html ?? null
+      ? (await readLiveArticle(slug, f.language))?.html ?? null
       : null;
     const oldDraftKey = draftKey();
     if (isNew) {
@@ -3464,6 +3494,7 @@ function compose(args: ComposeArgs) {
         sha || undefined
       );
       sha = result.sha;
+      f.language = next.language;
       isNew = false;
       localStorage.removeItem(oldDraftKey);
       localStorage.removeItem(draftKey());
@@ -3477,7 +3508,7 @@ function compose(args: ComposeArgs) {
         note.dataset.state = "";
         note.textContent = "Saved to GitHub \u{b7} The Journal is rebuilding\u{2026}";
         setStatus("Publishing to The Journal\u{2026}");
-        const live = await waitForLiveArticle(publishedSlug, next.title, previousHtml);
+        const live = await waitForLiveArticle(publishedSlug, next.language, next.title, previousHtml);
         note.dataset.deploy = "";
         if (live) {
           note.dataset.state = "ok";

@@ -1,7 +1,7 @@
 import rss from "@astrojs/rss";
 import type { APIRoute } from "astro";
 import { site } from "../site";
-import { getAllArticles, absoluteUrl, heroImageOf, slugOf } from "../utils/collection";
+import { getArticlesByLanguage, absoluteUrl, articleHref, heroImageOf } from "../utils/collection";
 
 /**
  * Every URL here is written out in full. `context.site` is the bare origin,
@@ -12,7 +12,7 @@ const absolute = (path: string) => `${site.siteUrl}${path}`;
 
 /** The feed carries Statevera's own writing only — the wire belongs to its publishers. */
 export const GET: APIRoute = async () => {
-  const articles = await getAllArticles();
+  const articles = await getArticlesByLanguage("en");
 
   const items = articles
     .map((a) => ({
@@ -20,7 +20,7 @@ export const GET: APIRoute = async () => {
       description: a.data.description,
       pubDate: a.data.date,
       ...(a.data.updated ? { updatedDate: a.data.updated } : {}),
-      link: absolute(`/articles/${slugOf(a)}`),
+      link: absoluteUrl(articleHref(a)),
       categories: [...a.data.tags, a.data.region, a.data.category],
       customData: [
         `<dc:creator><![CDATA[${a.data.author}]]></dc:creator>`,

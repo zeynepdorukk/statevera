@@ -48,6 +48,8 @@ const articles = defineCollection({
       date: z.coerce.date(),
       updated: z.coerce.date().optional(),
       author: z.string().default("Zeynep Doruk"),
+      language: z.enum(["en", "tr"]).default("en"),
+      translationKey: z.string().optional(),
       category: z.enum(CATEGORIES),
       region: z.enum(REGIONS),
       country: z.array(z.string()).optional().default([]),
