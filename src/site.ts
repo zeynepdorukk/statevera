@@ -43,7 +43,7 @@ export const site = {
    * PUBLIC_DESK_URL only has to be set when it moves.
    */
   deskUrl: (import.meta.env.PUBLIC_DESK_URL || "https://statevera-desk.onatozmen44.workers.dev").replace(/\/$/, ""),
-  defaultOgImage: "/images/branding/og-image.jpg",
+  defaultOgImage: "/images/branding/social-card-v2.png",
   locale: "en",
   language: "en-US",
 } as const;

@@ -86,7 +86,7 @@ const webJsonLd = {
     foundingDate: site.founded,
     logo: {
       "@type": "ImageObject",
-      url: absoluteUrl("/images/branding/logo-512.png"),
+      url: absoluteUrl("/images/branding/logo-512-v2.png"),
     },
   },
 };
@@ -131,11 +131,13 @@ const webJsonLd = {
     <link rel="preconnect" href="https://i.guim.co.uk" crossorigin />
     <link rel="preconnect" href="https://ichef.bbci.co.uk" crossorigin />
 
-    <link rel="icon" type="image/svg+xml" href={root("/images/branding/favicon-dark.svg")} />
-    <link rel="icon" type="image/png" sizes="32x32" href={root("/images/branding/favicon-32.png")} />
-    <link rel="icon" type="image/png" sizes="64x64" href={root("/images/branding/favicon-64.png")} />
-    <link rel="icon" href={root("/images/branding/favicon.ico")} sizes="16x16 32x32 48x48 64x64" />
-    <link rel="apple-touch-icon" href={root("/images/branding/apple-touch-icon.png")} />
+    <link rel="icon" type="image/svg+xml" sizes="any" href={root("/images/branding/favicon-v2.svg")} />
+    <link rel="icon" type="image/png" sizes="16x16" href={root("/images/branding/favicon-v2-16.png")} />
+    <link rel="icon" type="image/png" sizes="32x32" href={root("/images/branding/favicon-v2-32.png")} />
+    <link rel="icon" type="image/png" sizes="48x48" href={root("/images/branding/favicon-v2-48.png")} />
+    <link rel="icon" type="image/png" sizes="64x64" href={root("/images/branding/favicon-v2-64.png")} />
+    <link rel="icon" href={root("/images/branding/favicon-v2.ico")} sizes="16x16 32x32 48x48 64x64" />
+    <link rel="apple-touch-icon" sizes="180x180" href={root("/images/branding/apple-touch-icon-v2.png")} />
     <link rel="alternate" type="application/rss+xml" title={`${site.publicationName} RSS`} href={root("/rss.xml")} />
     <link rel="sitemap" href={root("/sitemap-index.xml")} />
 
@@ -145,9 +147,11 @@ const webJsonLd = {
     <meta property="og:type" content={type === "article" ? "article" : "website"} />
     <meta property="og:url" content={url.toString()} />
     <meta property="og:image" content={absoluteImage} />
-    <meta property="og:image:alt" content={`${site.publicationName} — ${site.publicationTagline}`} />
+    <meta property="og:image:secure_url" content={absoluteImage} />
+    <meta property="og:image:alt" content={`${site.publicationName} logo`} />
     {isDefaultImage && (
       <>
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </>
@@ -163,6 +167,7 @@ const webJsonLd = {
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={absoluteImage} />
+    <meta name="twitter:image:alt" content={`${site.publicationName} logo`} />
 
     {article && (
       <>

@@ -70,7 +70,7 @@ const jsonLd = [
       name: site.publicationName,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/images/branding/logo-512.png"),
+        url: absoluteUrl("/images/branding/logo-512-v2.png"),
       },
     },
     image: [absoluteUrl(heroImageOf(data.heroImage))],
@@ -96,7 +96,6 @@ const jsonLd = [
 <BaseLayout
   title={data.title}
   description={data.description}
-  image={heroImageOf(data.heroImage)}
   type="article"
   tone="journal"
   path={href}
