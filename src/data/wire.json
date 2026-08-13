@@ -1,10 +1,91 @@
 {
-  "generatedAt": "2026-08-13T08:10:11.723Z",
+  "generatedAt": "2026-08-13T09:23:10.888Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
   ],
   "items": [
+    {
+      "id": "6046fbda5455",
+      "title": "Li Ka-shing family's CK Hutchison logs profit jump amid stalled port deal",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/companies/li-ka-shing-family-s-ck-hutchison-logs-profit-jump-amid-stalled-port-deal",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-13T09:23:05.722Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "ff511405fc37",
+      "title": "Voters in Zambia to deliver verdict on president's economic record",
+      "summary": "Zambia are voting in a general election on Thursday which will decide whether President Hakainde Hichilema returns for a second term, after steering the country out of a debt crisis.",
+      "url": "https://www.rfi.fr/en/africa/20260813-voters-in-zambia-to-deliver-verdict-on-president-s-economic-record",
+      "publisher": "RFI",
+      "publisherHome": "https://www.rfi.fr/en",
+      "sourceId": "rfi-world",
+      "publishedAt": "2026-08-13T09:01:17.000Z",
+      "image": "https://s.rfi.fr/media/display/8c3327da-7c10-11f1-b608-005056a90284/w:1024/p:16x9/2026-07-09T081147Z-165481622-RC243MA7WI20-RTRMADP-3-ZAMBIA-ELECTION.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "ba8a39bd4377",
+      "title": "UK economy grows between April and June but experts warn of challenges in coming months",
+      "summary": "The UK economy grew by 0.4% with some firms reporting hot weather and sports helped growth in June.",
+      "url": "https://www.bbc.co.uk/news/articles/cx2d1gpx2k0o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/business",
+      "sourceId": "bbc-business",
+      "publishedAt": "2026-08-13T08:21:42.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/aa44/live/cf456350-96ee-11f1-bdf3-57bf9a99cb46.jpg",
+      "imageWidth": 240,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "3d3345a054b3",
+      "title": "Pentagon official and former Aukus sceptic says deal is ‘full steam ahead’, echoing Trump",
+      "summary": "Elbridge Colby, a US under secretary of war, says he is ‘very pleased’ with the nuclear submarine program’s progress Get our breaking news email , free app or daily news podcast Elbridge Colby, the third-highest-ranking official at the Pentagon and formerly…",
+      "url": "https://www.theguardian.com/world/2026/aug/13/pentagon-official-and-former-aukus-sceptic-says-deal-is-full-steam-ahead-echoing-trump",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-13T08:20:43.000Z",
+      "image": "https://i.guim.co.uk/img/media/27d3d8c0038e3643768bb564787f4186cc978e49/171_0_4913_3931/master/4913.jpg?width=700&quality=85&auto=format&fit=max&s=6d31375c17dd5558dc486f193b205e84",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "5b5cc81dcc1d",
+      "title": "French ambassador to CAR accused of bringing women to official residence faces disciplinary action",
+      "summary": "The accusations against Bruno Foucher prompted investigations into a potential security breach.",
+      "url": "https://www.bbc.co.uk/news/articles/cqx7pp3yd25o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/africa",
+      "sourceId": "bbc-africa",
+      "publishedAt": "2026-08-13T08:15:10.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ddec/live/94f00910-96d7-11f1-a393-936d941a912a.jpg",
+      "imageWidth": 240,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
     {
       "id": "c88f2ed3d39a",
       "title": "India news: Parliament ends turbulent monsoon session",
@@ -24,7 +105,7 @@
     {
       "id": "00aeadd70831",
       "title": "Iran says Strait of Hormuz is under its control",
-      "summary": "Iran says Strait of Hormuz is under its control The Strait of Hormuz is \"under Iran's control and management\", the head of Iran's Basij paramilitary unit, Hossein Taeb, said on Thursday, according to Fars news agency. The remarks came a day after U.S.…",
+      "summary": "Iran says Strait of Hormuz is under its control The Strait of Hormuz is \"under Iran's control and management\", the head of Iran's Basij paramilitary unit, Hossein Taeb, said on Thursday, according to Fars news agency. The remarks came a day after US President…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-says-strait-hormuz-under-its-control",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -104,7 +185,7 @@
     {
       "id": "272c7a169fa8",
       "title": "Morning update",
-      "summary": "Morning update Good morning Middle East Eye readers, Here is a recap of the latest developments: The chairman of Yemen's Presidential Leadership Council indicated the government does not want a deal with the Houthis, and instead called for \"lasting and…",
+      "summary": "Morning update Good morning, Middle East Eye readers, Here is a recap of the latest developments: The chairman of Yemen's Presidential Leadership Council indicated the government does not want a deal with the Houthis, and instead called for \"lasting and…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/morning-update-602",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -262,22 +343,6 @@
       "weight": 2
     },
     {
-      "id": "af6096a6e2c7",
-      "title": "Trump wants to talk to Hezbollah. Will they pick up the phone?",
-      "summary": "For decades, U.S. policy in Lebanon has focused on the elimination of Hezbollah, or at least its military wing. But the Trump administration has taken this effort to new heights. The State Department is sponsoring the first ever direct talks between Lebanon…",
-      "url": "https://responsiblestatecraft.org/trump-hezbollah/",
-      "publisher": "Responsible Statecraft",
-      "publisherHome": "https://responsiblestatecraft.org",
-      "sourceId": "responsible-statecraft",
-      "publishedAt": "2026-08-13T04:05:02.000Z",
-      "image": "https://responsiblestatecraft.org/media-library/shi-ite-mourners-stand-in-front-of-a-banner-with-pictures-of-hezbollah-chief-naim-qassem-and-iran-s-new-supreme-leader-mojtaba-k.jpg?id=67609524&width=980",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Middle East",
-      "weight": 3
-    },
-    {
       "id": "2ff98c8f20fd",
       "title": "Machado is hiring DC lobbyists for access to Venezuela's future",
       "summary": "Opposition leader-in-exile Maria Corina Machado has hired veteran Republican lobbyists in Washington DC in what experts say is an effort to gain the support of the Trump administration as she continues to seek the Venezuelan presidency. Machado has retained…",
@@ -291,6 +356,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Americas",
+      "weight": 3
+    },
+    {
+      "id": "af6096a6e2c7",
+      "title": "Trump wants to talk to Hezbollah. Will they pick up the phone?",
+      "summary": "For decades, U.S. policy in Lebanon has focused on the elimination of Hezbollah, or at least its military wing. But the Trump administration has taken this effort to new heights. The State Department is sponsoring the first ever direct talks between Lebanon…",
+      "url": "https://responsiblestatecraft.org/trump-hezbollah/",
+      "publisher": "Responsible Statecraft",
+      "publisherHome": "https://responsiblestatecraft.org",
+      "sourceId": "responsible-statecraft",
+      "publishedAt": "2026-08-13T04:05:02.000Z",
+      "image": "https://responsiblestatecraft.org/media-library/shi-ite-mourners-stand-in-front-of-a-banner-with-pictures-of-hezbollah-chief-naim-qassem-and-iran-s-new-supreme-leader-mojtaba-k.jpg?id=67609524&width=980",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Middle East",
       "weight": 3
     },
     {
@@ -312,7 +393,7 @@
     {
       "id": "f5b2d8613014",
       "title": "Zambia elections haunted by ghost of incumbent president’s arch-rival",
-      "summary": "Hakainde Hichilema is bidding for second term, but feud between him and family of Edgar Lungu, who died in 2025, continues As Zambians go to the polls, the ghost of the current president’s predecessor hangs over the elections. Hakainde Hichilema, 64, is…",
+      "summary": "Hakainde Hichilema is bidding for second term, but feud between him and family of Edgar Lungu, who died in 2025, continues As Zambians go to the polls on Thursday, the ghost of the current president’s predecessor hangs over the elections. Hakainde Hichilema,…",
       "url": "https://www.theguardian.com/world/2026/aug/13/zambia-elections-hakainde-hichilema-haunted-ghost-incumbent-president-arch-rival-edgar-lungu",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -404,6 +485,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "b010baeceb22",
+      "title": "Iraq will not be used as 'launch pad' for attacks on neighbours, prime minister says",
+      "summary": "Iraq will not be used as 'launch pad' for attacks on neighbours, prime minister says Iraqi Prime Minister Ali al-Zaidi says Baghdad will not allow its territory or airspace to be utilised for launching attacks against neighbouring countries, according to the…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iraq-will-not-be-used-launch-pad-attacks-neighbours-prime-minister-says",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-13T01:45:21.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -535,6 +632,22 @@
       "weight": 2
     },
     {
+      "id": "ec2d23e337a7",
+      "title": "Lebanon passes sweeping amnesty law for prisoners, wanted people",
+      "summary": "Lebanon passes sweeping amnesty law for prisoners, wanted people Lebanon's parliament on Wednesday passed a sweeping and long-awaited amnesty law that should benefit thousands of prisoners and wanted people, in the first legislation of its kind since 1991.…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/lebanon-passes-sweeping-amnesty-law-prisoners-wanted-people",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-12T21:39:27.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "d28483faf0ef",
       "title": "Partial eclipse seen from North and West Africa",
       "summary": "Across parts of Africa, millions lifted their eyes skywards this Wednesday to observe a rare celestial event: a partial solar eclipse. Also, Zambian President Hakainde Hichilema hopes for a second term in Thursday’s elections. Hs main rival says it's been a…",
@@ -633,38 +746,6 @@
       "weight": 2
     },
     {
-      "id": "64bfa4402d0b",
-      "title": "Defence minister says Israeli military will remain in Lebanon, Syria and Gaza",
-      "summary": "Defence minister says Israeli military will remain in Lebanon, Syria and Gaza The Israeli military “under no circumstances” will withdraw from land it occupies in Lebanon, Syria and Gaza, Israel’s i24 news reported; the defence minister said. The report said…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/defence-minister-says-israeli-military-indefinitely-remain-lebanon-syria",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-12T19:21:13.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "433d98bb6b2e",
-      "title": "Pentagon tells Congress US killed 153 civilians in Yemen air strikes",
-      "summary": "Pentagon tells Congress US killed 153 civilians in Yemen air strikes Submitted by MEE staff on Wed, 08/12/2026 - 19:33 The Houthis have resumed attacks on vessels in the Red Sea despite enduring hundreds of US air strikes A Yemeni man who was injured in US…",
-      "url": "https://www.middleeasteye.net/news/pentagon-tells-congress-us-killed-153-civilians-yemen-air-strikes",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-12T19:18:18.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "5064db82e429",
       "title": "Japan margin trading doubles in 6 months, lifted by pricey AI stocks",
       "summary": "",
@@ -679,22 +760,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "1ba505de9617",
-      "title": "Iraq says no foreign military presence by 1 Oct and weapons will be under state control",
-      "summary": "Iraq says no foreign military presence by 1 Oct and weapons will be under state control Iraqi Prime Minister Ali Faleh al-Zaidi said that the country will be free of any foreign military presence on its soil and that weapons will be solely under state control…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iraq-says-no-foreign-military-presence-or-weapons-outside-state-control",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-12T18:54:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1035,22 +1100,6 @@
       "weight": 3
     },
     {
-      "id": "1fce9fb14d4c",
-      "title": "French ambassador to CAR disciplined over misconduct allegations",
-      "summary": "France’s foreign ministry has launched disciplinary proceedings against its ambassador to the Central African Republic, following allegations that he repeatedly brought young women to the official residence in Bangui and had sexual relations with some of them.",
-      "url": "https://www.rfi.fr/en/africa/20260812-french-ambassador-to-car-disciplined-over-misconduct-allegations",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-12T14:02:33.000Z",
-      "image": "https://s.rfi.fr/media/display/051412da-9634-11f1-8957-005056a90284/w:1024/p:16x9/french-ambassador-bangui.jpeg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "ed04f7ff2d72",
       "title": "Braw in Al Jazeera on Ukrainian drone attacks on Russian port infrastructure",
       "summary": "On August 12, Elisabeth Braw was interviewed by Al Jazeera to discuss Ukrainian naval drone attacks on the Russian port city of Novorossiysk. The post Braw in Al Jazeera on Ukrainian drone attacks on Russian port infrastructure appeared first on Atlantic…",
@@ -1083,10 +1132,10 @@
       "weight": 3
     },
     {
-      "id": "b193e4544a0d",
-      "title": "Gulf states scramble for Strait of Hormuz alternative",
+      "id": "9b3740c66282",
+      "title": "Gulf states scramble for Strait of Hormuz alternatives",
       "summary": "Saudi Arabia has redirected oil exports away from the Strait of Hormuz, but most Gulf producers still lack a reliable backup option to the world's most important energy choke point.",
-      "url": "https://www.dw.com/en/gulf-states-scramble-for-strait-of-hormuz-alternative/a-78336679?maca=en-rss-en-all-1573-rdf",
+      "url": "https://www.dw.com/en/gulf-states-scramble-for-strait-of-hormuz-alternatives/a-78336679?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
       "sourceId": "dw",
@@ -1209,22 +1258,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "2313963435ef",
-      "title": "Lebanese parliament passes sweeping amnesty law to reduce overcrowding in prisons",
-      "summary": "Lebanon's parliament on Wednesday passed a general amnesty law reducing sentences for inmates and people detained for more than 12 years without charges in a bid to reduce prison overcrowding. The legislation was passed a day after Lebanon became the first…",
-      "url": "https://www.france24.com/en/middle-east/20260812-lebanese-parliament-passes-sweeping-amnesty-law-thousands-prisoners-wanted-people",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-12T12:28:44.000Z",
-      "image": "https://s.france24.com/media/display/dae86c3e-963f-11f1-bd91-005056bfb2b6/w:1024/p:16x9/000-A7VC3ZQ.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "0b1cdcfb5658",
@@ -2507,6 +2540,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Turkey",
+      "weight": 2
+    },
+    {
+      "id": "73892c222554",
+      "title": "Consortium advances talks for stake in Liverpool",
+      "summary": "A group including Amazon founder Jeff Bezos advances its talks to buy about a 30% stake in Liverpool, BBC Sport has been told.",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cgljd4kny9eo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/business",
+      "sourceId": "bbc-business",
+      "publishedAt": "2026-08-10T13:16:51.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/bf9e/live/650f8d00-94b7-11f1-a7ab-8b30adf0800a.png",
+      "imageWidth": 240,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
