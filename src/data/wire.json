@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-13T22:42:41.129Z",
+  "generatedAt": "2026-08-13T23:24:03.459Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "fa9ec2b400ec",
+      "title": "US conducted ‘mass spying campaign’ against leftwing groups and anti-ICE protesters, records reveal",
+      "summary": "DHS sent undercover agents to meetings and infiltrated chats of groups opposing Trump’s immigration crackdown Newly disclosed records reveal the US government extensively spied on prominent leftwing organizations and on protesters as part of a vast operation…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/13/us-government-spied-anti-ice-protesters",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-13T23:06:04.000Z",
+      "image": "https://i.guim.co.uk/img/media/8aa8f9f5eba781c6d1cb935745b1134a91fe96fe/500_0_4500_3600/master/4500.jpg?width=700&quality=85&auto=format&fit=max&s=ec868183e9e89962e0b1ad02bde818ce",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "405388ae86e1",
       "title": "Australia news live: Albanese says he argued for tariff exemption in ‘substantial’ call with Trump",
@@ -11,26 +27,10 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-13T22:28:59.000Z",
+      "publishedAt": "2026-08-13T22:55:30.000Z",
       "image": "https://i.guim.co.uk/img/media/6b42715903aa3b951532fbdd17ccb3ce07518684/330_0_6266_5013/master/6266.jpg?width=700&quality=85&auto=format&fit=max&s=dd6253a2b38bdf1e2809aac3ba3b2c82",
       "imageWidth": 700,
       "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "fa9ec2b400ec",
-      "title": "US government extensively spied on anti-ICE protesters and leftwing groups, records reveal",
-      "summary": "DHS sent undercover agents to meetings, infiltrated chats and obtained financial records in vast operation into groups opposing Trump’s immigration crackdown Newly disclosed records reveal the US government extensively spied on prominent leftwing…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/13/us-government-spied-anti-ice-protesters",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-13T22:00:49.000Z",
-      "image": "https://i.guim.co.uk/img/media/8aa8f9f5eba781c6d1cb935745b1134a91fe96fe/500_0_4500_3600/master/4500.jpg?width=700&quality=85&auto=format&fit=max&s=ec868183e9e89962e0b1ad02bde818ce",
-      "imageWidth": 700,
-      "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 2
