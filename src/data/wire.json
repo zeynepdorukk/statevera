@@ -1,10 +1,58 @@
 {
-  "generatedAt": "2026-08-13T11:26:04.349Z",
+  "generatedAt": "2026-08-13T12:05:50.554Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
   ],
   "items": [
+    {
+      "id": "c5962e7c0bc0",
+      "title": "Andy Burnham ‘angry’ over water company bill increases – business live",
+      "summary": "Live, rolling coverage of business, economics and financial markets as regulator says five companies can raise bills to pay for infrastructure for new housing and datacentres The biggest factor for the FTSE 100 ’s underperformance on Thursday morning relative…",
+      "url": "https://www.theguardian.com/business/live/2026/aug/13/uk-economy-gdp-growth-second-quarter-services-june-hot-weather-heatwave-world-cup-business-latest-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/business/economics",
+      "sourceId": "guardian-economics",
+      "publishedAt": "2026-08-13T11:59:13.000Z",
+      "image": "https://i.guim.co.uk/img/media/265fa1ecc024d8399f044886689d692adb8b2d10/2307_144_3054_2443/master/3054.jpg?width=700&quality=85&auto=format&fit=max&s=6d52a99afe1c077635699559998b168f",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "c777e2130255",
+      "title": "In Christian village of Taybeh, Israeli military order fails to stop settler violence",
+      "summary": "In Christian village of Taybeh, Israeli military order fails to stop settler violence Submitted by Fayha Shalash on Thu, 08/13/2026 - 10:08 Palestinian residents and rights activists describe near-daily raids on homes and olive groves, with some saying…",
+      "url": "https://www.middleeasteye.net/news/palestinian-christians-taybeh-face-continuing-settler-attacks-despite-military-closure",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-13T11:48:20.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "233cd5c0a51d",
+      "title": "Inflation eased slightly in July. And, ICE plans to give officers electric shock gloves",
+      "summary": "Inflation cooled a bit last month, according to a new report from the Labor Department. And, ICE plans to equip its officers with electric shock gloves.",
+      "url": "https://www.npr.org/2026/08/13/g-s1-138578/up-first-newsletter-inflation-colombia-earthquake-ice-gloves-migrant-children-karolina-leavitt",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-13T11:31:18.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "4d9f740890ac",
       "title": "Chipmaker CXMT becomes China's most valuable company as Tencent slips",
@@ -39,10 +87,10 @@
       "weight": 2
     },
     {
-      "id": "26d2f6a5a5f9",
-      "title": "What would North Korean surge mean for Ukraine war?",
-      "summary": "Ukraine is claiming that North Korea is preparing to send tens of thousands more troops to Russia, where they'll gain valuable battlefield experience. President Zelenskyy urged South Korea to work closer with Kyiv.",
-      "url": "https://www.dw.com/en/what-would-north-korean-surge-mean-for-ukraine-war/a-78350896?maca=en-rss-en-all-1573-rdf",
+      "id": "2af1ac0ee18d",
+      "title": "What would a North Korean surge mean for Ukraine war?",
+      "summary": "Ukraine is claiming that North Korea is preparing to send tens of thousands more troops to Russia, where they'll gain valuable battlefield experience. President Zelenskyy has urged South Korea to work closer with Kyiv.",
+      "url": "https://www.dw.com/en/what-would-a-north-korean-surge-mean-for-ukraine-war/a-78350896?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
       "sourceId": "dw",
@@ -68,6 +116,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "e61d05809553",
+      "title": "Russian drone strikes passenger train in Odesa region, killing driver",
+      "summary": "A Russian Shahed drone struck a passenger train in Ukraine’s Odesa region on 13 August 2026, killing the driver and his assistant and forcing the evacuation of 340 passengers, including 67 children, in the Berezivka district.",
+      "url": "http://www.africanews.com/2026/08/13/russian-drone-strikes-passenger-train-in-odesa-region-killing-driver/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-13T10:43:34.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/87/29/31/640x360_cmsv2_a5961566-9d10-5311-acf5-af5540738b65-9872931.jpg?1786615580",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -344,22 +408,6 @@
       "weight": 2
     },
     {
-      "id": "b9393db906a4",
-      "title": "The US is now using the ‘terrorist’ label to interfere in Brazil’s election",
-      "summary": "The designation of PCC and CV serves to expand Washington’s reach into the country’s politics and security.",
-      "url": "https://www.aljazeera.com/opinions/2026/8/13/the-us-is-now-using-the-terrorist-label-to-interfere-in-brazils-election?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-13T06:33:31.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "86a73b9f82e2",
       "title": "Pakistan says Israel's refusal to withdraw forces from Gaza 'serious setback' to peace plan",
       "summary": "Pakistan says Israel's refusal to withdraw forces from Gaza 'serious setback' to peace plan Pakistan has expressed its rejection of Israeli Prime Minister Benjamin Netanyahu's opposition to the establishment of a Palestinian state. Foreign Ministry spokesman…",
@@ -606,8 +654,8 @@
       "summary": "This live blog is now closed. Karoline Leavitt will step down as White House press secretary Sign up for the Breaking News US email Core inflation, which measures price changes without volatile goods like food and gas, rose by 0.2% in July , after not really…",
       "url": "https://www.theguardian.com/us-news/live/2026/aug/12/donald-trump-air-force-one-switch-politics-primaries-midterm-elections-results-latest-updates",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-13T02:11:27.000Z",
       "image": "https://i.guim.co.uk/img/media/e72190fa6c6cbe2ef36856c6905d0f5d7dff6f8f/451_0_4521_3616/master/4521.jpg?width=700&quality=85&auto=format&fit=max&s=e327e445a9f87c00004ea1063a06c6db",
       "imageWidth": 700,
@@ -649,35 +697,19 @@
       "weight": 2
     },
     {
-      "id": "4167d1854dd6",
-      "title": "Wisconsin Democrats chose a middle path – will it lead to victory in November?",
-      "summary": "Democratic socialist Francesca Hong fell just short as David Crowley strives for unity for the general election Francesca Hong, a democratic socialist, was on course to win the party’s nomination for Wisconsin governor on Wednesday by a clear margin,…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/12/wisconsin-primary-democrats-david-crowley",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-13T00:16:25.000Z",
-      "image": "https://i.guim.co.uk/img/media/43a83d9290bfd2185fa988dc7be0dabced247142/693_0_6904_5527/master/6904.jpg?width=700&quality=85&auto=format&fit=max&s=8774fec79a7e8b0b226bc7794103ca57",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "78ff4fec1301",
-      "title": "'If you're not conservative, don't come here': The town making missiles for Trump",
-      "summary": "The president's approval numbers may be down, but in this Tennessee town, his support is as strong as ever.",
+      "title": "Devotion to Trump stays strong in town making missiles for US war in Iran",
+      "summary": "Polls suggest Republicans nationally are souring - but in Kingsport, Tennessee, they don’t blame the president.",
       "url": "https://www.bbc.co.uk/news/articles/cn0n8nd6645o?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
       "publisherHome": "https://www.bbc.com/news/world",
       "sourceId": "bbc-world",
       "publishedAt": "2026-08-12T23:26:21.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a229/live/1eb9ff30-96e1-11f1-870d-5d08c49babb2.jpg",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0efd/live/f0862c10-970d-11f1-b2ab-0dd01740f9f6.jpg",
       "imageWidth": 240,
       "category": "Security",
       "categoryConfidence": "high",
-      "region": "Americas",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -1309,22 +1341,6 @@
       "weight": 2
     },
     {
-      "id": "e04609ab2f08",
-      "title": "Youth advocates gather in New York to launch new AI standards",
-      "summary": "As artificial intelligence (AI) rapidly transforms everything from how we learn, to the job market, children are adopting the technology more than three times faster than adults – exposing them to unique opportunities and risks.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168129",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-12T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/08/12-08-2026-UN-News-youth.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "066213763898",
       "title": "UN continues scaling up response to earthquake in Colombia",
       "summary": "The UN on Wednesday continued scaling up assistance to areas affected by the deadly earthquake that hit Colombia two days earlier.",
@@ -1338,6 +1354,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "e04609ab2f08",
+      "title": "Youth advocates gather in New York to launch new AI standards",
+      "summary": "As artificial intelligence (AI) rapidly transforms everything from how we learn, to the job market, children are adopting the technology more than three times faster than adults – exposing them to unique opportunities and risks.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168129",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-12T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/08/12-08-2026-UN-News-youth.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Global",
       "weight": 2
     },
     {
