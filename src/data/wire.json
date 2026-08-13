@@ -1,8 +1,74 @@
 {
-  "generatedAt": "2026-08-13T18:34:16.584Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-13T19:41:49.623Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "91fd82f2cc46",
+      "title": "Romania shuts only nuclear plant as heat causes huge drop in Danube River level",
+      "summary": "The Cernavodă plant, which produces 20% of Romania's electricity, is not expected to be restarted within the next 10 days.",
+      "url": "https://www.bbc.co.uk/news/articles/cqlxpq5q799o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-13T19:20:58.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/73db/live/5d4d0250-9728-11f1-808c-532494fd22c7.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "433b9626afe3",
+      "title": "How Nepal, Sri Lanka, and Bangladesh are deciding on India’s digital public infrastructure",
+      "summary": "The choices that leaders are now making about identity, payment, and health-data systems could shape the region for a decade or more. The post How Nepal, Sri Lanka, and Bangladesh are deciding on India’s digital public infrastructure appeared first on…",
+      "url": "https://www.atlanticcouncil.org/dispatches/how-nepal-sri-lanka-and-bangladesh-are-deciding-on-indias-digital-public-infrastructure/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-13T19:07:05.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
+      "id": "34a2437c4cfe",
+      "title": "Mangione lawyers to meet federal prosecutors amid reports of plea deal",
+      "summary": "Mangione faces two federal charges of stalking resulting in death, each carrying a maximum sentence of life in prison.",
+      "url": "https://www.bbc.co.uk/news/articles/c5yw71q9y00o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-13T18:45:51.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0854/live/f4140030-972d-11f1-bbb3-ebc49f706d46.jpg",
+      "imageWidth": 240,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "dde4f68736cd",
+      "title": "Saudi defence minister calls Iraq 'cherished neighbour' after strikes",
+      "summary": "Saudi defence minister calls Iraq 'cherished neighbour' after strikes Saudi Arabia's defence minister called Iraq a \"cherished neighbour\" in talks with a senior Iraqi army official on Thursday, despite last month's deadly US-Saudi strikes on targets in the…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/saudi-defence-minister-calls-iraq-cherished-neighbour-after-strikes",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-13T18:37:31.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "da5f62702537",
       "title": "Japan's Takaichi charts own course on Russian diplomacy",
@@ -90,14 +156,14 @@
       "summary": "State department says it has reached administrative settlement with company’s US arm to resolve breaches The UK defence company BAE Systems is to pay a $36m (£26.7m) civil penalty after breaching US arms exports regulations more than 100 times. The US…",
       "url": "https://www.theguardian.com/business/2026/aug/13/bae-systems-inc-to-pay-36m-penalty-104-violations-us-arms-export-regulations",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-13T17:35:47.000Z",
       "image": "https://i.guim.co.uk/img/media/cb56b0c9df5e53424c29206816fbc7d6502e888a/564_0_2819_2255/master/2819.jpg?width=700&quality=85&auto=format&fit=max&s=0add78dfc50ca89da842efba4b3fb74a",
       "imageWidth": 700,
       "category": "Economy",
       "categoryConfidence": "high",
-      "region": "Global",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -130,22 +196,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "34a2437c4cfe",
-      "title": "Mangione lawyers to meet federal prosecutors amid reports of plea deal",
-      "summary": "Mangione faces two federal stalking crimes that carry a maximum penalty of life in prison without parole.",
-      "url": "https://www.bbc.co.uk/news/articles/c5yw71q9y00o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-13T16:45:06.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0854/live/f4140030-972d-11f1-bbb3-ebc49f706d46.jpg",
-      "imageWidth": 240,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -226,22 +276,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "91fd82f2cc46",
-      "title": "Romania shuts only nuclear plant as heat causes huge drop in Danube River level",
-      "summary": "The Cernavodă plant, which produces 20% of Romania's electricity, is not expected to be restarted within the next 10 days.",
-      "url": "https://www.bbc.co.uk/news/articles/cqlxpq5q799o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-13T16:05:35.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/73db/live/5d4d0250-9728-11f1-808c-532494fd22c7.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -340,22 +374,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "e6607fe51a96",
-      "title": "Hegseth criticized for locking Democrats out of closed-door defense budget talks",
-      "summary": "Republican lawmakers express concern after US defense secretary repeatedly excluded Democrats from briefings US politics live – latest updates Republican senators have criticized the Pentagon for locking Democrats out of classified briefings on defense…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/13/pete-hegseth-democrats-budget",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-13T15:06:10.000Z",
-      "image": "https://i.guim.co.uk/img/media/a10315cdd795677260cb07ba8c424aff90587dad/1361_0_6829_5464/master/6829.jpg?width=700&quality=85&auto=format&fit=max&s=3d9f601e5ae9ab8252538fb45efd9fa4",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -551,22 +569,6 @@
       "weight": 3
     },
     {
-      "id": "72145710bc5e",
-      "title": "Rebuilding Aleppo: Syria's war-torn economic capital enjoys gradual rebirth",
-      "summary": "Syria's economic capital Aleppo was left largely in ruins by the fighting that raged there between regime and rebel forces from 2012 to 2016. A 2023 earthquake also caused severe damage to the old city. But reconstruction is now well underway, in particular…",
-      "url": "https://www.france24.com/en/tv-shows/focus/20260813-rebuilding-aleppo-syria-s-war-torn-economic-capital-enjoys-gradual-rebirth",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-13T13:02:33.000Z",
-      "image": "https://s.france24.com/media/display/2a29c426-8dd7-11f1-82f0-005056a97e36/w:1024/p:16x9/FOCUS-VI-SYRIE-ALEP-RECONSTRUCTION.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "90e136808084",
       "title": "Digitizing Gaza’s financial system",
       "summary": "A modern payment system could allow households and businesses in Gaza to receive aid, earn income, and transact safely during reconstruction. But it can only function with reliable internet, suitable devices, and robust identity verification. The post…",
@@ -584,8 +586,8 @@
     },
     {
       "id": "a25c96408f14",
-      "title": "A path towards sustainable security in Colombia",
-      "summary": "Colombia has a long road ahead to sustainable peace. The incoming government recognizes the failures of past approaches and could seek a new security strategy that draws on building state presence in conflict areas and clear institutional frameworks to foster…",
+      "title": "A path toward sustainable security in Colombia",
+      "summary": "Colombia has a long road ahead to sustainable peace. Recognizing the failures of past approaches, the incoming government could seek a new security strategy that draws on building state presence in conflict areas and clear institutional frameworks to foster…",
       "url": "https://www.atlanticcouncil.org/in-depth-research-reports/issue-brief/the-path-toward-sustainable-peace-in-colombia/",
       "publisher": "Atlantic Council",
       "publisherHome": "https://www.atlanticcouncil.org",
@@ -711,6 +713,22 @@
       "weight": 2
     },
     {
+      "id": "29e0e3906dec",
+      "title": "World News in Brief: Afghanistan education, Myanmar flooding, Syria recovery, homecare workers in New York",
+      "summary": "Five years since the Taliban seized power in Kabul, life for some Afghans has improved while many others suffer growing hardship.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168135",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-13T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production%20Library/28-07-2023-UN-Photo-Afghanistan.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
       "id": "09ccf56f729a",
       "title": "Türkiye’s changes to child detention ‘raise serious human rights concerns’",
       "summary": "UN human rights chief Volker Türk on Thursday condemned an amendment adopted by Türkiye’s parliament that would allow judges to give life sentences to child offenders convicted of serious crimes.",
@@ -743,38 +761,6 @@
       "weight": 2
     },
     {
-      "id": "6977da2e47ad",
-      "title": "Farage face off against Count Binface: \"He's been the subject to many jokes in the UK\"",
-      "summary": "Polls opened Thursday in an eastern England by-election that pits hard-right leader Nigel Farage - often touted as a potential future British prime minister - against perennial joke candidate Count Binface in a vote shunned by the country's main political…",
-      "url": "https://www.france24.com/en/video/20260813-farage-face-off-against-count-binface-he-s-been-the-subject-to-many-jokes-in-the-uk",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-13T11:56:43.000Z",
-      "image": "https://s.france24.com/media/display/4b8963ac-9709-11f1-940c-005056a97e36/w:1024/p:16x9/EN-20260813-110400-110843-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "723445d03909",
-      "title": "US-Iran talks in deadlock – what’s the latest?",
-      "summary": "The US and Iran continue their standoff in the Strait of Hormuz as mediators try to coax talks.",
-      "url": "https://www.aljazeera.com/news/2026/8/13/us-iran-talks-in-deadlock-whats-the-latest?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-13T11:56:40.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "c777e2130255",
       "title": "In Christian village of Taybeh, Israeli military order fails to stop settler violence",
       "summary": "In Christian village of Taybeh, Israeli military order fails to stop settler violence Submitted by Fayha Shalash on Thu, 08/13/2026 - 10:08 Palestinian residents and rights activists describe near-daily raids on homes and olive groves, with some saying…",
@@ -791,10 +777,10 @@
       "weight": 2
     },
     {
-      "id": "aba85ceea277",
-      "title": "Eritrea: Rising power along key global shipping arteries",
+      "id": "8d839773bef3",
+      "title": "Eritrea: a rising power along a global shipping artery",
       "summary": "Amid growing tensions and security risks in the Horn of Africa, Eritrea, with its strategically important coastal points on the Red Sea, is emerging as an important player in the region.",
-      "url": "https://www.dw.com/en/eritrea-rising-power-along-key-global-shipping-arteries/a-78335316?maca=en-rss-en-all-1573-rdf",
+      "url": "https://www.dw.com/en/eritrea-a-rising-power-along-a-global-shipping-artery/a-78335316?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
       "sourceId": "dw",
@@ -840,19 +826,19 @@
       "weight": 2
     },
     {
-      "id": "ad61ff584ff1",
-      "title": "Families of Egyptian political prisoners launch UK advocacy group",
-      "summary": "Families of Egyptian political prisoners launch UK advocacy group Submitted by MEE staff on Thu, 08/13/2026 - 11:13 The Families of Egyptian Detainees Association will liaise with international bodies to fight for the release of prisoners of conscience, press…",
-      "url": "https://www.middleeasteye.net/news/families-egyptian-political-prisoners-launch-new-organisation-uk",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-13T11:19:45.000Z",
-      "image": "",
+      "id": "06cf88ad6821",
+      "title": "Putin watches Russian navy drills off Russia's Sakhalin Island",
+      "summary": "Russia's President Vladimir Putin observed naval exercises off Sakhalin Island on Thursday before travelling to the disputed Kuril Islands, prompting a strong protest from Japan.",
+      "url": "http://www.africanews.com/2026/08/13/putin-watches-russian-navy-drills-off-russias-sakhalin-island/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-13T11:01:05.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/87/29/45/640x360_cmsv2_f1891523-36e5-5660-95f0-55989523814a-9872945.jpg?1786616493",
       "imageWidth": 0,
-      "category": "Politics",
+      "category": "Security",
       "categoryConfidence": "high",
-      "region": "Middle East",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -1774,22 +1760,6 @@
       "weight": 2
     },
     {
-      "id": "066213763898",
-      "title": "UN continues scaling up response to earthquake in Colombia",
-      "summary": "The UN on Wednesday continued scaling up assistance to areas affected by the deadly earthquake that hit Colombia two days earlier.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168128",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-12T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/08/12-08-2026_Colombia_UNFPA_1.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "e04609ab2f08",
       "title": "Youth advocates gather in New York to launch new AI standards",
       "summary": "As artificial intelligence (AI) rapidly transforms everything from how we learn, to the job market, children are adopting the technology more than three times faster than adults – exposing them to unique opportunities and risks.",
@@ -1803,6 +1773,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "066213763898",
+      "title": "UN continues scaling up response to earthquake in Colombia",
+      "summary": "The UN on Wednesday continued scaling up assistance to areas affected by the deadly earthquake that hit Colombia two days earlier.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168128",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-12T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/08/12-08-2026_Colombia_UNFPA_1.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -2206,22 +2192,6 @@
       "weight": 2
     },
     {
-      "id": "873e03ae3c56",
-      "title": "Turkey wants a bigger role in NATO. Its defense industry will be key.",
-      "summary": "With the NATO Summit in Ankara behind it, Turkey’s defense sector now faces the challenge of turning political momentum into action—from defense-industrial cooperation to diplomatic initiatives and NATO capability development. The post Turkey wants a bigger…",
-      "url": "https://www.atlanticcouncil.org/blogs/turkeysource/turkey-wants-a-bigger-role-in-nato-its-defense-industry-will-be-key/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-11T15:52:05.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Turkey",
-      "weight": 3
-    },
-    {
       "id": "8c94fd507d2c",
       "title": "Lebanon parliament votes to abolish death penalty",
       "summary": "The new law - which next goes to the cabinet for approval - would make Lebanon the first country in the Middle East to end capital punishment.",
@@ -2331,22 +2301,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "df152f0dfd31",
-      "title": "Ebola deaths top 2,000 as scientists race to develop vaccine",
-      "summary": "Local officials in the DR Congo (DRC) reported on Tuesday that deaths from the Ebola virus disease have surpassed 2,000, with half of that number in the last 20 days.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168117",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-11T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/06/19-06-2026-IOM-DR-Congo-ebola.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -2843,22 +2797,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "6c61fead8ba7",
-      "title": "Iran-aligned Houthis claim they attacked oil refinery in Saudi Arabia",
-      "summary": "Drone strike comes after Riyadh signs defence pact and Tehran issues tough demands to reopen strait of Hormuz Yemen’s Tehran-aligned Houthis have claimed responsibility for an attack on a refinery in Saudi Arabia, two days after the kingdom signed ⁠a defence…",
-      "url": "https://www.theguardian.com/world/2026/aug/09/yemen-houthis-saudi-oil-refinery-defence-pact-iran-strait-of-hormuz",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-09T15:11:28.000Z",
-      "image": "https://i.guim.co.uk/img/media/4b3ebbb27a298382cf514404f7afc68b64dbe38a/1024_0_7883_6308/master/7883.jpg?width=700&quality=85&auto=format&fit=max&s=c7255e1c73e17496ae02d1056b7e80bb",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
