@@ -1,22 +1,38 @@
 {
-  "generatedAt": "2026-08-13T21:59:50.304Z",
+  "generatedAt": "2026-08-13T22:42:41.129Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
       "id": "405388ae86e1",
-      "title": "Australia news live: Albanese says he argued for tariff exemption in ‘productive and substantial’ call with Trump",
-      "summary": "PM says he also spoke with the US president about Aukus, which ‘remains full steam ahead’. Follow today’s news live Get our breaking news email , free app or daily news podcast Anthony Albanese is speaking in Canberra after he held a “productive” and…",
+      "title": "Australia news live: Albanese says he argued for tariff exemption in ‘substantial’ call with Trump",
+      "summary": "PM says he also spoke with the US president about Aukus, which ‘remains full steam ahead’. Follow today’s news live Get our breaking news email , free app or daily news podcast Albanese says gambling inducements are ‘over the top’ Albanese said gambling…",
       "url": "https://www.theguardian.com/australia-news/live/2026/aug/14/australia-news-live-kpmg-inquiry-icac-alan-jones-trial-gst-treasurer-jim-chalmers-anthony-albanese-angus-taylor-pauline-hanson-labor-liberals-one-nation-ntwnfb",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-13T21:53:10.000Z",
-      "image": "https://i.guim.co.uk/img/media/f937af29aaeeff0b6a71f84e989afbbe7d0966ca/939_569_5843_4675/master/5843.jpg?width=700&quality=85&auto=format&fit=max&s=b6349c36b570661a7b7e10feac46d57a",
+      "publishedAt": "2026-08-13T22:28:59.000Z",
+      "image": "https://i.guim.co.uk/img/media/6b42715903aa3b951532fbdd17ccb3ce07518684/330_0_6266_5013/master/6266.jpg?width=700&quality=85&auto=format&fit=max&s=dd6253a2b38bdf1e2809aac3ba3b2c82",
       "imageWidth": 700,
       "category": "Economy",
       "categoryConfidence": "high",
-      "region": "Asia-Pacific",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "fa9ec2b400ec",
+      "title": "US government extensively spied on anti-ICE protesters and leftwing groups, records reveal",
+      "summary": "DHS sent undercover agents to meetings, infiltrated chats and obtained financial records in vast operation into groups opposing Trump’s immigration crackdown Newly disclosed records reveal the US government extensively spied on prominent leftwing…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/13/us-government-spied-anti-ice-protesters",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-13T22:00:49.000Z",
+      "image": "https://i.guim.co.uk/img/media/8aa8f9f5eba781c6d1cb935745b1134a91fe96fe/500_0_4500_3600/master/4500.jpg?width=700&quality=85&auto=format&fit=max&s=ec868183e9e89962e0b1ad02bde818ce",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -54,7 +70,7 @@
     {
       "id": "0fd8502f74e0",
       "title": "UAE's Adnoc says two vessels attacked in Strait of Hormuz, no injuries",
-      "summary": "UAE's Adnoc says two vessels attacked in Strait of Hormuz, no injuries Abu Dhabi National Oil Company Adnoc said two of its vessels were attacked while transiting the Strait of Hormuz on Thursday evening, the United Arab Emirates' state news agency WAM…",
+      "summary": "UAE's Adnoc says two vessels attacked in Strait of Hormuz, no injuries Abu Dhabi National Oil Company (Adnoc) said two of its vessels were attacked while transiting the Strait of Hormuz on Thursday evening, the United Arab Emirates' state news agency WAM…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/uaes-adnoc-says-two-vessels-attacked-strait-hormuz-no-injuries",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
