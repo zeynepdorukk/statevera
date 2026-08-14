@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-14T19:54:06.558Z",
+  "generatedAt": "2026-08-14T20:20:19.228Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "d919e64241bb",
+      "title": "US has lost roughly 25 percent of its Reaper drones in Iran war: Report",
+      "summary": "US has lost roughly 25 percent of its Reaper drones in Iran war: Report Submitted by MEE staff on Fri, 08/14/2026 - 20:44 The US has depleted critical standoff munitions and interceptors as it wages war on Iran A US military MQ-9 Reaper drone approaches for…",
+      "url": "https://www.middleeasteye.net/news/us-has-lost-roughly-25-percent-its-reaper-drones-iran-war-report",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-14T20:16:59.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "47fb95ea1d4e",
+      "title": "Son of Mexico’s former president AMLO alleges US revoked his visa",
+      "summary": "The US has not confirmed the revocation which comes amid crackdown on Mexican politicians with alleged ties to cartels.",
+      "url": "https://www.aljazeera.com/news/2026/8/14/son-of-mexicos-former-president-amlo-alleges-us-revoked-his-visa?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-14T19:44:43.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "6b21c3c238e4",
       "title": "Trump asks Supreme Court to allow ballroom work to continue",
@@ -516,22 +548,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "9b7129b3c27e",
-      "title": "Russia's UN envoy says Hormuz navigation 'ruined' by US",
-      "summary": "Russia's UN envoy says Hormuz navigation 'ruined' by US Mikhail Ulyanov, Russia's permanent representative to the United Nations, criticised US President Donald Trump's policy on the Strait of Hormuz in a post on X on Friday. \"The logic of Washington is not…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/russia-un-envoy-says-hormuz-navigation-ruined-us",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-14T12:51:55.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "25221711b6ee",
