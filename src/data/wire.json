@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-14T20:52:02.417Z",
+  "generatedAt": "2026-08-14T21:14:29.003Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "b8ee5b69ef0a",
+      "title": "BBC seeks to subpoena Trump’s eldest children and son-in-law over defamation lawsuit",
+      "summary": "Network wants to serve Jared Kushner, Ivanka Trump and Donald Trump Jr after president sues over January 6 documentary The BBC is trying to subpoena Donald Trump’s children as it builds its defense against the president’s defamation lawsuit centered on a…",
+      "url": "https://www.theguardian.com/media/2026/aug/14/bbc-trump-children-subpoenas-lawsuit",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-14T21:05:47.000Z",
+      "image": "https://i.guim.co.uk/img/media/c519726d2d851d677c5334018aad733b64b7db60/1132_104_3152_2521/master/3152.jpg?width=700&quality=85&auto=format&fit=max&s=ad2c476df10b802c91c773402e13fdd8",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "0260809968a3",
       "title": "What shrinking US missile stocks means for allies and adversaries around the world",
@@ -580,22 +596,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "25221711b6ee",
-      "title": "Saudi Arabia announces start of Red Sea defence alliance: Will it work?",
-      "summary": "Thirteen countries have become members of the Saudi-led maritime alliance.",
-      "url": "https://www.aljazeera.com/news/2026/8/14/saudi-arabia-announces-start-of-red-sea-defence-alliance-will-it-work?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-14T12:45:11.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "a445a32281c2",
@@ -1415,23 +1415,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "364325cb8c01",
-      "title": "Yen rescue puts Asia's weak currencies on notice: 5 things to know",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/markets/currencies/yen-rescue-puts-asia-s-weak-currencies-on-notice-5-things-to-know",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-13T15:37:18.757Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
