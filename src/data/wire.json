@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-14T04:27:37.808Z",
+  "generatedAt": "2026-08-14T05:53:45.130Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "288a2313f817",
+      "title": "North Korea fumes over upcoming US-South Korea military drills",
+      "summary": "Pyongyang has accused the US of pushing the world 'to the brink of nuclear war'.",
+      "url": "https://www.aljazeera.com/news/2026/8/14/north-korea-fumes-over-upcoming-us-south-korea-military-drills?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-14T05:40:45.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "3df3a9aa5e14",
+      "title": "Farage wins Clacton by-election",
+      "summary": "Reform UK leader sails home in special contest he triggered amid scrutiny of his finances — but misses the count.",
+      "url": "https://www.politico.eu/article/nigel-farage-wins-clacton-by-election/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+      "publisher": "POLITICO Europe",
+      "publisherHome": "https://www.politico.eu",
+      "sourceId": "politico-eu",
+      "publishedAt": "2026-08-14T05:26:46.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "0fb78cf1315c",
+      "title": "Turkey's foreign minister accuses Israel of expelling Palestinians from Gaza",
+      "summary": "Turkey's foreign minister accuses Israel of expelling Palestinians from Gaza Turkish Foreign Minister Hakan Fidan accused Israel of aiming to expel all Palestinians from Gaza, adding that there must be immediate action to pressure Netanyahu to comply with…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkeys-foreign-minister-accuses-israel-expelling-palestinians-gaza",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-14T04:50:48.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "0ce10b1b61c4",
       "title": "Malaysia Q2 GDP growth accelerates to 6.0%",
@@ -162,22 +210,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "18bb89cd96c2",
-      "title": "Middle East live: US threatens Iran with economic isolation like 'never seen before'",
-      "summary": "US Treasury Secretary Scott Bessent threatened Thursday to subject Iran to economic isolation \"like the world has never seen before\", adding that new measures are expected next week. Follow our liveblog for the latest updates.",
-      "url": "https://www.france24.com/en/middle-east/20260814-middle-east-live-us-threatens-iran-with-economic-isolation-like-never-seen-before",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T02:31:55.000Z",
-      "image": "https://s.france24.com/media/display/cf10c646-9783-11f1-b889-005056a97e36/w:1024/p:16x9/AP26211764838482.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -341,22 +373,6 @@
       "weight": 2
     },
     {
-      "id": "d022183e7967",
-      "title": "Polls close in Clacton byelection where Nigel Farage faces slew of fringe candidates",
-      "summary": "Longest ballot in UK voting history features likes of Count Binface and Howling Laud Hope alongside Reform leader Polls have closed in Clacton, where thousands of residents in the Essex seat voted in a ballot featuring Nigel Farage and a range of novelty and…",
-      "url": "https://www.theguardian.com/politics/2026/aug/13/clacton-byelection-polls-open",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-13T21:37:58.000Z",
-      "image": "https://i.guim.co.uk/img/media/10fef22e4aad248b556ea600aa2bc445896b973f/243_0_3100_2480/master/3100.jpg?width=700&quality=85&auto=format&fit=max&s=f8df24c6581d5ed4521f9b58a8eeb872",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "0fd8502f74e0",
       "title": "UAE's Adnoc says two vessels attacked in Strait of Hormuz, no injuries",
       "summary": "UAE's Adnoc says two vessels attacked in Strait of Hormuz, no injuries Abu Dhabi National Oil Company (Adnoc) said two of its vessels were attacked while transiting the Strait of Hormuz on Thursday evening, the United Arab Emirates' state news agency WAM…",
@@ -370,22 +386,6 @@
       "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "bdf72f6c5df6",
-      "title": "What’s at stake in Zambia’s elections?",
-      "summary": "The economy dominates voter concerns in the southern African country.",
-      "url": "https://www.aljazeera.com/video/inside-story/2026/8/13/whats-at-stake-in-zambias-elections?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-13T21:04:22.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
