@@ -1,8 +1,42 @@
 {
-  "generatedAt": "2026-08-14T18:05:17.348Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-14T19:10:35.416Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "6b21c3c238e4",
+      "title": "Trump asks Supreme Court to allow ballroom work to continue",
+      "summary": "Forcing the US president to go \"hat-in-hand to Congress\" for permission would be \"dangerous\", the administration says.",
+      "url": "https://www.bbc.co.uk/news/articles/c3v0yz2r4wlo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-14T19:05:22.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/50eb/live/f1f95720-97e9-11f1-a76b-f1c27c51f3da.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "e5efe61d1072",
+      "title": "Indonesia has all that it takes to move up the value chain",
+      "summary": "Ahead of the 2026 IMF-World Bank Annual Meetings, Indonesia has a chance to showcase its growing economic clout. The challenge is turning its natural resources, young population, and strategic position into lasting productivity gains. The post Indonesia has…",
+      "url": "https://www.atlanticcouncil.org/blogs/econographics/indonesia-has-all-that-it-takes-to-move-up-the-value-chain/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-14T18:57:50.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "medium",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
     {
       "id": "c56a140b572c",
       "title": "Israeli military plans to transfer law enforcement in occupied West Bank to police",
@@ -12,11 +46,27 @@
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
       "publishedAt": "2026-08-14T17:52:51.000Z",
-      "image": "https://i.guim.co.uk/img/media/93d2cb133ccf66f29fb598f95c57681831cf7594/0_0_4560_3648/master/4560.jpg?width=700&quality=85&auto=format&fit=max&s=7beb58478a310504fd0af1bd62de2030",
+      "image": "https://i.guim.co.uk/img/media/b3ca7d7b89c8fea93d13e3268882fcc9a706ce5d/912_0_4560_3648/master/4560.jpg?width=700&quality=85&auto=format&fit=max&s=086c23ec64e85256fca305425a281826",
       "imageWidth": 700,
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "f07a42efe83b",
+      "title": "French court blocks Macron’s social media ban for under-15s",
+      "summary": "Constitutional council says curbs infringe freedom of expression and privacy as president vows to rework legislation France’s top court has blocked a ban on social media access for under-15s, ruling that it infringed freedom of expression and privacy. The…",
+      "url": "https://www.theguardian.com/world/2026/aug/14/french-court-blocks-macron-social-media-ban-under-15s",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-14T17:12:14.000Z",
+      "image": "https://i.guim.co.uk/img/media/37d9d05fd3b13992e53c2a7f0210f723e9bc0a54/92_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=c79d2943a6d3f02319ca72eb1888dbc5",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -41,14 +91,14 @@
       "summary": "Group backs Elijah Manley in primary election in bid to unseat veteran Democrat in newly drawn district A progressive group has endorsed a 27-year-old substitute teacher who overcame childhood homelessness in his bid to unseat the veteran Democrat Debbie…",
       "url": "https://www.theguardian.com/us-news/2026/aug/14/florida-debbie-wasserman-schultz-elijah-manley",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-14T16:54:25.000Z",
       "image": "https://i.guim.co.uk/img/media/9135bf1b1f9f3825fc50bc8af0083d27bacf1b32/0_0_1500_1200/master/1500.jpg?width=700&quality=85&auto=format&fit=max&s=43e612fb9e0696c6abbe5904858fdc6d",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "medium",
-      "region": "Global",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -97,22 +147,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "664ffe5c3f42",
-      "title": "UK politics: Country a ‘tinderbox’, says Burnham, as he calls in military and bans disposable barbecues – as it happened",
-      "summary": "PM also says fire and rescue services will be given more cash This election is a novelty with a record 34 candidates, including Howling Laud Hope of The Official Monster Raving Loony Party and Marcus White from the Everyone is God Party. They have pounded the…",
-      "url": "https://www.theguardian.com/politics/live/2026/aug/14/clacton-byelection-nigel-farage-count-binface-reform-uk-finances-donations-investigation-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-14T15:59:23.000Z",
-      "image": "https://i.guim.co.uk/img/media/8946984dd9ff5c2ed22d7e3fa41312b86326f8c3/695_0_4167_3333/master/4167.jpg?width=700&quality=85&auto=format&fit=max&s=37d0d5c62bde8ad6f156ff0bd6eaa4be",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -177,22 +211,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "6b21c3c238e4",
-      "title": "Trump asks Supreme Court to allow ballroom work to continue",
-      "summary": "Forcing the US president to go \"hat-in-hand to Congress\" for permission would be \"dangerous\", the administration says.",
-      "url": "https://www.bbc.co.uk/news/articles/c3v0yz2r4wlo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-14T15:10:41.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/50eb/live/f1f95720-97e9-11f1-a76b-f1c27c51f3da.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -292,22 +310,6 @@
       "weight": 3
     },
     {
-      "id": "dabd8dd70cfc",
-      "title": "World Bank to fund 645-metre bridge linking Bangui and Zongo",
-      "summary": "The Central African Republic and the Democratic Republic of Congo are set to build a new bridge linking their two major cities, Bangui and Zongo. The 60-million-dollar project will see the construction of a 645-metre bridge across the Congo River, aimed at…",
-      "url": "https://www.france24.com/en/world-bank-to-fund-645-metre-bridge-linking-bangui-and-zongo",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T13:52:37.000Z",
-      "image": "https://s.france24.com/media/display/e8ae000c-97e5-11f1-8fa6-005056a97e36/w:1024/p:16x9/EN-20260813-215150-215350-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "2817d46f5a7e",
       "title": "Taliban pressured by insurgents after 5 years in power",
       "summary": "The Taliban managed to retake power in Afghanistan on August 15, 2021. Now, they face armed factions who challenge the Taliban rule and strain their central claim of providing security.",
@@ -321,22 +323,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "34d61afb3c11",
-      "title": "Chadian President Déby pardons jailed main rival and 8 opposition leaders",
-      "summary": "Chad’s President Mahamat Idriss Déby on Friday pardoned the jailed ex-prime minister and leader of Chad’s main opposition party Succès Masra, along with eight other party leaders. Masra had been serving a 20-year sentence, convicted of hate speech, xenophobia…",
-      "url": "https://www.france24.com/en/africa/20260814-chadian-president-d%C3%A9by-pardons-jailed-main-rival-and-8-opposition-leaders",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T13:48:13.000Z",
-      "image": "https://s.france24.com/media/display/c5e23ab6-97e0-11f1-a96f-005056a90284/w:1024/p:16x9/AP26132439304576.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -422,22 +408,6 @@
       "weight": 3
     },
     {
-      "id": "0de25ab6c4cd",
-      "title": "France's constitutional authority strikes down social media ban for under-15s",
-      "summary": "France's constitutional council struck down a proposed ban on social media for children under 15 on Friday, citing freedom of expression. President Emmanuel Macron tasked Prime Minister Sébastien Lecornu with re-working ​the draft legislation to take the…",
-      "url": "https://www.france24.com/en/france/20260814-france-s-constitutional-authority-strikes-down-social-media-ban-for-under-15s",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T13:17:13.000Z",
-      "image": "https://s.france24.com/media/display/8bd8eb1e-8005-11f1-836b-005056bfb2b6/w:1024/p:16x9/000-B9J29ZQ.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "f3da11b2cbec",
       "title": "Le Conseil Constitutionnel censure la loi interdisant les réseaux sociaux aux mineurs",
       "summary": "PARIS – Le Conseil Constitutionnel a rendu ce vendredi sa décision sur la loi interdisant les réseaux sociaux aux mineurs et a annoncé censurer son article 1er, qui acte ladite interdiction pour les moins de 15 ans. De fait, la décision rend caduque le…",
@@ -483,22 +453,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "12df1dd6eea0",
-      "title": "Tennessee’s Justin Pearson takes on America’s most contentious issues",
-      "summary": "The progressive candidate won a Democratic congressional primary after boldly staking positions on voting rights, datacenters and the US war machine Justin Pearson and Brent Taylor win primaries for key Tennessee House seat Justin Pearson made national…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/14/tennessee-justin-pearson-progressive-candidate",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-14T13:00:27.000Z",
-      "image": "https://i.guim.co.uk/img/media/00f4f92f25676c709674b2c70ebc592134895dc2/320_0_4561_3648/master/4561.jpg?width=700&quality=85&auto=format&fit=max&s=cb0d5730131527fa4fe69771c904aa68",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -630,6 +584,22 @@
       "weight": 2
     },
     {
+      "id": "69d9bf4effc1",
+      "title": "An attack on healthcare every six hours, and no one held to account",
+      "summary": "Across the world, healthcare has suffered more than 10,000 attacks in the past eight years, including during the brutal conflict in Ukraine and efforts to contain the current Ebola outbreak spreading rapidly in the eastern Democratic Republic of the Congo…",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168144",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-14T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/15-08-2025-Avaaz-Sudan-Khartoum-11.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Global",
+      "weight": 2
+    },
+    {
       "id": "2500376f209c",
       "title": "Meth trafficking across Middle East becoming more advanced, UNODC warns",
       "summary": "Authorities in Iran intercepted 3,663 kilogrammes of methamphetamines headed for Europe and the Persian Gulf in the first quarter of 2026, according to the UN’s drugs and crime fighting agency (UNODC).",
@@ -662,22 +632,6 @@
       "weight": 2
     },
     {
-      "id": "9e019c22e0fa",
-      "title": "Zambia suspends vote count nationwide amid reports of violence, ballot theft",
-      "summary": "Zambia's electoral commission on Friday suspended vote counting from Thursday's presidential and parliamentary elections for at least 24 hours due to “violence targeted at poll staff” and reported instances of theft of marked ballot papers. Former minister…",
-      "url": "https://www.france24.com/en/africa/20260814-zambia-suspends-election-vote-counting-over-reports-of-violence",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T11:57:23.000Z",
-      "image": "https://s.france24.com/media/display/4ed5b6a4-97d7-11f1-9fe0-005056bf30b7/w:1024/p:16x9/fde95d622020d705e303b29b9aa9f9eaa2522446.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "d07a4d49f506",
       "title": "Trump’s great plane escape | Politics Weekly America",
       "summary": "When Air Force One took off from Turkey after July’s Nato summit, almost everyone believed Donald Trump was on board … but he wasn’t. Jonathan Freedland talks to Tara Setmayer of the Seneca Project about why the White House felt the need to come up with such…",
@@ -691,38 +645,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "dc8a62e187c4",
-      "title": "US threatens ‘indefinite’ blockade against Iran: How long can it last?",
-      "summary": "US Secretary of Defense Pete Hegseth claims US Navy can sustain blockade despite reports of poor conditions.",
-      "url": "https://www.aljazeera.com/news/2026/8/14/us-threatens-indefinite-blockade-against-iran-how-long-can-it-last?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-14T11:06:59.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "e3734646822d",
-      "title": "Russian ballistic attacks intensify as Kyiv claims Dnipropetrovsk advance",
-      "summary": "Ukraine says it has liberated 26 settlements in the south as it retools under heavy bombardment.",
-      "url": "https://www.aljazeera.com/news/2026/8/14/ukraine-liberates-dnipropetrovsk-as-russia-intensifies-missile-attacks?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-14T11:04:40.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -1257,6 +1179,22 @@
       "weight": 3
     },
     {
+      "id": "6c487946ba93",
+      "title": "Braw in New York Times on Russia’s war against Ukrainian merchant shipping",
+      "summary": "On August 13, Elisabeth Braw was interviewed in an article in the New York Times on Russia’s attacks on Ukrainian merchant shipping. The post Braw in New York Times on Russia’s war against Ukrainian merchant shipping appeared first on Atlantic Council .",
+      "url": "https://www.atlanticcouncil.org/commentary/braw-in-new-york-times-on-russias-war-against-ukrainian-merchant-shipping/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-13T19:00:28.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Eurasia",
+      "weight": 3
+    },
+    {
       "id": "8246a8c5bdc2",
       "title": "Israeli troops force families from homes amid settler terror campaign in West Bank",
       "summary": "Former PM of Israel calls events ‘concerted and meticulous attempt at ethnic cleansing’ against Palestinians Israeli troops have forced two Palestinian families to leave their besieged West Bank homes, the day after a top Israeli commander personally promised…",
@@ -1468,6 +1406,22 @@
       "weight": 2
     },
     {
+      "id": "87ca81b2c70e",
+      "title": "Zambians vote as Hichilema’s economic record faces crucial test",
+      "summary": "Zambians began voting Thursday in a presidential election testing President Hakainde Hichilema’s economic record amid widespread frustration over the cost of living. Millions are also choosing lawmakers and local councillors in a one-day vote expected to…",
+      "url": "http://www.africanews.com/2026/08/13/zambians-vote-as-hichilemas-economic-record-faces-crucial-test/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-13T14:26:57.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/87/29/39/640x360_cmsv2_5c15d198-bf7b-5620-8447-3d5c931e9f03-9872939.jpg?1786616234",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
       "id": "b76ab26021cb",
       "title": "France opens disciplinary proceedings against ambassador to Central African Republic",
       "summary": "The case comes at a sensitive time for French diplomacy. Paris has been working to restore ties with the Central African Republic after relations deteriorated in recent years as Russia expanded its influence in the country through the Wagner paramilitary group",
@@ -1673,23 +1627,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "6046fbda5455",
-      "title": "Li Ka-shing family's CK Hutchison logs profit jump amid stalled port deal",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/companies/li-ka-shing-family-s-ck-hutchison-logs-profit-jump-amid-stalled-port-deal",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-13T09:23:05.722Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -2061,38 +1998,6 @@
       "weight": 2
     },
     {
-      "id": "1ba90e6755b5",
-      "title": "Europe’s rare earth strategy is betting on allies",
-      "summary": "Europe cannot mine its way out of rare earth dependence on China. With most refining still under Chinese control, the EU needs deeper allied cooperation—and sustained investment—to build resilient supply chains. The post Europe’s rare earth strategy is…",
-      "url": "https://www.atlanticcouncil.org/blogs/econographics/europes-rare-earth-strategy-is-betting-on-allies/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-12T14:09:33.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "medium",
-      "region": "Europe",
-      "weight": 3
-    },
-    {
-      "id": "ed04f7ff2d72",
-      "title": "Braw in Al Jazeera on Ukrainian drone attacks on Russian port infrastructure",
-      "summary": "On August 12, Elisabeth Braw was interviewed by Al Jazeera to discuss Ukrainian naval drone attacks on the Russian port city of Novorossiysk. The post Braw in Al Jazeera on Ukrainian drone attacks on Russian port infrastructure appeared first on Atlantic…",
-      "url": "https://www.atlanticcouncil.org/commentary/braw-in-al-jazeera-on-ukrainian-drone-attacks-on-russian-port-infrastructure/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-12T13:59:59.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 3
-    },
-    {
       "id": "fdf53419e429",
       "title": "US inflation cooled slightly to 3.4% in July but prices still elevated",
       "summary": "Energy is cheaper than at its peak in late April, but gas is still nearly $1 a gallon more expensive than before the Iran war US consumer prices cooled slightly in July as the annualized inflation rate dipped down to 3.4%, though prices still remain higher…",
@@ -2166,22 +2071,6 @@
       "sourceId": "un-news",
       "publishedAt": "2026-08-12T12:00:00.000Z",
       "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/08-07-2025-UNICEF-Sudan-01.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "2d56f016d5ed",
-      "title": "Cholera spreads across borders in West and Central Africa",
-      "summary": "Cholera is spreading rapidly across West and Central Africa, with active outbreaks now in six countries and millions of children at growing risk, UN children’s agency UNICEF has said.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168125",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-12T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/assets/2017/12/28629/image560x340cropped.jpg",
       "imageWidth": 0,
       "category": "Diplomacy",
       "categoryConfidence": "source",
