@@ -1,8 +1,41 @@
 {
-  "generatedAt": "2026-08-14T21:57:01.059Z",
+  "generatedAt": "2026-08-14T22:15:14.640Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "84666f54bbbe",
+      "title": "WWII work of Japan's future Nobelists shows complex relationship with military",
+      "summary": "",
+      "url": "https://asia.nikkei.com/spotlight/comment/wwii-work-of-japan-s-future-nobelists-shows-complex-relationship-with-military",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-14T22:15:06.706Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "1186eebed6a6",
+      "title": "Iran has not decided on resuming US talks, ISNA citing foreign minister",
+      "summary": "Iran has not decided on resuming US talks, ISNA citing foreign minister Iranian Foreign Minister Abbas Araghchi said no decision has yet been made to resume negotiations with the United States, the ​Iranian Student News Agency reported. Araghchi added that…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-has-not-decided-resuming-us-talks-isna-citing-foreign-minister",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-14T22:10:49.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "19e34dd16691",
       "title": "Vance says low oil prices are top US goal in Iran conflict",
@@ -324,22 +357,6 @@
       "weight": 2
     },
     {
-      "id": "8b8cc8fd4e62",
-      "title": "Mutual defence: The alliances that preceded Turkiye-Pakistan-Saudi pact",
-      "summary": "The pact says an armed ⁠⁠attack on any one of the ⁠⁠three countries would be ⁠⁠regarded as an ⁠⁠attack against them all.",
-      "url": "https://www.aljazeera.com/news/2026/8/14/mutual-defence-the-alliances-that-preceded-turkiye-pakistan-saudi-pact?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-14T14:19:30.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "8bd14fb4d30e",
       "title": "In Interview, Japarov Says He’d Planned for Tashiev to Be Kyrgyz President Next",
       "summary": "Japarov claimed he changed his mind once he realized Tashiev is “not ready.”",
@@ -454,22 +471,6 @@
       "weight": 2
     },
     {
-      "id": "d57a82b25417",
-      "title": "Iraq says daily oil exports at highest level since start of war",
-      "summary": "Iraq says daily oil exports at highest level since start of war Iraq's average daily oil exports since the beginning of August are the highest since the outbreak of the Middle East war between Iran and the United States, which has choked off the Strait of…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iraq-says-daily-oil-exports-highest-level-start-war",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-14T13:32:51.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "95835b49ac4d",
       "title": "China Forced Nepal to Cancel an International Conference on Tibetan Studies",
       "summary": "The incident reveals Beijing’s growing efforts to assert authority over Tibetan Buddhism – including in other countries.",
@@ -515,22 +516,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "71d0e31128b0",
-      "title": "Pakistan PM’s ‘red line’ warning to India over water treaty",
-      "summary": "Pakistan Prime Minister Shehbaz Sharif accused India of illegally suspending the Indus Waters Treaty.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/14/14-08-clip-pakistan-warns-india-over-indus-pk?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-14T13:07:19.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -1450,23 +1435,6 @@
       "weight": 2
     },
     {
-      "id": "d64412a3fc08",
-      "title": "Tencent to become top shareholder of Manus in unwinding of Meta deal",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/business-deals/tencent-to-become-top-shareholder-of-manus-in-unwinding-of-meta-deal",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-13T15:37:18.756Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "178425fe5af4",
       "title": "Doku commits to Manchester City until 2031 in five-year deal",
       "summary": "Jérémy Doku has signed a new five-year contract with Manchester City, keeping the Belgium winger at the Etihad until 2031. The 24-year-old has become a key part of the squad since joining from Rennes in 2023.",
@@ -1480,22 +1448,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "ad5b2579a261",
-      "title": "By sky and sea, Ukraine's drone strikes challenge Russia's grip on Crimea",
-      "summary": "Russia maintained an iron grip on Crimea since seizing it from Ukraine in 2014. Many Russian civilians go there to enjoy the beaches. But now Ukraine is hitting Crimea hard, upending daily life.",
-      "url": "https://www.npr.org/2026/08/13/nx-s1-5904418/ukraine-crimea-russia-drone-strikes",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-13T15:18:27.000Z",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4778x3185+0+0/resize/4778x3185!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Ff2%2Fb5%2Fd20bf74b402c851eb7ab3831e9ec%2Fcrimea-1-gettyimages-2287489830.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
