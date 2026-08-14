@@ -1,9 +1,7 @@
 {
-  "generatedAt": "2026-08-14T19:10:35.416Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-14T19:54:06.558Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
     {
       "id": "6b21c3c238e4",
@@ -51,22 +49,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "f07a42efe83b",
-      "title": "French court blocks Macron’s social media ban for under-15s",
-      "summary": "Constitutional council says curbs infringe freedom of expression and privacy as president vows to rework legislation France’s top court has blocked a ban on social media access for under-15s, ruling that it infringed freedom of expression and privacy. The…",
-      "url": "https://www.theguardian.com/world/2026/aug/14/french-court-blocks-macron-social-media-ban-under-15s",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-14T17:12:14.000Z",
-      "image": "https://i.guim.co.uk/img/media/37d9d05fd3b13992e53c2a7f0210f723e9bc0a54/92_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=c79d2943a6d3f02319ca72eb1888dbc5",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -310,6 +292,22 @@
       "weight": 3
     },
     {
+      "id": "dabd8dd70cfc",
+      "title": "World Bank to fund 645-metre bridge linking Bangui and Zongo",
+      "summary": "The Central African Republic and the Democratic Republic of Congo are set to build a new bridge linking their two major cities, Bangui and Zongo. The 60-million-dollar project will see the construction of a 645-metre bridge across the Congo River, aimed at…",
+      "url": "https://www.france24.com/en/world-bank-to-fund-645-metre-bridge-linking-bangui-and-zongo",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T13:52:37.000Z",
+      "image": "https://s.france24.com/media/display/e8ae000c-97e5-11f1-8fa6-005056a97e36/w:1024/p:16x9/EN-20260813-215150-215350-CS.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
       "id": "2817d46f5a7e",
       "title": "Taliban pressured by insurgents after 5 years in power",
       "summary": "The Taliban managed to retake power in Afghanistan on August 15, 2021. Now, they face armed factions who challenge the Taliban rule and strain their central claim of providing security.",
@@ -323,6 +321,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "34d61afb3c11",
+      "title": "Chadian President Déby pardons jailed main rival and 8 opposition leaders",
+      "summary": "Chad’s President Mahamat Idriss Déby on Friday pardoned the jailed ex-prime minister and leader of Chad’s main opposition party Succès Masra, along with eight other party leaders. Masra had been serving a 20-year sentence, convicted of hate speech, xenophobia…",
+      "url": "https://www.france24.com/en/africa/20260814-chadian-president-d%C3%A9by-pardons-jailed-main-rival-and-8-opposition-leaders",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T13:48:13.000Z",
+      "image": "https://s.france24.com/media/display/c5e23ab6-97e0-11f1-a96f-005056a90284/w:1024/p:16x9/AP26132439304576.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -406,6 +420,22 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
+    },
+    {
+      "id": "0de25ab6c4cd",
+      "title": "France's constitutional authority strikes down social media ban for under-15s",
+      "summary": "France's constitutional council struck down a proposed ban on social media for children under 15 on Friday, citing freedom of expression. President Emmanuel Macron tasked Prime Minister Sébastien Lecornu with re-working ​the draft legislation to take the…",
+      "url": "https://www.france24.com/en/france/20260814-france-s-constitutional-authority-strikes-down-social-media-ban-for-under-15s",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T13:17:13.000Z",
+      "image": "https://s.france24.com/media/display/8bd8eb1e-8005-11f1-836b-005056bfb2b6/w:1024/p:16x9/000-B9J29ZQ.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
     },
     {
       "id": "f3da11b2cbec",
@@ -629,6 +659,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "9e019c22e0fa",
+      "title": "Zambia suspends vote count nationwide amid reports of violence, ballot theft",
+      "summary": "Zambia's electoral commission on Friday suspended vote counting from Thursday's presidential and parliamentary elections for at least 24 hours due to “violence targeted at poll staff” and reported instances of theft of marked ballot papers. Former minister…",
+      "url": "https://www.france24.com/en/africa/20260814-zambia-suspends-election-vote-counting-over-reports-of-violence",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T11:57:23.000Z",
+      "image": "https://s.france24.com/media/display/4ed5b6a4-97d7-11f1-9fe0-005056bf30b7/w:1024/p:16x9/fde95d622020d705e303b29b9aa9f9eaa2522446.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -1406,22 +1452,6 @@
       "weight": 2
     },
     {
-      "id": "87ca81b2c70e",
-      "title": "Zambians vote as Hichilema’s economic record faces crucial test",
-      "summary": "Zambians began voting Thursday in a presidential election testing President Hakainde Hichilema’s economic record amid widespread frustration over the cost of living. Millions are also choosing lawmakers and local councillors in a one-day vote expected to…",
-      "url": "http://www.africanews.com/2026/08/13/zambians-vote-as-hichilemas-economic-record-faces-crucial-test/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-13T14:26:57.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/87/29/39/640x360_cmsv2_5c15d198-bf7b-5620-8447-3d5c931e9f03-9872939.jpg?1786616234",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "b76ab26021cb",
       "title": "France opens disciplinary proceedings against ambassador to Central African Republic",
       "summary": "The case comes at a sensitive time for French diplomacy. Paris has been working to restore ties with the Central African Republic after relations deteriorated in recent years as Russia expanded its influence in the country through the Wagner paramilitary group",
@@ -1451,22 +1481,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "8cab3b1bc5eb",
-      "title": "Iran says Strait of Hormuz will stay blocked despite Trump’s claim of ‘total control’",
-      "summary": "The Strait of Hormuz remains blocked and Iran says it will stay that way until its conditions are accepted.",
-      "url": "http://www.africanews.com/2026/08/13/iran-says-strait-of-hormuz-will-stay-blocked-despite-trumps-claim-of-total-control/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-13T13:39:04.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/87/31/33/640x360_cmsv2_ce2a483d-5697-59be-9c6e-c648c8481e56-9873133.jpg?1786620562",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1920,7 +1934,7 @@
     {
       "id": "c7f65a20e01c",
       "title": "A deadly earthquake gives Colombia’s new president his first test",
-      "summary": "CALI, Colombia—Most elected officials enter office with an agenda for a better future, and most want to get to work implementing it immediately. Sooner or later, however, that agenda must compete with the urgent, unexpected demands of the present. For newly…",
+      "summary": "After the earthquake, de la Espriella must demonstrate firm leadership and his commitment to making the state work in the regions. The post A deadly earthquake gives Colombia’s new president his first test appeared first on Atlantic Council .",
       "url": "https://www.atlanticcouncil.org/dispatches/deadly-earthquake-gives-colombian-president-his-first-test/",
       "publisher": "Atlantic Council",
       "publisherHome": "https://www.atlanticcouncil.org",
