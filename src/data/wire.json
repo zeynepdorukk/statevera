@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-14T17:11:32.626Z",
+  "generatedAt": "2026-08-14T18:05:17.348Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "c56a140b572c",
+      "title": "Israeli military plans to transfer law enforcement in occupied West Bank to police",
+      "summary": "Palestine’s vice-president calls plan ‘flagrant violation of international law’ and a step towards full Israeli annexation Israel’s defence minister wants to transfer law enforcement powers for Israelis in the occupied West Bank over to the police, a plan…",
+      "url": "https://www.theguardian.com/world/2026/aug/14/israeli-military-plans-transfer-law-enforcement-in-occupied-west-bank-to-police",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-14T17:52:51.000Z",
+      "image": "https://i.guim.co.uk/img/media/93d2cb133ccf66f29fb598f95c57681831cf7594/0_0_4560_3648/master/4560.jpg?width=700&quality=85&auto=format&fit=max&s=7beb58478a310504fd0af1bd62de2030",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "5beaacc50010",
+      "title": "UK diplomats no longer get hardship bonus for being posted to Buenos Aires",
+      "summary": "Civil servants are entitled to extra money for working in difficult or dangerous cities around the world.",
+      "url": "https://www.bbc.co.uk/news/articles/cly5p995ykko?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-14T17:00:46.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3016/live/a7f45110-97fe-11f1-bc94-d3a8a062b873.png",
+      "imageWidth": 240,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "bdb5c67c88ab",
       "title": "Progressives back substitute teacher over Wasserman Schultz in Florida",
@@ -30,22 +62,6 @@
       "publishedAt": "2026-08-14T16:54:00.000Z",
       "image": "",
       "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "f07a42efe83b",
-      "title": "French court blocks Macron’s social media ban for under-15s",
-      "summary": "Constitutional council says curbs infringe freedom of expression and privacy as president vows to rework legislation France’s top court has blocked a ban on social media access for under-15s, ruling that it infringed freedom of expression and privacy. The…",
-      "url": "https://www.theguardian.com/world/2026/aug/14/french-court-blocks-macron-social-media-ban-under-15s",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-14T16:51:59.000Z",
-      "image": "https://i.guim.co.uk/img/media/37d9d05fd3b13992e53c2a7f0210f723e9bc0a54/92_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=c79d2943a6d3f02319ca72eb1888dbc5",
-      "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Europe",
@@ -81,22 +97,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "64c5b4e5fc2d",
-      "title": "Scottish police expect ‘great deal of public opposition’ to planned Larbert datacentre",
-      "summary": "Planning consultation told ‘robust security measures’ will be needed amid growing resistance to such developments Scottish police have warned that a proposed datacentre will require “robust security measures” to prevent “incursion” amid growing public…",
-      "url": "https://www.theguardian.com/uk-news/2026/aug/14/scottish-police-expect-public-opposition-larbert-datacentre",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-14T16:05:31.000Z",
-      "image": "https://i.guim.co.uk/img/media/65184f83e6747a64f330160115edcc9a26c143a4/57_0_1709_1367/master/1709.jpg?width=700&quality=85&auto=format&fit=max&s=605eeef35e187021e2715946daa9423d",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -148,6 +148,22 @@
       "weight": 2
     },
     {
+      "id": "3a1b81e4e5c3",
+      "title": "Singapore’s Israel Tightrope",
+      "summary": "The city-state’s ties with Israel have been built on a history that very few other Asian countries can boast. But Singapore can still say \"no.\"",
+      "url": "https://thediplomat.com/2026/08/singapores-israel-tightrope/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T15:20:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2024/04/thediplomat_2024-04-01-230428.jpg",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
       "id": "746e0c7c3150",
       "title": "Law on assisted dying wins constitutional approval in France",
       "summary": "France's Constitutional Council on Friday approved a law creating a right to assisted dying, removing the last major legal obstacle before the measure can be enacted and implemented.",
@@ -196,6 +212,22 @@
       "weight": 2
     },
     {
+      "id": "d227304e8969",
+      "title": "Taiwan Wants to Know Why Indonesia Joined China in a Naval Exercise East of Taiwan",
+      "summary": "The exercise highlighted increasing tensions in the waters east of Taiwan, which are also close to Japan and the Philippines.",
+      "url": "https://thediplomat.com/2026/08/taiwan-wants-to-know-why-indonesia-joined-china-in-a-naval-exercise-east-of-taiwan/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T14:50:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-14-235710.jpg",
+      "imageWidth": 600,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
       "id": "639d225fd569",
       "title": "War in Ukraine: Deadly Russian air raid on Kramatorsk leaves 1 dead and 17 wounded",
       "summary": "At least one person was killed and 17 injured in a Russian airstrike on Kramatorsk in eastern Ukraine overnight, according to Ukraine’s State Emergency Service.",
@@ -226,6 +258,38 @@
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 2
+    },
+    {
+      "id": "8bd14fb4d30e",
+      "title": "In Interview, Japarov Says He’d Planned for Tashiev to Be Kyrgyz President Next",
+      "summary": "Japarov claimed he changed his mind once he realized Tashiev is “not ready.”",
+      "url": "https://thediplomat.com/2026/08/in-interview-japarov-says-hed-planned-for-tashiev-to-be-kyrgyz-president-next/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T14:00:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/03/thediplomat_2026-03-19-014746.jpg",
+      "imageWidth": 600,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
+      "id": "1c9f281f5039",
+      "title": "Why India Needs a Comprehensive Polar Strategy",
+      "summary": "The Arctic and Antarctic are reshaping both the global climate and the geopolitical chessboard. Yet India remains absent from the tables where polar futures are decided.",
+      "url": "https://thediplomat.com/2026/08/why-india-needs-a-comprehensive-polar-strategy/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T13:56:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-14-225944.jpg",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
     },
     {
       "id": "dabd8dd70cfc",
@@ -342,6 +406,22 @@
       "weight": 2
     },
     {
+      "id": "95835b49ac4d",
+      "title": "China Forced Nepal to Cancel an International Conference on Tibetan Studies",
+      "summary": "The incident reveals Beijing’s growing efforts to assert authority over Tibetan Buddhism – including in other countries.",
+      "url": "https://thediplomat.com/2026/08/china-forced-nepal-to-cancel-an-international-conference-on-tibetan-studies/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T13:21:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-14-222441.jpg",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
       "id": "0de25ab6c4cd",
       "title": "France's constitutional authority strikes down social media ban for under-15s",
       "summary": "France's constitutional council struck down a proposed ban on social media for children under 15 on Friday, citing freedom of expression. President Emmanuel Macron tasked Prime Minister Sébastien Lecornu with re-working ​the draft legislation to take the…",
@@ -438,6 +518,22 @@
       "weight": 3
     },
     {
+      "id": "3af139daf4d5",
+      "title": "In Afghanistan, Growing Resistance Meets Fears of Pakistani Influence",
+      "summary": "Five years after the Taliban’s return, the Afghan resistance is growing but so is the fear of Pakistan’s shadow.",
+      "url": "https://thediplomat.com/2026/08/in-afghanistan-growing-resistance-meets-fears-of-pakistani-influence/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T12:57:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2025/10/thediplomat_2025-10-21-133021.jpg",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
       "id": "9b7129b3c27e",
       "title": "Russia's UN envoy says Hormuz navigation 'ruined' by US",
       "summary": "Russia's UN envoy says Hormuz navigation 'ruined' by US Mikhail Ulyanov, Russia's permanent representative to the United Nations, criticised US President Donald Trump's policy on the Strait of Hormuz in a post on X on Friday. \"The logic of Washington is not…",
@@ -468,6 +564,38 @@
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
+    },
+    {
+      "id": "a445a32281c2",
+      "title": "5 Years After the Fall: Why the World Still Misreads the Taliban",
+      "summary": "The international community assumed that governing would change the Taliban. The Taliban, however, viewed government as a means of transforming society according to their ideology.",
+      "url": "https://thediplomat.com/2026/08/5-years-after-the-fall-why-the-world-still-misreads-the-taliban/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T12:26:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2025/08/thediplomat_2025-08-14-122526.png",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
+      "id": "f29907f1d695",
+      "title": "Afghanistan: 5 Years in the Dark",
+      "summary": "How the Taliban turned Afghanistan into a country where half the population has been ordered to disappear.",
+      "url": "https://thediplomat.com/2026/08/afghanistan-5-years-in-the-dark/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T12:25:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2024/03/thediplomat_2024-03-08-025803.jpeg",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
     },
     {
       "id": "d4410593e990",
@@ -502,6 +630,22 @@
       "weight": 2
     },
     {
+      "id": "2500376f209c",
+      "title": "Meth trafficking across Middle East becoming more advanced, UNODC warns",
+      "summary": "Authorities in Iran intercepted 3,663 kilogrammes of methamphetamines headed for Europe and the Persian Gulf in the first quarter of 2026, according to the UN’s drugs and crime fighting agency (UNODC).",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168142",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-14T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Graphics%20Library/2026/08/14-08-2026-UNODC-infographic.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "a87f4dbb51a2",
       "title": "Sudan: The harrowing reality of giving birth in a war zone",
       "summary": "Sudanese women about to give birth are losing their babies and sometimes their own lives because of a lack of specialist healthcare support, amid the ongoing war, UN humanitarians said on Friday.",
@@ -531,22 +675,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "ecb056c6df41",
-      "title": "First Thing: Court files show how federal agents spied on anti-ICE protesters | Martin Belam",
-      "summary": "Undercover agents infiltrated meetings, private chats and local events. Plus Wile E Coyote returns to the big screen Don’t already get First Thing in your inbox? Sign up here Good morning. The extent to which federal law enforcement targeted political…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/14/first-thing-court-files-federal-agents-spying-anti-ice-protesters",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-14T11:35:16.000Z",
-      "image": "https://i.guim.co.uk/img/media/5e2a28ae5f9e2354dd15dedd18436d62fa829869/400_0_4000_3200/master/4000.jpg?width=700&quality=85&auto=format&fit=max&s=06fb5996ff0ee3ba09395f05d291b21e",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -662,6 +790,22 @@
       "weight": 2
     },
     {
+      "id": "0659679b49ed",
+      "title": "Mecca Joint Deterrence Agreement: Implications for India",
+      "summary": "Pakistan would surely try to rally the group and invoke the pact in some form in the event of tensions with India.",
+      "url": "https://thediplomat.com/2026/08/mecca-joint-deterrence-agreement-implications-for-india/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T10:48:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-10-224019.jpg",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
       "id": "a30884d682bb",
       "title": "Sen. Ruben Gallego on handling of USS Lincoln conditions: 'That's not proper leadership'",
       "summary": "Lawmakers want answers from the Pentagon chief and the U.S. Navy about living conditions aboard the USS Lincoln. NPR's Michel Martin speaks with Democratic Sen. Ruben Gallego of Arizona.",
@@ -691,22 +835,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "a2c7e6412db7",
-      "title": "UK: Farage wins controversial by-election",
-      "summary": "In the UK, far-right politician Nigel Farage has won a victory of sorts in a by-election on the English coast, securing 63 percent of the vote. But all the major parties boycotted the vote, calling it a stunt by Farage. His closest challenger was a joke…",
-      "url": "https://www.france24.com/en/uk-farage-wins-controversial-by-election",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T10:29:22.000Z",
-      "image": "https://s.france24.com/media/display/79338fb8-97c6-11f1-8bd3-005056bfb2b6/w:1024/p:16x9/EN-20260814-100855-101051-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -740,22 +868,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "d1aa9ec7e17a",
-      "title": "Albanian ambassador attacks UK right wing for ‘unhinged’ fixation with 2022 migrant surge",
-      "summary": "Exclusive: Uran Ferizi says arrivals fell sharply after short-lived influx, but country continues to be stigmatised The number of Albanians who travelled to Britain in small boats four years ago remains the focus of “unhinged” and “hysterical” criticisms from…",
-      "url": "https://www.theguardian.com/uk-news/2026/aug/14/albanian-ambassador-attacks-uk-right-wing-fixation-2022-migrant-surge",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-14T09:29:56.000Z",
-      "image": "https://i.guim.co.uk/img/media/b1f861dee3546f4945fa06bdf476f3727d9630f4/121_0_3419_2736/master/3419.jpg?width=700&quality=85&auto=format&fit=max&s=b0428642a09e4acb6008d64e8f2b891c",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -872,6 +984,22 @@
       "weight": 3
     },
     {
+      "id": "ee8988b275d9",
+      "title": "Indonesia’s Transgender Community Is Facing Growing Repression",
+      "summary": "Vigilante mobs are attacking transgender people as the government takes steps to codify anti-LGBTQ+ attitudes into law.",
+      "url": "https://thediplomat.com/2026/08/indonesias-transgender-community-is-facing-growing-repression/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T07:28:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2019/02/thediplomat-pride-828056_1920.jpg",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
       "id": "9146026e9a4d",
       "title": "Trump adviser, Board of Peace envoy to visit Israel for talks on US Gaza plan: Report",
       "summary": "White House does not want Israeli elections to stall implementation of next phase of plan, reports Axios",
@@ -888,6 +1016,22 @@
       "weight": 2
     },
     {
+      "id": "363cadf44fd9",
+      "title": "The Key Takeaways From the Vietnamese President’s Visit to Australia",
+      "summary": "To Lam's four-day trip marked a new high-water mark in the relationship between Hanoi and Canberra.",
+      "url": "https://thediplomat.com/2026/08/the-key-takeaways-from-the-vietnamese-presidents-visit-to-australia/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T07:04:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2022/07/thediplomat_2022-07-20-035258.jpg",
+      "imageWidth": 600,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
       "id": "859c966887e5",
       "title": "Sen. Van Hollen: Iran war is illegal and we cannot fund another dime",
       "summary": "Today, there is no all-out war, no peace, and no light at the end of the Strait of Hormuz. The Trump administration’s crack at transforming Iran is drifting along in the Persian Gulf, as on-again, off-again negotiations fail to resolve a conflict that has…",
@@ -901,6 +1045,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Middle East",
+      "weight": 3
+    },
+    {
+      "id": "2ea5c189f0c4",
+      "title": "Thailand Denies Reports It Planned to Use Security Cooperation as US Tariff Leverage",
+      "summary": "Bangkok has reaffirmed its commitment to the security relationship and denied a report that it was prepared to link military cooperation to ongoing trade talks.",
+      "url": "https://thediplomat.com/2026/08/thailand-denies-reports-it-planned-to-use-security-cooperation-as-us-tariff-leverage/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T06:20:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2025/11/thediplomat_2025-11-17-092024.jpg",
+      "imageWidth": 600,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
       "weight": 3
     },
     {
@@ -950,6 +1110,22 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Americas",
+      "weight": 3
+    },
+    {
+      "id": "48228d9eccf5",
+      "title": "Restrictions on Foreign Fund Flow to Christian Organizations in India Complicate India-US Ties",
+      "summary": "If the row over India’s proposed amendment of the FCRA persists alongside other irritants, the trade deal will remain in limbo for the foreseeable future.",
+      "url": "https://thediplomat.com/2026/08/restrictions-on-foreign-fund-flow-to-christian-organizations-in-india-complicate-india-us-ties/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-14T02:52:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2024/04/thediplomat_2024-04-26-081851.jpg",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
       "weight": 3
     },
     {
@@ -1162,22 +1338,6 @@
       "weight": 2
     },
     {
-      "id": "1e17cc76ee98",
-      "title": "How Could the Rise of Progressive Democrats Impact US China Policy?",
-      "summary": "A divide over China, although less pronounced than the divide over Israel, has become increasingly visible among Democrats as progressives have risen within the party.",
-      "url": "https://thediplomat.com/2026/08/how-could-the-rise-of-progressive-democrats-impact-us-china-policy/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-13T17:08:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-14-021114.jpeg",
-      "imageWidth": 600,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
       "id": "7c7a50dd6aa5",
       "title": "Vladimir Putin's first visit to disputed Pacific islands draws Tokyo protest",
       "summary": "The four southernmost islands of the chain also are claimed by Japan, which calls them the Northern Territories.",
@@ -1308,22 +1468,6 @@
       "weight": 2
     },
     {
-      "id": "e599d9d73517",
-      "title": "Why Is Everyone Playing Mahjong?",
-      "summary": "The centuries-old game is having a moment. But what happens when a tradition rooted in Chinese history becomes a lifestyle trend?",
-      "url": "https://thediplomat.com/2026/08/why-is-everyone-playing-mahjong/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-13T14:48:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-13-235259.jpg",
-      "imageWidth": 600,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
       "id": "b76ab26021cb",
       "title": "France opens disciplinary proceedings against ambassador to Central African Republic",
       "summary": "The case comes at a sensitive time for French diplomacy. Paris has been working to restore ties with the Central African Republic after relations deteriorated in recent years as Russia expanded its influence in the country through the Wagner paramilitary group",
@@ -1356,22 +1500,6 @@
       "weight": 2
     },
     {
-      "id": "b0a3b8fd7cf0",
-      "title": "Can South Korea’s $880 Billion AI Ambition Help Cement Its Status as a High-Tech Powerhouse?",
-      "summary": "Plans are firmly underway to ensure that South Korea’s chipmaking strength can help to facilitate a stronger global position when it comes to the AI buildout.",
-      "url": "https://thediplomat.com/2026/08/can-south-koreas-880-billion-ai-ambition-help-cement-its-status-as-a-high-tech-powerhouse/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-13T14:05:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2021/12/thediplomat_2021-12-17-142312.jpg",
-      "imageWidth": 600,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
       "id": "8cab3b1bc5eb",
       "title": "Iran says Strait of Hormuz will stay blocked despite Trump’s claim of ‘total control’",
       "summary": "The Strait of Hormuz remains blocked and Iran says it will stay that way until its conditions are accepted.",
@@ -1386,38 +1514,6 @@
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
-    },
-    {
-      "id": "07b6b2464c92",
-      "title": "North Korea Fires Ballistic Missiles, Deepening Silence Fuels Analyst Speculation",
-      "summary": "Seoul, Tokyo, and Washington condemned two ballistic missile launches ahead of allied military drills, but Pyongyang’s failure to report either test has left analysts guessing at the cause.",
-      "url": "https://thediplomat.com/2026/08/north-korea-fires-ballistic-missiles-deepening-silence-fuels-analyst-speculation/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-13T13:32:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/04/thediplomat_2026-04-20-225309.png",
-      "imageWidth": 600,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
-      "id": "975112565299",
-      "title": "The US Military Can’t Function Without China",
-      "summary": "Rare earths are critical to making modern weapons – and China dominates the supply chain.",
-      "url": "https://thediplomat.com/2026/08/the-us-military-cant-function-without-china/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-13T13:13:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-13-221601.jpg",
-      "imageWidth": 600,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 3
     },
     {
       "id": "a25c96408f14",
@@ -1449,54 +1545,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 3
-    },
-    {
-      "id": "d5a8464e39f5",
-      "title": "Can Japan’s Defense Industry Meet its Ambitious Goals?",
-      "summary": "Japan increasingly recognizes the importance of the defense industrial base as a source of strategic capability. But can the industry actually deliver?",
-      "url": "https://thediplomat.com/2026/08/can-japans-defense-industry-meet-its-ambitious-goals/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-13T12:48:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2025/07/thediplomat_2025-07-02-133038.jpg",
-      "imageWidth": 600,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
-      "id": "c7435cf44180",
-      "title": "Competing Interests, Common Narrative: How Industry Shapes the AI Race",
-      "summary": "Different firms in the AI value chain invoke the AI race narrative, but with different policy preferences in mind.",
-      "url": "https://thediplomat.com/2026/08/competing-interests-common-narrative-how-industry-shapes-the-ai-race/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-13T12:48:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2025/03/thediplomat_2025-03-25-040521.jpg",
-      "imageWidth": 600,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
-      "id": "5e6f7281f7bf",
-      "title": "Vietnam’s Top Leader Concludes Australia Visit With Trade, Defense in Focus",
-      "summary": "In their updated Joint Vision Statement, Canberra and Hanoi identify a more challenging regional security environment.",
-      "url": "https://thediplomat.com/2026/08/vietnams-top-leader-concludes-australia-visit-with-trade-defense-in-focus/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-13T12:25:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-13-213436.jpg",
-      "imageWidth": 600,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 3
     },
     {
@@ -1677,22 +1725,6 @@
       "weight": 3
     },
     {
-      "id": "eb00aa5da313",
-      "title": "How the Modi Government is Downgrading India’s National Anthem",
-      "summary": "For the first time in eight decades, the country’s national song, Vande Mataram, will precede the playing of the national anthem on Independence Day.",
-      "url": "https://thediplomat.com/2026/08/how-the-modi-government-is-downgrading-indias-national-anthem/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-13T07:23:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-13-162921.jpg",
-      "imageWidth": 600,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
       "id": "93ecd0501833",
       "title": "UK economic growth slows down as Iran war pushes up energy prices",
       "summary": "GDP expanded by 0.4% in three months to June, but analysts warn growth is ‘likely to fade’ UK economy shows surprising resilience Business live – latest updates Economic growth slowed in the second quarter of the year, as the disruption unleashed by the Iran…",
@@ -1707,38 +1739,6 @@
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
-    },
-    {
-      "id": "86d9439528ac",
-      "title": "Vietnam, Rare Earths, and the Evolving China Plus One Strategy",
-      "summary": "Vietnam has benefited greatly from foreign firms' desire to de-risk from China. Can it free itself of dependence on the country's critical rare earth inputs?",
-      "url": "https://thediplomat.com/2026/08/vietnam-rare-earths-and-the-evolving-china-plus-one-strategy/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-13T05:15:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2022/11/thediplomat_2022-11-21-091641.jpg",
-      "imageWidth": 600,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
-      "id": "70e9b3c5a76a",
-      "title": "Myanmar’s Resistance Finally Has a Unified Front",
-      "summary": "The new Steering Council for the Emergence of a Federal Democratic Union could change the course of the country's conflict.",
-      "url": "https://thediplomat.com/2026/08/myanmars-resistance-finally-has-a-unified-front/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-13T04:56:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-13-140556.jpg",
-      "imageWidth": 600,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Asia-Pacific",
-      "weight": 3
     },
     {
       "id": "33bbf54aba93",
@@ -1933,22 +1933,6 @@
       "weight": 3
     },
     {
-      "id": "48427370d104",
-      "title": "Japan’s Underground Lab Wants to Solve the World’s Nuclear Waste Problem",
-      "summary": "A rare visit to the Horonobe Underground Research Laboratory, where Japanese researchers are testing options for storing radioactive waste.",
-      "url": "https://thediplomat.com/2026/08/japans-underground-lab-wants-to-solve-the-worlds-nuclear-waste-problem/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-12T17:09:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-13-020259.jpg",
-      "imageWidth": 600,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
       "id": "966d93740039",
       "title": "Pentagon says it killed at least 150 Yemeni civilians in strikes",
       "summary": "The Pentagon acknowledged for the first time that U.S. military operations killed Yemeni civilians last year, in an annual report on civilian casualties it sent to members of Congress Tuesday. CENTCOM determined that three operations in Yemen last year “more…",
@@ -2043,22 +2027,6 @@
       "categoryConfidence": "high",
       "region": "Eurasia",
       "weight": 2
-    },
-    {
-      "id": "e67026098b5e",
-      "title": "Data of 15 Million Kazakhstanis Allegedly Leaked",
-      "summary": "A hacker claims to have stolen the data from Kazakhstan eGov service. The authorities are investigating the claim.",
-      "url": "https://thediplomat.com/2026/08/data-of-15-million-kazakhstanis-allegedly-leaked/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-12T15:16:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-13-001837.jpg",
-      "imageWidth": 600,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Eurasia",
-      "weight": 3
     },
     {
       "id": "4a85d79d1cdf",
@@ -2218,22 +2186,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "4a3d43db356a",
-      "title": "WHO chief voices concern over Trump Administration’s executive order on vaccines",
-      "summary": "The head of the World Health Organization (WHO) on Wednesday upheld the safety of childhood vaccines in response to a new directive from the White House to overhaul the recommended inoculation schedule.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168124",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-12T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/14-07-2025-UNICEF-Ukraine-polio.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -2482,8 +2434,8 @@
       "summary": "Lawsuit challenges executive order targeting international criminal court for investigating Israeli crimes in Palestine Four prominent US human rights organizations have accused the Trump administration of using its “crippling” sanctions regime against the…",
       "url": "https://www.theguardian.com/us-news/2026/aug/11/human-rights-groups-trump-lawsuit-icc-sanctions",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
       "publishedAt": "2026-08-11T15:10:16.000Z",
       "image": "https://i.guim.co.uk/img/media/5c551917c35bcb59f884aa24a70b9287bb68abe0/43_0_3252_2602/master/3252.jpg?width=700&quality=85&auto=format&fit=max&s=9655ae8ffe8b8b8740cf1b7bc1b2383e",
       "imageWidth": 700,
@@ -2797,6 +2749,22 @@
       "weight": 2
     },
     {
+      "id": "457c7b8c1b81",
+      "title": "Netanyahu's rejection of Trump's 15-point Gaza plan unlikely to be final word",
+      "summary": "The Trump administration is said to be unbothered by the Israeli prime minister's rejection of the deal, viewing it as campaign rhetoric ahead of a general election.",
+      "url": "https://www.bbc.co.uk/news/articles/ce3q5282ep3o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/middle_east",
+      "sourceId": "bbc-mideast",
+      "publishedAt": "2026-08-10T14:43:08.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1688/live/5a6f2b30-94c1-11f1-adb5-bd19050a74a5.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "91024385e6ab",
       "title": "At least 13 killed in Ukrainian drone strike deep into Russia",
       "summary": "Russian officials say another 75 people were injured by the attack - one of the deadliest Ukrainian drone attacks since Moscow's full-scale invasion.",
@@ -2874,22 +2842,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "20c45a65aa54",
-      "title": "Netanyahu rejects US-led 15-point Gaza peace plan in rare public break with Trump",
-      "summary": "Israeli PM says IDF will not withdraw until Hamas is disarmed and rebukes US pressure to end wars without his country’s buy-in Israel’s prime minister, Benjamin Netanyahu, has rejected a US-backed 15-point peace plan for Gaza in a rare public break with…",
-      "url": "https://www.theguardian.com/world/2026/aug/09/israel-rejects-us-led-15-point-gaza-peace-plan-says-netanyahu",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-09T20:00:48.000Z",
-      "image": "https://i.guim.co.uk/img/media/abf1b6b87678a98aa666eefdb7ed2e2cd9ea85b7/398_0_3413_2731/master/3413.jpg?width=700&quality=85&auto=format&fit=max&s=a7fd958fbc3f4f5c206d848966004e84",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
