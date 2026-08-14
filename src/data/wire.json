@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-14T20:20:19.228Z",
+  "generatedAt": "2026-08-14T20:52:02.417Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "0260809968a3",
+      "title": "What shrinking US missile stocks means for allies and adversaries around the world",
+      "summary": "Replenishing US munitions stocks used in the Iran war could take years, and the repercussions are likely to be felt in Europe, the Indo-Pacific, and beyond. The post What shrinking US missile stocks means for allies and adversaries around the world appeared…",
+      "url": "https://www.atlanticcouncil.org/dispatches/what-shrinking-us-missile-stocks-means-for-allies-and-adversaries-around-the-world/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-14T20:49:31.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 3
+    },
+    {
+      "id": "d8fd5e7d6626",
+      "title": "Trump says he will 'soon' declare Hormuz strait US territory",
+      "summary": "Trump says he will 'soon' declare Hormuz strait US territory President Donald Trump on Friday said he would \"soon\" declare the Strait of Hormuz waterway part of US territory after defeating Iran. \"After we finish defeating Iran, which is being very badly…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-says-will-soon-declare-hormuz-strait-us-territory",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-14T20:27:55.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "dd7fc59cfc09",
+      "title": "Trump says record Navy deployment in Iran operations 'not nearly long enough'",
+      "summary": "US President Donald Trump on Friday dismissed concerns about the toll on sailors aboard the aircraft carrier USS Abraham Lincoln, who have endured a record deployment of almost nine months, saying that the deployment had been “not nearly long enough”. The…",
+      "url": "https://www.france24.com/en/middle-east/20260814-trump-says-record-navy-deployment-in-iran-operations-not-nearly-long-enough",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T20:17:38.000Z",
+      "image": "https://s.france24.com/media/display/80a702ec-9817-11f1-a732-005056a97e36/w:1024/p:16x9/000-C4NF8WE.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "d919e64241bb",
       "title": "US has lost roughly 25 percent of its Reaper drones in Iran war: Report",
@@ -129,22 +177,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "ccf03b2a876e",
-      "title": "What’s next for far-right Reform UK after Farage’s by-election win?",
-      "summary": "",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/14/whats-next-for-far-right-reform-uk-after-farages-by-election-win?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-14T16:35:45.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -1994,22 +2026,6 @@
       "categoryConfidence": "high",
       "region": "Eurasia",
       "weight": 2
-    },
-    {
-      "id": "4a85d79d1cdf",
-      "title": "Ukraine is also fighting for its future in the EU. With the right help and reforms, it can win.",
-      "summary": "Ukraine's path to prosperity also depends on advancing EU accession reforms and sustaining US support for civil society. The post Ukraine is also fighting for its future in the EU. With the right help and reforms, it can win. appeared first on Atlantic…",
-      "url": "https://www.atlanticcouncil.org/dispatches/ukraine-can-also-win-war-on-corruption-with-help-and-reforms/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-12T14:59:46.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Eurasia",
-      "weight": 3
     },
     {
       "id": "0d416c63a585",
