@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T22:57:57.170Z",
+  "generatedAt": "2026-08-14T23:17:17.913Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -306,22 +306,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "5a3436f5b7ab",
-      "title": "Netanyahu brands Britain an ‘Islamic republic’ as it prepares Israel sanctions",
-      "summary": "Netanyahu brands Britain an ‘Islamic republic’ as it prepares Israel sanctions Submitted by Elis Gjevori on Fri, 08/14/2026 - 14:49 The Israeli prime minister attacks London despite years of British arms sales, intelligence sharing and diplomatic protection A…",
-      "url": "https://www.middleeasteye.net/news/netanyahu-brands-britain-islamic-republic-despite-prepares-israel-sanctions",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-14T15:21:45.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
