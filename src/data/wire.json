@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-14T22:15:14.640Z",
+  "generatedAt": "2026-08-14T22:41:24.174Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "fabe0493e2f5",
+      "title": "Iran's deputy foreign minister says won't be intimidated by US threats after Trump's statements on Hormuz",
+      "summary": "Iran's deputy foreign minister says won't be intimidated by US threats after Trump's statements on Hormuz Iran's Deputy Foreign Minister Kazem Gharibabadi said early Saturday that Tehran would not be intimidated by threats or a show of force by Washington…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/irans-deputy-foreign-minister-says-wont-be-intimidated-us-threats-after",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-14T22:25:25.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "84666f54bbbe",
       "title": "WWII work of Japan's future Nobelists shows complex relationship with military",
@@ -22,8 +38,8 @@
     },
     {
       "id": "1186eebed6a6",
-      "title": "Iran has not decided on resuming US talks, ISNA citing foreign minister",
-      "summary": "Iran has not decided on resuming US talks, ISNA citing foreign minister Iranian Foreign Minister Abbas Araghchi said no decision has yet been made to resume negotiations with the United States, the ​Iranian Student News Agency reported. Araghchi added that…",
+      "title": "Iran has not decided on resuming US talks, Araghchi says",
+      "summary": "Iran has not decided on resuming US talks, Araghchi says Iranian Foreign Minister Abbas Araghchi said no decision has yet been made to resume negotiations with the United States, the ​Iranian Student News Agency reported. Araghchi added that mediator Qatar…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-has-not-decided-resuming-us-talks-isna-citing-foreign-minister",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -209,6 +225,22 @@
       "imageWidth": 240,
       "category": "Diplomacy",
       "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "bdb5c67c88ab",
+      "title": "Progressives back substitute teacher over Wasserman Schultz in Florida",
+      "summary": "Group backs Elijah Manley in primary election in bid to unseat veteran Democrat in newly drawn district A progressive group has endorsed a 27-year-old substitute teacher who overcame childhood homelessness in his bid to unseat the veteran Democrat Debbie…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/14/florida-debbie-wasserman-schultz-elijah-manley",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-14T16:54:25.000Z",
+      "image": "https://i.guim.co.uk/img/media/9135bf1b1f9f3825fc50bc8af0083d27bacf1b32/0_0_1500_1200/master/1500.jpg?width=700&quality=85&auto=format&fit=max&s=43e612fb9e0696c6abbe5904858fdc6d",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
       "region": "Americas",
       "weight": 2
     },
@@ -1208,22 +1240,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "fa9ec2b400ec",
-      "title": "US conducted ‘mass spying campaign’ against leftwing groups and anti-ICE protesters, records reveal",
-      "summary": "DHS sent undercover agents to meetings and infiltrated chats of groups opposing Trump’s immigration crackdown Newly disclosed records reveal the US government extensively spied on prominent leftwing organizations and on protesters as part of a vast operation…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/13/us-government-spied-anti-ice-protesters",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-13T23:06:04.000Z",
-      "image": "https://i.guim.co.uk/img/media/56df7d438fbc734a9cf5ba75d077400fa5d78021/500_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=e547ccc62a45d7bfb4ed371a0ce83e46",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "b5e1b4165eb6",
@@ -2552,22 +2568,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "045fbb73254e",
-      "title": "How the Rhine drought threatens Germany's economic recovery",
-      "summary": "Germany's inland waterways still move around 5% of the nation's goods. With the Rhine at a critically low level, DW explores how the drought is hitting the economy where it hurts most.",
-      "url": "https://www.dw.com/en/how-the-rhine-drought-threatens-germany-s-economic-recovery/a-78300076?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-10T15:55:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
