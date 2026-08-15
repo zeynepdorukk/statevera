@@ -1,7 +1,9 @@
 {
-  "generatedAt": "2026-08-15T12:14:36.786Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-15T12:58:39.407Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
     {
       "id": "2ebd46ff0f6a",
@@ -11,11 +13,27 @@
       "publisher": "Africanews",
       "publisherHome": "https://www.africanews.com/",
       "sourceId": "africanews",
-      "publishedAt": "2026-08-15T11:48:18.000Z",
+      "publishedAt": "2026-08-15T12:15:14.000Z",
       "image": "http://images.euronews.com/articles/stories/09/87/53/82/640x360_cmsv2_32dfe956-0aa3-51d6-a1dd-d80719987af1-9875382.jpg?1786776607",
       "imageWidth": 0,
       "category": "Security",
       "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "8a017754e712",
+      "title": "Former rebel fighters join campaign against Ebola in the DR Congo",
+      "summary": "Demobilised former combatants are actively joining the fight against Ebola by participating in public information campaigns in the east of the Democratic Republic of the Congo.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168146",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-15T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/14-08-2026-MONUSCO-DR-Congo-ebola-02.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
       "region": "Africa",
       "weight": 2
     },
@@ -161,22 +179,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "d1c6fa4de632",
-      "title": "'We're seeing an important escalation in southern Lebanon despite the so-called truce'",
-      "summary": "Overnight Israeli strikes in southern Lebanon killed at least seven people in one village, in the deadliest escalation since the lull in fighting began two months ago. FRANCE 24 correspondent Renée Davis, reporting from Beirut, says the strikes mark a…",
-      "url": "https://www.france24.com/en/we-re-seeing-an-important-escalation-in-southern-lebanon-despite-the-so-called-truce",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-15T09:59:22.000Z",
-      "image": "https://s.france24.com/media/display/99beeffe-988c-11f1-ac90-005056bf30b7/w:1024/p:16x9/EN-20260815-110119-110440-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -386,22 +388,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "11ed4ed5ed6f",
-      "title": "'The nightmare is over': Families reunite as Venezuela frees political prisoners",
-      "summary": "Venezuela's government freed 131 detained ​prisoners on Friday, as human rights groups hailed releases of some ​people ‌they say were being held ⁠unjustly or for political reasons.",
-      "url": "https://www.france24.com/en/americas/20260814-the-nightmare-is-over-families-reunite-as-venezuela-frees-political-prisoners",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T21:55:14.000Z",
-      "image": "https://s.france24.com/media/display/5e88eec0-984c-11f1-bcd9-005056bfb2b6/w:1024/p:16x9/003a420a71bfa55848a0d9f5cec9358a28e639bf.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -1530,22 +1516,6 @@
       "weight": 2
     },
     {
-      "id": "178425fe5af4",
-      "title": "Doku commits to Manchester City until 2031 in five-year deal",
-      "summary": "Jérémy Doku has signed a new five-year contract with Manchester City, keeping the Belgium winger at the Etihad until 2031. The 24-year-old has become a key part of the squad since joining from Rennes in 2023.",
-      "url": "http://www.africanews.com/2026/08/13/doku-commits-to-manchester-city-until-2031-in-five-year-deal/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-13T15:31:17.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/87/33/60/640x360_cmsv2_dc23bbc6-2b75-555c-bda3-a3c24a285e6f-9873360.jpg?1786627119",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "7fcee502911f",
       "title": "France and 30 other countries condemn Iran's executions of protestors",
       "summary": "More than 30 countries, including France, the United Kingdom and Canada, have condemned Iran's use of capital punishment, saying in a joint statement on Wednesday the Islamic Republic was executing protesters to \"silence dissent\". Tehran accused its critics…",
@@ -2086,22 +2056,6 @@
       "imageWidth": 700,
       "category": "Economy",
       "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "e04609ab2f08",
-      "title": "Youth advocates gather in New York to launch new AI standards",
-      "summary": "As artificial intelligence (AI) rapidly transforms everything from how we learn, to the job market, children are adopting the technology more than three times faster than adults – exposing them to unique opportunities and risks.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168129",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-12T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/08/12-08-2026-UN-News-youth.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
       "region": "Global",
       "weight": 2
     },
