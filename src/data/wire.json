@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-15T07:14:42.559Z",
+  "generatedAt": "2026-08-15T07:44:29.295Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "e6e8782613ee",
+      "title": "UN calls for negotiations to end the conflict in Mozambique",
+      "summary": "A military victory over jihadist insurgents in Mozambique's Cabo Delgado province does not appear imminent, according to a report by a United Nations special rapporteur released Friday.",
+      "url": "http://www.africanews.com/2026/08/15/un-calls-for-negotiations-to-end-the-conflict-in-mozambique/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-15T06:21:25.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/87/52/51/640x360_cmsv2_c0f938b7-7576-56ec-afcd-00fbb52a4e6b-9875251.jpg?1786738010",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
     {
       "id": "53d7ddf02914",
       "title": "Seven people killed in Israeli air attacks on southern Lebanon",
@@ -373,22 +389,6 @@
       "weight": 2
     },
     {
-      "id": "6b21c3c238e4",
-      "title": "Trump asks US Supreme Court to allow ballroom work to continue",
-      "summary": "Forcing the US president to go \"hat-in-hand to Congress\" for permission would be \"dangerous\", the administration says.",
-      "url": "https://www.bbc.co.uk/news/articles/c3v0yz2r4wlo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-14T19:05:22.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/50eb/live/f1f95720-97e9-11f1-a76b-f1c27c51f3da.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "e5efe61d1072",
       "title": "Indonesia has all that it takes to move up the value chain",
       "summary": "Ahead of the 2026 IMF-World Bank Annual Meetings, Indonesia has a chance to showcase its growing economic clout. The challenge is turning its natural resources, young population, and strategic position into lasting productivity gains. The post Indonesia has…",
@@ -418,22 +418,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "5beaacc50010",
-      "title": "UK diplomats no longer get hardship bonus for being posted to Buenos Aires",
-      "summary": "Civil servants are entitled to extra money for working in difficult or dangerous cities around the world.",
-      "url": "https://www.bbc.co.uk/news/articles/cly5p995ykko?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-14T17:00:46.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3016/live/a7f45110-97fe-11f1-bc94-d3a8a062b873.png",
-      "imageWidth": 240,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -1165,8 +1149,8 @@
       "summary": "A new US report said China had moved goods through nations with lower tariffs to dodge higher levies.",
       "url": "https://www.bbc.co.uk/news/articles/c78gy6ep3n5o?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
+      "publisherHome": "https://www.bbc.com/news/business",
+      "sourceId": "bbc-business",
       "publishedAt": "2026-08-14T08:39:46.000Z",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d8fc/live/12e1de40-977b-11f1-a8a8-85d648bbf002.jpg",
       "imageWidth": 240,
@@ -1591,22 +1575,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "b76ab26021cb",
-      "title": "France opens disciplinary proceedings against ambassador to Central African Republic",
-      "summary": "The case comes at a sensitive time for French diplomacy. Paris has been working to restore ties with the Central African Republic after relations deteriorated in recent years as Russia expanded its influence in the country through the Wagner paramilitary group",
-      "url": "http://www.africanews.com/2026/08/13/france-opens-disciplinary-proceedings-against-ambassador-to-central-african-republic/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-13T14:26:48.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/87/32/11/640x360_cmsv2_1f5269b6-e7a6-55d5-a2a3-95284d6e5791-9873211.jpg?1786622722",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
