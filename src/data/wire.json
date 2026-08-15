@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-15T10:56:02.498Z",
+  "generatedAt": "2026-08-15T11:10:47.414Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
-      "id": "8a6229fe1a24",
+      "id": "e340854ca216",
       "title": "Thirteen years after Rabaa massacre, families urge Egypt to free political prisoners",
       "summary": "Thirteen years after Rabaa massacre, families urge Egypt to free political prisoners Submitted by MEE staff on Sat, 08/15/2026 - 11:05 On 14 August 2013, Egyptian forces under Abdel Fattah el-Sisi killed at least 900 pro-democracy protesters Egyptian…",
-      "url": "https://www.middleeasteye.net/news/egypt-urged-release-political-prisoners-rabaa-massacre-anniversary",
+      "url": "https://www.middleeasteye.net/news/thirteen-years-after-rabaa-massacre-families-urge-egypt-free-political-prisoners",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
       "sourceId": "middle-east-eye",
@@ -41,8 +41,8 @@
       "summary": "Two airstrikes reportedly hit homes in Ansar and Deir al-Zahrani with rescue services trying to find survivors Nine people have been killed, including three children, and 11 injured in two Israeli airstrikes on south Lebanon, the worst toll since deals in…",
       "url": "https://www.theguardian.com/world/2026/aug/15/israeli-strike-on-southern-lebanon-kills-seven-in-worst-toll-since-june-state-media-says",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-15T10:48:33.000Z",
       "image": "https://i.guim.co.uk/img/media/7c89de51a1cb60ff5893f2358eef87af6a328c6a/103_0_4103_3283/master/4103.jpg?width=700&quality=85&auto=format&fit=max&s=911b9a5b1a0f4fdb589438acfc269af0",
       "imageWidth": 700,
@@ -289,22 +289,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "c32975108115",
-      "title": "Venezuela says 131 political prisoners freed amid post-Maduro talks",
-      "summary": "As detainees granted 'alternative' to imprisonment, US welcomes release as crucial step for Venezuela's reconciliation.",
-      "url": "https://www.aljazeera.com/news/2026/8/15/venezuela-says-131-political-prisoners-freed-amid-post-maduro-talks?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-15T02:08:02.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
