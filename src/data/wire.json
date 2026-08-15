@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T15:54:19.452Z",
+  "generatedAt": "2026-08-15T16:10:49.451Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -226,6 +226,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "cddb8e100969",
+      "title": "The grass beneath our feet: Why rangelands matter",
+      "summary": "In northern Kenya, a herder scans the sky for rain that hasn't come. The grass his animals need is thinning by the day.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168119",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-15T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/10-08-2026-UNDP-Kazakhstan-rangelands.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Global",
       "weight": 2
     },
     {
