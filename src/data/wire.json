@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-15T22:09:02.015Z",
+  "generatedAt": "2026-08-15T22:35:09.974Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "b54e9b656950",
+      "title": "Hamas chief heads to Cairo for talks ahead of Kushner visit",
+      "summary": "Hamas chief heads to Cairo for talks ahead of Kushner visit Hamas leader Khalil al-Hayya is set to travel to Cairo for talks with Egyptian officials, a Hamas source tells AFP, ahead of a visit by US President Donald Trump’s envoy Jared Kushner to the region.…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-chief-heads-cairo-talks-ahead-kushner-visit",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T22:31:17.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "be639d9256cf",
+      "title": "US Democrats finalise major shakeup to 2028 presidential primary calendar",
+      "summary": "South Carolina will again take centre stage as the first nominating contest, pushing Iowa from its top spot.",
+      "url": "https://www.aljazeera.com/news/2026/8/15/us-democrats-finalise-major-shakeup-to-2028-presidential-primary-calendar?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-15T22:22:46.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "e9e4895993b1",
       "title": "Report: Drone strikes kill three Houthi fighters and wound commanders in southwest Yemen",
@@ -306,22 +338,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "9cfd4714e9fa",
-      "title": "Five years on, how will Taliban deal with armed opposition?",
-      "summary": "The United Nations says armed groups opposed to the government remain active.",
-      "url": "https://www.aljazeera.com/news/2026/8/15/five-years-on-how-will-taliban-deal-with-armed-opposition?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-15T12:44:30.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
