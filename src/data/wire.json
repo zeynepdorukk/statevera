@@ -1,7 +1,9 @@
 {
-  "generatedAt": "2026-08-15T14:56:35.028Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-15T15:12:33.559Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
     {
       "id": "ac62d2ad884d",
@@ -276,22 +278,6 @@
       "weight": 2
     },
     {
-      "id": "d1c6fa4de632",
-      "title": "'We're seeing an important escalation in southern Lebanon despite the so-called truce'",
-      "summary": "Overnight Israeli strikes in southern Lebanon killed at least seven people in one village, in the deadliest escalation since the lull in fighting began two months ago. FRANCE 24 correspondent Renée Davis, reporting from Beirut, says the strikes mark a…",
-      "url": "https://www.france24.com/en/we-re-seeing-an-important-escalation-in-southern-lebanon-despite-the-so-called-truce",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-15T09:59:22.000Z",
-      "image": "https://s.france24.com/media/display/99beeffe-988c-11f1-ac90-005056bf30b7/w:1024/p:16x9/EN-20260815-110119-110440-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "71ce77244153",
       "title": "UN says $50 million ransom fueled Al-Qaeda offensive in Mali",
       "summary": "According to a new UN report, most of the money was redistributed to fighters in the Sahel, while some was passed on to Al-Qaeda’s affiliate in the Arabian Peninsula and to the group’s central command.",
@@ -450,22 +436,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "11ed4ed5ed6f",
-      "title": "'The nightmare is over': Families reunite as Venezuela frees political prisoners",
-      "summary": "Venezuela's government freed 131 detained ​prisoners on Friday, as human rights groups hailed releases of some ​people ‌they say were being held ⁠unjustly or for political reasons.",
-      "url": "https://www.france24.com/en/americas/20260814-the-nightmare-is-over-families-reunite-as-venezuela-frees-political-prisoners",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T21:55:14.000Z",
-      "image": "https://s.france24.com/media/display/5e88eec0-984c-11f1-bcd9-005056bfb2b6/w:1024/p:16x9/003a420a71bfa55848a0d9f5cec9358a28e639bf.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
