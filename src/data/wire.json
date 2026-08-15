@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-15T07:59:33.897Z",
+  "generatedAt": "2026-08-15T08:28:14.153Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "446ed2a458ad",
+      "title": "India: Modi promises free exam coaching, AI training for youth after protests",
+      "summary": "Speaking on India's Independence Day, PM Modi announced free online coaching for competitive exams and AI training for 10 million youths, weeks after protests over alleged exam paper leaks and recruitment irregularities.",
+      "url": "https://www.dw.com/en/india-modi-promises-free-exam-coaching-ai-training-for-youth-after-protests/a-78378982?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-15T08:25:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "e6e8782613ee",
       "title": "UN calls for negotiations to end the conflict in Mozambique",
@@ -31,22 +47,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "01a1c27cf3db",
-      "title": "Middle East live: Trump threatens US takeover of Hormuz as Iran vows to retain control",
-      "summary": "US President Donald Trump threatened to declare the Strait of Hormuz US territory after vowing to “finish defeating” Iran in a New York rally on Friday. Tehran rejected the claim on Saturday, with Deputy Foreign Minister Kazem Gharibabadi saying the strategic…",
-      "url": "https://www.france24.com/en/middle-east/20260815-middle-east-live-trump-threatens-us-takeover-of-hormuz-as-iran-vows-to-retain-control",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-15T05:12:23.000Z",
-      "image": "https://s.france24.com/media/display/4acbe102-9866-11f1-a709-005056bf30b7/w:1024/p:16x9/AP26218279369637-1.jpg",
-      "imageWidth": 0,
-      "category": "Geopolitics",
       "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
@@ -2520,22 +2520,6 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "52acebdf5046",
-      "title": "Turkey MPs back historic law on reintegrating PKK militants",
-      "summary": "Turkey's parliament has taken a major step toward ending four decades of conflict with the PKK. The new law sets out how some militants can return to civilian life, but leaves Abdullah Ocalan's future unresolved.",
-      "url": "https://www.dw.com/en/turkey-mps-back-historic-law-on-reintegrating-pkk-militants/a-78313397?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-10T22:22:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Turkey",
-      "weight": 2
     },
     {
       "id": "832172e69047",
