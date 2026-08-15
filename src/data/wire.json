@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-15T11:54:14.912Z",
+  "generatedAt": "2026-08-15T12:14:36.786Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "2ebd46ff0f6a",
+      "title": "Burkina Faso imposes military training on journalists",
+      "summary": "More than 40 journalists in Burkina Faso have taken part in a military-style \"patriotism\" training course imposed by the authoritarian ruling junta.",
+      "url": "http://www.africanews.com/2026/08/15/burkina-faso-imposes-military-training-on-journalists/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-15T11:48:18.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/87/53/82/640x360_cmsv2_32dfe956-0aa3-51d6-a1dd-d80719987af1-9875382.jpg?1786776607",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
     {
       "id": "027ff6689190",
       "title": "Israeli drone strike injures three in central Gaza",
@@ -33,6 +49,22 @@
       "category": "Geopolitics",
       "categoryConfidence": "medium",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "8aebfd5175f1",
+      "title": "Is China seeking to copy Iran’s Strait of Hormuz blockade around Taiwan?",
+      "summary": "Taiwan has long prepared for a Chinese military invasion but wars in Iran and Ukraine expose new potential threats.",
+      "url": "https://www.aljazeera.com/video/101-east/2026/8/15/is-china-seeking-to-copy-irans-strait-of-hormuz-blockade-around-taiwan?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-15T11:30:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -273,22 +305,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "f6c5f5668431",
-      "title": "Did the US really destroy Iran’s ballistic missile capability?",
-      "summary": "The US claims it destroyed Iran’s missile capability, but a former White House adviser calls that a “pipe dream\".",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/15/08-11-2026-tia-us-iran-munitions-quotable?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-15T03:52:08.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
