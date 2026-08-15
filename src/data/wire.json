@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T16:57:52.296Z",
+  "generatedAt": "2026-08-15T17:16:13.341Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -434,22 +434,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "53d7ddf02914",
-      "title": "Seven people killed in Israeli air attacks on southern Lebanon",
-      "summary": "Seven people killed in Israeli air attacks on southern Lebanon Seven people were killed following an Israeli air strike on the town of Ansar in southern Lebanon early Saturday morning, according to the country’s civil defence. Israeli jets struck the…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/six-killed-israeli-air-attacks-southern-lebanon",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-15T05:26:57.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
