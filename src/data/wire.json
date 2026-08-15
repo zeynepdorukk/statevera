@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-15T05:14:57.913Z",
+  "generatedAt": "2026-08-15T05:42:06.484Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "53d7ddf02914",
+      "title": "Seven people killed in Israeli air attacks on southern Lebanon",
+      "summary": "Seven people killed in Israeli air attacks on southern Lebanon Seven people were killed following an Israeli air strike on the town of Ansar in southern Lebanon early Saturday morning, according to the country’s civil defence. Israeli jets struck the…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/six-killed-israeli-air-attacks-southern-lebanon",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T05:26:57.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "01a1c27cf3db",
       "title": "Middle East live: Trump threatens US takeover of Hormuz as Iran vows to retain control",
@@ -306,22 +322,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "19e34dd16691",
-      "title": "Vance says low oil prices are top US goal in Iran conflict",
-      "summary": "Vance says low oil prices are top US goal in Iran conflict Vice President JD Vance said on Thursday that the top US priority in the Iran war was keeping oil and gasoline prices low for Americans, with preventing Tehran from acquiring a nuclear weapon ranking…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/vance-says-low-oil-prices-are-top-us-goal-iran-conflict",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-14T21:44:35.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -744,7 +744,7 @@
     },
     {
       "id": "0de25ab6c4cd",
-      "title": "France's constitutional authority strikes down social media ban for under-15s",
+      "title": "France's top court blocks Macron's social media ban for under-15s",
       "summary": "France's constitutional council struck down a proposed ban on social media for children under 15 on Friday, citing freedom of expression. President Emmanuel Macron tasked Prime Minister Sébastien Lecornu with re-working ​the draft legislation to take the…",
       "url": "https://www.france24.com/en/france/20260814-france-s-constitutional-authority-strikes-down-social-media-ban-for-under-15s",
       "publisher": "France 24",
@@ -754,7 +754,7 @@
       "image": "https://s.france24.com/media/display/8bd8eb1e-8005-11f1-836b-005056bfb2b6/w:1024/p:16x9/000-B9J29ZQ.jpg",
       "imageWidth": 0,
       "category": "Politics",
-      "categoryConfidence": "high",
+      "categoryConfidence": "medium",
       "region": "Europe",
       "weight": 2
     },
@@ -1495,23 +1495,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "da5f62702537",
-      "title": "Japan's Takaichi charts own course on Russian diplomacy",
-      "summary": "",
-      "url": "https://asia.nikkei.com/politics/international-relations/japan-s-takaichi-charts-own-course-on-russian-diplomacy",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-13T18:34:10.216Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
