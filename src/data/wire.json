@@ -1,10 +1,40 @@
 {
-  "generatedAt": "2026-08-15T10:11:02.148Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-15T10:36:24.706Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
+    {
+      "id": "330df4029a4d",
+      "title": "Where healthcare could sway voters, Democratic canvassers ramp up an old tactic: talking to people",
+      "summary": "In Wisconsin, voters weigh candidates who backed cuts to Medicare and Medicaid, and those who want to expand it Going door to door in western Wisconsin, Bill Hogseth tells strangers about the seizures he has multiple times a week. Hogseth, the co-executive…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/15/wisconsin-healthcare-democrats-canvassers",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-15T10:00:54.000Z",
+      "image": "https://i.guim.co.uk/img/media/089c9ec5f740d0bbda50fba48b2da9d70250cd0b/231_0_2503_2002/master/2503.jpg?width=700&quality=85&auto=format&fit=max&s=e7613b00ad496dffffb4eca610a20115",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "d1c6fa4de632",
+      "title": "'We're seeing an important escalation in southern Lebanon despite the so-called truce'",
+      "summary": "Overnight Israeli strikes in southern Lebanon killed at least seven people in one village, in the deadliest escalation since the lull in fighting began two months ago. FRANCE 24 correspondent Renée Davis, reporting from Beirut, says the strikes mark a…",
+      "url": "https://www.france24.com/en/we-re-seeing-an-important-escalation-in-southern-lebanon-despite-the-so-called-truce",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-15T09:59:22.000Z",
+      "image": "https://s.france24.com/media/display/99beeffe-988c-11f1-ac90-005056bf30b7/w:1024/p:16x9/EN-20260815-110119-110440-CS.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "71ce77244153",
       "title": "UN says $50 million ransom fueled Al-Qaeda offensive in Mali",
@@ -13,7 +43,7 @@
       "publisher": "Africanews",
       "publisherHome": "https://www.africanews.com/",
       "sourceId": "africanews",
-      "publishedAt": "2026-08-15T09:10:28.000Z",
+      "publishedAt": "2026-08-15T09:10:29.000Z",
       "image": "http://images.euronews.com/articles/stories/09/87/54/40/640x360_cmsv2_4ecfaa6c-b853-5fae-9eed-8bc7d59722f8-9875440.jpg?1786781014",
       "imageWidth": 0,
       "category": "Security",
@@ -214,22 +244,6 @@
       "weight": 2
     },
     {
-      "id": "c32975108115",
-      "title": "Venezuela says 131 political prisoners freed amid post-Maduro talks",
-      "summary": "As detainees granted 'alternative' to imprisonment, US welcomes release as crucial step for Venezuela's reconciliation.",
-      "url": "https://www.aljazeera.com/news/2026/8/15/venezuela-says-131-political-prisoners-freed-amid-post-maduro-talks?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-15T02:08:02.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "b44b5133fa9b",
       "title": "Coalition split on Andrew Bragg speech as South Australian senator Andrew McLachlan urges colleagues to ‘follow his lead’",
       "summary": "Senior colleagues dismiss Bragg’s migration figures as ‘personal views’ while others say critical response is an ‘overreaction’ Get our breaking news email , free app or daily news podcast The Liberal senator Andrew McLachlan has publicly backed Andrew Bragg…",
@@ -295,6 +309,22 @@
       "weight": 2
     },
     {
+      "id": "11ed4ed5ed6f",
+      "title": "'The nightmare is over': Families reunite as Venezuela frees political prisoners",
+      "summary": "Venezuela's government freed 131 detained ​prisoners on Friday, as human rights groups hailed releases of some ​people ‌they say were being held ⁠unjustly or for political reasons.",
+      "url": "https://www.france24.com/en/americas/20260814-the-nightmare-is-over-families-reunite-as-venezuela-frees-political-prisoners",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T21:55:14.000Z",
+      "image": "https://s.france24.com/media/display/5e88eec0-984c-11f1-bcd9-005056bfb2b6/w:1024/p:16x9/003a420a71bfa55848a0d9f5cec9358a28e639bf.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "def668b7e9dc",
       "title": "Trump threatens to declare strait of Hormuz ‘territory of the United States’",
       "summary": "Seriousness of remark made in New York on Friday, and whether it signaled new policy ​position, not clear Donald Trump has threatened to declare the strait of Hormuz as “a territory of the United States” as his administration struggles to conclude the war…",
@@ -341,6 +371,22 @@
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 3
+    },
+    {
+      "id": "dd7fc59cfc09",
+      "title": "Trump says record Navy deployment in Iran operations 'not nearly long enough'",
+      "summary": "US President Donald Trump on Friday dismissed concerns about the toll on sailors aboard the aircraft carrier USS Abraham Lincoln, who have endured a record deployment of almost nine months, saying that the deployment had been “not nearly long enough”. The…",
+      "url": "https://www.france24.com/en/middle-east/20260814-trump-says-record-navy-deployment-in-iran-operations-not-nearly-long-enough",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T20:17:38.000Z",
+      "image": "https://s.france24.com/media/display/80a702ec-9817-11f1-a732-005056a97e36/w:1024/p:16x9/000-C4NF8WE.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
     },
     {
       "id": "4603d757aed6",
@@ -1420,22 +1466,6 @@
       "weight": 2
     },
     {
-      "id": "1ccc17370820",
-      "title": "Tesla paid Elon Musk 2.5m times more as CEO than its average worker in 2025",
-      "summary": "Tech billionaire’s $158.3bn deal an outlier in report showing widening gap of CEO to worker pay at top companies Elon Musk received over 2.5m times as much compensation at Tesla as the company’s average worker, according to a new report on the growing gap…",
-      "url": "https://www.theguardian.com/business/2026/aug/13/elon-musk-tesla-pay-workers",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-13T16:31:14.000Z",
-      "image": "https://i.guim.co.uk/img/media/667343356ec711ebe9805b26bd35bb6be6022994/287_0_2501_2001/master/2501.jpg?width=700&quality=85&auto=format&fit=max&s=4cb4da718ea8eb5a51c601b4f589a523",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "182debe3e33a",
       "title": "Presidential pardon for French alleged spy accused of plotting Mali coup",
       "summary": "France is yet to comment on Yann Vezilier's pardon and previously called the accusations \"unfounded\".",
@@ -1849,22 +1879,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "4f9f4efd7d48",
-      "title": "What can we learn from Francesca Hong’s loss in Wisconsin? | Ben Davis",
-      "summary": "A fairly overtly radical socialist winning about 40% of the vote in a primary like this was unthinkable even a few years ago The left’s insurgency against the Democratic party establishment has hit its first serious bump in the road in Wisconsin. Democratic…",
-      "url": "https://www.theguardian.com/commentisfree/2026/aug/12/francesca-hongs-defeat-wisconsin-lessons",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-12T18:00:35.000Z",
-      "image": "https://i.guim.co.uk/img/media/f08aba807cbdea31c4308ce5ef4f380bc3e7d870/220_0_2198_1758/master/2198.jpg?width=700&quality=85&auto=format&fit=max&s=f6f1324aee6b1fc57c534e3011df3d2b",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
