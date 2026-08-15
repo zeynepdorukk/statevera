@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T13:28:26.918Z",
+  "generatedAt": "2026-08-15T13:51:34.220Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -70,7 +70,7 @@
     {
       "id": "8a017754e712",
       "title": "Former rebel fighters join campaign against Ebola in the DR Congo",
-      "summary": "Demobilised former combatants are actively joining the fight against Ebola by participating in public information campaigns in the east of the Democratic Republic of the Congo (DRC).",
+      "summary": "Demobilised former combatants are actively joining the fight against Ebola by participating in public information campaigns in the east of the Democratic Republic of the Congo.",
       "url": "https://news.un.org/feed/view/en/story/2026/08/1168146",
       "publisher": "UN News",
       "publisherHome": "https://news.un.org/en",
@@ -289,22 +289,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "800ab79981fe",
-      "title": "Is the US ready for President Alexandria Ocasio-Cortez?",
-      "summary": "The New York congresswoman’s power is in the spotlight as people wonder if the stars are finally aligning for her to run for US president in 2028 “They assume that my ambition is positional. They assume that my ambition is a title or a seat. And my ambition…",
-      "url": "https://www.theguardian.com/news/ng-interactive/2026/aug/15/will-aoc-run-for-president",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-15T05:00:50.000Z",
-      "image": "https://i.guim.co.uk/img/media/1df59ee85f53da4c7d6485ec5dad6ba21f5b8435/0_566_3600_2878/master/3600.jpg?width=700&quality=85&auto=format&fit=max&s=e2ed34e74d8e7aa3453e5f45563814dd",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
