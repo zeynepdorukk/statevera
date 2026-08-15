@@ -1,10 +1,26 @@
 {
-  "generatedAt": "2026-08-15T23:10:33.681Z",
+  "generatedAt": "2026-08-15T23:32:30.164Z",
   "sourceCount": 26,
   "failedSources": [
     "france24"
   ],
   "items": [
+    {
+      "id": "e3153285630a",
+      "title": "Colombia asks Trump to suspend tariffs as country reels from earthquake",
+      "summary": "Post-earthquake reconstruction is expected to cost about $6.4bn, but Colombia has been hit by renewed US tariffs.",
+      "url": "https://www.aljazeera.com/news/2026/8/15/colombia-asks-trump-to-suspend-tariffs-as-country-reels-from-earthquake?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-15T23:04:47.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "b54e9b656950",
       "title": "Hamas chief heads to Cairo for talks ahead of Kushner visit",
