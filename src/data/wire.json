@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T08:54:26.988Z",
+  "generatedAt": "2026-08-15T09:15:15.894Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -196,22 +196,6 @@
       "weight": 2
     },
     {
-      "id": "c32975108115",
-      "title": "Venezuela says 131 political prisoners freed amid post-Maduro talks",
-      "summary": "As detainees granted 'alternative' to imprisonment, US welcomes release as crucial step for Venezuela's reconciliation.",
-      "url": "https://www.aljazeera.com/news/2026/8/15/venezuela-says-131-political-prisoners-freed-amid-post-maduro-talks?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-15T02:08:02.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "b44b5133fa9b",
       "title": "Coalition split on Andrew Bragg speech as South Australian senator Andrew McLachlan urges colleagues to ‘follow his lead’",
       "summary": "Senior colleagues dismiss Bragg’s migration figures as ‘personal views’ while others say critical response is an ‘overreaction’ Get our breaking news email , free app or daily news podcast The Liberal senator Andrew McLachlan has publicly backed Andrew Bragg…",
@@ -274,6 +258,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "11ed4ed5ed6f",
+      "title": "'The nightmare is over': Families reunite as Venezuela frees political prisoners",
+      "summary": "Venezuela's government freed 131 detained ​prisoners on Friday, as human rights groups hailed releases of some ​people ‌they say were being held ⁠unjustly or for political reasons.",
+      "url": "https://www.france24.com/en/americas/20260814-the-nightmare-is-over-families-reunite-as-venezuela-frees-political-prisoners",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T21:55:14.000Z",
+      "image": "https://s.france24.com/media/display/5e88eec0-984c-11f1-bcd9-005056bfb2b6/w:1024/p:16x9/003a420a71bfa55848a0d9f5cec9358a28e639bf.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -341,6 +341,22 @@
       "weight": 2
     },
     {
+      "id": "4603d757aed6",
+      "title": "Zambia resumes counting after violence disrupts election process",
+      "summary": "Zambia has resumed vote counting after a nationwide suspension over election-related violence, with the Electoral Commission saying security threats have been contained. The first presidential results are expected at 10:00 p.m. local time, or 2000 GMT.",
+      "url": "http://www.africanews.com/2026/08/14/zambia-resumes-counting-after-violence-disrupts-election-process/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-14T19:07:37.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/87/50/88/640x360_cmsv2_fcd69ecd-18b3-5c5e-84b3-18be7bf87363-9875088.jpg?1786726801",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
       "id": "e5efe61d1072",
       "title": "Indonesia has all that it takes to move up the value chain",
       "summary": "Ahead of the 2026 IMF-World Bank Annual Meetings, Indonesia has a chance to showcase its growing economic clout. The challenge is turning its natural resources, young population, and strategic position into lasting productivity gains. The post Indonesia has…",
@@ -370,6 +386,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "f07a42efe83b",
+      "title": "French court blocks Macron’s social media ban for under-15s",
+      "summary": "Constitutional council says curbs infringe freedom of expression and privacy as president vows to rework legislation France’s top court has blocked a ban on social media access for under-15s, ruling that it infringed freedom of expression and privacy. The…",
+      "url": "https://www.theguardian.com/world/2026/aug/14/french-court-blocks-macron-social-media-ban-under-15s",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-14T17:12:14.000Z",
+      "image": "https://i.guim.co.uk/img/media/37d9d05fd3b13992e53c2a7f0210f723e9bc0a54/92_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=c79d2943a6d3f02319ca72eb1888dbc5",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -581,22 +613,6 @@
       "weight": 2
     },
     {
-      "id": "34d61afb3c11",
-      "title": "Chadian President Déby pardons jailed main rival and 8 opposition leaders",
-      "summary": "Chad’s President Mahamat Idriss Déby on Friday pardoned the jailed ex-prime minister and leader of Chad’s main opposition party Succès Masra, along with eight other party leaders. Masra had been serving a 20-year sentence, convicted of hate speech, xenophobia…",
-      "url": "https://www.france24.com/en/africa/20260814-chadian-president-d%C3%A9by-pardons-jailed-main-rival-and-8-opposition-leaders",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T13:48:13.000Z",
-      "image": "https://s.france24.com/media/display/c5e23ab6-97e0-11f1-a96f-005056a90284/w:1024/p:16x9/AP26132439304576.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "70b79d1f00af",
       "title": "Indonesia's Prabowo targets 6% growth, lower budget deficit in 2027",
       "summary": "",
@@ -645,22 +661,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "0de25ab6c4cd",
-      "title": "France's top court blocks Macron's social media ban for under-15s",
-      "summary": "France's constitutional council struck down a proposed ban on social media for children under 15 on Friday, citing freedom of expression. President Emmanuel Macron tasked Prime Minister Sébastien Lecornu with re-working ​the draft legislation to take the…",
-      "url": "https://www.france24.com/en/france/20260814-france-s-constitutional-authority-strikes-down-social-media-ban-for-under-15s",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T13:17:13.000Z",
-      "image": "https://s.france24.com/media/display/8bd8eb1e-8005-11f1-836b-005056bfb2b6/w:1024/p:16x9/000-B9J29ZQ.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Europe",
-      "weight": 2
     },
     {
       "id": "f3da11b2cbec",
@@ -884,22 +884,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "9e019c22e0fa",
-      "title": "Zambia suspends vote count nationwide amid reports of violence, ballot theft",
-      "summary": "Zambia's electoral commission on Friday suspended vote counting from Thursday's presidential and parliamentary elections for at least 24 hours due to “violence targeted at poll staff” and reported instances of theft of marked ballot papers. Former minister…",
-      "url": "https://www.france24.com/en/africa/20260814-zambia-suspends-election-vote-counting-over-reports-of-violence",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T11:57:23.000Z",
-      "image": "https://s.france24.com/media/display/4ed5b6a4-97d7-11f1-9fe0-005056bf30b7/w:1024/p:16x9/fde95d622020d705e303b29b9aa9f9eaa2522446.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
