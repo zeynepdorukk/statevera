@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-15T13:51:34.220Z",
+  "generatedAt": "2026-08-15T14:11:18.676Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "be0547c48ba1",
+      "title": "Israeli strikes on southern Lebanon kill 11 in worst toll since June truce",
+      "summary": "Rescue services search for survivors and bodies after airstrikes hit homes in Ansar and Deir al-Zahrani Eleven people have been killed, including three children, and 19 injured in two Israeli airstrikes on southern Lebanon, the worst toll since deals in June…",
+      "url": "https://www.theguardian.com/world/2026/aug/15/israeli-strike-on-southern-lebanon-kills-seven-in-worst-toll-since-june-state-media-says",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
+      "publishedAt": "2026-08-15T13:55:28.000Z",
+      "image": "https://i.guim.co.uk/img/media/7c89de51a1cb60ff5893f2358eef87af6a328c6a/103_0_4103_3283/master/4103.jpg?width=700&quality=85&auto=format&fit=max&s=911b9a5b1a0f4fdb589438acfc269af0",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "2e9c4b0176a5",
       "title": "Nine killed in Israeli strikes on Lebanon as tensions test peace framework",
@@ -70,7 +86,7 @@
     {
       "id": "8a017754e712",
       "title": "Former rebel fighters join campaign against Ebola in the DR Congo",
-      "summary": "Demobilised former combatants are actively joining the fight against Ebola by participating in public information campaigns in the east of the Democratic Republic of the Congo.",
+      "summary": "Demobilised former combatants are actively joining the fight against Ebola by participating in public information campaigns in the east of the Democratic Republic of the Congo (DRC).",
       "url": "https://news.un.org/feed/view/en/story/2026/08/1168146",
       "publisher": "UN News",
       "publisherHome": "https://news.un.org/en",
@@ -193,22 +209,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "be0547c48ba1",
-      "title": "Israeli strikes on south Lebanon kill nine in worst toll since June",
-      "summary": "Two airstrikes reportedly hit homes in Ansar and Deir al-Zahrani with rescue services trying to find survivors Nine people have been killed, including three children, and 11 injured in two Israeli airstrikes on south Lebanon, the worst toll since deals in…",
-      "url": "https://www.theguardian.com/world/2026/aug/15/israeli-strike-on-southern-lebanon-kills-seven-in-worst-toll-since-june-state-media-says",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-15T10:48:33.000Z",
-      "image": "https://i.guim.co.uk/img/media/7c89de51a1cb60ff5893f2358eef87af6a328c6a/103_0_4103_3283/master/4103.jpg?width=700&quality=85&auto=format&fit=max&s=911b9a5b1a0f4fdb589438acfc269af0",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
