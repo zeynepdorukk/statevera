@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T09:46:54.314Z",
+  "generatedAt": "2026-08-15T10:11:02.148Z",
   "sourceCount": 26,
   "failedSources": [
     "france24"
@@ -2822,22 +2822,6 @@
       "publishedAt": "2026-08-05T22:47:45.000Z",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cea7/live/33cb3d80-911e-11f1-befb-c1ce8cf596f6.jpg",
       "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "c4e7bcbebcd4",
-      "title": "US refunds $100bn of Donald Trump’s ‘liberation day’ tariffs",
-      "summary": "More than half of tariff income refunded after supreme court ruled Trump’s levies were illegal Business live – latest updates The Trump administration has refunded about $100bn from the tariffs it collected before the US supreme court ruled them illegal,…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/05/trump-administration-has-paid-back-100bn-of-165bn-tariff-refunds",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
-      "publishedAt": "2026-08-05T10:43:44.000Z",
-      "image": "https://i.guim.co.uk/img/media/ed2c3601a468df43f57e47e94309fd63d0d09547/0_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=b3d13cb20c147a549cc139716c921144",
-      "imageWidth": 700,
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
