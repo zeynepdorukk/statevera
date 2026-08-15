@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-15T02:18:19.389Z",
+  "generatedAt": "2026-08-15T03:09:55.584Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "cac1af78e328",
+      "title": "Rashida Tlaib rally cancelled after Florida lawmaker calls its 'anti-jew'",
+      "summary": "Rashida Tlaib rally cancelled after Florida lawmaker calls its 'anti-jew' A South Florida site backed out of hosting a rally with Democratic US Representative Rashida Tlaib, a vocal critic of Israel's government, after complaints by a Democratic state…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/rashida-tlaib-rally-cancelled-after-florida-lawmaker-calls-its-anti-jew",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T02:53:11.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "4c2eb59bb81c",
+      "title": "Hamas likely to elect Gaza political bureau head next week, report says",
+      "summary": "Hamas likely to elect Gaza political bureau head next week, report says Hamas is expected to hold internal elections in the Gaza Strip next week to choose the head of its political bureau for the territory, Arab48 reported. Ali Al-Amoudi is the most likely…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-likely-elect-gaza-political-bureau-head-next-week-report-says",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T02:36:34.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "f7deca45fc43",
       "title": "Houthi spokesman says 'Saudi warships and mercenaries' targeted",
@@ -17,6 +49,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "c32975108115",
+      "title": "Venezuela says 131 political prisoners freed amid post-Maduro talks",
+      "summary": "As detainees granted 'alternative' to imprisonment, US welcomes release as crucial step for Venezuela's reconciliation.",
+      "url": "https://www.aljazeera.com/news/2026/8/15/venezuela-says-131-political-prisoners-freed-amid-post-maduro-talks?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-15T02:08:02.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
