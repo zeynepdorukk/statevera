@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T18:12:44.715Z",
+  "generatedAt": "2026-08-15T18:46:38.975Z",
   "sourceCount": 26,
   "failedSources": [
     "france24"
@@ -19,6 +19,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "7efc257cb6e5",
+      "title": "Inter Milan sign England’s Djed Spence from Tottenham Hotspur",
+      "summary": "The 26-year-old, who has signed a five-year deal, cost the Italian champions about $40m, according to media reports.",
+      "url": "https://www.aljazeera.com/sports/2026/8/15/inter-milan-sign-englands-djed-spence-from-tottenham-hotspur?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-15T17:48:32.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -500,22 +516,6 @@
       "imageWidth": 700,
       "category": "Geopolitics",
       "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "b8ee5b69ef0a",
-      "title": "BBC seeks to subpoena Trump children and son-in-law over defamation lawsuit",
-      "summary": "Network wants to serve Jared Kushner, Ivanka Trump and Donald Trump Jr after president sues over January 6 documentary The BBC is trying to subpoena Donald Trump’s children as it builds its defense against the president’s defamation lawsuit centered on a…",
-      "url": "https://www.theguardian.com/media/2026/aug/14/bbc-trump-children-subpoenas-lawsuit",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-14T21:05:47.000Z",
-      "image": "https://i.guim.co.uk/img/media/c519726d2d851d677c5334018aad733b64b7db60/1132_104_3152_2521/master/3152.jpg?width=700&quality=85&auto=format&fit=max&s=ad2c476df10b802c91c773402e13fdd8",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
       "region": "Americas",
       "weight": 2
     },
