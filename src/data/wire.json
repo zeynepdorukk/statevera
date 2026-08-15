@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T21:13:42.831Z",
+  "generatedAt": "2026-08-15T21:34:19.520Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -150,7 +150,7 @@
     },
     {
       "id": "bcecfe0ccf38",
-      "title": "Alaska candidate for US Senate seat rejects Kamala Harris’s unsolicited support",
+      "title": "Alaska candidate for US Senate rejects Kamala Harris’s unsolicited support",
       "summary": "Former VP sent fundraising appeal for Democrat Mary Peltola’s campaign – with half of donations going to Harris’s organization Alaska US Senate candidate Mary Peltola has rejected the support of Kamala Harris , her fellow Democrat, after the 2024 presidential…",
       "url": "https://www.theguardian.com/us-news/2026/aug/15/alaska-mary-peltola-rejects-kamala-harris-unsolicited-support",
       "publisher": "The Guardian",
@@ -1960,22 +1960,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "07e1b688b0eb",
-      "title": "Solar eclipse visible over Houses of Parliament and Big Ben in London – video",
-      "summary": "People gathered to watch a partial solar eclipse in central London. The eclipse, which reached more than 90% coverage in the UK, was western Europe's first total solar eclipse in 27 years Continue reading...",
-      "url": "https://www.theguardian.com/science/video/2026/aug/12/solar-eclipse-visible-over-houses-of-parliament-and-big-ben-in-london-video",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-12T20:49:31.000Z",
-      "image": "https://i.guim.co.uk/img/media/0fa5710ef38bebae93ae487607fbbc6c14935e28/673_0_5669_4535/master/5669.jpg?width=700&quality=85&auto=format&fit=max&s=702403e84de8bc2f6d513ea9ba907db6",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
