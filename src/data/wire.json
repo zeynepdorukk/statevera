@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T19:33:04.004Z",
+  "generatedAt": "2026-08-15T19:52:55.759Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -1904,14 +1904,14 @@
       "summary": "Hakainde Hichilema is bidding for second term, but feud between him and family of Edgar Lungu, who died in 2025, continues As Zambians go to the polls on Thursday, the ghost of the current president’s predecessor hangs over the elections. Hakainde Hichilema,…",
       "url": "https://www.theguardian.com/world/2026/aug/13/zambia-elections-hakainde-hichilema-haunted-ghost-incumbent-president-arch-rival-edgar-lungu",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/world/africa",
+      "sourceId": "guardian-africa",
       "publishedAt": "2026-08-13T04:00:49.000Z",
       "image": "https://i.guim.co.uk/img/media/7fb7bd10ff23989b0737c787f520bde17fc8ae97/0_0_4731_3785/master/4731.jpg?width=700&quality=85&auto=format&fit=max&s=31c9d8d1526b69a55a2f404016554e59",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
-      "region": "Global",
+      "region": "Africa",
       "weight": 2
     },
     {
