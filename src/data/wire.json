@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T04:18:39.555Z",
+  "generatedAt": "2026-08-15T04:54:06.163Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -258,22 +258,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "1186eebed6a6",
-      "title": "Iran has not decided on resuming US talks, Araghchi says",
-      "summary": "Iran has not decided on resuming US talks, Araghchi says Iranian Foreign Minister Abbas Araghchi said no decision has yet been made to resume negotiations with the United States, the ​Iranian Student News Agency reported. Araghchi added that mediator Qatar…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-has-not-decided-resuming-us-talks-isna-citing-foreign-minister",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-14T22:10:49.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
