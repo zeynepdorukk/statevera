@@ -1,9 +1,7 @@
 {
-  "generatedAt": "2026-08-15T06:38:01.476Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-15T07:14:42.559Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
     {
       "id": "53d7ddf02914",
@@ -17,6 +15,22 @@
       "image": "",
       "imageWidth": 0,
       "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "01a1c27cf3db",
+      "title": "Middle East live: Trump threatens US takeover of Hormuz as Iran vows to retain control",
+      "summary": "US President Donald Trump threatened to declare the Strait of Hormuz US territory after vowing to “finish defeating” Iran in a New York rally on Friday. Tehran rejected the claim on Saturday, with Deputy Foreign Minister Kazem Gharibabadi saying the strategic…",
+      "url": "https://www.france24.com/en/middle-east/20260815-middle-east-live-trump-threatens-us-takeover-of-hormuz-as-iran-vows-to-retain-control",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-15T05:12:23.000Z",
+      "image": "https://s.france24.com/media/display/4acbe102-9866-11f1-a709-005056bf30b7/w:1024/p:16x9/AP26218279369637-1.jpg",
+      "imageWidth": 0,
+      "category": "Geopolitics",
       "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
@@ -343,24 +357,24 @@
       "weight": 3
     },
     {
-      "id": "4603d757aed6",
-      "title": "Zambia resumes counting after violence disrupts election process",
-      "summary": "Zambia has resumed vote counting after a nationwide suspension over election-related violence, with the Electoral Commission saying security threats have been contained. The first presidential results are expected at 10:00 p.m. local time, or 2000 GMT.",
-      "url": "http://www.africanews.com/2026/08/14/zambia-resumes-counting-after-violence-disrupts-election-process/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-14T19:07:37.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/87/50/88/640x360_cmsv2_fcd69ecd-18b3-5c5e-84b3-18be7bf87363-9875088.jpg?1786726801",
+      "id": "dd7fc59cfc09",
+      "title": "Trump says record Navy deployment in Iran operations 'not nearly long enough'",
+      "summary": "US President Donald Trump on Friday dismissed concerns about the toll on sailors aboard the aircraft carrier USS Abraham Lincoln, who have endured a record deployment of almost nine months, saying that the deployment had been “not nearly long enough”. The…",
+      "url": "https://www.france24.com/en/middle-east/20260814-trump-says-record-navy-deployment-in-iran-operations-not-nearly-long-enough",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T20:17:38.000Z",
+      "image": "https://s.france24.com/media/display/80a702ec-9817-11f1-a732-005056a97e36/w:1024/p:16x9/000-C4NF8WE.jpg",
       "imageWidth": 0,
-      "category": "Politics",
+      "category": "Security",
       "categoryConfidence": "high",
-      "region": "Africa",
+      "region": "Americas",
       "weight": 2
     },
     {
       "id": "6b21c3c238e4",
-      "title": "Trump asks Supreme Court to allow ballroom work to continue",
+      "title": "Trump asks US Supreme Court to allow ballroom work to continue",
       "summary": "Forcing the US president to go \"hat-in-hand to Congress\" for permission would be \"dangerous\", the administration says.",
       "url": "https://www.bbc.co.uk/news/articles/c3v0yz2r4wlo?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
@@ -404,22 +418,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "f07a42efe83b",
-      "title": "French court blocks Macron’s social media ban for under-15s",
-      "summary": "Constitutional council says curbs infringe freedom of expression and privacy as president vows to rework legislation France’s top court has blocked a ban on social media access for under-15s, ruling that it infringed freedom of expression and privacy. The…",
-      "url": "https://www.theguardian.com/world/2026/aug/14/french-court-blocks-macron-social-media-ban-under-15s",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-14T17:12:14.000Z",
-      "image": "https://i.guim.co.uk/img/media/37d9d05fd3b13992e53c2a7f0210f723e9bc0a54/92_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=c79d2943a6d3f02319ca72eb1888dbc5",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -551,22 +549,6 @@
       "weight": 2
     },
     {
-      "id": "3268876d6bad",
-      "title": "A Queensland man enjoyed soaring profits from a crypto trading app. Then his money started disappearing",
-      "summary": "The administrative work required to run an effective investment scam has been drastically cut by using merging technology Get our breaking news email , free app or daily news podcast Within days of clicking on an online ad for a cryptocurrency trading app, a…",
-      "url": "https://www.theguardian.com/australia-news/2026/aug/15/australia-crypto-money-investment-scam-ai-fraud-crime",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-14T15:00:31.000Z",
-      "image": "https://i.guim.co.uk/img/media/3ab62c6f8d7667c76c6b8b999f646763190e82c2/508_0_3709_2969/master/3709.jpg?width=700&quality=85&auto=format&fit=max&s=24dafb7665813dceebd362b979068f7f",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "d227304e8969",
       "title": "Taiwan Wants to Know Why Indonesia Joined China in a Naval Exercise East of Taiwan",
       "summary": "The exercise highlighted increasing tensions in the waters east of Taiwan, which are also close to Japan and the Philippines.",
@@ -631,6 +613,22 @@
       "weight": 3
     },
     {
+      "id": "dabd8dd70cfc",
+      "title": "World Bank to fund 645-metre bridge linking Bangui and Zongo",
+      "summary": "The Central African Republic and the Democratic Republic of Congo are set to build a new bridge linking their two major cities, Bangui and Zongo. The 60-million-dollar project will see the construction of a 645-metre bridge across the Congo River, aimed at…",
+      "url": "https://www.france24.com/en/world-bank-to-fund-645-metre-bridge-linking-bangui-and-zongo",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T13:52:37.000Z",
+      "image": "https://s.france24.com/media/display/e8ae000c-97e5-11f1-8fa6-005056a97e36/w:1024/p:16x9/EN-20260813-215150-215350-CS.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
       "id": "2817d46f5a7e",
       "title": "Taliban pressured by insurgents after 5 years in power",
       "summary": "The Taliban managed to retake power in Afghanistan on August 15, 2021. Now, they face armed factions who challenge the Taliban rule and strain their central claim of providing security.",
@@ -644,6 +642,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "34d61afb3c11",
+      "title": "Chadian President Déby pardons jailed main rival and 8 opposition leaders",
+      "summary": "Chad’s President Mahamat Idriss Déby on Friday pardoned the jailed ex-prime minister and leader of Chad’s main opposition party Succès Masra, along with eight other party leaders. Masra had been serving a 20-year sentence, convicted of hate speech, xenophobia…",
+      "url": "https://www.france24.com/en/africa/20260814-chadian-president-d%C3%A9by-pardons-jailed-main-rival-and-8-opposition-leaders",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T13:48:13.000Z",
+      "image": "https://s.france24.com/media/display/c5e23ab6-97e0-11f1-a96f-005056a90284/w:1024/p:16x9/AP26132439304576.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -695,6 +709,22 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
+    },
+    {
+      "id": "0de25ab6c4cd",
+      "title": "France's top court blocks Macron's social media ban for under-15s",
+      "summary": "France's constitutional council struck down a proposed ban on social media for children under 15 on Friday, citing freedom of expression. President Emmanuel Macron tasked Prime Minister Sébastien Lecornu with re-working ​the draft legislation to take the…",
+      "url": "https://www.france24.com/en/france/20260814-france-s-constitutional-authority-strikes-down-social-media-ban-for-under-15s",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T13:17:13.000Z",
+      "image": "https://s.france24.com/media/display/8bd8eb1e-8005-11f1-836b-005056bfb2b6/w:1024/p:16x9/000-B9J29ZQ.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Europe",
+      "weight": 2
     },
     {
       "id": "f3da11b2cbec",
@@ -918,6 +948,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "9e019c22e0fa",
+      "title": "Zambia suspends vote count nationwide amid reports of violence, ballot theft",
+      "summary": "Zambia's electoral commission on Friday suspended vote counting from Thursday's presidential and parliamentary elections for at least 24 hours due to “violence targeted at poll staff” and reported instances of theft of marked ballot papers. Former minister…",
+      "url": "https://www.france24.com/en/africa/20260814-zambia-suspends-election-vote-counting-over-reports-of-violence",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T11:57:23.000Z",
+      "image": "https://s.france24.com/media/display/4ed5b6a4-97d7-11f1-9fe0-005056bf30b7/w:1024/p:16x9/fde95d622020d705e303b29b9aa9f9eaa2522446.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -2602,22 +2648,6 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "62ab943427f9",
-      "title": "Flip-flopping Netanyahu rejects Gaza plan but cannot placate all his allies",
-      "summary": "Israeli prime minister faces incompatible demands from his far-right government ministers and from Donald Trump Benjamin Netanyahu’s public rejection of a US-backed deal for Gaza drew scepticism in Israel, amid reports he was personally hammering out details…",
-      "url": "https://www.theguardian.com/world/2026/aug/10/benjamin-netanyahu-rejection-us-deal-gaza-risky-gamble",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-10T17:27:54.000Z",
-      "image": "https://i.guim.co.uk/img/media/07ad89ff90892a48b970c5fa6a92f4cffe3f882b/386_8_3595_2877/master/3595.jpg?width=700&quality=85&auto=format&fit=max&s=5ba451e39a9ee0d467ee72e474cf8771",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "f03883f38d91",
