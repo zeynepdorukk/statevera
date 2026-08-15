@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-15T07:44:29.295Z",
+  "generatedAt": "2026-08-15T07:59:33.897Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -257,38 +257,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "591471bd14c1",
-      "title": "Lebanon’s PM urges timetable for Israeli withdrawal as Hezbollah slams deal",
-      "summary": "Hezbollah criticises Beirut’s approach, accusing officials of exposing the Lebanese army to risks and Israeli pressure.",
-      "url": "https://www.aljazeera.com/news/2026/8/14/lebanons-pm-urges-timetable-for-israeli-withdrawal-as-hezbollah-slams-deal?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-14T23:02:55.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "f48d2ac25c14",
-      "title": "Houthi attack on port kills four eroding truce with Yemen’s government",
-      "summary": "Six Houthi ballistic missiles struck Yemen's government-held al-Makha port, killing at least four.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/14/houthi-attack-on-port-kills-four-eroding-truce-with-yemens-government?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-14T22:58:58.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
