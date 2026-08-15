@@ -1,10 +1,24 @@
 {
-  "generatedAt": "2026-08-15T18:46:38.975Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-15T19:13:25.549Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
+    {
+      "id": "d11f182f7ce7",
+      "title": "Israel says soldiers wounded in southern Lebanon",
+      "summary": "Israel says soldiers wounded in southern Lebanon The Israeli military says three soldiers, including one officer, were wounded by an explosive drone in southern Lebanon overnight. In a post on X, the army said the soldiers were taken out of Lebanon to receive…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israel-says-soldiers-wounded-southern-lebanon",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T18:52:42.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "481bb4011916",
       "title": "Israeli army says it killed two Palestinians in Gaza",
@@ -231,6 +245,22 @@
       "weight": 2
     },
     {
+      "id": "b7ec4d1add9e",
+      "title": "France’s top court rejects social media ban for under-15s",
+      "summary": "France’s Constitutional Court has struck down a law that would have banned children under 15 from social media, ruling that it disproportionately infringed on freedom of expression and raised privacy concerns over age verification. The government plans to…",
+      "url": "https://www.france24.com/en/france-s-top-court-rejects-social-media-ban-for-under-15s",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-15T12:53:35.000Z",
+      "image": "https://s.france24.com/media/display/4c0806ce-98a5-11f1-904d-005056a90284/w:1024/p:16x9/EN-20260815-140907-141032-CS.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
       "id": "9cfd4714e9fa",
       "title": "Five years on, how will Taliban deal with armed opposition?",
       "summary": "The United Nations says armed groups opposed to the government remain active.",
@@ -388,6 +418,22 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Turkey",
+      "weight": 2
+    },
+    {
+      "id": "d1c6fa4de632",
+      "title": "'We're seeing an important escalation in southern Lebanon despite the so-called truce'",
+      "summary": "Overnight Israeli strikes in southern Lebanon killed at least seven people in one village, in the deadliest escalation since the lull in fighting began two months ago. FRANCE 24 correspondent Renée Davis, reporting from Beirut, says the strikes mark a…",
+      "url": "https://www.france24.com/en/we-re-seeing-an-important-escalation-in-southern-lebanon-despite-the-so-called-truce",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-15T09:59:22.000Z",
+      "image": "https://s.france24.com/media/display/99beeffe-988c-11f1-ac90-005056bf30b7/w:1024/p:16x9/EN-20260815-110119-110440-CS.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -581,22 +627,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "feba530ce504",
-      "title": "France's top court blocks social media ban for under-15s",
-      "summary": "The Constitutional Council says it infringes upon freedom of expression - but President Macron vows to prepare a new draft.",
-      "url": "https://www.bbc.co.uk/news/articles/cx2vj433xqlo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-14T16:35:06.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7f52/live/af679960-97f5-11f1-9577-b1309b6ea3af.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Europe",
       "weight": 2
     },
     {
