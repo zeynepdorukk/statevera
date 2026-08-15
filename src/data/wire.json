@@ -1,10 +1,56 @@
 {
-  "generatedAt": "2026-08-15T12:58:39.407Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-15T13:28:26.918Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
+    {
+      "id": "2e9c4b0176a5",
+      "title": "Nine killed in Israeli strikes on Lebanon as tensions test peace framework",
+      "summary": "At least nine people were killed in Israeli strikes on southern Lebanon on Saturday, according to Lebanon’s state news agency, in some of the deadliest attacks since Beirut agreed to a US-mediated framework aimed at ending the latest round of fighting.",
+      "url": "https://www.rfi.fr/en/international/20260815-nine-killed-in-israeli-strikes-on-lebanon-as-tensions-test-peace-framework",
+      "publisher": "RFI",
+      "publisherHome": "https://www.rfi.fr/en",
+      "sourceId": "rfi-world",
+      "publishedAt": "2026-08-15T13:14:08.000Z",
+      "image": "https://s.rfi.fr/media/display/498bb8d2-989b-11f1-a70f-005056a97e36/w:1024/p:16x9/Lebanon-Strike-bu-Israel.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "efeb3fd3b7c3",
+      "title": "Iran accuses French diplomats of 'infiltration'",
+      "summary": "Iran accuses French diplomats of 'infiltration' The Iranian government has accused two French diplomats of conducting an \"infiltration and interference\" operation inside Iran. Iran's intelligence ministry alleged in a statement that the diplomats were…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-accuses-french-diplomats-infiltration",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T13:08:07.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "9cfd4714e9fa",
+      "title": "Five years on, how will Taliban deal with armed opposition?",
+      "summary": "The United Nations says armed groups opposed to the government remain active.",
+      "url": "https://www.aljazeera.com/news/2026/8/15/five-years-on-how-will-taliban-deal-with-armed-opposition?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-15T12:44:30.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "2ebd46ff0f6a",
       "title": "Burkina Faso imposes military training on journalists",
@@ -24,7 +70,7 @@
     {
       "id": "8a017754e712",
       "title": "Former rebel fighters join campaign against Ebola in the DR Congo",
-      "summary": "Demobilised former combatants are actively joining the fight against Ebola by participating in public information campaigns in the east of the Democratic Republic of the Congo.",
+      "summary": "Demobilised former combatants are actively joining the fight against Ebola by participating in public information campaigns in the east of the Democratic Republic of the Congo (DRC).",
       "url": "https://news.un.org/feed/view/en/story/2026/08/1168146",
       "publisher": "UN News",
       "publisherHome": "https://news.un.org/en",
@@ -166,19 +212,19 @@
       "weight": 2
     },
     {
-      "id": "330df4029a4d",
-      "title": "Where healthcare could sway voters, Democratic canvassers ramp up an old tactic: talking to people",
-      "summary": "In Wisconsin, voters weigh candidates who backed cuts to Medicare and Medicaid, and those who want to expand it Going door to door in western Wisconsin, Bill Hogseth tells strangers about the seizures he has multiple times a week. Hogseth, the co-executive…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/15/wisconsin-healthcare-democrats-canvassers",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-15T10:00:54.000Z",
-      "image": "https://i.guim.co.uk/img/media/089c9ec5f740d0bbda50fba48b2da9d70250cd0b/231_0_2503_2002/master/2503.jpg?width=700&quality=85&auto=format&fit=max&s=e7613b00ad496dffffb4eca610a20115",
-      "imageWidth": 700,
-      "category": "Politics",
+      "id": "d1c6fa4de632",
+      "title": "'We're seeing an important escalation in southern Lebanon despite the so-called truce'",
+      "summary": "Overnight Israeli strikes in southern Lebanon killed at least seven people in one village, in the deadliest escalation since the lull in fighting began two months ago. FRANCE 24 correspondent Renée Davis, reporting from Beirut, says the strikes mark a…",
+      "url": "https://www.france24.com/en/we-re-seeing-an-important-escalation-in-southern-lebanon-despite-the-so-called-truce",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-15T09:59:22.000Z",
+      "image": "https://s.france24.com/media/display/99beeffe-988c-11f1-ac90-005056bf30b7/w:1024/p:16x9/EN-20260815-110119-110440-CS.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
       "categoryConfidence": "high",
-      "region": "Americas",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -278,22 +324,6 @@
       "weight": 2
     },
     {
-      "id": "cf46032716c0",
-      "title": "Iran says no decision yet on a return to talks with the US",
-      "summary": "FM Abbas Araghchi says Iran is working with Oman on routes, but Hormuz shipping depends on US meeting conditions.",
-      "url": "https://www.aljazeera.com/news/2026/8/15/iran-says-no-decision-yet-on-a-return-to-talks-with-the-us?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-15T04:24:02.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "d97ee4a3eaa2",
       "title": "South Korea’s Lee urges talks with North Korea about finally ending Korean war",
       "summary": "Lee wants to end 1950-53 war, which has never had a peace treaty, but says talks should include curbing North Korea’s nuclear capabilities South Korean president Lee ⁠Jae Myung called on Saturday for talks with North Korea to pursue peaceful coexistence,…",
@@ -388,6 +418,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "11ed4ed5ed6f",
+      "title": "'The nightmare is over': Families reunite as Venezuela frees political prisoners",
+      "summary": "Venezuela's government freed 131 detained ​prisoners on Friday, as human rights groups hailed releases of some ​people ‌they say were being held ⁠unjustly or for political reasons.",
+      "url": "https://www.france24.com/en/americas/20260814-the-nightmare-is-over-families-reunite-as-venezuela-frees-political-prisoners",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-14T21:55:14.000Z",
+      "image": "https://s.france24.com/media/display/5e88eec0-984c-11f1-bcd9-005056bfb2b6/w:1024/p:16x9/003a420a71bfa55848a0d9f5cec9358a28e639bf.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
