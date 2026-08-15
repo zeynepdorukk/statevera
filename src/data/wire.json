@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-15T10:36:24.706Z",
+  "generatedAt": "2026-08-15T10:56:02.498Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "8a6229fe1a24",
+      "title": "Thirteen years after Rabaa massacre, families urge Egypt to free political prisoners",
+      "summary": "Thirteen years after Rabaa massacre, families urge Egypt to free political prisoners Submitted by MEE staff on Sat, 08/15/2026 - 11:05 On 14 August 2013, Egyptian forces under Abdel Fattah el-Sisi killed at least 900 pro-democracy protesters Egyptian…",
+      "url": "https://www.middleeasteye.net/news/egypt-urged-release-political-prisoners-rabaa-massacre-anniversary",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T10:55:33.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "7f05d6d37bbd",
+      "title": "In Turkey, one of the world's longest conflicts reaches a turning point",
+      "summary": "Turkey stands on the threshold of closing a conflict spanning almost 50 years, after the Turkish parliament this week passed a law allowing exiled Kurdish militants to return home and rejoin society. The legislation aims to end the war with the Kurdistan…",
+      "url": "https://www.rfi.fr/en/podcasts/international-report/20260815-in-turkey-one-of-the-world-s-longest-conflicts-reaches-a-turning-point",
+      "publisher": "RFI",
+      "publisherHome": "https://www.rfi.fr/en",
+      "sourceId": "rfi-world",
+      "publishedAt": "2026-08-15T10:52:06.000Z",
+      "image": "https://s.rfi.fr/media/display/e4d800d6-f5ed-11ef-8568-005056bfb2b6/w:1024/p:16x9/AP24155534800968.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Turkey",
+      "weight": 2
+    },
+    {
+      "id": "be0547c48ba1",
+      "title": "Israeli strikes on south Lebanon kill nine in worst toll since June",
+      "summary": "Two airstrikes reportedly hit homes in Ansar and Deir al-Zahrani with rescue services trying to find survivors Nine people have been killed, including three children, and 11 injured in two Israeli airstrikes on south Lebanon, the worst toll since deals in…",
+      "url": "https://www.theguardian.com/world/2026/aug/15/israeli-strike-on-southern-lebanon-kills-seven-in-worst-toll-since-june-state-media-says",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
+      "publishedAt": "2026-08-15T10:48:33.000Z",
+      "image": "https://i.guim.co.uk/img/media/7c89de51a1cb60ff5893f2358eef87af6a328c6a/103_0_4103_3283/master/4103.jpg?width=700&quality=85&auto=format&fit=max&s=911b9a5b1a0f4fdb589438acfc269af0",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "330df4029a4d",
       "title": "Where healthcare could sway voters, Democratic canvassers ramp up an old tactic: talking to people",
@@ -244,6 +292,22 @@
       "weight": 2
     },
     {
+      "id": "c32975108115",
+      "title": "Venezuela says 131 political prisoners freed amid post-Maduro talks",
+      "summary": "As detainees granted 'alternative' to imprisonment, US welcomes release as crucial step for Venezuela's reconciliation.",
+      "url": "https://www.aljazeera.com/news/2026/8/15/venezuela-says-131-political-prisoners-freed-amid-post-maduro-talks?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-15T02:08:02.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "b44b5133fa9b",
       "title": "Coalition split on Andrew Bragg speech as South Australian senator Andrew McLachlan urges colleagues to ‘follow his lead’",
       "summary": "Senior colleagues dismiss Bragg’s migration figures as ‘personal views’ while others say critical response is an ‘overreaction’ Get our breaking news email , free app or daily news podcast The Liberal senator Andrew McLachlan has publicly backed Andrew Bragg…",
@@ -273,22 +337,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "2cb30ad42938",
-      "title": "Trump urges Americans to accept higher oil prices",
-      "summary": "Trump urges Americans to accept higher oil prices US President Donald Trump has urged Americans to accept slightly higher gasoline prices as the cost of preventing Iran from obtaining a nuclear weapon. The comments underscore the growing political risk for…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-urges-americans-accept-higher-oil-prices",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-14T23:32:04.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -2122,22 +2170,6 @@
       "weight": 2
     },
     {
-      "id": "8ce0f9d07f35",
-      "title": "Hungary elects Orban critic Andras Baka as first president in new political era",
-      "summary": "Hungarian lawmakers on Tuesday approved former supreme court chief Andras Baka – a prominent critic of Viktor Orban who was ousted during the ex-premier's time in power – as the country's next head of state.",
-      "url": "https://www.rfi.fr/en/international/20260812-hungary-elects-orban-critic-andras-baka-as-first-president-of-new-political-era",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-12T09:36:40.000Z",
-      "image": "https://s.rfi.fr/media/display/44e5b510-9613-11f1-b9fe-005056bfb2b6/w:1024/p:16x9/AP26223528576693.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "a086fd815c4d",
       "title": "Germany news: Cabinet approves intelligence service reforms",
       "summary": "Germany's domestic and foreign intelligence services are to get greater powers to deal with hybrid threats. Meanwhile, transport ministers are meeting to find solutions to increasingly low river levels.",
@@ -2279,6 +2311,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "bb5f42fc2bc8",
+      "title": "Hungary's parliament elects Orban critic as new president",
+      "summary": "Hungary's parliament has overwhelmingly confirmed Andras Baka, formerly the head of the Supreme Court, to the largely ceremonial role of president. New Prime Minister Peter Magyar controversially removed his predecessor.",
+      "url": "https://www.dw.com/en/hungary-s-parliament-elects-orban-critic-as-new-president/a-78325589?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-11T16:00:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Europe",
       "weight": 2
     },
     {
