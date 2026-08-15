@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-15T21:34:19.520Z",
+  "generatedAt": "2026-08-15T21:54:23.002Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "e9e4895993b1",
+      "title": "Report: Drone strikes kill three Houthi fighters and wound commanders in southwest Yemen",
+      "summary": "Report: Drone strikes kill three Houthi fighters and wound commanders in southwest Yemen Yemeni government forces said at least three Houthis have been killed during drone strikes west of Taiz governorate, in the southwest of the country, according to the…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/report-drone-strikes-kill-three-houthi-fighters-and-wound-commanders",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T21:52:28.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "5dfa3ac33e51",
       "title": "Israeli strikes kill 11 in southern Lebanon, Hezbollah threatens to retaliate",
