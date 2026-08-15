@@ -1,7 +1,9 @@
 {
-  "generatedAt": "2026-08-15T17:55:28.367Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-15T18:12:44.715Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
     {
       "id": "481bb4011916",
@@ -213,22 +215,6 @@
       "weight": 2
     },
     {
-      "id": "b7ec4d1add9e",
-      "title": "France’s top court rejects social media ban for under-15s",
-      "summary": "France’s Constitutional Court has struck down a law that would have banned children under 15 from social media, ruling that it disproportionately infringed on freedom of expression and raised privacy concerns over age verification. The government plans to…",
-      "url": "https://www.france24.com/en/france-s-top-court-rejects-social-media-ban-for-under-15s",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-15T12:53:35.000Z",
-      "image": "https://s.france24.com/media/display/4c0806ce-98a5-11f1-904d-005056a90284/w:1024/p:16x9/EN-20260815-140907-141032-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "9cfd4714e9fa",
       "title": "Five years on, how will Taliban deal with armed opposition?",
       "summary": "The United Nations says armed groups opposed to the government remain active.",
@@ -386,22 +372,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "d1c6fa4de632",
-      "title": "'We're seeing an important escalation in southern Lebanon despite the so-called truce'",
-      "summary": "Overnight Israeli strikes in southern Lebanon killed at least seven people in one village, in the deadliest escalation since the lull in fighting began two months ago. FRANCE 24 correspondent Renée Davis, reporting from Beirut, says the strikes mark a…",
-      "url": "https://www.france24.com/en/we-re-seeing-an-important-escalation-in-southern-lebanon-despite-the-so-called-truce",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-15T09:59:22.000Z",
-      "image": "https://s.france24.com/media/display/99beeffe-988c-11f1-ac90-005056bf30b7/w:1024/p:16x9/EN-20260815-110119-110440-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -611,6 +581,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "feba530ce504",
+      "title": "France's top court blocks social media ban for under-15s",
+      "summary": "The Constitutional Council says it infringes upon freedom of expression - but President Macron vows to prepare a new draft.",
+      "url": "https://www.bbc.co.uk/news/articles/cx2vj433xqlo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-14T16:35:06.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7f52/live/af679960-97f5-11f1-9577-b1309b6ea3af.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -2489,22 +2475,6 @@
       "categoryConfidence": "medium",
       "region": "Americas",
       "weight": 3
-    },
-    {
-      "id": "965561c723dd",
-      "title": "Trump reportedly hid in catering container to board secret flight in Turkey amid Iran threat",
-      "summary": "Elaborate ruse was used to transport president to military flight from Air Force One in July Donald Trump departed on a secret military flight from Turkey to Britain last month when the White House said he was flying aboard ⁠Air Force One, in an extraordinary…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/10/trump-secret-flight-nato-return",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-11T06:46:56.000Z",
-      "image": "https://i.guim.co.uk/img/media/1689d23cc9c76b118263c1cdf1b005a6d7d5e279/624_0_7200_5760/master/7200.jpg?width=700&quality=85&auto=format&fit=max&s=5eb098526e6102f47aead32005ae93d1",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "98dea4d99136",
