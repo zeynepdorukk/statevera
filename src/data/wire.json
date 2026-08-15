@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-15T17:41:30.171Z",
+  "generatedAt": "2026-08-15T17:55:28.367Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "481bb4011916",
+      "title": "Israeli army says it killed two Palestinians in Gaza",
+      "summary": "Israeli army says it killed two Palestinians in Gaza The Israeli military has said its Paratroopers Brigade killed two Palestinians in Gaza. The military said the Palestinians crossed the so-called “yellow line.\" Under the US-brokered agreement reached with…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-army-says-it-killed-two-palestinians-gaza",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T17:53:33.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "7541212a64d0",
       "title": "Iran says route through Hormuz agreed with Oman, but deal yet to be finalised",
