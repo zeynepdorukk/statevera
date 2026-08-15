@@ -1,12 +1,44 @@
 {
-  "generatedAt": "2026-08-15T11:32:17.338Z",
+  "generatedAt": "2026-08-15T11:54:14.912Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
+      "id": "027ff6689190",
+      "title": "Israeli drone strike injures three in central Gaza",
+      "summary": "Israeli drone strike injures three in central Gaza An Israeli drone strike on Deir al-Balah in central Gaza has injured three Palestinians, one of whom is in critical condition, according to the Wafa news agency. All three were taken to al-Aqsa hospital.",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-drone-strike-injures-three-central-gaza",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T11:39:52.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "0d87bc2ff495",
+      "title": "Donald Trump's Latin America allies open arms to Israel",
+      "summary": "While the ongoing military actions in Gaza and settler attacks on Palestinians in the West Bank have largely isolated Israel globally, Latin America's authoritarian right sees an opening for a strategic alliance.",
+      "url": "https://www.dw.com/en/donald-trump-s-latin-america-allies-open-arms-to-israel/a-78378930?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-15T11:35:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "c5a9c7a8a9fe",
       "title": "US navy veterans and military health experts express concern over USS Abraham Lincoln sailors",
-      "summary": "Prolonged deployment is coupled with reports of water shortages, plumbing issues and attempts to jump overboard US navy veterans and military health experts are expressing concerns about the strain on sailors aboard the USS Abraham Lincoln, which has spent…",
+      "summary": "Prolonged deployment is coupled with reports of water shortages, plumbing issues and attempts to jump overboard Trump downplays concerns about sailors onboard USS Abraham Lincoln US navy veterans and military health experts are expressing concerns about the…",
       "url": "https://www.theguardian.com/us-news/2026/aug/15/uss-abraham-lincoln-sailors-mental-health",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -260,22 +292,6 @@
       "weight": 2
     },
     {
-      "id": "faec0795aba1",
-      "title": "India marks 80th Independence Day with military display",
-      "summary": "India marked its 80th Independence Day at Delhi’s historic Red Fort.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/15/india-marks-80th-independence-day-with-military-display?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-15T03:39:06.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "cac1af78e328",
       "title": "Rashida Tlaib rally cancelled after Florida lawmaker calls its 'anti-jew'",
       "summary": "Rashida Tlaib rally cancelled after Florida lawmaker calls its 'anti-jew' A South Florida site backed out of hosting a rally with Democratic US Representative Rashida Tlaib, a vocal critic of Israel's government, after complaints by a Democratic state…",
@@ -337,22 +353,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "1c7e2366c7c6",
-      "title": "Three Palestinian injured in firing by Israeli army, settlers",
-      "summary": "Three Palestinian injured in firing by Israeli army, settlers Three Palestinians were injured in firing by the Israeli army and settlers in the occupied West Bank on Friday evening, Wafa reported. A Palestinian resident of Beit Fajjar, south of Bethlehem, was…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/three-palestinian-injured-firing-israeli-army-settlers",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-15T00:55:57.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -435,22 +435,6 @@
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "dd7fc59cfc09",
-      "title": "Trump says record Navy deployment in Iran operations 'not nearly long enough'",
-      "summary": "US President Donald Trump on Friday dismissed concerns about the toll on sailors aboard the aircraft carrier USS Abraham Lincoln, who have endured a record deployment of almost nine months, saying that the deployment had been “not nearly long enough”. The…",
-      "url": "https://www.france24.com/en/middle-east/20260814-trump-says-record-navy-deployment-in-iran-operations-not-nearly-long-enough",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-14T20:17:38.000Z",
-      "image": "https://s.france24.com/media/display/80a702ec-9817-11f1-a732-005056a97e36/w:1024/p:16x9/000-C4NF8WE.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "4603d757aed6",
@@ -839,22 +823,6 @@
       "weight": 3
     },
     {
-      "id": "d4410593e990",
-      "title": "NATO jets shoot down drone over Latvia",
-      "summary": "Jets have shot down a foreign drone over Latvia after it entered the Baltic state's airspace. Its origin remains unclear, but the incident adds to concern over repeated incursions along NATO's eastern flank.",
-      "url": "https://www.dw.com/en/nato-jets-shoot-down-drone-over-latvia/a-78366346?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-14T12:17:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "f66b3f35ff13",
       "title": "Benjamin Netanyahu describes UK as ‘first Islamic republic to get a nuclear weapon’",
       "summary": "Israeli PM criticised by political rival for attacking an international ally and overseeing ‘horrific diplomatic failure’ The Israeli prime minister, Benjamin Netanyahu, called the UK “the Islamic republic of Britain” in a podcast interview, where he also…",
@@ -1108,6 +1076,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "447cfe5d5276",
+      "title": "NATO jets shoot down drone over Latvia",
+      "summary": "The unmanned aerial vehicle entered Latvian airspace \"as a result of Russian electromagnetic warfare,\" said the Latvian military.",
+      "url": "https://www.politico.eu/article/nato-jets-shoot-down-drone-over-latvia/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+      "publisher": "POLITICO Europe",
+      "publisherHome": "https://www.politico.eu",
+      "sourceId": "politico-eu",
+      "publishedAt": "2026-08-14T10:18:39.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Europe",
       "weight": 2
     },
     {
