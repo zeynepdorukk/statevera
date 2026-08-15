@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-15T20:36:17.702Z",
+  "generatedAt": "2026-08-15T20:56:42.281Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "5dfa3ac33e51",
+      "title": "Israeli strikes kill 11 in southern Lebanon, Hezbollah threatens to retaliate",
+      "summary": "Israeli airstrikes on southern Lebanon killed at least 11 people Saturday, some of the deadliest since deals in June eased hostilities between Israel and Hezbollah. Israel's military said the strikes were in retaliation for an attack by Hezbollah on its…",
+      "url": "https://www.france24.com/en/middle-east/20260815-israeli-strikes-kill-11-in-southern-lebanon-hezbollah-threatens-to-retaliate",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-15T20:37:34.000Z",
+      "image": "https://s.france24.com/media/display/9bc873a4-98c5-11f1-8108-005056a90284/w:1024/p:16x9/8d2575533c572c55c8b941d6ec31b065014ce460.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "491a6e0099c8",
       "title": "Iran condemns Israeli attacks in Lebanon",
@@ -95,22 +111,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "3542ce53e50a",
-      "title": "Lebanon says 11 killed in Israeli airstrikes",
-      "summary": "Lebanon's prime minister denounced the attacks on villages in southern Lebanon for targeting civilians in their homes. Israel said it was firing on Hezbollah infrastructure.",
-      "url": "https://www.dw.com/en/lebanon-says-11-killed-in-israeli-airstrikes/a-78383713?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-15T15:35:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -386,22 +386,6 @@
       "category": "Geopolitics",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "8aebfd5175f1",
-      "title": "Is China seeking to copy Iran’s Strait of Hormuz blockade around Taiwan?",
-      "summary": "Taiwan has long prepared for a Chinese military invasion but wars in Iran and Ukraine expose new potential threats.",
-      "url": "https://www.aljazeera.com/video/101-east/2026/8/15/is-china-seeking-to-copy-irans-strait-of-hormuz-blockade-around-taiwan?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-15T11:30:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
