@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-15T11:10:47.414Z",
+  "generatedAt": "2026-08-15T11:32:17.338Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "c5a9c7a8a9fe",
+      "title": "US navy veterans and military health experts express concern over USS Abraham Lincoln sailors",
+      "summary": "Prolonged deployment is coupled with reports of water shortages, plumbing issues and attempts to jump overboard US navy veterans and military health experts are expressing concerns about the strain on sailors aboard the USS Abraham Lincoln, which has spent…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/15/uss-abraham-lincoln-sailors-mental-health",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-15T11:00:55.000Z",
+      "image": "https://i.guim.co.uk/img/media/4481abefeb84092ce31ab52cf71a02aafa82b4e7/128_0_2739_2193/master/2739.jpg?width=700&quality=85&auto=format&fit=max&s=a127d7f312d6bf4f40428d0b071238f6",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "26a47fb5afd9",
+      "title": "UK’s biggest EV battery gigafactory shelves expansion as Jaguar Land Rover talks stall",
+      "summary": "Chinese-owned AESC has pushed back plans in sign of slowing transition from petrol and diesel to electric cars Andy Burnham moves to cut new EV sales targets The UK’s biggest gigafactory has shelved plans to expand production in Sunderland because of stalled…",
+      "url": "https://www.theguardian.com/business/2026/aug/15/uk-ev-battery-gigafactory-aesc-jaguar-land-rover-nissan",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-15T11:00:54.000Z",
+      "image": "https://i.guim.co.uk/img/media/1ebc842f555e9a252aa9f08271d730845eed33e1/881_0_4800_3840/master/4800.jpg?width=700&quality=85&auto=format&fit=max&s=ad086ce54867557305eff4c47681793a",
+      "imageWidth": 700,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "e340854ca216",
       "title": "Thirteen years after Rabaa massacre, families urge Egypt to free political prisoners",
@@ -482,22 +514,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "bdb5c67c88ab",
-      "title": "Progressives back substitute teacher over Wasserman Schultz in Florida",
-      "summary": "Group backs Elijah Manley in primary election in bid to unseat veteran Democrat in newly drawn district A progressive group has endorsed a 27-year-old substitute teacher who overcame childhood homelessness in his bid to unseat the veteran Democrat Debbie…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/14/florida-debbie-wasserman-schultz-elijah-manley",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-14T16:54:25.000Z",
-      "image": "https://i.guim.co.uk/img/media/9135bf1b1f9f3825fc50bc8af0083d27bacf1b32/0_0_1500_1200/master/1500.jpg?width=700&quality=85&auto=format&fit=max&s=43e612fb9e0696c6abbe5904858fdc6d",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -1307,7 +1323,7 @@
     },
     {
       "id": "6a4fbacec1d6",
-      "title": "In Latin America, the road to Trump's heart goes through Israel",
+      "title": "The road to Trump's heart goes through Israel",
       "summary": "In the early months following Israel’s brutal war on Gaza, Latin American leaders emerged as some of the world’s sharpest critics of the military campaign. Then-Colombian President Gustavo Petro was among the first world leaders to call Israel’s actions a…",
       "url": "https://responsiblestatecraft.org/latin-america-israel/",
       "publisher": "Responsible Statecraft",
@@ -1318,7 +1334,7 @@
       "imageWidth": 0,
       "category": "Security",
       "categoryConfidence": "medium",
-      "region": "Americas",
+      "region": "Middle East",
       "weight": 3
     },
     {
@@ -2519,22 +2535,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "8a3b9b17e8ea",
-      "title": "The Guardian view on the failed Gaza peace plan: Trump’s hollow claims are ignored in Jerusalem | Editorial",
-      "summary": "Israel’s prime minister, Benjamin Netanyahu, has no interest in agreeing to a deal. For relief to come to Gaza, real US pressure must be exerted At the end of July, Donald Trump announced that a “monumental” US-backed deal had been struck on Gaza, securing…",
-      "url": "https://www.theguardian.com/commentisfree/2026/aug/10/the-guardian-view-on-the-failed-gaza-peace-plan-trumps-hollow-claims-are-ignored-in-jerusalem",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-10T17:47:44.000Z",
-      "image": "https://i.guim.co.uk/img/media/a1954dee0d8af889ae123d960e9dcbfe773fb1a9/410_0_5600_4480/master/5600.jpg?width=700&quality=85&auto=format&fit=max&s=8b1c7956ce041e5700026c98f7ea14d0",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
