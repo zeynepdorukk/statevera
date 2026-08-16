@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T21:53:36.000Z",
+  "updatedAt": "2026-08-16T22:09:03.000Z",
   "quotes": [
     {
       "id": "spx",
@@ -146,30 +146,30 @@
       "label": "USD/TRY",
       "symbol": "USDTRY=X",
       "decimals": 2,
-      "price": 47.8543,
-      "change": 0.02750000000000341,
-      "percent": 0.05749914274006082,
-      "updatedAt": "2026-08-16T21:17:31.000Z"
+      "price": 47.8537,
+      "change": 0.02690000000000481,
+      "percent": 0.05624461598937167,
+      "updatedAt": "2026-08-16T22:08:56.000Z"
     },
     {
       "id": "eurusd",
       "label": "EUR/USD",
       "symbol": "EURUSD=X",
       "decimals": 4,
-      "price": 1.1569,
-      "change": 0.0038000000000000256,
-      "percent": 0.3295464400312224,
-      "updatedAt": "2026-08-16T21:52:55.000Z"
+      "price": 1.157,
+      "change": 0.0039000000000000146,
+      "percent": 0.3382187147688851,
+      "updatedAt": "2026-08-16T22:08:56.000Z"
     },
     {
       "id": "usdjpy",
       "label": "USD/JPY",
       "symbol": "JPY=X",
       "decimals": 2,
-      "price": 159.305,
-      "change": -0.19499999999999318,
-      "percent": -0.12225705329153176,
-      "updatedAt": "2026-08-16T21:53:36.000Z"
+      "price": 159.374,
+      "change": -0.12600000000000477,
+      "percent": -0.07899686520376474,
+      "updatedAt": "2026-08-16T22:09:03.000Z"
     },
     {
       "id": "us10y",
