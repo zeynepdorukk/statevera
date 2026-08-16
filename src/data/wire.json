@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-16T09:48:17.560Z",
+  "generatedAt": "2026-08-16T10:11:30.537Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "2112629d3d3c",
+      "title": "Iranian military promises 'complete defeat' of Israel and US",
+      "summary": "Iranian military promises 'complete defeat' of Israel and US The General Staff of Iran's Armed Forces has pledged the \"complete defeat\" of the US and Israel in the region, saying the legacy of \"resistance\" has been passed to a new generation of Iranians.…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iranian-military-promises-complete-defeat-israel-and-us",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T10:02:11.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "9a8469f233de",
+      "title": "Families of US sailors denounce Trump and Hegseth for ‘dismissing their experiences and calling them liars’",
+      "summary": "One US sailor’s mother asks: ‘My son signed up to serve his country. But why isn’t his country serving him?’ Naval families with loved ones deployed for months on US warships amid the Iran war have reacted with fury to Donald Trump and the defense secretary…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/16/navy-families-denounce-trump-hegseth",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-16T10:00:23.000Z",
+      "image": "https://i.guim.co.uk/img/media/4b0bf9c20f8a01ab8ad792c11f0721414b095f8d/12_0_4288_3431/master/4288.jpg?width=700&quality=85&auto=format&fit=max&s=89da1e81bd61b29bb39e566a95c5b1b1",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "ae07be82aa03",
+      "title": "Germany has chosen Israel over international law",
+      "summary": "Germany has chosen Israel over international law Submitted by Jurgen Mackert on Wed, 08/05/2026 - 20:39 The state's commitment to the murderous Netanyahu regime outstrips its dedication to preserving democracy at home Israeli Prime Minister Benjamin Netanyahu…",
+      "url": "https://www.middleeasteye.net/opinion/germany-has-chosen-israel-over-international-law",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T09:56:47.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "357da72f69eb",
       "title": "A positive new report raises the question: was Reeves undermined by dodgy data? | Heather Stewart",
@@ -357,22 +405,6 @@
       "weight": 2
     },
     {
-      "id": "a8c92461db55",
-      "title": "Iran war live: Talks on Hormuz Strait continue; Israel kills 11 in Lebanon",
-      "summary": "Israel kills 11 in deadliest attacks on Lebanon since June truce as Iran and Oman continue talks on Hormuz.",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/8/16/iran-war-live-talks-on-hormuz-strait-continue-israel-kills-11-in-lebanon?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-16T00:00:45.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "cab39fca5cad",
       "title": "I survived two years as prime minister in a hit new game - then my cabinet deserted me",
       "summary": "Mobile game No 10: Full Confidence recently ranked above Minecraft on the UK App Store paid games chart",
@@ -630,6 +662,22 @@
       "weight": 2
     },
     {
+      "id": "c5a9c7a8a9fe",
+      "title": "US navy veterans and military health experts express concern over USS Abraham Lincoln sailors",
+      "summary": "Prolonged deployment is coupled with reports of water shortages, plumbing issues and attempts to jump overboard Trump downplays concerns about sailors onboard USS Abraham Lincoln US navy veterans and military health experts are expressing concerns about the…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/15/uss-abraham-lincoln-sailors-mental-health",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-15T11:00:55.000Z",
+      "image": "https://i.guim.co.uk/img/media/4481abefeb84092ce31ab52cf71a02aafa82b4e7/128_0_2739_2193/master/2739.jpg?width=700&quality=85&auto=format&fit=max&s=a127d7f312d6bf4f40428d0b071238f6",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "7f05d6d37bbd",
       "title": "In Turkey, one of the world's longest conflicts reaches a turning point",
       "summary": "Turkey stands on the threshold of closing a conflict spanning almost 50 years, after the Turkish parliament this week passed a law allowing exiled Kurdish militants to return home and rejoin society. The legislation aims to end the war with the Kurdistan…",
@@ -675,6 +723,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "4b5fabc32910",
+      "title": "Germany increasingly revokes refugee status for Syrians",
+      "summary": "In the first half of 2026, 23.2% of reviews ended with protection being revoked or withdrawn, according to a government response to a parliamentary question by the socialist Left Party. DW has more.",
+      "url": "https://www.dw.com/en/germany-increasingly-revokes-refugee-status-for-syrians/live-78378773?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-15T07:58:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -724,22 +788,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "491eb911e8ea",
-      "title": "Trump downplays concerns about sailors onboard USS Abraham Lincoln amid record deployment",
-      "summary": "President said nine months at sea ‘not nearly long enough’ even as families call for attention to mental health crisis US navy veterans and military health experts express concern over USS Abraham Lincoln sailors Donald Trump has downplayed concerns about US…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/14/trump-uss-abraham-lincoln-deployment",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-14T22:12:55.000Z",
-      "image": "https://i.guim.co.uk/img/media/bb189f5df21af2d08918529132fc52e6524508eb/335_0_1873_1500/master/1873.jpg?width=700&quality=85&auto=format&fit=max&s=caf2378aa86339551a3939b1cdfd264c",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -2489,22 +2537,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "bb5f42fc2bc8",
-      "title": "Hungary's parliament elects Orban critic as new president",
-      "summary": "Hungary's parliament has overwhelmingly confirmed Andras Baka, formerly the head of the Supreme Court, to the largely ceremonial role of president. New Prime Minister Peter Magyar controversially removed his predecessor.",
-      "url": "https://www.dw.com/en/hungary-s-parliament-elects-orban-critic-as-new-president/a-78325589?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-11T16:00:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
