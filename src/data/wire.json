@@ -1,10 +1,26 @@
 {
-  "generatedAt": "2026-08-16T17:54:18.997Z",
+  "generatedAt": "2026-08-16T18:11:53.495Z",
   "sourceCount": 26,
   "failedSources": [
     "npr-world"
   ],
   "items": [
+    {
+      "id": "7977962b972d",
+      "title": "Israeli army besieges Palestinian homes in occupied West Bank",
+      "summary": "Israeli troops have raided the village of Qusra, south of Nablus, in the occupied West Bank.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/16/israeli-army-besieges-palestinian-homes-in-occupied-west-bank?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-16T17:45:52.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "19d81bf0a1ed",
       "title": "UAE, Saudi Arabia, others condemn Israel's rejection of Trump Gaza plan",
@@ -452,22 +468,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "d91d65980c9f",
-      "title": "Former UAE presidential aide's post mocking Pakistan exposes unease over Mecca pact",
-      "summary": "Former UAE presidential aide's post mocking Pakistan exposes unease over Mecca pact Submitted by MEE staff on Sun, 08/16/2026 - 06:02 Remarks by the political analyst on Pakistan's poverty, illiteracy and nuclear arsenal have sparked online backlash Turkish…",
-      "url": "https://www.middleeasteye.net/news/emirati-academics-barbed-tweet-pakistan-exposes-uae-unease-over-mecca-pact",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T07:19:35.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
