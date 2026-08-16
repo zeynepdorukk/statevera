@@ -1,12 +1,28 @@
 {
-  "generatedAt": "2026-08-16T10:11:30.537Z",
+  "generatedAt": "2026-08-16T10:37:38.070Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
+      "id": "fc0a7f70a5d2",
+      "title": "NATO fighter jet shoots down drone over Romania",
+      "summary": "A NATO official says the drone \"appears to be Russian.”",
+      "url": "https://www.politico.eu/article/nato-fighter-jet-shoot-drone-romania/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+      "publisher": "POLITICO Europe",
+      "publisherHome": "https://www.politico.eu",
+      "sourceId": "politico-eu",
+      "publishedAt": "2026-08-16T10:15:17.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
       "id": "2112629d3d3c",
       "title": "Iranian military promises 'complete defeat' of Israel and US",
-      "summary": "Iranian military promises 'complete defeat' of Israel and US The General Staff of Iran's Armed Forces has pledged the \"complete defeat\" of the US and Israel in the region, saying the legacy of \"resistance\" has been passed to a new generation of Iranians.…",
+      "summary": "Iranian military promises 'complete defeat' of Israel and US The general staff of Iran's armed forces has pledged the \"complete defeat\" of the US and Israel in the region, saying the legacy of \"resistance\" has been passed to a new generation of Iranians.…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iranian-military-promises-complete-defeat-israel-and-us",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -418,6 +434,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "b54e9b656950",
+      "title": "Hamas chief heads to Cairo for talks ahead of Kushner visit",
+      "summary": "Hamas chief heads to Cairo for talks ahead of Kushner visit Hamas leader Khalil al-Hayya is set to travel to Cairo for talks with Egyptian officials, a Hamas source tells AFP, ahead of a visit by US President Donald Trump’s envoy Jared Kushner to the region.…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-chief-heads-cairo-talks-ahead-kushner-visit",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T22:31:17.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1833,22 +1865,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "7fcee502911f",
-      "title": "France and 30 other countries condemn Iran's executions of protestors",
-      "summary": "More than 30 countries, including France, the United Kingdom and Canada, have condemned Iran's use of capital punishment, saying in a joint statement on Wednesday the Islamic Republic was executing protesters to \"silence dissent\". Tehran accused its critics…",
-      "url": "https://www.rfi.fr/en/international/20260813-france-and-30-other-countries-condemn-iran-s-executions-of-protestors",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-13T15:02:28.000Z",
-      "image": "https://s.rfi.fr/media/display/895cb972-373c-11f1-ac98-005056a97e36/w:1024/p:16x9/AP26079799726369.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
