@@ -1,16 +1,32 @@
 {
-  "generatedAt": "2026-08-16T08:56:48.998Z",
+  "generatedAt": "2026-08-16T09:20:10.547Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "8c4eee7152fa",
+      "title": "Block export of ‘national treasure’ UK fossils, says MP",
+      "summary": "Sale of one of UK’s top collections overseas prompts call new rules to help keep items in country One of UK’s best fossil collections sold in ‘loss to the nation’ An MP has called on ministers to change export controls so that significant fossils can be…",
+      "url": "https://www.theguardian.com/science/2026/aug/16/block-export-of-national-treasure-uk-fossils-says-mp",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-16T09:00:22.000Z",
+      "image": "https://i.guim.co.uk/img/media/f48938d86acd223cf061cc24ec53cd828e7e8c7c/0_0_5250_4200/master/5250.jpg?width=700&quality=85&auto=format&fit=max&s=7902acc83bab89928102d7f008442ffb",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "9b0d2249ac15",
       "title": "New UK cost of living crisis looms with soaring energy bills forecast to lift inflation",
       "summary": "Latest reading on Wednesday likely to frame scale of challenge for new PM to ease pressures on households amid Iran war fallout British households are facing a renewed cost of living squeeze, with official figures expected to show this week that soaring…",
       "url": "https://www.theguardian.com/business/2026/aug/16/new-uk-cost-of-living-crisis-looms-rising-energy-bills-inflation",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-16T08:42:16.000Z",
       "image": "https://i.guim.co.uk/img/media/40e2709d6ab1818cac0173dac8116cdbf673d354/398_0_2703_2162/master/2703.jpg?width=700&quality=85&auto=format&fit=max&s=94d557df364893dec9ce8cc85e06c044",
       "imageWidth": 700,
@@ -53,8 +69,8 @@
     },
     {
       "id": "d91d65980c9f",
-      "title": "Former UAE presidential aide's tweet mocking Pakistan exposes Emitari unease over Mecca pact",
-      "summary": "Former UAE presidential aide's tweet mocking Pakistan exposes Emitari unease over Mecca pact Submitted by MEE staff on Sun, 08/16/2026 - 06:02 Remarks by the political analyst on Pakistan's ‘poverty, illiteracy’ and nuclear arsenal have sparked online…",
+      "title": "Former UAE presidential aide's post mocking Pakistan exposes unease over Mecca pact",
+      "summary": "Former UAE presidential aide's post mocking Pakistan exposes unease over Mecca pact Submitted by MEE staff on Sun, 08/16/2026 - 06:02 Remarks by the political analyst on Pakistan's poverty, illiteracy and nuclear arsenal have sparked online backlash Turkish…",
       "url": "https://www.middleeasteye.net/news/emirati-academics-barbed-tweet-pakistan-exposes-uae-unease-over-mecca-pact",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -357,22 +373,6 @@
       "weight": 2
     },
     {
-      "id": "be639d9256cf",
-      "title": "US Democrats finalise major shakeup to 2028 presidential primary calendar",
-      "summary": "South Carolina will again take centre stage as the first nominating contest, pushing Iowa from its top spot.",
-      "url": "https://www.aljazeera.com/news/2026/8/15/us-democrats-finalise-major-shakeup-to-2028-presidential-primary-calendar?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-15T22:22:46.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "e9e4895993b1",
       "title": "Report: Drone strikes kill three Houthi fighters and wound commanders in southwest Yemen",
       "summary": "Report: Drone strikes kill three Houthi fighters and wound commanders in southwest Yemen Yemeni government forces said at least three Houthis have been killed during drone strikes west of Taiz governorate, in the southwest of the country, according to the…",
@@ -547,22 +547,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "b7ec4d1add9e",
-      "title": "France’s top court rejects social media ban for under-15s",
-      "summary": "France’s Constitutional Court has struck down a law that would have banned children under 15 from social media, ruling that it disproportionately infringed on freedom of expression and raised privacy concerns over age verification. The government plans to…",
-      "url": "https://www.france24.com/en/france-s-top-court-rejects-social-media-ban-for-under-15s",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-15T12:53:35.000Z",
-      "image": "https://s.france24.com/media/display/4c0806ce-98a5-11f1-904d-005056a90284/w:1024/p:16x9/EN-20260815-140907-141032-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -820,6 +804,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "feba530ce504",
+      "title": "France's top court blocks social media ban for under-15s",
+      "summary": "The Constitutional Council says it infringes upon freedom of expression - but President Macron vows to prepare a new draft.",
+      "url": "https://www.bbc.co.uk/news/articles/cx2vj433xqlo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-14T16:35:06.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7f52/live/af679960-97f5-11f1-9577-b1309b6ea3af.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -1754,22 +1754,6 @@
       "categoryConfidence": "source",
       "region": "Europe",
       "weight": 3
-    },
-    {
-      "id": "73524cfe5e85",
-      "title": "BAE Systems to pay $36m penalty after 104 violations of US arms export rules",
-      "summary": "State department says it has reached administrative settlement with company’s US arm to resolve breaches The UK defence company BAE Systems is to pay a $36m (£26.7m) civil penalty after breaching US arms exports regulations more than 100 times. The US…",
-      "url": "https://www.theguardian.com/business/2026/aug/13/bae-systems-inc-to-pay-36m-penalty-104-violations-us-arms-export-regulations",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-13T17:35:47.000Z",
-      "image": "https://i.guim.co.uk/img/media/cb56b0c9df5e53424c29206816fbc7d6502e888a/564_0_2819_2255/master/2819.jpg?width=700&quality=85&auto=format&fit=max&s=0add78dfc50ca89da842efba4b3fb74a",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "182debe3e33a",
