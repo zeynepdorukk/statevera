@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T22:34:02.741Z",
+  "generatedAt": "2026-08-16T22:54:51.726Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "d39bc91ddc0a",
+      "title": "Trump says US to scale back military drills with South Korea after it stayed out of Iran war",
+      "summary": "His decision to reduce the partnership came after South Korea recently declined to aid his war effort in Iran.",
+      "url": "https://www.bbc.co.uk/news/articles/cx2lll7zvn0o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-16T22:41:34.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/43fc/live/4a1c1570-99b9-11f1-870d-5d08c49babb2.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "074b9edfa1ee",
       "title": "Australia politics live: Nationals argue gun buyback is against constitutional clause featured in The Castle",
@@ -11,7 +27,7 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-16T22:24:41.000Z",
+      "publishedAt": "2026-08-16T22:39:11.000Z",
       "image": "https://i.guim.co.uk/img/media/e0422088c498f7a73bd8088b2c3a1c42b3013533/0_0_4702_3762/master/4702.jpg?width=700&quality=85&auto=format&fit=max&s=b0b79e248a703fa0ed0ec7c30ba99e31",
       "imageWidth": 700,
       "category": "Politics",
@@ -33,22 +49,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "d39bc91ddc0a",
-      "title": "Trump says US to scale back military drills with South Korea after it stayed out of Iran war",
-      "summary": "His decision to reduce the partnership came after South Korea recently declined to aid his war effort in Iran.",
-      "url": "https://www.bbc.co.uk/news/articles/cx2lll7zvn0o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-16T21:57:13.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/43fc/live/4a1c1570-99b9-11f1-870d-5d08c49babb2.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -2872,22 +2872,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "3ab3d5e995b6",
-      "title": "Houthi attacks reportedly kill at least 30 Yemeni government forces",
-      "summary": "The Houthis say they launched missiles and drones at \"Saudi military build-ups\" in the central provinces of Marib and Hadramawt.",
-      "url": "https://www.bbc.co.uk/news/articles/ckgdmdr0lmgo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/middle_east",
-      "sourceId": "bbc-mideast",
-      "publishedAt": "2026-08-06T22:41:09.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/13bf/live/fd004bd0-91b1-11f1-a7ab-8b30adf0800a.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     }
   ]
