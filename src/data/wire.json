@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T16:42:46.710Z",
+  "generatedAt": "2026-08-16T16:59:28.396Z",
   "sourceCount": 26,
   "failedSources": [
     "npr-world"
@@ -726,22 +726,6 @@
       "category": "Geopolitics",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "c5a9c7a8a9fe",
-      "title": "US navy veterans and military health experts express concern over USS Abraham Lincoln sailors",
-      "summary": "Prolonged deployment is coupled with reports of water shortages, plumbing issues and attempts to jump overboard Trump downplays concerns about sailors onboard USS Abraham Lincoln US navy veterans and military health experts are expressing concerns about the…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/15/uss-abraham-lincoln-sailors-mental-health",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-15T11:00:55.000Z",
-      "image": "https://i.guim.co.uk/img/media/4481abefeb84092ce31ab52cf71a02aafa82b4e7/128_0_2739_2193/master/2739.jpg?width=700&quality=85&auto=format&fit=max&s=a127d7f312d6bf4f40428d0b071238f6",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -2716,22 +2700,6 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "832172e69047",
-      "title": "Russian court bars only anti-war party from standing in parliamentary elections",
-      "summary": "Russia's only liberal, anti-war party will not be able to take part in next month's parliamentary elections, a Moscow court rules.",
-      "url": "https://www.bbc.co.uk/news/articles/cy9w1l5jr7lo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/europe",
-      "sourceId": "bbc-europe",
-      "publishedAt": "2026-08-10T18:19:41.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3520/live/5abf3640-94dd-11f1-b2ab-0dd01740f9f6.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
     },
     {
       "id": "172affb5124c",
