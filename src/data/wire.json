@@ -1,8 +1,41 @@
 {
-  "generatedAt": "2026-08-16T20:56:03.756Z",
+  "generatedAt": "2026-08-16T21:11:19.218Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "f033e26e25d7",
+      "title": "'A new Plaza Accord?' Japan's battle against yen bears enters new phase",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/markets/trading-asia/a-new-plaza-accord-japan-s-battle-against-yen-bears-enters-new-phase",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-16T21:11:13.247Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "f129b3759831",
+      "title": "Iran parliament speaker says US used more firepower in Iran than on Vietnam",
+      "summary": "Iran parliament speaker says US used more firepower in Iran than on Vietnam Iranian Parliament Speaker Mohammad Bagher Ghalibaf said the US had used more firepower against Iran than during the Vietnam War. Speaking at an event broadcast by state broadcaster…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-parliament-speaker-says-us-used-more-firepower-iran-vietnam",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T21:05:27.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "fed4ee3055dd",
       "title": "Brazil: Lula, Bolsonaro return to strongholds to launch runs for president",
@@ -230,7 +263,7 @@
     {
       "id": "b89d41bf3b66",
       "title": "A fake website and a deluge of CVs: the Australian firm embroiled in an FBI probe into alleged Chinese espionage",
-      "summary": "Exclusive: Fake consultancy impersonating Brisbane firm online is one of 13 websites seized by the US Department of Justice Get our breaking news email , free app or daily news podcast When the first emails arrived, they were easily dismissed as spam. But as…",
+      "summary": "Exclusive: Fake consultancy impersonating Brisbane firm online is one of 13 websites seized by the US Department of Justice Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast When the first…",
       "url": "https://www.theguardian.com/australia-news/2026/aug/17/fbi-investigation-china-alleged-espionage-fake-websites-defence-intelligence-australia",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world/asia-pacific",
@@ -386,22 +419,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "2112629d3d3c",
-      "title": "Iranian military promises 'complete defeat' of Israel and US",
-      "summary": "Iranian military promises 'complete defeat' of Israel and US The general staff of Iran's armed forces has pledged the \"complete defeat\" of the US and Israel in the region, saying the legacy of \"resistance\" has been passed to a new generation of Iranians.…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iranian-military-promises-complete-defeat-israel-and-us",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T10:02:11.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
