@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T18:11:53.495Z",
+  "generatedAt": "2026-08-16T18:45:12.752Z",
   "sourceCount": 26,
   "failedSources": [
     "npr-world"
@@ -1560,23 +1560,6 @@
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d8fc/live/12e1de40-977b-11f1-a8a8-85d648bbf002.jpg",
       "imageWidth": 240,
       "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "efbba18d961f",
-      "title": "Rising right wing risks hurting Australia's standing in Asia: foreign minister",
-      "summary": "",
-      "url": "https://asia.nikkei.com/politics/rising-right-wing-risks-hurting-australia-s-standing-in-asia-foreign-minister",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-14T08:35:54.928Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
