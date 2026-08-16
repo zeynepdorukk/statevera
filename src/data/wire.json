@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T04:28:05.154Z",
+  "generatedAt": "2026-08-16T05:00:03.184Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "f24eea844477",
+      "title": "Japan’s defence minister heads to Australia to meet Marles in wake of melon-gate controversy",
+      "summary": "Discussions to focus on Australia’s acquisition of Mogami-class frigates as Japan plays down Albanese’s podcast comments Japan’s defence minister will visit Canberra this week, the highest level engagement with Australia after controversy over Anthony…",
+      "url": "https://www.theguardian.com/world/2026/aug/16/japans-defence-minister-heads-to-australia-to-meet-marles-in-wake-of-melon-gate-controversy",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-16T04:44:30.000Z",
+      "image": "https://i.guim.co.uk/img/media/4523dec71e91cd5ac6f89d2534b808eaf5868cd3/557_0_4964_3973/master/4964.jpg?width=700&quality=85&auto=format&fit=max&s=1ab86e7c53568ebc992fcc6a2b9ad5c3",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "7b50041b467d",
       "title": "Hamas delegation to hold talks on Gaza agreement in Cairo, report says",
@@ -15,6 +31,22 @@
       "image": "",
       "imageWidth": 0,
       "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "74705ce5df9d",
+      "title": "Yemeni government forces hit back after new Houthi offensive",
+      "summary": "Yemeni government forces, backed by Saudi Arabia, have struck back after a new Houthi offensive in areas it controls.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/16/08-16-2026-houthis-yemen-sv?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-16T04:09:01.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -2346,22 +2378,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "d0bb18b570e6",
-      "title": "Cook Islands election: PM Mark Brown speaks on the diplomatic crises that defined his year",
-      "summary": "The prime minister tells the Guardian that last year’s diplomatic rift with ally New Zealand could be on voters’ minds as they head to the polls As voters in the Cook Islands prepare to head to the polls in a high-stakes general election, they will have much…",
-      "url": "https://www.theguardian.com/world/2026/aug/12/cook-islands-election-mark-brown-pm-prime-minister",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
-      "sourceId": "guardian-asia",
-      "publishedAt": "2026-08-12T00:24:55.000Z",
-      "image": "https://i.guim.co.uk/img/media/5ddd1921ced4c1db389588ed807f2b882e7e02f4/512_0_5120_4096/master/5120.jpg?width=700&quality=85&auto=format&fit=max&s=438e110ed6ee860df049971a9c0b2a37",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "24e94659b6cb",
