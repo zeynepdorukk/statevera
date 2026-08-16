@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T09:20:10.547Z",
+  "generatedAt": "2026-08-16T09:48:17.560Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "357da72f69eb",
+      "title": "A positive new report raises the question: was Reeves undermined by dodgy data? | Heather Stewart",
+      "summary": "Assessment that has found a jump in UK productivity emphasises urgent need to appoint a national statistician Keen new chancellor, John Healey, responded to last week’s better-than-expected economic news by claiming the government is “bringing hope back”.…",
+      "url": "https://www.theguardian.com/business/2026/aug/16/uk-productivity-data-rachel-reeves-national-statistician",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/business/economics",
+      "sourceId": "guardian-economics",
+      "publishedAt": "2026-08-16T09:30:05.000Z",
+      "image": "https://i.guim.co.uk/img/media/02e91604c973694ec92513d9ca7a51f9a1b55fb9/779_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=eefd4ca72217adeec9dbbf7215a404d4",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "8c4eee7152fa",
       "title": "Block export of ‘national treasure’ UK fossils, says MP",
@@ -33,22 +49,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "6603ca277ac1",
-      "title": "Moscow says 600 drones targeted region overnight",
-      "summary": "Moscow says hundreds of drones targeted the Russian capital overnight, while NATO jets were again called into action farther south. The incidents underline the growing reach of drone warfare well beyond Ukraine itself.",
-      "url": "https://www.dw.com/en/moscow-says-600-drones-targeted-region-overnight/a-78386779?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-16T08:13:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -209,6 +209,22 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "4b1b40151105",
+      "title": "Live: Ukraine hit missile fuel production facility in Russia in overnight assault",
+      "summary": "Ukraine ​hit ​a missile fuel production facility ​in ‌Russia's ⁠Rostov ‌region overnight, Ukrainian military ⁠said on Sunday, as Ukraine steps up long-range attacks into Russian territory. The assault came as Russian ⁠forces launched a ​missile attack on…",
+      "url": "https://www.france24.com/en/europe/20260816-live-moscow-targeted-by-600-drones-overnight-explosions-heard-in-kyiv",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-16T04:42:16.000Z",
+      "image": "https://s.france24.com/media/display/5961ce42-9957-11f1-b280-005056bf30b7/w:1024/p:16x9/2026-08-16T090834Z-1069700491-RC2EZMA4CLAH-RTRMADP-3-UKRAINE-CRISIS-RUSSIA-WILDBERRIES-MOSCOW.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -2921,22 +2937,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "8aa924fe288b",
-      "title": "Trump orders new 15% tariff on key material for solar panels and microchips",
-      "summary": "Move to raise levy on goods made with polysilicon aims to protect domestic US supply chains from China, the major producer Donald Trump has ordered a new 15% tariff on imported products made of polysilicon, an important ingredient in microchip manufacturing…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/07/trump-orders-tariff-solar-panels-microchips-manufacturing-ingredient",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
-      "publishedAt": "2026-08-07T09:11:36.000Z",
-      "image": "https://i.guim.co.uk/img/media/908237f4505e2ae1348ac9098ae93c4bd57241a4/427_0_4268_3414/master/4268.jpg?width=700&quality=85&auto=format&fit=max&s=e2501931101c710eb33578006438ee47",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
