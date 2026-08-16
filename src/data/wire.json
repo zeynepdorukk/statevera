@@ -1,8 +1,42 @@
 {
-  "generatedAt": "2026-08-16T05:00:03.184Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-16T05:29:33.412Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "9b0d2249ac15",
+      "title": "New UK cost of living crisis looms with soaring energy bills forecast to lift inflation",
+      "summary": "Latest reading on Wednesday likely to frame scale of challenge for new PM to ease pressures on households amid Iran war fallout British households are facing a renewed cost of living squeeze, with official figures expected to show this week that soaring…",
+      "url": "https://www.theguardian.com/business/2026/aug/16/new-uk-cost-of-living-crisis-looms-rising-energy-bills-inflation",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-16T05:00:16.000Z",
+      "image": "https://i.guim.co.uk/img/media/40e2709d6ab1818cac0173dac8116cdbf673d354/398_0_2703_2162/master/2703.jpg?width=700&quality=85&auto=format&fit=max&s=94d557df364893dec9ce8cc85e06c044",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "abfb728b448e",
+      "title": "Russian strikes kill Ukrainian woman as NATO jet downs drone over Romania",
+      "summary": "Romania's Defence Ministry didn't specify origin of the drone but has previously blamed Russia for similar incidents.",
+      "url": "https://www.aljazeera.com/news/2026/8/16/russian-strikes-kill-ukrainian-woman-as-nato-jet-downs-drone-over-romania?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-16T04:54:33.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "f24eea844477",
       "title": "Japan’s defence minister heads to Australia to meet Marles in wake of melon-gate controversy",
@@ -229,22 +263,6 @@
       "weight": 2
     },
     {
-      "id": "5dfa3ac33e51",
-      "title": "Israeli strikes kill 11 in southern Lebanon, Hezbollah threatens to retaliate",
-      "summary": "Israeli airstrikes on southern Lebanon killed at least 11 people Saturday, some of the deadliest since deals in June eased hostilities between Israel and Hezbollah. Israel's military said the strikes were in retaliation for an attack by Hezbollah on its…",
-      "url": "https://www.france24.com/en/middle-east/20260815-israeli-strikes-kill-11-in-southern-lebanon-hezbollah-threatens-to-retaliate",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-15T20:37:34.000Z",
-      "image": "https://s.france24.com/media/display/9bc873a4-98c5-11f1-8108-005056a90284/w:1024/p:16x9/8d2575533c572c55c8b941d6ec31b065014ce460.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "491a6e0099c8",
       "title": "Iran condemns Israeli attacks in Lebanon",
       "summary": "Iran condemns Israeli attacks in Lebanon Iran’s foreign ministry has condemned Israel’s recent attacks on southern Lebanon which killed 11 people, including children, according to Iran’s semi-official Tasnim news agency. Ministry spokesman Esmaeil Baghaei…",
@@ -293,6 +311,22 @@
       "weight": 2
     },
     {
+      "id": "d11f182f7ce7",
+      "title": "Israel says soldiers wounded in southern Lebanon",
+      "summary": "Israel says soldiers wounded in southern Lebanon The Israeli military says three soldiers, including one officer, were wounded by an explosive drone in southern Lebanon overnight. In a post on X, the army said the soldiers were taken out of Lebanon to receive…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israel-says-soldiers-wounded-southern-lebanon",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-15T18:52:42.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "481bb4011916",
       "title": "Israeli army says it killed two Palestinians in Gaza",
       "summary": "Israeli army says it killed two Palestinians in Gaza The Israeli military has said its Paratroopers Brigade killed two Palestinians in Gaza. The military said the Palestinians crossed the so-called “yellow line.\" Under the US-brokered agreement reached with…",
@@ -306,22 +340,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "7efc257cb6e5",
-      "title": "Inter Milan sign England’s Djed Spence from Tottenham Hotspur",
-      "summary": "The 26-year-old, who has signed a five-year deal, cost the Italian champions about $40m, according to media reports.",
-      "url": "https://www.aljazeera.com/sports/2026/8/15/inter-milan-sign-englands-djed-spence-from-tottenham-hotspur?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-15T17:48:32.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -454,22 +472,6 @@
       "weight": 2
     },
     {
-      "id": "b7ec4d1add9e",
-      "title": "France’s top court rejects social media ban for under-15s",
-      "summary": "France’s Constitutional Court has struck down a law that would have banned children under 15 from social media, ruling that it disproportionately infringed on freedom of expression and raised privacy concerns over age verification. The government plans to…",
-      "url": "https://www.france24.com/en/france-s-top-court-rejects-social-media-ban-for-under-15s",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-15T12:53:35.000Z",
-      "image": "https://s.france24.com/media/display/4c0806ce-98a5-11f1-904d-005056a90284/w:1024/p:16x9/EN-20260815-140907-141032-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "2ebd46ff0f6a",
       "title": "Burkina Faso imposes military training on journalists",
       "summary": "More than 40 journalists in Burkina Faso have taken part in a military-style \"patriotism\" training course imposed by the authoritarian ruling junta.",
@@ -547,22 +549,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "d1c6fa4de632",
-      "title": "'We're seeing an important escalation in southern Lebanon despite the so-called truce'",
-      "summary": "Overnight Israeli strikes in southern Lebanon killed at least seven people in one village, in the deadliest escalation since the lull in fighting began two months ago. FRANCE 24 correspondent Renée Davis, reporting from Beirut, says the strikes mark a…",
-      "url": "https://www.france24.com/en/we-re-seeing-an-important-escalation-in-southern-lebanon-despite-the-so-called-truce",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-15T09:59:22.000Z",
-      "image": "https://s.france24.com/media/display/99beeffe-988c-11f1-ac90-005056bf30b7/w:1024/p:16x9/EN-20260815-110119-110440-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -740,6 +726,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "feba530ce504",
+      "title": "France's top court blocks social media ban for under-15s",
+      "summary": "The Constitutional Council says it infringes upon freedom of expression - but President Macron vows to prepare a new draft.",
+      "url": "https://www.bbc.co.uk/news/articles/cx2vj433xqlo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-14T16:35:06.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7f52/live/af679960-97f5-11f1-9577-b1309b6ea3af.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Europe",
       "weight": 2
     },
     {
