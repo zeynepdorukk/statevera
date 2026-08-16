@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T14:44:54.391Z",
+  "generatedAt": "2026-08-16T14:59:27.832Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -449,22 +449,6 @@
       "imageWidth": 0,
       "category": "Diplomacy",
       "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "ee7c3fdde47b",
-      "title": "Houthis launch sixth ballistic missile at Marib city",
-      "summary": "Houthis launch sixth ballistic missile at Marib city Houthis have fired a sixth ballistic missile on the Yemeni city of Marib, according to the Marib governorate. In a post on X, the governorate published photos of a crater in the ground as well as the…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/houthis-launch-sixth-ballistic-missile-marib-city",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T02:57:38.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     },
