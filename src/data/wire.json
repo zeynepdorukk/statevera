@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T08:28:43.160Z",
+  "generatedAt": "2026-08-16T08:56:48.998Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "9b0d2249ac15",
+      "title": "New UK cost of living crisis looms with soaring energy bills forecast to lift inflation",
+      "summary": "Latest reading on Wednesday likely to frame scale of challenge for new PM to ease pressures on households amid Iran war fallout British households are facing a renewed cost of living squeeze, with official figures expected to show this week that soaring…",
+      "url": "https://www.theguardian.com/business/2026/aug/16/new-uk-cost-of-living-crisis-looms-rising-energy-bills-inflation",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/business/economics",
+      "sourceId": "guardian-economics",
+      "publishedAt": "2026-08-16T08:42:16.000Z",
+      "image": "https://i.guim.co.uk/img/media/40e2709d6ab1818cac0173dac8116cdbf673d354/398_0_2703_2162/master/2703.jpg?width=700&quality=85&auto=format&fit=max&s=94d557df364893dec9ce8cc85e06c044",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "6603ca277ac1",
       "title": "Moscow says 600 drones targeted region overnight",
@@ -33,6 +49,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "d91d65980c9f",
+      "title": "Former UAE presidential aide's tweet mocking Pakistan exposes Emitari unease over Mecca pact",
+      "summary": "Former UAE presidential aide's tweet mocking Pakistan exposes Emitari unease over Mecca pact Submitted by MEE staff on Sun, 08/16/2026 - 06:02 Remarks by the political analyst on Pakistan's ‘poverty, illiteracy’ and nuclear arsenal have sparked online…",
+      "url": "https://www.middleeasteye.net/news/emirati-academics-barbed-tweet-pakistan-exposes-uae-unease-over-mecca-pact",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T07:19:35.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -129,22 +161,6 @@
       "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "9b0d2249ac15",
-      "title": "New UK cost of living crisis looms with soaring energy bills forecast to lift inflation",
-      "summary": "Latest reading on Wednesday likely to frame scale of challenge for new PM to ease pressures on households amid Iran war fallout British households are facing a renewed cost of living squeeze, with official figures expected to show this week that soaring…",
-      "url": "https://www.theguardian.com/business/2026/aug/16/new-uk-cost-of-living-crisis-looms-rising-energy-bills-inflation",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-16T05:00:16.000Z",
-      "image": "https://i.guim.co.uk/img/media/40e2709d6ab1818cac0173dac8116cdbf673d354/398_0_2703_2162/master/2703.jpg?width=700&quality=85&auto=format&fit=max&s=94d557df364893dec9ce8cc85e06c044",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -421,38 +437,6 @@
       "weight": 2
     },
     {
-      "id": "d11f182f7ce7",
-      "title": "Israel says soldiers wounded in southern Lebanon",
-      "summary": "Israel says soldiers wounded in southern Lebanon The Israeli military says three soldiers, including one officer, were wounded by an explosive drone in southern Lebanon overnight. In a post on X, the army said the soldiers were taken out of Lebanon to receive…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israel-says-soldiers-wounded-southern-lebanon",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-15T18:52:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "481bb4011916",
-      "title": "Israeli army says it killed two Palestinians in Gaza",
-      "summary": "Israeli army says it killed two Palestinians in Gaza The Israeli military has said its Paratroopers Brigade killed two Palestinians in Gaza. The military said the Palestinians crossed the so-called “yellow line.\" Under the US-brokered agreement reached with…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-army-says-it-killed-two-palestinians-gaza",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-15T17:53:33.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "625d4dba3f7b",
       "title": "Japan Inc. boosts short-term corporate debt holdings amid inflation",
       "summary": "",
@@ -659,22 +643,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "d1c6fa4de632",
-      "title": "'We're seeing an important escalation in southern Lebanon despite the so-called truce'",
-      "summary": "Overnight Israeli strikes in southern Lebanon killed at least seven people in one village, in the deadliest escalation since the lull in fighting began two months ago. FRANCE 24 correspondent Renée Davis, reporting from Beirut, says the strikes mark a…",
-      "url": "https://www.france24.com/en/we-re-seeing-an-important-escalation-in-southern-lebanon-despite-the-so-called-truce",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-15T09:59:22.000Z",
-      "image": "https://s.france24.com/media/display/99beeffe-988c-11f1-ac90-005056bf30b7/w:1024/p:16x9/EN-20260815-110119-110440-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
