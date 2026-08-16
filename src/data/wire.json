@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T12:15:53.630Z",
+  "generatedAt": "2026-08-16T13:06:23.032Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -17,6 +17,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "074ac629f8b6",
+      "title": "‘Spearhead of annexation’: Israel hands West Bank rule to civilian police",
+      "summary": "Israel's transfer of West Bank policing to civilian forces cements de facto annexation and empowers settler militias.",
+      "url": "https://www.aljazeera.com/news/2026/8/16/spearhead-of-annexation-israel-hands-west-bank-rule-to-civilian-police?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-16T11:54:55.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -422,7 +438,7 @@
     },
     {
       "id": "4b1b40151105",
-      "title": "Live: Ukraine hit missile fuel production facility in Russia in overnight assault",
+      "title": "Live: Ukraine launches 600 drones at Russia, one of its largest aerial attacks of the war",
       "summary": "Ukraine ​hit ​a missile fuel production facility ​in ‌Russia's ⁠Rostov ‌region overnight, Ukrainian military ⁠said on Sunday, as Ukraine steps up long-range attacks into Russian territory. The assault came as Russian ⁠forces launched a ​missile attack on…",
       "url": "https://www.france24.com/en/europe/20260816-live-moscow-targeted-by-600-drones-overnight-explosions-heard-in-kyiv",
       "publisher": "France 24",
@@ -534,54 +550,6 @@
       "weight": 2
     },
     {
-      "id": "b54e9b656950",
-      "title": "Hamas chief heads to Cairo for talks ahead of Kushner visit",
-      "summary": "Hamas chief heads to Cairo for talks ahead of Kushner visit Hamas leader Khalil al-Hayya is set to travel to Cairo for talks with Egyptian officials, a Hamas source tells AFP, ahead of a visit by US President Donald Trump’s envoy Jared Kushner to the region.…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-chief-heads-cairo-talks-ahead-kushner-visit",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-15T22:31:17.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "e9e4895993b1",
-      "title": "Report: Drone strikes kill three Houthi fighters and wound commanders in southwest Yemen",
-      "summary": "Report: Drone strikes kill three Houthi fighters and wound commanders in southwest Yemen Yemeni government forces said at least three Houthis have been killed during drone strikes west of Taiz governorate, in the southwest of the country, according to the…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/report-drone-strikes-kill-three-houthi-fighters-and-wound-commanders",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-15T21:52:28.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "5dfa3ac33e51",
-      "title": "Israeli strikes kill 11 in southern Lebanon, Hezbollah threatens to retaliate",
-      "summary": "Israeli airstrikes on southern Lebanon killed at least 11 people Saturday, some of the deadliest since deals in June eased hostilities between Israel and Hezbollah. Israel's military said the strikes were in retaliation for an attack by Hezbollah on its…",
-      "url": "https://www.france24.com/en/middle-east/20260815-israeli-strikes-kill-11-in-southern-lebanon-hezbollah-threatens-to-retaliate",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-15T20:37:34.000Z",
-      "image": "https://s.france24.com/media/display/9bc873a4-98c5-11f1-8108-005056a90284/w:1024/p:16x9/8d2575533c572c55c8b941d6ec31b065014ce460.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "4712ee207373",
       "title": "Armenian Genocide survivors' grandson says 'political motives' block recognition",
       "summary": "In 1915, the Ottoman Empire began the systematic deportation and massacre of its Armenian population. As many as 1.5 million Armenians were killed – widely regarded by historians as the twentieth century's first genocide, and the event for which the term was…",
@@ -595,6 +563,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "3542ce53e50a",
+      "title": "Lebanon says 11 killed in Israeli airstrikes",
+      "summary": "Lebanon's prime minister denounced the attacks on villages in southern Lebanon for targeting civilians in their homes. Israel said it was firing on Hezbollah infrastructure.",
+      "url": "https://www.dw.com/en/lebanon-says-11-killed-in-israeli-airstrikes/a-78383713?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-15T15:35:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -676,6 +660,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "be0547c48ba1",
+      "title": "Israeli strikes on southern Lebanon kill 11 in worst toll since June truce",
+      "summary": "Rescue services search for survivors and bodies after airstrikes hit homes in Ansar and Deir al-Zahrani Eleven people have been killed, including three children, and 19 injured in two Israeli airstrikes on southern Lebanon, the worst toll since deals in June…",
+      "url": "https://www.theguardian.com/world/2026/aug/15/israeli-strike-on-southern-lebanon-kills-seven-in-worst-toll-since-june-state-media-says",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-15T13:55:28.000Z",
+      "image": "https://i.guim.co.uk/img/media/7c89de51a1cb60ff5893f2358eef87af6a328c6a/103_0_4103_3283/master/4103.jpg?width=700&quality=85&auto=format&fit=max&s=911b9a5b1a0f4fdb589438acfc269af0",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1527,22 +1527,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "447cfe5d5276",
-      "title": "NATO jets shoot down drone over Latvia",
-      "summary": "The unmanned aerial vehicle entered Latvian airspace \"as a result of Russian electromagnetic warfare,\" said the Latvian military.",
-      "url": "https://www.politico.eu/article/nato-jets-shoot-down-drone-over-latvia/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-14T10:18:39.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -3098,22 +3082,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "0f4f38c866cc",
-      "title": "Nigerian security forces free more than 300 hostages in ‘largest single-day recovery’",
-      "summary": "President hails operation to rescue captives held in dense forests of Kainji Lake national park in north-central region Nigerian security forces have rescued more than 300 abducted people in what the president, Bola Ahmed Tinubu, hailed as the largest…",
-      "url": "https://www.theguardian.com/world/2026/aug/06/nigerian-security-forces-free-hostages-abducted-by-militants",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/africa",
-      "sourceId": "guardian-africa",
-      "publishedAt": "2026-08-06T12:40:32.000Z",
-      "image": "https://i.guim.co.uk/img/media/62045eac3aead8107b88f33dd07b04186a7000ca/0_0_3506_2805/master/3506.jpg?width=700&quality=85&auto=format&fit=max&s=b8dc7822dd99a0181ad74e5f5d8a85fe",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Africa",
       "weight": 2
     }
   ]
