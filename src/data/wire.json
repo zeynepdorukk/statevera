@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T19:03:07.433Z",
+  "generatedAt": "2026-08-16T19:31:16.104Z",
   "sourceCount": 26,
   "failedSources": [
     "npr-world"
@@ -649,10 +649,10 @@
       "weight": 2
     },
     {
-      "id": "044a8215f665",
-      "title": "Climate action doesn't seem to be a priority for Germany — despite heat-related deaths and drought. Why aren't more people taking to the streets?",
+      "id": "ac62d2ad884d",
+      "title": "In Germany, record heat meets climate action fatigue",
       "summary": "Climate action does not seem to be a priority for the German government — despite record temperatures, heat-related deaths and drought. Why aren't more people taking to the streets in protest?",
-      "url": "https://www.dw.com/en/climate-action-doesn-t-seem-to-be-a-priority-for-germany-despite-heat-related-deaths-and-drought-why-aren-t-more-people-taking-to-the-streets/a-78374727?maca=en-rss-en-all-1573-rdf",
+      "url": "https://www.dw.com/en/in-germany-record-heat-meets-climate-action-fatigue/a-78374727?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
       "sourceId": "dw",
