@@ -1,8 +1,42 @@
 {
-  "generatedAt": "2026-08-16T14:59:27.832Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-16T15:20:37.582Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "4a38ea4308ed",
+      "title": "Nazi artefacts still being sold online years after trade outlawed across Australia",
+      "summary": "One seller says second world war memorabilia containing banned Nazi symbols is legal under exemptions to the laws Get our breaking news email , free app or daily news podcast Nazi artefacts bearing prohibited symbols are being openly sold in Australia three…",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/17/nazi-artefacts-prohibited-symbols-still-being-sold-online-australia-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-16T15:00:30.000Z",
+      "image": "https://i.guim.co.uk/img/media/183a8ab5352081c5d1ebbe833f230d71a9a870c6/0_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=c3056d2e6c8ea3421766bd39b48499dd",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "b89d41bf3b66",
+      "title": "A fake website and a deluge of CVs: the Australian firm embroiled in an FBI probe into alleged Chinese espionage",
+      "summary": "Exclusive: Fake consultancy impersonating Brisbane firm online is one of 13 websites seized by the US Department of Justice Get our breaking news email , free app or daily news podcast When the first emails arrived, they were easily dismissed as spam. But as…",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/17/fbi-investigation-china-alleged-espionage-fake-websites-defence-intelligence-australia",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
+      "sourceId": "guardian-asia",
+      "publishedAt": "2026-08-16T15:00:30.000Z",
+      "image": "https://i.guim.co.uk/img/media/4fb3471814f8ddf60e815e68672a8e1e71ac2e08/688_0_6880_5504/master/6880.jpg?width=700&quality=85&auto=format&fit=max&s=cfa189291d8c0b8c07b637470262f5bb",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "7b1a382b13a7",
       "title": "Interest rate dilemma for central banks as inflation rises but growth slows",
@@ -84,22 +118,6 @@
       "weight": 2
     },
     {
-      "id": "a55aa9f8583c",
-      "title": "Kushner, Hamas delegation in Egypt for talks on Gaza peace plan",
-      "summary": "A Hamas delegation began a meeting with Egypt's spy chief on Sunday to discuss ways to advance the implementation of a post-war plan for Gaza while US envoy Jared Kushner met with Egyptian President Abdel Fattah al-Sissi.",
-      "url": "https://www.france24.com/en/middle-east/20260816-hamas-begins-crucial-talks-with-egypt-on-trump-s-gaza-peace-plan",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T11:33:32.000Z",
-      "image": "https://s.france24.com/media/display/64f693de-9964-11f1-94e0-005056a97e36/w:1024/p:16x9/2026-07-20T122458Z-1821028812-RC2OHMA50977-RTRMADP-3-ISRAEL-PALESTINIANS-HAMAS-HAYYA.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "766b4c5ab106",
       "title": "DAP votes to stay in Malaysia's ruling coalition, easing pressure on Anwar",
       "summary": "",
@@ -178,22 +196,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "1894033c9c53",
-      "title": "Brazil election: Lula and the new face of Bolsonaro's right",
-      "summary": "Brazil's October presidential election is shaping up as another battle between the Lula and Bolsonaro camps, with incumbent Luiz Inácio Lula da Silva seeking a fourth term and Flávio Bolsonaro stepping in for his imprisoned father. The two frontrunners are…",
-      "url": "https://www.france24.com/en/brazil-election-lula-and-the-new-face-of-bolsonaro-s-right",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T10:46:32.000Z",
-      "image": "https://s.france24.com/media/display/b9e5d9be-995e-11f1-a1a8-005056bf30b7/w:1024/p:16x9/EN-20260816-121323-121530-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -293,22 +295,6 @@
       "weight": 2
     },
     {
-      "id": "43b093e9a0b4",
-      "title": "Spanish fighter jet downs drone breaching Romania's airspace",
-      "summary": "A Spanish fighter jet on Sunday shot down a drone that breached Romania's airspace near the border with Ukraine and Moldova, Romania's defence ministry said, in the latest incident to highlight the challenges facing NATO states bordering Ukraine.",
-      "url": "https://www.france24.com/en/europe/20260816-spanish-fighter-jet-downs-drone-breaching-romania-s-airspace",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T07:50:35.000Z",
-      "image": "https://s.france24.com/media/display/b6665cfe-9946-11f1-9aed-005056a97e36/w:1024/p:16x9/000-36FL9VV.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "d91d65980c9f",
       "title": "Former UAE presidential aide's post mocking Pakistan exposes unease over Mecca pact",
       "summary": "Former UAE presidential aide's post mocking Pakistan exposes unease over Mecca pact Submitted by MEE staff on Sun, 08/16/2026 - 06:02 Remarks by the political analyst on Pakistan's poverty, illiteracy and nuclear arsenal have sparked online backlash Turkish…",
@@ -373,19 +359,19 @@
       "weight": 2
     },
     {
-      "id": "6a8c06c45901",
-      "title": "Colombia's new president asks Trump to suspend tariffs after deadly earthquake",
-      "summary": "Colombia's President Abelardo de la Espriella on Saturday called on US President Donald Trump to suspend tariffs on the South American nation as the country contiues to reel from a deadly earthquake. At least 300 people were killed in the quake that…",
-      "url": "https://www.france24.com/en/americas/20260816-colombia-s-new-president-asks-trump-to-suspend-tariffs-after-deadly-earthquake",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T05:39:51.000Z",
-      "image": "https://s.france24.com/media/display/e7f88232-9933-11f1-8413-005056bfb2b6/w:1024/p:16x9/AP26228081392272.jpg",
+      "id": "6fe7a79fa37e",
+      "title": "Morning recap",
+      "summary": "Morning recap Iran’s foreign minister, Abbas Araghchi, has reiterated that talks with Oman and reopening of Hormuz were “two separate issues” and the two countries “may reach an outcome soon”. “The routes that existed previously are no longer functional, so a…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/morning-recap-154",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T06:48:59.000Z",
+      "image": "",
       "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -434,38 +420,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "9f51f22dfcba",
-      "title": "Iran and Oman defining a temporary route for now, Araghchi says",
-      "summary": "Iran and Oman defining a temporary route for now, Araghchi says Iran’s foreign minister, Abbas Araghchi has reiterated that talks with Oman and reopening of Hormuz were “two separate issues”. In his comments carried by Shahrara News, he said: “Our…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-and-oman-defining-temporary-route-now-araghchi-says",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T03:12:12.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "c761e79ec70e",
-      "title": "Ukraine war briefing: Kyiv faces missile barrage after Zelenskyy targets Russian satellite network",
-      "summary": "Kyiv mayor says attack has caused fires in at least two districts; Ukraine hits Russian rocket facility in long-range strike. What we know on day 1,636 Russian forces launched a missile ⁠attack on Kyiv early on Sunday, sparking fires in ⁠at least ⁠two…",
-      "url": "https://www.theguardian.com/world/2026/aug/16/ukraine-war-briefing-kyiv-faces-missile-barrage-after-zelenskyy-targets-russian-satellite-network",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-16T02:22:46.000Z",
-      "image": "https://i.guim.co.uk/img/media/82f1212b26402bf5528cbe6200105866c26a5833/415_138_4157_3326/master/4157.jpg?width=700&quality=85&auto=format&fit=max&s=bc7353451a5f002ec769f1ab7020db2f",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
