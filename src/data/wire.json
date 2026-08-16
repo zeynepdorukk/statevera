@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T20:35:33.168Z",
+  "generatedAt": "2026-08-16T20:56:03.756Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "fed4ee3055dd",
+      "title": "Brazil: Lula, Bolsonaro return to strongholds to launch runs for president",
+      "summary": "Lula and Bolsonaro appeal to Brazil’s women voters with promises to combat rising femicide and gender violence.",
+      "url": "https://www.aljazeera.com/news/2026/8/16/brazil-lula-bolsonaro-return-to-strongholds-to-launch-runs-for-president?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-16T20:36:32.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "aae2f5cc0ce3",
       "title": "Kushner meets with Hamas on the Gaza road map ahead of talks with Netanyahu",
@@ -102,7 +118,7 @@
     {
       "id": "19d81bf0a1ed",
       "title": "UAE, Saudi Arabia, others condemn Israel's rejection of Trump Gaza plan",
-      "summary": "The statement came as US envoy Jared Kushner and Gaza peace envoy Nickolay Mladenov held ceasefire and implementation talks with regional mediators in Egypt.",
+      "summary": "The statement came as US envoy Jared Kushner and Gaza peace envoy Nickolay Mladenov held ceasefire and implementation talks with regional mediators and Hamas in Egypt.",
       "url": "https://www.dw.com/en/uae-saudi-arabia-others-condemn-israel-s-rejection-of-trump-gaza-plan/a-78389399?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
@@ -305,38 +321,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "074ac629f8b6",
-      "title": "‘Spearhead of annexation’: Israel hands West Bank rule to civilian police",
-      "summary": "Israel's transfer of West Bank policing to civilian forces cements de facto annexation and empowers settler militias.",
-      "url": "https://www.aljazeera.com/news/2026/8/16/spearhead-of-annexation-israel-hands-west-bank-rule-to-civilian-police?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-16T11:54:55.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "baca6d673ebc",
-      "title": "‘Limited options’ for many Iranians as war with US chokes economy",
-      "summary": "Millions of Iranians struggle to make ends meet as war with US devastates the economy and sends prices soaring.",
-      "url": "https://www.aljazeera.com/news/2026/8/16/limited-options-for-many-iranians-as-war-with-us-chokes-economy?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-16T11:38:50.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
