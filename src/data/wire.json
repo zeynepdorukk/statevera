@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T19:52:09.215Z",
+  "generatedAt": "2026-08-16T20:09:02.456Z",
   "sourceCount": 26,
   "failedSources": [
     "npr-world"
@@ -22,19 +22,19 @@
       "weight": 2
     },
     {
-      "id": "1c42477df747",
-      "title": "Hamas says it asked Board of Peace to 'compel' Israel to accept Gaza plan",
-      "summary": "Hamas says it asked Board of Peace to 'compel' Israel to accept Gaza plan Hamas said on Sunday that it had asked the US-backed Board of Peace to \"compel\" Israel to accept a peace plan for Gaza after its leader met with US President Donald Trump's envoy Jared…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-says-it-asked-board-peace-compel-israel-accept-gaza-plan",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T19:45:52.000Z",
-      "image": "",
-      "imageWidth": 0,
+      "id": "847268e9ed16",
+      "title": "Barcelona agree £65m deal to sign Rodri from Man City",
+      "summary": "Barcelona agree a deal to sign Spain captain Rodri from Manchester City.",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cy0jj65r18yo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/europe",
+      "sourceId": "bbc-europe",
+      "publishedAt": "2026-08-16T19:37:45.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/6425/live/0b8f72c0-99a5-11f1-a10a-71ff76b28954.jpg",
+      "imageWidth": 240,
       "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
+      "categoryConfidence": "high",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -1468,23 +1468,6 @@
       "weight": 2
     },
     {
-      "id": "63470e4fa29a",
-      "title": "Brookfield enters Japan housing market with $627m deal in 4 urban centers",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/markets/property/brookfield-enters-japan-housing-market-with-627m-deal-in-4-urban-centers",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-14T09:41:06.852Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "6c434788dec2",
       "title": "Nigeria’s Muslim and Christian leaders sign new peace accord",
       "summary": "More than 50 Muslim and Christian leaders have signed a new peace accord in Nigeria, aiming to ease religious tensions and promote harmony.",
@@ -2746,22 +2729,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "91024385e6ab",
-      "title": "At least 13 killed in Ukrainian drone strike deep into Russia",
-      "summary": "Russian officials say another 75 people were injured by the attack - one of the deadliest Ukrainian drone attacks since Moscow's full-scale invasion.",
-      "url": "https://www.bbc.co.uk/news/articles/cvgjvgv926po?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/europe",
-      "sourceId": "bbc-europe",
-      "publishedAt": "2026-08-10T14:34:25.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cc11/live/b8002050-9495-11f1-9ade-bb7c8a2b6bc0.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
