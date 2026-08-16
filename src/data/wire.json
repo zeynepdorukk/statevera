@@ -1,10 +1,59 @@
 {
-  "generatedAt": "2026-08-16T17:18:54.241Z",
-  "sourceCount": 26,
+  "generatedAt": "2026-08-16T17:41:01.922Z",
+  "sourceCount": 25,
   "failedSources": [
+    "france24",
     "npr-world"
   ],
   "items": [
+    {
+      "id": "19d81bf0a1ed",
+      "title": "UAE, Saudi Arabia, others condemn Israel's rejection of Trump Gaza plan",
+      "summary": "The statement came as US envoy Jared Kushner and Gaza peace envoy Nickolay Mladenov held ceasefire and implementation talks with regional mediators in Egypt.",
+      "url": "https://www.dw.com/en/uae-saudi-arabia-others-condemn-israel-s-rejection-of-trump-gaza-plan/a-78389399?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-16T17:31:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "6bbaff75297d",
+      "title": "Report: US envoy Kushner meets Hamas leaders in Egypt",
+      "summary": "Report: US envoy Kushner meets Hamas leaders in Egypt Hamas leaders met on Sunday in Egypt with President Donald Trump's son-in-law and envoy Jared Kushner, who is seeking to push a Gaza plan rejected by Israel, sources with knowledge of the talks told AFP.…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/report-us-envoy-kushner-meets-hamas-leaders-egypt",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T17:30:49.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "f10c00fb3cbf",
+      "title": "Ex-PM Attal urges Macron to put under-15 social media ban to referendum",
+      "summary": "Gabriel Attal has called on President Emmanuel Macron to put a proposed ban on social media for children under 15 directly to French voters, after the Constitutional Council struck down legislation approved by parliament.",
+      "url": "https://www.rfi.fr/en/france/20260816-ex-pm-attal-urges-macron-to-put-under-15-social-media-ban-to-referendum",
+      "publisher": "RFI",
+      "publisherHome": "https://www.rfi.fr/en",
+      "sourceId": "rfi-world",
+      "publishedAt": "2026-08-16T17:30:00.000Z",
+      "image": "https://s.rfi.fr/media/display/c8acb7a0-1e30-11f1-8f66-005056a97e36/w:1024/p:16x9/AP24066822349898.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "e2571668980f",
       "title": "Democrats demand answers from Trump on USS Abraham Lincoln conditions",
@@ -50,22 +99,6 @@
       "imageWidth": 0,
       "category": "Geopolitics",
       "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "53a72380085d",
-      "title": "Iran offers $30,000 bounty for killing or capturing US soldiers",
-      "summary": "The Iranian military announced on Sunday it would be offering a $30,000 reward for killing or capturing US soldiers, with the bounty doubled if conducted by a woman. There have been no known deployments of US ground troops in Iran during the war except for a…",
-      "url": "https://www.france24.com/en/middle-east/20260816-iran-offers-30-000-bounty-for-killing-or-capturing-us-soldiers",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T15:40:26.000Z",
-      "image": "https://s.france24.com/media/display/2a9f5802-8ecd-11f1-8fd4-005056bf30b7/w:1024/p:16x9/AP26208419033757.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
     },
@@ -182,6 +215,22 @@
       "weight": 2
     },
     {
+      "id": "30f0377ed0d7",
+      "title": "First Person: Syrians lead efforts to clear rubble and rebuild lives",
+      "summary": "Communities in Syria are clearing rubble and rebuilding neighbourhoods and livelihoods torn down in the more than a decade of conflict and crisis in the country.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168136",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-16T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/11-08-2026-UNDP-Syria-01.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "074ac629f8b6",
       "title": "‘Spearhead of annexation’: Israel hands West Bank rule to civilian police",
       "summary": "Israel's transfer of West Bank policing to civilian forces cements de facto annexation and empowers settler militias.",
@@ -211,22 +260,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "a55aa9f8583c",
-      "title": "Kushner, Hamas delegation in Egypt for talks on Gaza peace plan",
-      "summary": "A Hamas delegation began a meeting with Egypt's spy chief on Sunday to discuss ways to advance the implementation of a post-war plan for Gaza while US envoy Jared Kushner met with Egyptian President Abdel Fattah al-Sissi.",
-      "url": "https://www.france24.com/en/middle-east/20260816-hamas-begins-crucial-talks-with-egypt-on-trump-s-gaza-peace-plan",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T11:33:32.000Z",
-      "image": "https://s.france24.com/media/display/64f693de-9964-11f1-94e0-005056a97e36/w:1024/p:16x9/2026-07-20T122458Z-1821028812-RC2OHMA50977-RTRMADP-3-ISRAEL-PALESTINIANS-HAMAS-HAYYA.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -292,22 +325,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "1894033c9c53",
-      "title": "Brazil election: Lula and the new face of Bolsonaro's right",
-      "summary": "Brazil's October presidential election is shaping up as another battle between the Lula and Bolsonaro camps, with incumbent Luiz Inácio Lula da Silva seeking a fourth term and Flávio Bolsonaro stepping in for his imprisoned father. The two frontrunners are…",
-      "url": "https://www.france24.com/en/brazil-election-lula-and-the-new-face-of-bolsonaro-s-right",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T10:46:32.000Z",
-      "image": "https://s.france24.com/media/display/b9e5d9be-995e-11f1-a1a8-005056bf30b7/w:1024/p:16x9/EN-20260816-121323-121530-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -468,22 +485,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "6fe7a79fa37e",
-      "title": "Morning recap",
-      "summary": "Morning recap Iran’s foreign minister, Abbas Araghchi, has reiterated that talks with Oman and reopening of Hormuz were “two separate issues” and the two countries “may reach an outcome soon”. “The routes that existed previously are no longer functional, so a…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/morning-recap-154",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T06:48:59.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1995,22 +1996,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "670e025c5871",
-      "title": "Security Council LIVE: Escalating attacks threaten peace in Yemen",
-      "summary": "As tensions triggered by the US-Iran war continue to ripple across the Middle East, the Security Council held an open debate Thursday on Yemen, where escalating deadly military clashes are worsening an already fragile humanitarian situation amid fears that…",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168131",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-13T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production%20Library/06-04-2023_WFP_Yemen-02.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
