@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T21:32:47.626Z",
+  "generatedAt": "2026-08-16T21:53:26.909Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -50,6 +50,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "4559c202444f",
+      "title": "US commander says mental health a 'priority' on USS Lincoln",
+      "summary": "Adm Brad Cooper acknowledged that navy service at sea for long periods is \"uniquely challenging and tough\", following a visit to the warship.",
+      "url": "https://www.bbc.co.uk/news/articles/ceqeeendz42o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-16T21:04:27.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cfe2/live/6ee53b10-99ab-11f1-870d-5d08c49babb2.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -891,7 +907,7 @@
     {
       "id": "0260809968a3",
       "title": "What shrinking US missile stocks means for allies and adversaries around the world",
-      "summary": "Replenishing US munitions stocks used in the Iran war could take years, and the repercussions are likely to be felt in Europe, the Indo-Pacific, and beyond. The post What shrinking US missile stocks means for allies and adversaries around the world appeared…",
+      "summary": "Replenishing US inventories following the Iran war could take years, and the consequences could extend to Europe, the Indo-Pacific, and beyond. The post What shrinking US missile stocks means for allies and adversaries around the world appeared first on…",
       "url": "https://www.atlanticcouncil.org/dispatches/what-shrinking-us-missile-stocks-means-for-allies-and-adversaries-around-the-world/",
       "publisher": "Atlantic Council",
       "publisherHome": "https://www.atlanticcouncil.org",
