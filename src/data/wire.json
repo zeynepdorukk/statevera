@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T13:58:16.628Z",
+  "generatedAt": "2026-08-16T14:19:08.108Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "7b1a382b13a7",
+      "title": "Interest rate dilemma for central banks as inflation rises but growth slows",
+      "summary": "The Federal Reserve, the ECB and the Bank of England appear unclear on how to tackle inflation amid the Iran war New UK cost of living crisis looms as rising energy bills lift inflation Inflation rates have been falling across the industrialised world, but…",
+      "url": "https://www.theguardian.com/business/2026/aug/16/interest-rate-dilemma-for-central-banks-as-inflation-rises-but-growth-slows",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-16T14:00:27.000Z",
+      "image": "https://i.guim.co.uk/img/media/901ec40e5f25b51fe3cb0055d8b0d65c6196d7b6/644_0_6418_5137/master/6418.jpg?width=700&quality=85&auto=format&fit=max&s=804cf620dc618254e182adf9cee9347f",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "dda07d2b561c",
       "title": "Houthis launch new attacks on al-Makha and Marib as Yemen conflict escalates",
@@ -69,8 +85,8 @@
     },
     {
       "id": "a55aa9f8583c",
-      "title": "Hamas begins crucial talks with Egypt on Trump's Gaza peace plan",
-      "summary": "A Hamas delegation began a meeting with Egypt's spy chief on Sunday to discuss ways to advance the implementation of a post-war plan for Gaza, an official from the Palestinian group told AFP.",
+      "title": "Kushner, Hamas delegation in Egypt for talks on Gaza peace plan",
+      "summary": "A Hamas delegation began a meeting with Egypt's spy chief on Sunday to discuss ways to advance the implementation of a post-war plan for Gaza while US envoy Jared Kushner met with Egyptian President Abdel Fattah al-Sissi.",
       "url": "https://www.france24.com/en/middle-east/20260816-hamas-begins-crucial-talks-with-egypt-on-trump-s-gaza-peace-plan",
       "publisher": "France 24",
       "publisherHome": "https://www.france24.com/en",
@@ -98,22 +114,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "af693fc85830",
-      "title": "Burnham urged to crack down on gig economy firms to protect 4m workers",
-      "summary": "Exclusive: Campaigners say millions are missing out on key rights including sick pay and protection against unfair dismissal Andy Burnham is being urged to protect 4 million gig economy workers by prosecuting companies that use widespread “bogus”…",
-      "url": "https://www.theguardian.com/business/2026/aug/16/andy-burnham-gig-economy-companies-employment-rights",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-16T11:29:41.000Z",
-      "image": "https://i.guim.co.uk/img/media/ba5ef7e25d2cb675df661cfad328b2eb475039dc/505_0_4886_3910/master/4886.jpg?width=700&quality=85&auto=format&fit=max&s=10acd0d68df9ceb4cc69cccc558c0b3c",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -1674,23 +1674,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "0ce10b1b61c4",
-      "title": "Malaysia Q2 GDP growth accelerates to 6.0%",
-      "summary": "",
-      "url": "https://asia.nikkei.com/economy/malaysia-q2-gdp-growth-accelerates-to-6.0",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-14T04:27:32.050Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "90957172e541",
