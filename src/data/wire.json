@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-16T03:10:34.478Z",
+  "generatedAt": "2026-08-16T03:56:35.083Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "9ec79d8a139e",
+      "title": "Observers say Zambia’s election marred by reports of intimidation, violence",
+      "summary": "Vote counting in Thursday's presidential polls were briefly suspended amid security threats to the electoral process.",
+      "url": "https://www.aljazeera.com/news/2026/8/16/observers-say-zambias-election-marred-by-reports-of-intimidation-violence?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-16T03:39:32.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "9f51f22dfcba",
+      "title": "Iran and Oman defining a temporary route for now, Araghchi says",
+      "summary": "Iran and Oman defining a temporary route for now, Araghchi says Iran’s foreign minister, Abbas Araghchi has reiterated that talks with Oman and reopening of Hormuz were “two separate issues”. In his comments carried by Shahrara News, he said: “Our…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-and-oman-defining-temporary-route-now-araghchi-says",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T03:12:12.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "ee7c3fdde47b",
       "title": "Houthis launch sixth ballistic missile at Marib city",
