@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T07:59:28.875Z",
+  "generatedAt": "2026-08-16T08:28:43.160Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "6603ca277ac1",
+      "title": "Moscow says 600 drones targeted region overnight",
+      "summary": "Moscow says hundreds of drones targeted the Russian capital overnight, while NATO jets were again called into action farther south. The incidents underline the growing reach of drone warfare well beyond Ukraine itself.",
+      "url": "https://www.dw.com/en/moscow-says-600-drones-targeted-region-overnight/a-78386779?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-16T08:13:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "43b093e9a0b4",
       "title": "Spanish fighter jet downs drone breaching Romania's airspace",
@@ -134,7 +150,7 @@
     {
       "id": "abfb728b448e",
       "title": "Ukraine targets Moscow in mass drone attack as Russia bombards Kyiv",
-      "summary": "Russian authorities report 201 Ukrainian drones downed overnight in the Moscow region during the escalating conflict.",
+      "summary": "Russian authorities report 201 Ukrainian drones downed overnight in the Moscow region in the escalating conflict.",
       "url": "https://www.aljazeera.com/news/2026/8/16/russian-strikes-kill-ukrainian-woman-as-nato-jet-downs-drone-over-romania?traffic_source=rss",
       "publisher": "Al Jazeera",
       "publisherHome": "https://www.aljazeera.com",
@@ -386,22 +402,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "4d1bda371cd5",
-      "title": "Canadian petition to expel US ambassador gains over 170,000 signatures",
-      "summary": "The petition is set to be discussed by House of Commons in a sign of discontent with policies of US President Trump.",
-      "url": "https://www.aljazeera.com/news/2026/8/15/canadian-petition-to-expel-us-ambassador-gains-over-170000-signatures?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-15T20:09:33.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
