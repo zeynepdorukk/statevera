@@ -1,10 +1,24 @@
 {
-  "generatedAt": "2026-08-16T15:20:37.582Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-16T15:42:19.880Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
+    {
+      "id": "815c04aab635",
+      "title": "Iranian parliament advances bill to curb foreign influence",
+      "summary": "Iranian parliament advances bill to curb foreign influence Iran's parliament approved on Sunday the general principles of a bill that would criminalise interviews and other communications with media deemed hostile to the Islamic Republic, including US or…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iranian-parliament-advances-bill-curb-foreign-influence",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T15:21:16.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "4a38ea4308ed",
       "title": "Nazi artefacts still being sold online years after trade outlawed across Australia",
@@ -118,6 +132,22 @@
       "weight": 2
     },
     {
+      "id": "a55aa9f8583c",
+      "title": "Kushner, Hamas delegation in Egypt for talks on Gaza peace plan",
+      "summary": "A Hamas delegation began a meeting with Egypt's spy chief on Sunday to discuss ways to advance the implementation of a post-war plan for Gaza while US envoy Jared Kushner met with Egyptian President Abdel Fattah al-Sissi.",
+      "url": "https://www.france24.com/en/middle-east/20260816-hamas-begins-crucial-talks-with-egypt-on-trump-s-gaza-peace-plan",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-16T11:33:32.000Z",
+      "image": "https://s.france24.com/media/display/64f693de-9964-11f1-94e0-005056a97e36/w:1024/p:16x9/2026-07-20T122458Z-1821028812-RC2OHMA50977-RTRMADP-3-ISRAEL-PALESTINIANS-HAMAS-HAYYA.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "766b4c5ab106",
       "title": "DAP votes to stay in Malaysia's ruling coalition, easing pressure on Anwar",
       "summary": "",
@@ -196,6 +226,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "1894033c9c53",
+      "title": "Brazil election: Lula and the new face of Bolsonaro's right",
+      "summary": "Brazil's October presidential election is shaping up as another battle between the Lula and Bolsonaro camps, with incumbent Luiz Inácio Lula da Silva seeking a fourth term and Flávio Bolsonaro stepping in for his imprisoned father. The two frontrunners are…",
+      "url": "https://www.france24.com/en/brazil-election-lula-and-the-new-face-of-bolsonaro-s-right",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-16T10:46:32.000Z",
+      "image": "https://s.france24.com/media/display/b9e5d9be-995e-11f1-a1a8-005056bf30b7/w:1024/p:16x9/EN-20260816-121323-121530-CS.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -295,6 +341,22 @@
       "weight": 2
     },
     {
+      "id": "43b093e9a0b4",
+      "title": "Spanish fighter jet downs drone breaching Romania's airspace",
+      "summary": "A Spanish fighter jet on Sunday shot down a drone that breached Romania's airspace near the border with Ukraine and Moldova, Romania's defence ministry said, in the latest incident to highlight the challenges facing NATO states bordering Ukraine.",
+      "url": "https://www.france24.com/en/europe/20260816-spanish-fighter-jet-downs-drone-breaching-romania-s-airspace",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-16T07:50:35.000Z",
+      "image": "https://s.france24.com/media/display/b6665cfe-9946-11f1-9aed-005056a97e36/w:1024/p:16x9/000-36FL9VV.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
       "id": "d91d65980c9f",
       "title": "Former UAE presidential aide's post mocking Pakistan exposes unease over Mecca pact",
       "summary": "Former UAE presidential aide's post mocking Pakistan exposes unease over Mecca pact Submitted by MEE staff on Sun, 08/16/2026 - 06:02 Remarks by the political analyst on Pakistan's poverty, illiteracy and nuclear arsenal have sparked online backlash Turkish…",
@@ -372,6 +434,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "6a8c06c45901",
+      "title": "Colombia's new president asks Trump to suspend tariffs after deadly earthquake",
+      "summary": "Colombia's President Abelardo de la Espriella on Saturday called on US President Donald Trump to suspend tariffs on the South American nation as the country contiues to reel from a deadly earthquake. At least 300 people were killed in the quake that…",
+      "url": "https://www.france24.com/en/americas/20260816-colombia-s-new-president-asks-trump-to-suspend-tariffs-after-deadly-earthquake",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-16T05:39:51.000Z",
+      "image": "https://s.france24.com/media/display/e7f88232-9933-11f1-8413-005056bfb2b6/w:1024/p:16x9/AP26228081392272.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -726,22 +804,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "4b5fabc32910",
-      "title": "Germany increasingly revokes refugee status for Syrians",
-      "summary": "In the first half of 2026, 23.2% of reviews ended with protection being revoked or withdrawn, according to a government response to a parliamentary question by the socialist Left Party. DW has more.",
-      "url": "https://www.dw.com/en/germany-increasingly-revokes-refugee-status-for-syrians/live-78378773?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-15T07:58:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -2923,22 +2985,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "ba83ebaebc44",
-      "title": "US to shut five consulates as critics fear China could fill diplomatic vacuum",
-      "summary": "State department informs Congress of planned closures in Canada, Grenada, Japan, Indonesia and Cameroon The US state department is to shut five foreign consulates and missions across Asia, Africa, North America and the Caribbean, drawing criticism that it is…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/05/us-state-department-consulate-closures",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/africa",
-      "sourceId": "guardian-africa",
-      "publishedAt": "2026-08-06T15:41:29.000Z",
-      "image": "https://i.guim.co.uk/img/media/2d303f1c00bd3175b4c5f7faebac7877b8e08984/488_0_4858_3889/master/4858.jpg?width=700&quality=85&auto=format&fit=max&s=1f882a930f218747a8207e6c29f958e2",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     }
   ]
