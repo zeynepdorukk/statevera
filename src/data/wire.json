@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T13:06:23.032Z",
+  "generatedAt": "2026-08-16T13:42:02.923Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "dda07d2b561c",
+      "title": "Houthis launch new attacks on al-Makha and Marib as Yemen conflict escalates",
+      "summary": "Houthi missile and drone strikes target Marib and al-Makha, killing at least four people and injuring eight.",
+      "url": "https://www.aljazeera.com/news/2026/8/16/houthis-launch-new-attacks-on-al-makha-and-marib-as-yemen-conflict-escalates?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-16T13:18:28.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "0841de94e99e",
       "title": "Why cancer, not cost of living, may be the biggest issue in Iowa’s midterm elections",
@@ -261,22 +277,6 @@
       "weight": 2
     },
     {
-      "id": "8c4eee7152fa",
-      "title": "Block export of ‘national treasure’ UK fossils, says MP",
-      "summary": "Sale of one of UK’s top collections overseas prompts call new rules to help keep items in country One of UK’s best fossil collections sold in ‘loss to the nation’ An MP has called on ministers to change export controls so that significant fossils can be…",
-      "url": "https://www.theguardian.com/science/2026/aug/16/block-export-of-national-treasure-uk-fossils-says-mp",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-16T09:00:22.000Z",
-      "image": "https://i.guim.co.uk/img/media/f48938d86acd223cf061cc24ec53cd828e7e8c7c/0_0_5250_4200/master/5250.jpg?width=700&quality=85&auto=format&fit=max&s=7902acc83bab89928102d7f008442ffb",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "9b0d2249ac15",
       "title": "New UK cost of living crisis looms with soaring energy bills forecast to lift inflation",
       "summary": "Latest reading on Wednesday likely to frame scale of challenge for new PM to ease pressures on households amid Iran war fallout British households are facing a renewed cost of living squeeze, with official figures expected to show this week that soaring…",
@@ -373,22 +373,6 @@
       "weight": 2
     },
     {
-      "id": "d197bf7b4736",
-      "title": "A nation divided: What do Israelis want in October’s elections?",
-      "summary": "Despite a genocide and multiple wars, analysts say the issues determining October’s elections fall far closer to home.",
-      "url": "https://www.aljazeera.com/news/2026/8/16/a-nation-divided-what-do-israelis-want-in-octobers-elections?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-16T06:06:31.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "6a8c06c45901",
       "title": "Colombia's new president asks Trump to suspend tariffs after deadly earthquake",
       "summary": "Colombia's President Abelardo de la Espriella on Saturday called on US President Donald Trump to suspend tariffs on the South American nation as the country contiues to reel from a deadly earthquake. At least 300 people were killed in the quake that…",
@@ -434,22 +418,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "4b1b40151105",
-      "title": "Live: Ukraine launches 600 drones at Russia, one of its largest aerial attacks of the war",
-      "summary": "Ukraine ​hit ​a missile fuel production facility ​in ‌Russia's ⁠Rostov ‌region overnight, Ukrainian military ⁠said on Sunday, as Ukraine steps up long-range attacks into Russian territory. The assault came as Russian ⁠forces launched a ​missile attack on…",
-      "url": "https://www.france24.com/en/europe/20260816-live-moscow-targeted-by-600-drones-overnight-explosions-heard-in-kyiv",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T04:42:16.000Z",
-      "image": "https://s.france24.com/media/display/5961ce42-9957-11f1-b280-005056bf30b7/w:1024/p:16x9/2026-08-16T090834Z-1069700491-RC2EZMA4CLAH-RTRMADP-3-UKRAINE-CRISIS-RUSSIA-WILDBERRIES-MOSCOW.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -2845,22 +2813,6 @@
       "weight": 3
     },
     {
-      "id": "f03883f38d91",
-      "title": "Police use teargas on young Indians as government jobs protest escalates",
-      "summary": "Demonstrators accuse authorities of failing to tackle irregularities in exams for sought-after civil service jobs Thousands of angry young job-seekers clashed with police in Jharkhand, one of India’s poorest states, on Monday as a weeks-long protest over…",
-      "url": "https://www.theguardian.com/world/2026/aug/10/indian-police-use-force-to-disperse-youth-protesters-calling-for-exam-overhaul",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-10T17:16:28.000Z",
-      "image": "https://i.guim.co.uk/img/media/43648b7782b4d45aaffaf3714f44d2ea212f338c/394_0_3750_3000/master/3750.jpg?width=700&quality=85&auto=format&fit=max&s=095e8c5693eaf0ed2ab40b89defefee7",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "3c5e8492d50f",
       "title": "Austrian chancellor praises Türkiye's efforts to end Russia-Ukraine war, regional role",
       "summary": "Stocker highlights President Erdogan's personal efforts, says Türkiye's voice 'carries weight' in Middle East",
@@ -2970,22 +2922,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "88d93f7c4f32",
-      "title": "Drones spotted over German base days after Leipzig bomb incident",
-      "summary": "Police are investigating a drone sighting over a miltary base reportedly used for housing Patriot missile system parts.",
-      "url": "https://www.bbc.co.uk/news/articles/cwyeg1ljp2eo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/europe",
-      "sourceId": "bbc-europe",
-      "publishedAt": "2026-08-09T16:18:10.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1e19/live/9f71d840-940d-11f1-870d-5d08c49babb2.png",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Europe",
       "weight": 2
     },
     {
