@@ -1,10 +1,24 @@
 {
-  "generatedAt": "2026-08-16T20:09:02.456Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "npr-world"
-  ],
+  "generatedAt": "2026-08-16T20:35:33.168Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
+    {
+      "id": "aae2f5cc0ce3",
+      "title": "Kushner meets with Hamas on the Gaza road map ahead of talks with Netanyahu",
+      "summary": "Jared Kushner, President Trump's son-in-law, held a rare meeting with Hamas leadership Sunday in Egypt, in a new diplomatic effort to make progress in the stalled Gaza ceasefire.",
+      "url": "https://www.npr.org/2026/08/16/g-s1-138948/kushner-gaza-hamas-netanyahu-egypt-talks",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-16T20:20:22.000Z",
+      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7295x4863+0+0/resize/7295x4863!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fce%2Fe7%2Fa09053624bd6bf05bc01b10f7fad%2Fap26226028475268.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "c42029d31448",
       "title": "Iran and Oman work on temporary Hormuz shipping route as Trump threatens to claim the strait",
@@ -323,22 +337,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "a55aa9f8583c",
-      "title": "Kushner, Hamas delegation in Egypt for talks on Gaza peace plan",
-      "summary": "A Hamas delegation held talks with Egyptian intelligence chief Hassan Rashad in Egypt on Sunday, followed by talks with US envoy Jared Kushner. Kushner had met shortly before with President Abdel Fattah al-Sisi in an effort to break the deadlock over the…",
-      "url": "https://www.france24.com/en/middle-east/20260816-hamas-begins-crucial-talks-with-egypt-on-trump-s-gaza-peace-plan",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T11:33:32.000Z",
-      "image": "https://s.france24.com/media/display/64f693de-9964-11f1-94e0-005056a97e36/w:1024/p:16x9/2026-07-20T122458Z-1821028812-RC2OHMA50977-RTRMADP-3-ISRAEL-PALESTINIANS-HAMAS-HAYYA.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
