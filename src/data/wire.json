@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T10:37:38.070Z",
+  "generatedAt": "2026-08-16T10:56:52.057Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -402,22 +402,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "4e5488cf69f4",
-      "title": "Army drops roses on Syrian crowds in a far cry from war",
-      "summary": "Syrian army helicopters dropped roses on crowds at Damascus Citadel’s Summer Syria festival.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/16/08-16-26-damascus-summer-festival-sv?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-16T00:50:12.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
