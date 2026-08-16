@@ -1,8 +1,7 @@
 {
-  "generatedAt": "2026-08-16T17:41:01.922Z",
-  "sourceCount": 25,
+  "generatedAt": "2026-08-16T17:54:18.997Z",
+  "sourceCount": 26,
   "failedSources": [
-    "france24",
     "npr-world"
   ],
   "items": [
@@ -19,22 +18,6 @@
       "imageWidth": 0,
       "category": "Diplomacy",
       "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "6bbaff75297d",
-      "title": "Report: US envoy Kushner meets Hamas leaders in Egypt",
-      "summary": "Report: US envoy Kushner meets Hamas leaders in Egypt Hamas leaders met on Sunday in Egypt with President Donald Trump's son-in-law and envoy Jared Kushner, who is seeking to push a Gaza plan rejected by Israel, sources with knowledge of the talks told AFP.…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/report-us-envoy-kushner-meets-hamas-leaders-egypt",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T17:30:49.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     },
@@ -99,6 +82,22 @@
       "imageWidth": 0,
       "category": "Geopolitics",
       "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "53a72380085d",
+      "title": "Iran offers $30,000 bounty for killing or capturing US soldiers",
+      "summary": "The Iranian military announced on Sunday it would be offering a $30,000 reward for killing or capturing US soldiers, with the bounty doubled if conducted by a woman. There have been no known deployments of US ground troops in Iran during the war except for a…",
+      "url": "https://www.france24.com/en/middle-east/20260816-iran-offers-30-000-bounty-for-killing-or-capturing-us-soldiers",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-16T15:40:26.000Z",
+      "image": "https://s.france24.com/media/display/2a9f5802-8ecd-11f1-8fd4-005056bf30b7/w:1024/p:16x9/AP26208419033757.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
     },
@@ -263,6 +262,22 @@
       "weight": 2
     },
     {
+      "id": "a55aa9f8583c",
+      "title": "Kushner, Hamas delegation in Egypt for talks on Gaza peace plan",
+      "summary": "A Hamas delegation held talks with Egyptian intelligence chief Hassan Rashad in Egypt on Sunday, followed by talks with US envoy Jared Kushner. Kushner had met shortly before with President Abdel Fattah al-Sisi in an effort to break the deadlock over the…",
+      "url": "https://www.france24.com/en/middle-east/20260816-hamas-begins-crucial-talks-with-egypt-on-trump-s-gaza-peace-plan",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-16T11:33:32.000Z",
+      "image": "https://s.france24.com/media/display/64f693de-9964-11f1-94e0-005056a97e36/w:1024/p:16x9/2026-07-20T122458Z-1821028812-RC2OHMA50977-RTRMADP-3-ISRAEL-PALESTINIANS-HAMAS-HAYYA.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "766b4c5ab106",
       "title": "DAP votes to stay in Malaysia's ruling coalition, easing pressure on Anwar",
       "summary": "",
@@ -325,6 +340,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "1894033c9c53",
+      "title": "Brazil election: Lula and the new face of Bolsonaro's right",
+      "summary": "Brazil's October presidential election is shaping up as another battle between the Lula and Bolsonaro camps, with incumbent Luiz Inácio Lula da Silva seeking a fourth term and Flávio Bolsonaro stepping in for his imprisoned father. The two frontrunners are…",
+      "url": "https://www.france24.com/en/brazil-election-lula-and-the-new-face-of-bolsonaro-s-right",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-16T10:46:32.000Z",
+      "image": "https://s.france24.com/media/display/b9e5d9be-995e-11f1-a1a8-005056bf30b7/w:1024/p:16x9/EN-20260816-121323-121530-CS.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
