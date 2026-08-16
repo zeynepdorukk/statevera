@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T03:56:35.083Z",
+  "generatedAt": "2026-08-16T04:28:05.154Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "7b50041b467d",
+      "title": "Hamas delegation to hold talks on Gaza agreement in Cairo, report says",
+      "summary": "Hamas delegation to hold talks on Gaza agreement in Cairo, report says Hamas political bureau chief Khalil al-Hayya is due to arrive in the Egyptian capital, Cairo, for talks on the ceasefire agreement in Gaza, Al Jazeera reported, citing Anadolu Agency.…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-delegation-hold-talks-gaza-agreement-cairo-report-says",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T04:09:58.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "9ec79d8a139e",
       "title": "Observers say Zambia’s election marred by reports of intimidation, violence",
@@ -96,22 +112,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "52da01357070",
-      "title": "Hamas leader heads to Cairo for Gaza talks ahead of Kushner visit",
-      "summary": "Hamas chief Khalil al-Hayya to meet Egyptian intelligence chief Hassan Rashad in Cairo amid ongoing Gaza tensions.",
-      "url": "https://www.aljazeera.com/news/2026/8/16/hamas-leader-heads-to-cairo-for-gaza-talks-ahead-of-kushner-visit?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-16T00:44:59.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -261,22 +261,6 @@
       "weight": 2
     },
     {
-      "id": "d11f182f7ce7",
-      "title": "Israel says soldiers wounded in southern Lebanon",
-      "summary": "Israel says soldiers wounded in southern Lebanon The Israeli military says three soldiers, including one officer, were wounded by an explosive drone in southern Lebanon overnight. In a post on X, the army said the soldiers were taken out of Lebanon to receive…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israel-says-soldiers-wounded-southern-lebanon",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-15T18:52:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "481bb4011916",
       "title": "Israeli army says it killed two Palestinians in Gaza",
       "summary": "Israeli army says it killed two Palestinians in Gaza The Israeli military has said its Paratroopers Brigade killed two Palestinians in Gaza. The military said the Palestinians crossed the so-called “yellow line.\" Under the US-brokered agreement reached with…",
@@ -403,22 +387,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "435c0cadda3a",
-      "title": "Lebanese parliament speaker condemns Israeli 'massacre'",
-      "summary": "Lebanese parliament speaker condemns Israeli 'massacre' The death toll from the Israeli attacks in southern Lebanon has risen to 11, with 19 wounded, the Lebanese health ministry has said. The speaker of the Lebanese parliament, Nabih Berri, called Israel's…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/lebanese-parliament-speaker-condemns-israeli-massacre",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-15T14:19:13.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -611,22 +579,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "dba6fd3171be",
-      "title": "Concerns grow over increased global ties with Taliban in Afghanistan",
-      "summary": "Campaigners fear deeper diplomatic contacts are undermining demands for improvements in human rights The Taliban in Afghanistan have launched a diplomatic effort to end their isolation as major regional and international powers show a readiness to engage more…",
-      "url": "https://www.theguardian.com/world/2026/aug/15/concern-grow-global-ties-taliban-afghanistan-human-rights",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-15T05:00:49.000Z",
-      "image": "https://i.guim.co.uk/img/media/a00bb7fceb915e0108c0489f2a825134df963bfa/233_0_2333_1867/master/2333.jpg?width=700&quality=85&auto=format&fit=max&s=7b0f9de3788161cda364e6876672438d",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
