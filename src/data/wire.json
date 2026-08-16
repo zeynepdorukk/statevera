@@ -1,10 +1,26 @@
 {
-  "generatedAt": "2026-08-16T18:45:12.752Z",
+  "generatedAt": "2026-08-16T19:03:07.433Z",
   "sourceCount": 26,
   "failedSources": [
     "npr-world"
   ],
   "items": [
+    {
+      "id": "adc8c29dd4e4",
+      "title": "Brazil’s Lula launches historic fourth term bid – but son of jailed Bolsonaro stands in his way",
+      "summary": "President, 80, vows to keep far-right from power as Flávio Bolsonaro tells supporters he will ‘fight this system’ Brazil’s leftwing president, Luiz Inácio Lula da Silva, has launched his campaign for a historic fourth term and vowed that as long as he lived…",
+      "url": "https://www.theguardian.com/world/2026/aug/16/lula-brazil-president-fourth-term-jair-flavio-bolsonaro",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-16T18:44:41.000Z",
+      "image": "https://i.guim.co.uk/img/media/3e2ace44178f44321232918e4c929d66067c6ce5/0_0_2585_2068/master/2585.jpg?width=700&quality=85&auto=format&fit=max&s=de88249112853b7561fb647814a825cf",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "7977962b972d",
       "title": "Israeli army besieges Palestinian homes in occupied West Bank",
@@ -356,22 +372,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "1894033c9c53",
-      "title": "Brazil election: Lula and the new face of Bolsonaro's right",
-      "summary": "Brazil's October presidential election is shaping up as another battle between the Lula and Bolsonaro camps, with incumbent Luiz Inácio Lula da Silva seeking a fourth term and Flávio Bolsonaro stepping in for his imprisoned father. The two frontrunners are…",
-      "url": "https://www.france24.com/en/brazil-election-lula-and-the-new-face-of-bolsonaro-s-right",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T10:46:32.000Z",
-      "image": "https://s.france24.com/media/display/b9e5d9be-995e-11f1-a1a8-005056bf30b7/w:1024/p:16x9/EN-20260816-121323-121530-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -2314,22 +2314,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "0d416c63a585",
-      "title": "Canadian airline WestJet agrees to settle flight attendants’ sexual harassment class action",
-      "summary": "Female staff alleged company failed to maintain safe workplace, after allegations of sexual assault against pilot The Canadian airline WestJet has agreed to pay C$4.5m (£2.4m) to settle a decade-long sexual harassment class action lawsuit levelled by its…",
-      "url": "https://www.theguardian.com/world/2026/aug/12/canadian-airline-westjet-settle-flight-attendants-sexual-harassment-class-action",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-12T14:40:36.000Z",
-      "image": "https://i.guim.co.uk/img/media/cfd2c3c171670d7c7e5ad5586c0ad9af636bbccc/103_0_4640_3712/master/4640.jpg?width=700&quality=85&auto=format&fit=max&s=c1e52ebb94b3a882bbbe51b5eaa1f795",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
