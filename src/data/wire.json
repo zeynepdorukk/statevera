@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T11:54:40.807Z",
+  "generatedAt": "2026-08-16T12:15:53.630Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "0841de94e99e",
+      "title": "Why cancer, not cost of living, may be the biggest issue in Iowa’s midterm elections",
+      "summary": "A broad group of diseases in the agricultural powerhouse is top of mind for the midterm elections In Iowa , one of the key battleground states in November’s midterm elections , just about every political candidate agrees on one thing: something must be done…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/16/iowa-midterm-elections-republicans-democrats",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-16T12:00:25.000Z",
+      "image": "https://i.guim.co.uk/img/media/b9ffe9d7e46ea6f04f0b74440a94a114ddec5fca/630_0_4561_3648/master/4561.jpg?width=700&quality=85&auto=format&fit=max&s=c7a0d092f7b3364e00b0f217d8ce76ec",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "baca6d673ebc",
       "title": "‘Limited options’ for many Iranians as war with US chokes economy",
@@ -215,7 +231,7 @@
     {
       "id": "357da72f69eb",
       "title": "A positive new report raises the question: was Reeves undermined by dodgy data? | Heather Stewart",
-      "summary": "Assessment that has found a jump in UK productivity emphasises urgent need to appoint a national statistician The keen new chancellor, John Healey, responded to last week’s better-than-expected economic news by claiming the government was “bringing hope…",
+      "summary": "Assessment’s finding of a jump in UK productivity emphasises urgent need to appoint a national statistician The keen new chancellor, John Healey, responded to last week’s better-than-expected economic news by claiming the government was “bringing hope back”.…",
       "url": "https://www.theguardian.com/business/2026/aug/16/uk-productivity-data-rachel-reeves-national-statistician",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/business/economics",
@@ -604,14 +620,14 @@
       "summary": "Former VP sent fundraising appeal for Democrat Mary Peltola’s campaign – with half of donations going to Harris’s organization Alaska US Senate candidate Mary Peltola has rejected the support of Kamala Harris , her fellow Democrat, after the 2024 presidential…",
       "url": "https://www.theguardian.com/us-news/2026/aug/15/alaska-mary-peltola-rejects-kamala-harris-unsolicited-support",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-15T15:07:54.000Z",
       "image": "https://i.guim.co.uk/img/media/46541bd5527a1eae60f3570b67456fe7118c170c/85_0_3047_2438/master/3047.jpg?width=700&quality=85&auto=format&fit=max&s=c2c7f90017b0e8a351a6a4bafafcc2b7",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
-      "region": "Global",
+      "region": "Americas",
       "weight": 2
     },
     {
