@@ -1,10 +1,42 @@
 {
-  "generatedAt": "2026-08-16T16:59:28.396Z",
+  "generatedAt": "2026-08-16T17:18:54.241Z",
   "sourceCount": 26,
   "failedSources": [
     "npr-world"
   ],
   "items": [
+    {
+      "id": "e2571668980f",
+      "title": "Democrats demand answers from Trump on USS Abraham Lincoln conditions",
+      "summary": "Senator Ruben Gallego calls carrier’s months-long deployment a ‘deep problem’ as wellbeing concerns mount Democrats on Sunday intensified their demands for answers from the Trump administration over conditions aboard the USS Abraham Lincoln as the aircraft…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/16/democrats-trump-uss-abraham-lincoln",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-16T17:08:20.000Z",
+      "image": "https://i.guim.co.uk/img/media/c3cfd24cda3e978ac3cf705221a3ee06cb70e778/483_0_3619_2896/master/3619.jpg?width=700&quality=85&auto=format&fit=max&s=1920746db44fc5c3213842a32c396300",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "e31701498439",
+      "title": "Israeli military attacks strategic hill in southern Lebanon",
+      "summary": "Israeli military attacks strategic hill in southern Lebanon The Israeli military has attacked Ali al-Taher Hill in southern Lebanon with explosives, according to the National News Agency. The strategically important high ground on the outskirts of Nabatieh…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-military-attacks-southern-lebanon",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T17:05:01.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "9841a172ce3b",
       "title": "Iran and Oman work on temporary Hormuz shipping route as Trump threatens to claim the strait",
@@ -425,7 +457,7 @@
     {
       "id": "2685bccdeea4",
       "title": "Troops from North Korea to boost Russia's Ukraine forces",
-      "summary": "Intelligence agencies report that North Korea is preparing to send up to 50,000 troops to Russia. But military experts doubt that this will make a fundamental difference in the course of Russia's war with Ukraine.",
+      "summary": "Intelligence agencies report that North Korea is preparing to send up to 50,000 troops to Russia. But military experts doubt this will make a fundamental difference in the course of Russia's war with Ukraine.",
       "url": "https://www.dw.com/en/troops-from-north-korea-to-boost-russia-s-ukraine-forces/a-78385524?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
