@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-16T10:56:52.057Z",
+  "generatedAt": "2026-08-16T11:13:27.687Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "5467f9af8d64",
+      "title": "‘Massive’ Ukrainian drone attack on Russia kills at least six, says Moscow",
+      "summary": "Kyiv launches what may be its largest attack wave of war, with fire breaking out at warehouse near Russian capital Ukraine has launched one of its largest drone attacks since the start of the war, causing a fire at a distribution warehouse near Moscow and…",
+      "url": "https://www.theguardian.com/world/2026/aug/16/ukrainian-drone-attack-on-russia-wildberries-warehouse-fire",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/europe-news",
+      "sourceId": "guardian-europe",
+      "publishedAt": "2026-08-16T11:04:00.000Z",
+      "image": "https://i.guim.co.uk/img/media/acfacf3e973699b93f0e6e0f6d012dc4983a4c71/176_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=33b95b56ab3f79499bd0ed218504cc12",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "9b6ac2daac98",
+      "title": "Houthi missile barrage hits Mocha port as fighting escalates in Yemen",
+      "summary": "Houthi missile barrage hits Mocha port as fighting escalates in Yemen Submitted by MEE staff on Sun, 08/16/2026 - 10:32 Officials say Houthi strikes have damaged civilian property in Marib and caused an estimated $16m in losses at the strategic Red Sea port…",
+      "url": "https://www.middleeasteye.net/news/houthi-missile-barrage-hits-mocha-port-fighting-escalates-yemen",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T10:57:46.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "fc0a7f70a5d2",
       "title": "NATO fighter jet shoots down drone over Romania",
@@ -244,22 +276,6 @@
       "weight": 2
     },
     {
-      "id": "abfb728b448e",
-      "title": "Ukraine targets Moscow in mass drone attack as Russia bombards Kyiv",
-      "summary": "Russian authorities report 201 Ukrainian drones downed overnight in the Moscow region in the escalating conflict.",
-      "url": "https://www.aljazeera.com/news/2026/8/16/russian-strikes-kill-ukrainian-woman-as-nato-jet-downs-drone-over-romania?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-16T04:54:33.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "f24eea844477",
       "title": "Japan’s defence minister heads to Australia to meet Marles in wake of melon-gate controversy",
       "summary": "Discussions to focus on Australia’s acquisition of Mogami-class frigates as Japan plays down Albanese’s podcast comments Japan’s defence minister will visit Canberra this week, the highest level engagement with Australia after controversy over Anthony…",
@@ -321,22 +337,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "9ec79d8a139e",
-      "title": "Observers say Zambia’s election marred by reports of intimidation, violence",
-      "summary": "Vote counting in Thursday's presidential polls were briefly suspended amid security threats to the electoral process.",
-      "url": "https://www.aljazeera.com/news/2026/8/16/observers-say-zambias-election-marred-by-reports-of-intimidation-violence?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-16T03:39:32.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -464,22 +464,6 @@
       "image": "https://s.france24.com/media/display/9bc873a4-98c5-11f1-8108-005056a90284/w:1024/p:16x9/8d2575533c572c55c8b941d6ec31b065014ce460.jpg",
       "imageWidth": 0,
       "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "491a6e0099c8",
-      "title": "Iran condemns Israeli attacks in Lebanon",
-      "summary": "Iran condemns Israeli attacks in Lebanon Iran’s foreign ministry has condemned Israel’s recent attacks on southern Lebanon which killed 11 people, including children, according to Iran’s semi-official Tasnim news agency. Ministry spokesman Esmaeil Baghaei…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-condemns-israeli-attacks-lebanon",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-15T20:16:10.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
@@ -2537,6 +2521,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "bb5f42fc2bc8",
+      "title": "Hungary's parliament elects Orban critic as new president",
+      "summary": "Hungary's parliament has overwhelmingly confirmed Andras Baka, formerly the head of the Supreme Court, to the largely ceremonial role of president. New Prime Minister Peter Magyar controversially removed his predecessor.",
+      "url": "https://www.dw.com/en/hungary-s-parliament-elects-orban-critic-as-new-president/a-78325589?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-11T16:00:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Europe",
       "weight": 2
     },
     {
