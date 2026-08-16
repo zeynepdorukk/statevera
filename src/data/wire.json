@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-16T02:09:29.445Z",
+  "generatedAt": "2026-08-16T03:10:34.478Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "ee7c3fdde47b",
+      "title": "Houthis launch sixth ballistic missile at Marib city",
+      "summary": "Houthis launch sixth ballistic missile at Marib city Houthis have fired a sixth ballistic missile on the Yemeni city of Marib, according to the Marib governorate. In a post on X, the governorate published photos of a crater in the ground as well as the…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/houthis-launch-sixth-ballistic-missile-marib-city",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T02:57:38.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "c761e79ec70e",
+      "title": "Ukraine war briefing: Kyiv faces missile barrage after Zelenskyy targets Russian satellite network",
+      "summary": "Kyiv mayor says attack has caused fires in at least two districts; Ukraine hits Russian rocket facility in long-range strike. What we know on day 1,636 Russian forces launched a missile ⁠attack on Kyiv early on Sunday, sparking fires in ⁠at least ⁠two…",
+      "url": "https://www.theguardian.com/world/2026/aug/16/ukraine-war-briefing-kyiv-faces-missile-barrage-after-zelenskyy-targets-russian-satellite-network",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/europe-news",
+      "sourceId": "guardian-europe",
+      "publishedAt": "2026-08-16T02:22:46.000Z",
+      "image": "https://i.guim.co.uk/img/media/82f1212b26402bf5528cbe6200105866c26a5833/415_138_4157_3326/master/4157.jpg?width=700&quality=85&auto=format&fit=max&s=bc7353451a5f002ec769f1ab7020db2f",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "820a5fd96f0f",
       "title": "Takaichi keeps friends close as China ratchets up diplomatic pressure",
@@ -390,22 +422,6 @@
       "weight": 2
     },
     {
-      "id": "efeb3fd3b7c3",
-      "title": "Iran accuses French diplomats of 'infiltration'",
-      "summary": "Iran accuses French diplomats of 'infiltration' The Iranian government has accused two French diplomats of conducting an \"infiltration and interference\" operation inside Iran. Iran's intelligence ministry alleged in a statement that the diplomats were…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-accuses-french-diplomats-infiltration",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-15T13:08:07.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "b7ec4d1add9e",
       "title": "France’s top court rejects social media ban for under-15s",
       "summary": "France’s Constitutional Court has struck down a law that would have banned children under 15 from social media, ruling that it disproportionately infringed on freedom of expression and raised privacy concerns over age verification. The government plans to…",
@@ -467,22 +483,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "027ff6689190",
-      "title": "Israeli drone strike injures three in central Gaza",
-      "summary": "Israeli drone strike injures three in central Gaza An Israeli drone strike on Deir al-Balah in central Gaza has injured three Palestinians, one of whom is in critical condition, according to the Wafa news agency. All three were taken to al-Aqsa hospital.",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-drone-strike-injures-three-central-gaza",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-15T11:39:52.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
