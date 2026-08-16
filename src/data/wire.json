@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T07:42:37.598Z",
+  "generatedAt": "2026-08-16T07:59:28.875Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "43b093e9a0b4",
+      "title": "Spanish fighter jet downs drone breaching Romania's airspace",
+      "summary": "A Spanish fighter jet on Sunday shot down a drone that breached Romania's airspace near the border with Ukraine and Moldova, Romania's defence ministry said, in the latest incident to highlight the challenges facing NATO states bordering Ukraine.",
+      "url": "https://www.france24.com/en/europe/20260816-spanish-fighter-jet-downs-drone-breaching-romania-s-airspace",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-16T07:50:35.000Z",
+      "image": "https://s.france24.com/media/display/b6665cfe-9946-11f1-9aed-005056a97e36/w:1024/p:16x9/000-36FL9VV.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
     {
       "id": "fb1102f26db2",
       "title": "AI cheating, leaked papers and marking errors: how exam protests went global",
