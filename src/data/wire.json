@@ -1,10 +1,26 @@
 {
-  "generatedAt": "2026-08-16T05:29:33.412Z",
+  "generatedAt": "2026-08-16T05:54:07.618Z",
   "sourceCount": 26,
   "failedSources": [
     "france24"
   ],
   "items": [
+    {
+      "id": "80d7eb67c1c9",
+      "title": "Africa's low-key high-stakes Strait of Hormuz diplomacy",
+      "summary": "African governments have kept a low profile on the international stage during the crisis in the Strait of Hormuz. But that doesn't mean they haven't been engaging with the issue behind the scenes.",
+      "url": "https://www.dw.com/en/africa-s-low-key-high-stakes-strait-of-hormuz-diplomacy/a-78376699?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-16T05:31:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
     {
       "id": "9b0d2249ac15",
       "title": "New UK cost of living crisis looms with soaring energy bills forecast to lift inflation",
