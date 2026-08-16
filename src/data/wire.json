@@ -1,7 +1,9 @@
 {
-  "generatedAt": "2026-08-16T16:14:57.350Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-16T16:42:46.710Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "npr-world"
+  ],
   "items": [
     {
       "id": "9841a172ce3b",
@@ -116,6 +118,22 @@
       "weight": 2
     },
     {
+      "id": "cdf46a43ae88",
+      "title": "Warehouse near Moscow on fire after Ukrainian drone attack – video",
+      "summary": "Black smoke was seen rising in the sky in the Moscow region of Russia, after one of Ukraine's largest drone attacks since the start of the war. The Russian e-commerce company Wildberries confirmed a fire had broken out at its warehouse in Koledino ‘Massive’…",
+      "url": "https://www.theguardian.com/world/video/2026/aug/16/moscow-warehouse-on-fire-ukrainian-drone-attack-video",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/europe-news",
+      "sourceId": "guardian-europe",
+      "publishedAt": "2026-08-16T12:31:02.000Z",
+      "image": "https://i.guim.co.uk/img/media/27a6e38d5db5bae2109406fca89f4659b7333b45/218_0_1278_1023/master/1278.jpg?width=700&quality=85&auto=format&fit=max&s=e6b4e68b464564b9ee8e02c89bb01299",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "0841de94e99e",
       "title": "Why cancer, not cost of living, may be the biggest issue in Iowa’s midterm elections",
       "summary": "A broad group of diseases in the agricultural powerhouse is top of mind for the midterm elections In Iowa , one of the key battleground states in November’s midterm elections , just about every political candidate agrees on one thing: something must be done…",
@@ -210,22 +228,6 @@
       "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "5467f9af8d64",
-      "title": "‘Massive’ Ukrainian drone attack on Russia kills at least six, says Moscow",
-      "summary": "Kyiv launches what may be its largest attack wave of war, with fire breaking out at warehouse near Russian capital Ukraine has launched one of its largest drone attacks since the start of the war, causing a fire at a distribution warehouse near Moscow and…",
-      "url": "https://www.theguardian.com/world/2026/aug/16/ukrainian-drone-attack-on-russia-wildberries-warehouse-fire",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-16T11:04:00.000Z",
-      "image": "https://i.guim.co.uk/img/media/32117ccbd21fa32d8a2eba949e84cad036fc92aa/253_0_2820_2255/master/2820.jpg?width=700&quality=85&auto=format&fit=max&s=d90298741bfdcecfa38aa5e216b9a7e4",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -1351,22 +1353,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "e1f15ecfec3e",
-      "title": "Feds probe 'mention markets.' And, lawmakers call for investigation into USS Lincoln",
-      "summary": "Federal regulators are reviewing 'mention markets' that allow wagers on what public figures will say. And, Democratic lawmakers call for an investigation into conditions on the long-deployed USS Lincoln.",
-      "url": "https://www.npr.org/2026/08/14/g-s1-138735/up-first-newsletter-mention-markets-kalshi-pentagon-uss-lincoln-ukraine-russia-crimea-kennedy-center",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-14T11:02:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
