@@ -1,22 +1,55 @@
 {
-  "generatedAt": "2026-08-16T11:13:27.687Z",
+  "generatedAt": "2026-08-16T11:33:24.503Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "766b4c5ab106",
+      "title": "DAP votes to stay in Malaysia's ruling coalition, easing pressure on Anwar",
+      "summary": "",
+      "url": "https://asia.nikkei.com/politics/dap-votes-to-stay-in-malaysia-s-ruling-coalition-easing-pressure-on-anwar",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-16T11:33:17.582Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "5467f9af8d64",
       "title": "‘Massive’ Ukrainian drone attack on Russia kills at least six, says Moscow",
       "summary": "Kyiv launches what may be its largest attack wave of war, with fire breaking out at warehouse near Russian capital Ukraine has launched one of its largest drone attacks since the start of the war, causing a fire at a distribution warehouse near Moscow and…",
       "url": "https://www.theguardian.com/world/2026/aug/16/ukrainian-drone-attack-on-russia-wildberries-warehouse-fire",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-16T11:04:00.000Z",
       "image": "https://i.guim.co.uk/img/media/acfacf3e973699b93f0e6e0f6d012dc4983a4c71/176_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=33b95b56ab3f79499bd0ed218504cc12",
       "imageWidth": 700,
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "778fd1374e29",
+      "title": "California law would force companies to disclose toxic chemicals in disposable diapers",
+      "summary": "Legislation requiring disclosure of chemicals in diapers passed assembly and will go before state senate soon New California legislation would require manufacturers to disclose the “mystery cocktail” of toxic chemicals used in disposable diapers. Diapers…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/16/california-law-chemicals-diapers",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-16T11:00:25.000Z",
+      "image": "https://i.guim.co.uk/img/media/4170e939a4e618afcac1ad6211efc2b52c994355/552_0_5520_4416/master/5520.jpg?width=700&quality=85&auto=format&fit=max&s=2ae20eb0e1992880f5376cedd789af22",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -566,22 +599,6 @@
       "weight": 2
     },
     {
-      "id": "be0547c48ba1",
-      "title": "Israeli strikes on southern Lebanon kill 11 in worst toll since June truce",
-      "summary": "Rescue services search for survivors and bodies after airstrikes hit homes in Ansar and Deir al-Zahrani Eleven people have been killed, including three children, and 19 injured in two Israeli airstrikes on southern Lebanon, the worst toll since deals in June…",
-      "url": "https://www.theguardian.com/world/2026/aug/15/israeli-strike-on-southern-lebanon-kills-seven-in-worst-toll-since-june-state-media-says",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-15T13:55:28.000Z",
-      "image": "https://i.guim.co.uk/img/media/7c89de51a1cb60ff5893f2358eef87af6a328c6a/103_0_4103_3283/master/4103.jpg?width=700&quality=85&auto=format&fit=max&s=911b9a5b1a0f4fdb589438acfc269af0",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "2e9c4b0176a5",
       "title": "Nine killed in Israeli strikes on Lebanon as tensions test peace framework",
       "summary": "At least nine people were killed in Israeli strikes on southern Lebanon on Saturday, according to Lebanon’s state news agency, in some of the deadliest attacks since Beirut agreed to a US-mediated framework aimed at ending the latest round of fighting.",
@@ -755,6 +772,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "dba6fd3171be",
+      "title": "Concerns grow over increased global ties with Taliban in Afghanistan",
+      "summary": "Campaigners fear deeper diplomatic contacts are undermining demands for improvements in human rights The Taliban in Afghanistan have launched a diplomatic effort to end their isolation as major regional and international powers show a readiness to engage more…",
+      "url": "https://www.theguardian.com/world/2026/aug/15/concern-grow-global-ties-taliban-afghanistan-human-rights",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-15T05:00:49.000Z",
+      "image": "https://i.guim.co.uk/img/media/a00bb7fceb915e0108c0489f2a825134df963bfa/233_0_2333_1867/master/2333.jpg?width=700&quality=85&auto=format&fit=max&s=7b0f9de3788161cda364e6876672438d",
+      "imageWidth": 700,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -2858,22 +2891,6 @@
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "84a784336808",
-      "title": "British national shot dead in Kashmir by Pakistani security forces",
-      "summary": "Mohammad Akhtar, 50, from Peterborough killed during clashes between authorities and protesters A British national was shot dead in Pakistan-administered Kashmir during clashes between security forces and protesters, the Guardian can reveal. Another Briton…",
-      "url": "https://www.theguardian.com/world/2026/aug/10/british-national-shot-dead-in-kashmir-by-pakistani-security-forces",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-10T05:00:36.000Z",
-      "image": "https://i.guim.co.uk/img/media/6ac70c404227a603441ac0a8df4e88aa815a1ef1/0_0_2475_1980/master/2475.jpg?width=700&quality=85&auto=format&fit=max&s=d429318698db743d2a2cccee237a9593",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "565969cef161",
