@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-16T21:11:19.218Z",
+  "generatedAt": "2026-08-16T21:32:47.626Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "d39bc91ddc0a",
+      "title": "Trump says US will scale back military drills with South Korea",
+      "summary": "His decision to reduce the partnership came after South Korea recently declined to aid his war effort in Iran.",
+      "url": "https://www.bbc.co.uk/news/articles/cx2lll7zvn0o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-16T21:27:42.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/43fc/live/4a1c1570-99b9-11f1-870d-5d08c49babb2.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "f033e26e25d7",
       "title": "'A new Plaza Accord?' Japan's battle against yen bears enters new phase",
@@ -247,7 +263,7 @@
     {
       "id": "4a38ea4308ed",
       "title": "Nazi artefacts still being sold online years after trade outlawed across Australia",
-      "summary": "One seller says second world war memorabilia containing banned Nazi symbols is legal under exemptions to the laws Get our breaking news email , free app or daily news podcast Nazi artefacts bearing prohibited symbols are being openly sold in Australia three…",
+      "summary": "One seller says second world war memorabilia containing banned Nazi symbols is legal under exemptions to the laws Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast Nazi artefacts bearing…",
       "url": "https://www.theguardian.com/australia-news/2026/aug/17/nazi-artefacts-prohibited-symbols-still-being-sold-online-australia-ntwnfb",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -290,22 +306,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "dda07d2b561c",
-      "title": "Houthis launch new attacks on al-Makha and Marib as Yemen conflict escalates",
-      "summary": "Houthi missile and drone strikes target Marib and al-Makha, killing at least four people and injuring eight.",
-      "url": "https://www.aljazeera.com/news/2026/8/16/houthis-launch-new-attacks-on-al-makha-and-marib-as-yemen-conflict-escalates?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-16T13:18:28.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -387,22 +387,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "9b6ac2daac98",
-      "title": "Houthi missile barrage hits Mocha port as fighting escalates in Yemen",
-      "summary": "Houthi missile barrage hits Mocha port as fighting escalates in Yemen Submitted by MEE staff on Sun, 08/16/2026 - 10:32 Officials say Houthi strikes have damaged civilian property in Marib and caused an estimated $16m in losses at the strategic Red Sea port…",
-      "url": "https://www.middleeasteye.net/news/houthi-missile-barrage-hits-mocha-port-fighting-escalates-yemen",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T10:57:46.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
