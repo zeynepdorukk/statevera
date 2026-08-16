@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-08-16T15:42:19.880Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-16T15:56:36.234Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "9841a172ce3b",
+      "title": "Iran and Oman work on temporary Hormuz shipping route as Trump threatens to claim the strait",
+      "summary": "Iran and Oman work on temporary Hormuz shipping route as Trump threatens to claim the strait Submitted by MEE staff on Sun, 08/16/2026 - 15:04 Iranian Foreign Minister Abbas Araghchi says talks with Oman on a new maritime route are 'separate' from the…",
+      "url": "https://www.middleeasteye.net/news/iran-oman-work-temporary-hormuz-shipping-route-trump-threatens-claim-strait",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T15:43:46.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "815c04aab635",
       "title": "Iranian parliament advances bill to curb foreign influence",
@@ -132,22 +150,6 @@
       "weight": 2
     },
     {
-      "id": "a55aa9f8583c",
-      "title": "Kushner, Hamas delegation in Egypt for talks on Gaza peace plan",
-      "summary": "A Hamas delegation began a meeting with Egypt's spy chief on Sunday to discuss ways to advance the implementation of a post-war plan for Gaza while US envoy Jared Kushner met with Egyptian President Abdel Fattah al-Sissi.",
-      "url": "https://www.france24.com/en/middle-east/20260816-hamas-begins-crucial-talks-with-egypt-on-trump-s-gaza-peace-plan",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T11:33:32.000Z",
-      "image": "https://s.france24.com/media/display/64f693de-9964-11f1-94e0-005056a97e36/w:1024/p:16x9/2026-07-20T122458Z-1821028812-RC2OHMA50977-RTRMADP-3-ISRAEL-PALESTINIANS-HAMAS-HAYYA.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "766b4c5ab106",
       "title": "DAP votes to stay in Malaysia's ruling coalition, easing pressure on Anwar",
       "summary": "",
@@ -226,22 +228,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "1894033c9c53",
-      "title": "Brazil election: Lula and the new face of Bolsonaro's right",
-      "summary": "Brazil's October presidential election is shaping up as another battle between the Lula and Bolsonaro camps, with incumbent Luiz Inácio Lula da Silva seeking a fourth term and Flávio Bolsonaro stepping in for his imprisoned father. The two frontrunners are…",
-      "url": "https://www.france24.com/en/brazil-election-lula-and-the-new-face-of-bolsonaro-s-right",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T10:46:32.000Z",
-      "image": "https://s.france24.com/media/display/b9e5d9be-995e-11f1-a1a8-005056bf30b7/w:1024/p:16x9/EN-20260816-121323-121530-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -341,22 +327,6 @@
       "weight": 2
     },
     {
-      "id": "43b093e9a0b4",
-      "title": "Spanish fighter jet downs drone breaching Romania's airspace",
-      "summary": "A Spanish fighter jet on Sunday shot down a drone that breached Romania's airspace near the border with Ukraine and Moldova, Romania's defence ministry said, in the latest incident to highlight the challenges facing NATO states bordering Ukraine.",
-      "url": "https://www.france24.com/en/europe/20260816-spanish-fighter-jet-downs-drone-breaching-romania-s-airspace",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T07:50:35.000Z",
-      "image": "https://s.france24.com/media/display/b6665cfe-9946-11f1-9aed-005056a97e36/w:1024/p:16x9/000-36FL9VV.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "d91d65980c9f",
       "title": "Former UAE presidential aide's post mocking Pakistan exposes unease over Mecca pact",
       "summary": "Former UAE presidential aide's post mocking Pakistan exposes unease over Mecca pact Submitted by MEE staff on Sun, 08/16/2026 - 06:02 Remarks by the political analyst on Pakistan's poverty, illiteracy and nuclear arsenal have sparked online backlash Turkish…",
@@ -437,22 +407,6 @@
       "weight": 2
     },
     {
-      "id": "6a8c06c45901",
-      "title": "Colombia's new president asks Trump to suspend tariffs after deadly earthquake",
-      "summary": "Colombia's President Abelardo de la Espriella on Saturday called on US President Donald Trump to suspend tariffs on the South American nation as the country contiues to reel from a deadly earthquake. At least 300 people were killed in the quake that…",
-      "url": "https://www.france24.com/en/americas/20260816-colombia-s-new-president-asks-trump-to-suspend-tariffs-after-deadly-earthquake",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T05:39:51.000Z",
-      "image": "https://s.france24.com/media/display/e7f88232-9933-11f1-8413-005056bfb2b6/w:1024/p:16x9/AP26228081392272.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "80d7eb67c1c9",
       "title": "Africa's low-key high-stakes Strait of Hormuz diplomacy",
       "summary": "African governments have kept a low profile on the international stage during the crisis in the Strait of Hormuz. But that doesn't mean they haven't been engaging with the issue behind the scenes.",
@@ -482,22 +436,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "7b50041b467d",
-      "title": "Hamas delegation to hold talks on Gaza agreement in Cairo, report says",
-      "summary": "Hamas delegation to hold talks on Gaza agreement in Cairo, report says Hamas political bureau chief Khalil al-Hayya is due to arrive in the Egyptian capital, Cairo, for talks on the ceasefire agreement in Gaza, Al Jazeera reported, citing Anadolu Agency.…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-delegation-hold-talks-gaza-agreement-cairo-report-says",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T04:09:58.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1448,22 +1386,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "a30884d682bb",
-      "title": "Sen. Ruben Gallego on handling of USS Lincoln conditions: 'That's not proper leadership'",
-      "summary": "Lawmakers want answers from the Pentagon chief and the U.S. Navy about living conditions aboard the USS Lincoln. NPR's Michel Martin speaks with Democratic Sen. Ruben Gallego of Arizona.",
-      "url": "https://www.npr.org/2026/08/14/nx-s1-5930365/uss-abraham-lincoln-iran-navy-ruben-gallego",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-14T10:47:19.000Z",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4719x3146+0+0/resize/4719x3146!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F54%2F0f%2F60a111394423be133b8000d80b81%2Fap26060522777051.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Global",
-      "weight": 2
     },
     {
       "id": "672467871875",
