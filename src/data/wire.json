@@ -1,16 +1,32 @@
 {
-  "generatedAt": "2026-08-17T09:54:33.309Z",
+  "generatedAt": "2026-08-17T10:19:57.512Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
+      "id": "d124b5e3d9ff",
+      "title": "Two Republicans with the same name are running for Senate in Alaska. The bigger threat? Democrat Mary Peltola",
+      "summary": "Observers call Peltola, who won the red state’s House seat twice and is running to unseat Dan Sullivan, ‘a unicorn’ Dan J Sullivan is a retired schoolteacher and US Forest Service employee living in the town of Petersburg in south-eastern Alaska, who is…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/17/alaska-senate-dan-sullivan-mary-peltola",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-17T10:00:53.000Z",
+      "image": "https://i.guim.co.uk/img/media/f52e319e756b2d43e6ab8449bb2d83daa1b4c264/0_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=3c9faf893bedb184f280b0ac0ad015ca",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "e3d7c0ac2a93",
-      "title": "Hamas calls for Trump’s Board of Peace to ‘compel’ Israel over Gaza peace plan – Middle East crisis live",
-      "summary": "Jared Kushner set to meet Netanyahu following talks with Hamas Jared Kushner meets with Hamas ahead of talks with Netanyahu on Gaza US President Donald Trump’s envoy and son-in-law Jared Kushner has begun his planned meeting with Prime Minister Benjamin…",
+      "title": "Kushner meets Netanyahu in Jerusalem following Hamas talks – Middle East crisis live",
+      "summary": "Trump’s envoy and son-in-law meets Israeli leader in effort to push Gaza peace plan Jared Kushner meets with Hamas ahead of talks with Netanyahu on Gaza US President Donald Trump’s envoy and son-in-law Jared Kushner has begun his planned meeting with Prime…",
       "url": "https://www.theguardian.com/world/live/2026/aug/17/trump-kushner-netanyahu-hamas-gaza-israel-blair-us-iran-hormuz-oil-latest-news-updates",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-17T09:51:23.000Z",
       "image": "https://i.guim.co.uk/img/media/130351c0b118bb75e17e9ed4b3a296be5375ede0/125_0_1250_1000/master/1250.jpg?width=700&quality=85&auto=format&fit=max&s=c7a32fe25f149ad65f619c2f854685be",
       "imageWidth": 700,
@@ -119,7 +135,7 @@
     {
       "id": "720e28ae6999",
       "title": "JP Morgan boss Jamie Dimon warns UK chancellor not to hike taxes on banks",
-      "summary": "Billionaire CEO of world’s biggest bank says any windfall tax on sector’s bumper profits could harm jobs in City Jamie Dimon, the boss of the US bank JP Morgan, has urged John Healey not to use his first budget as chancellor to increase taxes on banks’ bumper…",
+      "summary": "Billionaire CEO of world’s biggest bank says any windfall tax on sector’s bumper profits could harm jobs in City Business live – latest updates Jamie Dimon, the boss of the US bank JP Morgan, has urged John Healey not to use his first budget as chancellor to…",
       "url": "https://www.theguardian.com/business/2026/aug/17/jp-morgan-boss-jamie-dimon-warns-uk-chancellor-windfall-tax-banks",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -860,22 +876,6 @@
       "weight": 2
     },
     {
-      "id": "0841de94e99e",
-      "title": "Why cancer, not cost of living, may be the biggest issue in Iowa’s midterm elections",
-      "summary": "A broad group of diseases in the agricultural powerhouse is top of mind for the midterm elections In Iowa , one of the key battleground states in November’s midterm elections , just about every political candidate agrees on one thing: something must be done…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/16/iowa-midterm-elections-republicans-democrats",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-16T12:00:25.000Z",
-      "image": "https://i.guim.co.uk/img/media/b9ffe9d7e46ea6f04f0b74440a94a114ddec5fca/630_0_4561_3648/master/4561.jpg?width=700&quality=85&auto=format&fit=max&s=c7a0d092f7b3364e00b0f217d8ce76ec",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "30f0377ed0d7",
       "title": "First Person: Syrians lead efforts to clear rubble and rebuild lives",
       "summary": "Communities in Syria are clearing rubble and rebuilding neighbourhoods and livelihoods torn down in the more than a decade of conflict and crisis in the country.",
@@ -1033,22 +1033,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "3542ce53e50a",
-      "title": "Lebanon says 11 killed in Israeli airstrikes",
-      "summary": "Lebanon's prime minister denounced the attacks on villages in southern Lebanon for targeting civilians in their homes. Israel said it was firing on Hezbollah infrastructure.",
-      "url": "https://www.dw.com/en/lebanon-says-11-killed-in-israeli-airstrikes/a-78383713?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-15T15:35:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
