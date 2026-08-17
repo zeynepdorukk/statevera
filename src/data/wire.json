@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-08-17T20:17:54.604Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-17T20:49:27.340Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "9b656d5dd7e6",
+      "title": "Trump says Kim Jong-un has responded to his overtures when asked about scaling back US drills with South Korea – live",
+      "summary": "Trump also claims he’s ‘actually making it much safer’ for South Korea by scaling back joint military drills just days after North Korea test-fired ballistic missiles Sign up for the Breaking News US email Republican senator Thom Tillis deplored Trump’s…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/17/politics-trump-south-korea-military-pentagon-republicans-democrats",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-17T20:28:25.000Z",
+      "image": "https://i.guim.co.uk/img/media/52559c1e1c5daeeff5af9103bae7999e74139051/565_0_3826_3060/master/3826.jpg?width=700&quality=85&auto=format&fit=max&s=b744aa65ff115fbb9036e4d9f43f1b66",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "ab107b9dc736",
       "title": "Won and yen: 2 currencies, 2 very different problems",
@@ -34,22 +52,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "9b656d5dd7e6",
-      "title": "Trump says Kim Jong-un has responded to his overtures when asked about scaling back US drills with South Korea – live",
-      "summary": "Trump also claims he’s ‘actually making it much safer’ for South Korea by scaling back joint military drills just days after North Korea test-fired ballistic missiles Sign up for the Breaking News US email Republican senator Thom Tillis deplored Trump’s…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/17/politics-trump-south-korea-military-pentagon-republicans-democrats",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-17T19:53:41.000Z",
-      "image": "https://i.guim.co.uk/img/media/52559c1e1c5daeeff5af9103bae7999e74139051/565_0_3826_3060/master/3826.jpg?width=700&quality=85&auto=format&fit=max&s=b744aa65ff115fbb9036e4d9f43f1b66",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -166,6 +168,22 @@
       "weight": 3
     },
     {
+      "id": "f4ae8cc92b8c",
+      "title": "Russia maintains election ban on opposition Yabloko, jails deputy head",
+      "summary": "Supreme Court ruling supports Kremlin's clampdown on the political party ahead of September's parliamentary vote.",
+      "url": "https://www.aljazeera.com/news/2026/8/17/russia-maintains-election-ban-on-opposition-yabloko-jails-deputy-head?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-17T18:46:12.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "386a52834bf8",
       "title": "Somalia clashes with regional forces over control of key city",
       "summary": "Somali national forces clashed with troops loyal to an ousted regional leader on Monday over control of a key city, the government said, accusing him of allying with Islamist insurgents",
@@ -203,8 +221,8 @@
       "summary": "USS Benfold lost power after ‘engineering casualty’ leaving sailors without galley services, toilets and air conditioning A US guided-missile destroyer reportedly spent four days adrift and without power in the South China Sea in July, furthering concerns…",
       "url": "https://www.theguardian.com/us-news/2026/aug/17/us-navy-destroyer-south-china-sea",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-17T18:35:29.000Z",
       "image": "https://i.guim.co.uk/img/media/6dd7794f129cb93c5ce14e1d852881776ee0dc1b/935_407_2180_1744/master/2180.jpg?width=700&quality=85&auto=format&fit=max&s=253372f9bde349dd1185be308eccd257",
       "imageWidth": 700,
@@ -259,22 +277,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "2ab296b93709",
-      "title": "Netanyahu, Kushner agree US general to verify Hamas disarmament before Israel withdraws from Gaza",
-      "summary": "Israeli Prime Minister Benjamin Netanyahu and US envoy Jared Kushner agreed Monday that an American general would oversee the disarmament of Hamas, an Israeli official said, as Netanyahu insisted Israel would not withdraw from Gaza until the group gives up…",
-      "url": "https://www.france24.com/en/middle-east/20260817-netanyahu-kushner-agree-us-general-verify-hamas-disarmament-before-israel-withdraws-from-gaza",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-17T18:14:46.000Z",
-      "image": "https://s.france24.com/media/display/72ff5282-9a62-11f1-a27b-005056a90284/w:1024/p:16x9/000-C4B269E.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -422,6 +424,22 @@
       "weight": 2
     },
     {
+      "id": "6f9341030fc7",
+      "title": "Kushner, Netanyahu agree on path forward for Gaza, Board of Peace official says",
+      "summary": "Kushner, Netanyahu agree on path forward for Gaza, Board of Peace official says An agreement was reached on Monday between President Donald Trump's envoy and son-in-law Jared Kushner and Israeli Prime Minister Benjamin Netanyahu on a path forward for the war…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/kushner-netanyahu-agree-path-forward-gaza-board-peace-official-says",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-17T16:36:44.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "275e7d371a14",
       "title": "Jon Ossoff calls Trump’s handling of Iran war ‘uniquely despicable’ in excoriating speech",
       "summary": "Georgia Democratic senator has stoked speculation for 2028 presidency bid by delivering stinging attacks on Trump Democratic senator Jon Ossoff has attacked Donald Trump’s “uniquely despicable” handling of the US-Israel war on Iran, accusing the US president…",
@@ -503,35 +521,19 @@
       "weight": 2
     },
     {
-      "id": "2abc22f34bca",
-      "title": "US gas prices reach highest ever recorded for August amid stalled talks with Iran",
-      "summary": "Energy prices have been high since the US-Israel war with Iran began and the strait of Hormuz was blocked US gas prices this month are so far the highest ever recorded for August as peace talks between the US and Iran have stalled and Donald Trump launched…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/17/gas-prices-august-record-iran-war",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-17T15:51:46.000Z",
-      "image": "https://i.guim.co.uk/img/media/24af72b71f79b33388aba42419e5996e19a78bc8/724_546_6520_5216/master/6520.jpg?width=700&quality=85&auto=format&fit=max&s=057024668a0428c8983db5361b612eaa",
-      "imageWidth": 700,
-      "category": "Economy",
+      "id": "2d4b21839f92",
+      "title": "Trump envoy hails 'very good' meeting with Netanyahu after Hamas talks on peace plan",
+      "summary": "US President Trump's son-in-law Jared Kushner is seeking to gain Israeli backing for the US-backed Gaza peace plan.",
+      "url": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-17T16:02:58.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1476/live/b59ea940-9a3e-11f1-a291-b542ee92de7c.jpg",
+      "imageWidth": 240,
+      "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "dc1430f7fb1d",
-      "title": "Russia’s Supreme Court upholds ban on anti-war party Yabloko",
-      "summary": "Russia’s Supreme Court on Monday upheld the exclusion of liberal opposition party Yabloko from September’s legislative elections, eliminating the country’s only explicitly anti-war party from the ballot, as dozens of the party's supporters were detained…",
-      "url": "https://www.france24.com/en/europe/20260817-russia-supreme-court-upholds-ban-anti-war-party-yabloko",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-17T15:51:35.000Z",
-      "image": "https://s.france24.com/media/display/38025686-9a51-11f1-aac6-005056bf30b7/w:1024/p:16x9/000-C4UE9NQ.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -792,22 +794,6 @@
       "weight": 2
     },
     {
-      "id": "54fbabfb86fd",
-      "title": "Trump orders Pentagon to cut back military drills with Seoul hours before start",
-      "summary": "Joint military drills between South Korea and US troops went ahead as planned on Monday despite US President Donald Trump's statement that he had ordered them to be scaled back out of respect for North Korean leader Kim Jong-un.",
-      "url": "https://www.france24.com/en/video/20260817-trump-orders-pentagon-to-cut-back-military-drills-with-seoul-hours-before-start",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-17T10:56:44.000Z",
-      "image": "https://s.france24.com/media/display/2f808d66-9a29-11f1-b5f4-005056a90284/w:1024/p:16x9/mini-26.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "03a983e80766",
       "title": "Taylor demands Albanese repeal ‘cruel tax’ in return for NDIS bill support",
       "summary": "Coalition leader tells Anthony Albanese that delaying change to budget measure is ‘unconscionable’ Get our breaking news email , free app or daily news podcast Angus Taylor says the Coalition will only support the Albanese government’s proposed overhaul of…",
@@ -856,19 +842,19 @@
       "weight": 3
     },
     {
-      "id": "04baa96ed728",
-      "title": "Ukraine launches one of its largest drone attacks on Russia",
-      "summary": "Ukraine launched one of its largest drone attacks on Russia, hitting a Wildberries warehouse and other sites. Meanwhile, Russian strikes continued across Ukraine, destroying civilian and industrial areas. The attacks are bringing the war closer to civilians…",
-      "url": "https://www.france24.com/en/video/20260817-ukraine-launches-one-of-its-largest-drone-attacks-on-russia",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-17T09:09:36.000Z",
-      "image": "https://s.france24.com/media/display/6903777c-9a17-11f1-a4a9-005056bfb2b6/w:1024/p:16x9/EN-20260817-070621-070750-CS.jpg",
-      "imageWidth": 0,
+      "id": "c5e1e17987ea",
+      "title": "Trump orders cuts to South Korea joint drills despite warnings about Kim regime",
+      "summary": "President says he ‘gets along great’ with dictator but officials say Ukraine war is boosting North’s capabilities Donald Trump has said he is scaling back joint US military drills with South Korea aimed at deterring North Korea, despite military officials…",
+      "url": "https://www.theguardian.com/world/2026/aug/17/trump-cuts-south-korea-joint-drills-us-military-good-relationship-kim-jong-un",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-17T09:10:24.000Z",
+      "image": "https://i.guim.co.uk/img/media/812d23651e2260e3817cb53514597677be97214b/367_1_2220_1777/master/2220.jpg?width=700&quality=85&auto=format&fit=max&s=d87d354280f810c970d4964a039c1b03",
+      "imageWidth": 700,
       "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
+      "categoryConfidence": "medium",
+      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -1096,22 +1082,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "0c50e82f5204",
-      "title": "Meet Dave Brat, the US ambassador who ‘can speak Trump’ in Canberra",
-      "summary": "Once an insurgent rabble-rouser in Congress, Brat is now a Trump world insider sent to Australia as tariffs and Pacific tensions test the relationship.",
-      "url": "https://www.politico.com/news/2026/08/16/dave-brat-australia-ambassador-01037656?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-17T02:48:27.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
