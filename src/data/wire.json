@@ -1,22 +1,54 @@
 {
-  "generatedAt": "2026-08-17T21:58:28.879Z",
+  "generatedAt": "2026-08-17T22:21:26.867Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "1ff0ced4e9d6",
+      "title": "Election denier Tina Peters to be hired as elections consultant in conservative California county",
+      "summary": "Shasta county, hotbed of US election denialism movement, set to appoint ex-Colorado clerk who served prison term A northern California county that has become a hotbed of activism for those who sow doubts about the reliability of voting machines plans to hire…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/17/election-denier-tina-peters-shasta-county",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-17T22:14:15.000Z",
+      "image": "https://i.guim.co.uk/img/media/2cb384efb5469c5878495a5bba5abb07d69cb586/500_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=86f6e9fffbe4577141a9c2012fc9a94d",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "6dcb7be5f31c",
+      "title": "Erdogan urges Trump to continue talks with Iran, offers support",
+      "summary": "Erdogan urges Trump to continue talks with Iran, offers support Turkish President Tayyip Erdogan held a call with US President Donald Trump to urge the US to continue talks with Iran and de-escalate tensions, offering Ankara's support in peace efforts,…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/erdogan-urges-trump-continue-talks-iran-offers-support",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-17T22:05:22.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Turkey",
+      "weight": 2
+    },
     {
       "id": "9b656d5dd7e6",
       "title": "Trump says Kim Jong-un has responded to his overtures when asked about scaling back US drills with South Korea – live",
       "summary": "Trump also claims he’s ‘actually making it much safer’ for South Korea by scaling back joint military drills just days after North Korea test-fired ballistic missiles Sign up for the Breaking News US email Republican senator Thom Tillis deplored Trump’s…",
       "url": "https://www.theguardian.com/us-news/live/2026/aug/17/politics-trump-south-korea-military-pentagon-republicans-democrats",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-17T21:46:17.000Z",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-17T22:01:17.000Z",
       "image": "https://i.guim.co.uk/img/media/52559c1e1c5daeeff5af9103bae7999e74139051/565_0_3826_3060/master/3826.jpg?width=700&quality=85&auto=format&fit=max&s=b744aa65ff115fbb9036e4d9f43f1b66",
       "imageWidth": 700,
       "category": "Security",
       "categoryConfidence": "medium",
-      "region": "Americas",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -50,22 +82,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "1ff0ced4e9d6",
-      "title": "Election denier Tina Peters to be hired as elections consultant in conservative California county",
-      "summary": "Shasta county, hotbed of US election denialism movement, set to appoint ex-Colorado clerk who served prison term A northern California county that has become a hotbed of activism for those who sow doubts about the reliability of voting machines plans to hire…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/17/election-denier-tina-peters-shasta-county",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-17T21:07:29.000Z",
-      "image": "https://i.guim.co.uk/img/media/2cb384efb5469c5878495a5bba5abb07d69cb586/500_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=86f6e9fffbe4577141a9c2012fc9a94d",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -436,22 +452,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "e1e330b65364",
-      "title": "IRGC rejects Trump’s claims of talks with the US",
-      "summary": "IRGC rejects Trump’s claims of talks with the US IRGC spokesperson Brigadier General Hossein Mohammadi rejected President Donald Trump’s claim that the US has been conducting talks with Iran's Islamic Revolutionary Guard Corps. “There are no talks between…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/irgc-rejects-trumps-claims-backchannel-talks-us",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-17T16:53:01.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -854,22 +854,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "03a983e80766",
-      "title": "Taylor demands Albanese repeal ‘cruel tax’ in return for NDIS bill support",
-      "summary": "Coalition leader tells Anthony Albanese that delaying change to budget measure is ‘unconscionable’ Get our breaking news email , free app or daily news podcast Angus Taylor says the Coalition will only support the Albanese government’s proposed overhaul of…",
-      "url": "https://www.theguardian.com/australia-news/2026/aug/17/angus-taylor-links-support-for-ndis-reform-to-removal-of-widow-tax-loophole",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-17T10:51:40.000Z",
-      "image": "https://i.guim.co.uk/img/media/d56c335e15bde62f76ddf960974bc9e6354c7a91/690_0_2853_2282/master/2853.jpg?width=700&quality=85&auto=format&fit=max&s=e70f113aaf431fa65eab31eb50bbdf51",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Global",
       "weight": 2
     },
     {
