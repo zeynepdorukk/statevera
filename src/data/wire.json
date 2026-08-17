@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-17T05:57:17.898Z",
+  "generatedAt": "2026-08-17T06:40:59.936Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "e3d7c0ac2a93",
+      "title": "Hamas calls for Trump’s Board of Peace to ‘compel’ Israel over Gaza peace plan – Middle East crisis live",
+      "summary": "Jared Kushner set to meet Netanyahu following talks with Hamas Jared Kushner meets with Hamas ahead of talks with Netanyahu on Gaza Welcome to our live coverage of the latest in the continuing conflicts in the Middle East . Donald Trump ’s envoys met with…",
+      "url": "https://www.theguardian.com/world/live/2026/aug/17/trump-kushner-netanyahu-hamas-gaza-israel-blair-us-iran-hormuz-oil-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
+      "publishedAt": "2026-08-17T06:32:03.000Z",
+      "image": "https://i.guim.co.uk/img/media/130351c0b118bb75e17e9ed4b3a296be5375ede0/125_0_1250_1000/master/1250.jpg?width=700&quality=85&auto=format&fit=max&s=c7a32fe25f149ad65f619c2f854685be",
+      "imageWidth": 700,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "580e3a4996b3",
       "title": "Iran’s top negotiator declares victory in war against the US and Israel",
@@ -14,22 +30,6 @@
       "publishedAt": "2026-08-17T05:16:18.000Z",
       "image": "",
       "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "2d4b21839f92",
-      "title": "Trump envoy Kushner arrives in Israel after rare Hamas talks on Gaza peace plan",
-      "summary": "US President Trump's son-in-law Jared Kushner is expected to meet Israeli Prime Minister Benjamin Netanyahu later on Monday.",
-      "url": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-17T04:50:56.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c31f/live/48688550-99f6-11f1-b2ab-0dd01740f9f6.jpg",
-      "imageWidth": 240,
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
@@ -506,22 +506,6 @@
       "weight": 2
     },
     {
-      "id": "1c42477df747",
-      "title": "Hamas says it asked 'Board of Peace' to 'compel' Israel to accept Gaza plan",
-      "summary": "Hamas says it asked 'Board of Peace' to 'compel' Israel to accept Gaza plan Hamas said on Sunday that it had asked the US-backed \"Board of Peace\" to \"compel\" Israel to accept a peace plan for Gaza after its leader met with US President Donald Trump's envoy…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-says-it-asked-board-peace-compel-israel-accept-gaza-plan",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T19:45:52.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "847268e9ed16",
       "title": "Barcelona agree £65m deal to sign Rodri from Man City",
       "summary": "Barcelona agree a deal to sign Spain captain Rodri from Manchester City.",
@@ -604,7 +588,7 @@
     {
       "id": "53a72380085d",
       "title": "Iran offers $30,000 bounty for killing or capturing US soldiers",
-      "summary": "The Iranian military announced on Sunday it would be offering a $30,000 reward for killing or capturing US soldiers, with the bounty doubled if conducted by a woman. There have been no known deployments of US ground troops in Iran during the war except for a…",
+      "summary": "The Iranian military announced on Sunday it would be offering a $30,000 reward for the killing or capturing of US soldiers, with the bounty doubled if conducted by a woman. There have been no known deployments of US ground troops in Iran during the war except…",
       "url": "https://www.france24.com/en/middle-east/20260816-iran-offers-30-000-bounty-for-killing-or-capturing-us-soldiers",
       "publisher": "France 24",
       "publisherHome": "https://www.france24.com/en",
@@ -1000,22 +984,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "4415f21395c4",
-      "title": "Trump's Latin America allies open arms to Israel",
-      "summary": "While ongoing military actions in Gaza and settler attacks on Palestinians in the occupied West Bank have largely isolated Israel globally, Latin America's authoritarian right sees an opening for a strategic alliance.",
-      "url": "https://www.dw.com/en/trump-s-latin-america-allies-open-arms-to-israel/a-78378930?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-15T11:35:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
