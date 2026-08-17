@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-17T04:41:05.806Z",
+  "generatedAt": "2026-08-17T05:20:26.303Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "2d4b21839f92",
+      "title": "Trump envoy Kushner arrives in Israel after rare Hamas talks on Gaza peace plan",
+      "summary": "US President Trump's son-in-law Jared Kushner is expected to meet Israeli Prime Minister Benjamin Netanyahu later on Monday.",
+      "url": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-17T04:50:56.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/c31f/live/48688550-99f6-11f1-b2ab-0dd01740f9f6.jpg",
+      "imageWidth": 240,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "3b13c58acc5d",
       "title": "China-built data center stirs debate on Pakistan's digital sovereignty",
@@ -195,6 +211,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "ebea493e8207",
+      "title": "Kushner meets Sisi in Egypt to discuss regional issues",
+      "summary": "Kushner meets Sisi in Egypt to discuss regional issues Jared Kushner and Egyptian President Sisi met in Egypt for talks on the war on Gaza and other regional issues on Sunday, according to a press release by the Egyptian Presidency. Trump's son-in-law and…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/kushner-meets-sisi-egypt-discuss-regional-issues",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-17T02:37:07.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -426,22 +458,6 @@
       "weight": 2
     },
     {
-      "id": "aae2f5cc0ce3",
-      "title": "Kushner meets with Hamas on the Gaza road map ahead of talks with Netanyahu",
-      "summary": "Jared Kushner, President Trump's son-in-law, held a rare meeting with Hamas leadership Sunday in Egypt, in a new diplomatic effort to make progress in the stalled Gaza ceasefire.",
-      "url": "https://www.npr.org/2026/08/16/g-s1-138948/kushner-gaza-hamas-netanyahu-egypt-talks",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-16T20:20:22.000Z",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7295x4863+0+0/resize/7295x4863!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fce%2Fe7%2Fa09053624bd6bf05bc01b10f7fad%2Fap26226028475268.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "c42029d31448",
       "title": "Iran and Oman work on temporary Hormuz shipping route as Trump threatens to claim the strait",
       "summary": "Iran and Oman work on temporary Hormuz shipping route as Trump threatens to claim the strait Iranian Foreign Minister Abbas Araghchi said on Sunday that Tehran and Muscat were working to establish a temporary maritime route through the Strait of Hormuz, while…",
@@ -454,6 +470,22 @@
       "imageWidth": 0,
       "category": "Geopolitics",
       "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "1c42477df747",
+      "title": "Hamas says it asked 'Board of Peace' to 'compel' Israel to accept Gaza plan",
+      "summary": "Hamas says it asked 'Board of Peace' to 'compel' Israel to accept Gaza plan Hamas said on Sunday that it had asked the US-backed \"Board of Peace\" to \"compel\" Israel to accept a peace plan for Gaza after its leader met with US President Donald Trump's envoy…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-says-it-asked-board-peace-compel-israel-accept-gaza-plan",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-16T19:45:52.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
     },
@@ -527,8 +559,8 @@
       "summary": "Senator Ruben Gallego calls carrier’s months-long deployment a ‘deep problem’ as wellbeing concerns mount Democrats on Sunday intensified their demands for answers from the Trump administration over conditions aboard the USS Abraham Lincoln as the aircraft…",
       "url": "https://www.theguardian.com/us-news/2026/aug/16/democrats-trump-uss-abraham-lincoln",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-16T17:08:20.000Z",
       "image": "https://i.guim.co.uk/img/media/c3cfd24cda3e978ac3cf705221a3ee06cb70e778/483_0_3619_2896/master/3619.jpg?width=700&quality=85&auto=format&fit=max&s=1920746db44fc5c3213842a32c396300",
       "imageWidth": 700,
@@ -1016,22 +1048,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "446ed2a458ad",
-      "title": "India: Modi promises free exam coaching, AI training for youth after protests",
-      "summary": "Speaking on India's Independence Day, PM Modi announced free online coaching for competitive exams and AI training for 10 million youths, weeks after protests over alleged exam paper leaks and recruitment irregularities.",
-      "url": "https://www.dw.com/en/india-modi-promises-free-exam-coaching-ai-training-for-youth-after-protests/a-78378982?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-15T08:25:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
