@@ -1,24 +1,8 @@
 {
-  "generatedAt": "2026-08-17T15:40:24.358Z",
+  "generatedAt": "2026-08-17T15:57:25.931Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
-    {
-      "id": "cc4c9a150c81",
-      "title": "China’s economy showing signs that slowdown may be extending",
-      "summary": "Industrial output and retail sales slump in July after one of the country’s weakest quarterly growth rates ever China’s economy is showing signs of extending a slowdown with a slump in industrial output and retail sales in July, adding to pressure on Beijing…",
-      "url": "https://www.theguardian.com/business/2026/aug/17/china-economy-slowdown-signs-extending",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
-      "sourceId": "guardian-asia",
-      "publishedAt": "2026-08-17T15:36:25.000Z",
-      "image": "https://i.guim.co.uk/img/media/990f70c7faa98b9a8da40ae06ea211f6b29a631d/1113_0_5439_4352/master/5439.jpg?width=700&quality=85&auto=format&fit=max&s=efd61e5e1ae38311352b99ec16291dd2",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
     {
       "id": "e3d7c0ac2a93",
       "title": "Trump threatens to bomb Oman if it ‘gets in the way’ of Iran deal as Kushner meets Netanyahu – Middle East crisis live",
@@ -27,12 +11,28 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world/middleeast",
       "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-17T15:31:55.000Z",
+      "publishedAt": "2026-08-17T15:50:34.000Z",
       "image": "https://i.guim.co.uk/img/media/130351c0b118bb75e17e9ed4b3a296be5375ede0/125_0_1250_1000/master/1250.jpg?width=700&quality=85&auto=format&fit=max&s=c7a32fe25f149ad65f619c2f854685be",
       "imageWidth": 700,
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "cc4c9a150c81",
+      "title": "China’s economy showing signs that slowdown may be extending",
+      "summary": "Industrial output and retail sales slump in July after one of the country’s weakest quarterly growth rates ever China’s economy is showing signs of extending a slowdown with a slump in industrial output and retail sales in July, adding to pressure on Beijing…",
+      "url": "https://www.theguardian.com/business/2026/aug/17/china-economy-slowdown-signs-extending",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-17T15:36:25.000Z",
+      "image": "https://i.guim.co.uk/img/media/990f70c7faa98b9a8da40ae06ea211f6b29a631d/1113_0_5439_4352/master/5439.jpg?width=700&quality=85&auto=format&fit=max&s=efd61e5e1ae38311352b99ec16291dd2",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -1469,22 +1469,6 @@
       "weight": 3
     },
     {
-      "id": "639d225fd569",
-      "title": "War in Ukraine: Deadly Russian air raid on Kramatorsk leaves 1 dead and 17 wounded",
-      "summary": "At least one person was killed and 17 injured in a Russian airstrike on Kramatorsk in eastern Ukraine overnight, according to Ukraine’s State Emergency Service.",
-      "url": "http://www.africanews.com/2026/08/14/war-in-ukraine-deadly-russian-air-raid-on-kramatorsk-leaves-1-dead-and-17-wounded/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-14T14:22:35.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/87/47/85/640x360_cmsv2_b96ce699-36ef-5a78-ad55-3dfd058f11b7-9874785.jpg?1786716612",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "8bd14fb4d30e",
       "title": "In Interview, Japarov Says He’d Planned for Tashiev to Be Kyrgyz President Next",
       "summary": "Japarov claimed he changed his mind once he realized Tashiev is “not ready.”",
@@ -2618,22 +2602,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "38ea7234a842",
-      "title": "Libyan oil refinery engulfed in flames after drone attack – video",
-      "summary": "Firefighters attempt to tackle a huge blaze at a refinery in Zawiya after a drone strike near a main oil tank and pipeline network. It was the third such attack in two days, according to Libya's National Oil Corporation, but no group has claimed…",
-      "url": "https://www.theguardian.com/world/video/2026/aug/11/libya-oil-refinery-blaze-drone-attack-video",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-11T14:10:34.000Z",
-      "image": "https://i.guim.co.uk/img/media/1855ac0ca29a6929a71e22a79072bc61a4b3f0a5/338_0_1800_1440/master/1800.jpg?width=700&quality=85&auto=format&fit=max&s=7295dbb9e97d8e5449b7f702ecc91cd1",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Africa",
       "weight": 2
     },
     {
