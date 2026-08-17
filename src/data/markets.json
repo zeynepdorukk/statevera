@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-17T00:33:28.000Z",
+  "updatedAt": "2026-08-17T02:07:56.000Z",
   "quotes": [
     {
       "id": "spx",
@@ -56,10 +56,10 @@
       "label": "N225",
       "symbol": "^N225",
       "decimals": 2,
-      "price": 69061.39,
-      "change": 347.5899999999965,
-      "percent": 0.5058518085158971,
-      "updatedAt": "2026-08-17T00:18:25.000Z"
+      "price": 68721.21,
+      "change": 7.4100000000034925,
+      "percent": 0.010783860010657965,
+      "updatedAt": "2026-08-17T01:52:55.000Z"
     },
     {
       "id": "bist",
@@ -76,10 +76,10 @@
       "label": "HANG SENG",
       "symbol": "^HSI",
       "decimals": 2,
-      "price": 25116.85,
-      "change": -279.65000000000146,
-      "percent": -1.1011359833047918,
-      "updatedAt": "2026-08-14T08:08:56.000Z"
+      "price": 25471.31,
+      "change": 354.46000000000276,
+      "percent": 1.4112438462625798,
+      "updatedAt": "2026-08-17T01:52:56.000Z"
     },
     {
       "id": "kospi",
@@ -96,70 +96,70 @@
       "label": "SHANGHAI",
       "symbol": "000001.SS",
       "decimals": 2,
-      "price": 3927.177,
-      "change": 0.21700000000009823,
-      "percent": 0.005525902988573813,
-      "updatedAt": "2026-08-14T07:00:24.000Z"
+      "price": 3936.7527,
+      "change": 9.576199999999972,
+      "percent": 0.24384440067819643,
+      "updatedAt": "2026-08-17T01:52:55.000Z"
     },
     {
       "id": "brent",
       "label": "BRENT",
       "symbol": "BZ=F",
       "decimals": 2,
-      "price": 88.47,
-      "change": -0.04999999999999716,
-      "percent": -0.05648441030275324,
-      "updatedAt": "2026-08-17T00:21:22.000Z"
+      "price": 88.83,
+      "change": 0.3100000000000023,
+      "percent": 0.3502033438770925,
+      "updatedAt": "2026-08-17T01:56:58.000Z"
     },
     {
       "id": "gold",
       "label": "GOLD",
       "symbol": "GC=F",
       "decimals": 2,
-      "price": 4439.9,
-      "change": 2.5999999999994543,
-      "percent": 0.058594190160670995,
-      "updatedAt": "2026-08-17T00:23:22.000Z"
+      "price": 4451.6,
+      "change": 14.300000000000182,
+      "percent": 0.32226804588376223,
+      "updatedAt": "2026-08-17T01:57:52.000Z"
     },
     {
       "id": "wti",
       "label": "WTI",
       "symbol": "CL=F",
       "decimals": 2,
-      "price": 82.07,
-      "change": -0.3300000000000125,
-      "percent": -0.4004854368932191,
-      "updatedAt": "2026-08-17T00:23:14.000Z"
+      "price": 82.54,
+      "change": 0.14000000000000057,
+      "percent": 0.1699029126213599,
+      "updatedAt": "2026-08-17T01:57:55.000Z"
     },
     {
       "id": "copper",
       "label": "COPPER",
       "symbol": "HG=F",
       "decimals": 2,
-      "price": 6.645,
-      "change": 0.03199999999999914,
-      "percent": 0.48389535762889974,
-      "updatedAt": "2026-08-17T00:23:12.000Z"
+      "price": 6.709,
+      "change": 0.0959999999999992,
+      "percent": 1.451686072886726,
+      "updatedAt": "2026-08-17T01:57:51.000Z"
     },
     {
       "id": "usdtry",
       "label": "USD/TRY",
       "symbol": "USDTRY=X",
       "decimals": 2,
-      "price": 47.8884,
-      "change": 0.027899999999995373,
-      "percent": 0.05829441815274678,
-      "updatedAt": "2026-08-17T00:33:27.000Z"
+      "price": 47.8948,
+      "change": 0.03429999999999467,
+      "percent": 0.07166661443151381,
+      "updatedAt": "2026-08-17T02:07:56.000Z"
     },
     {
       "id": "eurusd",
       "label": "EUR/USD",
       "symbol": "EURUSD=X",
       "decimals": 4,
-      "price": 1.1585,
-      "change": 0.0012000000000000899,
-      "percent": 0.1036896223969662,
-      "updatedAt": "2026-08-17T00:32:58.000Z"
+      "price": 1.1586,
+      "change": 0.0013000000000000789,
+      "percent": 0.11233042426337844,
+      "updatedAt": "2026-08-17T02:07:55.000Z"
     },
     {
       "id": "usdjpy",
@@ -169,7 +169,7 @@
       "price": 159.058,
       "change": -0.2470000000000141,
       "percent": -0.15504849188664138,
-      "updatedAt": "2026-08-17T00:33:28.000Z"
+      "updatedAt": "2026-08-17T02:07:56.000Z"
     },
     {
       "id": "us10y",
