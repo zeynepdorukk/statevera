@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-17T09:05:41.627Z",
+  "generatedAt": "2026-08-17T09:54:33.309Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "e3d7c0ac2a93",
+      "title": "Hamas calls for Trump’s Board of Peace to ‘compel’ Israel over Gaza peace plan – Middle East crisis live",
+      "summary": "Jared Kushner set to meet Netanyahu following talks with Hamas Jared Kushner meets with Hamas ahead of talks with Netanyahu on Gaza US President Donald Trump’s envoy and son-in-law Jared Kushner has begun his planned meeting with Prime Minister Benjamin…",
+      "url": "https://www.theguardian.com/world/live/2026/aug/17/trump-kushner-netanyahu-hamas-gaza-israel-blair-us-iran-hormuz-oil-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
+      "publishedAt": "2026-08-17T09:51:23.000Z",
+      "image": "https://i.guim.co.uk/img/media/130351c0b118bb75e17e9ed4b3a296be5375ede0/125_0_1250_1000/master/1250.jpg?width=700&quality=85&auto=format&fit=max&s=c7a32fe25f149ad65f619c2f854685be",
+      "imageWidth": 700,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "04baa96ed728",
+      "title": "Ukraine launches one of its largest drone attacks on Russia",
+      "summary": "Ukraine launched one of its largest drone attacks on Russia, hitting a Wildberries warehouse and other sites. Meanwhile, Russian strikes continued across Ukraine, destroying civilian and industrial areas. The attacks are bringing the war closer to civilians…",
+      "url": "https://www.france24.com/en/video/20260817-ukraine-launches-one-of-its-largest-drone-attacks-on-russia",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-17T09:09:36.000Z",
+      "image": "https://s.france24.com/media/display/6903777c-9a17-11f1-a4a9-005056bfb2b6/w:1024/p:16x9/EN-20260817-070621-070750-CS.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "c7a773211506",
       "title": "Geely's Q2 profit grows 37% as exports increasingly power sales",
@@ -18,6 +50,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "43f597aefd23",
+      "title": "Photos: Rising energy prices disrupt education on Cambodia’s Tonle Sap lake",
+      "summary": "Children on Tonle Sap sacrifice education, with many working to help their families cover increasing fuel costs.",
+      "url": "https://www.aljazeera.com/gallery/2026/8/17/photos-rising-energy-prices-disrupt-education-on-cambodias-tonle-sap-lake?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-17T09:01:52.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -37,22 +85,6 @@
       "weight": 2
     },
     {
-      "id": "e3d7c0ac2a93",
-      "title": "Hamas calls for Trump’s Board of Peace to ‘compel’ Israel over Gaza peace plan – Middle East crisis live",
-      "summary": "Jared Kushner set to meet Netanyahu following talks with Hamas Jared Kushner meets with Hamas ahead of talks with Netanyahu on Gaza Jared Kushner reportedly spent over two hours on Sunday at the meeting with Hamas chief Khalil al-Hayya in Egypt, where they…",
-      "url": "https://www.theguardian.com/world/live/2026/aug/17/trump-kushner-netanyahu-hamas-gaza-israel-blair-us-iran-hormuz-oil-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-17T09:00:26.000Z",
-      "image": "https://i.guim.co.uk/img/media/130351c0b118bb75e17e9ed4b3a296be5375ede0/125_0_1250_1000/master/1250.jpg?width=700&quality=85&auto=format&fit=max&s=c7a32fe25f149ad65f619c2f854685be",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "48e3870dc9f7",
       "title": "Ebola outbreak in Democratic Republic of the Congo now deadliest in country’s history",
       "summary": "At least 2,325 people have died from the virus, according to official data, with outbreak on track to be biggest in history The Ebola outbreak in the Democratic Republic of the Congo is now the deadliest in the country’s history with at least 2,325 people…",
@@ -66,6 +98,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "cce62cf0779b",
+      "title": "Iran says talks with Oman continue on new Hormuz transit route",
+      "summary": "Iran says talks with Oman continue on new Hormuz transit route Iran and Oman are continuing talks to establish a secure maritime transit route through the Strait of Hormuz, Iranian foreign ministry spokesman Esmaeil Baghaei said, blaming security…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-says-talks-oman-continue-new-hormuz-transit-route",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-17T08:42:07.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -198,6 +246,22 @@
       "weight": 2
     },
     {
+      "id": "d39bc91ddc0a",
+      "title": "Trump says US to reduce military drills with South Korea after it stayed out of Iran war",
+      "summary": "Trump cites his \"very good relationship\" with North Korea's leader in deciding to downsize the exercises.",
+      "url": "https://www.bbc.co.uk/news/articles/cx2lll7zvn0o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-17T06:24:31.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8304/live/fde5dbb0-99c6-11f1-b604-2bfb19ba7385.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
       "id": "50aa17988d96",
       "title": "Japan’s economy slows, missing growth forecasts",
       "summary": "GDP rises 0.3 percent in the second quarter as consumption and capital spending sag.",
@@ -263,6 +327,22 @@
       "weight": 2
     },
     {
+      "id": "4a7502b00a40",
+      "title": "The Thai Government’s Myanmar Gambit Could Backfire on ASEAN",
+      "summary": "Bangkok's recent campaign of diplomatic outreach undermines the bloc's collective approach to the country's crisis.",
+      "url": "https://thediplomat.com/2026/08/the-thai-governments-myanmar-gambit-could-backfire-on-asean/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-17T04:41:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-17-134725.jpg",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
       "id": "b05d71d9ac08",
       "title": "US senator slams Trump, Hegseth over 'disgraceful' disregard for American troops",
       "summary": "US senator slams Trump, Hegseth over 'disgraceful' disregard for American troops US senator Chris Van Hollen criticised Donald Trump and Defense Secretary Pete Hegseth for what he called their \"disregard for American servicemembers\". \"This war isn’t making…",
@@ -276,22 +356,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "c5e1e17987ea",
-      "title": "Trump orders cuts to South Korea joint drills despite warnings of North’s growing battlefield experience",
-      "summary": "President says move is based on ‘very good relationship with Kim Jong-un’ but US military officials have said Ukraine war is boosting regime’s combat capabilities Donald Trump has said he is scaling back joint US military drills with South Korea aimed at…",
-      "url": "https://www.theguardian.com/world/2026/aug/17/trump-cuts-south-korea-joint-drills-us-military-good-relationship-kim-jong-un",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-17T04:07:57.000Z",
-      "image": "https://i.guim.co.uk/img/media/812d23651e2260e3817cb53514597677be97214b/367_1_2220_1777/master/2220.jpg?width=700&quality=85&auto=format&fit=max&s=d87d354280f810c970d4964a039c1b03",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -440,6 +504,22 @@
       "weight": 2
     },
     {
+      "id": "a425829f4362",
+      "title": "Joint Resource Exploration With China a ‘Possibility’ Before 2028, Philippine President Says",
+      "summary": "Ferdinand Marcos Jr. said that Manila and Beijing have made progress in energy talks, despite the ongoing tensions in the South China Sea.",
+      "url": "https://thediplomat.com/2026/08/joint-resource-exploration-with-china-a-possibility-before-2028-philippine-president-says/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-17T02:29:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-17-114132.jpg",
+      "imageWidth": 600,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
       "id": "0b2849b77eb2",
       "title": "Zambia incumbent takes early election lead as opposition alleges armed raid",
       "summary": "President Hakainde Hichilema appears on course for outright win as observers cite violence and a tilted campaign field.",
@@ -481,7 +561,7 @@
       "publisherHome": "https://www.politico.eu",
       "sourceId": "politico-eu",
       "publishedAt": "2026-08-17T02:00:00.000Z",
-      "image": "https://www.politico.eu/wp-content/uploads/2026/08/14/Belgaimage-84505080-1024x661.jpg",
+      "image": "https://www.politico.eu/wp-content/uploads/2026/08/14/Belgaimage-142557795-1024x683.jpg",
       "imageWidth": 0,
       "category": "Security",
       "categoryConfidence": "high",
@@ -519,6 +599,22 @@
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
+    },
+    {
+      "id": "4bee33a3ca5f",
+      "title": "Bou Meng, Survivor of Khmer Rouge Security Prison, Dies Aged 85",
+      "summary": "The painter was one of 14,000-plus men, women, and children who were sent to S-21 between 1975 and 1979 – and one of just a handful to survive.",
+      "url": "https://thediplomat.com/2026/08/bou-meng-survivor-of-khmer-rouge-security-prison-dies-aged-85/",
+      "publisher": "The Diplomat",
+      "publisherHome": "https://thediplomat.com",
+      "sourceId": "diplomat",
+      "publishedAt": "2026-08-17T01:08:00.000Z",
+      "image": "https://images.thediplomat.com/v1/td-list-l-2/2026/08/thediplomat_2026-08-17-101248.jpg",
+      "imageWidth": 600,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
     },
     {
       "id": "75eaee195d03",
@@ -567,22 +663,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "ff2e406cc869",
-      "title": "Trump directs Hegseth to scale back joint military exercises with South Korea",
-      "summary": "The president’s announcement comes just a day before the joint exercises with a longtime ally were set to kick off.",
-      "url": "https://www.politico.com/news/2026/08/16/trump-hegseth-joint-military-drills-south-korea-01038949?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-16T23:42:14.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -649,38 +729,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "f129b3759831",
-      "title": "Iran parliament speaker says US used more firepower in Iran than on Vietnam",
-      "summary": "Iran parliament speaker says US used more firepower in Iran than on Vietnam Iranian Parliament Speaker Mohammad Bagher Ghalibaf said the US had used more firepower against Iran than during the Vietnam War. Speaking at an event broadcast by state broadcaster…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-parliament-speaker-says-us-used-more-firepower-iran-vietnam",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T21:05:27.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "c42029d31448",
-      "title": "Iran and Oman work on temporary Hormuz shipping route as Trump threatens to claim the strait",
-      "summary": "Iran and Oman work on temporary Hormuz shipping route as Trump threatens to claim the strait Iranian Foreign Minister Abbas Araghchi said on Sunday that Tehran and Muscat were working to establish a temporary maritime route through the Strait of Hormuz, while…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-and-oman-work-temporary-hormuz-shipping-route-trump-threatens-claim",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T19:48:33.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -761,22 +809,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "5467f9af8d64",
-      "title": "Ukrainian drone attack on Russia kills at least six, says Moscow",
-      "summary": "Kyiv launches what may be its largest attack wave of war, with fire breaking out at warehouse near Russian capital Ukraine has launched one of its largest drone attacks since the start of the war, causing a fire at a distribution warehouse near Moscow and…",
-      "url": "https://www.theguardian.com/world/2026/aug/16/ukrainian-drone-attack-on-russia-wildberries-warehouse-fire",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-16T16:10:19.000Z",
-      "image": "https://i.guim.co.uk/img/media/32117ccbd21fa32d8a2eba949e84cad036fc92aa/253_0_2820_2255/master/2820.jpg?width=700&quality=85&auto=format&fit=max&s=d90298741bfdcecfa38aa5e216b9a7e4",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -1037,22 +1069,6 @@
       "weight": 2
     },
     {
-      "id": "bcecfe0ccf38",
-      "title": "Alaska candidate for US Senate rejects Kamala Harris’s unsolicited support",
-      "summary": "Former VP sent fundraising appeal for Democrat Mary Peltola’s campaign – with half of donations going to Harris’s organization Alaska US Senate candidate Mary Peltola has rejected the support of Kamala Harris , her fellow Democrat, after the 2024 presidential…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/15/alaska-mary-peltola-rejects-kamala-harris-unsolicited-support",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-15T15:07:54.000Z",
-      "image": "https://i.guim.co.uk/img/media/46541bd5527a1eae60f3570b67456fe7118c170c/85_0_3047_2438/master/3047.jpg?width=700&quality=85&auto=format&fit=max&s=c2c7f90017b0e8a351a6a4bafafcc2b7",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "ac62d2ad884d",
       "title": "In Germany, record heat meets climate action fatigue",
       "summary": "Climate action does not seem to be a priority for the German government — despite record temperatures, heat-related deaths and drought. Why aren't more people taking to the streets in protest?",
@@ -1240,23 +1256,6 @@
       "image": "https://i.guim.co.uk/img/media/66f8ecfc4615a8387997574be15c2a8111894179/515_0_3430_2744/master/3430.jpg?width=700&quality=85&auto=format&fit=max&s=2a45a0cd2eae2737633f1a02901285ba",
       "imageWidth": 700,
       "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "84666f54bbbe",
-      "title": "WWII work of Japan's future Nobelists shows complex relationship with military",
-      "summary": "",
-      "url": "https://asia.nikkei.com/spotlight/comment/wwii-work-of-japan-s-future-nobelists-shows-complex-relationship-with-military",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-14T22:15:06.706Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
@@ -1790,22 +1789,6 @@
       "weight": 2
     },
     {
-      "id": "80a084de24ae",
-      "title": "Patriot missiles have been a godsend for Ukraine against Putin, but they’re running out. Kyiv needs help and fast | Jack Watling",
-      "summary": "Europe and Nato have known for years that interceptor production can’t keep up with demand and now disaster looms, putting us all in danger “Invincible.” That was how Vladimir Putin described Russia’s latest generation of ballistic missiles in 2018 . In 2022…",
-      "url": "https://www.theguardian.com/commentisfree/2026/aug/14/patriot-missiles-ukraine-putin-kyiv-running-out-nato-danger",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-14T08:54:50.000Z",
-      "image": "https://i.guim.co.uk/img/media/60e87bec90821946c7de7c541a26d4b86cf5dcff/193_0_4910_3928/master/4910.jpg?width=700&quality=85&auto=format&fit=max&s=e07325a37a977f30076de6fd357e9e42",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "eeffef378099",
       "title": "US says dozens of countries helped China dodge Trump's tariffs",
       "summary": "A new US report said China had moved goods through nations with lower tariffs to dodge higher levies.",
@@ -1838,22 +1821,6 @@
       "weight": 3
     },
     {
-      "id": "ee8988b275d9",
-      "title": "Indonesia’s Transgender Community Is Facing Growing Repression",
-      "summary": "Vigilante mobs are attacking transgender people as the government takes steps to codify anti-LGBTQ+ attitudes into law.",
-      "url": "https://thediplomat.com/2026/08/indonesias-transgender-community-is-facing-growing-repression/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-14T07:28:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2019/02/thediplomat-pride-828056_1920.jpg",
-      "imageWidth": 600,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
       "id": "9146026e9a4d",
       "title": "Trump adviser, Board of Peace envoy to visit Israel for talks on US Gaza plan: Report",
       "summary": "White House does not want Israeli elections to stall implementation of next phase of plan, reports Axios",
@@ -1870,22 +1837,6 @@
       "weight": 2
     },
     {
-      "id": "363cadf44fd9",
-      "title": "The Key Takeaways From the Vietnamese President’s Visit to Australia",
-      "summary": "To Lam's four-day trip marked a new high-water mark in the relationship between Hanoi and Canberra.",
-      "url": "https://thediplomat.com/2026/08/the-key-takeaways-from-the-vietnamese-presidents-visit-to-australia/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-14T07:04:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2022/07/thediplomat_2022-07-20-035258.jpg",
-      "imageWidth": 600,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 3
-    },
-    {
       "id": "859c966887e5",
       "title": "Sen. Van Hollen: Iran war is illegal and we cannot fund another dime",
       "summary": "Today, there is no all-out war, no peace, and no light at the end of the Strait of Hormuz. The Trump administration’s crack at transforming Iran is drifting along in the Persian Gulf, as on-again, off-again negotiations fail to resolve a conflict that has…",
@@ -1899,22 +1850,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Middle East",
-      "weight": 3
-    },
-    {
-      "id": "2ea5c189f0c4",
-      "title": "Thailand Denies Reports It Planned to Use Security Cooperation as US Tariff Leverage",
-      "summary": "Bangkok has reaffirmed its commitment to the security relationship and denied a report that it was prepared to link military cooperation to ongoing trade talks.",
-      "url": "https://thediplomat.com/2026/08/thailand-denies-reports-it-planned-to-use-security-cooperation-as-us-tariff-leverage/",
-      "publisher": "The Diplomat",
-      "publisherHome": "https://thediplomat.com",
-      "sourceId": "diplomat",
-      "publishedAt": "2026-08-14T06:20:00.000Z",
-      "image": "https://images.thediplomat.com/v1/td-list-l-2/2025/11/thediplomat_2025-11-17-092024.jpg",
-      "imageWidth": 600,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 3
     },
     {
@@ -2395,22 +2330,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "ebe6ee7b159c",
-      "title": "Farage wins UK by-election as Count Binface claims 'moral victory'",
-      "summary": "Hard-right British politician Nigel Farage reclaimed his seat in a by-election, according to the final tally Friday, though his main rival and joke candidate Count Binface took an larger than expected share of the ballot.",
-      "url": "https://www.rfi.fr/en/international/20260813-farage-wins-uk-by-election-as-count-binface-claims-moral-victory",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-13T02:26:10.000Z",
-      "image": "https://s.rfi.fr/media/display/f50c945a-97ac-11f1-8012-005056a90284/w:1024/p:16x9/78f883b2cf1f30f756558a7c5f4e0c7c88ce82bb.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
