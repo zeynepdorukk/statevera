@@ -1,8 +1,58 @@
 {
-  "generatedAt": "2026-08-17T07:37:45.775Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-17T08:22:12.913Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "e9c8408f02df",
+      "title": "At least six people killed in Ukrainian missile attack on Russia’s Belgorod",
+      "summary": "Overnight Russian missile and drone attacks across Ukraine kill two people and injure 19.",
+      "url": "https://www.aljazeera.com/news/2026/8/17/at-least-six-people-killed-in-ukrainian-missile-attack-on-russias-belgorod?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-17T08:00:05.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "6a33dd21c086",
+      "title": "Blanchard’s Lathe and the Long Arc of American Manufacturing",
+      "summary": "Emerging from the chaos of supplying the U.S. Army during the War of 1812, the War Department sought to foster domestic production of standardized muskets. Out of this industrial project arose an invention that laid the foundation for automation and mass…",
+      "url": "https://warontherocks.com/cogs-of-war/blanchards-lathe-and-the-long-arc-of-american-manufacturing/",
+      "publisher": "War on the Rocks",
+      "publisherHome": "https://warontherocks.com",
+      "sourceId": "war-on-the-rocks",
+      "publishedAt": "2026-08-17T08:00:05.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 3
+    },
+    {
+      "id": "720e28ae6999",
+      "title": "JP Morgan boss Jamie Dimon warns UK chancellor not to hike taxes on banks",
+      "summary": "Billionaire CEO of world’s biggest bank says any windfall tax on sector’s bumper profits could harm jobs in the City Jamie Dimon, the boss of the US bank JP Morgan, has urged John Healey not to use his first budget as chancellor to increase taxes on banks’…",
+      "url": "https://www.theguardian.com/business/2026/aug/17/jp-morgan-boss-jamie-dimon-warns-uk-chancellor-windfall-tax-banks",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-17T07:55:31.000Z",
+      "image": "https://i.guim.co.uk/img/media/4313694390950987033a4065db614c40ab04f922/562_0_2915_2333/master/2915.jpg?width=700&quality=85&auto=format&fit=max&s=237b9bb1825f9448017ff64564b45537",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "96c0c3e722af",
       "title": "China's economic growth challenges mount as consumption slips",
@@ -43,8 +93,8 @@
       "summary": "Jared Kushner set to meet Netanyahu following talks with Hamas Jared Kushner meets with Hamas ahead of talks with Netanyahu on Gaza The meeting marks the second known meeting between Jared Kushner with representatives of Hamas. Kushner, Trump’s envoy and…",
       "url": "https://www.theguardian.com/world/live/2026/aug/17/trump-kushner-netanyahu-hamas-gaza-israel-blair-us-iran-hormuz-oil-latest-news-updates",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-17T07:32:49.000Z",
       "image": "https://i.guim.co.uk/img/media/130351c0b118bb75e17e9ed4b3a296be5375ede0/125_0_1250_1000/master/1250.jpg?width=700&quality=85&auto=format&fit=max&s=c7a32fe25f149ad65f619c2f854685be",
       "imageWidth": 700,
@@ -88,7 +138,7 @@
     {
       "id": "d1c2c5e2a821",
       "title": "Victorian teachers are to be the best paid in Australia. A union rebellion helped seal the deal",
-      "summary": "Salaries will rise 28.3% to 32.4% over four years, an outcome partly shaped by a rank-and-file rebellion within the Australian Education Union Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast…",
+      "summary": "Salaries will rise 28.3% to 32.4% over four years, an outcome partly shaped by a rank-and-file revolt within the Australian Education Union Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast…",
       "url": "https://www.theguardian.com/australia-news/2026/aug/17/australia-victoria-teachers-union-vote-pay-deal",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -697,22 +747,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "53a72380085d",
-      "title": "Iran offers $30,000 bounty for killing or capturing US soldiers",
-      "summary": "The Iranian military announced on Sunday it would be offering a $30,000 reward for the killing or capturing of US soldiers, with the bounty doubled if conducted by a woman. There have been no known deployments of US ground troops in Iran during the war except…",
-      "url": "https://www.france24.com/en/middle-east/20260816-iran-offers-30-000-bounty-for-killing-or-capturing-us-soldiers",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-16T15:40:26.000Z",
-      "image": "https://s.france24.com/media/display/2a9f5802-8ecd-11f1-8fd4-005056bf30b7/w:1024/p:16x9/AP26208419033757.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -2812,22 +2846,6 @@
       "categoryConfidence": "high",
       "region": "Africa",
       "weight": 2
-    },
-    {
-      "id": "172affb5124c",
-      "title": "Is Ukraine Drifting Towards Groupthink on European Integration?",
-      "summary": "Welcome to The Ukraine Compass, a weekly digest of Ukrainian commentary and analysis from across the political spectrum, only for War on the Rocks members. Each Monday, we bring you a curated selection of articles from Ukrainian media offering insight into…",
-      "url": "https://warontherocks.com/is-ukraine-drifting-towards-groupthink-on-european-integration/",
-      "publisher": "War on the Rocks",
-      "publisherHome": "https://warontherocks.com",
-      "sourceId": "war-on-the-rocks",
-      "publishedAt": "2026-08-10T17:45:16.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "source",
-      "region": "Eurasia",
-      "weight": 3
     },
     {
       "id": "3c5e8492d50f",
