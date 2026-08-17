@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-17T14:50:37.947Z",
+  "generatedAt": "2026-08-17T15:14:49.277Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -9,9 +9,9 @@
       "summary": "US president makes threat in comments to Fox News, as his son-in-law meets the Israeli leader in Jerusalem in effort to push Gaza peace plan Jared Kushner meets with Hamas ahead of talks with Netanyahu on Gaza The UN rights chief voiced alarm Monday at the…",
       "url": "https://www.theguardian.com/world/live/2026/aug/17/trump-kushner-netanyahu-hamas-gaza-israel-blair-us-iran-hormuz-oil-latest-news-updates",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-17T14:32:45.000Z",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
+      "publishedAt": "2026-08-17T15:01:00.000Z",
       "image": "https://i.guim.co.uk/img/media/130351c0b118bb75e17e9ed4b3a296be5375ede0/125_0_1250_1000/master/1250.jpg?width=700&quality=85&auto=format&fit=max&s=c7a32fe25f149ad65f619c2f854685be",
       "imageWidth": 700,
       "category": "Diplomacy",
@@ -22,17 +22,17 @@
     {
       "id": "9b656d5dd7e6",
       "title": "Top Democrat slams Trump’s ‘inane, haphazard’ cuts to US-South Korea drills – live",
-      "summary": "Senator Jack Reed slammed ‘another inane, haphazard decision’ after Trump ordered the Pentagon to scale back military drills with South Korea aimed at deterring North Korea Sign up for the Breaking News US email Senator Jack Reed has slammed “another inane,…",
+      "summary": "Senator Jack Reed slammed ‘another inane, haphazard decision’ after Trump ordered the Pentagon to scale back military drills with South Korea aimed at deterring North Korea Sign up for the Breaking News US email Republican senator Thom Tillis deplored Trump’s…",
       "url": "https://www.theguardian.com/us-news/live/2026/aug/17/politics-trump-south-korea-military-pentagon-republicans-democrats",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-17T14:26:30.000Z",
-      "image": "https://i.guim.co.uk/img/media/d1400823b513ccd817d84a686e6996e127415f5b/0_127_521_417/master/521.jpg?width=700&quality=85&auto=format&fit=max&s=9be8f8dd31faf6ff981ce38cdc748855",
+      "publishedAt": "2026-08-17T14:51:02.000Z",
+      "image": "https://i.guim.co.uk/img/media/52559c1e1c5daeeff5af9103bae7999e74139051/565_0_3826_3060/master/3826.jpg?width=700&quality=85&auto=format&fit=max&s=b744aa65ff115fbb9036e4d9f43f1b66",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
-      "region": "Global",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -209,22 +209,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "720e28ae6999",
-      "title": "JP Morgan boss Jamie Dimon warns UK chancellor not to hike taxes on banks",
-      "summary": "Billionaire CEO of world’s biggest bank says any windfall tax on sector’s bumper profits could harm jobs in City Business live – latest updates Jamie Dimon, the boss of the US bank JP Morgan, has urged John Healey not to use his first budget as chancellor to…",
-      "url": "https://www.theguardian.com/business/2026/aug/17/jp-morgan-boss-jamie-dimon-warns-uk-chancellor-windfall-tax-banks",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-17T12:26:33.000Z",
-      "image": "https://i.guim.co.uk/img/media/4313694390950987033a4065db614c40ab04f922/562_0_2915_2333/master/2915.jpg?width=700&quality=85&auto=format&fit=max&s=237b9bb1825f9448017ff64564b45537",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -1004,10 +988,10 @@
       "weight": 2
     },
     {
-      "id": "2685bccdeea4",
-      "title": "Troops from North Korea to boost Russia's Ukraine forces",
-      "summary": "Intelligence agencies report that North Korea is preparing to send up to 50,000 troops to Russia. But military experts doubt this will make a fundamental difference in the course of Russia's war with Ukraine.",
-      "url": "https://www.dw.com/en/troops-from-north-korea-to-boost-russia-s-ukraine-forces/a-78385524?maca=en-rss-en-all-1573-rdf",
+      "id": "b2a14203c8e4",
+      "title": "Will North Korean forces bolster Russia's Ukraine war?",
+      "summary": "Intelligence agencies report that North Korea could send up to 50,000 troops to support Russia in its war on Ukraine, though experts doubt this will fundamentally shift the military balance in Moscow’s favor.",
+      "url": "https://www.dw.com/en/will-north-korean-forces-bolster-russia-s-ukraine-war/a-78385524?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
       "sourceId": "dw",
@@ -2842,22 +2826,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "66520018ff46",
-      "title": "Private pensions are a publicly subsidised gift to the wealthy | Phillip Inman",
-      "summary": "John Healey should equalise the tax break on pension savings to stop inequalities from widening Private pensions are a privilege for the lucky few and a curse for everyone else. Sold as a saviour for what would otherwise be a ruinous old age, they have become…",
-      "url": "https://www.theguardian.com/business/2026/aug/08/private-pensions-publicly-subsidised-gift-to-the-wealthy",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
-      "publishedAt": "2026-08-08T15:00:48.000Z",
-      "image": "https://i.guim.co.uk/img/media/afe5fa71ce6a019984b62bfb59d13498dfd7d0b7/1082_934_4432_3546/master/4432.jpg?width=700&quality=85&auto=format&fit=max&s=a3704143dc9d3e54c1d480dfc6f84c49",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     }
   ]
