@@ -1,16 +1,32 @@
 {
-  "generatedAt": "2026-08-17T22:21:26.867Z",
+  "generatedAt": "2026-08-17T22:46:24.893Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "9b656d5dd7e6",
+      "title": "Trump says Kim Jong-un has responded to his overtures when asked about scaling back US drills with South Korea – live",
+      "summary": "Trump also claims he’s ‘actually making it much safer’ for South Korea by scaling back joint military drills just days after North Korea test-fired ballistic missiles Sign up for the Breaking News US email Republican senator Thom Tillis deplored Trump’s…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/17/politics-trump-south-korea-military-pentagon-republicans-democrats",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-17T22:26:32.000Z",
+      "image": "https://i.guim.co.uk/img/media/52559c1e1c5daeeff5af9103bae7999e74139051/565_0_3826_3060/master/3826.jpg?width=700&quality=85&auto=format&fit=max&s=b744aa65ff115fbb9036e4d9f43f1b66",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "1ff0ced4e9d6",
       "title": "Election denier Tina Peters to be hired as elections consultant in conservative California county",
       "summary": "Shasta county, hotbed of US election denialism movement, set to appoint ex-Colorado clerk who served prison term A northern California county that has become a hotbed of activism for those who sow doubts about the reliability of voting machines plans to hire…",
       "url": "https://www.theguardian.com/us-news/2026/aug/17/election-denier-tina-peters-shasta-county",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-17T22:14:15.000Z",
       "image": "https://i.guim.co.uk/img/media/2cb384efb5469c5878495a5bba5abb07d69cb586/500_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=86f6e9fffbe4577141a9c2012fc9a94d",
       "imageWidth": 700,
@@ -33,22 +49,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "9b656d5dd7e6",
-      "title": "Trump says Kim Jong-un has responded to his overtures when asked about scaling back US drills with South Korea – live",
-      "summary": "Trump also claims he’s ‘actually making it much safer’ for South Korea by scaling back joint military drills just days after North Korea test-fired ballistic missiles Sign up for the Breaking News US email Republican senator Thom Tillis deplored Trump’s…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/17/politics-trump-south-korea-military-pentagon-republicans-democrats",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-17T22:01:17.000Z",
-      "image": "https://i.guim.co.uk/img/media/52559c1e1c5daeeff5af9103bae7999e74139051/565_0_3826_3060/master/3826.jpg?width=700&quality=85&auto=format&fit=max&s=b744aa65ff115fbb9036e4d9f43f1b66",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Global",
       "weight": 2
     },
     {
