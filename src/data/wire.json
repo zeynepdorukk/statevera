@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-17T03:10:19.642Z",
+  "generatedAt": "2026-08-17T03:59:24.029Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "4e8302659532",
+      "title": "Report: Israeli military prepares for possible escalation in Lebanon",
+      "summary": "Report: Israeli military prepares for possible escalation in Lebanon The Israeli army is planning for a possible escalation in Lebanon that would last for a number of days, according to Israel's Channel 12. The broadcaster claimed that Israeli exercised…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/report-israeli-military-prepares-possible-escalation-lebanon",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-17T03:23:58.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "493d43477a42",
       "title": "Thailand Q2 GDP growth slows to 1.9% on energy, travel woes",
@@ -22,8 +38,8 @@
     },
     {
       "id": "7047c5cdd4d9",
-      "title": "Irans foreign ministry criticises Canada's participation in US war on Iran",
-      "summary": "Irans foreign ministry criticises Canada's participation in US war on Iran Iran's foreign ministry spokesperson Esmaeil Baqaei criticised Canada over its participation in the US war on Iran. \"Washington calls Canada its 51st state; Washington imposes tariffs…",
+      "title": "Tehran's foreign ministry slams Canada for backing US war on Iran",
+      "summary": "Tehran's foreign ministry slams Canada for backing US war on Iran Iran's foreign ministry spokesperson Esmaeil Baqaei criticised Canada over its participation in the US war on Iran. \"Washington calls Canada its 51st state; Washington imposes tariffs on…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/irans-foreign-ministry-criticises-canadas-participation-us-war-iran",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -33,7 +49,23 @@
       "imageWidth": 0,
       "category": "Diplomacy",
       "categoryConfidence": "high",
-      "region": "Americas",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "159b18c41326",
+      "title": "Report supporting Australia’s teen social media ban appears to contain AI hallucinations, Senate hears",
+      "summary": "Exclusive: Guardian analysis finds one section of report includes links to academic articles that do not exist, but authors deny the references were made up by AI Follow our Australia news live blog for latest updates Get our breaking news email , free app or…",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/17/australia-social-media-ban-report-ai-hallucinations-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-17T02:58:05.000Z",
+      "image": "https://i.guim.co.uk/img/media/428083c3e499e85ef5be906b41a991f175fc77bf/0_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=2fdd698311551e3bd28e5734b53c97f3",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -50,22 +82,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "074b9edfa1ee",
-      "title": "Australia politics live: Greens senator accuses Labor of backing gas industry and billionaires over ‘disabled people and our families’",
-      "summary": "Both major parties say current NDIS scheme is unsustainable as Senate debate of legislation continues. Follow today’s news live Get our breaking news email , free app or daily news podcast Hume says housing the ‘best indicator of economic security’ in…",
-      "url": "https://www.theguardian.com/australia-news/live/2026/aug/17/australia-politics-live-labor-work-rights-visa-holders-anthony-albanese-angus-taylor-pauline-hanson-liberal-party-one-nation-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-17T02:37:04.000Z",
-      "image": "https://i.guim.co.uk/img/media/3318662ac201b0537d616ab3b9db9826cb8b7947/1587_623_5581_4465/master/5581.jpg?width=700&quality=85&auto=format&fit=max&s=e4670d8671ebd254e857cfee16198073",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -390,22 +406,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "7977962b972d",
-      "title": "Israeli army besieges Palestinian homes in occupied West Bank",
-      "summary": "Israeli troops have raided the village of Qusra, south of Nablus, in the occupied West Bank.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/16/israeli-army-besieges-palestinian-homes-in-occupied-west-bank?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-16T17:45:52.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
