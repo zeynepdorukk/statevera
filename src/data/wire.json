@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-17T05:20:26.303Z",
+  "generatedAt": "2026-08-17T05:57:17.898Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "580e3a4996b3",
+      "title": "Iran’s top negotiator declares victory in war against the US and Israel",
+      "summary": "Iran’s Parliament speaker and top negotiator Mohammad Baqer Qalibaf has declared both a military and political victory.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/17/irans-top-negotiator-declares-victory-in-war-against-the-us-and-israel?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-17T05:16:18.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "2d4b21839f92",
       "title": "Trump envoy Kushner arrives in Israel after rare Hamas talks on Gaza peace plan",
@@ -360,6 +376,22 @@
       "weight": 2
     },
     {
+      "id": "ff2e406cc869",
+      "title": "Trump directs Hegseth to scale back joint military exercises with South Korea",
+      "summary": "The president’s announcement comes just a day before the joint exercises with a longtime ally were set to kick off.",
+      "url": "https://www.politico.com/news/2026/08/16/trump-hegseth-joint-military-drills-south-korea-01038949?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+      "publisher": "POLITICO Europe",
+      "publisherHome": "https://www.politico.eu",
+      "sourceId": "politico-eu",
+      "publishedAt": "2026-08-16T23:42:14.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
       "id": "f0f8fe6975e4",
       "title": "Japan's Takaichi keeps friends close as China ups diplomatic pressure",
       "summary": "",
@@ -570,22 +602,6 @@
       "weight": 2
     },
     {
-      "id": "e31701498439",
-      "title": "Israeli military attacks strategic hill in southern Lebanon",
-      "summary": "Israeli military attacks strategic hill in southern Lebanon The Israeli military has attacked Ali al-Taher Hill in southern Lebanon with explosives, according to the National News Agency. The strategically important high ground on the outskirts of Nabatieh…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-military-attacks-southern-lebanon",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-16T17:05:01.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "53a72380085d",
       "title": "Iran offers $30,000 bounty for killing or capturing US soldiers",
       "summary": "The Iranian military announced on Sunday it would be offering a $30,000 reward for killing or capturing US soldiers, with the bounty doubled if conducted by a woman. There have been no known deployments of US ground troops in Iran during the war except for a…",
@@ -599,22 +615,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "4a38ea4308ed",
-      "title": "Nazi artefacts still being sold online years after trade outlawed across Australia",
-      "summary": "One seller says second world war memorabilia containing banned Nazi symbols is legal under exemptions to the laws Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast Nazi artefacts bearing…",
-      "url": "https://www.theguardian.com/australia-news/2026/aug/17/nazi-artefacts-prohibited-symbols-still-being-sold-online-australia-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-16T15:00:30.000Z",
-      "image": "https://i.guim.co.uk/img/media/183a8ab5352081c5d1ebbe833f230d71a9a870c6/0_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=c3056d2e6c8ea3421766bd39b48499dd",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
