@@ -1,10 +1,74 @@
 {
-  "generatedAt": "2026-08-18T10:16:15.905Z",
+  "generatedAt": "2026-08-18T10:52:22.764Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
   ],
   "items": [
+    {
+      "id": "72f4da1d2876",
+      "title": "Deaths mount, trauma sets in as Russia ramps up missile attacks on Ukraine",
+      "summary": "Ukrainian families mourn their loved ones as experts lament Washington's elusive promises of military support.",
+      "url": "https://www.aljazeera.com/news/2026/8/18/putins-illusion-of-victory-russia-ramps-up-missile-attacks-on-ukraine?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-18T10:45:37.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "71de50bb03c8",
+      "title": "Redistricting scrambles Florida primary as Alaska awaits Dan Sullivan v Dan Sullivan – US politics live",
+      "summary": "Today’s contests will help shape the fiercely contested midterms this fall to determine control of Congress Sign up for the US Breaking News email CNN defended its journalist Kristen Holmes in a statement, calling her “one of the most respected and…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/18/donald-trump-florida-alaska-wyoming-primaries-midterms-white-house-ballroom-iran-cnn-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-18T10:44:54.000Z",
+      "image": "https://i.guim.co.uk/img/media/ce57174e301acbf64d21d5842f89a0e015130622/714_8_3318_2654/master/3318.jpg?width=700&quality=85&auto=format&fit=max&s=967dc25e35a8b3e2c78457734755ddb5",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "e16622c61f67",
+      "title": "‘Come fetch your people’: 300 anti-migrants protesters call out to SADC leaders",
+      "summary": "South Africa hosted a gathering of leaders from the southern African regional bloc amid xenophobic violence and anti-migrant protests. As the continent’s wealthiest country, South Africa has long attracted migrants, but it faces an unemployment rate of over…",
+      "url": "https://www.france24.com/en/come-fetch-your-people-300-anti-migrants-protesters-call-out-to-sadc-leaders",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-18T10:38:45.000Z",
+      "image": "https://s.france24.com/media/display/f1756936-9aed-11f1-b963-005056bf30b7/w:1024/p:16x9/EN-20260817-214608-215242-CS.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "7d7f4b179a12",
+      "title": "Sydney Swans will sanction players for ‘serious breach’ over sexual assault allegations",
+      "summary": "Club’s board meets on Tuesday night to decide penalties after league boss calls reports ‘deeply concerning’ The Sydney Swans AFL club will sanction players for “serious breach” of standards over an incident that led to a report of sexual assault. Victorian…",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/18/afl-chief-breaks-silence-over-deeply-concerning-sydney-swans-sexual-assault-allegations-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-18T10:36:01.000Z",
+      "image": "https://i.guim.co.uk/img/media/b80d3715eee1e3a7b6741c2cdd4063ffd9999883/296_0_3760_3007/master/3760.jpg?width=700&quality=85&auto=format&fit=max&s=7c5a75707b1d8a978e365015e5f69e48",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "4ebe5fc1a2f5",
       "title": "Smartphone king Xiaomi's profits drop 43% on memory crunch, weak demand",
@@ -167,6 +231,22 @@
       "weight": 2
     },
     {
+      "id": "d72eed2c40c7",
+      "title": "South Korea calls for solid US alliance after Trump says 'good relationship' with Kim Jong Un",
+      "summary": "The United States and North Korea could be edging back toward direct communication, while creating separation with South Korea by cutting down on joint military exercises. US President Donald Trump announced on Monday that Kim Jong Un had responded to his…",
+      "url": "https://www.france24.com/en/south-korea-calls-for-solid-us-alliance-after-trump-says-good-relationship-with-kim-jong-un",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-18T08:51:28.000Z",
+      "image": "https://s.france24.com/media/display/499ba594-9adf-11f1-8dc1-005056bf30b7/w:1024/p:16x9/EN-20260818-100142-100329-CS.jpg",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
       "id": "c8f238168185",
       "title": "What to watch in Tuesday’s Florida primary elections",
       "summary": "Islamophobia, anti-Semitism, Trump's politics and Israel's war on Gaza figure prominently in the elections.",
@@ -213,22 +293,6 @@
       "categoryConfidence": "source",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "028da7268515",
-      "title": "Victoria moves to expand definition of ‘corruption’ before state election",
-      "summary": "Former Ibac head welcomes potential change that could capture actions that currently cannot be used to make corrupt findings Get our breaking news email , free app or daily news podcast Ben Carroll has committed to changing the definition of “corruption”…",
-      "url": "https://www.theguardian.com/australia-news/2026/aug/18/victoria-moves-to-expand-definition-of-corruption-before-state-election-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-18T07:25:26.000Z",
-      "image": "https://i.guim.co.uk/img/media/d5f1696fa3905e006a9431f9ec06a88aefc8a742/476_0_4744_3797/master/4744.jpg?width=700&quality=85&auto=format&fit=max&s=ae9a8f4925c0570452e474ad8c762f95",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
     },
     {
       "id": "bd269aa88549",
@@ -729,22 +793,6 @@
       "weight": 2
     },
     {
-      "id": "6dcb7be5f31c",
-      "title": "Erdogan urges Trump to continue talks with Iran, offers support",
-      "summary": "Erdogan urges Trump to continue talks with Iran, offers support Turkish President Tayyip Erdogan held a call with US President Donald Trump to urge the US to continue talks with Iran and de-escalate tensions, offering Ankara's support in peace efforts,…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/erdogan-urges-trump-continue-talks-iran-offers-support",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-17T22:05:22.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Turkey",
-      "weight": 2
-    },
-    {
       "id": "f138b09292a6",
       "title": "Palestinian family in West Bank fear settler violence will rob them of home",
       "summary": "The family of a Palestinian-American man remain holed up in his West Bank home for more than a week, after Israeli settlers laid siege to the house and the Israeli army then turned it into a closed military area.",
@@ -956,22 +1004,6 @@
       "weight": 2
     },
     {
-      "id": "2ab296b93709",
-      "title": "Netanyahu, Kushner agree US general to verify Hamas disarmament before Israel withdraws from Gaza",
-      "summary": "Israeli Prime Minister Benjamin Netanyahu and US envoy Jared Kushner agreed Monday that an American general would oversee the disarmament of Hamas, an Israeli official said, as Netanyahu insisted Israel would not withdraw from Gaza until the group gives up…",
-      "url": "https://www.france24.com/en/middle-east/20260817-netanyahu-kushner-agree-us-general-verify-hamas-disarmament-before-israel-withdraws-from-gaza",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-17T18:14:46.000Z",
-      "image": "https://s.france24.com/media/display/72ff5282-9a62-11f1-a27b-005056a90284/w:1024/p:16x9/000-C4B269E.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "cad9b4f6a618",
       "title": "UAE economy: On the brink or bouncing back?",
       "summary": "On the one hand, the UAE economy is suffering due to the Iran war, as residents leave and tourists cancel plans. On the other hand, UAE authorities insist recovery is underway. What's really going on?",
@@ -1117,19 +1149,19 @@
       "weight": 2
     },
     {
-      "id": "dc1430f7fb1d",
-      "title": "Russia’s Supreme Court upholds ban on anti-war party Yabloko",
-      "summary": "Russia’s Supreme Court on Monday upheld the exclusion of liberal opposition party Yabloko from September’s legislative elections, eliminating the country’s only explicitly anti-war party from the ballot, as dozens of the party's supporters were detained…",
-      "url": "https://www.france24.com/en/europe/20260817-russia-supreme-court-upholds-ban-anti-war-party-yabloko",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-17T15:51:35.000Z",
-      "image": "https://s.france24.com/media/display/38025686-9a51-11f1-aac6-005056bf30b7/w:1024/p:16x9/000-C4UE9NQ.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
+      "id": "2d4b21839f92",
+      "title": "Kushner hails 'very good' meeting with Netanyahu after Hamas talks on Gaza peace plan",
+      "summary": "Donald Trump's Middle East envoy and son-in-law, Jared Kushner, is seeking to gain Israeli backing for the US-backed Gaza peace plan.",
+      "url": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/middle_east",
+      "sourceId": "bbc-mideast",
+      "publishedAt": "2026-08-17T16:02:58.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1476/live/b59ea940-9a3e-11f1-a291-b542ee92de7c.jpg",
+      "imageWidth": 240,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1921,22 +1953,6 @@
       "weight": 2
     },
     {
-      "id": "e6e8782613ee",
-      "title": "UN calls for negotiations to end the conflict in Mozambique",
-      "summary": "A military victory over jihadist insurgents in Mozambique's Cabo Delgado province does not appear imminent, according to a report by a United Nations special rapporteur released Friday.",
-      "url": "http://www.africanews.com/2026/08/15/un-calls-for-negotiations-to-end-the-conflict-in-mozambique/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-15T06:21:25.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/87/52/51/640x360_cmsv2_c0f938b7-7576-56ec-afcd-00fbb52a4e6b-9875251.jpg?1786738010",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "dba6fd3171be",
       "title": "Concerns grow over increased global ties with Taliban in Afghanistan",
       "summary": "Campaigners fear deeper diplomatic contacts are undermining demands for improvements in human rights The Taliban in Afghanistan have launched a diplomatic effort to end their isolation as major regional and international powers show a readiness to engage more…",
@@ -2702,22 +2718,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "fdf53419e429",
-      "title": "US inflation cooled slightly to 3.4% in July but prices still elevated",
-      "summary": "Energy is cheaper than at its peak in late April, but gas is still nearly $1 a gallon more expensive than before the Iran war US consumer prices cooled slightly in July as the annualized inflation rate dipped down to 3.4%, though prices still remain higher…",
-      "url": "https://www.theguardian.com/business/2026/aug/12/inflation-data-july",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
-      "publishedAt": "2026-08-12T12:39:46.000Z",
-      "image": "https://i.guim.co.uk/img/media/51d41cfe5d174197ba14354e0f4f6ca96148d4bb/333_0_3333_2668/master/3333.jpg?width=700&quality=85&auto=format&fit=max&s=65a827d24ffb0ad2f563184c0de32cac",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
