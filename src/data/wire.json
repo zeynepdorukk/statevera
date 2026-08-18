@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-08-18T22:46:20.644Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-18T23:11:28.083Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "71de50bb03c8",
+      "title": "Florida and Alaska hold primary elections; California voters to select successor for Eric Swalwell’s seat – live",
+      "summary": "Polls begin to close in Florida; Alaska voters decide among crowded Senate primary; California holds special election for US House seat held by disgraced Eric Swalwell Sign up for the US Breaking News email President Donald Trump posted an image of a map of…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/18/donald-trump-florida-alaska-wyoming-primaries-midterms-white-house-ballroom-iran-cnn-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-18T23:01:39.000Z",
+      "image": "https://i.guim.co.uk/img/media/7930b8eab783e95a4e63247f913744b25d67bcb4/515_0_2577_2062/master/2577.jpg?width=700&quality=85&auto=format&fit=max&s=ca1db31cb4491901c4a42eb863e7bda6",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "3e28eb1a4b87",
       "title": "Australia politics live: Hastie says fight for his seat against One Nation is already ‘dirty and nasty’; NDIS reforms to pass parliament today",
@@ -11,44 +29,12 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-18T22:43:37.000Z",
+      "publishedAt": "2026-08-18T22:50:33.000Z",
       "image": "https://i.guim.co.uk/img/media/1c22c2db5ab8c73c8cf17e2c819a517bd4813ca1/1908_670_4325_3460/master/4325.jpg?width=700&quality=85&auto=format&fit=max&s=ed8b2b4534a3f15cb3fb4556c2a1518c",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "71de50bb03c8",
-      "title": "Jon Ossoff blasts ‘draft-dodging, crook president’ in latest war of words with Trump – US politics live",
-      "summary": "The Democratic senator, who is currently running for re-election in Georgia, says Trump ‘has plunged our nation recklessly into a war he knows not how to end or to win’ Sign up for the US Breaking News email President Donald Trump posted an image of a map of…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/18/donald-trump-florida-alaska-wyoming-primaries-midterms-white-house-ballroom-iran-cnn-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-18T22:28:56.000Z",
-      "image": "https://i.guim.co.uk/img/media/114752b2a10a5d0a14dfcf048abc168fd1619cb4/972_0_6880_5504/master/6880.jpg?width=700&quality=85&auto=format&fit=max&s=5b63aaf35c09a695be7680e0e20ea5f3",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "8e7819430206",
-      "title": "Trump says no Iran talks planned, insists Strait of Hormuz remains open",
-      "summary": "US President Donald Trump said on Tuesday there were no talks planned with Iran and insisted the Strait of Hormuz remained open, despite limited traffic and a reported attack on a ship. Trump also threatened Oman as it sought to broker a shipping agreement…",
-      "url": "https://www.france24.com/en/middle-east/20260818-trump-says-no-iran-talks-planned-insists-strait-of-hormuz-remains-open",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T22:22:09.000Z",
-      "image": "https://s.france24.com/media/display/6464dea0-971e-11f1-b5b1-005056bfb2b6/w:1024/p:16x9/AP26168698034901.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -213,6 +199,22 @@
       "weight": 2
     },
     {
+      "id": "05d51be6e652",
+      "title": "Trump says no talks planned with Iran amid anger over Iran-Oman Hormuz deal",
+      "summary": "US president hits out as states bordering the Strait of Hormuz continue talks on managing the strategic waterway.",
+      "url": "https://www.aljazeera.com/news/2026/8/18/no-talks-with-iran-says-trump-as-us-president-stews-over-hormuz-deal?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-18T21:03:59.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "f6db6841a683",
       "title": "Canadian tariff deadline looms as two sides continue to negotiate",
       "summary": "The U.S. is scheduled to impose more tariffs on Canada, hitting about $20 billion dollars worth of goods, as trade negotiations between the two neighboring countries hit an impasse.",
@@ -245,22 +247,6 @@
       "weight": 2
     },
     {
-      "id": "97f9cba6d5da",
-      "title": "ICC says US sanctions on top court members 'undermine rule of law'",
-      "summary": "The US on Tuesday imposed sanctions against two top members of the International Criminal Court (ICC) which the court said \"undermine the rule of law\". The move represents the Trump administration's latest salvo against the court based in The Hague, which was…",
-      "url": "https://www.france24.com/en/americas/20260818-icc-says-us-sanctions-on-top-court-members-undermine-rule-of-law",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T20:31:24.000Z",
-      "image": "https://s.france24.com/media/display/6a367f22-9b3e-11f1-99ff-005056a97e36/w:1024/p:16x9/000-C4XZ6CV.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "7d77c32e59e1",
       "title": "Russian missile strike kills 10 civilians in Kharkiv",
       "summary": "A Russian missile strike on Pechenihy, in Ukraine’s Kharkiv region, killed at least 10 civilians and wounded 17 others.",
@@ -274,6 +260,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "f5a79ac33366",
+      "title": "US announces new sanctions on top ICC figures",
+      "summary": "The Trump administration has vowed to dismantle the international court \"brick by brick\".",
+      "url": "https://www.bbc.co.uk/news/articles/cnvnl0elz47o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-18T20:21:49.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cd44/live/c84cee60-9b2b-11f1-9a2c-6d6ac3827d20.jpg",
+      "imageWidth": 240,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -341,6 +343,22 @@
       "weight": 3
     },
     {
+      "id": "4b85dc8be3ad",
+      "title": "France to expel two Iranian diplomats in coming days, foreign minister says",
+      "summary": "France to expel two Iranian diplomats in coming days, foreign minister says France will expel two Iranian diplomats in the coming days, French Foreign Minister Jean-Noel Barrot said on Tuesday in a post on X. His comments come one day after the Iranian…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/france-expel-two-iranian-diplomats-coming-days-foreign-minister-says",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-18T19:37:48.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "a83cc50d544e",
       "title": "US envoy calls out Israeli settler 'terrorism' in interview",
       "summary": "US envoy calls out Israeli settler 'terrorism' in interview US ambassador to Israel Mike Huckabee said on Tuesday that “terrorism” is the most accurate term to describe the actions of Israeli settlers in the occupied West Bank. He said in an interview to…",
@@ -373,22 +391,6 @@
       "weight": 3
     },
     {
-      "id": "898dfb39338a",
-      "title": "France to expel two Iranian diplomats as arrests row heightens",
-      "summary": "Paris is to expel two Iranian diplomats serving in France following the banning by Iran of two French diplomats posted to the embassy in Tehran, French Foreign Minister Jean-Noël Barrot said Tuesday. He said Iran's treatment of the French diplomats briefly…",
-      "url": "https://www.france24.com/en/france/20260818-france-expel-two-iranian-diplomats-row-over-interference-arrests-heightens",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T19:22:11.000Z",
-      "image": "https://s.france24.com/media/display/8e12e38a-9b35-11f1-9d6e-005056a97e36/w:1024/p:16x9/000-C2UL234.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "d5207d440000",
       "title": "Trump is weighing whether to grant Canada a tariff reprieve",
       "summary": "A deal to avoid 50 percent duties on some Canadian goods is on Trump's desk, as Ottawa and Washington work towards a broader trade agreement.",
@@ -399,6 +401,22 @@
       "publishedAt": "2026-08-18T19:21:22.000Z",
       "image": "",
       "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "d8936e2728c0",
+      "title": "US man posed as doctor in scheme to profit from Ozempic, prosecutors say",
+      "summary": "Rodney Greer accused of securing unauthorized prescriptions for GLP-1 drugs and selling them to customers An Illinois man who allegedly impersonated doctors – and evidently referred to himself online as “$hotboy1” – is facing criminal charges that he secured…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/18/doctor-ozempic-fraud-indictment",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-18T19:19:10.000Z",
+      "image": "https://i.guim.co.uk/img/media/64876f21c88dc2a424e7004e6e87354773faefeb/384_0_5982_4786/master/5982.jpg?width=700&quality=85&auto=format&fit=max&s=12a368263e47fb47ebaa063a32a04246",
+      "imageWidth": 700,
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
@@ -549,38 +567,6 @@
       "weight": 2
     },
     {
-      "id": "33115cc27986",
-      "title": "'Tons' of nuclear material found at undisclosed Syrian site, IAEA chief says",
-      "summary": "UN nuclear watchdog head Rafael Mariano Grossi said Tuesday that his agency had found several \"tons of nuclear materials\" at a previously undeclared site dating from the rule of Syria's previous authorities. Syria's Foreign Minister Asaad al-Shaibani said the…",
-      "url": "https://www.france24.com/en/middle-east/20260818-tons-of-nuclear-materials-found-at-undisclosed-syrian-site-iaea-chief-says",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T15:50:02.000Z",
-      "image": "https://s.france24.com/media/display/7f1fd9de-9b15-11f1-91e7-005056bf30b7/w:1024/p:16x9/000-99K837E.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "fa036eeca48e",
-      "title": "Palestinian American challenges Israeli army outside his home in the West Bank",
-      "summary": "For more than a week, militant ​Israeli settlers have encircled Palestinian homes in the West Bank village of Qusra, despite the deployment of the Israeli military. The ongoing siege has prompted Palestinian-American Loui Ridi to come back to his hometown,…",
-      "url": "https://www.france24.com/en/palestinian-american-challenges-israeli-army-outside-his-home-in-the-west-bank",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T15:43:42.000Z",
-      "image": "https://s.france24.com/media/display/5e94709a-9b19-11f1-a715-005056a90284/w:1024/p:16x9/EN-20260818-170518-170712-CS.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "d6657562006a",
       "title": "Odesa under attack: Russia is cutting Ukraine off from the Black Sea",
       "summary": "Russia's current bombing strategy is not simply to punish Odesa. Moscow aims to make Ukraine's largest Black Sea port city functionally landlocked, writes Michael Bociurkiw. The post Odesa under attack: Russia is cutting Ukraine off from the Black Sea…",
@@ -690,22 +676,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "7378ce9084ba",
-      "title": "Volodymyr Zelensky names new Defence minister after weeks of political crisis",
-      "summary": "President ​Volodymyr Zelensky nominated ​Yevheny Khmara for parliamentary approval ​to become Defence minister. Khmara served ​as acting ‌minister following the abrupt dismissal of ‌his predecessor, Mykhailo Fedorov, in June, which ​sparked public outrage and…",
-      "url": "https://www.france24.com/en/volodymyr-zelensky-names-new-defence-minister-after-weeks-of-political-crisis",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T14:27:17.000Z",
-      "image": "https://s.france24.com/media/display/90fc6aec-9b0f-11f1-b988-005056a90284/w:1024/p:16x9/EN-20260818-160121-160505-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -1109,22 +1079,6 @@
       "weight": 2
     },
     {
-      "id": "a99e3c8719a2",
-      "title": "🔴 Middle East live: US says Israel behind strikes on military airport in Syria",
-      "summary": "",
-      "url": "https://www.france24.com/en/middle-east/20260818-middle-east-live-iran-declares-60-day-negotiation-deadline-null-and-void",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T11:50:32.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "807f30dc1546",
       "title": "‘Our task is to laugh at these enemies’: the Ukrainian unit posting drone videos of Russian soldiers’ last moments",
       "summary": "Creators of chase compilations reject any moral qualms and say they show ‘death is waiting’ for those who join war To many observers they will appear dehumanising and offensive. To many Ukrainians, however, they are a brutal reminder of the fate that awaits…",
@@ -1154,22 +1108,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "00691063d439",
-      "title": "France probes disinfo campaigns targeting 2027 election candidates",
-      "summary": "Presidential contenders Edouard Philippe and Gabriel Attal were purportedly targeted by Russia-affiliated networks this summer.",
-      "url": "https://www.politico.eu/article/france-probe-russia-disinformation-campaigns-2027-election/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-18T11:34:16.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -1558,6 +1496,22 @@
       "categoryConfidence": "source",
       "region": "Global",
       "weight": 3
+    },
+    {
+      "id": "f138b09292a6",
+      "title": "Palestinian family in West Bank fear settler violence will rob them of home",
+      "summary": "The family of a Palestinian-American man remain holed up in his West Bank home for more than a week, after Israeli settlers laid siege to the house and the Israeli army then turned it into a closed military area.",
+      "url": "https://www.npr.org/2026/08/17/nx-s1-5933860/palestinian-american-family-in-west-bank-fear-settler-violence-will-rob-them-of-home",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-17T21:27:58.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
     },
     {
       "id": "c2195ddabd9c",
