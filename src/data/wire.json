@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-18T23:33:39.251Z",
+  "generatedAt": "2026-08-18T23:55:39.891Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "71de50bb03c8",
+      "title": "Florida, Wyoming and Alaska hold primary elections; California voters to select successor for Eric Swalwell’s seat – live",
+      "summary": "Polls begin to close in Florida; Alaska voters decide among crowded Senate primary; California holds special election for US House seat held by disgraced Eric Swalwell Sign up for the US Breaking News email President Donald Trump posted an image of a map of…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/18/donald-trump-florida-alaska-wyoming-primaries-midterms-white-house-ballroom-iran-cnn-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-18T23:46:10.000Z",
+      "image": "https://i.guim.co.uk/img/media/7930b8eab783e95a4e63247f913744b25d67bcb4/515_0_2577_2062/master/2577.jpg?width=700&quality=85&auto=format&fit=max&s=ca1db31cb4491901c4a42eb863e7bda6",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "3e28eb1a4b87",
       "title": "Australia politics live: Hastie says fight for his seat against One Nation is already ‘dirty and nasty’; NDIS reforms to pass parliament today",
@@ -11,7 +27,7 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-18T23:27:55.000Z",
+      "publishedAt": "2026-08-18T23:39:56.000Z",
       "image": "https://i.guim.co.uk/img/media/1c22c2db5ab8c73c8cf17e2c819a517bd4813ca1/1908_670_4325_3460/master/4325.jpg?width=700&quality=85&auto=format&fit=max&s=ed8b2b4534a3f15cb3fb4556c2a1518c",
       "imageWidth": 700,
       "category": "Politics",
@@ -20,15 +36,15 @@
       "weight": 2
     },
     {
-      "id": "71de50bb03c8",
-      "title": "Florida, Wyoming and Alaska hold primary elections; California voters to select successor for Eric Swalwell’s seat – live",
-      "summary": "Polls begin to close in Florida; Alaska voters decide among crowded Senate primary; California holds special election for US House seat held by disgraced Eric Swalwell Sign up for the US Breaking News email President Donald Trump posted an image of a map of…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/18/donald-trump-florida-alaska-wyoming-primaries-midterms-white-house-ballroom-iran-cnn-latest-news-updates",
+      "id": "21341b3eb473",
+      "title": "Democratic senator Jon Ossoff condemns Trump as ‘draft-dodging, crook president’",
+      "summary": "Ossoff, running for re-election in Georgia, intensifies White House feud after remarks about ‘Natalie’ drew ire of president and allies The Democratic senator Jon Ossoff called Donald Trump a “draft-dodging, crook president” while defending the senator Mark…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/18/jon-ossoff-trump",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-18T23:23:07.000Z",
-      "image": "https://i.guim.co.uk/img/media/7930b8eab783e95a4e63247f913744b25d67bcb4/515_0_2577_2062/master/2577.jpg?width=700&quality=85&auto=format&fit=max&s=ca1db31cb4491901c4a42eb863e7bda6",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-18T23:32:53.000Z",
+      "image": "https://i.guim.co.uk/img/media/f6a6bda3d2c5b0c809ea78d0484a5b5d737e3f8a/688_0_6880_5504/master/6880.jpg?width=700&quality=85&auto=format&fit=max&s=23ebb063e4dc91bde44cef460dc9f2ed",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
@@ -405,22 +421,6 @@
       "weight": 2
     },
     {
-      "id": "d8936e2728c0",
-      "title": "US man posed as doctor in scheme to profit from Ozempic, prosecutors say",
-      "summary": "Rodney Greer accused of securing unauthorized prescriptions for GLP-1 drugs and selling them to customers An Illinois man who allegedly impersonated doctors – and evidently referred to himself online as “$hotboy1” – is facing criminal charges that he secured…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/18/doctor-ozempic-fraud-indictment",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-18T19:19:10.000Z",
-      "image": "https://i.guim.co.uk/img/media/64876f21c88dc2a424e7004e6e87354773faefeb/384_0_5982_4786/master/5982.jpg?width=700&quality=85&auto=format&fit=max&s=12a368263e47fb47ebaa063a32a04246",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "d5fcee4f9057",
       "title": "Trump envoy 'deeply concerned' by Israeli strikes on Syrian air base",
       "summary": "Trump envoy 'deeply concerned' by Israeli strikes on Syrian air base Submitted by MEE staff on Tue, 08/18/2026 - 18:11 In rare pushback against Israel, Tom Barrack said Syria did nothing to provoke the attack US special envoy for Syria and US ambassador to…",
@@ -451,22 +451,6 @@
       "categoryConfidence": "source",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "2d47de5f7c5a",
-      "title": "Houthi ballistic missile hits house near Yemen’s Taiz",
-      "summary": "Houthi ballistic missile hits house near Yemen’s Taiz A ballistic missile launched by Yemen’s Houthis hit a house in al-Akmah village in the Maqbanah district, west of Taiz, according to the media centre connected to the country’s Saudi-backed government. The…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/houthi-ballistic-missile-hits-house-near-yemens-taiz",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-18T18:47:52.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "a2d681440ef3",
@@ -1251,22 +1235,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "f91bfc8ba121",
-      "title": "Top Democrats tussle in Florida primary but progressive liberalism not on menu",
-      "summary": "Politics that worked for Democratic candidates in New York, Minnesota, Michigan won’t cut it in red Florida, analysts say If primary elections elsewhere this summer were tussles between progressives and moderates for the direction of the Democratic party’s…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/18/florida-primary-election-senate-governor-races",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-18T09:00:21.000Z",
-      "image": "https://i.guim.co.uk/img/media/268c3a3e9aea2f24c7d22346259d4928d2e6b6aa/0_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=fd14c933e1a057d99f06bf69b2a8af04",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -2300,22 +2268,6 @@
       "weight": 2
     },
     {
-      "id": "cab39fca5cad",
-      "title": "I survived two years as prime minister in a hit new game - then my cabinet deserted me",
-      "summary": "Mobile game No 10: Full Confidence recently ranked above Minecraft on the UK App Store paid games chart",
-      "url": "https://www.bbc.co.uk/news/articles/cq56pzqy6jvo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/business",
-      "sourceId": "bbc-business",
-      "publishedAt": "2026-08-15T23:45:44.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1a22/live/86235450-9731-11f1-870d-5d08c49babb2.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "4712ee207373",
       "title": "Armenian Genocide survivors' grandson says 'political motives' block recognition",
       "summary": "In 1915, the Ottoman Empire began the systematic deportation and massacre of its Armenian population. As many as 1.5 million Armenians were killed – widely regarded by historians as the twentieth century's first genocide, and the event for which the term was…",
@@ -2984,22 +2936,6 @@
       "imageWidth": 240,
       "category": "Politics",
       "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "7503591c004d",
-      "title": "Israel accused of weaponising archaeology at ancient West Bank sites",
-      "summary": "Israel is planning large-scale land expropriations in historic, Palestinian areas of the West Bank.",
-      "url": "https://www.bbc.co.uk/news/articles/c20d8qre98do?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/middle_east",
-      "sourceId": "bbc-mideast",
-      "publishedAt": "2026-08-08T23:43:44.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/52b5/live/810aa740-917b-11f1-b8ee-9b3c26ad07bb.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     }
