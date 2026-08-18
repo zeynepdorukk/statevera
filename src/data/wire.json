@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-18T20:37:55.911Z",
+  "generatedAt": "2026-08-18T20:57:36.281Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "df1ec323be80",
+      "title": "Russia reports Ukrainian drone strike near Zaporizhzhia nuclear plant",
+      "summary": "Concern over the security of Europe's largest nuclear plant has been rife since Russia launched its full-scale war.",
+      "url": "https://www.aljazeera.com/news/2026/8/18/russia-reports-ukrainian-drone-strike-near-zaporizhzhia-nuclear-plant?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-18T20:45:42.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "3e28eb1a4b87",
+      "title": "Australia politics live: NDIS reforms to pass parliament today after 63 amendments get Coalition on side",
+      "summary": "Bill passed Senate on Wednesday evening and is due back in lower house today. Follow today’s news live Follow our breaking news email , free app or daily news podcast Good morning and welcome to our live news blog. I’m Martin Farrer with the top overnight…",
+      "url": "https://www.theguardian.com/australia-news/live/2026/aug/19/australia-politcs-live-ndis-reform-coalition-labor-anthony-albanese-angus-taylor-mark-butler-david-pocock-question-time-tax-superannuation-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-18T20:33:58.000Z",
+      "image": "https://i.guim.co.uk/img/media/d5ee456ee12ad77a027d353b806d766ec58b586f/442_605_3643_2916/master/3643.jpg?width=700&quality=85&auto=format&fit=max&s=e757df21fe9eef6a7b05f8b7918ff46f",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "97f9cba6d5da",
       "title": "ICC says US sanctions on top court members 'undermine rule of law'",
@@ -308,22 +340,6 @@
       "weight": 2
     },
     {
-      "id": "3cf1f1b544b2",
-      "title": "Six killed in Israeli air strike on Gaza City, including a child",
-      "summary": "Six killed in Israeli air strike on Gaza City, including a child Gaza health officials said on Tuesday that an Israeli air strike had killed at least six people, including a child, at a cafe in the port area west of Gaza City, and wounded a dozen more. The…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/five-killed-israeli-airstrike-gaza-city-including-child",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-18T16:25:38.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "9ce1ce85cb56",
       "title": "Iran prepares to keep economy alive as US threatens further sanctions",
       "summary": "Iran’s authorities say they could shift to offensive operations as Washington considers further sanctions.",
@@ -497,22 +513,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "e735c27f17f8",
-      "title": "US cites India on voter IDs, but are elections under Modi clean?",
-      "summary": "Trump highlights India's voter ID rules to bolster his case for stricter US election laws.",
-      "url": "https://www.aljazeera.com/news/2026/8/18/us-cites-india-on-voter-ids-but-are-elections-under-modi-clean?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-18T15:04:24.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -1039,22 +1039,6 @@
       "image": "https://i.guim.co.uk/img/media/8e4dec039d993f32cb2289c74b5a6b8de8d2d7d6/191_0_2768_2214/master/2768.jpg?width=700&quality=85&auto=format&fit=max&s=9ca2f959377441f19d3af047f1e055b0",
       "imageWidth": 700,
       "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "b3035b5a495f",
-      "title": "Controversial NDIS bill passes Senate with ‘substantial’ amendments as Labor and Coalition strike deal",
-      "summary": "David Pocock says legislation still includes ‘indiscriminate cut’ impacting thousands of participants but will pass lower house on Wednesday Get our breaking news email , free app or daily news podcast The government’s controversial NDIS bill will pass after…",
-      "url": "https://www.theguardian.com/australia-news/2026/aug/18/controversial-ndis-bill-undergoes-substantial-amendments-as-labor-and-coalition-strike-deal",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-18T11:04:25.000Z",
-      "image": "https://i.guim.co.uk/img/media/e42b30533457d8cb26aaedfc890434d0b0454c93/335_0_6880_5504/master/6880.jpg?width=700&quality=85&auto=format&fit=max&s=03cde53f674ae1c2b3f04aff4d07497f",
-      "imageWidth": 700,
-      "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 2
@@ -1994,23 +1978,6 @@
       "categoryConfidence": "medium",
       "region": "Americas",
       "weight": 3
-    },
-    {
-      "id": "96c0c3e722af",
-      "title": "China's economic growth challenges mount as consumption slips",
-      "summary": "",
-      "url": "https://asia.nikkei.com/economy/china-s-economic-growth-challenges-mount-as-consumption-slips",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-17T07:37:39.752Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "7025e33ce383",
