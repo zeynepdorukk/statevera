@@ -1,10 +1,42 @@
 {
-  "generatedAt": "2026-08-18T05:27:07.164Z",
+  "generatedAt": "2026-08-18T05:53:09.482Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
   ],
   "items": [
+    {
+      "id": "80e2d954a5ba",
+      "title": "South Korea president calls for military independence in wake of Trump call to cut joint drills",
+      "summary": "Lee Jae Myung reiterates desire for full command back in Seoul’s hands after Donald Trump cuts joint exercises, citing warm ties with Kim Jong-un ‘Inane, haphazard decision’ by Trump to gut South Korea alliance South Korea’s president ⁠has renewed his push to…",
+      "url": "https://www.theguardian.com/world/2026/aug/18/south-korea-president-trump-military-drills-control-opcon-kim-jong-un",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
+      "sourceId": "guardian-asia",
+      "publishedAt": "2026-08-18T05:50:33.000Z",
+      "image": "https://i.guim.co.uk/img/media/df6bcc6943e9a77ef440e7b8573532433abd7cf5/163_0_3758_3006/master/3758.jpg?width=700&quality=85&auto=format&fit=max&s=9b704fd030f25a2bac4a20a3125c2bf9",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "4d3c4e97e696",
+      "title": "Australia politics live: Coalition MPs cross floor in protest against gambling bill; Liberals target Labor on housing crisis in question time",
+      "summary": "Government MPs agree to more than a dozen amendments made with the Coalition. Follow today’s news live Get our breaking news email , free app or daily news podcast Chalmers calls gambling amendments ‘very substantial changes’ Treasurer Jim Chalmers says the…",
+      "url": "https://www.theguardian.com/australia-news/live/2026/aug/18/australia-politics-live-labor-coalition-gambling-advertising-ai-charlton-datacentres-question-time-anthony-albanese-angus-taylor-one-nation-pauline-hanson-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-18T05:37:24.000Z",
+      "image": "https://i.guim.co.uk/img/media/cdaa9c0b88dc4aab0e812d01d673aa7c9b8d74fe/1001_205_6198_4958/master/6198.jpg?width=700&quality=85&auto=format&fit=max&s=c8187f4496d76c9db1ed38fcc8414617",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "648f5dbcc79c",
       "title": "US lawmaker calls for action against settler violence in the West Bank",
@@ -38,22 +70,6 @@
       "weight": 2
     },
     {
-      "id": "4d3c4e97e696",
-      "title": "Australia politics live: Coalition MPs cross floor in protest against gambling bill; Liberals target Labor on housing crisis in question time",
-      "summary": "Government MPs agree to more than a dozen amendments made with the Coalition. Follow today’s news live Get our breaking news email , free app or daily news podcast Chalmers calls gambling amendments ‘very substantial changes’ Treasurer Jim Chalmers says the…",
-      "url": "https://www.theguardian.com/australia-news/live/2026/aug/18/australia-politics-live-labor-coalition-gambling-advertising-ai-charlton-datacentres-question-time-anthony-albanese-angus-taylor-one-nation-pauline-hanson-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-18T05:08:47.000Z",
-      "image": "https://i.guim.co.uk/img/media/cdaa9c0b88dc4aab0e812d01d673aa7c9b8d74fe/1001_205_6198_4958/master/6198.jpg?width=700&quality=85&auto=format&fit=max&s=c8187f4496d76c9db1ed38fcc8414617",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "c333912f0e53",
       "title": "What it's like to be on a warship like the USS Abraham Lincoln",
       "summary": "Concerns have mounted about conditions aboard the USS Abraham Lincoln, which has been deployed since 11 December.",
@@ -71,7 +87,7 @@
     },
     {
       "id": "a99e3c8719a2",
-      "title": "Middle East live: Iran declares 60-day negotiation deadline null and void",
+      "title": "Live: Iran declares 60-day memorandum of understanding negotiation deadline null and void",
       "summary": "Iran's foreign ministry spokesman Esmaeil Baghaei said the 60-day negotiation deadline set out under the June Iran-US memorandum of understanding for a lasting settlement had been rendered null and void by \"violations\" committed by Washington. After meeting…",
       "url": "https://www.france24.com/en/middle-east/20260818-middle-east-live-iran-declares-60-day-negotiation-deadline-null-and-void",
       "publisher": "France 24",
@@ -598,22 +614,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "d4ca08041bea",
-      "title": "Trump’s move to gut South Korea alliance is ‘inane, haphazard decision’, lawmakers say",
-      "summary": "US president’s abrupt order to scale back joint exercises with Seoul is meant to ‘flatter’ North Korea’s dictator, top Democrat says Donald Trump’s move to gut Washington’s 73-year-old military alliance with Seoul has been called “inane” and “shortsighted” as…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/17/trump-south-korea-alliance",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-17T19:11:26.000Z",
-      "image": "https://i.guim.co.uk/img/media/949b48d131e9924cba15519d8cd17dcd79a04520/689_0_2311_1849/master/2311.jpg?width=700&quality=85&auto=format&fit=max&s=a9797a04ec4f1c2168223c73106433fc",
-      "imageWidth": 700,
-      "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
@@ -1998,22 +1998,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "da67addac7d9",
-      "title": "China and Egypt launch second joint air force exercise",
-      "summary": "The exercises reflect growing defense ties between Beijing and Cairo as both countries expand military cooperation through joint training and strategic exchanges.",
-      "url": "http://www.africanews.com/2026/08/14/china-and-egypt-launch-second-joint-air-force-exercise/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-14T16:08:34.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/87/47/56/640x360_cmsv2_cbbe1cf5-75d0-56ad-b9ab-99711e6eaa42-9874756.jpg?1786715723",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Africa",
       "weight": 2
     },
     {
