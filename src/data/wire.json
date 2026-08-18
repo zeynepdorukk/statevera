@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T05:53:09.482Z",
+  "generatedAt": "2026-08-18T06:22:40.649Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
@@ -11,8 +11,8 @@
       "summary": "Lee Jae Myung reiterates desire for full command back in Seoul’s hands after Donald Trump cuts joint exercises, citing warm ties with Kim Jong-un ‘Inane, haphazard decision’ by Trump to gut South Korea alliance South Korea’s president ⁠has renewed his push to…",
       "url": "https://www.theguardian.com/world/2026/aug/18/south-korea-president-trump-military-drills-control-opcon-kim-jong-un",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
-      "sourceId": "guardian-asia",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-18T05:50:33.000Z",
       "image": "https://i.guim.co.uk/img/media/df6bcc6943e9a77ef440e7b8573532433abd7cf5/163_0_3758_3006/master/3758.jpg?width=700&quality=85&auto=format&fit=max&s=9b704fd030f25a2bac4a20a3125c2bf9",
       "imageWidth": 700,
@@ -29,28 +29,12 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-18T05:37:24.000Z",
+      "publishedAt": "2026-08-18T05:46:15.000Z",
       "image": "https://i.guim.co.uk/img/media/cdaa9c0b88dc4aab0e812d01d673aa7c9b8d74fe/1001_205_6198_4958/master/6198.jpg?width=700&quality=85&auto=format&fit=max&s=c8187f4496d76c9db1ed38fcc8414617",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "648f5dbcc79c",
-      "title": "US lawmaker calls for action against settler violence in the West Bank",
-      "summary": "US lawmaker calls for action against settler violence in the West Bank Amid escalating Israeli settler violence, US House Minority Leader Hakeem Jeffries called on the Trump administration to pressure Israel into protecting Palestinians in the occupied West…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-lawmaker-calls-action-against-settler-violence-west-bank",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-18T05:23:14.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -408,6 +392,22 @@
       "weight": 2
     },
     {
+      "id": "f138b09292a6",
+      "title": "Palestinian family in West Bank fear settler violence will rob them of home",
+      "summary": "The family of a Palestinian-American man remain holed up in his West Bank home for more than a week, after Israeli settlers laid siege to the house and the Israeli army then turned it into a closed military area.",
+      "url": "https://www.npr.org/2026/08/17/nx-s1-5933860/palestinian-american-family-in-west-bank-fear-settler-violence-will-rob-them-of-home",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-17T21:27:58.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "bceb1327e8a2",
       "title": "US envoy backs Yemen government’s fight against Houthis",
       "summary": "US envoy backs Yemen government’s fight against Houthis Neil Hope, the Chargé d’Affaires of the US embassy in Yemen, signalled his support for the Saudi-backed Yemeni government’s fight against the Houthis in a meeting with the vice president of the…",
@@ -551,22 +551,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "156f92f596f8",
-      "title": "'Political stunt': Cair slams Texas governor for threatening airports that install ablution stations for Muslims",
-      "summary": "'Political stunt': Cair slams Texas governor for threatening airports that install ablution stations for Muslims Submitted by MEE staff on Mon, 08/17/2026 - 18:58 Foot washing stations accommodate, but are not limited to, practising Muslims who perform five…",
-      "url": "https://www.middleeasteye.net/news/political-stunt-cair-slams-texas-governor-threatening-airports-install-ablution-stations",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-17T20:07:49.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -1702,8 +1686,8 @@
       "summary": "Discussions to focus on Australia’s acquisition of Mogami-class frigates as Japan plays down Albanese’s podcast comments Japan’s defence minister will visit Canberra this week, the highest level engagement with Australia after controversy over Anthony…",
       "url": "https://www.theguardian.com/world/2026/aug/16/japans-defence-minister-heads-to-australia-to-meet-marles-in-wake-of-melon-gate-controversy",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
+      "sourceId": "guardian-asia",
       "publishedAt": "2026-08-16T04:44:30.000Z",
       "image": "https://i.guim.co.uk/img/media/4523dec71e91cd5ac6f89d2534b808eaf5868cd3/557_0_4964_3973/master/4964.jpg?width=700&quality=85&auto=format&fit=max&s=1ab86e7c53568ebc992fcc6a2b9ad5c3",
       "imageWidth": 700,
