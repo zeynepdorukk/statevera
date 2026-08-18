@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-18T14:49:32.066Z",
+  "generatedAt": "2026-08-18T15:20:09.787Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "5e9f86c00587",
+      "title": "Cooling UK labour market ‘questions need’ for Bank of England rate hikes; grocery inflation slows to two-year low – business live",
+      "summary": "Youth unemployment down to 16.2% but remains at high level; Brent crude climbs above $91 a barrel as US-Iran ceasefire ends The retail billionaire Mike Ashley has given the latest indication that his summer shopping spree may be far from over, after he…",
+      "url": "https://www.theguardian.com/business/live/2026/aug/18/oil-prices-rise-us-iran-ceasefire-ends-uk-wage-growth-slows-cost-of-living-squeeze-live-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/business/economics",
+      "sourceId": "guardian-economics",
+      "publishedAt": "2026-08-18T15:10:55.000Z",
+      "image": "https://i.guim.co.uk/img/media/6d345a2f8c083aedf4649a4f2032e73fc8e6064d/500_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=426bbabd3122d84dd90c883ca54a9efc",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "19fa93a9b331",
+      "title": "UAE says seek shelter, warning of 'potential missile threats'",
+      "summary": "UAE says seek shelter, warning of 'potential missile threats' The UAE issued a phone alert for \"potential missile threats\" on Tuesday, the first such warning in months. \"Due to the current situation, potential missile threats, immediately seek a safe place in…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/uae-says-seek-shelter-warning-potential-missile-threats",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-18T15:07:06.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "e735c27f17f8",
+      "title": "US cites India on voter IDs, but are elections under Modi clean?",
+      "summary": "Trump highlights India's voter ID rules to bolster his case for stricter US election laws.",
+      "url": "https://www.aljazeera.com/news/2026/8/18/us-cites-india-on-voter-ids-but-are-elections-under-modi-clean?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-18T15:04:24.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "8cfd25234362",
       "title": "Trump labels Strait of Hormuz ‘US territory’ as Iran says Israel is biggest obstacle to negotiations",
@@ -17,22 +65,6 @@
       "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "5e9f86c00587",
-      "title": "Cooling UK labour market ‘questions need’ for Bank of England rate hikes; grocery inflation slows to two-year low – business live",
-      "summary": "Youth unemployment down to 16.2% but remains at high level; Brent crude climbs above $91 a barrel as US-Iran ceasefire ends The retail billionaire Mike Ashley has given the latest indication that his summer shopping spree may be far from over, after he…",
-      "url": "https://www.theguardian.com/business/live/2026/aug/18/oil-prices-rise-us-iran-ceasefire-ends-uk-wage-growth-slows-cost-of-living-squeeze-live-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
-      "publishedAt": "2026-08-18T14:35:37.000Z",
-      "image": "https://i.guim.co.uk/img/media/6d345a2f8c083aedf4649a4f2032e73fc8e6064d/500_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=426bbabd3122d84dd90c883ca54a9efc",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -225,6 +257,22 @@
       "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "bdb8a8744e47",
+      "title": "Brazil's President Lula hails oil discovery near Amazon river",
+      "summary": "Environmentalists have heavily criticised the exploratory drilling in the sea off the mouth of the Amazon.",
+      "url": "https://www.bbc.co.uk/news/articles/c4gd7xd8e8lo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-18T13:13:54.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5240/live/17e6ceb0-9ae0-11f1-b2f7-5d1639b20e22.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -548,6 +596,22 @@
       "weight": 2
     },
     {
+      "id": "3723e5866c92",
+      "title": "Iran parliament speaker Ghalibaf to visit Iraq for talks",
+      "summary": "Iran parliament speaker Ghalibaf to visit Iraq for talks Iran's parliament speaker and chief negotiator, Mohammad Bagher Ghalibaf, will travel to Iraq on Wednesday for talks, Iranian media reported. Ghalibaf will head \"a high-level parliamentary delegation to…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-parliament-speaker-ghalibaf-visit-iraq-talks",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-18T10:31:16.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "4ebe5fc1a2f5",
       "title": "Smartphone king Xiaomi's profits drop 43% on memory crunch, weak demand",
       "summary": "",
@@ -562,22 +626,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "a0333ee66c66",
-      "title": "Brazil’s president says Amazon oil is ‘passport to the future’",
-      "summary": "Brazil's president says Amazon oil is ‘passport to the future’",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/18/brazils-president-says-amazon-oil-is-passport-to-the?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-18T10:08:04.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -707,22 +755,6 @@
       "categoryConfidence": "high",
       "region": "Americas",
       "weight": 3
-    },
-    {
-      "id": "b0465f8dc3e8",
-      "title": "Iran's Ghalibaf heads to Iraq on Wednesday for cooperation talks",
-      "summary": "Iran's Ghalibaf heads to Iraq on Wednesday for cooperation talks Iranian Parliament Speaker Mohammad Bagher Ghalibaf will depart for Iraq on Wednesday morning to discuss regional developments and strengthening strategic ties between Tehran and Baghdad.…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/irans-ghalibaf-heads-iraq-wednesday-cooperation-talks",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-18T06:46:55.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "80e2d954a5ba",
@@ -1144,22 +1176,6 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "d39bc91ddc0a",
-      "title": "Trump says US to reduce military drills with South Korea after it stayed out of Iran war",
-      "summary": "Trump cites his \"very good relationship\" with North Korea's leader in deciding to downsize the exercises.",
-      "url": "https://www.bbc.co.uk/news/articles/cx2lll7zvn0o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-17T18:39:39.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8304/live/fde5dbb0-99c6-11f1-b604-2bfb19ba7385.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
     },
     {
       "id": "c30c345cb3fa",
@@ -1740,22 +1756,6 @@
       "categoryConfidence": "source",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "ef8d74748690",
-      "title": "Italy’s mythic ‘month off’ in August was hard won. It would be good for us all | Jamie Mackay",
-      "summary": "The villeggiatura, a month-long break, was popularised in the 1960s when trade unions were strong – and so was economic productivity On the Riviera di Ponente, sandwiched between the glitzy resort towns of the Ligurian coast, sits the Albenga plain. Dotted…",
-      "url": "https://www.theguardian.com/commentisfree/2026/aug/17/italy-month-off-august-economic-productivity",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-17T04:00:45.000Z",
-      "image": "https://i.guim.co.uk/img/media/e203ca8f455eeb72348c7d64b0ebde56af2ad302/68_0_5591_4473/master/5591.jpg?width=700&quality=85&auto=format&fit=max&s=2e0acf95cf0dcdf98b3516d250ed4a11",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "medium",
-      "region": "Europe",
-      "weight": 2
     },
     {
       "id": "a591a70e4457",
