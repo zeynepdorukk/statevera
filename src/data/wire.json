@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-08-18T16:54:30.000Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-18T17:17:21.752Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "18185c180534",
+      "title": "Zambia's Hichilema re-elected president as main rival in hiding over alleged threats",
+      "summary": "Hakainde Hichilema says he was “truly humbled” by the victory and promised to work for all Zambians.",
+      "url": "https://www.bbc.co.uk/news/articles/c5y6j4jl03xo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-18T17:00:29.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1a5c/live/58189080-9ae1-11f1-b2f7-5d1639b20e22.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "cb19e64fa151",
       "title": "UAE says Iran fired two ballistic missiles at territory",
@@ -148,38 +166,6 @@
       "weight": 2
     },
     {
-      "id": "33115cc27986",
-      "title": "'Tons' of nuclear materials found at undisclosed Syrian site, IAEA chief says",
-      "summary": "UN nuclear watchdog head Rafael Grossi said Tuesday that his agency had found several \"tons of nuclear materials\" at a previously undeclared site dating from the rule of Syria's previous authorities. Syria's Foreign Minister Asaad al-Shaibani said the…",
-      "url": "https://www.france24.com/en/middle-east/20260818-tons-of-nuclear-materials-found-at-undisclosed-syrian-site-iaea-chief-says",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T15:50:02.000Z",
-      "image": "https://s.france24.com/media/display/7f1fd9de-9b15-11f1-91e7-005056bf30b7/w:1024/p:16x9/000-99K837E.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "fa036eeca48e",
-      "title": "Palestinian American challenges Israeli army outside his home in the West Bank",
-      "summary": "For more than a week, militant ​Israeli settlers have encircled Palestinian homes in the West Bank village of Qusra, despite the deployment of the Israeli military. The ongoing siege has prompted Palestinian-American Loui Ridi to come back to his hometown,…",
-      "url": "https://www.france24.com/en/palestinian-american-challenges-israeli-army-outside-his-home-in-the-west-bank",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T15:43:42.000Z",
-      "image": "https://s.france24.com/media/display/5e94709a-9b19-11f1-a715-005056a90284/w:1024/p:16x9/EN-20260818-170518-170712-CS.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "d6657562006a",
       "title": "Odesa under attack: Russia is cutting Ukraine off from the Black Sea",
       "summary": "Russia's current bombing strategy is not simply to punish Odesa. Moscow aims to make Ukraine's largest Black Sea port city functionally landlocked, writes Michael Bociurkiw. The post Odesa under attack: Russia is cutting Ukraine off from the Black Sea…",
@@ -194,6 +180,22 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
+    },
+    {
+      "id": "f3c340b098cd",
+      "title": "S. Korea stresses US alliance amid confusion over Trump drill cut",
+      "summary": "Lee's comments Tuesday come as many South Koreans remain baffled and concerned about U.S. President Donald Trump's abrupt order to \"substantially reduce\" military exercises with South Korea.",
+      "url": "https://www.npr.org/2026/08/18/g-s1-139096/s-korea-stresses-us-alliance-amid-confusion-over-trump-drill-cut",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-18T15:19:40.000Z",
+      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3093x2128+0+0/resize/3093x2128!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F3d%2F09%2F3b50633a46d5903c3cc70220bcd1%2Fap26230133133563.jpg",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
     },
     {
       "id": "5e9f86c00587",
@@ -305,22 +307,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "7378ce9084ba",
-      "title": "Volodymyr Zelensky names new Defence minister after weeks of political crisis",
-      "summary": "President ​Volodymyr Zelensky nominated ​Yevheny Khmara for parliamentary approval ​to become Defence minister. Khmara served ​as acting ‌minister following the abrupt dismissal of ‌his predecessor, Mykhailo Fedorov, in June, which ​sparked public outrage and…",
-      "url": "https://www.france24.com/en/volodymyr-zelensky-names-new-defence-minister-after-weeks-of-political-crisis",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T14:27:17.000Z",
-      "image": "https://s.france24.com/media/display/90fc6aec-9b0f-11f1-b988-005056a90284/w:1024/p:16x9/EN-20260818-160121-160505-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -692,22 +678,6 @@
       "weight": 2
     },
     {
-      "id": "a99e3c8719a2",
-      "title": "🔴 Middle East live: US says Israel behind strikes on military airport in Syria",
-      "summary": "",
-      "url": "https://www.france24.com/en/middle-east/20260818-middle-east-live-iran-declares-60-day-negotiation-deadline-null-and-void",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T11:50:32.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "807f30dc1546",
       "title": "‘Our task is to laugh at these enemies’: the Ukrainian unit posting drone videos of Russian soldiers’ last moments",
       "summary": "Creators of chase compilations reject any moral qualms and say they show ‘death is waiting’ for those who join war To many observers they will appear dehumanising and offensive. To many Ukrainians, however, they are a brutal reminder of the fate that awaits…",
@@ -804,22 +774,6 @@
       "weight": 2
     },
     {
-      "id": "18185c180534",
-      "title": "Zambia's Hichilema re-elected president as main rival in hiding over alleged threats",
-      "summary": "Hakainde Hichilema says he was “truly humbled” by the victory and promised to work for all Zambians.",
-      "url": "https://www.bbc.co.uk/news/articles/c5y6j4jl03xo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-18T10:59:22.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1a5c/live/58189080-9ae1-11f1-b2f7-5d1639b20e22.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "1339f27b3b7a",
       "title": "‘Migration has been weaponised’: Italy’s security law criticised after death of Moroccan man in police restraint",
       "summary": "Case of Abderrahim Fakir is first in which legal shield giving police greater protection from prosecution has been invoked If, before 19 July, few people in Italy beyond his family and friends knew who Abderrahim Fakir was, by the late afternoon of that day…",
@@ -833,22 +787,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "e16622c61f67",
-      "title": "‘Come fetch your people’: 300 anti-migrants protesters call out to SADC leaders",
-      "summary": "South Africa hosted a gathering of leaders from the southern African regional bloc amid xenophobic violence and anti-migrant protests. As the continent’s wealthiest country, South Africa has long attracted migrants, but it faces an unemployment rate of over…",
-      "url": "https://www.france24.com/en/come-fetch-your-people-300-anti-migrants-protesters-call-out-to-sadc-leaders",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T10:38:45.000Z",
-      "image": "https://s.france24.com/media/display/f1756936-9aed-11f1-b963-005056bf30b7/w:1024/p:16x9/EN-20260817-214608-215242-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Africa",
       "weight": 2
     },
     {
@@ -882,38 +820,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "bf76c73fd7b5",
-      "title": "Somali army repels troops loyal to ousted leader and Islamist insurgents",
-      "summary": "Somali national forces repelled an assault by troops loyal to an ousted regional leader and Islamist insurgents on Monday over control of the key city of Baidoa. The assault involved \"vehicles laden with explosives\" according to the government, which said its…",
-      "url": "https://www.france24.com/en/somali-army-repels-troups-loyal-to-ousted-leader-and-islamist-insurgents",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T10:02:18.000Z",
-      "image": "https://s.france24.com/media/display/71da104e-9aea-11f1-8ff8-005056bfb2b6/w:1024/p:16x9/EN-20260818-091039-091158-CS.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "b35c139af2c6",
-      "title": "In Jerusalem, US negotiator Jared Kushner presses Netanyahu about Gaza deal",
-      "summary": "Mideast negotiator and Trump son-in-law Jared Kushner was meeting Monday with Israeli Prime Minister Benjamin Netanyahu, days after the premier rejected the US-backed road map to move the ceasefire deal forward in Gaza. The meeting follows Kushner's meeting…",
-      "url": "https://www.france24.com/en/in-jerusalem-us-negotiator-jared-kushner-presses-netanyahu-about-gaza-deal",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-18T09:58:34.000Z",
-      "image": "https://s.france24.com/media/display/c988f592-9ae7-11f1-9447-005056a90284/w:1024/p:16x9/EN-20260818-080149-080354-CS.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1255,6 +1161,22 @@
       "weight": 3
     },
     {
+      "id": "f138b09292a6",
+      "title": "Palestinian family in West Bank fear settler violence will rob them of home",
+      "summary": "The family of a Palestinian-American man remain holed up in his West Bank home for more than a week, after Israeli settlers laid siege to the house and the Israeli army then turned it into a closed military area.",
+      "url": "https://www.npr.org/2026/08/17/nx-s1-5933860/palestinian-american-family-in-west-bank-fear-settler-violence-will-rob-them-of-home",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-17T21:27:58.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "c2195ddabd9c",
       "title": "Delta Electronics' Thai subsidiary thrives despite recent share slump",
       "summary": "",
@@ -1384,6 +1306,22 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
+    },
+    {
+      "id": "386a52834bf8",
+      "title": "Somalia clashes with regional forces over control of key city",
+      "summary": "Somali national forces clashed with troops loyal to an ousted regional leader on Monday over control of a key city, the government said, accusing him of allying with Islamist insurgents",
+      "url": "http://www.africanews.com/2026/08/17/somalia-clashes-with-regional-forces-over-control-of-key-city/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-17T18:43:57.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/87/77/95/640x360_cmsv2_142bb528-cad2-5310-a57e-456b485ccf24-9877795.jpg?1786983571",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Africa",
+      "weight": 2
     },
     {
       "id": "c30c345cb3fa",
