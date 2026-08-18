@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-18T21:18:18.569Z",
+  "generatedAt": "2026-08-18T21:44:07.717Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "3e28eb1a4b87",
+      "title": "Australia politics live: NDIS reforms to pass parliament today after 63 amendments get Coalition on side",
+      "summary": "Bill passed Senate on Wednesday evening and is due back in lower house today. Follow today’s news live Follow our breaking news email , free app or daily news podcast ‘Up to them to explain’: Queensland lags on thriving kids Jenny McAllister , the NDIS…",
+      "url": "https://www.theguardian.com/australia-news/live/2026/aug/19/australia-politcs-live-ndis-reform-coalition-labor-anthony-albanese-angus-taylor-mark-butler-david-pocock-question-time-tax-superannuation-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-18T21:24:22.000Z",
+      "image": "https://i.guim.co.uk/img/media/d5ee456ee12ad77a027d353b806d766ec58b586f/442_605_3643_2916/master/3643.jpg?width=700&quality=85&auto=format&fit=max&s=e757df21fe9eef6a7b05f8b7918ff46f",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "71de50bb03c8",
+      "title": "Jon Ossoff blasts ‘draft-dodging, crook president’ in latest war of words with Trump – US politics live",
+      "summary": "The Democratic senator, who is currently running for re-election in Georgia, says Trump ‘has plunged our nation recklessly into a war he knows not how to end or to win’ Sign up for the US Breaking News email President Donald Trump posted an image of a map of…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/18/donald-trump-florida-alaska-wyoming-primaries-midterms-white-house-ballroom-iran-cnn-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-18T21:22:59.000Z",
+      "image": "https://i.guim.co.uk/img/media/114752b2a10a5d0a14dfcf048abc168fd1619cb4/972_0_6880_5504/master/6880.jpg?width=700&quality=85&auto=format&fit=max&s=5b63aaf35c09a695be7680e0e20ea5f3",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "323df1c297a1",
       "title": "Israel says Syria acceptance of Turkish troops posed 'threat'",
@@ -17,22 +49,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "3e28eb1a4b87",
-      "title": "Australia politics live: NDIS reforms to pass parliament today after 63 amendments get Coalition on side",
-      "summary": "Bill passed Senate on Wednesday evening and is due back in lower house today. Follow today’s news live Follow our breaking news email , free app or daily news podcast ‘We are pleased’ says Henderson on gambling bill deal Mark Butler’s not the only happy…",
-      "url": "https://www.theguardian.com/australia-news/live/2026/aug/19/australia-politcs-live-ndis-reform-coalition-labor-anthony-albanese-angus-taylor-mark-butler-david-pocock-question-time-tax-superannuation-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-18T21:14:34.000Z",
-      "image": "https://i.guim.co.uk/img/media/d5ee456ee12ad77a027d353b806d766ec58b586f/442_605_3643_2916/master/3643.jpg?width=700&quality=85&auto=format&fit=max&s=e757df21fe9eef6a7b05f8b7918ff46f",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -97,22 +113,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "71de50bb03c8",
-      "title": "Jon Ossoff blasts ‘draft-dodging, crook president’ in latest war of words with Trump – US politics live",
-      "summary": "The Democratic senator, who is currently running for re-election in Georgia, says Trump ‘has plunged our nation recklessly into a war he knows not how to end or to win’ Sign up for the US Breaking News email President Donald Trump posted an image of a map of…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/18/donald-trump-florida-alaska-wyoming-primaries-midterms-white-house-ballroom-iran-cnn-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-18T21:03:52.000Z",
-      "image": "https://i.guim.co.uk/img/media/114752b2a10a5d0a14dfcf048abc168fd1619cb4/972_0_6880_5504/master/6880.jpg?width=700&quality=85&auto=format&fit=max&s=5b63aaf35c09a695be7680e0e20ea5f3",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -229,7 +229,7 @@
     },
     {
       "id": "cb4989939df7",
-      "title": "How Feasible is a European Nuclear Deterrent Without Washington?",
+      "title": "How Feasible Is a European Nuclear Deterrent Without Washington?",
       "summary": "In 2025, James Cameron wrote, “Eurodeterrent: A Vision for an Anglo-French Nuclear Force,” where he argued the United Kingdom and France should cooperate to develop a nuclear deterrent umbrella for Europe, independent of Washington. A year later, after French…",
       "url": "https://warontherocks.com/how-feasible-is-a-european-nuclear-deterrent-without-washington/",
       "publisher": "War on the Rocks",
@@ -2024,23 +2024,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "a0462798a6d7",
-      "title": "China's Geely boosts export target as founder warns of 'deglobalization'",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/automobiles/china-s-geely-boosts-export-target-as-founder-warns-of-deglobalization",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-17T11:15:22.173Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
