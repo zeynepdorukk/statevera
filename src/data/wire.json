@@ -1,10 +1,42 @@
 {
-  "generatedAt": "2026-08-18T04:23:56.942Z",
+  "generatedAt": "2026-08-18T04:58:57.312Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
   ],
   "items": [
+    {
+      "id": "435b70aa765e",
+      "title": "US Democrats set to push for resolutions to stomp out Trump's war powers",
+      "summary": "US Democrats set to push for resolutions to stomp out Trump's war powers Axios reported that Congressional Democrats are planning to push for new resolutions in order to restrict US President Donald Trump's war powers, after he threatened to \"bomb the shit\"…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-democrats-set-push-resolutions-stomp-out-trumps-war-powers",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-18T04:50:51.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "4d3c4e97e696",
+      "title": "Australia politics live: Coalition MPs cross floor in protest against gambling bill; Greens leader says Labor ‘should hang their heads in shame’",
+      "summary": "Government MPs agree to more than a dozen amendments made with the Coalition. Follow today’s news live Get our breaking news email , free app or daily news podcast Chalmers calls gambling amendments ‘very substantial changes’ Treasurer Jim Chalmers says the…",
+      "url": "https://www.theguardian.com/australia-news/live/2026/aug/18/australia-politics-live-labor-coalition-gambling-advertising-ai-charlton-datacentres-question-time-anthony-albanese-angus-taylor-one-nation-pauline-hanson-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-18T04:34:36.000Z",
+      "image": "https://i.guim.co.uk/img/media/f226b4ba668c854f573f44cb302afed92d30638d/2779_32_2141_1713/master/2141.jpg?width=700&quality=85&auto=format&fit=max&s=69aaff3b925da8e357912dd0c9f9f96a",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "247e2e055423",
       "title": "Israeli forces carry out artillery shelling, strikes in south Lebanon",
@@ -84,22 +116,6 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "4d3c4e97e696",
-      "title": "Australia politics live: Coalition MPs cross floor in protest against gambling bill; Greens leader says Labor ‘should hang their heads in shame’",
-      "summary": "Government MPs agree to more than a dozen amendments made with the Coalition. Follow today’s news live Get our breaking news email , free app or daily news podcast Chalmers calls gambling amendments ‘very substantial changes’ Treasurer Jim Chalmers says the…",
-      "url": "https://www.theguardian.com/australia-news/live/2026/aug/18/australia-politics-live-labor-coalition-gambling-advertising-ai-charlton-datacentres-question-time-anthony-albanese-angus-taylor-one-nation-pauline-hanson-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-18T03:59:41.000Z",
-      "image": "https://i.guim.co.uk/img/media/f226b4ba668c854f573f44cb302afed92d30638d/2779_32_2141_1713/master/2141.jpg?width=700&quality=85&auto=format&fit=max&s=69aaff3b925da8e357912dd0c9f9f96a",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "c2cb1fc57e59",
