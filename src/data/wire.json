@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-08-19T22:47:17.215Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-19T23:12:47.387Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "dd468abe1d3b",
+      "title": "Who is Natalie Harp, Trump's right-hand woman?",
+      "summary": "One of Trump's longest serving and most loyal aides, Harp was thrust again into the spotlight when Democrat Jon Ossoff noted her closeness to the president.",
+      "url": "https://www.bbc.co.uk/news/articles/c80nzdjgmk3o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-19T23:11:14.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9db2/live/5fb103a0-9c02-11f1-b0bd-839fb1d8b591.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "f7dc350976c5",
       "title": "Australia politics live: ‘outraged’ Wong to call in Israel ambassador over handling of Frankcom killing; Victoria to launch construction royal commission",
@@ -11,28 +29,12 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-19T22:44:51.000Z",
+      "publishedAt": "2026-08-19T22:55:41.000Z",
       "image": "https://i.guim.co.uk/img/media/e1bae47405ce5efb2d9e0a305a6725c13c98b8d4/962_0_6827_5464/master/6827.jpg?width=700&quality=85&auto=format&fit=max&s=defe1a6eee1e7da8c8c4c14b8a18dc67",
       "imageWidth": 700,
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "f1d7cb977c4c",
-      "title": "‘Not another Trump sycophant’: Democrats blast Trump’s nomination of Heidi Overton for FDA chief – live",
-      "summary": "The abortion opponent stood next to the president as he made false claims about vaccines last week Sign up for the US Breaking News email Those unfamiliar with Alaska politics are likely raising an eyebrow at some repeated names. No, we’re not talking about…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/19/mary-peltola-dan-sullivan-alaska-primary-election-us-senate-florida-california-wyoming--donald-trump-us-politics-latest",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-19T22:39:34.000Z",
-      "image": "https://i.guim.co.uk/img/media/ab58f7029876bf45b50c3e7cfb28bbccee32b123/1329_550_2521_2017/master/2521.jpg?width=700&quality=85&auto=format&fit=max&s=06212197bb8f4f96cad7d5a76f614803",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -43,12 +45,28 @@
       "publisher": "BBC News",
       "publisherHome": "https://www.bbc.com/news/world",
       "sourceId": "bbc-world",
-      "publishedAt": "2026-08-19T22:04:21.000Z",
+      "publishedAt": "2026-08-19T22:55:37.000Z",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9e39/live/8b4a6c40-9c16-11f1-a291-b542ee92de7c.jpg",
       "imageWidth": 240,
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "f1d7cb977c4c",
+      "title": "Republicans reportedly fear datacenter backlash could cost them Ohio Senate seat – US politics live",
+      "summary": "Jon Husted campaign reportedly concerned that rival Sherrod Brown successfully channelling outrage over energy-guzzling facilities Sign up for the US Breaking News email Those unfamiliar with Alaska politics are likely raising an eyebrow at some repeated…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/19/mary-peltola-dan-sullivan-alaska-primary-election-us-senate-florida-california-wyoming--donald-trump-us-politics-latest",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-19T22:43:44.000Z",
+      "image": "https://i.guim.co.uk/img/media/a932257314b35733da2e614262acf2fa99c9d2a7/0_0_3333_2667/master/3333.jpg?width=700&quality=85&auto=format&fit=max&s=af43e34379aa7162b8719e4f400067fa",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -310,22 +328,6 @@
       "weight": 2
     },
     {
-      "id": "dd468abe1d3b",
-      "title": "Who is Natalie Harp, Trump's right-hand woman?",
-      "summary": "One of Trump's longest serving and most loyal aides, Harp was thrust again into the spotlight when Democrat Jon Ossoff noted her closeness to the president.",
-      "url": "https://www.bbc.co.uk/news/articles/c80nzdjgmk3o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-19T19:02:41.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9db2/live/5fb103a0-9c02-11f1-b0bd-839fb1d8b591.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "a71de372e5c6",
       "title": "Zelenskyy’s rival Fedorov overplays his hand with election push",
       "summary": "Ousted defense chief scored political hits with his criticism of Zelenskyy's administration — but his call for an election has triggered outrage.",
@@ -419,22 +421,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "9f6a66de9a5c",
-      "title": "Tax hack: What we know about the cyberattacks on French government agencies",
-      "summary": "French government systems came under attack by hackers who stole information on hundreds of thousands of households and private businesses in June and July, notably from the tax authority. Here's what we know about the latest cyberattacks, and what the…",
-      "url": "https://www.france24.com/en/france/20260819-tax-hack-cyberattacks-on-french-government-agencies",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T18:18:54.000Z",
-      "image": "https://s.france24.com/media/display/e437f1be-9749-11f1-a34a-005056a97e36/w:1024/p:16x9/2026-08-11T170845Z-1402842411-RC2EWMAVMB22-RTRMADP-3-FRANCE-ECONOMY.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -548,6 +534,22 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
+    },
+    {
+      "id": "50063425df92",
+      "title": "Israel admits its soldiers fired at car in which Hind Rajab was killed",
+      "summary": "Military orders criminal investigation into deaths of five-year-old and six family members in Gaza in 2024 The Israeli military admitted on Wednesday its troops had opened fire on a car carrying five-year-old Hind Rajab and six family members in Gaza in 2024,…",
+      "url": "https://www.theguardian.com/world/2026/aug/19/israel-admits-it-soldiers-fired-at-car-in-which-hind-rajab-was-killed",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-19T17:21:14.000Z",
+      "image": "https://i.guim.co.uk/img/media/f8230805cca357ae6ff4dce57acf9547484cc359/52_27_1153_922/master/1153.jpg?width=700&quality=85&auto=format&fit=max&s=655a4f305619bd552aa62615f85a6036",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
     },
     {
       "id": "a98edf7a229d",
@@ -710,6 +712,22 @@
       "weight": 2
     },
     {
+      "id": "a3009d8d4d06",
+      "title": "Trump nominates abortion opponent Heidi Overton to be head of FDA",
+      "summary": "Overton has said that Congress should strictly regulate abortion drug mifepristone ‘to protect women and children’ Donald Trump nominated Dr Heidi Overton – an abortion opponent who stood next to the president as he made false claims about vaccines – to be…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/19/heidi-overton-fda-commissioner-nomination",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-19T16:31:59.000Z",
+      "image": "https://i.guim.co.uk/img/media/8281969432aa19d320e35d9f12dcac7093e6ba69/798_0_7202_5760/master/7202.jpg?width=700&quality=85&auto=format&fit=max&s=79d3e56b7b32c078067da57c2493c18c",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "b8bc921bcfe7",
       "title": "Why does the U.S. military seem stymied in the war with Iran?",
       "summary": "Defense analyst Stacie Pettyjohn says while the U.S. military is facing long-range missile shortages, prolonged deployments and vacated regional bases, Iran is building cheaper weapons quickly.",
@@ -790,19 +808,19 @@
       "weight": 2
     },
     {
-      "id": "ba79a3558e41",
-      "title": "Libyan government in Tunisia for crisis talks",
-      "summary": "On Tuesday, Libya's national oil corporation said the country needs around 40 billion dollars in investment to make the most of its energy resources. The country's unreliable access to energy is feeding into instability stemming from fighting between rival…",
-      "url": "https://www.france24.com/en/video/20260819-libyan-government-in-tunisia-for-crisis-talks",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T15:40:46.000Z",
-      "image": "https://s.france24.com/media/display/60ce73be-9bdd-11f1-968e-005056bfb2b6/w:1024/p:16x9/EN-20260818-215001-215207-CS.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
+      "id": "e4ea8d1c5ac4",
+      "title": "Why is Ukraine's ex-defence minister calling for wartime elections?",
+      "summary": "Mykhailo Fedorov has called for elections, without addressing concerns over how they could be held while at war.",
+      "url": "https://www.bbc.co.uk/news/videos/c62eyn5ggnzo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-19T15:38:38.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0cab/live/644e3cd0-9bde-11f1-a291-b542ee92de7c.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
       "categoryConfidence": "high",
-      "region": "Africa",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -934,54 +952,6 @@
       "weight": 2
     },
     {
-      "id": "de992e83f8d1",
-      "title": "Zelensky's office probed for corruption as fired defence minister demands elections",
-      "summary": "Ukrainian anti-corruption agencies announced Wednesday that they are investigating senior officials in President Volodymyr Zelenskyy's office, a day after the country’s recently fired defence minister called for national elections despite the ongoing fight…",
-      "url": "https://www.france24.com/en/video/20260819-zelensky-s-office-probed-for-corruption-as-fired-defence-minister-demands-elections",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T14:37:26.000Z",
-      "image": "https://s.france24.com/media/display/72b58378-9bd4-11f1-8a8b-005056bf30b7/w:1024/p:16x9/EN-20260819-150109-150508-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "3d9f2345fa92",
-      "title": "PA financial crisis: No budget for 'essential services' including infrastructure, education & health",
-      "summary": "Annette Young is pleased to welcome Joost Hiltermann, Special Adviser for MENA and training for the International Crisis Group. He sees the Palestinian Authority’s financial crisis not as an approaching emergency, but as an ongoing process of institutional…",
-      "url": "https://www.france24.com/en/pa-financial-crisis-no-budget-for-essential-services-including-infrastructure-education-health",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T14:33:26.000Z",
-      "image": "https://s.france24.com/media/display/61b88164-9bd5-11f1-9750-005056a97e36/w:1024/p:16x9/EN-20260819-130449-131623-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "9c27379f4dc9",
-      "title": "Fractured opposition battles Nigeria's Tinubu as presidential campaign begins",
-      "summary": "Nigeria on Wednesday kicked off campaigns for the presidential election scheduled in January, with incumbent President Bola Tinubu seeking reelection against a fractured opposition. Africa's most populous country will hold the election against a backdrop of…",
-      "url": "https://www.france24.com/en/video/20260819-fractured-opposition-battles-nigeria-s-tinubu-as-presidential-campaign-begins",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T14:31:31.000Z",
-      "image": "https://s.france24.com/media/display/f11888c2-9bd5-11f1-97ea-005056a97e36/w:1024/p:16x9/EN-20260819-140941-141136-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "7d0511ae25ff",
       "title": "Russia and Ukraine Exchange 103 Prisoners Each in Latest Swap",
       "summary": "Russia and Ukraine have exchanged 103 prisoners each in their latest wartime swap, with the United Arab Emirates acting as mediator. The release offers another rare point of cooperation between the two sides as diplomatic efforts to end the conflict remain…",
@@ -1094,22 +1064,6 @@
       "weight": 2
     },
     {
-      "id": "80d85ddbe6f2",
-      "title": "Israeli army launches criminal probe into killing of 5-year-old Hind Rajab in Gaza",
-      "summary": "The Israeli military will open internal criminal investigations into its troops' 2024 killing of 5-year-old Palestinian girl Hind Rajab alongside six of her relatives, as well as the killings of 15 medics and humanitarian workers in 2025, it announced…",
-      "url": "https://www.france24.com/en/middle-east/20260819-israeli-army-launches-criminal-probe-into-its-troops-killing-of-five-year-old-hind-rajab",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T13:07:12.000Z",
-      "image": "https://s.france24.com/media/display/583c2e3c-9bc2-11f1-9d5d-005056bfb2b6/w:1024/p:16x9/000-73B64HM-1.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "a34f8c41c5f5",
       "title": "India-Japan Defense Technology Cooperation Hinges on Industrial Endurance",
       "summary": "There is a marked asymmetry between high-powered India-Japan diplomacy and their uneven industrial integration.",
@@ -1171,22 +1125,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "80af12d5d931",
-      "title": "Ukraine’s ousted minister Mykhailo Fedorov calls for wartime elections",
-      "summary": "In a bombshell address posted on YouTube, Ukraine’s ousted defence minister Mykhailo Fedorov called for elections to be held even as the war against Russia continues, saying the country was gripped by a crisis of governance. Ukrainian law prohibits elections…",
-      "url": "https://www.france24.com/en/video/20260819-ukraine-s-ousted-minister-mykhailo-fedorov-calls-for-wartime-elections",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T12:23:43.000Z",
-      "image": "https://s.france24.com/media/display/dc3fae50-9bbf-11f1-9c08-005056a97e36/w:1024/p:16x9/Ukraine-Fedorov-10.png",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -1270,6 +1208,22 @@
       "weight": 2
     },
     {
+      "id": "75716f96fbe2",
+      "title": "Israeli military to open criminal probes into 2 Gaza attacks",
+      "summary": "The investigations will focus on the killings of 5-year-old Palestinian girl Hind ⁠Rajab and 15 emergency aid workers in Gaza. The decision came after a review of 150 incidents concerning the conduct of Israeli troops.",
+      "url": "https://www.dw.com/en/israeli-military-to-open-criminal-probes-into-2-gaza-attacks/a-78429726?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-19T11:44:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "1186b99cba45",
       "title": "Could Pakistan's jailed ex-PM Imran Khan make a new deal?",
       "summary": "The imprisoned former prime minister of Pakistan could be moved to a hospital for medical treatment, ushering speculation over the possibility of new political negotiations.",
@@ -1299,22 +1253,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "a3637cf0407f",
-      "title": "Ukraine’s new defence minister takes office as popular predecessor calls for presidential vote",
-      "summary": "Ukrainian lawmakers approved former top special forces operative Yevhenii Khmara as the country’s new defence minister Wednesday, just hours after his predecessor Mykhailo Fedorov called for fresh presidential elections. Elections have been banned in Ukraine…",
-      "url": "https://www.france24.com/en/europe/20260819-ukraine-live-zelensky-fires-deputy-head-of-presidential-office-as-corruption-probe-unfolds",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T11:20:23.000Z",
-      "image": "https://s.france24.com/media/display/0c3d1c0a-9bcf-11f1-b142-005056a90284/w:1024/p:16x9/000-C4WR3WK.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
