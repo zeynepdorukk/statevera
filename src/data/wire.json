@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T20:44:48.399Z",
+  "generatedAt": "2026-08-19T21:03:36.727Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -9,9 +9,9 @@
       "summary": "The abortion opponent stood next to the president as he made false claims about vaccines last week Trump nominates abortion opponent Heidi Overton to be head of FDA Sign up for the US Breaking News email Those unfamiliar with Alaska politics are likely…",
       "url": "https://www.theguardian.com/us-news/live/2026/aug/19/mary-peltola-dan-sullivan-alaska-primary-election-us-senate-florida-california-wyoming--donald-trump-us-politics-latest",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-19T20:23:09.000Z",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-19T20:51:13.000Z",
       "image": "https://i.guim.co.uk/img/media/ab58f7029876bf45b50c3e7cfb28bbccee32b123/1329_550_2521_2017/master/2521.jpg?width=700&quality=85&auto=format&fit=max&s=06212197bb8f4f96cad7d5a76f614803",
       "imageWidth": 700,
       "category": "Politics",
@@ -550,10 +550,10 @@
       "weight": 2
     },
     {
-      "id": "33879c7c5eea",
+      "id": "49e6a7b6db73",
       "title": "Trump says Kim Jong Un will be ‘fine’ with ‘smart president’",
       "summary": "US president says he gets along with North Korean leader ‘very well,’ adds he expects to meet with him this year",
-      "url": "https://www.aa.com.tr/en/americas/trump-says-kim-jong-un-will-be-fine-with-smart-president-/4032048",
+      "url": "https://www.aa.com.tr/en/politics/trump-says-kim-jong-un-will-be-fine-with-smart-president-/4032048",
       "publisher": "Anadolu Agency",
       "publisherHome": "https://www.aa.com.tr/en",
       "sourceId": "anadolu-politics",
@@ -646,22 +646,6 @@
       "weight": 2
     },
     {
-      "id": "022fff65aa39",
-      "title": "Unhinged White House response shows senator’s ‘Natalie’ barb struck a nerve",
-      "summary": "Senator Jon Ossoff, who is up for re-election, came up with arguably the standout line of the midterm elections so far Jon Ossoff really struck a nerve. That much is clear. The US senator for Georgia, running for re-election in November, came up with arguably…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/19/trump-white-house-attacks",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-19T15:41:19.000Z",
-      "image": "https://i.guim.co.uk/img/media/fbe5b0444e445c8f03c15d9175850a0ad5010d65/380_0_6881_5504/master/6881.jpg?width=700&quality=85&auto=format&fit=max&s=f39a4f290358552863a6f69cd82d6dfe",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "ba79a3558e41",
       "title": "Libyan government in Tunisia for crisis talks",
       "summary": "On Tuesday, Libya's national oil corporation said the country needs around 40 billion dollars in investment to make the most of its energy resources. The country's unreliable access to energy is feeding into instability stemming from fighting between rival…",
@@ -707,6 +691,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "0c34063ad23c",
+      "title": "A democratic socialist win and losses for Trump allies: takeaways from primaries in three key states",
+      "summary": "Elections in Florida, Alaska and Wyoming provide a sense of how voters are feeling ahead of November’s midterms Primaries in Florida, Alaska and Wyoming held on Tuesday provided the latest view into how voters are feeling ahead of November’s US midterm…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/19/key-takeaways-primaries-florida-alaska-wyoming",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-19T15:14:16.000Z",
+      "image": "https://i.guim.co.uk/img/media/428ee97ca1c7008a2cad032cd61222dac17dd2cd/0_0_5374_4299/master/5374.jpg?width=700&quality=85&auto=format&fit=max&s=b854fbe39c7afe35ea63aa35bc7fabca",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -1076,6 +1076,38 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
+    },
+    {
+      "id": "8f77ff029ca7",
+      "title": "Zambia: Arrests and detention of political opponents following election raises concern",
+      "summary": "In the wake of President Hakainde Hichilema of Zambia’s re-election for a second five-year term, UN human rights chief has raised concerns over the reported arrests and detention of political opponents in the country.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168169",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-19T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/19-08-2026-Adobe-Stock-Zambia.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "81917205ed2f",
+      "title": "Sudan war: 200,000 newly displaced as fighting and floods intensify",
+      "summary": "Intensifying fighting in Sudan has displaced at least another 200,000 people since late 2025, while destructive seasonal floods are compounding the massive humanitarian emergency there, the UN International Organization for Migration (IOM) said on Wednesday.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168165",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-19T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/12-08-2024-IOM-Sudan.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Africa",
+      "weight": 2
     },
     {
       "id": "027ebb31ab67",
@@ -2826,22 +2858,6 @@
       "weight": 2
     },
     {
-      "id": "8a017754e712",
-      "title": "Former rebel fighters join campaign against Ebola in the DR Congo",
-      "summary": "Demobilised former combatants are actively joining the fight against Ebola by participating in public information campaigns in the east of the Democratic Republic of the Congo (DRC).",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168146",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-15T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/14-08-2026-MONUSCO-DR-Congo-ebola-02.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "dba6fd3171be",
       "title": "Concerns grow over increased global ties with Taliban in Afghanistan",
       "summary": "Campaigners fear deeper diplomatic contacts are undermining demands for improvements in human rights The Taliban in Afghanistan have launched a diplomatic effort to end their isolation as major regional and international powers show a readiness to engage more…",
@@ -2935,22 +2951,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "3c5370f394d6",
-      "title": "‘Warned but not protected’: Four in ten adults in England ignore heat alerts",
-      "summary": "As amber heat-health alerts spread across England this summer, a new study has found that the warnings are being received – but not changing behaviour.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168149",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-14T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/08/14-08-2026-Adobe-Stock-London.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Global",
       "weight": 2
     },
     {
