@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-19T04:27:49.160Z",
+  "generatedAt": "2026-08-19T05:02:00.602Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "3e28eb1a4b87",
+      "title": "Australia politics live: Coalition accuses Labor of treating veterans ‘with contempt’; Victorian Liberals pledge to ‘throw open doors to gas’",
+      "summary": "Follow today’s news live Follow our breaking news email , free app or daily news podcast ‘Collapsing confidence’ in housing market, Wilson says Tim Wilson has jumped on that reporting around rent increases and says there has been a collapse in confidence…",
+      "url": "https://www.theguardian.com/australia-news/live/2026/aug/19/australia-politcs-live-ndis-reform-coalition-labor-anthony-albanese-angus-taylor-mark-butler-david-pocock-question-time-tax-superannuation-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-19T04:59:56.000Z",
+      "image": "https://i.guim.co.uk/img/media/ee94e0173b5340689639cdd3d8e4e9cee4acfee3/1376_0_6880_5504/master/6880.jpg?width=700&quality=85&auto=format&fit=max&s=0bccb55176be0d8d032b8197f6dd2fd9",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "f53d7089c651",
+      "title": "Sacked Ukrainian defence minister calls for presidential election",
+      "summary": "Martial law has been in place in Ukraine since February 2022, under which elections are suspended.",
+      "url": "https://www.bbc.co.uk/news/articles/cdew8n9erlwo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-19T04:44:41.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/26e2/live/88af3c20-9b5f-11f1-aed2-8d6da8d75094.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "a3a1c8a267d5",
       "title": "The Mecca Pact could be an opportunity for Iran",
@@ -84,6 +116,22 @@
       "weight": 2
     },
     {
+      "id": "fe307da7bf3f",
+      "title": "South Korea shortens war games with US, citing Washington request",
+      "summary": "It comes after Trump announced plans to curtail joint military exercises with South Korea, citing a \"very good\" relationship with North Korea's Kim Jong Un.",
+      "url": "https://www.bbc.co.uk/news/articles/cnvn0j31qj8o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-19T03:39:41.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/86ad/live/375f2780-9b83-11f1-bdab-bd265066e1df.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
       "id": "a0d16aea4ec3",
       "title": "Report: Syria denies security agreement with Israel after strike on airbase",
       "summary": "Report: Syria denies security agreement with Israel after strike on airbase A Syrian Foreign Ministry diplomatic source has denied the existence of a security arrangement agreement between Syria and Israel, Al Jazeera reported. The source told the network…",
@@ -162,22 +210,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "f53d7089c651",
-      "title": "Sacked Ukrainian defence minister calls for presidential election",
-      "summary": "Martial law has been in place in Ukraine since February 2022, under which elections are suspended.",
-      "url": "https://www.bbc.co.uk/news/articles/cdew8n9erlwo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-19T01:31:15.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/26e2/live/88af3c20-9b5f-11f1-aed2-8d6da8d75094.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -1319,22 +1351,6 @@
       "weight": 2
     },
     {
-      "id": "aa08e528cb0c",
-      "title": "Zambia election marred by irregularities, 'militia' arrests",
-      "summary": "Zambia is gripped by allegations of armed plots, intimidation and electoral interference. As President Hakainde Hichilema leads the count, concerns are growing over the state of the country's democracy.",
-      "url": "https://www.dw.com/en/zambia-election-marred-by-irregularities-militia-arrests/a-78400154?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-18T09:11:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "315b2838a23d",
       "title": "AI and the Risks of Tearing Down an Old System",
       "summary": "Operation Epic Fury made clear that AI is now at the heart of American warfighting. Central Command used Claude through Palantir’s Maven Smart System platform to generate and prioritize roughly 1,000 targets in the first 24 hours of the campaign, at an…",
@@ -1640,22 +1656,6 @@
       "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "32447f568780",
-      "title": "Trump says North Korea's Kim responded to his request for talks",
-      "summary": "'Kim Jong Un has always treated me with great respect,' says president while questioning why US should continue to help defend South Korea",
-      "url": "https://www.aa.com.tr/en/americas/trump-says-north-koreas-kim-responded-to-his-request-for-talks/4029939",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-17T19:47:33.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "50c5a4c3b1f3",
