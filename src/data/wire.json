@@ -1,8 +1,25 @@
 {
-  "generatedAt": "2026-08-19T19:46:39.338Z",
+  "generatedAt": "2026-08-19T20:13:54.290Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "a2c125b08b6f",
+      "title": "South Korean progressives' \"Park Chung-hee\" coalition in the AI era",
+      "summary": "",
+      "url": "https://asia.nikkei.com/opinion/south-korean-progressives-park-chung-hee-coalition-in-the-ai-era",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-19T20:13:47.945Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "f1d7cb977c4c",
       "title": "‘Not another Trump sycophant’: Democrats blast Trump’s nomination of Heidi Overton for FDA chief – live",
@@ -11,12 +28,44 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-19T19:44:29.000Z",
+      "publishedAt": "2026-08-19T19:59:52.000Z",
       "image": "https://i.guim.co.uk/img/media/ab58f7029876bf45b50c3e7cfb28bbccee32b123/1329_550_2521_2017/master/2521.jpg?width=700&quality=85&auto=format&fit=max&s=06212197bb8f4f96cad7d5a76f614803",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "2642b6ed2d7f",
+      "title": "Canada and US say they are finalising a trade deal, but details remain murky",
+      "summary": "Prime Minister Carney hailed \"significant progress\" in trade talks as the two countries seek to hammer out final details ahead of a new weekend tariff deadline.",
+      "url": "https://www.bbc.co.uk/news/articles/c3ekl74jnk5o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-19T19:59:14.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cd23/live/184fdf20-9bf0-11f1-8470-d18257d2d589.jpg",
+      "imageWidth": 240,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "832d13c42371",
+      "title": "Remains of 11 Palestinians recovered from rubble in Gaza City, report says",
+      "summary": "Remains of 11 Palestinians recovered from rubble in Gaza City, report says Gaza’s civil defence recovered the remains of 11 Palestinians killed in earlier Israeli air strikes on the al-Sawafiri house in Gaza City’s Zeitoun neighbourhood, Al Jazeera reported.…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/remains-11-palestinians-recovered-rubble-gaza-city",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-19T19:53:03.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -290,22 +339,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "2642b6ed2d7f",
-      "title": "Canada and US say they are finalising a trade deal, but details remain murky",
-      "summary": "Prime Minister Carney hailed \"significant progress\" in trade talks as the two countries seek to hammer out final details ahead of a new weekend tariff deadline.",
-      "url": "https://www.bbc.co.uk/news/articles/c3ekl74jnk5o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-19T17:47:52.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/cd23/live/184fdf20-9bf0-11f1-8470-d18257d2d589.jpg",
-      "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -933,22 +966,6 @@
       "weight": 2
     },
     {
-      "id": "1c4bb8551679",
-      "title": "Israeli drone strike kills nine in Gaza City",
-      "summary": "Israeli drone strike kills nine in Gaza City The number of people killed in an Israeli drone strike on central Gaza City has increased to nine, an ambulance official has told Al Jazeera correspondents. The latest update raises the death toll from six reported…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-drone-strike-kills-nine-gaza-city",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-19T12:57:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "a0f358d0028f",
       "title": "Iran issues warning against Arab states aiding US, as UAE cuts economic ties",
       "summary": "Iran issues warning against Arab states aiding US, as UAE cuts economic ties Submitted by MEE staff on Wed, 08/19/2026 - 12:18 Tehran's armed forces chief says 'any assistance or facilitation provided to the aggressor US military amounts to participation' in…",
@@ -979,22 +996,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "0a68517acd6c",
-      "title": "Greece's alliance with Israel is becoming a domestic liability",
-      "summary": "Greece's alliance with Israel is becoming a domestic liability Submitted by Iason Athanasiadis on Wed, 08/19/2026 - 13:45 Athens sees Israel as an important partner, but the relationship is facing mounting anger over arms sales, high rents and Israel’s…",
-      "url": "https://www.middleeasteye.net/big-story/greece-alliance-israel-becoming-domestic-liability",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-19T12:46:03.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "52e00c3deb10",
@@ -1111,7 +1112,7 @@
     {
       "id": "1186b99cba45",
       "title": "Could Pakistan's jailed ex-PM Imran Khan make a new deal?",
-      "summary": "The imprisoned former prime minister of Pakistan has been moved to a hospital for medical treatment, ushering speculation over the possibility of new political negotiations.",
+      "summary": "The imprisoned former prime minister of Pakistan could be moved to a hospital for medical treatment, ushering speculation over the possibility of new political negotiations.",
       "url": "https://www.dw.com/en/could-pakistan-s-jailed-ex-pm-imran-khan-make-a-new-deal/a-78429070?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
