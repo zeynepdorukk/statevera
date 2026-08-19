@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-19T09:46:42.641Z",
+  "generatedAt": "2026-08-19T10:17:02.676Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "f1d7cb977c4c",
+      "title": "Democrat Mary Peltola and Republican Dan Sullivan lead in Alaska primary for US Senate – US politics live",
+      "summary": "Incumbent Sullivan is running for third term while Peltola is fighting to flip seat and aid Democrats retake control of Congress Democratic socialist Angie Nixon clinches surprise win in Florida Sign up for the US Breaking News email In other primary news,…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/19/mary-peltola-dan-sullivan-alaska-primary-election-us-senate-florida-california-wyoming--donald-trump-us-politics-latest",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-19T10:01:33.000Z",
+      "image": "https://i.guim.co.uk/img/media/45b7fd2d28e47c87029bf05b371a20e14c31d3a9/222_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=66e1b9885557c862b2e048df7b839919",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "ae2c1c0dfe78",
+      "title": "Fresh Ukraine corruption probe adds to pressure on Zelenskyy ahead of key vote – Europe live",
+      "summary": "Investigation into unnamed lawmakers comes hours before parliament is due to to vote on successor to Mykhailo Fedorov as he calls for elections Meanwhile, Estonia is investigating whether Russia was involved in an arson ⁠attack on a building housing a defence…",
+      "url": "https://www.theguardian.com/world/live/2026/aug/19/europe-ukraine-zelenskyy-mykhailo-fedorov-parliament-vote-corruption-probe-russia-belgium-wildfires-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-19T09:55:03.000Z",
+      "image": "https://i.guim.co.uk/img/media/6d064283acd593fcdf2ab35fe06d3c535fe161ba/336_0_5040_4032/master/5040.jpg?width=700&quality=85&auto=format&fit=max&s=007fd49ee7345f83413f553820637866",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "e0db76659d56",
       "title": "Ukraine anti-graft agencies uncover alleged laundering group tied to presidential official",
@@ -52,38 +84,6 @@
       "weight": 2
     },
     {
-      "id": "ae2c1c0dfe78",
-      "title": "Fresh Ukraine corruption probe adds to pressure on Zelenskyy ahead of key vote – Europe live",
-      "summary": "Investigation into unnamed lawmakers comes hours before parliament is due to to vote on successor to Mykhailo Fedorov as he calls for elections We are also getting a bit more detail on that anticorruption investigation. The two anti-corruption agencies said…",
-      "url": "https://www.theguardian.com/world/live/2026/aug/19/europe-ukraine-zelenskyy-mykhailo-fedorov-parliament-vote-corruption-probe-russia-belgium-wildfires-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-19T09:25:50.000Z",
-      "image": "https://i.guim.co.uk/img/media/6d064283acd593fcdf2ab35fe06d3c535fe161ba/336_0_5040_4032/master/5040.jpg?width=700&quality=85&auto=format&fit=max&s=007fd49ee7345f83413f553820637866",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "f1d7cb977c4c",
-      "title": "Democrat Mary Peltola and Republican Dan Sullivan lead in Alaska primary for US Senate – US politics live",
-      "summary": "Incumbent Sullivan is running for third term while Peltola is fighting to flip seat and aid Democrats retake control of Congress Democratic socialist Angie Nixon clinches surprise win in Florida Sign up for the US Breaking News email Wearing shoulder-length…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/19/mary-peltola-dan-sullivan-alaska-primary-election-us-senate-florida-california-wyoming--donald-trump-us-politics-latest",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-19T09:24:01.000Z",
-      "image": "https://i.guim.co.uk/img/media/45b7fd2d28e47c87029bf05b371a20e14c31d3a9/222_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=66e1b9885557c862b2e048df7b839919",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "32baaf2275d2",
       "title": "Iran parliament speaker Ghalibaf in Iraq for talks",
       "summary": "Iran's parliament speaker Mohammad Bagher Ghalibaf, who led negotiations with the United States to end the Middle East war, arrived in Baghdad on Wednesday for talks. Ghalibaf will head \"a high-level parliamentary delegation to discuss regional developments\"…",
@@ -118,7 +118,7 @@
     {
       "id": "13af5fa6840e",
       "title": "Jump in energy bills drives UK inflation to highest rate for four months",
-      "summary": "The 2.9% rise in inflation in July had been widely expected by economists, with Chancellor John Healey saying the Iran war “continues to impact prices here at home”.",
+      "summary": "A 2.9% rise in inflation had been widely expected by economists, with Chancellor John Healey saying the Iran war “continues to impact prices here at home”.",
       "url": "https://www.bbc.co.uk/news/articles/cdrv7jr8n74o?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
       "publisherHome": "https://www.bbc.com/news/business",
@@ -740,22 +740,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "3cb6daebd832",
-      "title": "Iran’s top security official ridicules Trump’s claims over Hormuz Strait",
-      "summary": "Iran’s top security official ridicules Trump’s claims over Hormuz Strait Iran’s secretary of the Supreme National Security Council, Mohsen Rezaei, has ridiculed US President Donald Trump after he declared the Strait of Hormuz as a US territory. \"The gap…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/irans-top-security-official-ridicules-trumps-claims-over-hormuz-strait",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-19T01:08:12.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
