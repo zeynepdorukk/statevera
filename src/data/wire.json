@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-19T13:29:20.163Z",
+  "generatedAt": "2026-08-19T14:06:28.644Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "90c9b6f75963",
+      "title": "Man who died with woman and girl off Sussex coast was Palestinian refugee",
+      "summary": "Palestinian embassy named man as Hossam al-Khawas but was unable to confirm names of other family members A father who died alongside a woman and a teenage girl off the Sussex coast on Tuesday was a Palestinian refugee, the Palestinian embassy has said. The…",
+      "url": "https://www.theguardian.com/uk-news/2026/aug/19/andy-burnham-dangers-open-water-swimming-family-tragedy-sussex",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-19T13:55:54.000Z",
+      "image": "https://i.guim.co.uk/img/media/74885ce94e680456e71b9928320bb12bb46f9f09/129_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=e1bffde5a07373dda8bce9bb683ba1a0",
+      "imageWidth": 700,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "f1d7cb977c4c",
+      "title": "Democrat Mary Peltola and Republican Dan Sullivan lead in Alaska primary for US Senate – US politics live",
+      "summary": "Incumbent Sullivan is running for third term while Peltola is fighting to flip seat and aid Democrats retake control of Congress Democratic socialist Angie Nixon clinches surprise win in Florida Sign up for the US Breaking News email Those unfamiliar with…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/19/mary-peltola-dan-sullivan-alaska-primary-election-us-senate-florida-california-wyoming--donald-trump-us-politics-latest",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-19T13:31:21.000Z",
+      "image": "https://i.guim.co.uk/img/media/45b7fd2d28e47c87029bf05b371a20e14c31d3a9/222_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=66e1b9885557c862b2e048df7b839919",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "aceaea93f58f",
       "title": "Trump is full speed ahead in making money off being the US president | Margaret Sullivan",
@@ -17,22 +49,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "f1d7cb977c4c",
-      "title": "Democrat Mary Peltola and Republican Dan Sullivan lead in Alaska primary for US Senate – US politics live",
-      "summary": "Incumbent Sullivan is running for third term while Peltola is fighting to flip seat and aid Democrats retake control of Congress Democratic socialist Angie Nixon clinches surprise win in Florida Sign up for the US Breaking News email Those unfamiliar with…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/19/mary-peltola-dan-sullivan-alaska-primary-election-us-senate-florida-california-wyoming--donald-trump-us-politics-latest",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-19T13:10:51.000Z",
-      "image": "https://i.guim.co.uk/img/media/45b7fd2d28e47c87029bf05b371a20e14c31d3a9/222_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=66e1b9885557c862b2e048df7b839919",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -209,22 +225,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "728f3c62fc51",
-      "title": "Forecast energy price cap rise in Britain could push UK fuel bills up 4% this winter",
-      "summary": "Expected quarterly rise highest in three years and likely to wipe out Burnham’s VAT cut on electricity bills Household energy bills across Great Britain are expected to climb to a three-year high this winter as the impact of the Middle East war wipes out Andy…",
-      "url": "https://www.theguardian.com/money/2026/aug/19/forecast-energy-price-cap-rise-britain-winter",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-19T12:11:04.000Z",
-      "image": "https://i.guim.co.uk/img/media/70d86f585be955b16725a7b6633ea20383d417ad/155_0_3351_2682/master/3351.jpg?width=700&quality=85&auto=format&fit=max&s=4ba4431d5ab21424317d2cfabdccd4ee",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -485,8 +485,8 @@
     },
     {
       "id": "e0db76659d56",
-      "title": "Ukraine anti-graft agencies uncover alleged laundering group tied to presidential official",
-      "summary": "Ukraine's ⁠anti-graft agencies ​said on Wednesday ​they had uncovered a group including a presidential official ​that ‌had laundered ⁠150 million hryvnias ($3.35 ‌million) used to pay for bail ⁠in an energy corruption scheme.",
+      "title": "Zelensky fires top presidential aide after anti-graft agencies reveal corruption probe",
+      "summary": "Ukrainian President Volodymyr Zelensky on Wednesday dismissed his deputy chief-of-staff Iryna Mudra after the country’s anti-graft agencies announced they were raiding the homes of a senior official from the president's office and a sitting member of…",
       "url": "https://www.france24.com/en/europe/20260819-ukraine-anti-graft-agencies-uncover-alleged-laundering-group-tied-to-presidential-official",
       "publisher": "France 24",
       "publisherHome": "https://www.france24.com/en",
@@ -819,22 +819,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "8455eb9e6870",
-      "title": "Iran warns countries against 'assistance or facilitation' of US army",
-      "summary": "Iran warns countries against 'assistance or facilitation' of US army The chief of staff of Iran's Armed Forces has warned neighbouring countries against allowing the US to use their territories to launch attacks against Iran. \"The countries on the southern…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-warns-countries-against-assistance-or-facilitation-us-army",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-19T06:43:22.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
