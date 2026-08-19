@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-19T20:13:54.290Z",
+  "generatedAt": "2026-08-19T20:44:48.399Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "f1d7cb977c4c",
+      "title": "‘Not another Trump sycophant’: Democrats blast Trump’s nomination of Heidi Overton for FDA chief – live",
+      "summary": "The abortion opponent stood next to the president as he made false claims about vaccines last week Trump nominates abortion opponent Heidi Overton to be head of FDA Sign up for the US Breaking News email Those unfamiliar with Alaska politics are likely…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/19/mary-peltola-dan-sullivan-alaska-primary-election-us-senate-florida-california-wyoming--donald-trump-us-politics-latest",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-19T20:23:09.000Z",
+      "image": "https://i.guim.co.uk/img/media/ab58f7029876bf45b50c3e7cfb28bbccee32b123/1329_550_2521_2017/master/2521.jpg?width=700&quality=85&auto=format&fit=max&s=06212197bb8f4f96cad7d5a76f614803",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "a2c125b08b6f",
       "title": "South Korean progressives' \"Park Chung-hee\" coalition in the AI era",
@@ -18,22 +34,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "f1d7cb977c4c",
-      "title": "‘Not another Trump sycophant’: Democrats blast Trump’s nomination of Heidi Overton for FDA chief – live",
-      "summary": "The abortion opponent stood next to the president as he made false claims about vaccines last week Trump nominates abortion opponent Heidi Overton to be head of FDA Sign up for the US Breaking News email Those unfamiliar with Alaska politics are likely…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/19/mary-peltola-dan-sullivan-alaska-primary-election-us-senate-florida-california-wyoming--donald-trump-us-politics-latest",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-19T19:59:52.000Z",
-      "image": "https://i.guim.co.uk/img/media/ab58f7029876bf45b50c3e7cfb28bbccee32b123/1329_550_2521_2017/master/2521.jpg?width=700&quality=85&auto=format&fit=max&s=06212197bb8f4f96cad7d5a76f614803",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -71,7 +71,7 @@
     {
       "id": "2ed15e53c43b",
       "title": "Another democratic socialist victory – Angie Nixon in Florida – sends shock waves through party establishment",
-      "summary": "‘They call us extreme, they call us radical,’ the progressive candidate said. ‘But I think people see through that’ US politics live – latest updates It wasn’t supposed to be this way. In conservative Florida , Alex Vindman – a retired army intelligence…",
+      "summary": "‘They call us extreme, they call us radical,’ the progressive Senate candidate said. ‘But I think people see through that’ US politics live – latest updates It wasn’t supposed to be this way. In conservative Florida , Alex Vindman – a retired army…",
       "url": "https://www.theguardian.com/us-news/2026/aug/19/angie-nixon-florida-democratic-socialist",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -966,22 +966,6 @@
       "weight": 2
     },
     {
-      "id": "a0f358d0028f",
-      "title": "Iran issues warning against Arab states aiding US, as UAE cuts economic ties",
-      "summary": "Iran issues warning against Arab states aiding US, as UAE cuts economic ties Submitted by MEE staff on Wed, 08/19/2026 - 12:18 Tehran's armed forces chief says 'any assistance or facilitation provided to the aggressor US military amounts to participation' in…",
-      "url": "https://www.middleeasteye.net/news/iran-issues-warning-against-arab-states-aiding-us-uae-cuts-economic-ties",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-19T12:51:07.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "a34f8c41c5f5",
       "title": "India-Japan Defense Technology Cooperation Hinges on Industrial Endurance",
       "summary": "There is a marked asymmetry between high-powered India-Japan diplomacy and their uneven industrial integration.",
@@ -1143,7 +1127,7 @@
     },
     {
       "id": "a3637cf0407f",
-      "title": "Live: Ukraine’s new defence minister takes office as popular predecessor calls for presidential vote",
+      "title": "Ukraine’s new defence minister takes office as popular predecessor calls for presidential vote",
       "summary": "Ukrainian lawmakers approved former top special forces operative Yevhenii Khmara as the country’s new defence minister Wednesday, just hours after his predecessor Mykhailo Fedorov called for fresh presidential elections. Elections have been banned in Ukraine…",
       "url": "https://www.france24.com/en/europe/20260819-ukraine-live-zelensky-fires-deputy-head-of-presidential-office-as-corruption-probe-unfolds",
       "publisher": "France 24",
