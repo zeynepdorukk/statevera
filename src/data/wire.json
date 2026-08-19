@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T23:35:28.202Z",
+  "generatedAt": "2026-08-19T23:56:19.573Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -52,19 +52,19 @@
       "weight": 2
     },
     {
-      "id": "f7dc350976c5",
-      "title": "Australia politics live: ‘outraged’ Wong to call in Israel ambassador over handling of Frankcom killing; Victoria to launch construction royal commission",
-      "summary": "Foreign affairs minister says timing of IDF decision not to pursue criminal investigation was ‘especially insulting’. Follow today’s news live Get our breaking news email , free app or daily news podcast ‘Outrageous’: Greens leader says sending Israeli…",
-      "url": "https://www.theguardian.com/australia-news/live/2026/aug/20/australian-politics-live-penny-wong-labor-government-anthony-albanese-gambling-ndis-question-time-angus-taylor-pauline-hanson-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-19T23:22:44.000Z",
-      "image": "https://i.guim.co.uk/img/media/e1bae47405ce5efb2d9e0a305a6725c13c98b8d4/962_0_6827_5464/master/6827.jpg?width=700&quality=85&auto=format&fit=max&s=defe1a6eee1e7da8c8c4c14b8a18dc67",
-      "imageWidth": 700,
-      "category": "Diplomacy",
+      "id": "92b8494b2739",
+      "title": "Pentagon quizzes NATO allies on political loyalty, documents reveal",
+      "summary": "NATO allies probed on loyalty to US policies in Pentagon questionnaire obtained exclusively by Al Jazeera.",
+      "url": "https://www.aljazeera.com/news/2026/8/19/pentagon-quizzes-nato-allies-on-political-loyalty-documents-reveal?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-19T23:24:43.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
       "categoryConfidence": "high",
-      "region": "Middle East",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -598,22 +598,6 @@
       "weight": 3
     },
     {
-      "id": "a98edf7a229d",
-      "title": "Hamas condemns ‘new war crime’ as Israel kills 10 in crowded Gaza hubs",
-      "summary": "Israeli air strikes on Gaza kill 10 Palestinians, targeting police headquarters and a refugee camp in separate attacks.",
-      "url": "https://www.aljazeera.com/news/2026/8/19/hamas-condemns-new-war-crime-as-israel-kills-10-in-crowded-gaza-hubs?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-19T17:14:21.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "aff10ed42749",
       "title": "Volodymyr Zelenskyy sacks senior aide amid Ukraine corruption crisis",
       "summary": "Presidential deputy chief of staff Iryna Mudra dismissed day after former defence minister called for wartime election Ukraine’s president Volodymyr Zelenskyy has fired a senior aide amid a fresh corruption investigation – one day after a former defence…",
@@ -963,22 +947,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "2d253244e4b6",
-      "title": "EU moves to ease subsidy rules for small media",
-      "summary": "Revised state aid rules prioritize SMEs, innovation and social inclusion.",
-      "url": "https://www.politico.eu/article/eu-moves-to-ease-subsidy-rules-for-small-media/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-19T14:43:41.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
