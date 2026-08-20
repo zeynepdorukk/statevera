@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-20T08:23:33.450Z",
+  "generatedAt": "2026-08-20T09:02:39.956Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "befdf237dcbb",
+      "title": "An open letter to Iran’s political prisoners, trapped ‘between two blades of a scissors’",
+      "summary": "On one side, you face the domination of the Islamic Republic; on the other, the imperialist forces that Republic claims to stand against August marks the anniversary of the 1988 mass executions in Iran, a horror that echoes in the country’s current surge in…",
+      "url": "https://www.theguardian.com/commentisfree/ng-interactive/2026/aug/20/iran-political-prisoners",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
+      "publishedAt": "2026-08-20T09:00:48.000Z",
+      "image": "https://i.guim.co.uk/img/media/a5fe934479282dcc8edcce745a11c7f3ec616fc1/0_0_3498_2797/master/3498.jpg?width=700&quality=85&auto=format&fit=max&s=2e47e004ee3e264bad9c53c88b8ba3b8",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "69d3bedf1217",
+      "title": "ICC says US sanctions 'flagrant attack' on court independence",
+      "summary": "The International Criminal Court on Wednesday lashed out at the United States after Washington slapped sanctions on ICC President Tomoko Akane, calling it a \"flagrant attack\" on the court's independence. The US sanctioned Akane of Japan and trial lawyer…",
+      "url": "https://www.france24.com/en/video/20260820-icc-says-us-sanctions-flagrant-attack-on-court-independence",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-20T08:55:15.000Z",
+      "image": "https://s.france24.com/media/display/178c865e-9c74-11f1-add8-005056a97e36/w:1024/p:16x9/EN-20260820-100633-101034-CS.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "cc57c272b3d4",
+      "title": "North Korea fires possible ballistic missile toward sea",
+      "summary": "The launch came hours after US President Trump announced plans to meet Kim Jong Un later this year.",
+      "url": "https://www.dw.com/en/north-korea-fires-possible-ballistic-missile-toward-sea/a-78440280?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-20T08:32:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "0142e86e6d75",
       "title": "Regional body says Haiti need help ahead of holding first election in a decade",
@@ -17,22 +65,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "29c6fd446fce",
-      "title": "Russia launches ‘massive attack’ on Kyiv and surrounding region – Europe live",
-      "summary": "Zelenskyy says Russia had been preparing for a long time, combining different types of missiles Ukraine’s air ⁠force said that Russia ⁠had ⁠launched dozens ​of ballistic, cruise, and ⁠hypersonic missiles, as well as 168 ⁠drones in ​its ‌overnight attack ‌on…",
-      "url": "https://www.theguardian.com/world/live/2026/aug/20/ukraine-volodymyr-zelenskyy-russia-vladimir-putin-kyiv-europe-live-latest-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-20T08:01:32.000Z",
-      "image": "https://i.guim.co.uk/img/media/77c1832c7ea20d7d0fafe3357d5ef4f29ed73888/529_0_4169_3335/master/4169.jpg?width=700&quality=85&auto=format&fit=max&s=1b9c57011094a8f8810b773e2dea11b5",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -182,7 +214,7 @@
     {
       "id": "90edd41003a9",
       "title": "Bangladesh holds presidential election in first contested vote in 35 years",
-      "summary": "BNP's Mirza Fakhrul Islam Alamgir is pitted against ex-army officer Oli Ahmed, nominee of Jamaat-led 11-party alliance.",
+      "summary": "BNP's Mirza Fakhrul Islam Alamgir is pitted against ex-army officer Oli Ahmad, nominee of Jamaat-led 11-party alliance.",
       "url": "https://www.aljazeera.com/news/2026/8/20/bangladesh-holds-presidential-election-in-first-contested-vote-in-35-years?traffic_source=rss",
       "publisher": "Al Jazeera",
       "publisherHome": "https://www.aljazeera.com",
@@ -534,22 +566,6 @@
       "weight": 2
     },
     {
-      "id": "e68fe4f445db",
-      "title": "Iran war live: Tehran says Trump’s new economic measures will fail",
-      "summary": "Trump says Washington may resume talks with Tehran 'at some point'.",
-      "url": "https://www.aljazeera.com/news/liveblog/2026/8/20/iran-war-live-trump-announces-most-crushing-iran-sanctions?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-20T00:00:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "dfa1b83ab927",
       "title": "Middle East live: Trump threatens economic punishment on 'any country' helping Iran",
       "summary": "⁠US President ​Donald Trump on Wednesday ​warned of economic consequences against any country that ​supported ‌Tehran or ⁠provided \"any type of lifeline ‌to Iran.\" He ​did not specify ​what specific ​steps Washington would take against such ​a country and did…",
@@ -566,25 +582,9 @@
       "weight": 2
     },
     {
-      "id": "92b8494b2739",
-      "title": "Pentagon quizzes NATO allies on political loyalty, documents reveal",
-      "summary": "NATO allies probed on loyalty to US policies in Pentagon questionnaire obtained exclusively by Al Jazeera.",
-      "url": "https://www.aljazeera.com/news/2026/8/19/pentagon-quizzes-nato-allies-on-political-loyalty-documents-reveal?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-19T23:24:43.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "dd468abe1d3b",
-      "title": "Who is Natalie Harp, Trump's right-hand woman?",
-      "summary": "One of Trump's longest serving and most loyal aides, Harp was thrust again into the spotlight when Democrat Jon Ossoff noted her closeness to the president.",
+      "title": "Key Trump aide Natalie Harp suddenly in spotlight after years behind scenes",
+      "summary": "Democratic Senator Jon Ossoff used a speech to note the closeness of one aide to the president.",
       "url": "https://www.bbc.co.uk/news/articles/c80nzdjgmk3o?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
       "publisherHome": "https://www.bbc.com/news/world",
@@ -626,22 +626,6 @@
       "imageWidth": 0,
       "category": "Geopolitics",
       "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "b3dd81832fe2",
-      "title": "US elections: Progressive Democrat scores shock win in Florida",
-      "summary": "US elections: Progressive Democrat scores shock win in Florida Submitted by MEE staff on Wed, 08/19/2026 - 21:22 Voters delivered a mixed bag for US President Donald Trump's allies in Republican primaries Democratic US Senate candidate, Florida state…",
-      "url": "https://www.middleeasteye.net/news/us-elections-progressive-democrat-scores-shock-win-florida",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-19T21:21:43.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     },
@@ -805,22 +789,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "aee215cf5603",
-      "title": "AUKUS only works if Britain’s submarine town does",
-      "summary": "Barrow-in-Furness must deliver subs at an unprecedented pace, as it repairs decades of underinvestment in housing, skills and public services.",
-      "url": "https://www.politico.com/news/2026/08/19/aukus-britain-submarine-town-01041456?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-19T18:59:36.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -1144,22 +1112,6 @@
       "weight": 2
     },
     {
-      "id": "ba79a3558e41",
-      "title": "Libyan government in Tunisia for crisis talks",
-      "summary": "On Tuesday, Libya's national oil corporation said the country needs around 40 billion dollars in investment to make the most of its energy resources. The country's unreliable access to energy is feeding into instability stemming from fighting between rival…",
-      "url": "https://www.france24.com/en/video/20260819-libyan-government-in-tunisia-for-crisis-talks",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T15:40:46.000Z",
-      "image": "https://s.france24.com/media/display/60ce73be-9bdd-11f1-968e-005056bfb2b6/w:1024/p:16x9/EN-20260818-215001-215207-CS.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "e4ea8d1c5ac4",
       "title": "Why is Ukraine's ex-defence minister calling for wartime elections?",
       "summary": "Mykhailo Fedorov has called for elections, without addressing concerns over how they could be held while at war.",
@@ -1304,38 +1256,6 @@
       "weight": 3
     },
     {
-      "id": "de992e83f8d1",
-      "title": "Zelensky's office probed for corruption as fired defence minister demands elections",
-      "summary": "Ukrainian anti-corruption agencies announced Wednesday that they are investigating senior officials in President Volodymyr Zelenskyy's office, a day after the country’s recently fired defence minister called for national elections despite the ongoing fight…",
-      "url": "https://www.france24.com/en/video/20260819-zelensky-s-office-probed-for-corruption-as-fired-defence-minister-demands-elections",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T14:37:26.000Z",
-      "image": "https://s.france24.com/media/display/72b58378-9bd4-11f1-8a8b-005056bf30b7/w:1024/p:16x9/EN-20260819-150109-150508-CS.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "ca4cdc637dec",
-      "title": "Turkey slams Israel's 'untenable' claims after strikes on Syrian base",
-      "summary": "Turkey firmly rejected on Wednesday ⁠what it called \"untenable ​allegations\" by Israel regarding its military position in Syria, after Israel bombed a Syrian air base near ​the Turkish border and said Syria was on the verge of permitting Turkish troops to…",
-      "url": "https://www.france24.com/en/video/20260819-turkey-slams-israel-s-untenable-claims-after-strikes-on-syrian-base",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T14:35:12.000Z",
-      "image": "https://s.france24.com/media/display/b7d2c04c-9bd4-11f1-9706-005056bf30b7/w:1024/p:16x9/EN-20260819-150530-150814-CS.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "7d0511ae25ff",
       "title": "Russia and Ukraine Exchange 103 Prisoners Each in Latest Swap",
       "summary": "Russia and Ukraine have exchanged 103 prisoners each in their latest wartime swap, with the United Arab Emirates acting as mediator. The release offers another rare point of cooperation between the two sides as diplomatic efforts to end the conflict remain…",
@@ -1432,22 +1352,6 @@
       "weight": 2
     },
     {
-      "id": "ae972b61be55",
-      "title": "ICC slams United States sanctions against top court staff",
-      "summary": "It measures against the ICC president and a senior trial lawyer are the latest salvo by Washington against the court which it accuses of being \"politicised\".",
-      "url": "http://www.africanews.com/2026/08/19/icc-slams-united-states-sanctions-against-top-court-staff/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-19T13:12:47.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/88/05/49/640x360_cmsv2_2ff44b16-e24c-5e8c-806b-77e6d3e9ca7e-9880549.jpg?1787138970",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "a34f8c41c5f5",
       "title": "India-Japan Defense Technology Cooperation Hinges on Industrial Endurance",
       "summary": "There is a marked asymmetry between high-powered India-Japan diplomacy and their uneven industrial integration.",
@@ -1493,6 +1397,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "9a72c004d5e4",
+      "title": "Germany stands by International Criminal Court president as US steps up sanctions",
+      "summary": "Berlin criticizes latest US sanctions against ICC, warns against undermining court's vital work in prosecuting crimes against humanity",
+      "url": "https://www.aa.com.tr/en/europe/germany-stands-by-international-criminal-court-president-as-us-steps-up-sanctions/4031737",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-19T12:25:37.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -1915,23 +1835,6 @@
       "weight": 2
     },
     {
-      "id": "8eff0d09cca5",
-      "title": "Bluefin tuna quota increase agreed on as population recovers",
-      "summary": "",
-      "url": "https://asia.nikkei.com/spotlight/environment/bluefin-tuna-quota-increase-agreed-on-as-population-recovers",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-18T22:18:04.310Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "cb4989939df7",
       "title": "How Feasible Is a European Nuclear Deterrent Without Washington?",
       "summary": "In 2025, James Cameron wrote, “Eurodeterrent: A Vision for an Anglo-French Nuclear Force,” where he argued the United Kingdom and France should cooperate to develop a nuclear deterrent umbrella for Europe, independent of Washington. A year later, after French…",
@@ -2009,22 +1912,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "23d4a8343de3",
-      "title": "Aston Villa agree deal for West Ham's Wan-Bissaka",
-      "summary": "Aston Villa agree to sign West Ham defender Aaron Wan-Bissaka on an initial loan deal with an obligation to buy at the end of the season.",
-      "url": "https://www.bbc.co.uk/sport/football/articles/cgr7vvpkw0eo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/africa",
-      "sourceId": "bbc-africa",
-      "publishedAt": "2026-08-18T17:56:13.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8aec/live/1293ff20-9b1a-11f1-a8a4-83462463c9fa.jpg",
-      "imageWidth": 240,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Africa",
       "weight": 2
     },
     {
@@ -3004,22 +2891,6 @@
       "weight": 2
     },
     {
-      "id": "ac62d2ad884d",
-      "title": "In Germany, record heat meets climate action fatigue",
-      "summary": "Climate action does not seem to be a priority for the German government — despite record temperatures, heat-related deaths and drought. Why aren't more people taking to the streets in protest?",
-      "url": "https://www.dw.com/en/in-germany-record-heat-meets-climate-action-fatigue/a-78374727?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-15T14:51:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "be0547c48ba1",
       "title": "Israeli strikes on southern Lebanon kill 11 in worst toll since June truce",
       "summary": "Rescue services search for survivors and bodies after airstrikes hit homes in Ansar and Deir al-Zahrani Eleven people have been killed, including three children, and 19 injured in two Israeli airstrikes on southern Lebanon, the worst toll since deals in June…",
@@ -3065,22 +2936,6 @@
       "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "c56a140b572c",
-      "title": "Israeli military plans to transfer law enforcement in occupied West Bank to police",
-      "summary": "Palestine’s vice-president calls plan ‘flagrant violation of international law’ and a step towards full Israeli annexation Israel’s defence minister wants to transfer law enforcement powers for Israelis in the occupied West Bank over to the police, a plan…",
-      "url": "https://www.theguardian.com/world/2026/aug/14/israeli-military-plans-transfer-law-enforcement-in-occupied-west-bank-to-police",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-14T17:52:51.000Z",
-      "image": "https://i.guim.co.uk/img/media/b3ca7d7b89c8fea93d13e3268882fcc9a706ce5d/912_0_4560_3648/master/4560.jpg?width=700&quality=85&auto=format&fit=max&s=086c23ec64e85256fca305425a281826",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
