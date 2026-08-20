@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-20T17:53:09.326Z",
+  "generatedAt": "2026-08-20T18:20:55.413Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "7a114dd1a1f6",
+      "title": "With war in the region, Egypt must recalibrate its energy policy",
+      "summary": "Egypt needs a two-track strategy, accelerating its green energy buildout while managing its natural gas reserves for sustained output. The post With war in the region, Egypt must recalibrate its energy policy appeared first on Atlantic Council .",
+      "url": "https://www.atlanticcouncil.org/blogs/menasource/with-war-in-the-region-egypt-must-recalibrate-its-energy-policy/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-20T18:12:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Middle East",
+      "weight": 3
+    },
+    {
+      "id": "e7e9f84437cb",
+      "title": "FBI raids Eric Swalwell’s home amid sexual assault claims inquiry – report",
+      "summary": "Federal agents also ‘seized electronic devices’ from former Democratic representative at San Francisco airport Authorities are said to have searched the Washington DC home of disgraced former California Democratic representative Eric Swalwell on Sunday amid…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/20/fbi-raid-eric-swalwell-home",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-20T18:10:18.000Z",
+      "image": "https://i.guim.co.uk/img/media/c6c5f87b121fabc8a2e0e1c51d4de4ea1adca3d3/815_0_4638_3711/master/4638.jpg?width=700&quality=85&auto=format&fit=max&s=6c9333a29c9de01964526886457e9822",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "9ed879ed876b",
+      "title": "Opening Africa’s skies to trade, growth, and jobs",
+      "summary": "Air transport in Africa could be a powerful multiplier of growth, underpin regional trade, and fuel skilled job creation. What's holding the continent's air travel sector back? The post Opening Africa’s skies to trade, growth, and jobs appeared first on…",
+      "url": "https://www.atlanticcouncil.org/in-depth-research-reports/issue-brief/opening-africas-skies-to-trade-growth-and-jobs/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-20T18:07:07.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 3
+    },
     {
       "id": "2c10247c4fb0",
       "title": "Japan's Takaichi eyes September cabinet shuffle to cement power base",
@@ -21,6 +69,22 @@
       "weight": 2
     },
     {
+      "id": "59643912b834",
+      "title": "Cameroon's President Biya returns home after unexplained 10-week absence",
+      "summary": "President Paul Biya, 93, returned to Cameroon on Thursday, after a 73-day absence that fuelled speculation about his health.",
+      "url": "http://www.africanews.com/2026/08/20/cameroons-president-biya-returns-home-after-unexplained-10-week-absence/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-20T17:38:21.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/88/27/22/640x360_cmsv2_5634a238-e494-50ad-8c65-c441824a51d5-9882722.jpg?1787244624",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
       "id": "d3cc65e96dde",
       "title": "Reform’s new economic adviser has called for end of pensioners’ triple lock",
       "summary": "Exclusive: Mitchell Palmer has also argued for privatising the NHS and immigration as way of cutting poverty Reform UK’s new economic adviser has previously called the pensions triple lock unsustainable, advocated privatising the NHS and welcomed migration as…",
@@ -34,6 +98,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "4b65a5b24895",
+      "title": "Bangladesh elects ruling party veteran Alamgir as president",
+      "summary": "Bangladesh elects Mirza Fakhrul Islam Alamgir by parliamentary vote, filling vacancy after Shahabuddin's resignation.",
+      "url": "https://www.aljazeera.com/news/2026/8/20/bangladesh-elects-ruling-party-veteran-alamgir-as-president?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-20T17:35:34.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -300,14 +380,14 @@
       "summary": "Max Lederer, longtime head of the US military news outlet, says his ‘philosophy of leadership’ differs from Pentagon’s The long-serving publisher of Stars and Stripes could face an early dismissal just days after the taxpayer-funded military news outlet’s…",
       "url": "https://www.theguardian.com/us-news/2026/aug/20/stars-and-stripes-publisher-firing-uss-abraham-lincoln",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-20T15:18:58.000Z",
       "image": "https://i.guim.co.uk/img/media/17197d95ed687df8be54e0d9c7cb3a0f2de145bd/715_379_2814_2253/master/2814.jpg?width=700&quality=85&auto=format&fit=max&s=f7ff75147a59d6eda79e4d8046edfbdb",
       "imageWidth": 700,
       "category": "Security",
       "categoryConfidence": "medium",
-      "region": "Global",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -536,22 +616,6 @@
       "weight": 3
     },
     {
-      "id": "f53a06b2a64d",
-      "title": "Bangladesh lawmakers elect BNP's Alamgir as president",
-      "summary": "The longtime opposition figure's party came to power after the 2024 revolution, which ousted the government of Sheikh Hasina.",
-      "url": "https://www.dw.com/en/bangladesh-lawmakers-elect-bnp-s-alamgir-as-president/a-78438534?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-20T12:24:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "2c153704eab9",
       "title": "As elections near, South Sudan risks new atrocity crimes, warns rights probe",
       "summary": "The under-reported humanitarian crisis in South Sudan risks deepening with the real possibility of further atrocity crimes unless renewed fighting stops, a UN-backed probe said on Thursday.",
@@ -678,22 +742,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "1180ec95546f",
-      "title": "From McDonald’s to Congress: can a former fry cook flip a key district for Democrats?",
-      "summary": "Manny Rutinel hopes price-tag politics can win key voters in Colorado House race During his presidential campaign in October 2024, Donald Trump staged a photo op at a McDonald’s franchise in Pennsylvania, where he was briefly taught how to work the fryer and…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/20/mcdonalds-congress-affordability-democrats",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-20T11:00:50.000Z",
-      "image": "https://i.guim.co.uk/img/media/e1a4e010d53891e6dbd61b6fdf2298360d3b2475/436_0_3942_3153/master/3942.jpg?width=700&quality=85&auto=format&fit=max&s=697866e43a98c959235c571ea90d0e70",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -1406,22 +1454,6 @@
       "weight": 2
     },
     {
-      "id": "aff10ed42749",
-      "title": "Volodymyr Zelenskyy sacks senior aide amid Ukraine corruption crisis",
-      "summary": "Presidential deputy chief of staff Iryna Mudra dismissed day after former defence minister called for wartime election Ukraine’s president Volodymyr Zelenskyy has fired a senior aide amid a fresh corruption investigation – one day after a former defence…",
-      "url": "https://www.theguardian.com/world/2026/aug/19/volodymyr-zelenskyy-sacks-senior-aide-amid-ukraine-corruption-crisis",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-19T17:14:02.000Z",
-      "image": "https://i.guim.co.uk/img/media/3ad34a2f1bf432f48e58f951effb20d0fc3e6d49/376_0_4646_3715/master/4646.jpg?width=700&quality=85&auto=format&fit=max&s=6bc524e4ab84f9816d3290bffc763ab0",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "1f8b7b39623f",
       "title": "US retail giant receives $1bn boost from tariff refunds",
       "summary": "The US chain said it received a $994 million pre-tax reimbursement, which resulted in its second quarter operating income rising to $2.6bn.",
@@ -1497,22 +1529,6 @@
       "image": "http://images.euronews.com/articles/stories/09/88/10/09/640x360_cmsv2_080965ac-2e33-5bf9-92c5-c9aa9d7b9e27-9881009.jpg?1787150613",
       "imageWidth": 0,
       "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "eab5ac66db9f",
-      "title": "Inflation and security top voter concerns as Nigeria election campaign kicks off",
-      "summary": "Campaigning for Nigeria’s general election got underway on Wednesday and voters are already making one thing clear: they want straight answers from the candidates about how they’ll improve the lives of citizens.",
-      "url": "http://www.africanews.com/2026/08/19/inflation-and-security-top-voter-concerns-as-nigeria-election-campaign-kicks-off/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-19T16:35:52.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/88/10/11/640x360_cmsv2_7490e249-e4b2-53df-87b3-193cc20f277e-9881011.jpg?1787150919",
-      "imageWidth": 0,
-      "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
       "weight": 2
@@ -1651,14 +1667,14 @@
       "summary": "Interest rates, now sitting at about 3.5-3.7%, expected to go up if inflation doesn’t come down to Fed’s 2% target The US treasury is doubling its buyback of government debt in an effort to balance out the bond market as officials at the US Federal Reserve…",
       "url": "https://www.theguardian.com/business/2026/aug/19/us-treasury-doubles-debt-buyback-bond-market",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-19T14:57:21.000Z",
       "image": "https://i.guim.co.uk/img/media/449472a28109524fc7a64a3254660bc9eef9b431/639_357_4138_3310/master/4138.jpg?width=700&quality=85&auto=format&fit=max&s=6825eb984e611291e3c892af1091a514",
       "imageWidth": 700,
       "category": "Economy",
       "categoryConfidence": "high",
-      "region": "Global",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -2254,22 +2270,6 @@
       "weight": 3
     },
     {
-      "id": "835fc266bc66",
-      "title": "Braw in Financial Times on EU defence executives’ safety",
-      "summary": "On August 18, Elisabeth Braw was published in Financial Times in an article about how the threat of violence looms over Europe’s business leaders. The post Braw in Financial Times on EU defence executives’ safety appeared first on Atlantic Council .",
-      "url": "https://www.atlanticcouncil.org/uncategorized/braw-in-financial-times-on-eu-defence-executives-safety/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-18T15:14:26.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 3
-    },
-    {
       "id": "5e9f86c00587",
       "title": "Cooling UK labour market ‘questions need’ for Bank of England rate hikes; grocery inflation slows to two-year low – as it happened",
       "summary": "Youth unemployment down to 16.2% but remains at high level; Brent crude climbs above $91 a barrel as US-Iran ceasefire ends The retail billionaire Mike Ashley has given the latest indication that his summer shopping spree may be far from over, after he…",
@@ -2332,22 +2332,6 @@
       "categoryConfidence": "high",
       "region": "Turkey",
       "weight": 2
-    },
-    {
-      "id": "a6a8932b7f5f",
-      "title": "So what’s the strategy for democracy in 2026?",
-      "summary": "Host Matthew Kroening is joined by Damon Wilson, president and CEO of the National Endowment for Democracy, to discuss the state of global democracy in 2026. Wilson explains why strong democratic allies are critical to the security of the United States. The…",
-      "url": "https://www.atlanticcouncil.org/commentary/podcast/so-whats-the-strategy-for-democracy-in-2026/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-18T13:35:39.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 3
     },
     {
       "id": "7fb8bb526d29",
