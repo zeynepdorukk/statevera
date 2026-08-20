@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T07:54:12.000Z",
+  "updatedAt": "2026-08-20T08:23:44.000Z",
   "quotes": [
     {
       "id": "spx",
@@ -9,7 +9,7 @@
       "price": 7707.98,
       "change": 16.219999999999345,
       "percent": 0.21087501430100972,
-      "updatedAt": "2026-08-19T20:00:00.000Z"
+      "updatedAt": "2026-08-19T20:38:31.000Z"
     },
     {
       "id": "ixic",
@@ -36,20 +36,20 @@
       "label": "STOXX",
       "symbol": "^STOXX50E",
       "decimals": 2,
-      "price": 6440.8,
-      "change": -3.6599999999998545,
-      "percent": -0.056792966361803074,
-      "updatedAt": "2026-08-20T07:39:00.000Z"
+      "price": 6435.78,
+      "change": -8.680000000000291,
+      "percent": -0.1346893300602423,
+      "updatedAt": "2026-08-20T08:08:30.000Z"
     },
     {
       "id": "ftse",
       "label": "FTSE",
       "symbol": "^FTSE",
       "decimals": 2,
-      "price": 10714.94,
-      "change": -28.409999999999854,
-      "percent": -0.26444265522392785,
-      "updatedAt": "2026-08-20T07:39:12.000Z"
+      "price": 10710.3,
+      "change": -33.05000000000109,
+      "percent": -0.3076321631520996,
+      "updatedAt": "2026-08-20T08:08:43.000Z"
     },
     {
       "id": "n225",
@@ -66,20 +66,20 @@
       "label": "BIST100",
       "symbol": "XU100.IS",
       "decimals": 2,
-      "price": 14420.79,
-      "change": -38.18999999999869,
-      "percent": -0.2641265151483624,
-      "updatedAt": "2026-08-20T07:39:11.000Z"
+      "price": 14392.36,
+      "change": -66.61999999999898,
+      "percent": -0.46075172660864727,
+      "updatedAt": "2026-08-20T08:08:43.000Z"
     },
     {
       "id": "hsi",
       "label": "HANG SENG",
       "symbol": "^HSI",
       "decimals": 2,
-      "price": 25739.41,
-      "change": 268.2099999999991,
-      "percent": 1.0529931844593075,
-      "updatedAt": "2026-08-20T07:39:10.000Z"
+      "price": 25726.23,
+      "change": 255.02999999999884,
+      "percent": 1.001248468858942,
+      "updatedAt": "2026-08-20T08:08:42.000Z"
     },
     {
       "id": "kospi",
@@ -106,70 +106,70 @@
       "label": "BRENT",
       "symbol": "BZ=F",
       "decimals": 2,
-      "price": 93.06,
-      "change": 1.4399999999999977,
-      "percent": 1.571709233791746,
-      "updatedAt": "2026-08-20T07:44:03.000Z"
+      "price": 92.82,
+      "change": 1.1999999999999886,
+      "percent": 1.3097576948264447,
+      "updatedAt": "2026-08-20T08:13:21.000Z"
     },
     {
       "id": "gold",
       "label": "GOLD",
       "symbol": "GC=F",
       "decimals": 2,
-      "price": 4547.2,
-      "change": 1.8999999999996362,
-      "percent": 0.04180142124831444,
-      "updatedAt": "2026-08-20T07:44:10.000Z"
+      "price": 4549,
+      "change": 3.699999999999818,
+      "percent": 0.0814027676940976,
+      "updatedAt": "2026-08-20T08:13:36.000Z"
     },
     {
       "id": "wti",
       "label": "WTI",
       "symbol": "CL=F",
       "decimals": 2,
-      "price": 85.68,
-      "change": 1.2900000000000063,
-      "percent": 1.5286171347316106,
-      "updatedAt": "2026-08-20T07:44:11.000Z"
+      "price": 85.52,
+      "change": 1.1299999999999955,
+      "percent": 1.339021211043957,
+      "updatedAt": "2026-08-20T08:13:43.000Z"
     },
     {
       "id": "copper",
       "label": "COPPER",
       "symbol": "HG=F",
       "decimals": 2,
-      "price": 6.462,
-      "change": -0.034000000000000696,
-      "percent": -0.5233990147783358,
-      "updatedAt": "2026-08-20T07:43:50.000Z"
+      "price": 6.464,
+      "change": -0.03200000000000003,
+      "percent": -0.4926108374384241,
+      "updatedAt": "2026-08-20T08:13:34.000Z"
     },
     {
       "id": "usdtry",
       "label": "USD/TRY",
       "symbol": "USDTRY=X",
       "decimals": 2,
-      "price": 47.9489,
-      "change": 0.0031000000000034333,
-      "percent": 0.0064656341118584605,
-      "updatedAt": "2026-08-20T07:54:11.000Z"
+      "price": 47.87,
+      "change": -0.07580000000000098,
+      "percent": -0.1580951824768822,
+      "updatedAt": "2026-08-20T08:23:43.000Z"
     },
     {
       "id": "eurusd",
       "label": "EUR/USD",
       "symbol": "EURUSD=X",
       "decimals": 4,
-      "price": 1.1692,
-      "change": 0.001000000000000112,
-      "percent": 0.08560178051704434,
-      "updatedAt": "2026-08-20T07:53:58.000Z"
+      "price": 1.1697,
+      "change": 0.0015000000000000568,
+      "percent": 0.128402670775557,
+      "updatedAt": "2026-08-20T08:22:53.000Z"
     },
     {
       "id": "usdjpy",
       "label": "USD/JPY",
       "symbol": "JPY=X",
       "decimals": 2,
-      "price": 158.46,
-      "change": 0.36199999999999477,
-      "percent": 0.2289719035028873,
-      "updatedAt": "2026-08-20T07:54:12.000Z"
+      "price": 158.401,
+      "change": 0.30299999999999727,
+      "percent": 0.1916532783463404,
+      "updatedAt": "2026-08-20T08:23:44.000Z"
     },
     {
       "id": "us10y",
