@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T20:43:05.531Z",
+  "generatedAt": "2026-08-20T21:03:27.329Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -21,6 +21,22 @@
       "weight": 2
     },
     {
+      "id": "afd4fafdc61c",
+      "title": "US places sanctions on 10 people over alleged Hezbollah cash-smuggling ring",
+      "summary": "Courier network carried millions of dollars in cash to Lebanon on commercial flights, treasury department says The US treasury department announced sanctions on Thursday against 10 people it says formed a courier network that smuggled hundreds of millions of…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/20/alleged-money-smuggling-sanctions-hezbollah",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-20T20:41:24.000Z",
+      "image": "https://i.guim.co.uk/img/media/b6d7c63cea90deb636eb9623d8cff9756f74ea63/520_0_5200_4160/master/5200.jpg?width=700&quality=85&auto=format&fit=max&s=514cbc6d8bcaa22ef40d77f9049ac625",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "e2eb055ea8e9",
       "title": "As pressure mounts on Putin, Russia is escalating against Ukraine’s allies",
       "summary": "With the Russian army struggling to advance in Ukraine and Ukrainian strikes increasing inside Russia, Putin is escalating his gray zone campaign against Kyiv's European allies in a bid to deprive Ukraine of vital support and rescue his faltering invasion,…",
@@ -35,6 +51,22 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
+    },
+    {
+      "id": "982b143754f5",
+      "title": "US pummels Cuban economy with new sanctions on mining, construction",
+      "summary": "US economic restrictions have strained the island's already fragile economy, prompting blackouts and medical shortages.",
+      "url": "https://www.aljazeera.com/news/2026/8/20/us-pummels-cuban-economy-with-new-sanctions-on-mining-construction?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-20T20:37:25.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
     },
     {
       "id": "5343500a6c38",
@@ -245,22 +277,6 @@
       "weight": 3
     },
     {
-      "id": "e7e9f84437cb",
-      "title": "FBI raids Eric Swalwell’s home amid sexual assault claims inquiry – report",
-      "summary": "Federal agents also ‘seized electronic devices’ from former Democratic representative at San Francisco airport Authorities are said to have searched the Washington DC home of disgraced former California Democratic representative Eric Swalwell on Sunday amid…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/20/fbi-raid-eric-swalwell-home",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-20T18:10:18.000Z",
-      "image": "https://i.guim.co.uk/img/media/c6c5f87b121fabc8a2e0e1c51d4de4ea1adca3d3/815_0_4638_3711/master/4638.jpg?width=700&quality=85&auto=format&fit=max&s=6c9333a29c9de01964526886457e9822",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "9ed879ed876b",
       "title": "Opening Africa’s skies to trade, growth, and jobs",
       "summary": "Air transport in Africa could be a powerful multiplier of growth, underpin regional trade, and fuel skilled job creation. What's holding the continent's air travel sector back? The post Opening Africa’s skies to trade, growth, and jobs appeared first on…",
@@ -286,22 +302,6 @@
       "sourceId": "nikkei-asia",
       "publishedAt": "2026-08-20T17:53:03.962Z",
       "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "4b65a5b24895",
-      "title": "Bangladesh elects ruling party veteran Alamgir as president",
-      "summary": "Bangladesh elects Mirza Fakhrul Islam Alamgir by parliamentary vote, filling vacancy after Shahabuddin's resignation.",
-      "url": "https://www.aljazeera.com/news/2026/8/20/bangladesh-elects-ruling-party-veteran-alamgir-as-president?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-20T17:35:34.000Z",
       "image": "",
       "imageWidth": 0,
       "category": "Politics",
@@ -536,6 +536,22 @@
       "weight": 2
     },
     {
+      "id": "524e30f58b28",
+      "title": "Stars and Stripes publisher could be fired before planned retirement, sources say",
+      "summary": "Max Lederer, longtime head of the US military news outlet, says his ‘philosophy of leadership’ differs from Pentagon’s The long-serving publisher of Stars and Stripes could face an early dismissal just days after the taxpayer-funded military news outlet’s…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/20/stars-and-stripes-publisher-firing-uss-abraham-lincoln",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-20T15:18:58.000Z",
+      "image": "https://i.guim.co.uk/img/media/17197d95ed687df8be54e0d9c7cb3a0f2de145bd/715_379_2814_2253/master/2814.jpg?width=700&quality=85&auto=format&fit=max&s=f7ff75147a59d6eda79e4d8046edfbdb",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "0ec5468f83c9",
       "title": "Sydney air traffic controllers have ‘grave concerns’ about collision risk after airspace redesign",
       "summary": "Exclusive: Federal government notified after whistleblower says controllers have ‘minimal confidence in their ability to handle’ rule changes related to second airport Get our breaking news email , free app or daily news podcast Air traffic controllers at…",
@@ -695,6 +711,22 @@
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 3
+    },
+    {
+      "id": "f53a06b2a64d",
+      "title": "Bangladesh lawmakers elect BNP's Alamgir as president",
+      "summary": "The longtime opposition figure's party came to power after the 2024 revolution, which ousted the government of Sheikh Hasina.",
+      "url": "https://www.dw.com/en/bangladesh-lawmakers-elect-bnp-s-alamgir-as-president/a-78438534?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-20T12:24:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
     },
     {
       "id": "2c153704eab9",
@@ -888,22 +920,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "3256a7fce435",
-      "title": "Drug-dealing, makeshift weapons and a ‘culture of fear’ at Villawood detention centre, report warns",
-      "summary": "Prolonged detention of children, insufficient staffing and hazardous damage to buildings are among the ombudsman’s concerns Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast Drugs are being…",
-      "url": "https://www.theguardian.com/australia-news/2026/aug/20/villawood-detention-centre-conditions-report-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-20T09:23:42.000Z",
-      "image": "https://i.guim.co.uk/img/media/83d9f187d7745bdb7093eec058e83d69e4c7e708/356_0_3160_2528/master/3160.jpg?width=700&quality=85&auto=format&fit=max&s=126e73854495268f9fddcbe65c420592",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -1194,22 +1210,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "ca547b480665",
-      "title": "Larry David says former friend Alan Dershowitz ‘made a deal with the devil’ as Trump’s lawyer",
-      "summary": "The Seinfeld and Curb Your Enthusiasm creator says Dershowitz, who also defended Jeffrey Epstein and Harvey Weinstein, ‘only has himself to blame’ for being ostracised Larry David has opened up about the collapse of his friendship with Alan Dershowitz, saying…",
-      "url": "https://www.theguardian.com/tv-and-radio/2026/aug/20/larry-david-alan-dershowitz-friendship-trump-epstein",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-20T04:06:54.000Z",
-      "image": "https://i.guim.co.uk/img/media/9bcbdb9e43ba55ae32bfff48c924e9a9ce2d0489/263_0_2625_2100/master/2625.jpg?width=700&quality=85&auto=format&fit=max&s=962f3ef9bebd9bd0e96d0e764cea1960",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "e43626397f85",
@@ -1549,6 +1549,22 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
+    },
+    {
+      "id": "b8bc921bcfe7",
+      "title": "Why does the U.S. military seem stymied in the war with Iran?",
+      "summary": "Defense analyst Stacie Pettyjohn says while the U.S. military is facing long-range missile shortages, prolonged deployments and vacated regional bases, Iran is building cheaper weapons quickly.",
+      "url": "https://www.npr.org/2026/08/19/nx-s1-5937516/why-does-the-u-s-military-seem-stymied-in-the-war-with-iran",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-19T16:18:35.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
     },
     {
       "id": "13af5fa6840e",
