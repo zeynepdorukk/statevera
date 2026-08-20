@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-20T05:43:39.112Z",
+  "generatedAt": "2026-08-20T06:02:32.604Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "2b9ce7f26c75",
+      "title": "Blizzards, nuclear anxiety and a fragile bond: two sisters in Japan – in pictures",
+      "summary": "Sayuri Ichida’s and her sister used to be distant – until their mother died. This exhibition traces their close relationship through sun, wind and snow Continue reading...",
+      "url": "https://www.theguardian.com/artanddesign/gallery/2026/aug/20/sayuri-ichida-two-sisters-japan-exhibition",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
+      "sourceId": "guardian-asia",
+      "publishedAt": "2026-08-20T06:00:45.000Z",
+      "image": "https://i.guim.co.uk/img/media/f50a9c685236296fc1b72bd87d2aedf72a440a9a/716_852_8536_6831/master/8536.jpg?width=700&quality=85&auto=format&fit=max&s=9e78186a34062274ad938ccd92600f1a",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "7b08722165ab",
+      "title": "Mossad chief called Syria over Turkish army presence before airbase strike: Report",
+      "summary": "Mossad chief called Syria over Turkish army presence before airbase strike: Report Mossad had phone call with Syria’s foreign minister on 14 August to discuss Turkey’s military presence in Syria, according to Reuters citing several sources. The call, made…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/mossad-chief-called-syria-over-turkish-army-presence-airbase-strike",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-20T05:52:06.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "4764beae4a12",
+      "title": "Israeli military launches criminal probes into killings of 5-year-old and paramedics",
+      "summary": "Israel's military on Wednesday announced its first criminal investigations into troop conduct in Gaza, focusing on the killings of 5-year-old Hind Rajab and her family and of 15 Palestinian paramedics.",
+      "url": "https://www.npr.org/2026/08/20/nx-s1-5939310/israeli-military-criminal-probes",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-20T05:50:53.000Z",
+      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7953x5302+0+0/resize/7953x5302!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F3f%2F15%2Ff41db4514e298ac4461aca8380b2%2Fap26231694076080.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "5aec69d31c6b",
       "title": "Bangladesh lawmakers set to elect Alamgir president",
@@ -37,7 +85,7 @@
     },
     {
       "id": "088e31d8fd42",
-      "title": "Australia 'outraged' after Israeli decision not to prosecute over killing of aid worker in Gaza",
+      "title": "Australia 'outraged' after Israel decides not to open criminal investigation into killing of aid worker in Gaza",
       "summary": "Australia's foreign minister summoned the Israeli ambassador over \"insulting\" Zomi Frankcom decision.",
       "url": "https://www.bbc.co.uk/news/articles/cp87g29r718o?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
@@ -82,6 +130,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "9ef1cb02c15d",
+      "title": "Senegal opposition presses president to set local election date",
+      "summary": "Senegal’s opposition is urging President Bassirou Diomaye Faye to set a date for local elections, turning the vote into a potential early showdown with former ally Ousmane Sonko.",
+      "url": "http://www.africanews.com/2026/08/20/senegal-opposition-presses-president-to-set-local-election-date/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-20T04:58:24.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/88/11/71/640x360_cmsv2_01967688-23b0-593e-8a0c-488f458299cc-9881171.jpg?1787160823",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -664,22 +728,6 @@
       "weight": 2
     },
     {
-      "id": "ac5f4661f453",
-      "title": "Trump says US to reopen negotiations with Iran ‘maybe at some point’",
-      "summary": "Trump says US to reopen negotiations with Iran ‘maybe at some point’ US President Donald Trump has said that Washington might resume talks with Iran “maybe at some point” in the future. “Right now the situation is so good,” Trump told reporters, adding that…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-says-us-reopen-negotiations-iran-maybe-some-point",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-19T18:16:19.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "34434e14ed56",
       "title": "Kim Jong-un’s sister casts doubt on Trump’s claims of secret US-North Korea talks",
       "summary": "President says he plans to meet dictator this year but Kim Yo-jong says Washington remains Pyongyang’s enemy Donald Trump has said he is planning to meet North Korea’s Kim Jong-un later this year, though the reclusive leader’s younger sister cast doubt on…",
@@ -693,22 +741,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "fe307da7bf3f",
-      "title": "South Korea shortens war games with US, citing Washington request",
-      "summary": "It comes after Trump announced plans to curtail joint military exercises with South Korea, citing a \"very good\" relationship with North Korea's Kim Jong Un.",
-      "url": "https://www.bbc.co.uk/news/articles/cnvn0j31qj8o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-19T17:39:49.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/b878/live/63dff0a0-9b9c-11f1-b109-879e35c24276.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -742,6 +774,22 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
+    },
+    {
+      "id": "50063425df92",
+      "title": "Israel admits its soldiers fired at car in which Hind Rajab was killed",
+      "summary": "Military orders criminal investigation into deaths of five-year-old and six family members in Gaza in 2024 The Israeli military admitted on Wednesday its troops had opened fire on a car carrying five-year-old Hind Rajab and six family members in Gaza in 2024,…",
+      "url": "https://www.theguardian.com/world/2026/aug/19/israel-admits-it-soldiers-fired-at-car-in-which-hind-rajab-was-killed",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-19T17:21:14.000Z",
+      "image": "https://i.guim.co.uk/img/media/f8230805cca357ae6ff4dce57acf9547484cc359/52_27_1153_922/master/1153.jpg?width=700&quality=85&auto=format&fit=max&s=655a4f305619bd552aa62615f85a6036",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
     },
     {
       "id": "aff10ed42749",
@@ -952,22 +1000,6 @@
       "weight": 2
     },
     {
-      "id": "b8a54c5e51d8",
-      "title": "Israeli military probes killings of Hind Rajab and Palestinian paramedics",
-      "summary": "Israel’s military on Wednesday announced its first criminal investigations into troop conduct in the war in Gaza, focusing on the killings of 5-year-old Hind Rajab and her family and of 15 Palestinian paramedics. The military said it would not launch criminal…",
-      "url": "https://www.france24.com/en/video/20260819-israeli-military-probes-killings-of-hind-rajab-and-palestinian-paramedics",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-19T15:47:52.000Z",
-      "image": "https://s.france24.com/media/display/397ece9c-9be4-11f1-a4ee-005056a90284/w:1024/p:16x9/EN-20260819-170110-170755-CS.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "6854b3ddf9a5",
       "title": "Trump pauses new tariffs on Canada for three days, saying deal close",
       "summary": "The US president says the two sides are finalising documents to avert import taxes targeting a range of Canadian goods.",
@@ -1157,6 +1189,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "ca4cdc637dec",
+      "title": "Turkey slams Israel's 'untenable' claims after strikes on Syrian base",
+      "summary": "Turkey firmly rejected on Wednesday ⁠what it called \"untenable ​allegations\" by Israel regarding its military position in Syria, after Israel bombed a Syrian air base near ​the Turkish border and said Syria was on the verge of permitting Turkish troops to…",
+      "url": "https://www.france24.com/en/video/20260819-turkey-slams-israel-s-untenable-claims-after-strikes-on-syrian-base",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-19T14:35:12.000Z",
+      "image": "https://s.france24.com/media/display/b7d2c04c-9bd4-11f1-9706-005056bf30b7/w:1024/p:16x9/EN-20260819-150530-150814-CS.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -2172,22 +2220,6 @@
       "weight": 3
     },
     {
-      "id": "6f6cddf95f9a",
-      "title": "Strait of Hormuz to remain closed until US meets Iran's demands, top negotiator says",
-      "summary": "More than five months into the standoff over the Strait of Hormuz, Iran's parliament speaker says the waterway will remain closed until the US meets Tehran's demands. The announcement comes as a ship transiting the Strait was hit and damaged by an \"unknown…",
-      "url": "http://www.africanews.com/2026/08/18/strait-of-hormuz-to-remain-closed-until-us-meets-irans-demands-top-negotiator-says/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-18T13:28:27.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/87/19/02/640x360_cmsv2_7ce6deba-d78b-50fe-ac40-f06ea37322ed-9871902.jpg?1787054606",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "7fb8bb526d29",
       "title": "France's 2027 election: Russia denies interference, calls anti-Russian policy ‘doomed to failure’",
       "summary": "Moscow does not interfere in the internal affairs of sovereign states, says Russian Embassy in Paris",
@@ -2812,22 +2844,6 @@
       "weight": 2
     },
     {
-      "id": "f10c00fb3cbf",
-      "title": "Ex-PM Attal urges Macron to put under-15 social media ban to referendum",
-      "summary": "Gabriel Attal has called on President Emmanuel Macron to put a proposed ban on social media for children under 15 directly to French voters, after the Constitutional Council struck down legislation approved by parliament.",
-      "url": "https://www.rfi.fr/en/france/20260816-ex-pm-attal-urges-macron-to-put-under-15-social-media-ban-to-referendum",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-16T17:30:00.000Z",
-      "image": "https://s.rfi.fr/media/display/c8acb7a0-1e30-11f1-8f66-005056a97e36/w:1024/p:16x9/AP24066822349898.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "b89d41bf3b66",
       "title": "A fake website and a deluge of CVs: the Australian firm embroiled in an FBI probe into alleged Chinese espionage",
       "summary": "Exclusive: Fake consultancy impersonating Brisbane firm online is one of 13 websites seized by the US Department of Justice Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast When the first…",
@@ -2937,22 +2953,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "f24eea844477",
-      "title": "Japan’s defence minister heads to Australia to meet Marles in wake of melon-gate controversy",
-      "summary": "Discussions to focus on Australia’s acquisition of Mogami-class frigates as Japan plays down Albanese’s podcast comments Japan’s defence minister will visit Canberra this week, the highest level engagement with Australia after controversy over Anthony…",
-      "url": "https://www.theguardian.com/world/2026/aug/16/japans-defence-minister-heads-to-australia-to-meet-marles-in-wake-of-melon-gate-controversy",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
-      "sourceId": "guardian-asia",
-      "publishedAt": "2026-08-16T04:44:30.000Z",
-      "image": "https://i.guim.co.uk/img/media/4523dec71e91cd5ac6f89d2534b808eaf5868cd3/557_0_4964_3973/master/4964.jpg?width=700&quality=85&auto=format&fit=max&s=1ab86e7c53568ebc992fcc6a2b9ad5c3",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
