@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-20T15:55:28.203Z",
+  "generatedAt": "2026-08-20T16:21:00.731Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "466ac6cd3d45",
+      "title": "Why is US bond market turmoil hitting governments worldwide? | Richard Partington",
+      "summary": "As yields are dragged higher in the UK, Europe and Japan, the impact for consumers and businesses will be far-reaching Government borrowing costs around the world have surged to the highest levels in decades amid growing fears over US bond market turmoil.…",
+      "url": "https://www.theguardian.com/business/2026/aug/20/why-us-bond-market-turmoil-hitting-governments-worldwide",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/business/economics",
+      "sourceId": "guardian-economics",
+      "publishedAt": "2026-08-20T16:14:59.000Z",
+      "image": "https://i.guim.co.uk/img/media/e5d9265b4ad1f02b3b8743a220415673ba12afc2/568_0_5678_4543/master/5678.jpg?width=700&quality=85&auto=format&fit=max&s=0f251b08fd3a735c9ef34963f9a6a04d",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "bc3b21bcbc52",
+      "title": "British Army sailors rescue bedraggled barn owl 70 nautical miles out to sea",
+      "summary": "A barn owl stranded some 70 nautical miles out to sea was rescued by an astonished British Army sailing crew competing in a gruelling race around Britain and Ireland.",
+      "url": "https://www.france24.com/en/europe/20260820-british-army-sailors-rescue-bedraggled-barn-owl-70-nautical-miles-sea",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-20T16:13:05.000Z",
+      "image": "https://s.france24.com/media/display/8d4a2b78-9cae-11f1-9072-005056bf30b7/w:1024/p:16x9/000-C3QY3AF.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "71dc0dc074ae",
+      "title": "Why Iran has not folded yet",
+      "summary": "Formed by the brutal Iran-Iraq War, the men who now lead the Iranian regime will fight back before giving in. But time is not on their side. The post Why Iran has not folded yet appeared first on Atlantic Council .",
+      "url": "https://www.atlanticcouncil.org/dispatches/why-iran-has-not-folded-yet/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-20T16:06:11.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Middle East",
+      "weight": 3
+    },
     {
       "id": "8ee2cbebde67",
       "title": "Japan's foreign currency deposits log record growth on diversification push",
@@ -21,6 +69,22 @@
       "weight": 2
     },
     {
+      "id": "bab5225a109a",
+      "title": "Specsavers pays £12m dividend to parent company as profits soar",
+      "summary": "Pre-tax profits rose at high street opticians to £429.7m in the year to February while sales increased 7% to £4.3bn Specsavers has paid £12m to its parent company controlled by founders Doug and Dame Mary Perkins after the high street opticians’ profits…",
+      "url": "https://www.theguardian.com/business/2026/aug/20/specsavers-pays-dividend-to-parent-company-as-profits-soar",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-20T15:55:13.000Z",
+      "image": "https://i.guim.co.uk/img/media/a2fe314d5c00f23e77082773a9b7f6e90b2a6df1/263_0_2750_2200/master/2750.jpg?width=700&quality=85&auto=format&fit=max&s=27dee31d2d2ea178c2aa408e4813be2b",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
       "id": "d3f345001290",
       "title": "US deports 20 people to Liberia, the first of 1,200 migrants under Trump deal",
       "summary": "Agreement is among largest third-country deportations driven by Trump administration’s immigration crackdown The United States sent 20 deportees to Liberia, who arrived on Thursday as part of 1,200 migrants that the African country will receive under a new…",
@@ -34,6 +98,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "47a5df98d2bf",
+      "title": "Deadly Russian missile barrage hits Kyiv in hours-long overnight attack",
+      "summary": "Russia launched a hours-long overnight barrage of ballistic and cruise missiles and drones across Kyiv.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/20/deadly-russian-missile-barrage-hits-kyiv-in-hours-long-overnight-attack?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-20T15:41:56.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -98,6 +178,22 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "63fe50c71b87",
+      "title": "French PM announces creation of unit to combat cyberattacks",
+      "summary": "French Prime Minister Sébastien Lecornu has announced the creation of a specialised unit to strengthen the fight against cyberattacks. It follows a series of hacks on the websites of French government services that have highlighted vulnerabilities in IT…",
+      "url": "https://www.france24.com/en/video/20260820-french-pm-announces-creation-of-unit-to-combat-cyberattacks",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-20T15:19:31.000Z",
+      "image": "https://s.france24.com/media/display/d6f0ce12-9ca9-11f1-bf86-005056bf30b7/w:1024/p:16x9/EN-20260820-170636-170809-CS.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -551,22 +647,6 @@
       "weight": 2
     },
     {
-      "id": "8b978ab60bc2",
-      "title": "Israel admits its soldiers opened fire at car carrying five-year-old Hind Rajab | First Thing",
-      "summary": "Israeli military orders criminal investigation into deaths of Hind and six family members. Plus, FCC chair Brendan Carr’s close coordination with White House revealed Good morning. The Israeli military admitted on Wednesday its troops had opened fire on a car…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/20/first-thing-israel-admits-its-soldiers-opened-fire-at-car-carrying-five-year-old-hind-rajab",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-20T09:57:07.000Z",
-      "image": "https://i.guim.co.uk/img/media/f8230805cca357ae6ff4dce57acf9547484cc359/52_27_1153_922/master/1153.jpg?width=700&quality=85&auto=format&fit=max&s=655a4f305619bd552aa62615f85a6036",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "9ced6a2d85b2",
       "title": "China accuses EU of overreach regarding JD.com deal probe",
       "summary": "",
@@ -653,8 +733,8 @@
       "summary": "Inflation fuelled by Iran conflict deterring shoppers, especially in the US, says high street chain The sports fashion retailer JD has cut £50m from its profit forecast as cost of living pressures, fuelled by the US war on Iran, weighed on sales of trainers.…",
       "url": "https://www.theguardian.com/business/2026/aug/20/trainers-sales-dive-cost-of-living-inflation-jd-sports",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-20T09:03:50.000Z",
       "image": "https://i.guim.co.uk/img/media/2cc511e112782eb0adbbe15d452173336623976c/1275_1176_4126_3301/master/4126.jpg?width=700&quality=85&auto=format&fit=max&s=f4b7901651ff35969e90aca360e48263",
       "imageWidth": 700,
@@ -808,6 +888,22 @@
       "weight": 3
     },
     {
+      "id": "75c2b7c396b5",
+      "title": "Massive Russian strikes hit Kyiv killing several people",
+      "summary": "Russian ballistic missiles killed 12 people and injured more than 30 in Kyiv early on Thursday, authorities said, damaging ‌buildings and severing power supply to some parts of the Ukrainian capital. FRANCE 24’s Camille Corcoran brings us more with this…",
+      "url": "https://www.france24.com/en/massive-russian-strikes-hit-kyiv-killing-several-people",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-20T07:17:50.000Z",
+      "image": "https://s.france24.com/media/display/e7ca733e-9c7a-11f1-b585-005056a90284/w:1024/p:16x9/capture-14222123186a86cb16f1f768-46743830.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "26be312cb478",
       "title": "What property giant Evergrande's sentence means for China's economy",
       "summary": "For property giant Evergrande, the face of China's real estate woes, an excruciating saga that has dragged on for years culminated on Thursday with court rulings ordering fines and jail terms.",
@@ -885,22 +981,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "73524348417c",
-      "title": "Russian missile strikes kill at least 16 in and around Kyiv overnight",
-      "summary": "A Russian missile barrage on Thursday killed at least 16 people in Kyiv and the surrounding region, local authorities said, with explosions echoing across the capital throughout the night. Ukrainian President Volodymyr Zelensky said Russia had been preparing…",
-      "url": "https://www.france24.com/en/europe/20260820-kyiv-targeted-by-massive-russian-strikes-killing-several-people",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-20T05:30:24.000Z",
-      "image": "https://s.france24.com/media/display/092d3af0-9c9b-11f1-8a16-005056bf30b7/w:1024/p:16x9/Kyiv-2.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -1258,6 +1338,22 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
+    },
+    {
+      "id": "50063425df92",
+      "title": "Israel admits its soldiers fired at car in which Hind Rajab was killed",
+      "summary": "Military orders criminal investigation into deaths of five-year-old and six family members in Gaza in 2024 The Israeli military admitted on Wednesday its troops had opened fire on a car carrying five-year-old Hind Rajab and six family members in Gaza in 2024,…",
+      "url": "https://www.theguardian.com/world/2026/aug/19/israel-admits-it-soldiers-fired-at-car-in-which-hind-rajab-was-killed",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-19T17:21:14.000Z",
+      "image": "https://i.guim.co.uk/img/media/f8230805cca357ae6ff4dce57acf9547484cc359/52_27_1153_922/master/1153.jpg?width=700&quality=85&auto=format&fit=max&s=655a4f305619bd552aa62615f85a6036",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
     },
     {
       "id": "aff10ed42749",
@@ -2506,22 +2602,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Americas",
-      "weight": 3
-    },
-    {
-      "id": "aa206961c1f2",
-      "title": "Spring 2026 Young Global Professionals",
-      "summary": "Meet our Young Global Professionals for the Spring of 2026. The post Spring 2026 Young Global Professionals appeared first on Atlantic Council .",
-      "url": "https://www.atlanticcouncil.org/content-series/meet-our-ygps/spring-2026-young-global-professionals/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-18T00:00:39.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Global",
       "weight": 3
     },
     {
