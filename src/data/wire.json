@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-20T21:03:27.329Z",
+  "generatedAt": "2026-08-20T21:39:39.064Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -66,6 +66,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "2c2a926484cd",
+      "title": "Ukraine a 'genuine', 'fragile' democracy: 'Internal political turmoil will weaken political system'",
+      "summary": "Oliver Farry is pleased to welcome Dr. Volodymyr Yermolenko, Ukrainian philosopher, journalist, author and President of PEN Ukraine. According to Dr Yermolenko, Ukraine is confronting serious threats to its democracy. Suspending elections during wartime…",
+      "url": "https://www.france24.com/en/ukraine-a-genuine-fragile-democracy-internal-political-turmoil-will-weaken-political-system",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-20T20:32:28.000Z",
+      "image": "https://s.france24.com/media/display/cf03c1c2-9caf-11f1-be88-005056bf30b7/w:1024/p:16x9/EN-20260820-090657-091411-CS.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -554,7 +570,7 @@
     {
       "id": "0ec5468f83c9",
       "title": "Sydney air traffic controllers have ‘grave concerns’ about collision risk after airspace redesign",
-      "summary": "Exclusive: Federal government notified after whistleblower says controllers have ‘minimal confidence in their ability to handle’ rule changes related to second airport Get our breaking news email , free app or daily news podcast Air traffic controllers at…",
+      "summary": "Exclusive: Federal government notified after whistleblower says controllers have ‘minimal confidence in their ability to handle’ rule changes related to second airport Follow our Australia news live blog for latest updates Get our breaking news email , free…",
       "url": "https://www.theguardian.com/australia-news/2026/aug/21/air-traffic-controllers-safety-risk-fears-sydney-airport",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
