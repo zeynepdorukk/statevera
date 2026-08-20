@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-08-20T16:21:00.731Z",
+  "generatedAt": "2026-08-20T16:57:52.203Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
-      "id": "466ac6cd3d45",
-      "title": "Why is US bond market turmoil hitting governments worldwide? | Richard Partington",
-      "summary": "As yields are dragged higher in the UK, Europe and Japan, the impact for consumers and businesses will be far-reaching Government borrowing costs around the world have surged to the highest levels in decades amid growing fears over US bond market turmoil.…",
-      "url": "https://www.theguardian.com/business/2026/aug/20/why-us-bond-market-turmoil-hitting-governments-worldwide",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
-      "publishedAt": "2026-08-20T16:14:59.000Z",
-      "image": "https://i.guim.co.uk/img/media/e5d9265b4ad1f02b3b8743a220415673ba12afc2/568_0_5678_4543/master/5678.jpg?width=700&quality=85&auto=format&fit=max&s=0f251b08fd3a735c9ef34963f9a6a04d",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
+      "id": "6ec3fd32f49e",
+      "title": "Zelenskyy’s recent Serbia visit was a win for Ukraine and the West",
+      "summary": "Ukrainian President Volodymyr Zelenskyy's recent visit to Serbia highlighted growing ties between Kyiv and Belgrade while also underlining wartime Ukraine's emergence as an important geopolitical player, writes Stephen Blank. The post Zelenskyy’s recent…",
+      "url": "https://www.atlanticcouncil.org/blogs/ukrainealert/zelenskyys-recent-serbia-visit-was-a-win-for-ukraine-and-the-west/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-20T16:35:24.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Eurasia",
+      "weight": 3
     },
     {
       "id": "bc3b21bcbc52",
@@ -66,22 +66,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "bab5225a109a",
-      "title": "Specsavers pays £12m dividend to parent company as profits soar",
-      "summary": "Pre-tax profits rose at high street opticians to £429.7m in the year to February while sales increased 7% to £4.3bn Specsavers has paid £12m to its parent company controlled by founders Doug and Dame Mary Perkins after the high street opticians’ profits…",
-      "url": "https://www.theguardian.com/business/2026/aug/20/specsavers-pays-dividend-to-parent-company-as-profits-soar",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-20T15:55:13.000Z",
-      "image": "https://i.guim.co.uk/img/media/a2fe314d5c00f23e77082773a9b7f6e90b2a6df1/263_0_2750_2200/master/2750.jpg?width=700&quality=85&auto=format&fit=max&s=27dee31d2d2ea178c2aa408e4813be2b",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -167,7 +151,7 @@
     {
       "id": "8321a7e7c9bc",
       "title": "‘Starve the beast’? The $40tn cost of Republicans’ false promises to cut spending",
-      "summary": "The enormous US debt under Trump will hobble the next Democratic administration – just as the GOP planned You could pin the US’s staggering $40tn in government debt to Donald Trump’s Keystone Cops-style governance. Tariffs he sold as a new source of revenue…",
+      "summary": "The enormous US debt under Trump will hobble the next Democratic administration – just as the GOP planned Why is the Trump administration causing turmoil in the bond markets? You could pin the US’s staggering $40tn in government debt to Donald Trump’s…",
       "url": "https://www.theguardian.com/business/2026/aug/20/us-national-debt-republicans",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -970,7 +954,7 @@
     {
       "id": "fbb58bedad9a",
       "title": "Middle East updates: Trump warns 'economic consequences' for nations helping Iran",
-      "summary": "US President Donald Trump has threatened Iran with an \"economic warfare\". Meanwhile, Australia summoned Israel's envoy over the 2024 death of an aid worker in an Israeli strike in Gaza. DW has the latest.",
+      "summary": "US President Donald Trump has threatened Iran with an \"economic warfare,\" while Tehran says current sanctions amount to \"economic terrorism.\" DW has the latest.",
       "url": "https://www.dw.com/en/middle-east-updates-trump-warns-economic-consequences-for-nations-helping-iran/live-78438056?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
@@ -2362,22 +2346,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 3
-    },
-    {
-      "id": "0e76d16cf6da",
-      "title": "Echoes of Odysseus in Ukraine’s ingenious approach to the art of war",
-      "summary": "Christopher Nolan's new blockbuster film version of the Odyssey is shaped by timeless values of military ingenuity, righteous justice, and a longing for one’s homeland that offer ancient echoes of modern-day Ukraine’s fight against Russia’s invasion, writes…",
-      "url": "https://www.atlanticcouncil.org/blogs/ukrainealert/echoes-of-odysseus-in-ukraines-ingenious-approach-to-the-art-of-war/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-18T13:32:45.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
       "weight": 3
     },
     {
