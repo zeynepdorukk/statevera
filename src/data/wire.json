@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-21T23:19:13.137Z",
+  "generatedAt": "2026-08-21T23:44:46.187Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "d552f99cd2d4",
+      "title": "Centcom says 68 vessels redirected so far in Iran naval blockade",
+      "summary": "Centcom says 68 vessels redirected so far in Iran naval blockade The US forces have redirected 68 commercial vessels, disabled three and boarded two others to enforce the ongoing naval blockade against Iran, US Central Command (Centcom) said. In a post on X,…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/centcom-says-68-vessels-redirected-so-far-iran-naval-blockade",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-21T23:27:09.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "7b35f3334ced",
       "title": "Editor of military news outlet that first revealed US aircraft carrier crisis says he was fired over interview – live",
@@ -11,10 +27,26 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-21T22:58:02.000Z",
+      "publishedAt": "2026-08-21T23:22:06.000Z",
       "image": "https://i.guim.co.uk/img/media/fe49b4087569b0294cec5abd61ad195b814e4efe/375_0_3750_3000/master/3750.jpg?width=700&quality=85&auto=format&fit=max&s=c9cee1c2f32d7ddbee2e76e6da46056e",
       "imageWidth": 700,
       "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "290a131c62b7",
+      "title": "US Vice President JD Vance holds midterm election rally in Ohio hometown",
+      "summary": "The vice president's speech hinged heavily on economic themes, as voter confidence slips for Republican policies.",
+      "url": "https://www.aljazeera.com/news/2026/8/21/us-vice-president-jd-vance-holds-midterm-election-rally-in-ohio-hometown?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-21T22:52:40.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 2
@@ -340,22 +372,6 @@
       "weight": 2
     },
     {
-      "id": "ffbd0b6c1df9",
-      "title": "Why Iran is threatening Europe’s ‘strategically important’ southeast",
-      "summary": "Tehran has threatened Bulgaria, home to a US air base, but how credible is that threat?",
-      "url": "https://www.aljazeera.com/news/2026/8/21/iran-southeastern-europe-threats?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-21T17:29:17.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "8a7902939f76",
       "title": "From manufacturing to AI, Thailand must reinvent its growth model",
       "summary": "Thailand is at an economic crossroads. Slowing growth and rising structural pressures are exposing the limits of its manufacturing-led model. Can EVs, green industries, and AI drive its next phase of growth? The post From manufacturing to AI, Thailand must…",
@@ -578,22 +594,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "6a8c2bf2cc45",
-      "title": "Anas Altikriti case raises crucial questions about Britain's alliance with the UAE",
-      "summary": "Anas Altikriti case raises crucial questions about Britain's alliance with the UAE Submitted by Peter Oborne on Fri, 08/21/2026 - 15:17 Amid chilling revelations of an Emirati surveillance operation targeting the London-based analyst, it's past time for the…",
-      "url": "https://www.middleeasteye.net/opinion/anas-altikriti-case-raises-crucial-questions-about-britains-alliance-uae",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-21T15:15:09.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
