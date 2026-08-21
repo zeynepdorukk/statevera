@@ -1,10 +1,24 @@
 {
-  "generatedAt": "2026-08-21T22:38:59.967Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-21T22:58:05.062Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
+    {
+      "id": "b9adbcf41a2a",
+      "title": "Iran says Trump’s latest threatened economic sanctions are ‘bound to fail’",
+      "summary": "US president has newly vowed to financially cripple Iran, threatening country with 'economic D-Day'",
+      "url": "https://www.aa.com.tr/en/middle-east/iran-says-trump-s-latest-threatened-economic-sanctions-are-bound-to-fail-/4034347",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-21T22:41:51.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "d7066e6e2e5e",
       "title": "TikTok agrees to $400m settlement to resolve US children’s privacy litigation",
@@ -164,6 +178,22 @@
       "categoryConfidence": "high",
       "region": "Eurasia",
       "weight": 3
+    },
+    {
+      "id": "b703ada2c13d",
+      "title": "Israeli settlers and military kill 2 Palestinians – one a teenager – in separate West Bank shootings",
+      "summary": "A teenage boy and a 58-year-old man were shot dead Friday by Israeli settlers and soldiers, respectively, in separate shootings in the occupied West Bank.",
+      "url": "https://www.france24.com/en/middle-east/20260821-israeli-settlers-and-military-kill-2-palestinians-teenager-separate-west-bank-shootings",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-21T19:53:39.000Z",
+      "image": "https://s.france24.com/media/display/d8c7774e-9d95-11f1-b516-005056a97e36/w:1024/p:16x9/AP26233454282893.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
     },
     {
       "id": "fcfb10d2b5d4",
@@ -484,6 +514,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "f117c15b62d6",
+      "title": "Who are the eight candidates running to succeed Antonio Guterres as UN chief?",
+      "summary": "The United Nations Security Council held a second informal straw poll to gauge the popularity of candidates seeking to succeed Secretary-General Antonio Guterres, who will complete his second five-year term at the end of the year. Eight candidates are…",
+      "url": "https://www.france24.com/en/who-are-the-eight-candidates-running-to-succeed-antonio-guterres-as-un-chief",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-21T15:32:13.000Z",
+      "image": "https://s.france24.com/media/display/3a866c86-89f2-11f1-a74d-005056bf30b7/w:1024/p:16x9/000-C3B372N.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -2504,22 +2550,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "7fb8bb526d29",
-      "title": "France's 2027 election: Russia denies interference, calls anti-Russian policy ‘doomed to failure’",
-      "summary": "Moscow does not interfere in the internal affairs of sovereign states, says Russian Embassy in Paris",
-      "url": "https://www.aa.com.tr/en/features/frances-2027-election-russia-denies-interference-calls-anti-russian-policy-doomed-to-failure-/4030631",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-18T13:12:55.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
