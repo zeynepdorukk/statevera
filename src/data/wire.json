@@ -1,10 +1,40 @@
 {
-  "generatedAt": "2026-08-21T21:45:21.484Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-21T22:11:34.084Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
+    {
+      "id": "3257d8ecc9eb",
+      "title": "Turkey denounces Netanyahu's 'petty political tactics'",
+      "summary": "Turkey denounces Netanyahu's 'petty political tactics' Turkey on Friday denounced Israeli Prime Minister Benjamin Netanyahu's \"petty political tactics\" in a statement from the president's office. In a statement posted on X, it condemned what it called the…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkey-denounces-netanyahus-petty-political-tactics",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-21T21:53:29.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Turkey",
+      "weight": 2
+    },
+    {
+      "id": "7b35f3334ced",
+      "title": "Editor of military news outlet that first revealed US aircraft carrier crisis says he was fired over interview – live",
+      "summary": "Erik Slavin says he was dismissed for insubordination after objecting to potential censorship in wake of furor sparked by reported conditions on USS Abraham Lincoln Pentagon fires publisher and editor of Stars & Stripes Backlash as navy carrier set to honor…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/21/democrats-progressive-election-politics-live",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-21T21:52:16.000Z",
+      "image": "https://i.guim.co.uk/img/media/fe49b4087569b0294cec5abd61ad195b814e4efe/375_0_3750_3000/master/3750.jpg?width=700&quality=85&auto=format&fit=max&s=c9cee1c2f32d7ddbee2e76e6da46056e",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "fe4aa6ee03cd",
       "title": "Trump says Iran not ready to make the 'right deal'",
@@ -17,22 +47,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "7b35f3334ced",
-      "title": "Editor of military news outlet that first revealed US aircraft carrier crisis says he was fired over interview – live",
-      "summary": "Erik Slavin says he was dismissed for insubordination after objecting to potential censorship in wake of furor sparked by reported conditions on USS Abraham Lincoln Pentagon fires publisher and editor of Stars & Stripes Backlash as navy carrier set to honor…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/21/democrats-progressive-election-politics-live",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-21T21:35:51.000Z",
-      "image": "https://i.guim.co.uk/img/media/fe49b4087569b0294cec5abd61ad195b814e4efe/375_0_3750_3000/master/3750.jpg?width=700&quality=85&auto=format&fit=max&s=c9cee1c2f32d7ddbee2e76e6da46056e",
-      "imageWidth": 700,
-      "category": "Security",
       "categoryConfidence": "high",
       "region": "Americas",
       "weight": 2
@@ -116,6 +130,22 @@
       "categoryConfidence": "high",
       "region": "Eurasia",
       "weight": 3
+    },
+    {
+      "id": "b703ada2c13d",
+      "title": "Israeli settlers and military kill 2 Palestinians – one a teenager – in separate West Bank shootings",
+      "summary": "A teenage boy and a 58-year-old man were shot dead Friday by Israeli settlers and soldiers, respectively, in separate shootings in the occupied West Bank.",
+      "url": "https://www.france24.com/en/middle-east/20260821-israeli-settlers-and-military-kill-2-palestinians-teenager-separate-west-bank-shootings",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-21T19:53:39.000Z",
+      "image": "https://s.france24.com/media/display/d8c7774e-9d95-11f1-b516-005056a97e36/w:1024/p:16x9/AP26233454282893.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
     },
     {
       "id": "fcfb10d2b5d4",
@@ -230,22 +260,6 @@
       "weight": 2
     },
     {
-      "id": "c316f8ca9a97",
-      "title": "Russian drone attack on busy shopping centre kills 15 in Ukraine",
-      "summary": "Ukraine's Volodymyr Zelenskyy slams 'cynical and despicable' attack on his hometown Kryvyi Rih that injured over 130.",
-      "url": "https://www.aljazeera.com/news/2026/8/21/russian-drone-attack-on-busy-shopping-centre-kills-14-in-ukraine?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-21T18:17:40.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "c8521ab35eb3",
       "title": "Iran president says time to end war while in position of strength",
       "summary": "Iran president says time to end war while in position of strength Iranian President Masoud Pezeshkian said Friday it was time to end the months-long war with the United States because Tehran appeared to be in a stronger position than Washington. Talks between…",
@@ -291,22 +305,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "f1183ef8f18b",
-      "title": "Israeli army, settlers kill 2 Palestinians in separate West Bank incidents",
-      "summary": "Israeli settlers fatally shot 17-year-old Karim Sanad Shalaldeh while Israeli forces killed 58-year-old Fathi Khazem.",
-      "url": "https://www.aljazeera.com/news/2026/8/21/israeli-army-settlers-kill-2-palestinians-in-separate-west-bank-incidents?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-21T17:17:55.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -468,6 +466,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "f117c15b62d6",
+      "title": "Who are the eight candidates running to succeed Antonio Guterres as UN chief?",
+      "summary": "The United Nations Security Council held a second informal straw poll to gauge the popularity of candidates seeking to succeed Secretary-General Antonio Guterres, who will complete his second five-year term at the end of the year. Eight candidates are…",
+      "url": "https://www.france24.com/en/who-are-the-eight-candidates-running-to-succeed-antonio-guterres-as-un-chief",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-21T15:32:13.000Z",
+      "image": "https://s.france24.com/media/display/3a866c86-89f2-11f1-a74d-005056bf30b7/w:1024/p:16x9/000-C3B372N.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Global",
       "weight": 2
     },
     {
