@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-21T11:15:26.353Z",
+  "generatedAt": "2026-08-21T11:48:37.712Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "91d60e0f45a7",
+      "title": "Top Iran official says US focus on economic warfare shows it has failed militarily",
+      "summary": "The Iranian regime has dismissed President Trump's threats to crush the country economically, saying that years of U.S. sanctions have failed.",
+      "url": "https://www.npr.org/2026/08/21/nx-s1-5940610/iran-us-threat-economic-warfare",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-21T11:42:10.000Z",
+      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fce%2F1d%2Fd4b7c00c49eb8088a4e7decd6ac0%2Fap26232551199754.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "7b35f3334ced",
+      "title": "Democrats rally behind progressive Aisha Wahab after win in California special election – US politics live",
+      "summary": "First Muslim woman and Afghan American elected to California legislature held lead throughout race over main opponent Melissa Hernandez Sign up for the US Breaking News email The Guardian’s Rachel Leingang and Sam Levine report that former officials and…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/21/democrats-progressive-election-politics-live",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-21T11:41:12.000Z",
+      "image": "https://i.guim.co.uk/img/media/8cb13f6c1fe8847928709d5912e73d1a6b33e6df/934_0_7200_5760/master/7200.jpg?width=700&quality=85&auto=format&fit=max&s=bc73e46fd9dbf539639875206454adcb",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "78247f49f5e2",
+      "title": "Iran promises to resist interference by foreign 'enemies' as Trump threatens new sanctions",
+      "summary": "Iran promises to resist interference by foreign 'enemies' as Trump threatens new sanctions Submitted by MEE staff on Fri, 08/21/2026 - 11:11 US Treasury vows 'toughest sanctions in history' in hopes of collapsing Islamic Republic Iran's Parliament Speaker…",
+      "url": "https://www.middleeasteye.net/news/parliament-speaker-promises-resist-interference-foreign-enemies-iran-and-neighbouring-iraq",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-21T11:37:07.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "75a9d8ff6957",
       "title": "Iranian oil prices rise as US blockade tightens supplies to China",
@@ -38,7 +86,7 @@
     {
       "id": "c541dadcaf4e",
       "title": "North Korea: Will Trump-Kim talks happen anytime soon?",
-      "summary": "As Donald Trump claims a meeting is planned with Kim Jong Un, North Korea's response sends a signal it wants maximum concessions in return for talks with the US.",
+      "summary": "As Donald Trump claims a meeting is planned with Kim Jong Un, North Korea's response sends a signal that it wants maximum concessions in return for talks with the US.",
       "url": "https://www.dw.com/en/north-korea-will-trump-kim-talks-happen-anytime-soon/a-78456342?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
@@ -613,6 +661,22 @@
       "weight": 2
     },
     {
+      "id": "9b46289210bf",
+      "title": "US vows to 'collapse' Iran with new sanctions as energy prices spike",
+      "summary": "US vows to 'collapse' Iran with new sanctions as energy prices spike The US will impose \"the toughest sanctions in history” on Iran, Secretary of the Treasury Scott Bessent said on Thursday, vowing to ramp up economic pressure on the Islamic Republic even as…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-vows-collapse-iran-new-sanctions-energy-prices-spike",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-21T02:21:02.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "5ef773080fea",
       "title": "Sánchez has one year until Spain’s election deadline. The odds are against him.",
       "summary": "The prime minister is still facing heat over the Ceuta crisis and a raft of Socialist Party corruption scandals. An early election could make sense.",
@@ -674,22 +738,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "ed45fb91953c",
-      "title": "Progressive Aisha Wahab wins California special election to fill Eric Swalwell seat",
-      "summary": "State senator beats rival Melissa Hernandez and will replace US congressman who quit amid sexual misconduct claims Progressive Aisha Wahab has been elected to Congress in a special election following a bitter intra-party battle over the seat formerly held by…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/20/california-special-election-results-eric-swalwell",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-21T00:24:56.000Z",
-      "image": "https://i.guim.co.uk/img/media/774d94c1f7d07c77543d4efd89f83b72e3bbf1f4/714_0_6070_4856/master/6070.jpg?width=700&quality=85&auto=format&fit=max&s=3ec16bba164679ea72f4d1011449c7bc",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -786,6 +834,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "cf5bd627645b",
+      "title": "Website behind widely shared fake election polls run by 21-year-old",
+      "summary": "Exclusive: Rahil Prakash tells the Guardian: ‘I wanted to see if fake polls could penetrate the ecosystem that easily’ A 21-year-old recent college graduate was behind an anonymous website that put out widely shared fake election polling in Wisconsin, Nevada…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/20/fake-polling-website-median-strategies",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-20T21:33:59.000Z",
+      "image": "https://i.guim.co.uk/img/media/584f542a1ff7873a4f962b363bfc062f2ddaa15b/440_0_4395_3516/master/4395.jpg?width=700&quality=85&auto=format&fit=max&s=cded2238c4c5dea8912ac46f6cf24434",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -980,22 +1044,6 @@
       "categoryConfidence": "source",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "e7e9f84437cb",
-      "title": "FBI raids Eric Swalwell’s home amid sexual assault claims inquiry – report",
-      "summary": "Federal agents also ‘seized electronic devices’ from former Democratic representative at San Francisco airport Authorities are said to have searched the Washington DC home of disgraced former California Democratic representative Eric Swalwell on Sunday amid…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/20/fbi-raid-eric-swalwell-home",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-20T18:10:18.000Z",
-      "image": "https://i.guim.co.uk/img/media/c6c5f87b121fabc8a2e0e1c51d4de4ea1adca3d3/815_0_4638_3711/master/4638.jpg?width=700&quality=85&auto=format&fit=max&s=6c9333a29c9de01964526886457e9822",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "9ed879ed876b",
