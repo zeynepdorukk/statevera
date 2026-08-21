@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-21T18:19:47.055Z",
+  "generatedAt": "2026-08-21T19:04:01.361Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "fcfb10d2b5d4",
+      "title": "Russian double-tap drone strike kills 15 in Ukrainian mall, officials say",
+      "summary": "Another 130 people, including 23 children, were injured when the shopping centre was hit, according to the regional head.",
+      "url": "https://www.bbc.co.uk/news/articles/c39egw7nmk2o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-21T18:51:43.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/da84/live/0b5a45c0-9d86-11f1-adf5-2dc21c9cc109.png",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "7b35f3334ced",
       "title": "Doris Miller’s family ‘shocked’ by Navy’s reported consideration of honoring Trump instead of black war hero – live",
@@ -11,12 +27,28 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-21T18:09:28.000Z",
+      "publishedAt": "2026-08-21T18:51:07.000Z",
       "image": "https://i.guim.co.uk/img/media/5b8d9132af55955e74691e6bdfc6562717e575c7/0_0_4865_3888/master/4865.jpg?width=700&quality=85&auto=format&fit=max&s=0b557412d83019ba9fc3e46e9e61743e",
       "imageWidth": 700,
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "3549db891a23",
+      "title": "German army helps Poland construct a defensive barrier against Russia",
+      "summary": "Poland is building a defense system along its northern and eastern borders to protect itself from Russia. Since June, German sappers have been assisting their NATO ally with the construction of the East Shield.",
+      "url": "https://www.dw.com/en/german-army-helps-poland-construct-a-defensive-barrier-against-russia/a-78464726?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-21T18:44:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -226,22 +258,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "2815645c2b3f",
-      "title": "Eight killed in plane crash at remote Alaskan military site, air force says",
-      "summary": "It is unclear why the civilian-contracted plane was at the radar site on Alaska's south-west coast.",
-      "url": "https://www.bbc.co.uk/news/articles/cj9dmw8183wo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-21T16:05:09.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/88c1/live/024497b0-9d45-11f1-a137-179a8d1c790b.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -630,22 +646,6 @@
       "weight": 3
     },
     {
-      "id": "04ef7ab97d83",
-      "title": "Charter plane crash in Alaska kills all eight onboard near US military airstrip",
-      "summary": "‘Civilian-contracted aircraft’ crashes in western Alaska killing two pilots and six passengers, officials say A charter aircraft carrying eight people crashed at a remote radar site in western Alaska on Thursday, killing all on board, the US military said.…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/21/charter-plane-crash-alaska-deaths",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-21T12:32:08.000Z",
-      "image": "https://i.guim.co.uk/img/media/e01b3f717b573de52dca84d1f9a81be71628354c/52_0_1467_1174/master/1467.jpg?width=700&quality=85&auto=format&fit=max&s=92604ba7c781f7e956970a196f5ebc69",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "b3a658f22733",
       "title": "With ICC sanctions, Trump wants to make the world safe for war criminals | Kenneth Roth",
       "summary": "The US is engaged in a lawless quest to protect American and Israeli officials The Trump administration has taken another step in its crusade against the international criminal court by imposing sanctions on two more senior ICC officials. The growing number…",
@@ -756,22 +756,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "75a9d8ff6957",
-      "title": "Iranian oil prices rise as US blockade tightens supplies to China",
-      "summary": "Iranian oil prices rise as US blockade tightens supplies to China Iranian crude prices have climbed as fewer cargoes reach Chinese buyers under a tightening US blockade, Reuters reports. Traders said Iranian oil deliveries for September and October had fallen…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iranian-oil-prices-rise-us-blockade-tightens-supplies-china",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-21T11:11:45.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "c541dadcaf4e",
@@ -1177,7 +1161,7 @@
     {
       "id": "470e23116e50",
       "title": "'Orcas' with likely inside info win big on Trump Jr.-funded Polymarket",
-      "summary": "The Trump-connected Polymarket is likely helping gamblers with inside military information cash in on wars the president wages. According to Reuters, a report by the Anti-Corruption Data Collective, found that 152 “exceptionally successful” Polymarket wallets…",
+      "summary": "The Trump-connected Polymarket is likely helping gamblers with inside military information cash in on wars the president wages. According to Reuters, a report by the Anti-Corruption Data Collective found that 152 “exceptionally successful” Polymarket wallets…",
       "url": "https://responsiblestatecraft.org/trump-polymarket/",
       "publisher": "Responsible Statecraft",
       "publisherHome": "https://responsiblestatecraft.org",
@@ -1316,22 +1300,6 @@
       "category": "Economy",
       "categoryConfidence": "medium",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "cf5bd627645b",
-      "title": "Website behind widely shared fake election polls run by 21-year-old",
-      "summary": "Exclusive: Rahil Prakash tells the Guardian: ‘I wanted to see if fake polls could penetrate the ecosystem that easily’ A 21-year-old recent college graduate was behind an anonymous website that put out widely shared fake election polling in Wisconsin, Nevada…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/20/fake-polling-website-median-strategies",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-20T21:33:59.000Z",
-      "image": "https://i.guim.co.uk/img/media/584f542a1ff7873a4f962b363bfc062f2ddaa15b/440_0_4395_3516/master/4395.jpg?width=700&quality=85&auto=format&fit=max&s=cded2238c4c5dea8912ac46f6cf24434",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -1868,19 +1836,19 @@
       "weight": 3
     },
     {
-      "id": "f53d7089c651",
-      "title": "Sacked Ukrainian defence minister calls for presidential election",
-      "summary": "Martial law has been in place in Ukraine since February 2022, under which elections are suspended.",
-      "url": "https://www.bbc.co.uk/news/articles/cdew8n9erlwo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/europe",
-      "sourceId": "bbc-europe",
-      "publishedAt": "2026-08-19T20:34:39.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/26e2/live/88af3c20-9b5f-11f1-aed2-8d6da8d75094.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
+      "id": "0590b8cfc739",
+      "title": "Trump talks about grass as he shows off White House renovations – video",
+      "summary": "The US president waxed lyrical about grass being added around the new White House helipad in front of the media. 'You know, grass has a life like humans have a life,' Trump said Continue reading...",
+      "url": "https://www.theguardian.com/us-news/video/2026/aug/19/trump-talks-grass-white-house",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-20T02:00:20.000Z",
+      "image": "https://i.guim.co.uk/img/media/8f0e0ca305fa411f21c8c746a48236c93ae09b86/300_0_1350_1080/master/1350.jpg?width=700&quality=85&auto=format&fit=max&s=fd60ecacdfcdafaa3e91291ad9d4d1fc",
+      "imageWidth": 700,
+      "category": "Diplomacy",
       "categoryConfidence": "high",
-      "region": "Eurasia",
+      "region": "Americas",
       "weight": 2
     },
     {
