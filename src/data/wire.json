@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-21T05:54:08.925Z",
+  "generatedAt": "2026-08-21T06:24:36.766Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "79ff774b47c3",
+      "title": "Israel shelling in Syrian Golan Height's sparks fire",
+      "summary": "Israel shelling in Syrian Golan Height's sparks fire Israeli artillery shelling at an agricultural land south of the village of Jubata al-Khashab in Syria’s Golan Height sparked a fire, Alikhbaria TV reported. The broadcaster indicated that Israeli troops…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israel-shelling-syrian-golan-heights-sparks-fire",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-21T06:23:01.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "4690786e12ab",
+      "title": "JD Vance says US economic pressure 'most effective tool' against war on Iran",
+      "summary": "JD Vance says US economic pressure 'most effective tool' against war on Iran US Vice President JD Vance said that the country has entered a \"new phase\" in its war on Iran, leading with economic pressure as Washington's \"most effective tool\". \"We're kind of…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/jd-vance-says-us-economic-pressure-most-effective-tool-against-war-iran",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-21T06:19:33.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "76450aefc21a",
       "title": "Indonesia seeks expanded joint military exercises with China",
@@ -1581,23 +1613,6 @@
       "weight": 3
     },
     {
-      "id": "3ef85d49ec9a",
-      "title": "Japan logged trade deficit for third consecutive month in July",
-      "summary": "",
-      "url": "https://asia.nikkei.com/economy/trade/japan-logged-trade-deficit-for-third-consecutive-month-in-july",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-20T02:06:08.319Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "0b6ec1091e56",
       "title": "China Praises Malaysian PM Anwar Ibrahim For Supportive Comments on Taiwan",
       "summary": "The Malaysian leader's remarks also prompted a rebuke from Taipei, which said that they \"could negatively impact Taiwanese businesses’ confidence in investing in Malaysia.”",
@@ -2955,22 +2970,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "746e0c7c3150",
-      "title": "Law on assisted dying wins constitutional approval in France",
-      "summary": "France's Constitutional Council on Friday approved a law creating a right to assisted dying, removing the last major legal obstacle before the measure can be enacted and implemented.",
-      "url": "https://www.rfi.fr/en/france/20260814-law-on-assisted-dying-wins-constitutional-approval-in-france",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-14T15:11:47.000Z",
-      "image": "https://s.rfi.fr/media/display/3e3cd768-77a2-11ed-a3cf-005056a97e36/w:1024/p:16x9/000_15M4NW.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
