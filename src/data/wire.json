@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T07:57:18.124Z",
+  "generatedAt": "2026-08-21T08:32:44.303Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -117,8 +117,8 @@
     },
     {
       "id": "4690786e12ab",
-      "title": "JD Vance says US economic pressure 'most effective tool' against war on Iran",
-      "summary": "JD Vance says US economic pressure 'most effective tool' against war on Iran US Vice President JD Vance said that the country has entered a \"new phase\" in its war on Iran, leading with economic pressure as Washington's \"most effective tool\". \"We're kind of…",
+      "title": "JD Vance says US economic pressure 'most effective tool' against Iran",
+      "summary": "JD Vance says US economic pressure 'most effective tool' against Iran US Vice President JD Vance said that the country has entered a \"new phase\" in its war on Iran, leading with economic pressure as Washington's \"most effective tool\". \"We're kind of now in a…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/jd-vance-says-us-economic-pressure-most-effective-tool-against-war-iran",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -1049,22 +1049,6 @@
       "weight": 3
     },
     {
-      "id": "29c6fd446fce",
-      "title": "EU’s von der Leyen warns of ‘escalating campaign of threats’ as Romania destroys naval drone – as it happened",
-      "summary": "Device was near country’s Neptun Deep gas platform in the Black Sea Romania’s military has destroyed a marine drone spotted just “a few hundred meters” from the Neptun Deep platform, a major offshore gas project in the Black Sea. The drone, spotted just “a…",
-      "url": "https://www.theguardian.com/world/live/2026/aug/20/ukraine-volodymyr-zelenskyy-russia-vladimir-putin-kyiv-europe-live-latest-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-20T15:21:52.000Z",
-      "image": "https://i.guim.co.uk/img/media/7214ea56392894e1c394cec5f2e922223c61f631/342_0_924_739/master/924.jpg?width=700&quality=85&auto=format&fit=max&s=5cbf5137b2361de66c1685e1327544ef",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "8321a7e7c9bc",
       "title": "‘Starve the beast’? The $40tn cost of Republicans’ false promises to cut spending",
       "summary": "The enormous US debt under Trump will hobble the next Democratic administration – just as the GOP planned Why is the Trump administration causing turmoil in the bond markets? You could pin the US’s staggering $40tn in government debt to Donald Trump’s…",
@@ -1577,23 +1561,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "042bdfd97905",
-      "title": "Exclusive: China slows exports of key optical, aerospace metals to Taiwan",
-      "summary": "",
-      "url": "https://asia.nikkei.com/spotlight/supply-chain/exclusive-china-slows-exports-of-key-optical-aerospace-metals-to-taiwan",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-20T05:02:12.134Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
