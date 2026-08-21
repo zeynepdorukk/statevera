@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-21T07:14:53.204Z",
+  "generatedAt": "2026-08-21T07:57:18.124Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "10eb58b58c03",
+      "title": "A Rock and China’s Three-Sea Problem",
+      "summary": "Two rocks surrounded by coral, with a total land size of less than 10 square meters (approximately 108 square feet) at high tide, are the entire basis on which Japan claims a 150,000-square-mile exclusive economic zone, an area nearly the size of Japan…",
+      "url": "https://warontherocks.com/a-rock-and-chinas-three-sea-problem/",
+      "publisher": "War on the Rocks",
+      "publisherHome": "https://warontherocks.com",
+      "sourceId": "war-on-the-rocks",
+      "publishedAt": "2026-08-21T07:30:50.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
+    {
+      "id": "d6a5724e6e74",
+      "title": "Australian police charge man accused of attempting to share Ukrainian military intel with Russian agents",
+      "summary": "Vladmir Teslov, 27, charged after allegedly seeking to provide information about Ukrainian forces to ‘Russian intelligence services’ Australian police have charged a man who allegedly joined the Ukrainian military and sought to provide information about its…",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/21/vladimir-teslov-australian-charged-sharing-ukraine-intel-russian-agents-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-21T07:11:46.000Z",
+      "image": "https://i.guim.co.uk/img/media/d5e43bc671746cebfb46719aa9c59a84f32f8510/430_0_4640_3712/master/4640.jpg?width=700&quality=85&auto=format&fit=max&s=b6477aabddb26cf95e9ef5e7cde64a48",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "92c0d82684a9",
       "title": "Israeli army advances into southern Lebanese town, shelling reported",
@@ -150,12 +182,12 @@
     },
     {
       "id": "be74360785ae",
-      "title": "Israel reopens evacuated West Bank settlement, defying growing international protests",
+      "title": "Israel re-establishes closed West Bank settlement, defying growing international protests",
       "summary": "Thirty \"pioneer families\" have arrived on a wave of nationalism driven by Israel's government, but the rapid change has left nearby Palestinian residents fearful.",
       "url": "https://www.bbc.co.uk/news/articles/cn7n0l4p0kzo?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/middle_east",
-      "sourceId": "bbc-mideast",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
       "publishedAt": "2026-08-21T05:00:57.000Z",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/4659/live/0c7bbc90-9cdc-11f1-8c2c-67800657f112.jpg",
       "imageWidth": 240,
@@ -1320,22 +1352,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "63d7beb9581e",
-      "title": "South Africa's ANC faces voter backlash",
-      "summary": "Anti-migrant violence, economic stagnation and corruption allegations are eroding support for South Africa's ruling ANC ahead of local elections in November, opening the door to new coalition possibilities.",
-      "url": "https://www.dw.com/en/south-africa-s-anc-faces-voter-backlash/a-78430445?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-20T11:02:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Africa",
       "weight": 2
     },
     {
@@ -2794,22 +2810,6 @@
       "category": "Security",
       "categoryConfidence": "source",
       "region": "Eurasia",
-      "weight": 3
-    },
-    {
-      "id": "140d7ef7d42f",
-      "title": "A Life in Army Special Operations, from Desert Storm to the Next War",
-      "summary": "Lt. Gen. (ret.) Francis Beaudette, former commanding general of the U.S. Army Special Operations Command, joins Ryan to discuss how his family history, service, and books shaped his path into and time in the Army. Together, they talk through his years as a…",
-      "url": "https://warontherocks.com/a-life-in-army-special-operations-from-desert-storm-to-the-next-war/",
-      "publisher": "War on the Rocks",
-      "publisherHome": "https://warontherocks.com",
-      "sourceId": "war-on-the-rocks",
-      "publishedAt": "2026-08-17T17:40:08.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 3
     },
     {
