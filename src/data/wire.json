@@ -1,8 +1,42 @@
 {
-  "generatedAt": "2026-08-21T16:57:51.370Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-21T17:23:42.094Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "f1183ef8f18b",
+      "title": "Israeli army, settlers kill 2 Palestinians in separate West Bank incidents",
+      "summary": "Israeli settlers fatally shot 17-year-old Karim Sanad Shalaldeh while Israeli forces killed 58-year-old Fathi Khazem.",
+      "url": "https://www.aljazeera.com/news/2026/8/21/israeli-army-settlers-kill-2-palestinians-in-separate-west-bank-incidents?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-21T17:17:55.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "8a7902939f76",
+      "title": "From manufacturing to AI, Thailand must reinvent its growth model",
+      "summary": "Thailand is at an economic crossroads. Slowing growth and rising structural pressures are exposing the limits of its manufacturing-led model. Can EVs, green industries, and AI drive its next phase of growth? The post From manufacturing to AI, Thailand must…",
+      "url": "https://www.atlanticcouncil.org/blogs/econographics/from-manufacturing-to-ai-thailand-must-reinvent-its-growth-model/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-21T17:03:04.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 3
+    },
     {
       "id": "c4b71b12ec96",
       "title": "Japan greenlights new trading platform for unlisted shares",
@@ -18,6 +52,38 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "7b35f3334ced",
+      "title": "‘Shouldn’t be renamed at all’: senator attacks Navy’s reported consideration of honoring Trump instead of Black war hero – live",
+      "summary": "Mark Kelly, an Arizona Democrat and retired Navy officer, slams Navy’s mulling of naming a carrier for Trump instead of WWII hero Doris Miller US navy carrier set to honor Black war hero may reportedly be renamed after Trump Sign up for the US Breaking News…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/21/democrats-progressive-election-politics-live",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-21T16:53:26.000Z",
+      "image": "https://i.guim.co.uk/img/media/5b8d9132af55955e74691e6bdfc6562717e575c7/0_0_4865_3888/master/4865.jpg?width=700&quality=85&auto=format&fit=max&s=0b557412d83019ba9fc3e46e9e61743e",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "bbf039aad293",
+      "title": "French presidential hopeful Philippe vows to crack down on immigration to Mayotte",
+      "summary": "During a visit to Mayotte on Friday, France’s former Prime Minister Edouard Philippe vowed to crack down on immigration to the French overseas territory if he’s elected to the presidency next year.",
+      "url": "http://www.africanews.com/2026/08/21/french-presidential-hopeful-philippe-vows-to-crack-down-on-immigration-to-mayotte/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-21T16:42:21.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/88/41/21/640x360_cmsv2_669267ca-c257-5081-8e70-dddf5c8dcefe-9884121.jpg?1787323193",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -37,19 +103,35 @@
       "weight": 2
     },
     {
+      "id": "20e7542a616f",
+      "title": "Ukraine sanctions popular Russian cartoon ‘Masha and the Bear’",
+      "summary": "Zelenskyy signs decree imposing sanctions on producers, accuses cartoon show of spreading 'pro-Russian propaganda'.",
+      "url": "https://www.aljazeera.com/news/2026/8/21/ukraine-sanctions-popular-russian-cartoon-masha-and-the?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-21T16:38:15.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "46106b64e46b",
       "title": "Germany investigates Russia links to weapons cache discovered in woods, reports say",
       "summary": "German intelligence believes guns found last year were for carrying out assassinations on behalf of Moscow, reports say.",
       "url": "https://www.bbc.co.uk/news/articles/cp9edjpvplpo?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/europe",
-      "sourceId": "bbc-europe",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
       "publishedAt": "2026-08-21T16:26:53.000Z",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3237/live/ba89ed70-9d72-11f1-a291-b542ee92de7c.jpg",
       "imageWidth": 240,
       "category": "Security",
       "categoryConfidence": "high",
-      "region": "Europe",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -149,22 +231,6 @@
       "weight": 2
     },
     {
-      "id": "f117c15b62d6",
-      "title": "Who are the eight candidates running to succeed Antonio Guterres as UN chief?",
-      "summary": "The United Nations Security Council meets Friday for a second informal straw poll to gauge the popularity of candidates seeking to succeed Secretary-General Antonio Guterres, who will complete his second five-year term at the end of the year. Eight candidates…",
-      "url": "https://www.france24.com/en/who-are-the-eight-candidates-running-to-succeed-antonio-guterres-as-un-chief",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-21T15:32:13.000Z",
-      "image": "https://s.france24.com/media/display/3a866c86-89f2-11f1-a74d-005056bf30b7/w:1024/p:16x9/000-C3B372N.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "7a89febf2a3f",
       "title": "China calls for US-Iran dialogue",
       "summary": "China calls for US-Iran dialogue Chinese foreign ministry spokesperson Lin Jian has called for dialogue between the US and Iran amid threats of looming sanctions from Washington. Jian said in a statement on X that China \"opposes unilateral sanctions that lack…",
@@ -213,22 +279,6 @@
       "weight": 2
     },
     {
-      "id": "7b35f3334ced",
-      "title": "‘Shouldn’t be renamed at all’: senator attacks Navy’s reported consideration of honoring Trump instead of Black war hero – live",
-      "summary": "Mark Kelly, an Arizona Democrat and retired Navy officer, slams Navy’s mulling of naming a carrier for Trump instead of WWII hero Doris Miller US navy carrier set to honor Black war hero may reportedly be renamed after Trump Sign up for the US Breaking News…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/21/democrats-progressive-election-politics-live",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-21T15:15:05.000Z",
-      "image": "https://i.guim.co.uk/img/media/5b8d9132af55955e74691e6bdfc6562717e575c7/0_0_4865_3888/master/4865.jpg?width=700&quality=85&auto=format&fit=max&s=0b557412d83019ba9fc3e46e9e61743e",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "2c432f6ab940",
       "title": "Guinea-Bissau opposition calls for boycott of constitutional referendum",
       "summary": "Guinea-Bissau’s opposition PAIGC is calling for a boycott of the country’s upcoming constitutional referendum, citing fears of rigged vote.",
@@ -242,22 +292,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "ba99752789d7",
-      "title": "Neutrogena responds to criticism over how brand deal with Hayden Panettiere ended",
-      "summary": "Late actor in May said beauty brand cut off its relationship with her after she spoke out about postpartum depression The beauty brand Neutrogena has acknowledged making its former ambassador Hayden Panettiere “feel unsupported during a very difficult time” –…",
-      "url": "https://www.theguardian.com/tv-and-radio/2026/aug/21/neutrogena-hayden-panettiere-statement",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-21T15:09:49.000Z",
-      "image": "https://i.guim.co.uk/img/media/ced9a7df83f6bde1df3b1288d8bb15f0cddd6729/283_0_2708_2165/master/2708.jpg?width=700&quality=85&auto=format&fit=max&s=071861e83e35cf96940651143a4ace93",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -454,22 +488,6 @@
       "weight": 2
     },
     {
-      "id": "8c00680daeb8",
-      "title": "US allies in Asia wary as Trump moves military assets for Iran war",
-      "summary": "Allies worry about the US ability to deter China, even if the bulk of US forces remain in the region.",
-      "url": "https://www.aljazeera.com/news/2026/8/21/us-allies-in-asia-wary-as-trump-moves-military-assets-for-iran-war?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-21T12:32:03.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "b3a658f22733",
       "title": "With ICC sanctions, Trump wants to make the world safe for war criminals | Kenneth Roth",
       "summary": "The US is engaged in a lawless quest to protect American and Israeli officials The Trump administration has taken another step in its crusade against the international criminal court by imposing sanctions on two more senior ICC officials. The growing number…",
@@ -483,6 +501,38 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "6f8123b6e65f",
+      "title": "Somalia: Humanitarian aid cuts leave millions of children vulnerable to hunger",
+      "summary": "The global funding crisis for humanitarian work is taking a growing toll on the most vulnerable children in Somalia, where some aid programmes and facilities have been forced to shut down.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168184",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-21T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/08-05-2026-UNICEF-Somalia-02.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "08606f7e416a",
+      "title": "DR Congo Ebola outbreak spreading exponentially, UN responders warn",
+      "summary": "As the deadliest Ebola outbreak in DR Congo’s history continued spreading on Friday, UN responders renewed their urgent appeal for immediate international support, with existing funding for lifesaving work critically low.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168182",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-21T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/20-08-2026-WHO-DR-Congo-ebola.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -1240,22 +1290,6 @@
       "weight": 2
     },
     {
-      "id": "7a114dd1a1f6",
-      "title": "With war in the region, Egypt must recalibrate its energy policy",
-      "summary": "Egypt needs a two-track strategy, accelerating its green energy buildout while managing its natural gas reserves for sustained output. The post With war in the region, Egypt must recalibrate its energy policy appeared first on Atlantic Council .",
-      "url": "https://www.atlanticcouncil.org/blogs/menasource/with-war-in-the-region-egypt-must-recalibrate-its-energy-policy/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-20T18:12:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Middle East",
-      "weight": 3
-    },
-    {
       "id": "2c10247c4fb0",
       "title": "Japan's Takaichi eyes September cabinet shuffle to cement power base",
       "summary": "",
@@ -1436,38 +1470,6 @@
       "weight": 2
     },
     {
-      "id": "fcba170eb644",
-      "title": "In Senegal's Saint-Louis, traces of slave-trading past are being erased",
-      "summary": "The first French trading post in sub-Saharan Africa was established in Senegal's Saint-Louis in 1659 and the island soon became a holding point for thousands of captive Africans before they were shipped abroad. But Saint-Louis' role in the transatlantic slave…",
-      "url": "http://www.africanews.com/2026/08/20/in-senegals-saint-louis-traces-of-slave-trading-past-are-being-erased/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-20T13:13:09.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/88/18/22/640x360_cmsv2_02236517-98b8-53de-afb2-bb1cf13e71a9-9881822.jpg?1787218947",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "813ef6596b8b",
-      "title": "DR Congo receives 70,000 Ebola vaccine doses as Bundibugyo outbreak spreads",
-      "summary": "The Democratic Republic of the Congo (DRC) will receive 70,000 doses of the Ervebo vaccine from the UN’s international vaccine coordination group (ICG) to protect frontline communities against the Ebola virus disease.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168174",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-20T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/18-08-2026-UNOCHA-DR-Congo-ebola-04.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "b4c4952a6d91",
       "title": "Russian missiles kill 17 more in Ukraine as Guterres calls for ceasefire",
       "summary": "Russian ballistic missile strikes killed 17 people and injured more than 40 in and around the Ukrainian capital Kyiv on Thursday, local authorities reported.",
@@ -1529,6 +1531,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "813ef6596b8b",
+      "title": "DR Congo receives 70,000 Ebola vaccine doses as Bundibugyo outbreak spreads",
+      "summary": "The Democratic Republic of the Congo (DRC) will receive 70,000 doses of the Ervebo vaccine from the UN’s international vaccine coordination group (ICG) to protect frontline communities against the Ebola virus disease.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168174",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-20T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/18-08-2026-UNOCHA-DR-Congo-ebola-04.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -2618,22 +2636,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "84cbb076c54d",
-      "title": "Colombia earthquake: UN ramps up aid for 100,000 people",
-      "summary": "The UN is scaling up humanitarian assistance in western Colombia as needs continue to grow following last week’s devastating 7.4-magnitude earthquake, according to the latest update released on Tuesday.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168161",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-18T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/14-08-2026-UNICEF-Colombia-03.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Americas",
       "weight": 2
     },
     {
