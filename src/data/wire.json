@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-21T19:04:01.361Z",
+  "generatedAt": "2026-08-21T19:35:01.041Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "7b35f3334ced",
+      "title": "Doris Miller’s family ‘shocked’ by Navy’s reported consideration of honoring Trump instead of black war hero – live",
+      "summary": "Thomas Bledsoe told CNN the potential move is ‘quite a shock’ and that the family were not notified beforehand US navy carrier set to honor Black war hero may reportedly be renamed after Trump Sign up for the US Breaking News email US Senator Tim Sheehy, a…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/21/democrats-progressive-election-politics-live",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-21T19:08:29.000Z",
+      "image": "https://i.guim.co.uk/img/media/5b8d9132af55955e74691e6bdfc6562717e575c7/0_0_4865_3888/master/4865.jpg?width=700&quality=85&auto=format&fit=max&s=0b557412d83019ba9fc3e46e9e61743e",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "fcfb10d2b5d4",
       "title": "Russian double-tap drone strike kills 15 in Ukrainian mall, officials say",
@@ -17,22 +33,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "7b35f3334ced",
-      "title": "Doris Miller’s family ‘shocked’ by Navy’s reported consideration of honoring Trump instead of black war hero – live",
-      "summary": "Thomas Bledsoe told CNN the potential move is ‘quite a shock’ and that the family were not notified beforehand US navy carrier set to honor Black war hero may reportedly be renamed after Trump Sign up for the US Breaking News email US Senator Tim Sheehy, a…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/21/democrats-progressive-election-politics-live",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-21T18:51:07.000Z",
-      "image": "https://i.guim.co.uk/img/media/5b8d9132af55955e74691e6bdfc6562717e575c7/0_0_4865_3888/master/4865.jpg?width=700&quality=85&auto=format&fit=max&s=0b557412d83019ba9fc3e46e9e61743e",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -518,22 +518,6 @@
       "weight": 3
     },
     {
-      "id": "a53a6989cd97",
-      "title": "Trump’s ‘economic D-Day’ claims first victim: Not Iran, but US markets",
-      "summary": "The US and Israel's war on Iran has upended global financial and energy markets.",
-      "url": "https://www.aljazeera.com/news/2026/8/21/trumps-economic-d-day-claims-first-victim-not-iran-but-us-markets?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-21T13:47:26.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "f1fbca8df9a1",
       "title": "China’s Own Version of Ambiguity in the Taiwan Strait",
       "summary": "As the U.S. mulls “strategic clarity,” China may be shifting its pressure campaign away from highly visible military coercion toward methods that are less easily classified.",
@@ -719,22 +703,6 @@
       "sourceId": "npr-world",
       "publishedAt": "2026-08-21T11:42:10.000Z",
       "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fce%2F1d%2Fd4b7c00c49eb8088a4e7decd6ac0%2Fap26232551199754.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "78247f49f5e2",
-      "title": "Iran promises to resist interference by foreign 'enemies' as Trump threatens new sanctions",
-      "summary": "Iran promises to resist interference by foreign 'enemies' as Trump threatens new sanctions Submitted by MEE staff on Fri, 08/21/2026 - 11:11 US Treasury vows 'toughest sanctions in history' in hopes of collapsing Islamic Republic Iran's Parliament Speaker…",
-      "url": "https://www.middleeasteye.net/news/parliament-speaker-promises-resist-interference-foreign-enemies-iran-and-neighbouring-iraq",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-21T11:37:07.000Z",
-      "image": "",
       "imageWidth": 0,
       "category": "Economy",
       "categoryConfidence": "high",
@@ -980,22 +948,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "d6a5724e6e74",
-      "title": "Australian police charge man accused of attempting to share Ukrainian military intel with Russian agents",
-      "summary": "Vladmir Teslov, 27, charged after allegedly seeking to provide information about Ukrainian forces to ‘Russian intelligence services’ Australian police have charged a man who allegedly joined the Ukrainian military and sought to provide information about its…",
-      "url": "https://www.theguardian.com/australia-news/2026/aug/21/vladimir-teslov-australian-charged-sharing-ukraine-intel-russian-agents-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-21T07:11:46.000Z",
-      "image": "https://i.guim.co.uk/img/media/d5e43bc671746cebfb46719aa9c59a84f32f8510/430_0_4640_3712/master/4640.jpg?width=700&quality=85&auto=format&fit=max&s=b6477aabddb26cf95e9ef5e7cde64a48",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
     },
     {
       "id": "05d0963f883b",
