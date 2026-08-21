@@ -1,8 +1,42 @@
 {
-  "generatedAt": "2026-08-21T15:55:06.141Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-21T16:18:44.963Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "2815645c2b3f",
+      "title": "Eight killed in plane crash at remote Alaskan military site, air force says",
+      "summary": "It is unclear why the civilian-contracted plane was at the radar site on Alaska's south-west coast.",
+      "url": "https://www.bbc.co.uk/news/articles/cj9dmw8183wo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-21T16:05:09.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/88c1/live/024497b0-9d45-11f1-a137-179a8d1c790b.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "65c4cfb3b087",
+      "title": "Duck brigade replaces pesticides on wine farm in South Africa",
+      "summary": "Indian runner ducks are used, alongside sheep and cattle, at Vergenoegd Löw to control insects and trim down crops and weeds in the vineyards.",
+      "url": "http://www.africanews.com/2026/08/21/duck-brigade-replaces-pesticides-on-wine-farm-in-south-africa/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-21T15:58:27.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/88/41/20/640x360_cmsv2_80bc446a-1b37-5f31-b136-e84e6af24fd3-9884120.jpg?1787321455",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
     {
       "id": "d02a76f12d1e",
       "title": "Canada 'should fight' as US trade deadline looms, Manitoba premier says",
@@ -17,22 +51,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "f117c15b62d6",
-      "title": "Who are the eight candidates running to succeed Antonio Guterres as UN chief?",
-      "summary": "The United Nations Security Council meets Friday for a second informal straw poll to gauge the popularity of candidates seeking to succeed Secretary-General Antonio Guterres, who will complete his second five-year term at the end of the year. Eight candidates…",
-      "url": "https://www.france24.com/en/who-are-the-eight-candidates-running-to-succeed-antonio-guterres-as-un-chief",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-21T15:32:13.000Z",
-      "image": "https://s.france24.com/media/display/3a866c86-89f2-11f1-a74d-005056bf30b7/w:1024/p:16x9/000-C3B372N.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -97,6 +115,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "2c432f6ab940",
+      "title": "Guinea-Bissau opposition calls for boycott of constitutional referendum",
+      "summary": "Guinea-Bissau’s opposition PAIGC is calling for a boycott of the country’s upcoming constitutional referendum, citing fears of rigged vote.",
+      "url": "http://www.africanews.com/2026/08/21/guinea-bissau-opposition-calls-for-boycott-of-constitutional-referendum/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-21T15:13:23.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/82/77/43/640x360_cmsv2_1aaae203-80da-5c94-a736-30fe83fd8a79-9827743.jpg?1787319272",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -517,22 +551,6 @@
       "weight": 2
     },
     {
-      "id": "2815645c2b3f",
-      "title": "Eight killed in plane crash at remote Alaskan military site, air force says",
-      "summary": "It is unclear why the civilian-contracted plane was at the radar site on Alaska's south-west coast.",
-      "url": "https://www.bbc.co.uk/news/articles/cj9dmw8183wo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-21T09:53:47.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/88c1/live/024497b0-9d45-11f1-a137-179a8d1c790b.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "20de1d2a76eb",
       "title": "The inside story of how Trabzonspor pulled off Salah deal",
       "summary": "Mohamed Salah was expected to move to Saudi Arabia or the United States after leaving Liverpool, but Turkish side Trabzonspor pulled off one of the coups of the transfer window.",
@@ -560,22 +578,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "a3400eca2410",
-      "title": "Iran parliament chief visits graves of allied Iraqi fighters",
-      "summary": "Iran parliament chief visits graves of allied Iraqi fighters Iran’s parliament speaker has paid tribute to Abu Mahdi al-Muhandis during a visit to Iraq, according to Iran’s Student News Network. Mohammad Bagher Ghalibaf visited al-Muhandis’s grave at Wadi…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-parliament-chief-visits-graves-allied-iraqi-fighters",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-21T08:59:32.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -1483,22 +1485,6 @@
       "weight": 2
     },
     {
-      "id": "503701f14ec8",
-      "title": "UAE's indefinite trade embargo puts further pressure on Iranian economy",
-      "summary": "Analysts say the decision will deepen the hardship of ordinary Iranians already under strain.",
-      "url": "http://www.africanews.com/2026/08/20/uaes-indefinite-trade-embargo-puts-further-pressure-on-iranian-economy/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-20T11:20:33.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/88/18/90/640x360_cmsv2_e364c8c1-6e17-593d-b60a-f4a80c709471-9881890.jpg?1787220723",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "d110f870f646",
       "title": "Alibaba AI outlays dent profit despite best revenue growth in years",
       "summary": "",
@@ -2283,22 +2269,6 @@
       "categoryConfidence": "source",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "82b0510adc1f",
-      "title": "France to expel two Iranian diplomats amid growing 'interference' row",
-      "summary": "France will expel two Iranian diplomats in the coming days in response to Iran's decision to bar two French embassy staff from returning to Tehran, Foreign Minister Jean-Noël Barrot has said.",
-      "url": "https://www.rfi.fr/en/france/20260819-france-to-expel-two-iranian-diplomats-amid-growing-interference-row",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-19T07:29:23.000Z",
-      "image": "https://s.rfi.fr/media/display/437b61f4-075a-11f1-b957-005056a97e36/w:1024/p:16x9/AP26007632988811.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "4db40fec9a1a",
