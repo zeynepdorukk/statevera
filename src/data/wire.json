@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-21T23:44:46.187Z",
+  "generatedAt": "2026-08-21T23:59:36.758Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "a662d3b9b64e",
+      "title": "Georgia declines to join new EU sanctions against Iran",
+      "summary": "Georgia declines to join new EU sanctions against Iran Georgia has declined to join the European Union’s latest sanctions against Iran, saying its foreign policy decisions are guided by national interests, Iran’s state news agency, IRNA, reported. Tengiz…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/georgia-declines-join-new-eu-sanctions-against-iran",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-21T23:54:04.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "f3596bef7ccc",
+      "title": "‘She’s not afraid of anyone’: the prison writings of one of Hong Kong’s last outspoken democracy activists",
+      "summary": "Chow Hang-tung has been detained since 2021, and written about everything from clothes to Tiananmen Square and the meaning of freedom Tiananmen Square vigil organisers in Hong Kong found guilty of ‘inciting subversion’ In one essay written from prison, Chow…",
+      "url": "https://www.theguardian.com/world/2026/aug/22/chow-hang-tung-tiananmen-prison-writings-hong-kong",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
+      "sourceId": "guardian-asia",
+      "publishedAt": "2026-08-21T23:50:48.000Z",
+      "image": "https://i.guim.co.uk/img/media/4b5da48979090d4203cf9c69ba99f66d03f35628/958_199_4751_3801/master/4751.jpg?width=700&quality=85&auto=format&fit=max&s=d25857ec7aa90a7ba58e2543db05ca50",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "7b35f3334ced",
+      "title": "Editor of military news outlet that first revealed US aircraft carrier crisis says he was fired over interview – live",
+      "summary": "Erik Slavin says he was dismissed for insubordination after objecting to potential censorship in wake of furor sparked by reported conditions on USS Abraham Lincoln Pentagon fires publisher and editor of Stars & Stripes Backlash as navy carrier set to honor…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/21/democrats-progressive-election-politics-live",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-21T23:40:37.000Z",
+      "image": "https://i.guim.co.uk/img/media/fe49b4087569b0294cec5abd61ad195b814e4efe/375_0_3750_3000/master/3750.jpg?width=700&quality=85&auto=format&fit=max&s=c9cee1c2f32d7ddbee2e76e6da46056e",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "d552f99cd2d4",
       "title": "Centcom says 68 vessels redirected so far in Iran naval blockade",
@@ -17,22 +65,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "7b35f3334ced",
-      "title": "Editor of military news outlet that first revealed US aircraft carrier crisis says he was fired over interview – live",
-      "summary": "Erik Slavin says he was dismissed for insubordination after objecting to potential censorship in wake of furor sparked by reported conditions on USS Abraham Lincoln Pentagon fires publisher and editor of Stars & Stripes Backlash as navy carrier set to honor…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/21/democrats-progressive-election-politics-live",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-21T23:22:06.000Z",
-      "image": "https://i.guim.co.uk/img/media/fe49b4087569b0294cec5abd61ad195b814e4efe/375_0_3750_3000/master/3750.jpg?width=700&quality=85&auto=format&fit=max&s=c9cee1c2f32d7ddbee2e76e6da46056e",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -565,22 +597,6 @@
       "weight": 3
     },
     {
-      "id": "7a89febf2a3f",
-      "title": "China calls for US-Iran dialogue",
-      "summary": "China calls for US-Iran dialogue Chinese foreign ministry spokesperson Lin Jian has called for dialogue between the US and Iran amid threats of looming sanctions from Washington. Jian said in a statement on X that China \"opposes unilateral sanctions that lack…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/china-calls-us-iran-dialogue",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-21T15:28:33.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "medium",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "1a9e609c3fd7",
       "title": "JD Vance reportedly mocks Carney for trying to ‘out-tough’ Trump on trade",
       "summary": "Audio recording of US vice-president apparently made at New York fundraiser and shared with Canadian Press Leaked audio from a private event has reportedly captured the US vice-president, JD Vance, mocking Canada for apparently capitulating in a trade deal…",
@@ -628,22 +644,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
-    },
-    {
-      "id": "73fa6d534d8c",
-      "title": "Eftimiades interviewed on Restricted Handling on Chinese political influence campaigns",
-      "summary": "On July 5, Forward Defense Nonresident Senior Fellow Nicholas Eftimiades was interviewed on the Restricted Handling podcast to discuss Chinese political influence campaigns and penetration of American critical infrastructure. He highlights the need for an…",
-      "url": "https://www.atlanticcouncil.org/insight-impact/in-the-news/eftimiades-on-chinese-political-influence-campaigns/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-21T14:49:47.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 3
     },
     {
       "id": "6fa88048d1aa",
