@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T05:22:18.051Z",
+  "generatedAt": "2026-08-21T05:54:08.925Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -1465,22 +1465,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "9ef1cb02c15d",
-      "title": "Senegal opposition presses president to set local election date",
-      "summary": "Senegal’s opposition is urging President Bassirou Diomaye Faye to set a date for local elections, turning the vote into a potential early showdown with former ally Ousmane Sonko.",
-      "url": "http://www.africanews.com/2026/08/20/senegal-opposition-presses-president-to-set-local-election-date/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-20T05:03:23.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/88/11/71/640x360_cmsv2_01967688-23b0-593e-8a0c-488f458299cc-9881171.jpg?1787160823",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Africa",
       "weight": 2
     },
     {
