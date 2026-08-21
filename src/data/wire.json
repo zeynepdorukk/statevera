@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-21T04:07:58.188Z",
+  "generatedAt": "2026-08-21T04:51:27.170Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "3fb99bc55b68",
+      "title": "Former Liberal MP condemns Coalition for backing gambling reforms that ‘let down’ vulnerable Australians",
+      "summary": "Jenny Ware, member of inquiry that recommended wagering advertising ban, says ‘public health crisis’ demands stronger response from major parties Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news…",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/21/liberal-mp-condemns-coalition-backing-labor-gambling-reforms",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-21T04:12:08.000Z",
+      "image": "https://i.guim.co.uk/img/media/3dde6f6a93ca7f76db98a6721b1b2602018c34c8/691_219_4113_3290/master/4113.jpg?width=700&quality=85&auto=format&fit=max&s=676ccde575d5afeb7a4ee6191eb71191",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "470e23116e50",
       "title": "Trump Jr.-funded Polymarket helps gov't insiders cash out on war",
@@ -212,6 +228,22 @@
       "weight": 2
     },
     {
+      "id": "61126644e594",
+      "title": "Fix schools, say India's 'cockroach' protesters. Schoolchildren agree",
+      "summary": "The poor state of government schools is the focus of a new campaign by India's Cockroach Janta Party (CJP).",
+      "url": "https://www.bbc.co.uk/news/articles/ckg4q8kyxp7o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-21T00:04:10.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/29dd/live/4a1da930-9c84-11f1-98a7-0f0ed51e02be.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
       "id": "2cd478a755c6",
       "title": "Why Nigeria's one-time political giant may face extinction",
       "summary": "Once a giant of African politics, the PDP is in danger of being wiped out after January's elections.",
@@ -273,22 +305,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "ab2131e75f39",
-      "title": "Jailed ex-Pakistani PM Imran Khan in hospital after uproar over health",
-      "summary": "Supreme court ordered transfer of ex-leader whose health is reportedly deteriorating and following public protests Pakistan’s jailed former prime minister Imran Khan has been taken to a hospital in the country’s capital on supreme court orders after weeks of…",
-      "url": "https://www.theguardian.com/world/2026/aug/20/imran-khan-hospital-pakistan",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-20T23:07:10.000Z",
-      "image": "https://i.guim.co.uk/img/media/96766fdecb9254b8699c680a0c29d97bfc8e18d1/350_0_6801_5440/master/6801.jpg?width=700&quality=85&auto=format&fit=max&s=67d007fd385125034933cdf5b58837d9",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -711,22 +727,6 @@
       "weight": 2
     },
     {
-      "id": "f9db9dfa1c08",
-      "title": "US targets Hezbollah with fresh sanctions",
-      "summary": "US targets Hezbollah with fresh sanctions The United States will on Thursday issue fresh sanctions targeting Lebanon's Hezbollah, including re-designating it under a terrorism authority, according to a statement seen by Reuters, in a move aimed at emphasizing…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-targets-hezbollah-fresh-sanctions",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-20T17:22:05.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "6ec3fd32f49e",
       "title": "Zelenskyy’s recent Serbia visit was a win for Ukraine and the West",
       "summary": "Ukrainian President Volodymyr Zelenskyy's recent visit to Serbia highlighted growing ties between Kyiv and Belgrade while also underlining wartime Ukraine's emergence as an important geopolitical player, writes Stephen Blank. The post Zelenskyy’s recent…",
@@ -885,22 +885,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "0ec5468f83c9",
-      "title": "Sydney air traffic controllers have ‘grave concerns’ about collision risk after airspace redesign",
-      "summary": "Exclusive: Federal government notified after whistleblower says controllers have ‘minimal confidence in their ability to handle’ rule changes related to second airport Follow our Australia news live blog for latest updates Get our breaking news email , free…",
-      "url": "https://www.theguardian.com/australia-news/2026/aug/21/air-traffic-controllers-safety-risk-fears-sydney-airport",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-20T15:00:54.000Z",
-      "image": "https://i.guim.co.uk/img/media/fa6b0d51dfc2fc1b643964c65b9f814ed369ec84/0_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=98f75e16d5420e996be1ef2a19b8f8a4",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -1272,22 +1256,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "e1239ee18ddf",
-      "title": "Ukraine: Several killed in 'massive' Russian strikes on Kyiv",
-      "summary": "The strikes on the Ukrainian capital and its surrounding regions also injured dozens, damaged buildings and caused power cuts. In neighboring Poland, the military started preventive operations to protect its airspace.",
-      "url": "https://www.dw.com/en/ukraine-several-killed-in-massive-russian-strikes-on-kyiv/a-78437970?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-20T08:59:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
       "weight": 2
     },
     {
