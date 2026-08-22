@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T09:01:33.437Z",
+  "generatedAt": "2026-08-22T09:38:05.566Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -25,14 +25,14 @@
       "summary": "In letter to Macron and Burnham, more than 100 senior figures accuse Israel of ethnic cleansing and call for measures including trade ban More than 100 French and British former diplomats have said Palestine is being erased in front of the world’s eyes and…",
       "url": "https://www.theguardian.com/world/2026/aug/22/uk-france-diplomats-israel-palestine",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-22T09:00:04.000Z",
       "image": "https://i.guim.co.uk/img/media/dd5b33bf9f870a1fc5c8de54279eac6bbbe6119d/402_0_5484_4387/master/5484.jpg?width=700&quality=85&auto=format&fit=max&s=1596e868e6eceb98d4b1c7453c3c991d",
       "imageWidth": 700,
       "category": "Diplomacy",
       "categoryConfidence": "high",
-      "region": "Middle East",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -132,22 +132,6 @@
       "weight": 2
     },
     {
-      "id": "c5698ec68c51",
-      "title": "Russian strikes in Ukraine kill at least two a day after deadly drone attack on shopping centre",
-      "summary": "At least two people were reported dead early Saturday by local authorities, after Russian strikes on Ukraine. The strikes came after a series of Russian bombings killed at least 20 people in Ukraine on Friday, including 16 in a daytime drone attack on a busy…",
-      "url": "https://www.france24.com/en/europe/20260822-russian-strikes-in-ukraine-kill-at-least-two-people-injure-several-others",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-22T06:02:27.000Z",
-      "image": "https://s.france24.com/media/display/7370887e-9ded-11f1-8fd6-005056bf30b7/w:1024/p:16x9/AP26233423453970.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "522bcd203e32",
       "title": "US sanctions 'declaration of war on all nations', Iran says",
       "summary": "US sanctions 'declaration of war on all nations', Iran says Iran’s foreign ministry spokesperson, Esmaeil Baghaei, says new US sanctions against Iran amounted to a “declaration of war” on all countries and went beyond “an illegal economic war against a single…",
@@ -165,8 +149,8 @@
     },
     {
       "id": "c25b3791b426",
-      "title": "US envoy to Turkey: 'Israel occupies Golan despite UN resolutions, international order'",
-      "summary": "US envoy to Turkey: 'Israel occupies Golan despite UN resolutions, international order' Submitted by MEE staff on Sat, 08/22/2026 - 05:43 Tom Barrack made the remarks when asked whether Israel intended to annex Lebanese territory Barrack says America's…",
+      "title": "US ambassador to Turkey breaks with Washington on Israel's occupation of Syria's Golan Heights",
+      "summary": "US ambassador to Turkey breaks with Washington on Israel's occupation of Syria's Golan Heights Submitted by MEE staff on Sat, 08/22/2026 - 05:43 Tom Barrack's remarks put him at odds with the Trump administration, which recognised Israeli sovereignty over the…",
       "url": "https://www.middleeasteye.net/news/us-envoy-turkey-israel-occupies-golan-despite-un-resolutions-international-order",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -175,7 +159,7 @@
       "image": "",
       "imageWidth": 0,
       "category": "Diplomacy",
-      "categoryConfidence": "medium",
+      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     },
@@ -226,6 +210,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "69baec162cde",
+      "title": "Pentagon fires military newspaper leadership for 'insubordination'",
+      "summary": "The editor-in-chief of Stars and Stripes said he was fired, alongside the newspaper's publisher and a reporter, for insubordination after he objected to potential editorial interference.",
+      "url": "https://www.dw.com/en/pentagon-fires-military-newspaper-leadership-for-insubordination/a-78466373?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-22T02:55:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -483,22 +483,6 @@
       "categoryConfidence": "high",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "78a8ef57ab3b",
-      "title": "Pentagon fires publisher and editor of US military news outlet Stars and Stripes",
-      "summary": "Max Lederer and Erik Slavin receive termination notices after publication reported on crew conditions on the USS Abraham Lincoln The Pentagon has fired the publisher and the editor of Stars and Stripes, the US military news outlet that has clashed with the…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/21/pentagon-fires-publisher-editor-stars-stripes-uss-abraham-lincoln",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-21T20:10:07.000Z",
-      "image": "https://i.guim.co.uk/img/media/17197d95ed687df8be54e0d9c7cb3a0f2de145bd/715_379_2814_2253/master/2814.jpg?width=700&quality=85&auto=format&fit=max&s=f7ff75147a59d6eda79e4d8046edfbdb",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "b703ada2c13d",
