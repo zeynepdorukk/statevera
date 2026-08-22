@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-22T23:11:37.631Z",
+  "generatedAt": "2026-08-22T23:33:12.730Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "057308c495ef",
+      "title": "Hamas says not obligated to implement Trump Gaza deal unless Israel accepts it",
+      "summary": "Hamas says not obligated to implement Trump Gaza deal unless Israel accepts it Hamas leader Osama Hamdan said the group told US envoy Jared Kushner that it would not consider itself obligated to implement any part of president Trump’s Gaza peace deal unless…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-says-not-obligated-implement-trump-gaza-deal-unless-israel-accepts",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-22T23:14:34.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "a378ce3cf7fc",
       "title": "Evening recap",
@@ -1977,6 +1993,22 @@
       "weight": 2
     },
     {
+      "id": "cdf8edc1bfa4",
+      "title": "Spurs in talks to sign Egypt's Marmoush from Man City",
+      "summary": "Spurs open talks with Manchester City to sign attacking duo Omar Marmoush and Savinho.",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cz645z0w3ypo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/africa",
+      "sourceId": "bbc-africa",
+      "publishedAt": "2026-08-20T09:01:26.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/a624/live/8092d520-9c71-11f1-b109-879e35c24276.png",
+      "imageWidth": 240,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "befdf237dcbb",
       "title": "An open letter to Iran’s political prisoners, trapped ‘between two blades of a scissors’",
       "summary": "On one side, you face the domination of the Islamic Republic; on the other, the imperialist forces that republic claims to stand against August marks the anniversary of the 1988 mass executions in Iran, a horror that echoes in the country’s current surge in…",
@@ -2665,6 +2697,22 @@
       "weight": 3
     },
     {
+      "id": "23d4a8343de3",
+      "title": "Aston Villa agree deal for West Ham's Wan-Bissaka",
+      "summary": "Aston Villa agree to sign West Ham defender Aaron Wan-Bissaka on an initial loan deal with an obligation to buy at the end of the season.",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cgr7vvpkw0eo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/africa",
+      "sourceId": "bbc-africa",
+      "publishedAt": "2026-08-18T17:56:13.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8aec/live/1293ff20-9b1a-11f1-a8a4-83462463c9fa.jpg",
+      "imageWidth": 240,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
       "id": "10e9a93eba5c",
       "title": "Bangladesh seeks stronger energy ties with Qatar amid Strait of Hormuz tensions",
       "summary": "Foreign minister leads high-level delegation on 2-day visit to Doha as Bangladesh grapples with domestic energy shortages",
@@ -2918,22 +2966,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "182debe3e33a",
-      "title": "Presidential pardon for French alleged spy accused of plotting Mali coup",
-      "summary": "France is yet to comment on Yann Vezilier's pardon and previously called the accusations \"unfounded\".",
-      "url": "https://www.bbc.co.uk/news/articles/c2el29e3m3xo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/africa",
-      "sourceId": "bbc-africa",
-      "publishedAt": "2026-08-13T15:50:49.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d647/live/3b219a60-9728-11f1-808c-532494fd22c7.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
