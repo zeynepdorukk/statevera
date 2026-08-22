@@ -26,10 +26,10 @@
       "label": "DJI",
       "symbol": "^DJI",
       "decimals": 2,
-      "price": 53277.01,
+      "price": 53277,
       "change": 517.8000000000029,
-      "percent": 0.9814400177713104,
-      "updatedAt": "2026-08-21T20:41:57.000Z"
+      "percent": 0.9814402037938463,
+      "updatedAt": "2026-08-21T20:00:00.000Z"
     },
     {
       "id": "stoxx",
@@ -46,10 +46,10 @@
       "label": "FTSE",
       "symbol": "^FTSE",
       "decimals": 2,
-      "price": 10816.56,
+      "price": 10816.6,
       "change": 68.39999999999964,
-      "percent": 0.6363879957127512,
-      "updatedAt": "2026-08-21T15:35:30.000Z"
+      "percent": 0.636385627360857,
+      "updatedAt": "2026-08-21T15:30:00.000Z"
     },
     {
       "id": "n225",
@@ -76,10 +76,10 @@
       "label": "HANG SENG",
       "symbol": "^HSI",
       "decimals": 2,
-      "price": 26009.46,
-      "change": 310.9699999999975,
-      "percent": 1.210071097562532,
-      "updatedAt": "2026-08-21T08:08:30.000Z"
+      "price": 26009.5,
+      "change": 311,
+      "percent": 1.2101873650213046,
+      "updatedAt": "2026-08-21T08:10:00.000Z"
     },
     {
       "id": "kospi",
@@ -96,10 +96,10 @@
       "label": "SHANGHAI",
       "symbol": "000001.SS",
       "decimals": 2,
-      "price": 3905.203,
-      "change": 1.481999999999971,
-      "percent": 0.037963778661435355,
-      "updatedAt": "2026-08-21T07:00:24.000Z"
+      "price": 3905.2,
+      "change": 1.4800000000000182,
+      "percent": 0.03791255520375483,
+      "updatedAt": "2026-08-21T07:00:00.000Z"
     },
     {
       "id": "brent",

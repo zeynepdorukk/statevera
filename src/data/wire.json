@@ -1,8 +1,27 @@
 {
-  "generatedAt": "2026-08-22T02:20:36.684Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-22T03:12:13.641Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "d2cec9b6e40a",
+      "title": "Japan's Kubota to boost exports from India, seeks price edge in Europe, US",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/agriculture/japan-s-kubota-to-boost-exports-from-india-seeks-price-edge-in-europe-us",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-22T03:12:08.430Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "fcfb10d2b5d4",
       "title": "Russian double-tap drone strike kills 16 in Ukrainian mall, officials say",
@@ -340,22 +359,6 @@
       "weight": 2
     },
     {
-      "id": "b703ada2c13d",
-      "title": "Israeli settlers and military kill 2 Palestinians – one a teenager – in separate West Bank shootings",
-      "summary": "A teenage boy and a 58-year-old man were shot dead Friday by Israeli settlers and soldiers, respectively, in separate shootings in the occupied West Bank.",
-      "url": "https://www.france24.com/en/middle-east/20260821-israeli-settlers-and-military-kill-2-palestinians-teenager-separate-west-bank-shootings",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-21T19:53:39.000Z",
-      "image": "https://s.france24.com/media/display/d8c7774e-9d95-11f1-b516-005056a97e36/w:1024/p:16x9/AP26233454282893.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "a1763cea1b26",
       "title": "Trump waives ‘out-of-quota’ beef tariffs for 90 days to lower prices",
       "summary": "The president did not mention with whom he made the deal or where the imported ground beef is coming from.",
@@ -433,22 +436,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "38f1f3daedca",
-      "title": "Deadly 'double-tap' Russian drone strikes target Ukraine shopping centre",
-      "summary": "A pair of Russian drone strikes that hit a shopping centre in the Ukrainian city of Kryvyi Rih Friday killed at least 15 people and wounded scores more, authorities said. Ukrainian President Volodymyr Zelensky accused Moscow of targeting emergency workers in…",
-      "url": "https://www.france24.com/en/europe/20260821-back-to-back-russian-drone-strikes-kill-14-people-in-ukraine-shopping-centre",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-21T18:07:50.000Z",
-      "image": "https://s.france24.com/media/display/8b15b172-9d87-11f1-abb9-005056bfb2b6/w:1024/p:16x9/000-C69769G.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -627,22 +614,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "f117c15b62d6",
-      "title": "Who are the eight candidates running to succeed Antonio Guterres as UN chief?",
-      "summary": "The United Nations Security Council held a second informal straw poll to gauge the popularity of candidates seeking to succeed Secretary-General Antonio Guterres, who will complete his second five-year term at the end of the year. Eight candidates are…",
-      "url": "https://www.france24.com/en/who-are-the-eight-candidates-running-to-succeed-antonio-guterres-as-un-chief",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-21T15:32:13.000Z",
-      "image": "https://s.france24.com/media/display/3a866c86-89f2-11f1-a74d-005056bf30b7/w:1024/p:16x9/000-C3B372N.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Global",
-      "weight": 2
     },
     {
       "id": "db51d26e2826",
