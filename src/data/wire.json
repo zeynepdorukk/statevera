@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T14:58:15.255Z",
+  "generatedAt": "2026-08-22T15:16:50.004Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -32,6 +32,22 @@
       "imageWidth": 0,
       "category": "Security",
       "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "61702c7efa2d",
+      "title": "Israeli drone strike on ‘civilian vehicle’ injures several in Syria",
+      "summary": "Syria condemns attack in southwest as a 'flagrant violation of sovereignty' and a 'blatant breach of international law'.",
+      "url": "https://www.aljazeera.com/news/2026/8/22/israeli-drone-strike-on-civilian-vehicle-causes-injuries-in-syria?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-22T14:37:40.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     },
@@ -244,22 +260,6 @@
       "weight": 2
     },
     {
-      "id": "9a19cdde4343",
-      "title": "Diplomats urge France and UK to uphold rule of law in Palestinian territories",
-      "summary": "Dozens of former senior French and UK diplomats on Saturday urged their governments to work together to uphold international law in the Palestinian territories, accusing Israel of seeking to \"destroy\" any prospect of a viable Palestinian state.",
-      "url": "https://www.rfi.fr/en/international/20260822-former-envoys-urge-joint-french-uk-action-on-palestinian-territories",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-22T09:46:11.000Z",
-      "image": "https://s.rfi.fr/media/display/4df126be-9e0e-11f1-ad30-005056bf30b7/w:1024/p:16x9/85e7dd8c346dba72bef7c91da83b8a5b45173c6d.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "0aafe3710acd",
       "title": "Israeli settlers kill Palestinian teen in the occupied West Bank",
       "summary": "Two Palestinians were killed Friday in the West Bank, one in Jenin, in the north, by Israeli army gunfire, and the other in the southern part of the territory by a settler, according to Palestinian sources and the army.",
@@ -369,22 +369,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "fcf2b83a4232",
-      "title": "World Bank projects war-hit Lebanon’s economy to contract by 6.4 percent",
-      "summary": "Conflict with Israel derails Lebanon's economic recovery as inflation and consumer prices rise, the global lender says.",
-      "url": "https://www.aljazeera.com/news/2026/8/22/world-bank-projects-war-hit-lebanons-economy-to-contract-by-6-4-percent?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-22T07:35:08.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
