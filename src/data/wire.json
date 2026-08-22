@@ -1,9 +1,7 @@
 {
-  "generatedAt": "2026-08-22T03:12:13.641Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-22T03:55:07.033Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
     {
       "id": "d2cec9b6e40a",
@@ -20,22 +18,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "fcfb10d2b5d4",
-      "title": "Russian double-tap drone strike kills 16 in Ukrainian mall, officials say",
-      "summary": "At least 130 people, including 23 children, were also injured when the shopping centre was hit, according to the regional head.",
-      "url": "https://www.bbc.co.uk/news/articles/c39egw7nmk2o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-22T01:47:54.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/da84/live/0b5a45c0-9d86-11f1-adf5-2dc21c9cc109.png",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -359,19 +341,19 @@
       "weight": 2
     },
     {
-      "id": "a1763cea1b26",
-      "title": "Trump waives ‘out-of-quota’ beef tariffs for 90 days to lower prices",
-      "summary": "The president did not mention with whom he made the deal or where the imported ground beef is coming from.",
-      "url": "https://www.aljazeera.com/news/2026/8/21/trump-waives-out-of-quota-beef-tariffs-for-90-days-to-lower-prices?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-21T19:42:51.000Z",
-      "image": "",
+      "id": "b703ada2c13d",
+      "title": "Israeli settlers and military kill 2 Palestinians – one a teenager – in separate West Bank shootings",
+      "summary": "A teenage boy and a 58-year-old man were shot dead Friday by Israeli settlers and soldiers, respectively, in separate shootings in the occupied West Bank.",
+      "url": "https://www.france24.com/en/middle-east/20260821-israeli-settlers-and-military-kill-2-palestinians-teenager-separate-west-bank-shootings",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-21T19:53:39.000Z",
+      "image": "https://s.france24.com/media/display/d8c7774e-9d95-11f1-b516-005056a97e36/w:1024/p:16x9/AP26233454282893.jpg",
       "imageWidth": 0,
-      "category": "Economy",
+      "category": "Security",
       "categoryConfidence": "high",
-      "region": "Americas",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -436,6 +418,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "38f1f3daedca",
+      "title": "Deadly 'double-tap' Russian drone strikes target Ukraine shopping centre",
+      "summary": "A pair of Russian drone strikes that hit a shopping centre in the Ukrainian city of Kryvyi Rih Friday killed at least 15 people and wounded scores more, authorities said. Ukrainian President Volodymyr Zelensky accused Moscow of targeting emergency workers in…",
+      "url": "https://www.france24.com/en/europe/20260821-back-to-back-russian-drone-strikes-kill-14-people-in-ukraine-shopping-centre",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-21T18:07:50.000Z",
+      "image": "https://s.france24.com/media/display/8b15b172-9d87-11f1-abb9-005056bfb2b6/w:1024/p:16x9/000-C69769G.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -614,6 +612,22 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
+    },
+    {
+      "id": "f117c15b62d6",
+      "title": "Who are the eight candidates running to succeed Antonio Guterres as UN chief?",
+      "summary": "The United Nations Security Council held a second informal straw poll to gauge the popularity of candidates seeking to succeed Secretary-General Antonio Guterres, who will complete his second five-year term at the end of the year. Eight candidates are…",
+      "url": "https://www.france24.com/en/who-are-the-eight-candidates-running-to-succeed-antonio-guterres-as-un-chief",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-21T15:32:13.000Z",
+      "image": "https://s.france24.com/media/display/3a866c86-89f2-11f1-a74d-005056bf30b7/w:1024/p:16x9/000-C3B372N.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 2
     },
     {
       "id": "db51d26e2826",
@@ -886,6 +900,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "5c85ef016085",
+      "title": "AI for Good: How the UN uses AI to advance human rights",
+      "summary": "For Ari, a six-year-old boy with learning difficulties in Jamaica, artificial intelligence (AI) opened the door to something many children take for granted: reading a book in his own language. Thousands of miles away, gold miners in Ethiopia are being…",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168177",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-21T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/14-09-2023-UN-Photo-Doreen-Bogdan-Martin.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -2552,22 +2582,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "53f210eea74e",
-      "title": "Lebanon: 860,000 displaced people have returned home, but humanitarian crisis remains ‘immense’",
-      "summary": "Around 860,000 people displaced by the conflict in southern Lebanon have returned, but the displacement and humanitarian crisis are “far from over,” the UN warned on Tuesday.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168163",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-18T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/08/18-08-2026-Gaza-Tyre-UNHCR-01.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Middle East",
       "weight": 2
     },
     {
