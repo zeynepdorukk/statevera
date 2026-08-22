@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-22T15:16:50.004Z",
+  "generatedAt": "2026-08-22T15:41:58.433Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "5fd4de93df4f",
+      "title": "Carney faces crucial test after walking away from Trump's deal",
+      "summary": "The Canadian prime minister will have the sell his gamble that walking away from talks with the White House will be worth the consequences.",
+      "url": "https://www.bbc.co.uk/news/articles/c3040pn8lmmo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-22T15:00:27.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7965/live/5fe534d0-9e38-11f1-aed2-8d6da8d75094.jpg",
+      "imageWidth": 240,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "8fe8e38671ba",
       "title": "Kazakhstan's future after the elections: Russia, EU or China",
@@ -453,22 +469,6 @@
       "weight": 2
     },
     {
-      "id": "98a550fb6a8f",
-      "title": "Trump says he views strait of Hormuz as ‘American territory’",
-      "summary": "President at rally in South Carolina makes comments on key strategic waterway and jokes about bombing Iran Donald Trump called the strait of Hormuz “an American territory” on Friday, as the US continues its military blockade of Iran’s shipping and ports while…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/21/trump-strait-of-hormuz-american-territory",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-22T01:24:27.000Z",
-      "image": "https://i.guim.co.uk/img/media/46152a99661f01725bacb9b6571a9d9744184f38/1247_0_7200_5760/master/7200.jpg?width=700&quality=85&auto=format&fit=max&s=0257a22bf28353767a4763ce7d51a375",
-      "imageWidth": 700,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "0daf13301211",
       "title": "Attack on Ukraine shopping centre that killed 16 is ‘terror by design’, says EU foreign policy chief",
       "summary": "Kaja Kallas, the EU’s top diplomat, threatens harshest sanctions yet on Russia after strike on Kryvyi Rih, the home town of Volodymyr Zelenskyy Russian drones have slammed into a busy shopping centre in central Ukraine, killing 16 people in an attack that…",
@@ -731,8 +731,8 @@
       "summary": "An eagerly anticipated gathering of women will not be taking place following recent aerial strikes.",
       "url": "https://www.bbc.co.uk/news/articles/c24me64n31qo?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
+      "publisherHome": "https://www.bbc.com/news/world/africa",
+      "sourceId": "bbc-africa",
       "publishedAt": "2026-08-21T16:20:55.000Z",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d199/live/3b807760-9d77-11f1-b109-879e35c24276.jpg",
       "imageWidth": 240,
