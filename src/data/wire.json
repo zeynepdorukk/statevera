@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T07:06:53.503Z",
+  "generatedAt": "2026-08-22T07:42:45.268Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -17,6 +17,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "7147d4521ef7",
+      "title": "Tanzania: Tundu Lissu denounces 'political case' as treason trial starts",
+      "summary": "Lissu, head of the opposition Chadema party, was detained in April 2025 and charged with treason, which carries a potential death penalty, for allegedly inciting the public to boycott last year's elections",
+      "url": "http://www.africanews.com/2026/08/22/tanzania-tundu-lissu-denounces-political-case-as-treason-trial-starts/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-22T06:52:19.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/88/43/11/640x360_cmsv2_ada9df93-d0bc-5961-ad13-474853b914f3-9884311.jpg?1787331526",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -70,7 +86,7 @@
     {
       "id": "f54ef6774a10",
       "title": "As Russian missiles rain down on Kyiv, casualties mount and the mood darkens",
-      "summary": "Ukraine’s military has run out of US Patriot missiles to repel ballistic attacks, which have one aim, the capital’s mayor says: to destroy morale Viktor, 23, Sofiia, 18, and their dog, Teddy, were bedding down for the night on Thursday at the Dorohozhychi…",
+      "summary": "Ukraine’s military has run out of US Patriot interceptors to repel ballistic attacks, which have one aim, the capital’s mayor says: to destroy morale Viktor, 23, Sofiia, 18, and their dog, Teddy, were bedding down for the night on Thursday at the Dorohozhychi…",
       "url": "https://www.theguardian.com/world/2026/aug/22/russian-missiles-kyiv-ukraine-casualties-mood-darkens",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world/europe-news",
@@ -853,22 +869,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "37d73f3e708d",
-      "title": "Tanzanian opposition leader to face trial on treason charges",
-      "summary": "Tundu Lissu has been detained since April last year for allegedly inciting the public to boycott the November elections.",
-      "url": "http://www.africanews.com/2026/08/21/tanzanian-opposition-leader-to-face-trial-on-treason-charges/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-21T13:23:29.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/88/37/98/640x360_cmsv2_7f00f452-8d59-56ac-a4e4-e92f296a92e9-9883798.jpg?1787312114",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
     },
     {
       "id": "24d9e3341567",
@@ -2343,6 +2343,22 @@
       "categoryConfidence": "source",
       "region": "Global",
       "weight": 3
+    },
+    {
+      "id": "82b0510adc1f",
+      "title": "France to expel two Iranian diplomats amid growing 'interference' row",
+      "summary": "France will expel two Iranian diplomats in the coming days in response to Iran's decision to bar two French embassy staff from returning to Tehran, Foreign Minister Jean-Noël Barrot has said.",
+      "url": "https://www.rfi.fr/en/france/20260819-france-to-expel-two-iranian-diplomats-amid-growing-interference-row",
+      "publisher": "RFI",
+      "publisherHome": "https://www.rfi.fr/en",
+      "sourceId": "rfi-world",
+      "publishedAt": "2026-08-19T07:29:23.000Z",
+      "image": "https://s.rfi.fr/media/display/437b61f4-075a-11f1-b957-005056a97e36/w:1024/p:16x9/AP26007632988811.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
     },
     {
       "id": "4db40fec9a1a",
