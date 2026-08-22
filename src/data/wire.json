@@ -1,9 +1,7 @@
 {
-  "generatedAt": "2026-08-22T12:17:36.761Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "france24"
-  ],
+  "generatedAt": "2026-08-22T13:06:34.428Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
     {
       "id": "2a7cbb619107",
@@ -35,22 +33,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "1ba93b103296",
-      "title": "Canada says it will match US tariffs 'dollar for dollar' as trade talks break down",
-      "summary": "A new 50% levy on $20bn of Canadian imports comes into force after a last-minute breakdown in trade talks.",
-      "url": "https://www.bbc.co.uk/news/articles/cvgvyy4x2mvo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-22T11:21:05.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ef5d/live/88423690-9ddd-11f1-b109-879e35c24276.jpg",
-      "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -102,8 +84,40 @@
       "weight": 2
     },
     {
+      "id": "218e9cacf865",
+      "title": "Ethiopia uncorks a wine boom, Bordeaux vines driving exports and local demand",
+      "summary": "A partnership between French experts and Ethiopian winemakers is putting East Africa on the viticultural map. Using seeds imported from Bordeaux, and after years of refining, exports are now on the rise. Domestically, Ethiopians are also consuming more and…",
+      "url": "https://www.france24.com/en/ethiopia-uncorks-a-wine-boom-bordeaux-vines-driving-exports-and-local-demand",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-22T10:14:02.000Z",
+      "image": "https://s.france24.com/media/display/eb228c14-9e10-11f1-a183-005056bf30b7/w:1024/p:16x9/EN-20260822-092424-092621-CS.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "35c72d07032c",
+      "title": "Middle East live: Iran allows several Iraqi oil tankers to pass through Hormuz strait",
+      "summary": "Iran has allowed a ​number of Iraqi oil tankers to pass through the Strait of Hormuz following repeated requests from Baghdad, ​Iran’s ‌state news agency reported ⁠on Saturday. Meanwhile, the United States and Iran exchanged defiant messages ahead of Monday's…",
+      "url": "https://www.france24.com/en/middle-east/20260822-middle-east-live-iran-allows-several-iraqi-oil-tankers-to-pass-through-hormuz",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-22T09:48:45.000Z",
+      "image": "https://s.france24.com/media/display/e9dcf050-9e0c-11f1-a650-005056bfb2b6/w:1024/p:16x9/AP26207813043051.jpg",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "9a19cdde4343",
-      "title": "Former envoys urge joint French, UK action on Palestinian territories",
+      "title": "Over 100 former envoys urge joint French, UK action on Palestinian territories",
       "summary": "Dozens of former senior French and UK diplomats on Saturday urged their governments to work together to uphold international law in the Palestinian territories, accusing Israel of seeking to \"destroy\" any prospect of a viable Palestinian state.",
       "url": "https://www.rfi.fr/en/international/20260822-former-envoys-urge-joint-french-uk-action-on-palestinian-territories",
       "publisher": "RFI",
@@ -114,6 +128,22 @@
       "imageWidth": 0,
       "category": "Diplomacy",
       "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "0aafe3710acd",
+      "title": "Israeli settlers kill Palestinian teen in the occupied West Bank",
+      "summary": "Two Palestinians were killed Friday in the West Bank, one in Jenin, in the north, by Israeli army gunfire, and the other in the southern part of the territory by a settler, according to Palestinian sources and the army.",
+      "url": "https://www.france24.com/en/israeli-settlers-kill-palestinian-teen-in-the-occupied-west-bank",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-22T09:10:38.000Z",
+      "image": "https://s.france24.com/media/display/1aac477c-9e07-11f1-a67f-005056a90284/w:1024/p:16x9/EN-20260822-100539-100703-CS.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
     },
@@ -246,6 +276,38 @@
       "weight": 2
     },
     {
+      "id": "4b632992462d",
+      "title": "Morning recap",
+      "summary": "Morning recap Good morning, Middle East Eye readers. US President Donald Trump said he views the Strait of Hormuz as “an American territory” and reiterated that the US “cannot let Iran have a nuclear weapon”. His remarks came hours after he said he did not…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/morning-recap-155",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-22T06:46:06.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "c5698ec68c51",
+      "title": "Russian strikes in Ukraine kill at least four a day after deadly drone attack on shopping centre",
+      "summary": "French President Emmanuel Macron said Saturday that Paris would deliver new interceptor missiles to Ukraine after Russian strikes reportedly killed four people, including two children. The strikes followed a series of Russian attacks that killed at least 20…",
+      "url": "https://www.france24.com/en/europe/20260822-russian-strikes-in-ukraine-kill-at-least-two-people-injure-several-others",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-22T06:02:27.000Z",
+      "image": "https://s.france24.com/media/display/a1255b2a-9e1d-11f1-91e9-005056bfb2b6/w:1024/p:16x9/2026-08-22T081515Z-21730376-RC2K3NAZR8G6-RTRMADP-3-UKRAINE-CRISIS-ATTACK-RAILWAY-KYIV.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "522bcd203e32",
       "title": "US sanctions 'declaration of war on all nations', Iran says",
       "summary": "US sanctions 'declaration of war on all nations', Iran says Iran’s foreign ministry spokesperson, Esmaeil Baghaei, says new US sanctions against Iran amounted to a “declaration of war” on all countries and went beyond “an illegal economic war against a single…",
@@ -260,6 +322,38 @@
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
+    },
+    {
+      "id": "36a7d0b87bff",
+      "title": "Canada vows to match US tariffs 'dollar for dollar' after failed trade negotiations",
+      "summary": "Canadian Prime Minister Mark Carney vowed that his country will match the US tariffs \"dollar for dollar to protect our workers and businesses\", after hefty US tariffs on some Canadian products took effect on Saturday following days of failed negotiations.",
+      "url": "https://www.france24.com/en/americas/20260822-carney-says-canada-will-match-us-tariffs-dollar-for-dollar-after-failed-trade-negotiations",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-22T04:29:13.000Z",
+      "image": "https://s.france24.com/media/display/06bf9068-9de2-11f1-85f9-005056bf30b7/w:1024/p:16x9/71ef5231e98ab11a4b6cb91c727ec5b618113787.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "915b2d650485",
+      "title": "Israel is sponsoring ads on Ted Cruz's podcast. Is that legal?",
+      "summary": "The Israeli government is running advertisements on a popular podcast hosted by Sen. Ted Cruz (R-Texas), raising questions about whether the staunchly pro-Israel lawmaker is indirectly receiving campaign funding from a foreign country. Radio and podcast giant…",
+      "url": "https://responsiblestatecraft.org/ted-cruz-israel/",
+      "publisher": "Responsible Statecraft",
+      "publisherHome": "https://responsiblestatecraft.org",
+      "sourceId": "responsible-statecraft",
+      "publishedAt": "2026-08-22T04:05:01.000Z",
+      "image": "https://responsiblestatecraft.org/media-library/sen-ted-cruz-r-texas-is-seen-after-the-senate-luncheons-in-the-u-s-capitol.jpg?id=67658278&width=980",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 3
     },
     {
       "id": "f54ef6774a10",
@@ -1680,8 +1774,8 @@
       "summary": "Launches, detected by South Korea and Japan, came after US scaled back exercises with South Korea in apparent overture to Kim Jong-un North Korea has launched about 10 short-range ballistic missiles towards the sea, South Korea’s military said, a day after…",
       "url": "https://www.theguardian.com/world/2026/aug/20/north-korea-fires-10-missiles-day-after-trump-curtails-south-korea-joint-drills",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
+      "sourceId": "guardian-asia",
       "publishedAt": "2026-08-20T10:25:29.000Z",
       "image": "https://i.guim.co.uk/img/media/f1aa4a62b7bca7ec7ccef5c7cec998317506896c/139_0_4632_3706/master/4632.jpg?width=700&quality=85&auto=format&fit=max&s=85de399ffe68841d04f410711cedeedc",
       "imageWidth": 700,
@@ -2568,22 +2662,6 @@
       "category": "Economy",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 3
-    },
-    {
-      "id": "75b42f33d743",
-      "title": "The never-ending myth of a looming Ukrainian 'breakthrough'",
-      "summary": "For those casually observing the war in Ukraine, the failure of Kyiv’s recent strikes on Russian territory to impact the battlefield might be disappointing, even inexplicable. For those who have paid close attention to the war, it is just the latest…",
-      "url": "https://responsiblestatecraft.org/is-ukraine-winning-the-war/",
-      "publisher": "Responsible Statecraft",
-      "publisherHome": "https://responsiblestatecraft.org",
-      "sourceId": "responsible-statecraft",
-      "publishedAt": "2026-08-18T04:05:01.000Z",
-      "image": "https://responsiblestatecraft.org/media-library/ukrainian-soldiers-walk-together-during-training-for-the-2023-counteroffensive.jpg?id=67629723&width=980",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Eurasia",
       "weight": 3
     },
     {
