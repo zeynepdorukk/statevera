@@ -1,8 +1,42 @@
 {
-  "generatedAt": "2026-08-22T03:55:07.033Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-22T04:20:37.023Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "b5a87cacb088",
+      "title": "US imposes 50% tariffs on $20bn worth of Canadian goods after talks fail",
+      "summary": "Canadian Prime Minister vows retaliatory tariffs \"dollar for dollar\" following failure to secure a US trade agreement.",
+      "url": "https://www.aljazeera.com/news/2026/8/22/us-imposes-50-tariffs-on-20bn-worth-of-canadian-goods-after-talks-fail?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-22T04:02:32.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "f54ef6774a10",
+      "title": "As Russian missiles rain down on Kyiv, casualties mount and the mood darkens",
+      "summary": "Ukraine’s military has run out of US Patriot missiles to repel ballistic attacks, which have one aim, the capital’s mayor says: to destroy morale Viktor, 23, Sofiia, 18, and their dog, Teddy, were bedding down for the night on Thursday at the Dorohozhychi…",
+      "url": "https://www.theguardian.com/world/2026/aug/22/russian-missiles-kyiv-ukraine-casualties-mood-darkens",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/europe-news",
+      "sourceId": "guardian-europe",
+      "publishedAt": "2026-08-22T04:00:53.000Z",
+      "image": "https://i.guim.co.uk/img/media/b143771157607e19b0dfe027d1ca697824154cab/249_0_3540_2832/master/3540.jpg?width=700&quality=85&auto=format&fit=max&s=213981611683d1b9441a45bd568825a8",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "d2cec9b6e40a",
       "title": "Japan's Kubota to boost exports from India, seeks price edge in Europe, US",
@@ -341,22 +375,6 @@
       "weight": 2
     },
     {
-      "id": "b703ada2c13d",
-      "title": "Israeli settlers and military kill 2 Palestinians – one a teenager – in separate West Bank shootings",
-      "summary": "A teenage boy and a 58-year-old man were shot dead Friday by Israeli settlers and soldiers, respectively, in separate shootings in the occupied West Bank.",
-      "url": "https://www.france24.com/en/middle-east/20260821-israeli-settlers-and-military-kill-2-palestinians-teenager-separate-west-bank-shootings",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-21T19:53:39.000Z",
-      "image": "https://s.france24.com/media/display/d8c7774e-9d95-11f1-b516-005056a97e36/w:1024/p:16x9/AP26233454282893.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "abe16264ce2b",
       "title": "US elections: Aisha Wahab becomes first Afghan-American in Congress",
       "summary": "US elections: Aisha Wahab becomes first Afghan-American in Congress Submitted by MEE staff on Fri, 08/21/2026 - 18:19 Wahab will assume the seat of Eric Swalwell, who resigned in April, but she will still compete in the November midterms California State…",
@@ -418,22 +436,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "38f1f3daedca",
-      "title": "Deadly 'double-tap' Russian drone strikes target Ukraine shopping centre",
-      "summary": "A pair of Russian drone strikes that hit a shopping centre in the Ukrainian city of Kryvyi Rih Friday killed at least 15 people and wounded scores more, authorities said. Ukrainian President Volodymyr Zelensky accused Moscow of targeting emergency workers in…",
-      "url": "https://www.france24.com/en/europe/20260821-back-to-back-russian-drone-strikes-kill-14-people-in-ukraine-shopping-centre",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-21T18:07:50.000Z",
-      "image": "https://s.france24.com/media/display/8b15b172-9d87-11f1-abb9-005056bfb2b6/w:1024/p:16x9/000-C69769G.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -612,22 +614,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "f117c15b62d6",
-      "title": "Who are the eight candidates running to succeed Antonio Guterres as UN chief?",
-      "summary": "The United Nations Security Council held a second informal straw poll to gauge the popularity of candidates seeking to succeed Secretary-General Antonio Guterres, who will complete his second five-year term at the end of the year. Eight candidates are…",
-      "url": "https://www.france24.com/en/who-are-the-eight-candidates-running-to-succeed-antonio-guterres-as-un-chief",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-21T15:32:13.000Z",
-      "image": "https://s.france24.com/media/display/3a866c86-89f2-11f1-a74d-005056bf30b7/w:1024/p:16x9/000-C3B372N.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Global",
-      "weight": 2
     },
     {
       "id": "db51d26e2826",
