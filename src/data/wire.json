@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-22T09:56:25.878Z",
+  "generatedAt": "2026-08-22T10:14:11.616Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "35c72d07032c",
+      "title": "Middle East live: Iran allows several Iraqi oil tankers to pass through Hormuz strait",
+      "summary": "Iran has allowed a ​number of Iraqi oil tankers to pass through the Strait of Hormuz following repeated requests from Baghdad, ​Iran’s ‌state news agency reported ⁠on Saturday. Meanwhile, the United States and Iran exchanged defiant messages ahead of Monday's…",
+      "url": "https://www.france24.com/en/middle-east/20260822-middle-east-live-iran-allows-several-iraqi-oil-tankers-to-pass-through-hormuz",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-22T09:48:45.000Z",
+      "image": "https://s.france24.com/media/display/e9dcf050-9e0c-11f1-a650-005056bfb2b6/w:1024/p:16x9/AP26207813043051.jpg",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "893c6762e743",
       "title": "Persuasion, denial and bluster: Trump ‘stuck’ on Iran war ahead of elections",
