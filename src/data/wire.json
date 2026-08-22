@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T15:56:00.705Z",
+  "generatedAt": "2026-08-22T16:12:20.677Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -11,8 +11,8 @@
       "publisher": "BBC News",
       "publisherHome": "https://www.bbc.com/news/world",
       "sourceId": "bbc-world",
-      "publishedAt": "2026-08-22T15:44:57.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0f2c/live/60f697b0-1203-11ef-82e8-cd354766a224.png",
+      "publishedAt": "2026-08-22T16:05:04.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/daa9/live/22262a40-9e43-11f1-bb45-576721ee33bb.jpg",
       "imageWidth": 240,
       "category": "Economy",
       "categoryConfidence": "high",
@@ -148,6 +148,22 @@
       "weight": 2
     },
     {
+      "id": "a874138631ff",
+      "title": "Two Palestinians wounded in Israeli raid near Nablus, settlers and troops storm towns in Ramallah and Jenin",
+      "summary": "Two Palestinians wounded in Israeli raid near Nablus, settlers and troops storm towns in Ramallah and Jenin Two people have been wounded by Israeli forces during a military raid on the town of Beit Furik, east of Nablus in the occupied West Bank, Wafa news…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/two-palestinians-wounded-israeli-raid-near-nablus-settlers-and-troops",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-22T13:22:01.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "2a7cbb619107",
       "title": "It’s a miracle: Natalie Harp has turned Republicans into feminists | Arwa Mahdawi",
       "summary": "A Democrat’s remarks have resulted in impassioned defenses of the Trump aide. The right has discovered misogyny Jon Ossoff is quite the miracle worker. Perhaps the Democratic senator can’t turn water into wine, but he has managed to turn whining conservatives…",
@@ -276,22 +292,6 @@
       "weight": 2
     },
     {
-      "id": "0aafe3710acd",
-      "title": "Israeli settlers kill Palestinian teen in the occupied West Bank",
-      "summary": "Two Palestinians were killed Friday in the West Bank, one in Jenin, in the north, by Israeli army gunfire, and the other in the southern part of the territory by a settler, according to Palestinian sources and the army.",
-      "url": "https://www.france24.com/en/israeli-settlers-kill-palestinian-teen-in-the-occupied-west-bank",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-22T09:10:38.000Z",
-      "image": "https://s.france24.com/media/display/1aac477c-9e07-11f1-a67f-005056a90284/w:1024/p:16x9/EN-20260822-100539-100703-CS.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "893c6762e743",
       "title": "Persuasion, denial and bluster: Trump ‘stuck’ on Iran war ahead of elections",
       "summary": "As the president tries to extract the US from his Iran war quagmire, leadership in Tehran is only too happy to crush his midterm dreams In the aftermath of his devastating election defeat, the US president remained haunted by regrets over Iran . Months before…",
@@ -369,22 +369,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "f5fb5141fdcd",
-      "title": "How will Trump’s tariffs affect Canada’s economy?",
-      "summary": "US imposes 50% tariffs on key Canadian sectors after talks collapse, but unlikely to cripple Canada's economy.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/22/how-will-trumps-tariffs-affect-canadas-economy?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-22T08:01:55.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
