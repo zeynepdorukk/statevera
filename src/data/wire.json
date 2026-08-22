@@ -1,10 +1,26 @@
 {
-  "generatedAt": "2026-08-22T11:55:37.420Z",
+  "generatedAt": "2026-08-22T12:17:36.761Z",
   "sourceCount": 26,
   "failedSources": [
     "france24"
   ],
   "items": [
+    {
+      "id": "2a7cbb619107",
+      "title": "It’s a miracle: Natalie Harp has turned Republicans into feminists | Arwa Mahdawi",
+      "summary": "A Democrat’s remarks have resulted in impassioned defenses of the Trump aide. The right has discovered misogyny Jon Ossoff is quite the miracle worker. Perhaps the Democratic senator can’t turn water into wine, but he has managed to turn whining conservatives…",
+      "url": "https://www.theguardian.com/commentisfree/2026/aug/22/natalie-harp-republicans-feminists",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-22T12:00:03.000Z",
+      "image": "https://i.guim.co.uk/img/media/2c16f78a23a0ebebfa0d0b99a8598cb7c5dda6e8/685_0_6847_5477/master/6847.jpg?width=700&quality=85&auto=format&fit=max&s=525cf6ea493a05070f63f844fadbd108",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "f0ba4e1bea88",
       "title": "Myanmar military airstrike kills 14 at Buddhist monastery: reports",
@@ -2073,22 +2089,6 @@
       "categoryConfidence": "high",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "aceaea93f58f",
-      "title": "Trump is full speed ahead in making money off being the US president | Margaret Sullivan",
-      "summary": "Some restraint on Trump’s excesses might be accomplished if November’s midterm elections give Democrats more power Donald Trump is essentially unrestrained when it comes to enriching himself during his second term, with no sign of stopping. If anything, he’s…",
-      "url": "https://www.theguardian.com/commentisfree/2026/aug/19/trump-money-democrats-midterms",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-19T13:18:01.000Z",
-      "image": "https://i.guim.co.uk/img/media/fc11b9133866c6fc3468b6e63faa5536d012091f/125_0_2560_2048/master/2560.jpg?width=700&quality=85&auto=format&fit=max&s=68f9bf6b4fa6048499ad603b05348f97",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "96b80d02c35f",
