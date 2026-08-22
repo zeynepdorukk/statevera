@@ -1,8 +1,26 @@
 {
-  "generatedAt": "2026-08-22T11:14:28.790Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-22T11:35:13.182Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "france24"
+  ],
   "items": [
+    {
+      "id": "1ba93b103296",
+      "title": "Canada says it will match US tariffs 'dollar for dollar' as trade talks break down",
+      "summary": "A new 50% levy on $20bn of Canadian imports comes into force after a last-minute breakdown in trade talks.",
+      "url": "https://www.bbc.co.uk/news/articles/cvgvyy4x2mvo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-22T11:21:05.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ef5d/live/88423690-9ddd-11f1-b109-879e35c24276.jpg",
+      "imageWidth": 240,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "0822198b8d75",
       "title": "Taxi drivers urge council to agree 8% fare hike",
@@ -47,38 +65,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "218e9cacf865",
-      "title": "Ethiopia uncorks a wine boom, Bordeaux vines driving exports and local demand",
-      "summary": "A partnership between French experts and Ethiopian winemakers is putting East Africa on the viticultural map. Using seeds imported from Bordeaux, and after years of refining, exports are now on the rise. Domestically, Ethiopians are also consuming more and…",
-      "url": "https://www.france24.com/en/ethiopia-uncorks-a-wine-boom-bordeaux-vines-driving-exports-and-local-demand",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-22T10:14:02.000Z",
-      "image": "https://s.france24.com/media/display/eb228c14-9e10-11f1-a183-005056bf30b7/w:1024/p:16x9/EN-20260822-092424-092621-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "35c72d07032c",
-      "title": "Middle East live: Iran allows several Iraqi oil tankers to pass through Hormuz strait",
-      "summary": "Iran has allowed a ​number of Iraqi oil tankers to pass through the Strait of Hormuz following repeated requests from Baghdad, ​Iran’s ‌state news agency reported ⁠on Saturday. Meanwhile, the United States and Iran exchanged defiant messages ahead of Monday's…",
-      "url": "https://www.france24.com/en/middle-east/20260822-middle-east-live-iran-allows-several-iraqi-oil-tankers-to-pass-through-hormuz",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-22T09:48:45.000Z",
-      "image": "https://s.france24.com/media/display/e9dcf050-9e0c-11f1-a650-005056bfb2b6/w:1024/p:16x9/AP26207813043051.jpg",
-      "imageWidth": 0,
-      "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -150,7 +136,7 @@
     {
       "id": "db50a96a0a78",
       "title": "Ukraine: Russia steps up attacks as German Foreign Minister Johan Wadephul visits Kyiv",
-      "summary": "German Foreign Minister Johann Wadephul arrived in Kyiv by a special train, just days ahead of Ukraine's 35th independence day. His visit comes as two Ukrainians were killed overnight in Russian attacks.",
+      "summary": "German Foreign Minister Johann Wadephul has traveled to Kyiv ahead of Ukraine's 35th Independence Day. His visit comes as several people were killed overnight as Ukraine and Russia traded airstrikes.",
       "url": "https://www.dw.com/en/ukraine-russia-steps-up-attacks-as-german-foreign-minister-johan-wadephul-visits-kyiv/a-78467414?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
@@ -241,22 +227,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "36a7d0b87bff",
-      "title": "Canada vows to match US tariffs 'dollar for dollar' after failed trade negotiations",
-      "summary": "Canadian Prime Minister Mark Carney vowed that his country will match the US tariffs \"dollar for dollar to protect our workers and businesses\", after hefty US tariffs on some Canadian products took effect on Saturday following days of failed negotiations.",
-      "url": "https://www.france24.com/en/americas/20260822-carney-says-canada-will-match-us-tariffs-dollar-for-dollar-after-failed-trade-negotiations",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-22T04:29:13.000Z",
-      "image": "https://s.france24.com/media/display/06bf9068-9de2-11f1-85f9-005056bf30b7/w:1024/p:16x9/71ef5231e98ab11a4b6cb91c727ec5b618113787.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -357,22 +327,6 @@
       "weight": 2
     },
     {
-      "id": "cfe6a530394d",
-      "title": "California lawmaker overcomes pro-Israel spending to win special election",
-      "summary": "Victory for state Senator Aisha Wahab marks the latest example of a progressive overcoming millions in outside spending.",
-      "url": "https://www.aljazeera.com/news/2026/8/22/california-lawmaker-overcomes-pro-israel-spending-to-win-special-election?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-22T00:38:06.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "a662d3b9b64e",
       "title": "Georgia declines to join new EU sanctions against Iran",
       "summary": "Georgia declines to join new EU sanctions against Iran Georgia has declined to join the European Union’s latest sanctions against Iran, saying its foreign policy decisions are guided by national interests, Iran’s state news agency, IRNA, reported. Tengiz…",
@@ -402,22 +356,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "d552f99cd2d4",
-      "title": "Centcom says 68 vessels redirected so far in Iran naval blockade",
-      "summary": "Centcom says 68 vessels redirected so far in Iran naval blockade The US forces have redirected 68 commercial vessels, disabled three and boarded two others to enforce the ongoing naval blockade against Iran, US Central Command (Centcom) said. In a post on X,…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/centcom-says-68-vessels-redirected-so-far-iran-naval-blockade",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-21T23:27:09.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -499,22 +437,6 @@
       "categoryConfidence": "high",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "b703ada2c13d",
-      "title": "Israeli settlers and military kill 2 Palestinians – one a teenager – in separate West Bank shootings",
-      "summary": "A teenage boy and a 58-year-old man were shot dead Friday by Israeli settlers and soldiers, respectively, in separate shootings in the occupied West Bank.",
-      "url": "https://www.france24.com/en/middle-east/20260821-israeli-settlers-and-military-kill-2-palestinians-teenager-separate-west-bank-shootings",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-21T19:53:39.000Z",
-      "image": "https://s.france24.com/media/display/d8c7774e-9d95-11f1-b516-005056a97e36/w:1024/p:16x9/AP26233454282893.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "8e855f427aa3",
