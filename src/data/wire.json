@@ -1,10 +1,26 @@
 {
-  "generatedAt": "2026-08-22T11:35:13.182Z",
+  "generatedAt": "2026-08-22T11:55:37.420Z",
   "sourceCount": 26,
   "failedSources": [
     "france24"
   ],
   "items": [
+    {
+      "id": "f0ba4e1bea88",
+      "title": "Myanmar military airstrike kills 14 at Buddhist monastery: reports",
+      "summary": "Around 100 people were attending a meditation retreat in central Myanmar when the building was targeted by military planes, witnesses said.",
+      "url": "https://www.dw.com/en/myanmar-military-airstrike-kills-14-at-buddhist-monastery-reports/a-78468290?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-22T11:49:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "1ba93b103296",
       "title": "Canada says it will match US tariffs 'dollar for dollar' as trade talks break down",
@@ -324,22 +340,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "a662d3b9b64e",
-      "title": "Georgia declines to join new EU sanctions against Iran",
-      "summary": "Georgia declines to join new EU sanctions against Iran Georgia has declined to join the European Union’s latest sanctions against Iran, saying its foreign policy decisions are guided by national interests, Iran’s state news agency, IRNA, reported. Tengiz…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/georgia-declines-join-new-eu-sanctions-against-iran",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-21T23:54:04.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
