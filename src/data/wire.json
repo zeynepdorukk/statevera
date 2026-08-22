@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T10:56:53.377Z",
+  "generatedAt": "2026-08-22T11:14:28.790Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -421,6 +421,22 @@
       "weight": 2
     },
     {
+      "id": "467310a2baef",
+      "title": "TikTok agrees to pay $400m to settle US children's privacy case",
+      "summary": "The US Justice Department sued TikTok in 2024 over allegations that it violated children's online privacy laws. The settlement is believed to be one of the largest ever over the issue.",
+      "url": "https://www.dw.com/en/tiktok-agrees-to-pay-400m-to-settle-us-children-s-privacy-case/a-78466204?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-21T23:13:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
       "id": "b9adbcf41a2a",
       "title": "Iran says Trump’s latest threatened economic sanctions are ‘bound to fail’",
       "summary": "US president has newly vowed to financially cripple Iran, threatening country with 'economic D-Day'",
@@ -434,22 +450,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "d7066e6e2e5e",
-      "title": "TikTok agrees to $400m settlement to resolve US children’s privacy litigation",
-      "summary": "The DoJ sued TikTok and its former parent company in August 2024 for allegedly failing to protect children’s privacy and collecting their information ⁠TikTok and its Chinese former parent company ByteDance on Friday agreed to a $400m settlement to resolve the…",
-      "url": "https://www.theguardian.com/technology/2026/aug/21/tiktok-settlement-children-privacy",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-21T22:05:24.000Z",
-      "image": "https://i.guim.co.uk/img/media/b2d9653bdd6c451e907821d5aa66ec50260b3dff/191_288_6470_5176/master/6470.jpg?width=700&quality=85&auto=format&fit=max&s=ccd0df01d3f0cc77f339261bb2b06fbd",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -723,22 +723,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "f117c15b62d6",
-      "title": "Who are the eight candidates running to succeed Antonio Guterres as UN chief?",
-      "summary": "The United Nations Security Council held a second informal straw poll to gauge the popularity of candidates seeking to succeed Secretary-General Antonio Guterres, who will complete his second five-year term at the end of the year. Eight candidates are…",
-      "url": "https://www.france24.com/en/who-are-the-eight-candidates-running-to-succeed-antonio-guterres-as-un-chief",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-21T15:32:13.000Z",
-      "image": "https://s.france24.com/media/display/3a866c86-89f2-11f1-a74d-005056bf30b7/w:1024/p:16x9/000-C3B372N.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -2310,22 +2294,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "15a463d04a33",
-      "title": "By disparaging 2020 protests as ‘Woke 1’, liberals are following the rightwing’s lead",
-      "summary": "Alexandria Ocasio-Cortez’s co-opting of conservative language to discuss a movement against state-sanctioned killings of Black people is damning August has brought us a referendum on “Woke 1” – a term that reductively brands 2020’s social justice movement –…",
-      "url": "https://www.theguardian.com/commentisfree/2026/aug/19/woke-1-aoc-rightwing",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-19T11:00:13.000Z",
-      "image": "https://i.guim.co.uk/img/media/ca1b3c77ca177f79c9a8226c8a4929338955cef1/511_0_2583_2067/master/2583.jpg?width=700&quality=85&auto=format&fit=max&s=e2c0a1aa4b608dbaaa99bfc468c360bb",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
