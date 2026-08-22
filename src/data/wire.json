@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-22T17:57:06.061Z",
+  "generatedAt": "2026-08-22T18:19:24.142Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "74eaacfb2875",
+      "title": "US 'economic terrorism' will not break people's will: Iranian Vice President",
+      "summary": "US 'economic terrorism' will not break people's will: Iranian Vice President Iran's First Vice President Mohammad Reza Aref said on Saturday that the government will not allow what he called \"America's economic terrorism\" to undermine the country's economic…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-economic-terrorism-will-not-break-peoples-will-iranian-vice-president",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-22T18:17:23.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "f8b4042f91e6",
       "title": "Blast on security forces’ bus near Damascus causes injuries",
@@ -28,7 +44,7 @@
       "publisherHome": "https://www.bbc.com/news/world",
       "sourceId": "bbc-world",
       "publishedAt": "2026-08-22T16:57:19.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8464/live/2b4c9540-9e44-11f1-a291-b542ee92de7c.jpg",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8d51/live/20fafd70-9e53-11f1-8871-ff7211da55c9.jpg",
       "imageWidth": 240,
       "category": "Security",
       "categoryConfidence": "high",
@@ -2934,22 +2950,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "7b8f865636c1",
-      "title": "Ex-Myanmar ambassador to UK on trial for trespassing in diplomatic residence",
-      "summary": "Kyaw Zwar Minn was ousted for declaring loyalty to Aung San Suu Kyi after 2021 coup but refused to leave his home Myanmar’s ousted ambassador to the UK has gone on trial on trespassing charges for refusing to leave a diplomatic residence after being…",
-      "url": "https://www.theguardian.com/uk-news/2026/aug/12/ex-myanmar-ambassador-uk-kyaw-zwar-minn-trial-trespassing-diplomatic-residence",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-12T18:01:51.000Z",
-      "image": "https://i.guim.co.uk/img/media/6e4bb74949a7b347a2e1ce91d2a79cddc01d5719/500_323_2579_2065/master/2579.jpg?width=700&quality=85&auto=format&fit=max&s=58704aabf0a48c7ff1cdc91de78f0250",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     }
   ]
