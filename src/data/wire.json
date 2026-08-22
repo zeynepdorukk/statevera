@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-22T20:57:16.185Z",
+  "generatedAt": "2026-08-22T21:15:24.551Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
       "id": "03cab4fc398d",
       "title": "Iran threatens to block Hormuz if neighbours join US sanctions",
-      "summary": "Iran threatens to block Hormuz if neighbours join US sanctions Tehran would target the interests of countries that help the United States in its economic pressure campaign against Iran, the secretary of Iran's Supreme National Security Council, Mohsen Rezaei,…",
+      "summary": "Iran threatens to block Hormuz if neighbours join US sanctions Tehran would target the interests of countries that help the United States in its economic pressure campaign against Iran , the secretary of Iran's Supreme National Security Council, Mohsen…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-threatens-block-hormuz-if-neighbours-join-us-sanctions",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -17,6 +17,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "c7f99506e874",
+      "title": "US Postal Service shares mail-in ballot restrictions despite court ruling",
+      "summary": "US President Donald Trump has called for restrictions on mail-in voting as part of bid to exert control over elections.",
+      "url": "https://www.aljazeera.com/news/2026/8/22/us-postal-service-shares-mail-in-ballot-restrictions-despite-court-ruling?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-22T20:49:17.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -208,22 +224,6 @@
       "imageWidth": 0,
       "category": "Security",
       "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "61702c7efa2d",
-      "title": "Israeli drone strike on ‘civilian vehicle’ injures several in Syria",
-      "summary": "Syria condemns attack in southwest as a 'flagrant violation of sovereignty' and a 'blatant breach of international law'.",
-      "url": "https://www.aljazeera.com/news/2026/8/22/israeli-drone-strike-on-civilian-vehicle-causes-injuries-in-syria?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-22T14:37:40.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     },
