@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-22T19:14:17.536Z",
+  "generatedAt": "2026-08-22T19:34:53.848Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "d10737bc7517",
+      "title": "Envoy says Israel did not give the US notice before strikes on Syrian base",
+      "summary": "US official Tom Barrack has criticised Israel for failing to give his country adequate warning, a claim Tel Aviv denies.",
+      "url": "https://www.aljazeera.com/news/2026/8/22/envoy-says-israel-did-not-give-the-us-notice-before-strikes-on-syrian-base?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-22T19:18:02.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "2fde179b018a",
       "title": "Israel has no intention of escalating tensions with Turkey, foreign minister says",
@@ -193,22 +209,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "de9106f840b1",
-      "title": "Canada vows ‘dollar for dollar’ response as US puts 50% tariffs on some goods",
-      "summary": "Collapse of trade talks could lead to job losses, but biggest impact on traditional allies is expected to be political The US has imposed 50% tariffs on some goods from Canada, and the country’s prime minister, Mark Carney, has vowed to match them “dollar for…",
-      "url": "https://www.theguardian.com/world/2026/aug/22/canada-tariffs-trump-trade-deal-talks-fail",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-22T14:04:57.000Z",
-      "image": "https://i.guim.co.uk/img/media/6fca08f3a759225a7da5912b393aadcad7c6b4e7/0_0_4724_3780/master/4724.jpg?width=700&quality=85&auto=format&fit=max&s=03920ff6d052f3f77d474d9591414f45",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -511,22 +511,6 @@
       "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1024x746+0+0/resize/1024x746!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F62%2F76%2Fce6c9c994f5eab171f25f577f3bb%2Fgetty-uscanadatariffs.jpg",
       "imageWidth": 0,
       "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "c48286d0669c",
-      "title": "Canada suspends trade talks with US: Premier Carney",
-      "summary": "Progress in negotiations was not ‘enough to meet our objectives for Canadians,’ Prime Minister Mark Carney says",
-      "url": "https://www.aa.com.tr/en/politics/canada-suspends-trade-talks-with-us-premier-carney/4034352",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-22T04:22:37.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Americas",
       "weight": 2
@@ -932,22 +916,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "7e7914a0aa0e",
-      "title": "Iran's president: Time to end war in 'position of strength'",
-      "summary": "Iranian media cite Masoud Pezeshkian as saying it would be a good time to end the war with the US, \"as we are in a position of strength and dignity.\" He also said Tehran would never \"bow to intimidation.\"",
-      "url": "https://www.dw.com/en/iran-s-president-time-to-end-war-in-position-of-strength/a-78460267?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-21T15:37:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
     },
     {
       "id": "db51d26e2826",
@@ -2769,6 +2737,22 @@
       "publisherHome": "https://www.aa.com.tr/en",
       "sourceId": "anadolu-politics",
       "publishedAt": "2026-08-18T14:27:42.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Turkey",
+      "weight": 2
+    },
+    {
+      "id": "fb499c460fb6",
+      "title": "Trump says no talks with Iran underway or scheduled",
+      "summary": "US president says Strait of Hormuz is open and operating under Washington's blockade",
+      "url": "https://www.aa.com.tr/en/politics/trump-says-no-talks-with-iran-underway-or-scheduled/4030680",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-18T13:46:18.000Z",
       "image": "",
       "imageWidth": 0,
       "category": "Diplomacy",
