@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-22T22:14:11.480Z",
+  "generatedAt": "2026-08-22T22:38:00.896Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "a378ce3cf7fc",
+      "title": "Evening recap",
+      "summary": "Evening recap Good evening, Middle East Eye readers. If you're just joining us, here are key developments from the day: Tehran warned that it would target the interests of any countries that help the US sanctions against Iran, threatening to block oil exports…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/evening-recap-605",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-22T22:28:31.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "03cab4fc398d",
       "title": "Iran threatens to block Hormuz if neighbours join US sanctions",
@@ -308,6 +324,22 @@
       "weight": 2
     },
     {
+      "id": "909e4349728b",
+      "title": "Israeli army claims attack in southern Syria",
+      "summary": "Israeli army claims attack in southern Syria The Israeli army has said it has carried out an attack in southern Syria, claiming that it targeted a person who was preparing an attack. It did not provide any evidence to support this claim. Al Jazeera reported…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-army-claims-attack-southern-syria",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-22T13:03:34.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "2a7cbb619107",
       "title": "It’s a miracle: Natalie Harp has turned Republicans into feminists | Arwa Mahdawi",
       "summary": "A Democrat’s remarks have resulted in impassioned defenses of the Trump aide. The right has discovered misogyny Jon Ossoff is quite the miracle worker. Perhaps the Democratic senator can’t turn water into wine, but he has managed to turn whining conservatives…",
@@ -353,22 +385,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "1a2c6e9dd1a1",
-      "title": "Israeli drone strike in Syria wounds at least one person",
-      "summary": "Israeli drone strike in Syria wounds at least one person An Israeli drone strike targeting a truck in Beit Jinn village in southwestern Syria has wounded at least one person, Al Jazeera Arabic is reporting. The latest attack follows a series of Israeli…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-drone-strike-syria-wounds-least-one-person",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-22T10:28:56.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -2769,22 +2785,6 @@
       "publisherHome": "https://www.aa.com.tr/en",
       "sourceId": "anadolu-politics",
       "publishedAt": "2026-08-18T14:27:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "fb499c460fb6",
-      "title": "Trump says no talks with Iran underway or scheduled",
-      "summary": "US president says Strait of Hormuz is open and operating under Washington's blockade",
-      "url": "https://www.aa.com.tr/en/politics/trump-says-no-talks-with-iran-underway-or-scheduled/4030680",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-18T13:46:18.000Z",
       "image": "",
       "imageWidth": 0,
       "category": "Diplomacy",
