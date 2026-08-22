@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-22T05:18:57.307Z",
+  "generatedAt": "2026-08-22T05:49:31.181Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "c25b3791b426",
+      "title": "US envoy to Turkey: 'Israel occupies Golan despite UN resolutions, international order'",
+      "summary": "US envoy to Turkey: 'Israel occupies Golan despite UN resolutions, international order' Submitted by MEE staff on Sat, 08/22/2026 - 05:43 Tom Barrack made the remarks when asked whether Israel intended to annex Lebanese territory Barrack says America's…",
+      "url": "https://www.middleeasteye.net/news/us-envoy-turkey-israel-occupies-golan-despite-un-resolutions-international-order",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-22T05:21:45.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "36a7d0b87bff",
       "title": "Carney says Canada will match US tariffs 'dollar for dollar' after failed trade negotiations",
@@ -466,22 +482,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "620a44abdf4a",
-      "title": "FM Araghchi says US economic pressure campaign is doomed to fail",
-      "summary": "FM Araghchi says US economic pressure campaign is doomed to fail Iranian Foreign Minister Abbas Araghchi said US President Donald Trump’s threat to launch the “most crushing economic operation ever” against Iran was “doomed to failure”. “We’ve seen this movie…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/fm-araghchi-says-us-economic-pressure-campaign-doomed-fail",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-21T17:58:29.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
