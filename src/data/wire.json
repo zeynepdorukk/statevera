@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-22T17:15:52.997Z",
+  "generatedAt": "2026-08-22T17:42:17.603Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
       "id": "f8b4042f91e6",
       "title": "Blast on security forces’ bus near Damascus causes injuries",
-      "summary": "Blast on security forces’ bus near Damascus causes injuries An explosive device detonated on a bus carrying security forces near the Syrian capital on Saturday, according to Syrian state media. “An explosive device targeted a bus carrying Internal Security…",
+      "summary": "Blast on security forces’ bus near Damascus causes injuries An explosive device detonated on a bus carrying security forces near the Syrian capital Damascus on Saturday, according to Syrian state media. “An explosive device targeted a bus carrying Internal…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/blast-security-forces-bus-near-damascus-causes-injuries",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -70,7 +70,7 @@
     {
       "id": "5fd4de93df4f",
       "title": "Carney faces crucial test after walking away from Trump's deal",
-      "summary": "The Canadian prime minister will have the sell his gamble that walking away from talks with the White House will be worth the consequences.",
+      "summary": "The Canadian prime minister will have to sell his gamble that walking away from talks with the White House will be worth the consequences.",
       "url": "https://www.bbc.co.uk/news/articles/c3040pn8lmmo?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
       "publisherHome": "https://www.bbc.com/news/world",
@@ -709,10 +709,10 @@
       "weight": 2
     },
     {
-      "id": "3549db891a23",
-      "title": "German army helps Poland construct a defensive barrier against Russia",
+      "id": "4a5f79ae1417",
+      "title": "German army helps Poland protect itself against Russia",
       "summary": "Poland is building a defense system along its northern and eastern borders to protect itself from Russia. Since June, German sappers have been assisting their NATO ally with the construction of the East Shield.",
-      "url": "https://www.dw.com/en/german-army-helps-poland-construct-a-defensive-barrier-against-russia/a-78464726?maca=en-rss-en-all-1573-rdf",
+      "url": "https://www.dw.com/en/german-army-helps-poland-protect-itself-against-russia/a-78464726?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
       "sourceId": "dw",
