@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-23T21:55:47.783Z",
+  "generatedAt": "2026-08-23T22:11:24.379Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "1a6307987da5",
+      "title": "Yemen, US officials meet to discuss ‘countering Houthi propaganda’",
+      "summary": "Yemen, US officials meet to discuss ‘countering Houthi propaganda’ Yemen's Minister of Information Moammar al-Eryani and the US Embassy's chargé d'affaires in Yemen, Neal H. Opdahl, met on Sunday, according to a post on X by the US Embassy in Yemen. The…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/yemen-us-officials-meet-discuss-countering-houthi-propaganda",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-23T22:03:31.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "4d3d7b3493c4",
       "title": "Syria confirms US-mediated talks with Israel in Jordan to ease tensions",
@@ -276,6 +292,22 @@
       "weight": 2
     },
     {
+      "id": "a13939c1a454",
+      "title": "Pezeshkian says Iran ‘has not become Venezuela’ despite war and sanctions",
+      "summary": "Iranian President Masoud Pezeshkian says Iran has stood firm despite what he calls a full-scale war.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/23/23-08-clip-pezeshkian-iran-ir-fm?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-23T15:25:47.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "5142345ed0b4",
       "title": "Zelenskyy asked for more Patriot missiles, former US vice president says",
       "summary": "During a visit to Kyiv, Mike Pence told reporters Ukraine is “winning the war,” but concerns are growing as winter approaches.",
@@ -497,22 +529,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "063353ca2a35",
-      "title": "Israeli air strike in central Gaza kills one, wounds two",
-      "summary": "Israeli air strike in central Gaza kills one, wounds two An Israeli air strike in central Gaza has killed one Palestinian and wounded two others, Wafa news agency is reporting, citing medical sources. According to the sources, the individuals were targeted in…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-air-strike-central-gaza-kills-one-wounds-two",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-23T09:38:32.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1239,22 +1255,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
-    },
-    {
-      "id": "73fa6d534d8c",
-      "title": "Eftimiades interviewed on Restricted Handling on Chinese political influence campaigns",
-      "summary": "On July 5, Forward Defense Nonresident Senior Fellow Nicholas Eftimiades was interviewed on the Restricted Handling podcast to discuss Chinese political influence campaigns and penetration of American critical infrastructure. He highlights the need for an…",
-      "url": "https://www.atlanticcouncil.org/insight-impact/in-the-news/eftimiades-on-chinese-political-influence-campaigns/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-21T14:49:47.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 3
     },
     {
       "id": "6fa88048d1aa",
