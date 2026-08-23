@@ -1,8 +1,25 @@
 {
-  "generatedAt": "2026-08-23T02:13:00.617Z",
+  "generatedAt": "2026-08-23T03:14:26.610Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "074ff20dbb5a",
+      "title": "Taiwan's security council quietly steps up as architect of China strategy",
+      "summary": "",
+      "url": "https://asia.nikkei.com/politics/international-relations/taiwan-tensions/taiwan-s-security-council-quietly-steps-up-as-architect-of-china-strategy",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-23T03:14:21.931Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
     {
       "id": "61f34710bc52",
       "title": "Australia news live: Sydney Marathon admits ‘unfortunate error’ as finisher’s medal depicts Munich stadium as highlight of course",
@@ -11,12 +28,28 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-23T01:54:33.000Z",
+      "publishedAt": "2026-08-23T02:38:46.000Z",
       "image": "https://i.guim.co.uk/img/media/bcb5be27066d591f5b99283bdb63f22018974ba1/0_0_1975_1580/master/1975.jpg?width=700&quality=85&auto=format&fit=max&s=fdcbb6ffbc618c80b4eabb568115b043",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "9b810f9fa709",
+      "title": "Macron to host Saudi crown prince for talks on Middle East, energy",
+      "summary": "Macron to host Saudi crown prince for talks on Middle East, energy French President Emmanuel Macron will be hosting Saudi crown prince Mohammed bin Salman on Sunday for a two-day visit set to range from esports to the war in the Middle East. Several…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/macron-host-saudi-crown-prince-talks-middle-east-energy",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-23T02:20:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -64,6 +97,22 @@
       "imageWidth": 0,
       "category": "Economy",
       "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "3dd7db9ee90f",
+      "title": "Israeli army and settlers injure several Palestinians across West Bank",
+      "summary": "Palestinians face attacks and forced displacement as settlers expand control, backed by military raids and inaction.",
+      "url": "https://www.aljazeera.com/news/2026/8/22/israeli-army-and-settlers-injure-several-palestinians-across-west-bank?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-22T21:02:29.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     },
@@ -276,22 +325,6 @@
       "weight": 2
     },
     {
-      "id": "3e92c34b8b86",
-      "title": "Israel says Syria air base strike motivated by alleged Turkish plans to deploy forces there",
-      "summary": "Israel says Syria air base strike motivated by alleged Turkish plans to deploy forces there Israeli defence minister Israel Katz has said that a strike on northwestern Syria’s Abu Duhur military airport was conducted due to alleged plans by Turkey to deploy…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/katz-says-syria-air-base-strike-motivated-alleged-turkish-plans-deploy",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-22T13:41:32.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "0e615ea527e8",
       "title": "France to deliver interceptor missiles to Ukraine after fresh wave of Russian strikes",
       "summary": "This Saturday saw a continued exchange of fire between Kyiv and Moscow. French President Emmanuel Macron announced Paris would deliver new interceptor missiles to Ukraine, whose air defences are running short after the latest round of deadly Russian attacks.…",
@@ -305,22 +338,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "a874138631ff",
-      "title": "Two Palestinians wounded in Israeli raid near Nablus, settlers and troops storm towns in Ramallah and Jenin",
-      "summary": "Two Palestinians wounded in Israeli raid near Nablus, settlers and troops storm towns in Ramallah and Jenin Two people have been wounded by Israeli forces during a military raid on the town of Beit Furik, east of Nablus in the occupied West Bank, Wafa news…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/two-palestinians-wounded-israeli-raid-near-nablus-settlers-and-troops",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-22T13:22:01.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
