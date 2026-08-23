@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-23T20:36:18.676Z",
+  "generatedAt": "2026-08-23T20:56:29.040Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "2c4041ed6fc0",
+      "title": "Kazakhstan parliamentary vote cements president's power",
+      "summary": "Candidates from seven state-approved parties took part in the election, while opposition parties were banned. As Central Asia's largest nation, Kazakhstan maintains a delicate balance between Russia and the West.",
+      "url": "https://www.dw.com/en/kazakhstan-parliamentary-vote-cements-president-s-power/a-78474598?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-23T20:38:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "bfe265db79e4",
       "title": "Iranian parliamentary committee approves provision to charge ships in Hormuz",
@@ -513,22 +529,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "2c4041ed6fc0",
-      "title": "Kazakhstan parliamentary vote cements president's power",
-      "summary": "Candidates from seven state-approved parties took part in the election, while opposition parties were banned. As Central Asia's largest nation, Kazakhstan maintains a delicate balance between Russia and the West.",
-      "url": "https://www.dw.com/en/kazakhstan-parliamentary-vote-cements-president-s-power/a-78474598?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-23T08:54:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
