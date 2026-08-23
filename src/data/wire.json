@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-23T12:16:44.770Z",
+  "generatedAt": "2026-08-23T13:07:49.436Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "c85614423c82",
+      "title": "Zelensky should be asked what he knew about government corruption, sacked minister tells BBC",
+      "summary": "The former defence minister has also called for wartime elections to be held in Ukraine.",
+      "url": "https://www.bbc.co.uk/news/articles/cwy4ypzvd7po?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-23T12:56:43.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f1da/live/9dcc87a0-9ecc-11f1-a6c1-71ec82f18bdc.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "d690a675d64f",
       "title": "DR Congo, AFC/M23 group agree on roadmap for peace negotiations after Swiss talks",
@@ -17,6 +33,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "78f7cc3bbb77",
+      "title": "US Senate nominee Abdul El-Sayed rebuts criticism from JD Vance",
+      "summary": "El-Sayed has hit back at JD Vance, saying his identity and religion aren’t causing the Trump administration’s problems.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/23/us-senate-nominee-abdul-el-sayed-rebuts-criticism-from-jd-vance?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-23T12:02:08.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -38,7 +70,7 @@
     {
       "id": "bae08ed7c158",
       "title": "Can Iran retaliate against countries that join US ‘economic war’?",
-      "summary": "Iran's security chief has warned of retaliation against countries joining US ‘economic war'.",
+      "summary": "Iran warns that countries backing US economic sanctions will be considered an enemy of Tehran.",
       "url": "https://www.aljazeera.com/news/2026/8/23/can-iran-retaliate-against-countries-that-join-us-economic-war?traffic_source=rss",
       "publisher": "Al Jazeera",
       "publisherHome": "https://www.aljazeera.com",
@@ -212,22 +244,6 @@
       "weight": 2
     },
     {
-      "id": "c85614423c82",
-      "title": "Zelensky has 'questions to answer' about corruption in his government, sacked minister tells BBC",
-      "summary": "The sacked former defence minister has also called for elections to be held in Ukraine.",
-      "url": "https://www.bbc.co.uk/news/articles/cwy4ypzvd7po?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-23T09:37:05.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f1da/live/9dcc87a0-9ecc-11f1-a6c1-71ec82f18bdc.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "668872fab9bc",
       "title": "What is the 'political firewall' against Germany's far-right AfD?",
       "summary": "Germany's centrist parties reject any cooperation with the Alternative for Germany (AfD), parts of which are classified as right-wing extremist. However, this policy is coming under increasing pressure.",
@@ -388,22 +404,6 @@
       "weight": 2
     },
     {
-      "id": "4b839c8adc6f",
-      "title": "Kazakhstan parliamentary elections begin: What’s at stake?",
-      "summary": "People are voting to elect 145 members to the Kurultai, the country's new unicameral legislature.",
-      "url": "https://www.aljazeera.com/news/2026/8/23/kazakhstan-parliamentary-elections-begin-whats-at-stake?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-23T05:55:10.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "8a04b05b9867",
       "title": "Hussein al-Sheikh: Decision to hold Palestinian elections in November stands",
       "summary": "Hussein al-Sheikh: Decision to hold Palestinian elections in November stands Palestinian vice president Hussein al-Sheikh has said the decision to hold legislative elections in November will not be reversed, while ruling out Hamas’ participation as enshrined…",
@@ -412,22 +412,6 @@
       "publisherHome": "https://www.middleeasteye.net/",
       "sourceId": "middle-east-eye",
       "publishedAt": "2026-08-23T05:26:32.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "77f7e0faa530",
-      "title": "Ex-Colombian president: Restoring Israeli ties applauds Gaza genocide",
-      "summary": "Ex-Colombian President, Gustavo Petro, says restoring ties with Israel amounts to applauding the Gaza genocide.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/23/ex-colombian-president-restoring-israeli-ties-applauds-gaza-genocide?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-23T05:10:05.000Z",
       "image": "",
       "imageWidth": 0,
       "category": "Politics",
@@ -466,22 +450,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "fb9d36ab5b17",
-      "title": "‘You just can’t trust Trump’: Canadian premiers fire back in trade war",
-      "summary": "Provincial premiers have joined Canada’s Prime Minister Mark Carney, firing back after US President imposed tariffs.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/23/you-just-cant-trust-trump-canadian-premiers-fire-back-in-trade-war?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-23T03:42:22.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -739,22 +707,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "db50a96a0a78",
-      "title": "Ukraine: Russia steps up attacks as German Foreign Minister Johan Wadephul visits Kyiv",
-      "summary": "German Foreign Minister Johann Wadephul has traveled to Kyiv ahead of Ukraine's 35th Independence Day. A Russian missile attack killed at least 2 people as Wadephul met with President Volodymyr Zelenskyy.",
-      "url": "https://www.dw.com/en/ukraine-russia-steps-up-attacks-as-german-foreign-minister-johan-wadephul-visits-kyiv/a-78467414?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-22T08:28:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
