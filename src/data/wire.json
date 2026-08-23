@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-23T19:34:24.445Z",
+  "generatedAt": "2026-08-23T19:53:39.350Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "bfe265db79e4",
+      "title": "Iranian parliamentary committee approves provision to charge ships in Hormuz",
+      "summary": "Iranian parliamentary committee approves provision to charge ships in Hormuz Iranian parliament advanced a provision in a draft law on Sunday allowing Tehran to charge ships passing through the Strait of Hormuz. The parliament's National Security and Foreign…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iranian-parliamentary-committee-approves-provision-charge-ships-hormuz",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-23T19:48:02.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "0b7f99020853",
+      "title": "French centre-left candidate launches presidential bid amid divided left",
+      "summary": "Centre-left politician Raphaël Glucksmann on Sunday launched his bid for the French presidency, aiming to unite moderate left-wing voters and challenge Jean-Luc Mélenchon’s influence ahead of France’s 2027 election. With Marine Le Pen leading first-round…",
+      "url": "https://www.france24.com/en/france/20260823-glucksmann-launches-french-presidential-bid-as-left-seeks-to-challenge-far-right",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-23T19:38:57.000Z",
+      "image": "https://s.france24.com/media/display/0514f9be-598c-11f1-b38e-005056a97e36/w:1024/p:16x9/000-B44A7HG.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
     {
       "id": "f4c36d47d3dd",
       "title": "Trump says Canada wants 'benefits' of being US state after trade talks collapse",
@@ -484,22 +516,6 @@
       "weight": 2
     },
     {
-      "id": "fd40f7f181f5",
-      "title": "Iran escalates threats as US pushes economic isolation",
-      "summary": "Tensions between Iran and the United States continue to escalate. Tehran is threatening to regard as enemies any countries that join the US sanctions, in response to Washington’s calls to isolate its economy. A press conference is scheduled for Monday to…",
-      "url": "https://www.france24.com/en/iran-escalates-threats-as-us-pushes-economic-isolation",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-23T09:02:14.000Z",
-      "image": "https://s.france24.com/media/display/d751d94c-9ece-11f1-888f-005056a97e36/w:1024/p:16x9/EN-20260823-100400-100544-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "51eaeec6eaf5",
       "title": "‘The line’s running half-empty’: Llanwern steelworks feels the heat from cheap steel imports",
       "summary": "New quotas to protect UK firms and jobs appear to be having opposite effect in products such as galvanised steel At Tata Steel’s factory in Llanwern, south Wales, production lines that should be running full-time are now falling quiet for parts of the day,…",
@@ -560,22 +576,6 @@
       "imageWidth": 0,
       "category": "Politics",
       "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "104107c6aaaf",
-      "title": "Pezeshkian says Iran’s 'power and cohesion had astonished the world'",
-      "summary": "Pezeshkian says Iran’s 'power and cohesion had astonished the world' Iran’s president, Masoud Pezeshkian, said that Iran was fighting a \"full-scale economic, military and security war\", but the nation's “power and cohesion had astonished the world\". Speaking…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/pezeshkian-says-irans-power-and-unity-has-defied-predictions-collapse",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-23T06:45:39.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
     },
@@ -691,22 +691,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "47567e744f76",
-      "title": "Germany news: Most voters expect Merz to leave office early",
-      "summary": "A poll suggests most Germans do not expect Chancellor Merz to serve through to the 2029 election. Meanwhile, the far-right AfD co-leader says her party would lead Germany out of the euro and Schengen agreement.",
-      "url": "https://www.dw.com/en/germany-news-most-voters-expect-merz-to-leave-office-early/live-78467416?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-22T15:48:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -1271,6 +1255,22 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
+    },
+    {
+      "id": "73fa6d534d8c",
+      "title": "Eftimiades interviewed on Restricted Handling on Chinese political influence campaigns",
+      "summary": "On July 5, Forward Defense Nonresident Senior Fellow Nicholas Eftimiades was interviewed on the Restricted Handling podcast to discuss Chinese political influence campaigns and penetration of American critical infrastructure. He highlights the need for an…",
+      "url": "https://www.atlanticcouncil.org/insight-impact/in-the-news/eftimiades-on-chinese-political-influence-campaigns/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-21T14:49:47.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 3
     },
     {
       "id": "6fa88048d1aa",
