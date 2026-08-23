@@ -1,8 +1,42 @@
 {
-  "generatedAt": "2026-08-23T08:01:32.879Z",
-  "sourceCount": 27,
-  "failedSources": [],
+  "generatedAt": "2026-08-23T08:45:41.267Z",
+  "sourceCount": 26,
+  "failedSources": [
+    "politico-eu"
+  ],
   "items": [
+    {
+      "id": "c85614423c82",
+      "title": "Zelensky has 'questions to answer' about corruption in his government, sacked minister tells BBC",
+      "summary": "The sacked former defence minister has also called for elections to be held in Ukraine.",
+      "url": "https://www.bbc.co.uk/news/articles/cwy4ypzvd7po?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-23T08:36:53.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f1da/live/9dcc87a0-9ecc-11f1-a6c1-71ec82f18bdc.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "dfea9da41324",
+      "title": "DR Congo, M23 rebels agree on roadmap for peace talks",
+      "summary": "Roadmap follows a week of talks in Switzerland aimed at making progress on a framework agreement they signed last year.",
+      "url": "https://www.aljazeera.com/news/2026/8/23/dr-congo-m23-rebels-agree-on-roadmap-for-peace-talks?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-23T08:03:41.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
     {
       "id": "f6ea4b2ca4b8",
       "title": "Kazakhstan holds parliamentary election expected to cement president’s grip",
@@ -289,22 +323,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "03cab4fc398d",
-      "title": "Iran threatens to block Hormuz if neighbours join US sanctions",
-      "summary": "Iran threatens to block Hormuz if neighbours join US sanctions Tehran would target the interests of countries that help the United States in its economic pressure campaign against Iran , the secretary of Iran's Supreme National Security Council, Mohsen…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-threatens-block-hormuz-if-neighbours-join-us-sanctions",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-22T20:53:31.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -1318,22 +1336,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "023eba82fc97",
-      "title": "Germany plans a €12B missile program to deter Putin",
-      "summary": "Internal defense ministry documents say the plan for a new long-range strike arsenal ranges from cheap cruise missiles to Tomahawks and future hypersonic weapons.",
-      "url": "https://www.politico.eu/article/germany-missile-program-deter-russia-vladimirputin/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-21T11:44:06.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
