@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T13:59:27.148Z",
+  "generatedAt": "2026-08-23T14:22:26.698Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -9,8 +9,8 @@
       "summary": "Abbas Araghchi says country is unbowed but president Masoud Pezeshkian admits its people face ‘many problems’ Iran’s foreign minister has dismissed the threat of a fresh round of US economic sanctions as a “desperate” ploy, even as its president acknowledged…",
       "url": "https://www.theguardian.com/world/2026/aug/23/iran-new-security-chief-trump-economic-war-enemies-mohsen-rezaei",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-23T13:56:11.000Z",
       "image": "https://i.guim.co.uk/img/media/12b06c48e7e64060343fb59c63ad213067e6e1a8/487_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=f5bc044dfcd8c04193a5c7a84a97827a",
       "imageWidth": 700,
@@ -324,6 +324,22 @@
       "weight": 2
     },
     {
+      "id": "bf497beac805",
+      "title": "Kazakhstan parliamentary vote to cement president's power",
+      "summary": "Candidates from seven state-approved parties are taking part in the election, while opposition parties have been banned. Central Asia's largest nation, Kazakhstan maintains a delicate balance between Russia and the West.",
+      "url": "https://www.dw.com/en/kazakhstan-parliamentary-vote-to-cement-president-s-power/a-78474598?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-23T08:54:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "b1d8ba294683",
       "title": "Ethiopia: Tigrayan women celebrate Ashenda amid fears of new war",
       "summary": "In Addis Ababa, Tigrayan women gather to celebrate Ashenda, while expressing hopes for lasting peace in Ethiopia's Tigray region, where recent drone strikes on the regional capital Mekella have renewed fears of conflict after the devastating 2020-2022 war",
@@ -337,22 +353,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "f6ea4b2ca4b8",
-      "title": "Kazakhstan holds parliamentary election expected to cement president’s grip",
-      "summary": "Only state-approved parties loyal to President Tokayev permitted to take part amid a sweeping constitutional overhaul.",
-      "url": "https://www.aljazeera.com/news/2026/8/23/kazakhstan-holds-parliamentary-election-expected-to-cement-presidents-grip?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-23T07:38:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -2935,22 +2935,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "medium",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "2c6b31c519c7",
-      "title": "French ambassador to CAR investigated over claims he hosted dozens of women",
-      "summary": "Disciplinary proceedings under way after security concerns raised over reported visits to official residence France has opened disciplinary proceedings against its ambassador to Central African Republic over allegations of misconduct, after claims he brought…",
-      "url": "https://www.theguardian.com/world/2026/aug/13/france-ambassador-car-central-african-republic-investigation-bruno-foucher",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/africa",
-      "sourceId": "guardian-africa",
-      "publishedAt": "2026-08-13T14:21:52.000Z",
-      "image": "https://i.guim.co.uk/img/media/926de377daf3d455ab452397d131d8d39c41f462/1949_201_2022_1617/master/2022.jpg?width=700&quality=85&auto=format&fit=max&s=75dec55f0edba80a6b05a94672752e2f",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     }
   ]
