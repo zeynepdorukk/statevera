@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-23T15:55:56.178Z",
+  "generatedAt": "2026-08-23T16:13:17.232Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "a11210987517",
+      "title": "Mossad chief met Syrian foreign minister to ease tensions, Haaretz reports",
+      "summary": "Mossad chief met Syrian foreign minister to ease tensions, Haaretz reports Mossad chief Roman Gofman met with Syrian Foreign Minister Asaad al-Shaibani, Haaretz reported on Sunday, citing a source with knowledge of the meeting. The talks were part of an…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/mossad-chief-met-syrian-foreign-minister-ease-tensions-haaretz-reports",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-23T15:57:08.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "e5b48043e99b",
       "title": "Iran government signals fuel price hike on eve of new US sanctions",
@@ -1639,22 +1655,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "05d0963f883b",
-      "title": "Kyiv residents search through the wreckage after Russia’s deadly barrage",
-      "summary": "Residents of Kyiv’s Solomianskyi district spent Thursday assessing the damage after a Russian overnight barrage of ballistic and cruise missiles and drones tore through a residential area.",
-      "url": "http://www.africanews.com/2026/08/21/kyiv-residents-search-through-the-wreckage-after-russias-deadly-barrage/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-21T07:00:57.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/88/29/04/640x360_cmsv2_af16ca20-2f43-5eaa-bd89-22853d2b8fc5-9882904.jpg?1787256201",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
-      "weight": 2
     },
     {
       "id": "bb5970895b15",
