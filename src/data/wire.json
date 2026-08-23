@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-23T18:13:03.009Z",
+  "generatedAt": "2026-08-23T18:47:45.811Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "d1df1b43963d",
+      "title": "Tunisia sees protests after migrant boat sinking kills eight",
+      "summary": "A migrant boat carrying 15 Tunisians sank off the country's southeastern coast while heading to Italy, killing eight.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/23/tunisia-sees-protests-after-migrant-boat-sinking-kills-eight?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-23T17:57:48.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
+    },
     {
       "id": "907a3d920a14",
       "title": "Democrats incredulous over Hakeem Jeffries and Jared Kushner meeting",
@@ -324,22 +340,6 @@
       "weight": 2
     },
     {
-      "id": "bae08ed7c158",
-      "title": "Can Iran retaliate against countries that join US ‘economic war’?",
-      "summary": "Iran warns that countries backing US economic sanctions will be considered an enemy of Tehran.",
-      "url": "https://www.aljazeera.com/news/2026/8/23/can-iran-retaliate-against-countries-that-join-us-economic-war?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-23T11:50:22.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "c83a4afe46ef",
       "title": "Zelenskyy: Elections would ‘tear Ukraine apart’",
       "summary": "The Ukrainian president argues that holding a vote today would only play into Vladimir Putin's hands.",
@@ -646,6 +646,22 @@
       "weight": 2
     },
     {
+      "id": "57ae315ba302",
+      "title": "Iran warns countries against joining US 'economic war'",
+      "summary": "Iran has said nations joining US economic sanctions against it would be considered enemies. Earlier this week, President Trump had announced what he called the \"most crushing economic operation\" against Tehran.",
+      "url": "https://www.dw.com/en/iran-warns-countries-against-joining-us-economic-war/a-78473222?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-23T00:50:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "ef4b4b9b0db5",
       "title": "New US tariffs designed to ‘hurt and divide’ Canada: Premier Carney",
       "summary": "Canadian prime minister vows dollar-for-dollar retaliation against tariffs as trade talks remain suspended",
@@ -658,22 +674,6 @@
       "imageWidth": 0,
       "category": "Economy",
       "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "53a16abfaac8",
-      "title": "Nancy Kassebaum Baker, former US senator from Kansas, dies aged 94",
-      "summary": "Kassebaum Baker became the first woman elected to the US Senate without following a spouse into office Nancy Kassebaum Baker, a Kansas governor’s daughter who became the first woman elected to the US Senate without following a spouse into office, has died.…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/22/nancy-kassebaum-baker-dies-aged-94",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-22T20:40:38.000Z",
-      "image": "https://i.guim.co.uk/img/media/fa3ce1ac2c5c1c202fd718676700c3919fc4ee2f/367_0_2450_1960/master/2450.jpg?width=700&quality=85&auto=format&fit=max&s=aa77aa3095d85543392507c1d4929fbf",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
       "region": "Americas",
       "weight": 2
     },
