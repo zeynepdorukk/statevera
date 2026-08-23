@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T19:13:56.000Z",
+  "updatedAt": "2026-08-23T19:34:34.000Z",
   "quotes": [
     {
       "id": "spx",
@@ -107,8 +107,8 @@
       "symbol": "BZ=F",
       "decimals": 2,
       "price": 94.39,
-      "change": 0.6099999999999994,
-      "percent": 0.6504585199402851,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-08-21T20:59:57.000Z"
     },
     {
@@ -117,8 +117,8 @@
       "symbol": "GC=F",
       "decimals": 2,
       "price": 4680.6,
-      "change": 109.20000000000073,
-      "percent": 2.388764929780827,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-08-21T20:59:58.000Z"
     },
     {
@@ -127,8 +127,8 @@
       "symbol": "CL=F",
       "decimals": 2,
       "price": 87.06,
-      "change": 0.23000000000000398,
-      "percent": 0.264885408269036,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-08-21T20:59:59.000Z"
     },
     {
@@ -137,8 +137,8 @@
       "symbol": "HG=F",
       "decimals": 2,
       "price": 6.587,
-      "change": 0.11799999999999944,
-      "percent": 1.8240840933683635,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-08-21T20:59:59.000Z"
     },
     {
@@ -146,10 +146,10 @@
       "label": "USD/TRY",
       "symbol": "USDTRY=X",
       "decimals": 2,
-      "price": 48.0498,
-      "change": 0.06029999999999802,
-      "percent": 0.1256524864814137,
-      "updatedAt": "2026-08-23T19:13:56.000Z"
+      "price": 48.0486,
+      "change": 0.05910000000000082,
+      "percent": 0.12315193948676444,
+      "updatedAt": "2026-08-23T19:34:34.000Z"
     },
     {
       "id": "eurusd",
@@ -166,10 +166,10 @@
       "label": "USD/JPY",
       "symbol": "JPY=X",
       "decimals": 2,
-      "price": 158.94,
-      "change": -0.08799999999999386,
-      "percent": -0.05533616721583235,
-      "updatedAt": "2026-08-21T22:59:01.000Z"
+      "price": 158.976,
+      "change": -0.0519999999999925,
+      "percent": -0.0326986442638985,
+      "updatedAt": "2026-08-23T19:34:04.000Z"
     },
     {
       "id": "us10y",
