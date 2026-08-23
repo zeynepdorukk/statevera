@@ -1,10 +1,26 @@
 {
-  "generatedAt": "2026-08-23T10:37:40.964Z",
+  "generatedAt": "2026-08-23T10:57:00.435Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
   ],
   "items": [
+    {
+      "id": "359ed305a65a",
+      "title": "Russia withdraws ambassador to UK as Kremlin ratchets pressure over Ukraine support",
+      "summary": "Andrey Kelin left last month after seven years in diplomatic post Russia has withdrawn its ambassador to the UK, it has emerged, as the Kremlin continues to try to put pressure on Britain over its support for Ukraine. Andrey Kelin left last month after seven…",
+      "url": "https://www.theguardian.com/world/2026/aug/23/russia-withdraws-ambassador-uk-kremlin-pressure-ukraine-andrey-kelin",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-23T10:37:39.000Z",
+      "image": "https://i.guim.co.uk/img/media/3cc98ed45264c41995eb0d07bc84e2fcc0aa9201/234_0_2694_2155/master/2694.jpg?width=700&quality=85&auto=format&fit=max&s=6624d2a613b24df53cd2daa124e81360",
+      "imageWidth": 700,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "2dbf9f3f48c3",
       "title": "Ukraine: Zelenskyy rejects wartime elections",
@@ -264,7 +280,7 @@
     {
       "id": "4b839c8adc6f",
       "title": "Kazakhstan parliamentary elections begin: What’s at stake?",
-      "summary": "The Central Asian country heads to the polls on August 23.",
+      "summary": "People are voting to elect 145 members to the Kurultai, the country's new unicameral legislature.",
       "url": "https://www.aljazeera.com/news/2026/8/23/kazakhstan-parliamentary-elections-begin-whats-at-stake?traffic_source=rss",
       "publisher": "Al Jazeera",
       "publisherHome": "https://www.aljazeera.com",
@@ -758,22 +774,6 @@
       "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "0daf13301211",
-      "title": "Attack on Ukraine shopping centre that killed 16 is ‘terror by design’, says EU foreign policy chief",
-      "summary": "Kaja Kallas, the EU’s top diplomat, threatens harshest sanctions yet on Russia after strike on Kryvyi Rih, the home town of Volodymyr Zelenskyy Russian drones have slammed into a busy shopping centre in central Ukraine, killing 16 people in an attack that…",
-      "url": "https://www.theguardian.com/world/2026/aug/22/ukraine-shopping-centre-attack-deaths-russia-terror-by-design-kaja-kallas-kryvyi-rih",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-22T01:12:32.000Z",
-      "image": "https://i.guim.co.uk/img/media/2cc528426ef20eae7438615f8906db2f009b85dc/37_0_970_776/master/970.jpg?width=700&quality=85&auto=format&fit=max&s=14f02592564af8eb6f5b859c77eeb604",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
