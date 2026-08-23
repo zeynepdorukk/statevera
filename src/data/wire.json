@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T20:56:29.040Z",
+  "generatedAt": "2026-08-23T21:13:25.473Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -438,7 +438,7 @@
     {
       "id": "fa2a1e594ada",
       "title": "Trump laying groundwork to impose national emergency by sowing election distrust",
-      "summary": "President’s speech, declassification of documents and heightened claims of noncitizen voting have experts concerned A series of moves by Donald Trump ’s administration to sow doubt in the integrity of US elections have intensified concern among voting experts…",
+      "summary": "President’s speech, declassification of documents and heightened claims of noncitizen voting have experts concerned A series of moves by Donald Trump ’s administration to sow doubt in the integrity of US elections has intensified concern among voting experts…",
       "url": "https://www.theguardian.com/us-news/2026/aug/23/trump-sowing-election-distrust",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/us-news",
@@ -545,22 +545,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "789d3a786cbb",
-      "title": "Iran executes man charged with aiding US, Israel in January protests",
-      "summary": "Iran executes man charged with aiding US, Israel in January protests Iran on Sunday executed a man accused of carrying a chainsaw during January anti-government protests, who was charged with acting as an agent of Israel and the United States. The judiciary…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-executes-man-charged-aiding-us-israel-january-protests",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-23T06:53:16.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
