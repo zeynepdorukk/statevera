@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-23T13:43:29.696Z",
+  "generatedAt": "2026-08-23T13:59:27.148Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "1f5d1456e501",
+      "title": "Iran’s foreign minister calls threat of new US economic sanctions ‘desperate’",
+      "summary": "Abbas Araghchi says country is unbowed but president Masoud Pezeshkian admits its people face ‘many problems’ Iran’s foreign minister has dismissed the threat of a fresh round of US economic sanctions as a “desperate” ploy, even as its president acknowledged…",
+      "url": "https://www.theguardian.com/world/2026/aug/23/iran-new-security-chief-trump-economic-war-enemies-mohsen-rezaei",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
+      "publishedAt": "2026-08-23T13:56:11.000Z",
+      "image": "https://i.guim.co.uk/img/media/12b06c48e7e64060343fb59c63ad213067e6e1a8/487_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=f5bc044dfcd8c04193a5c7a84a97827a",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "ccf3914b74de",
       "title": "President Zelensky says having elections in Ukraine would 'destroy the country'",
@@ -81,22 +97,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "1f5d1456e501",
-      "title": "Iran’s president says country faces ‘many problems’ as US ramps up sanctions",
-      "summary": "Tehran’s acknowledgment of economic hardships comes a day before US expected to announce further measures Authorities in Tehran have acknowledged that the Iranian people are facing “many problems” as the US intensifies its efforts to isolate the country’s…",
-      "url": "https://www.theguardian.com/world/2026/aug/23/iran-new-security-chief-trump-economic-war-enemies-mohsen-rezaei",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-23T11:50:36.000Z",
-      "image": "https://i.guim.co.uk/img/media/12b06c48e7e64060343fb59c63ad213067e6e1a8/487_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=f5bc044dfcd8c04193a5c7a84a97827a",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -470,22 +470,6 @@
       "weight": 2
     },
     {
-      "id": "9b810f9fa709",
-      "title": "Macron to host Saudi crown prince for talks on Middle East, energy",
-      "summary": "Macron to host Saudi crown prince for talks on Middle East, energy French President Emmanuel Macron will be hosting Saudi crown prince Mohammed bin Salman on Sunday for a two-day visit set to range from esports to the war in the Middle East. Several…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/macron-host-saudi-crown-prince-talks-middle-east-energy",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-23T02:20:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "4103d667699c",
       "title": "Ukraine war briefing: Macron focuses on delivery of missile interceptors as Russian attacks intensify",
       "summary": "French president is working on European alternatives to US Patriot missile system and expresses ‘horror’ at deadly attack on shopping centre in Kryvyi Rih. What we know on day 1,642 French president Emmanuel Macron has promised to strengthen support for…",
@@ -566,22 +550,6 @@
       "weight": 2
     },
     {
-      "id": "b938b67ecbe8",
-      "title": "102 senior diplomats urge West Bank action against Israeli 'ethnic cleansing'",
-      "summary": "Dozens of former senior French and UK diplomats on Saturday urged their governments to work together to uphold international law in the Palestinian territories, accusing Israel of seeking to \"destroy\" any prospect of a viable Palestinian state. Analysis by…",
-      "url": "https://www.france24.com/en/102-senior-diplomats-urge-west-bank-action-against-israeli-ethnic-cleansing",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-22T14:50:57.000Z",
-      "image": "https://s.france24.com/media/display/0cd99772-9e38-11f1-be40-005056a97e36/w:1024/p:16x9/EN-20260822-160322-160755-CS.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "de9106f840b1",
       "title": "Canada vows ‘dollar for dollar’ response as US puts 50% tariffs on some goods",
       "summary": "Collapse of trade talks could lead to job losses, but biggest impact on traditional allies is expected to be political The US has imposed 50% tariffs on some goods from Canada, and Mark Carney, the country’s prime minister, has vowed to match them “dollar for…",
@@ -643,6 +611,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "9a19cdde4343",
+      "title": "Diplomats urge France and UK to uphold rule of law in Palestinian territories",
+      "summary": "Dozens of former senior French and UK diplomats on Saturday urged their governments to work together to uphold international law in the Palestinian territories, accusing Israel of seeking to \"destroy\" any prospect of a viable Palestinian state.",
+      "url": "https://www.rfi.fr/en/international/20260822-former-envoys-urge-joint-french-uk-action-on-palestinian-territories",
+      "publisher": "RFI",
+      "publisherHome": "https://www.rfi.fr/en",
+      "sourceId": "rfi-world",
+      "publishedAt": "2026-08-22T09:46:11.000Z",
+      "image": "https://s.rfi.fr/media/display/4df126be-9e0e-11f1-ad30-005056bf30b7/w:1024/p:16x9/85e7dd8c346dba72bef7c91da83b8a5b45173c6d.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -727,8 +711,8 @@
     },
     {
       "id": "4b33ff576081",
-      "title": "Hours after U.S. imposes tariffs, Canada says it'll strike back starting Sept. 8",
-      "summary": "The U.S. has now imposed 50% tariffs on $20 billion worth of Canadian products. Prime Minister Mark Carney says Canada will match those tariffs \"dollar for dollar\" next month.",
+      "title": "As Canada readies retaliatory tariffs, Mark Carney says his nation is 'at war' with U.S.",
+      "summary": "The U.S. has now imposed 50% tariffs on $20 billion worth of Canadian products. Prime Minister Mark Carney says Canada will match those tariffs \"dollar for dollar\" starting Sept. 8.",
       "url": "https://www.npr.org/2026/08/22/nx-s1-5941584/us-canada-tariffs",
       "publisher": "NPR",
       "publisherHome": "https://www.npr.org/sections/world",
@@ -1631,8 +1615,8 @@
       "summary": "Thirty \"pioneer families\" have arrived on a wave of nationalism driven by Israel's government, but the rapid change has left nearby Palestinian residents fearful.",
       "url": "https://www.bbc.co.uk/news/articles/cn7n0l4p0kzo?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
+      "publisherHome": "https://www.bbc.com/news/world/middle_east",
+      "sourceId": "bbc-mideast",
       "publishedAt": "2026-08-21T05:00:57.000Z",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5acd/live/49a65740-9d3d-11f1-aed2-8d6da8d75094.jpg",
       "imageWidth": 240,
