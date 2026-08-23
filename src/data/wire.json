@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T16:13:17.232Z",
+  "generatedAt": "2026-08-23T16:42:44.925Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -17,6 +17,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "4a2a1e35d93c",
+      "title": "Canada, US and tit-for-tat tariffs: How will they impact their economies?",
+      "summary": "Both countries will suffer from the trade war with steeper tariffs raising business costs and consumer prices.",
+      "url": "https://www.aljazeera.com/news/2026/8/23/canada-us-and-tit-for-tat-tariffs-how-will-it-impact-their-economies?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-23T15:54:36.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -512,22 +528,6 @@
       "imageWidth": 0,
       "category": "Security",
       "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "8a04b05b9867",
-      "title": "Hussein al-Sheikh: Decision to hold Palestinian elections in November stands",
-      "summary": "Hussein al-Sheikh: Decision to hold Palestinian elections in November stands Palestinian vice president Hussein al-Sheikh has said the decision to hold legislative elections in November will not be reversed, while ruling out Hamas’ participation as enshrined…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hussein-al-sheikh-decision-hold-palestinian-elections-november-stands",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-23T05:26:32.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
     },
@@ -1655,6 +1655,22 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
+    },
+    {
+      "id": "05d0963f883b",
+      "title": "Kyiv residents search through the wreckage after Russia’s deadly barrage",
+      "summary": "Residents of Kyiv’s Solomianskyi district spent Thursday assessing the damage after a Russian overnight barrage of ballistic and cruise missiles and drones tore through a residential area.",
+      "url": "http://www.africanews.com/2026/08/21/kyiv-residents-search-through-the-wreckage-after-russias-deadly-barrage/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-21T07:00:57.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/88/29/04/640x360_cmsv2_af16ca20-2f43-5eaa-bd89-22853d2b8fc5-9882904.jpg?1787256201",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
     },
     {
       "id": "bb5970895b15",
