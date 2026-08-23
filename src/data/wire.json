@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-23T23:33:46.057Z",
+  "generatedAt": "2026-08-23T23:55:12.182Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "bf0282009fae",
+      "title": "Review launched into how pub and hotel business rates calculated",
+      "summary": "The review of how rates are calculated in England and Wales could lead to reform of the system.",
+      "url": "https://www.bbc.co.uk/news/articles/c8xnxy89gv7o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/business",
+      "sourceId": "bbc-business",
+      "publishedAt": "2026-08-23T23:26:15.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/7f38/live/0b0cedf0-9ed7-11f1-9253-c70a43a5293b.jpg",
+      "imageWidth": 240,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "2b7ac6c15ae8",
       "title": "Burnham to visit Ukraine with promise of boost for Kyiv’s long-range missiles",
@@ -497,22 +513,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "6d2f1a0434b0",
-      "title": "Israeli military raids continue across the West Bank",
-      "summary": "Israeli military raids continue across the West Bank Israeli military raids and settler violence across the occupied West Bank continued overnight and into Sunday. Wafa news agency reports that Israeli forces raided central Tulkarm late on Saturday, firing…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-military-raids-continue-across-west-bank",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-23T10:09:25.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1943,22 +1943,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "61c52ea5c150",
-      "title": "Trump vows tougher economic measures on Iran and supporting countries",
-      "summary": "It comes after a 60-day ceasefire expired on Monday, with no sign of a diplomatic or military off-ramp to the conflict.",
-      "url": "https://www.bbc.co.uk/news/articles/c2k7e83ynj4o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/business",
-      "sourceId": "bbc-business",
-      "publishedAt": "2026-08-20T22:18:56.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/725b/live/5ef21940-9c2a-11f1-aa8e-d328e95deb46.jpg",
-      "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "medium",
-      "region": "Global",
       "weight": 2
     },
     {
