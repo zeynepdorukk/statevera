@@ -1,10 +1,24 @@
 {
-  "generatedAt": "2026-08-23T11:34:41.245Z",
-  "sourceCount": 26,
-  "failedSources": [
-    "politico-eu"
-  ],
+  "generatedAt": "2026-08-23T11:55:25.415Z",
+  "sourceCount": 27,
+  "failedSources": [],
   "items": [
+    {
+      "id": "c83a4afe46ef",
+      "title": "Zelenskyy: Elections would ‘tear Ukraine apart’",
+      "summary": "The Ukrainian president argues that holding a vote today would only play into Vladimir Putin's hands.",
+      "url": "https://www.politico.eu/article/volodymyr-zelenskyy-elections-would-tear-ukraine-apart/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+      "publisher": "POLITICO Europe",
+      "publisherHome": "https://www.politico.eu",
+      "sourceId": "politico-eu",
+      "publishedAt": "2026-08-23T11:50:10.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "3fb3f23fc839",
       "title": "‘No more!!!’: Trump lashes out after US-Canada talks devolve into trade war",
@@ -23,7 +37,7 @@
     },
     {
       "id": "ae42be62d98b",
-      "title": "Syria foreign minister says door open for diplomacy with Israel",
+      "title": "Syria’s foreign minister says door open for diplomacy with Israel",
       "summary": "Asaad al-Shaibani urges Israel to seize 'historic opportunity' for diplomacy.",
       "url": "https://www.aljazeera.com/news/2026/8/23/syria-foreign-minister-says-door-open-for-diplomacy-with-israel?traffic_source=rss",
       "publisher": "Al Jazeera",
