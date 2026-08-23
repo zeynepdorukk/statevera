@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-23T07:08:33.438Z",
+  "generatedAt": "2026-08-23T07:44:57.484Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "f6ea4b2ca4b8",
+      "title": "Kazakhstan holds parliamentary election expected to cement president’s grip",
+      "summary": "Only state-approved parties loyal to President Tokayev permitted to take part amid a sweeping constitutional overhaul.",
+      "url": "https://www.aljazeera.com/news/2026/8/23/kazakhstan-holds-parliamentary-election-expected-to-cement-presidents-grip?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-23T07:38:42.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "0efe3cc7ff70",
+      "title": "Trump says Canada wants 'benefits of being a state, without being one' as trade war deepens",
+      "summary": "US President Donald Trump slammed Canada on Sunday, saying the country wanted \"the benefits of being a State, without being one\", in response to Canadian Prime Minister Mark Carney announcing retaliatory tariffs following failed trade negotiations.",
+      "url": "https://www.france24.com/en/americas/20260823-trump-says-canada-wants-benefits-of-being-a-state-as-trade-war-deepens",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-23T06:56:30.000Z",
+      "image": "https://s.france24.com/media/display/443d54e2-9ebf-11f1-a9cb-005056bfb2b6/w:1024/p:16x9/AP26234046509856.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "789d3a786cbb",
       "title": "Iran executes man charged with aiding US, Israel in January protests",
@@ -65,22 +97,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "f4c36d47d3dd",
-      "title": "Trump says Canada wants 'benefits' of being US state as Carney says countries in trade war",
-      "summary": "Canada's prime minister said he was \"reluctantly\" announcing retaliatory tariffs as he accused the US of starting a trade war.",
-      "url": "https://www.bbc.co.uk/news/articles/cx272np7vgyo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-23T05:46:43.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0b8b/live/0b4b35a0-9eba-11f1-8afa-6d906fcc4949.jpg",
-      "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -246,6 +262,22 @@
       "weight": 2
     },
     {
+      "id": "ef4b4b9b0db5",
+      "title": "New US tariffs designed to ‘hurt and divide’ Canada: Premier Carney",
+      "summary": "Canadian prime minister vows dollar-for-dollar retaliation against tariffs as trade talks remain suspended",
+      "url": "https://www.aa.com.tr/en/americas/new-us-tariffs-designed-to-hurt-and-divide-canada-premier-carney/4034871",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-22T22:29:39.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "3dd7db9ee90f",
       "title": "Israeli army and settlers injure several Palestinians across West Bank",
       "summary": "Palestinians face attacks and forced displacement as settlers expand control, backed by military raids and inaction.",
@@ -326,22 +358,6 @@
       "weight": 2
     },
     {
-      "id": "d10737bc7517",
-      "title": "Envoy says Israel did not give the US notice before strikes on Syrian base",
-      "summary": "US official Tom Barrack has criticised Israel for failing to give his country adequate warning, a claim Tel Aviv denies.",
-      "url": "https://www.aljazeera.com/news/2026/8/22/envoy-says-israel-did-not-give-the-us-notice-before-strikes-on-syrian-base?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-22T19:18:02.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "524958d33aa6",
       "title": "US military newspaper editor voices censorship fears after being fired",
       "summary": "Erik Slavin believes he was fired for saying in an interview that \"in a hypothetical situation, censorship would be a red line\".",
@@ -358,19 +374,35 @@
       "weight": 2
     },
     {
+      "id": "de9106f840b1",
+      "title": "Canada vows ‘dollar for dollar’ response as US puts 50% tariffs on some goods",
+      "summary": "Collapse of trade talks could lead to job losses, but biggest impact on traditional allies is expected to be political The US has imposed 50% tariffs on some goods from Canada, and Mark Carney, the country’s prime minister, has vowed to match them “dollar for…",
+      "url": "https://www.theguardian.com/world/2026/aug/22/canada-tariffs-trump-trade-deal-talks-fail",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-22T14:04:57.000Z",
+      "image": "https://i.guim.co.uk/img/media/6fca08f3a759225a7da5912b393aadcad7c6b4e7/0_0_4724_3780/master/4724.jpg?width=700&quality=85&auto=format&fit=max&s=03920ff6d052f3f77d474d9591414f45",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "508f4496688b",
       "title": "Nebraska school district asks police to stop using shock gloves on students",
       "summary": "Omaha police agreed to stop carrying electric shock gloves in the halls of state’s largest public school district Omaha police recently agreed to stop carrying gloves that can deliver electric shocks to students in the halls of Nebraska ’s largest public…",
       "url": "https://www.theguardian.com/us-news/2026/aug/22/omaha-nebraska-school-district-shock-gloves-police",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-22T14:00:55.000Z",
       "image": "https://i.guim.co.uk/img/media/bbc8e90923f55bed3262694e8ecffbbbbbebb383/121_0_2499_2000/master/2499.jpg?width=700&quality=85&auto=format&fit=max&s=6e205ec43cbdb85f6d178d766ae7ba5e",
       "imageWidth": 700,
       "category": "Diplomacy",
       "categoryConfidence": "medium",
-      "region": "Global",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -563,6 +595,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
+      "weight": 2
+    },
+    {
+      "id": "4b33ff576081",
+      "title": "Hours after U.S. imposes tariffs, Canada says it'll strike back starting Sept. 8",
+      "summary": "The U.S. has now imposed 50% tariffs on $20 billion worth of Canadian products. Prime Minister Mark Carney says Canada will match those tariffs \"dollar for dollar\" next month.",
+      "url": "https://www.npr.org/2026/08/22/nx-s1-5941584/us-canada-tariffs",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-22T04:36:27.000Z",
+      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/1024x746+0+0/resize/1024x746!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F62%2F76%2Fce6c9c994f5eab171f25f577f3bb%2Fgetty-uscanadatariffs.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
