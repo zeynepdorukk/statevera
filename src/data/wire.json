@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T11:14:51.295Z",
+  "generatedAt": "2026-08-23T11:34:41.245Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
@@ -11,8 +11,8 @@
       "summary": "PM Mark Carney says ‘we got attacked’ as tariffs come into force on items from hockey sticks to tongue depressors Donald Trump has hit back at Canada after a breakdown in negotiations plunged the two countries into a trade war . In his first public comments…",
       "url": "https://www.theguardian.com/us-news/2026/aug/23/donald-trump-lashes-out-after-us-canada-talks-devolve-into-trade-war",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-23T11:00:16.000Z",
       "image": "https://i.guim.co.uk/img/media/b1fc5227ab8b91635aa6bdd84b88df0711c4cc64/200_0_6000_4800/master/6000.jpg?width=700&quality=85&auto=format&fit=max&s=60912b5764e26c8274ffe2e9a8add88f",
       "imageWidth": 700,
@@ -22,9 +22,25 @@
       "weight": 2
     },
     {
+      "id": "ae42be62d98b",
+      "title": "Syria foreign minister says door open for diplomacy with Israel",
+      "summary": "Asaad al-Shaibani urges Israel to seize 'historic opportunity' for diplomacy.",
+      "url": "https://www.aljazeera.com/news/2026/8/23/syria-foreign-minister-says-door-open-for-diplomacy-with-israel?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-23T10:48:55.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "359ed305a65a",
       "title": "Russia withdraws ambassador to UK as Kremlin ratchets pressure over Ukraine support",
-      "summary": "Andrey Kelin left last month after seven years in diplomatic post Russia has withdrawn its ambassador to the UK, it has emerged, as the Kremlin continues to try to put pressure on Britain over its support for Ukraine. Andrey Kelin left last month after seven…",
+      "summary": "Andrey Kelin left last month after seven years in diplomatic post with no sign yet of anyone replacing him in role Russia has withdrawn its ambassador to the UK, it has emerged, as the Kremlin continues to try to put pressure on Britain over its support for…",
       "url": "https://www.theguardian.com/world/2026/aug/23/russia-withdraws-ambassador-uk-kremlin-pressure-ukraine-andrey-kelin",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -179,6 +195,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "a88976a9bb94",
+      "title": "US-Canada trade dispute escalates after Carney announces retaliatory tariffs",
+      "summary": "Canada and the US were closing in on a trade deal earlier this week until the negotiations fell apart. Both sides blame each other for last-minute changes to the terms. Canada’s Prime Minister Mark Carney has announced retaliatory tariffs on the United States…",
+      "url": "https://www.france24.com/en/us-canada-trade-dispute-escalates-after-carney-announces-retaliatory-tariffs",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-23T09:02:22.000Z",
+      "image": "https://s.france24.com/media/display/ae4b6f1e-9ecd-11f1-b052-005056bf30b7/w:1024/p:16x9/EN-20260823-100144-100323-CS.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -472,14 +504,14 @@
       "weight": 2
     },
     {
-      "id": "3b09486e35c7",
-      "title": "Iran warns of retaliation against countries joining US ‘economic war’",
-      "summary": "Warning comes after Trump said he will impose 'most crushing' sanctions to isolate Iran and weaken its government.",
-      "url": "https://www.aljazeera.com/news/2026/8/22/iran-warns-nearby-nations-against-joining-us-economic-war-efforts?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-22T23:26:15.000Z",
+      "id": "57ae315ba302",
+      "title": "Iran warns countries against joining US 'economic war'",
+      "summary": "Iran has said nations joining US economic sanctions against it would be considered enemies. Earlier this week, President Trump had announced what he called the \"most crushing economic operation\" against Tehran.",
+      "url": "https://www.dw.com/en/iran-warns-countries-against-joining-us-economic-war/a-78473222?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-23T00:50:00.000Z",
       "image": "",
       "imageWidth": 0,
       "category": "Economy",
@@ -669,14 +701,14 @@
       "summary": "In letter to Macron and Burnham, more than 100 senior figures accuse Israel of ethnic cleansing and call for measures including trade ban More than 100 French and British former diplomats have said Palestine is being erased in front of the world’s eyes and…",
       "url": "https://www.theguardian.com/world/2026/aug/22/uk-france-diplomats-israel-palestine",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/world/europe-news",
+      "sourceId": "guardian-europe",
       "publishedAt": "2026-08-22T09:00:04.000Z",
       "image": "https://i.guim.co.uk/img/media/dd5b33bf9f870a1fc5c8de54279eac6bbbe6119d/402_0_5484_4387/master/5484.jpg?width=700&quality=85&auto=format&fit=max&s=1596e868e6eceb98d4b1c7453c3c991d",
       "imageWidth": 700,
       "category": "Diplomacy",
       "categoryConfidence": "high",
-      "region": "Global",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -1161,22 +1193,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
-    },
-    {
-      "id": "73fa6d534d8c",
-      "title": "Eftimiades interviewed on Restricted Handling on Chinese political influence campaigns",
-      "summary": "On July 5, Forward Defense Nonresident Senior Fellow Nicholas Eftimiades was interviewed on the Restricted Handling podcast to discuss Chinese political influence campaigns and penetration of American critical infrastructure. He highlights the need for an…",
-      "url": "https://www.atlanticcouncil.org/insight-impact/in-the-news/eftimiades-on-chinese-political-influence-campaigns/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-21T14:49:47.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 3
     },
     {
       "id": "6fa88048d1aa",
@@ -2585,22 +2601,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "12f92cdb58e7",
-      "title": "Activist forced out of US after criticising Trump-aligned Colombian politician",
-      "summary": "Beto Coral held up banners in Florida warning fellow Colombians to not vote for Abelardo de la Espriella In the week before Colombia’s presidential election, Beto Coral, a well-known activist living in the United States, travelled to Florida to persuade…",
-      "url": "https://www.theguardian.com/world/2026/aug/19/activist-forced-out-of-us-after-criticising-trump-aligned-colombian-politician",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-19T09:00:12.000Z",
-      "image": "https://i.guim.co.uk/img/media/8f035dc467e7763a29217ce5c9732e32b7b934ba/0_149_1198_958/master/1198.jpg?width=700&quality=85&auto=format&fit=max&s=1644b7953125054ef81b6c1b626232c4",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
