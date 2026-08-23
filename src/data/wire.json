@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T17:54:34.569Z",
+  "generatedAt": "2026-08-23T18:13:03.009Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -11,12 +11,28 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-23T17:33:41.000Z",
+      "publishedAt": "2026-08-23T17:55:52.000Z",
       "image": "https://i.guim.co.uk/img/media/9c27978883c3099f3b215f8e74787e2ead13ad64/0_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=eb0b0cc68e0f5c22ab23a3ed7fa54737",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "0fe47357cfd6",
+      "title": "Iran war: Top US lawmaker says Republicans can ‘absolutely’ win midterms",
+      "summary": "House Speaker Mike Johnson, a Trump ally, admits it 'would be helpful' if conflict ends before elections in November.",
+      "url": "https://www.aljazeera.com/news/2026/8/23/iran-war-top-us-lawmaker-says-republicans-can-absolutely-win-midterms?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-23T17:53:31.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
