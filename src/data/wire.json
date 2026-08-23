@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T23:54:55.069Z",
+  "generatedAt": "2026-08-23T00:36:20.124Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -196,6 +196,22 @@
       "weight": 2
     },
     {
+      "id": "524958d33aa6",
+      "title": "US military newspaper editor voices censorship fears after being fired",
+      "summary": "Erik Slavin believes he was fired for saying in an interview that \"in a hypothetical situation, censorship would be a red line\".",
+      "url": "https://www.bbc.co.uk/news/articles/cm2g23ng8p4o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-22T16:57:19.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/8d51/live/20fafd70-9e53-11f1-8871-ff7211da55c9.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
       "id": "8a3f8de190b4",
       "title": "Sanctioned by EU, Israeli settler steals and kills Palestinian donkey",
       "summary": "A donkey belonging to a Palestinian farmer was reportedly stolen and dragged to death by Israeli settlers.",
@@ -207,22 +223,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "4a2d23a6f71c",
-      "title": "How is the pro-Israel lobby influencing US elections?",
-      "summary": "As the 2026 US midterms approach, millions of dollars are pouring into races involving candidates who challenge Israel.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/22/how-is-the-pro-israel-lobby-influencing-us-midterm-elections?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-22T16:17:54.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -843,14 +843,14 @@
       "summary": "German intelligence believes guns found last year were for carrying out assassinations on behalf of Moscow, reports say.",
       "url": "https://www.bbc.co.uk/news/articles/cp9edjpvplpo?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
+      "publisherHome": "https://www.bbc.com/news/world/europe",
+      "sourceId": "bbc-europe",
       "publishedAt": "2026-08-21T16:26:53.000Z",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/3237/live/ba89ed70-9d72-11f1-a291-b542ee92de7c.jpg",
       "imageWidth": 240,
       "category": "Security",
       "categoryConfidence": "high",
-      "region": "Global",
+      "region": "Europe",
       "weight": 2
     },
     {
@@ -1693,8 +1693,8 @@
       "summary": "Iran has so far proved adept at finding ways around years of already punishing sanctions on its economy.",
       "url": "https://www.bbc.co.uk/news/articles/cre4gdvlj9ro?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
+      "publisherHome": "https://www.bbc.com/news/business",
+      "sourceId": "bbc-business",
       "publishedAt": "2026-08-20T23:16:45.000Z",
       "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ac2c/live/c4afa730-9d4b-11f1-a291-b542ee92de7c.jpg",
       "imageWidth": 240,
