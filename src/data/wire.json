@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T19:53:39.350Z",
+  "generatedAt": "2026-08-23T20:09:41.533Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -497,22 +497,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "a88976a9bb94",
-      "title": "US-Canada trade dispute escalates after Carney announces retaliatory tariffs",
-      "summary": "Canada and the US were closing in on a trade deal earlier this week until the negotiations fell apart. Both sides blame each other for last-minute changes to the terms. Canada’s Prime Minister Mark Carney has announced retaliatory tariffs on the United States…",
-      "url": "https://www.france24.com/en/us-canada-trade-dispute-escalates-after-carney-announces-retaliatory-tariffs",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-23T09:02:22.000Z",
-      "image": "https://s.france24.com/media/display/ae4b6f1e-9ecd-11f1-b052-005056bf30b7/w:1024/p:16x9/EN-20260823-100144-100323-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
