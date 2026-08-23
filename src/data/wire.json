@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T14:22:26.698Z",
+  "generatedAt": "2026-08-23T14:45:54.623Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -228,14 +228,14 @@
       "weight": 2
     },
     {
-      "id": "5215cd029089",
-      "title": "Israeli air strike near Gaza refugee camp kills one person and injures two",
-      "summary": "Israeli air attack near Gaza's Maghazi camp kills one person and injures two others.",
-      "url": "https://www.aljazeera.com/news/2026/8/23/israeli-air-strike-near-gaza-refugee-camp-kills-one-person-and-injures-two?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-23T09:43:47.000Z",
+      "id": "063353ca2a35",
+      "title": "Israeli air strike in central Gaza kills one, wounds two",
+      "summary": "Israeli air strike in central Gaza kills one, wounds two An Israeli air strike in central Gaza has killed one Palestinian and wounded two others, Wafa news agency is reporting, citing medical sources. According to the sources, the individuals were targeted in…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-air-strike-central-gaza-kills-one-wounds-two",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-23T09:38:32.000Z",
       "image": "",
       "imageWidth": 0,
       "category": "Security",
@@ -550,6 +550,22 @@
       "weight": 2
     },
     {
+      "id": "47567e744f76",
+      "title": "Germany news: Most voters expect Merz to leave office early",
+      "summary": "A poll suggests most Germans do not expect Chancellor Merz to serve through to the 2029 election. Meanwhile, the far-right AfD co-leader says her party would lead Germany out of the euro and Schengen agreement.",
+      "url": "https://www.dw.com/en/germany-news-most-voters-expect-merz-to-leave-office-early/live-78467416?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-22T15:48:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
       "id": "de9106f840b1",
       "title": "Canada vows ‘dollar for dollar’ response as US puts 50% tariffs on some goods",
       "summary": "Collapse of trade talks could lead to job losses, but biggest impact on traditional allies is expected to be political The US has imposed 50% tariffs on some goods from Canada, and Mark Carney, the country’s prime minister, has vowed to match them “dollar for…",
@@ -595,6 +611,22 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "b5acf07a49f5",
+      "title": "Breaking the silence over sexual violence against men and boys in war",
+      "summary": "Conflicts can expose civilians and detainees to grave abuses; the challenge is not only to document these crimes, but also to ensure all survivors are recognised, protected and able to access justice and care.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168150",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-22T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/03-02-2025-DR-Congo-02.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -2791,22 +2823,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "6a93d93b8e1b",
-      "title": "What’s journalism worth in disasters and emergencies? A lot, says a new UN report",
-      "summary": "A single New York Times article on a disaster generated an additional $500,000 in official aid. That’s just one of the findings on the critical role a free press plays in saving lives, according to a new UN report released on Tuesday.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168164",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-18T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production%20Library/01-05-2025_UNNews_Gaza_Press_01.JPG/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Global",
       "weight": 2
     },
     {
