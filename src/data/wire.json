@@ -1,10 +1,42 @@
 {
-  "generatedAt": "2026-08-23T09:16:54.764Z",
+  "generatedAt": "2026-08-23T09:48:54.186Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
   ],
   "items": [
+    {
+      "id": "063353ca2a35",
+      "title": "Israeli air strike in central Gaza kills one, wounds two",
+      "summary": "Israeli air strike in central Gaza kills one, wounds two An Israeli air strike in central Gaza has killed one Palestinian and wounded two others, Wafa news agency is reporting, citing medical sources. According to the sources, the individuals were targeted in…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-air-strike-central-gaza-kills-one-wounds-two",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-23T09:38:32.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "c85614423c82",
+      "title": "Zelensky has 'questions to answer' about corruption in his government, sacked minister tells BBC",
+      "summary": "The sacked former defence minister has also called for elections to be held in Ukraine.",
+      "url": "https://www.bbc.co.uk/news/articles/cwy4ypzvd7po?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-23T09:37:05.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f1da/live/9dcc87a0-9ecc-11f1-a6c1-71ec82f18bdc.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "668872fab9bc",
       "title": "What is the 'political firewall' against Germany's far-right AfD?",
@@ -24,7 +56,7 @@
     {
       "id": "acab02161ae0",
       "title": "Pakistan army chief set to visit Tehran on Monday",
-      "summary": "Pakistan army chief set to visit Tehran on Monday Pakistan's army chief Field Marshal Asim Munir is set to visit Tehran on Monday, Iran's foreign ministry spokesman Esmaeil Baghaei said on Sunday. Baghaei said the visit was in continuation of Pakistan's…",
+      "summary": "Pakistan army chief set to visit Tehran on Monday Pakistan's army chief, Field Marshal Asim Munir, is set to visit Tehran on Monday, Iran's foreign ministry spokesman Esmaeil Baghaei said on Sunday. Baghaei said the visit was a continuation of Pakistan's…",
       "url": "https://www.middleeasteye.net/live-blog/live-blog-update/pakistan-army-chief-set-visit-tehran-monday",
       "publisher": "Middle East Eye",
       "publisherHome": "https://www.middleeasteye.net/",
@@ -59,8 +91,8 @@
       "summary": "New quotas to protect UK firms and jobs appear to be having opposite effect in products such as galvanised steel At Tata Steel’s factory in Llanwern, south Wales, production lines that should be running full-time are now falling quiet for parts of the day,…",
       "url": "https://www.theguardian.com/business/2026/aug/23/llanwern-steelworks-cheap-steel-imports",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-23T09:00:28.000Z",
       "image": "https://i.guim.co.uk/img/media/aaf0f4e3c19ebfefc9ee7e8ca22fe25c59201fd7/377_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=867aa66d10b5a772e774b02434449b3f",
       "imageWidth": 700,
@@ -70,19 +102,19 @@
       "weight": 2
     },
     {
-      "id": "c85614423c82",
-      "title": "Zelensky has 'questions to answer' about corruption in his government, sacked minister tells BBC",
-      "summary": "The sacked former defence minister has also called for elections to be held in Ukraine.",
-      "url": "https://www.bbc.co.uk/news/articles/cwy4ypzvd7po?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-23T08:47:47.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f1da/live/9dcc87a0-9ecc-11f1-a6c1-71ec82f18bdc.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
+      "id": "b1d8ba294683",
+      "title": "Ethiopia: Tigrayan women celebrate Ashenda amid fears of new war",
+      "summary": "In Addis Ababa, Tigrayan women gather to celebrate Ashenda, while expressing hopes for lasting peace in Ethiopia's Tigray region, where recent drone strikes on the regional capital Mekella have renewed fears of conflict after the devastating 2020-2022 war",
+      "url": "http://www.africanews.com/2026/08/23/ethiopia-tigrayan-women-celebrate-ashenda-amid-fears-of-new-war/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-23T08:25:06.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/88/49/61/640x360_cmsv2_39de62ac-1d4d-5150-9d0c-5d99237b361d-9884961.jpg?1787429128",
+      "imageWidth": 0,
+      "category": "Security",
       "categoryConfidence": "medium",
-      "region": "Eurasia",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -344,22 +376,6 @@
       "weight": 2
     },
     {
-      "id": "057308c495ef",
-      "title": "Hamas says not obligated to implement Trump Gaza deal unless Israel accepts it",
-      "summary": "Hamas says not obligated to implement Trump Gaza deal unless Israel accepts it Hamas leader Osama Hamdan said the group told US envoy Jared Kushner that it would not consider itself obligated to implement any part of president Trump’s Gaza peace deal unless…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hamas-says-not-obligated-implement-trump-gaza-deal-unless-israel-accepts",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-22T23:14:34.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "ef4b4b9b0db5",
       "title": "New US tariffs designed to ‘hurt and divide’ Canada: Premier Carney",
       "summary": "Canadian prime minister vows dollar-for-dollar retaliation against tariffs as trade talks remain suspended",
@@ -389,22 +405,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "c7f99506e874",
-      "title": "US Postal Service shares mail-in ballot restrictions despite court ruling",
-      "summary": "US President Donald Trump has called for restrictions on mail-in voting as part of bid to exert control over elections.",
-      "url": "https://www.aljazeera.com/news/2026/8/22/us-postal-service-shares-mail-in-ballot-restrictions-despite-court-ruling?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-22T20:49:17.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -549,22 +549,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "218e9cacf865",
-      "title": "Ethiopia uncorks a wine boom, Bordeaux vines driving exports and local demand",
-      "summary": "A partnership between French experts and Ethiopian winemakers is putting East Africa on the viticultural map. Using seeds imported from Bordeaux, and after years of refining, exports are now on the rise. Domestically, Ethiopians are also consuming more and…",
-      "url": "https://www.france24.com/en/ethiopia-uncorks-a-wine-boom-bordeaux-vines-driving-exports-and-local-demand",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-22T10:14:02.000Z",
-      "image": "https://s.france24.com/media/display/eb228c14-9e10-11f1-a183-005056bf30b7/w:1024/p:16x9/EN-20260822-092424-092621-CS.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Africa",
       "weight": 2
     },
     {
@@ -1868,22 +1852,6 @@
       "weight": 2
     },
     {
-      "id": "5d5b19be965d",
-      "title": "Egypt and Qatar stress need for dialogue over Strait of Hormuz",
-      "summary": "Egypt’s Foreign Minister Badr Abdelatty met Qatari Prime Minister Sheikh Mohammed bin Abdulrahman Al-Thani in Cairo on Thursday for talks on bilateral cooperation and regional deescalation.",
-      "url": "http://www.africanews.com/2026/08/20/egypt-and-qatar-stress-need-for-dialogue-over-strait-of-hormuz/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-20T19:24:52.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/88/08/32/640x360_cmsv2_8fd61587-9740-575d-b827-acb06e8c0b0f-9880832.jpg?1787235877",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "50063425df92",
       "title": "Israel admits its soldiers fired at car in which Hind Rajab was killed",
       "summary": "Military orders criminal investigation into deaths of five-year-old and six family members in Gaza in 2024 The Israeli military admitted on Wednesday its troops had opened fire on a car carrying five-year-old Hind Rajab and six family members in Gaza in 2024,…",
@@ -2177,8 +2145,8 @@
       "summary": "US president pivots towards ‘crushing’ economic operation against Iran and its trading partners as military strikes fail to bring Tehran to the table Donald Trump has announced a new campaign to isolate Iran’s economy, threatening “tremendous economic…",
       "url": "https://www.theguardian.com/world/2026/aug/20/trump-threatens-crush-iran-economy-war-hormuz",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
       "publishedAt": "2026-08-20T04:53:44.000Z",
       "image": "https://i.guim.co.uk/img/media/d43051433cb016c208dfc647c9f2517efbfe04cf/1375_65_4125_3301/master/4125.jpg?width=700&quality=85&auto=format&fit=max&s=585702c6589684ffc6eeb84843092927",
       "imageWidth": 700,
