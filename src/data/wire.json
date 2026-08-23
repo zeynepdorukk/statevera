@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-23T22:55:48.433Z",
+  "generatedAt": "2026-08-23T23:11:03.641Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "2b7ac6c15ae8",
+      "title": "Burnham to visit Ukraine with promise of boost for Kyiv’s long-range missiles",
+      "summary": "PM will use independence day trip to announce sharing of classified information about Storm Shadow components Britain will boost Ukraine’s capacity to make its own long-range missiles, Andy Burnham will announce on Monday, as he travels to Kyiv for the…",
+      "url": "https://www.theguardian.com/politics/2026/aug/24/andy-burnham-ukraine-long-range-missile-technology-kyiv-visit",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/europe-news",
+      "sourceId": "guardian-europe",
+      "publishedAt": "2026-08-23T23:01:45.000Z",
+      "image": "https://i.guim.co.uk/img/media/ca77e9aa291b9e468bd5584aaf1bf5086b86c10e/406_15_3038_2431/master/3038.jpg?width=700&quality=85&auto=format&fit=max&s=2dccb959740253058ece12d092217dd2",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "1506ec5c686a",
+      "title": "UK productivity growing faster than official figures suggest, thinktank finds",
+      "summary": "Resolution Foundation suggests economy may finally be emerging from shadow of 2008 financial crisis Productivity in the UK – a vital measure of economic health – is growing more strongly than official figures suggest, according to analysis from the Resolution…",
+      "url": "https://www.theguardian.com/business/2026/aug/24/uk-productivity-growing-faster-official-figures-resolution-foundation",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/business/economics",
+      "sourceId": "guardian-economics",
+      "publishedAt": "2026-08-23T23:01:45.000Z",
+      "image": "https://i.guim.co.uk/img/media/88c9a76b09941bcb2fc4a8eed26e0ecf45ffbe43/598_0_4000_3200/master/4000.jpg?width=700&quality=85&auto=format&fit=max&s=7775e7579ca35212dac730578c3eaae0",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "e1eef0468f5c",
       "title": "Lobbyists face new fee to stalk Parliament",
@@ -2999,22 +3031,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "cc4c9a150c81",
-      "title": "China’s economy showing signs that slowdown may be extending",
-      "summary": "Industrial output and retail sales slump in July after one of the country’s weakest quarterly growth rates ever China’s economy is showing signs of extending a slowdown with a slump in industrial output and retail sales in July, adding to pressure on Beijing…",
-      "url": "https://www.theguardian.com/business/2026/aug/17/china-economy-slowdown-signs-extending",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
-      "publishedAt": "2026-08-17T15:36:25.000Z",
-      "image": "https://i.guim.co.uk/img/media/990f70c7faa98b9a8da40ae06ea211f6b29a631d/1113_0_5439_4352/master/5439.jpg?width=700&quality=85&auto=format&fit=max&s=efd61e5e1ae38311352b99ec16291dd2",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
