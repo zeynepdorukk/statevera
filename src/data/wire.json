@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-23T17:00:40.102Z",
+  "generatedAt": "2026-08-23T17:32:07.448Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "05a262ac14ca",
+      "title": "The lesson from Canada’s collapsed trade talks with the US: negotiation may be futile",
+      "summary": "Breakdown shows Washington now prioritises its own interests over any semblance of shared economic ground ‘No more!!!’: Trump lashes out after US-Canada talks devolve into trade war The calamitous collapse of trade negotiations between Canada and the United…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/23/canada-us-collapsed-trade-talks-negotiation-breakdown-analysis",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-23T17:24:46.000Z",
+      "image": "https://i.guim.co.uk/img/media/6fca08f3a759225a7da5912b393aadcad7c6b4e7/0_0_4724_3780/master/4724.jpg?width=700&quality=85&auto=format&fit=max&s=03920ff6d052f3f77d474d9591414f45",
+      "imageWidth": 700,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "907a3d920a14",
+      "title": "Democrats incredulous over Hakeem Jeffries and Jared Kushner meeting",
+      "summary": "Critics include Senator Chris van Hollen, ex-aide to Obama Tommy Vietor and ex-Republican congressman Adam Kinzinger Democrats and other Donald Trump critics reacted incredulously to a New York Times report on Sunday that House Democratic leader Hakeem…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/23/hakeem-jeffries-jared-kushner-meeting",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-23T16:56:10.000Z",
+      "image": "https://i.guim.co.uk/img/media/cf38aa576b15454db16b9051c12cc19800b6ee58/502_0_4035_3228/master/4035.jpg?width=700&quality=85&auto=format&fit=max&s=25f0236dca56c00eb9545084342991bf",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "8a1d3add33cf",
       "title": "French President Macron to host Saudi Crown Prince MBS in Paris for talks",
