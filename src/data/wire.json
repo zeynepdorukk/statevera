@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-23T05:51:57.141Z",
+  "generatedAt": "2026-08-23T06:20:41.106Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "4b839c8adc6f",
+      "title": "Kazakhstan parliamentary elections begin: What’s at stake?",
+      "summary": "The Central Asian country heads to the polls on August 23.",
+      "url": "https://www.aljazeera.com/news/2026/8/23/kazakhstan-parliamentary-elections-begin-whats-at-stake?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-23T05:55:10.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "f4c36d47d3dd",
       "title": "Trump says Canada wants 'benefits' of being US state as Carney says countries in trade war",
@@ -12,7 +28,7 @@
       "publisherHome": "https://www.bbc.com/news/world",
       "sourceId": "bbc-world",
       "publishedAt": "2026-08-23T05:46:43.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/336c/live/7ee35600-9e56-11f1-92d9-fda6ee78d386.jpg",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0b8b/live/0b4b35a0-9eba-11f1-8afa-6d906fcc4949.jpg",
       "imageWidth": 240,
       "category": "Economy",
       "categoryConfidence": "high",
