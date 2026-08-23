@@ -1,10 +1,26 @@
 {
-  "generatedAt": "2026-08-23T10:57:00.435Z",
+  "generatedAt": "2026-08-23T11:14:51.295Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
   ],
   "items": [
+    {
+      "id": "3fb3f23fc839",
+      "title": "‘No more!!!’: Trump lashes out after US-Canada talks devolve into trade war",
+      "summary": "PM Mark Carney says ‘we got attacked’ as tariffs come into force on items from hockey sticks to tongue depressors Donald Trump has hit back at Canada after a breakdown in negotiations plunged the two countries into a trade war . In his first public comments…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/23/donald-trump-lashes-out-after-us-canada-talks-devolve-into-trade-war",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-23T11:00:16.000Z",
+      "image": "https://i.guim.co.uk/img/media/b1fc5227ab8b91635aa6bdd84b88df0711c4cc64/200_0_6000_4800/master/6000.jpg?width=700&quality=85&auto=format&fit=max&s=60912b5764e26c8274ffe2e9a8add88f",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "359ed305a65a",
       "title": "Russia withdraws ambassador to UK as Kremlin ratchets pressure over Ukraine support",
@@ -80,6 +96,22 @@
       "publishedAt": "2026-08-23T10:00:29.000Z",
       "image": "https://i.guim.co.uk/img/media/73ea7457d977187bb862638d15771e1325c0d309/1002_563_5196_4157/master/5196.jpg?width=700&quality=85&auto=format&fit=max&s=871dfb74997a92a9a0c65fdd2bc2bff5",
       "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "de0507b6fb26",
+      "title": "Presidential campaign heats up in Brazil, as Lula and F. Bolsonaro hold rival rallies",
+      "summary": "Brazilian president Lula de Silva and his political opponent Flavio Bolsonaro pressed on with their presidential campaigns over the weekend, as both candidates held rallies in Rio De Janeiro. Top of the agenda for both candidates was crime, though the two…",
+      "url": "https://www.france24.com/en/presidential-campaign-heats-up-in-brazil-as-lula-and-f-bolsonaro-hold-rival-rallies",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-23T09:49:31.000Z",
+      "image": "https://s.france24.com/media/display/bb2d459a-9ed7-11f1-9944-005056a97e36/w:1024/p:16x9/2026-08-22T164700Z-1682985574-RC2R3NAZG6PK-RTRMADP-3-BRAZIL-ELECTION-BOLSONARO.jpg",
+      "imageWidth": 0,
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
