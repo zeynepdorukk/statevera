@@ -1,10 +1,26 @@
 {
-  "generatedAt": "2026-08-23T10:11:40.379Z",
+  "generatedAt": "2026-08-23T10:37:40.964Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
   ],
   "items": [
+    {
+      "id": "2dbf9f3f48c3",
+      "title": "Ukraine: Zelenskyy rejects wartime elections",
+      "summary": "The Ukrainian president says wartime elections, as called for by the ex-defense minister, could \"split Ukraine.\" He also said Russia was planning to mobilize hundreds of thousands of troops after September polls there.",
+      "url": "https://www.dw.com/en/ukraine-zelenskyy-rejects-wartime-elections/a-78475087?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-23T10:23:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "6d2f1a0434b0",
       "title": "Israeli military raids continue across the West Bank",
@@ -27,14 +43,14 @@
       "summary": "Michigan Senate nominee and others have re-energized one-time Democratic voters who abandoned the party under Biden Two years ago, Zainab Bibi Ahmed thought she had turned her back on the Democrats for good. Now, she is volunteering for the party’s US Senate…",
       "url": "https://www.theguardian.com/us-news/2026/aug/23/democrats-abdul-el-sayed-progressives",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-23T10:00:29.000Z",
       "image": "https://i.guim.co.uk/img/media/767ef567046396578cfca73ff1818913efca1a9e/230_0_2298_1838/master/2298.jpg?width=700&quality=85&auto=format&fit=max&s=7aca45b4d6037a4705622daa78bbef37",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
-      "region": "Americas",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -43,8 +59,8 @@
       "summary": "President’s speech, declassification of documents and heightened claims of noncitizen voting have experts concerned A series of moves by Donald Trump ’s administration to sow doubt in the integrity of US elections have intensified concern among voting experts…",
       "url": "https://www.theguardian.com/us-news/2026/aug/23/trump-sowing-election-distrust",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-23T10:00:29.000Z",
       "image": "https://i.guim.co.uk/img/media/73ea7457d977187bb862638d15771e1325c0d309/1002_563_5196_4157/master/5196.jpg?width=700&quality=85&auto=format&fit=max&s=871dfb74997a92a9a0c65fdd2bc2bff5",
       "imageWidth": 700,
@@ -445,14 +461,14 @@
       "summary": "Kassebaum Baker became the first woman elected to the US Senate without following a spouse into office Nancy Kassebaum Baker, a Kansas governor’s daughter who became the first woman elected to the US Senate without following a spouse into office, has died.…",
       "url": "https://www.theguardian.com/us-news/2026/aug/22/nancy-kassebaum-baker-dies-aged-94",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-22T20:40:38.000Z",
       "image": "https://i.guim.co.uk/img/media/fa3ce1ac2c5c1c202fd718676700c3919fc4ee2f/367_0_2450_1960/master/2450.jpg?width=700&quality=85&auto=format&fit=max&s=aa77aa3095d85543392507c1d4929fbf",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "medium",
-      "region": "Global",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -710,22 +726,6 @@
       "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "f54ef6774a10",
-      "title": "As Russian missiles rain down on Kyiv, casualties mount and the mood darkens",
-      "summary": "Ukraine’s military has run out of US Patriot interceptors to repel ballistic attacks, which have one aim, the capital’s mayor says: to destroy morale Viktor, 23, Sofiia, 18, and their dog, Teddy, were bedding down for the night on Thursday at the Dorohozhychi…",
-      "url": "https://www.theguardian.com/world/2026/aug/22/russian-missiles-kyiv-ukraine-casualties-mood-darkens",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-22T04:00:53.000Z",
-      "image": "https://i.guim.co.uk/img/media/b143771157607e19b0dfe027d1ca697824154cab/249_0_3540_2832/master/3540.jpg?width=700&quality=85&auto=format&fit=max&s=213981611683d1b9441a45bd568825a8",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
     },
     {
       "id": "d2cec9b6e40a",
