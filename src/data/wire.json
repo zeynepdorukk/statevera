@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-23T16:42:44.925Z",
+  "generatedAt": "2026-08-23T17:00:40.102Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "8a1d3add33cf",
+      "title": "French President Macron to host Saudi Crown Prince MBS in Paris for talks",
+      "summary": "Energy, regional conflicts, and bilateral cooperation to dominate Emmanuel Macron and Mohammed bin Salman's discussions.",
+      "url": "https://www.aljazeera.com/economy/2026/8/23/french-president-macron-to-host-saudi-crown-prince-mbs-in-paris-for-talks?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-23T16:12:55.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
     {
       "id": "a11210987517",
       "title": "Mossad chief met Syrian foreign minister to ease tensions, Haaretz reports",
@@ -37,7 +53,7 @@
     },
     {
       "id": "e5b48043e99b",
-      "title": "Iran government signals fuel price hike on eve of new US sanctions",
+      "title": "Iran’s government signals fuel price hike on eve of new US sanctions",
       "summary": "Prices for food and other items are soaring, and there is a history of unrest, so any increase is being considered.",
       "url": "https://www.aljazeera.com/economy/2026/8/23/iran-government-signals-fuel-price-hike-on-eve-of-new-us-sanctions?traffic_source=rss",
       "publisher": "Al Jazeera",
@@ -484,22 +500,6 @@
       "weight": 2
     },
     {
-      "id": "0efe3cc7ff70",
-      "title": "Trump says Canada wants 'benefits of being a State, without being one' as trade war deepens",
-      "summary": "US President Donald Trump slammed Canada on Sunday, saying the country wanted \"the benefits of being a State, without being one\", in response to Canadian Prime Minister Mark Carney announcing retaliatory tariffs following failed trade negotiations.",
-      "url": "https://www.france24.com/en/americas/20260823-trump-says-canada-wants-benefits-of-being-a-state-as-trade-war-deepens",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-23T06:56:30.000Z",
-      "image": "https://s.france24.com/media/display/443d54e2-9ebf-11f1-a9cb-005056bfb2b6/w:1024/p:16x9/AP26234046509856.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "789d3a786cbb",
       "title": "Iran executes man charged with aiding US, Israel in January protests",
       "summary": "Iran executes man charged with aiding US, Israel in January protests Iran on Sunday executed a man accused of carrying a chainsaw during January anti-government protests, who was charged with acting as an agent of Israel and the United States. The judiciary…",
@@ -529,6 +529,22 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "f4c36d47d3dd",
+      "title": "Trump says Canada wants 'benefits' of being US state after trade talks collapse",
+      "summary": "Canada's PM said he was \"reluctantly\" announcing retaliatory tariffs and accused the US of starting a trade war.",
+      "url": "https://www.bbc.co.uk/news/articles/cx272np7vgyo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-23T05:46:43.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0b8b/live/0b4b35a0-9eba-11f1-8afa-6d906fcc4949.jpg",
+      "imageWidth": 240,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -1655,22 +1671,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "05d0963f883b",
-      "title": "Kyiv residents search through the wreckage after Russia’s deadly barrage",
-      "summary": "Residents of Kyiv’s Solomianskyi district spent Thursday assessing the damage after a Russian overnight barrage of ballistic and cruise missiles and drones tore through a residential area.",
-      "url": "http://www.africanews.com/2026/08/21/kyiv-residents-search-through-the-wreckage-after-russias-deadly-barrage/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-21T07:00:57.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/88/29/04/640x360_cmsv2_af16ca20-2f43-5eaa-bd89-22853d2b8fc5-9882904.jpg?1787256201",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
-      "weight": 2
     },
     {
       "id": "bb5970895b15",
@@ -2980,6 +2980,22 @@
       "publishedAt": "2026-08-17T16:48:26.000Z",
       "image": "https://i.guim.co.uk/img/media/130351c0b118bb75e17e9ed4b3a296be5375ede0/125_0_1250_1000/master/1250.jpg?width=700&quality=85&auto=format&fit=max&s=c7a32fe25f149ad65f619c2f854685be",
       "imageWidth": 700,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "2d4b21839f92",
+      "title": "Kushner hails 'very good' meeting with Netanyahu after Hamas talks on Gaza peace plan",
+      "summary": "Donald Trump's Middle East envoy and son-in-law, Jared Kushner, is seeking to gain Israeli backing for the US-backed Gaza peace plan.",
+      "url": "https://www.bbc.co.uk/news/articles/c77gg5vn44yo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/middle_east",
+      "sourceId": "bbc-mideast",
+      "publishedAt": "2026-08-17T16:02:58.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/1476/live/b59ea940-9a3e-11f1-a291-b542ee92de7c.jpg",
+      "imageWidth": 240,
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
