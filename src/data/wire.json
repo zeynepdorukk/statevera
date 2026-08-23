@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T23:11:03.641Z",
+  "generatedAt": "2026-08-23T23:33:46.057Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -9,8 +9,8 @@
       "summary": "PM will use independence day trip to announce sharing of classified information about Storm Shadow components Britain will boost Ukraine’s capacity to make its own long-range missiles, Andy Burnham will announce on Monday, as he travels to Kyiv for the…",
       "url": "https://www.theguardian.com/politics/2026/aug/24/andy-burnham-ukraine-long-range-missile-technology-kyiv-visit",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-23T23:01:45.000Z",
       "image": "https://i.guim.co.uk/img/media/ca77e9aa291b9e468bd5584aaf1bf5086b86c10e/406_15_3038_2431/master/3038.jpg?width=700&quality=85&auto=format&fit=max&s=2dccb959740253058ece12d092217dd2",
       "imageWidth": 700,
@@ -25,8 +25,8 @@
       "summary": "Resolution Foundation suggests economy may finally be emerging from shadow of 2008 financial crisis Productivity in the UK – a vital measure of economic health – is growing more strongly than official figures suggest, according to analysis from the Resolution…",
       "url": "https://www.theguardian.com/business/2026/aug/24/uk-productivity-growing-faster-official-figures-resolution-foundation",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-23T23:01:45.000Z",
       "image": "https://i.guim.co.uk/img/media/88c9a76b09941bcb2fc4a8eed26e0ecf45ffbe43/598_0_4000_3200/master/4000.jpg?width=700&quality=85&auto=format&fit=max&s=7775e7579ca35212dac730578c3eaae0",
       "imageWidth": 700,
