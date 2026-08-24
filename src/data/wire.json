@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-24T08:09:34.787Z",
+  "generatedAt": "2026-08-24T09:01:24.016Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "01f965df2839",
+      "title": "Andy Burnham arrives in Ukraine with plans to share UK blueprints for long-range missiles – Europe live",
+      "summary": "UK PM to announce support for France in setting up missile assembly lines during his Kyiv visit, as coalition of willing meets later today Burnham visits Ukraine with promise of boost for Kyiv’s long-range missiles Later today, Burnham will co-chair his first…",
+      "url": "https://www.theguardian.com/world/live/2026/aug/24/europe-ukraine-russia-war-kyiv-andy-burnham-volodymyr-zelenskyy-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-24T08:39:08.000Z",
+      "image": "https://i.guim.co.uk/img/media/93773bfe720fcbdfe80dfe8b1cd5bbadcaa31357/949_1115_4204_3363/master/4204.jpg?width=700&quality=85&auto=format&fit=max&s=3a6c539ad93ee3c03c1a879bfb0cfa71",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "faa03352fa65",
+      "title": "Kazakhstan’s newly formed pro-government party wins parliamentary election",
+      "summary": "The victory of Adilet, founded earlier this year, is likely to consolidate the power of President Kassym-Jomart Tokayev.",
+      "url": "https://www.aljazeera.com/news/2026/8/24/kazakhstans-newly-formed-pro-government-party-wins-parliamentary-election?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-24T08:29:54.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "e3a27f17f916",
       "title": "India news: Police used 'excessive force' on CJP protesters",
@@ -34,22 +66,6 @@
       "categoryConfidence": "medium",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "01f965df2839",
-      "title": "Andy Burnham arrives in Ukraine with plans to share UK blueprints for long-range missiles - Europe live",
-      "summary": "UK PM to announce support for France in setting up missile assembly lines during his Kyiv visit, as coalition of willing the meets later today Burnham visits Ukraine with promise of boost for Kyiv’s long-range missiles Burnham’s visit to Kyiv comes on the…",
-      "url": "https://www.theguardian.com/world/live/2026/aug/24/europe-ukraine-russia-war-kyiv-andy-burnham-volodymyr-zelenskyy-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-24T07:48:40.000Z",
-      "image": "https://i.guim.co.uk/img/media/93773bfe720fcbdfe80dfe8b1cd5bbadcaa31357/949_1115_4204_3363/master/4204.jpg?width=700&quality=85&auto=format&fit=max&s=3a6c539ad93ee3c03c1a879bfb0cfa71",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
     },
     {
       "id": "a02d11e78844",
@@ -501,22 +517,6 @@
       "weight": 2
     },
     {
-      "id": "f75223848ed1",
-      "title": "Tokayev allies head for landslide victory in Kazakhstan elections",
-      "summary": "Exit polls give Kazakhstan’s pro-Tokayev Adilet party about 70 percent of the vote in the parliamentary elections.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/24/08-24-26-kazakh-elections-sv-mp4?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-24T00:12:21.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "cf24da5f4299",
       "title": "Iran war live: US vows ‘economic D-Day’; Tehran threatens Gulf oil exports",
       "summary": "US Treasury Secretary Scott Bessent says Washington aims to 'sever every economic lifeline' that sustains Iran.",
@@ -608,22 +608,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "c9c29d9da858",
-      "title": "US envoy Tom Barrack retracts comment that Syria’s Golan is occupied",
-      "summary": "Ambassador to Turkiye says US policy of recognising Israel's claimed sovereignty over Syrian territory is 'unchanged'.",
-      "url": "https://www.aljazeera.com/news/2026/8/23/us-envoy-tom-barrack-retracts-comment-that-syrias-golan-is-occupied?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-23T21:23:05.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -821,22 +805,6 @@
       "weight": 2
     },
     {
-      "id": "359ed305a65a",
-      "title": "Russia withdraws ambassador to UK as Kremlin raises pressure over Ukraine support",
-      "summary": "Embassy in London says Andrey Kelin left last month after seven years in diplomatic post Russia has withdrawn its ambassador to the UK, it has emerged, as the Kremlin continues to try to put pressure on Britain over its support for Ukraine. Andrey Kelin left…",
-      "url": "https://www.theguardian.com/world/2026/aug/23/russia-withdraws-ambassador-uk-kremlin-pressure-ukraine-andrey-kelin",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-23T13:01:11.000Z",
-      "image": "https://i.guim.co.uk/img/media/3cc98ed45264c41995eb0d07bc84e2fcc0aa9201/234_0_2694_2155/master/2694.jpg?width=700&quality=85&auto=format&fit=max&s=6624d2a613b24df53cd2daa124e81360",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "c85614423c82",
       "title": "Zelensky should be asked what he knew about government corruption, sacked minister tells BBC",
       "summary": "Mykhailo Fedorov has also called for wartime elections to be held in Ukraine.",
@@ -869,22 +837,6 @@
       "weight": 2
     },
     {
-      "id": "fa2a1e594ada",
-      "title": "Trump’s continued distrust in election integrity has experts eyeing his next move",
-      "summary": "President’s speech, declassification of documents and heightened claims of noncitizen voting have experts concerned A series of moves by Donald Trump ’s administration to sow doubt in the integrity of US elections has intensified concern among voting experts…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/23/trump-sowing-election-distrust",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-23T10:00:29.000Z",
-      "image": "https://i.guim.co.uk/img/media/73ea7457d977187bb862638d15771e1325c0d309/1002_563_5196_4157/master/5196.jpg?width=700&quality=85&auto=format&fit=max&s=871dfb74997a92a9a0c65fdd2bc2bff5",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "d823dd39014d",
       "title": "‘I hate Democrats, but I love Abdul’: voters who left over Gaza return for progressive push",
       "summary": "Michigan Senate nominee and others have re-energized one-time Democratic voters who abandoned the party under Biden Two years ago, Zainab Bibi Ahmed thought she had turned her back on the Democrats for good. Now, she is volunteering for the party’s US Senate…",
@@ -894,6 +846,22 @@
       "sourceId": "guardian-us",
       "publishedAt": "2026-08-23T10:00:29.000Z",
       "image": "https://i.guim.co.uk/img/media/767ef567046396578cfca73ff1818913efca1a9e/230_0_2298_1838/master/2298.jpg?width=700&quality=85&auto=format&fit=max&s=7aca45b4d6037a4705622daa78bbef37",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "fa2a1e594ada",
+      "title": "Trump’s continued distrust in election integrity has experts eyeing his next move",
+      "summary": "President’s speech, declassification of documents and heightened claims of noncitizen voting have experts concerned A series of moves by Donald Trump ’s administration to sow doubt in the integrity of US elections has intensified concern among voting experts…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/23/trump-sowing-election-distrust",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-23T10:00:29.000Z",
+      "image": "https://i.guim.co.uk/img/media/73ea7457d977187bb862638d15771e1325c0d309/1002_563_5196_4157/master/5196.jpg?width=700&quality=85&auto=format&fit=max&s=871dfb74997a92a9a0c65fdd2bc2bff5",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
@@ -1462,22 +1430,6 @@
       "categoryConfidence": "source",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "5d00886ff982",
-      "title": "Ethiopia's Virgin Mary festival in Tigray cancelled over drone strike fears",
-      "summary": "An eagerly anticipated gathering of women will not be taking place following recent aerial strikes.",
-      "url": "https://www.bbc.co.uk/news/articles/c24me64n31qo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/africa",
-      "sourceId": "bbc-africa",
-      "publishedAt": "2026-08-21T16:20:55.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/d199/live/3b807760-9d77-11f1-b109-879e35c24276.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
     },
     {
       "id": "1365ca2b4d1d",
