@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-24T22:14:07.452Z",
+  "generatedAt": "2026-08-24T22:44:12.116Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "0da747afde2e",
+      "title": "UN offers to facilitate fertiliser transit through Strait of Hormuz",
+      "summary": "UN offers to facilitate fertiliser transit through Strait of Hormuz UN Secretary-General Antonio Guterres offered on Monday to facilitate the transit of fertiliser through the Strait of Hormuz which has been disrupted as a result of the US-Israel war on Iran.…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/un-offers-facilitate-fertiliser-transit-through-strait-hormuz",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-24T22:25:40.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "f7e549326145",
+      "title": "Six months on, U.S. Navy families who evacauated Bahrain remain in limbo",
+      "summary": "When the U.S.-Iran war began, more than 1,000 dependents of U.S. Navy personnel in Bahrain were ordered to evacuate. After six months in temporary conditions, they want to know what the plan is.",
+      "url": "https://www.npr.org/2026/08/24/nx-s1-5943188/six-months-on-u-s-navy-families-who-evacauated-bahrain-remain-in-limbo",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-24T22:22:13.000Z",
+      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3402x2722+0+0/resize/3402x2722!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F09%2F8e%2Fcdcdf55840c58c59f6c67c03f089%2Ffifth-fleet-8-24-26.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "e8fb108155e2",
+      "title": "NAACP denounces supreme court decision to allow Trump administration to restrict mail-in voting – live",
+      "summary": "Order has ‘nothing to do with election integrity but everything to do with maintaining power at all costs’, says Derrick Johnson, NAACP president Sign up for the US Breaking News email Donald Trump has threatened to increase tariffs on Canadian cars, trucks,…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/24/hakeem-jeffries-jared-kushner-democrats-midterm-elections-donald-trump-iran-war-sanctions-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-24T22:17:25.000Z",
+      "image": "https://i.guim.co.uk/img/media/9422412f1508e4062fb95e1a57f5e519e751f6b7/335_0_3331_2666/master/3331.jpg?width=700&quality=85&auto=format&fit=max&s=70737dd767fbe63ab5dee69dfbf9cfa2",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "39edcda3c541",
       "title": "Canada wants a deal, but Washington keeps moving the goalposts",
@@ -18,22 +66,6 @@
       "categoryConfidence": "high",
       "region": "Americas",
       "weight": 3
-    },
-    {
-      "id": "127cdcf889e8",
-      "title": "US supreme court rules Trump can proceed with crackdown on mail-in voting",
-      "summary": "Justices’ ruling comes after lower courts had blocked president’s election order ahead of November midterms The US supreme court has sided with Donald Trump in his effort to crack down on mail-in voting, though it remains unclear if his administration can…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/24/supreme-court-trump-mail-in-voting",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-24T21:53:38.000Z",
-      "image": "https://i.guim.co.uk/img/media/2ccc7d2bbf4c6d0f275e0390e3225b48e54e5994/792_0_7920_6336/master/7920.jpg?width=700&quality=85&auto=format&fit=max&s=13c0855685ba92c3f761fc51cac57306",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "a977566f4d6a",
@@ -119,7 +151,7 @@
     {
       "id": "6c59fa4b4ba6",
       "title": "Experts react: Will Trump’s Operation Economic Outcast isolate Iran?",
-      "summary": "Our experts weigh in on the US Treasury’s newest measures intended “to sever every remaining economic lifeline sustaining” to the Iranian regime. The post Experts react: Will Trump’s Operation Economic Outcast isolate Iran? appeared first on Atlantic Council .",
+      "summary": "Our experts weigh in on the US Treasury’s newest measures intended “to sever every remaining economic lifeline sustaining” the Iranian regime. The post Experts react: Will Trump’s Operation Economic Outcast isolate Iran? appeared first on Atlantic Council .",
       "url": "https://www.atlanticcouncil.org/dispatches/experts-react-will-trumps-operation-economic-outcast-isolate-iran/",
       "publisher": "Atlantic Council",
       "publisherHome": "https://www.atlanticcouncil.org",
@@ -451,22 +483,6 @@
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "bf5180298f07",
-      "title": "Russia to seize poorly protected infrastructure amid Ukraine drone attacks",
-      "summary": "Owners could lose control of facilities if regulators find them too slow to repair damage.",
-      "url": "https://www.aljazeera.com/news/2026/8/24/russia-to-seize-poorly-protected-infrastructure-as-ukraine-barrage-persists?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-24T16:59:47.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
     },
     {
       "id": "eae5ac2e5ace",
@@ -1077,22 +1093,6 @@
       "weight": 3
     },
     {
-      "id": "167ff1849df6",
-      "title": "France and Saudi Arabia hold talks ranging from Middle East to esports",
-      "summary": "Mohammed bin Salman has arrived in Paris for a two-day official visit with French President Emmanuel Macron. Talks are expected to include the war in Iran and the Strait of Hormuz, as well as new energy routes to bypass the Strait. The two made an appearance…",
-      "url": "https://www.france24.com/en/france-and-saudi-arabia-hold-talks-ranging-from-middle-east-to-esports",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-24T10:03:01.000Z",
-      "image": "https://s.france24.com/media/display/8033e3d8-9fa2-11f1-adfb-005056a97e36/w:1024/p:16x9/2026-08-24T040751Z-493691781-RC2L4NA3T642-RTRMADP-3-SAUDI-FRANCE.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "c15f24fceb27",
       "title": "'Half my business will be gone' - firms in Canada and US fear trade war",
       "summary": "Business owners in both countries are navigating uncertainty and worry as the tit-for-tat import taxes ratchet up.",
@@ -1303,7 +1303,7 @@
     {
       "id": "d1af5143e1e8",
       "title": "Burnham likens Ukraine fight to British stand against Nazis",
-      "summary": "Andy Burnham's first trip abroad as prime minister includes co-chairing a meeting of the Coalition of the Willing and holding talks with Volodymyr Zelenskyy. The visit comes on Ukraine's Independence Day. DW has more.",
+      "summary": "Andy Burnham's first trip abroad as prime minister includes co-chairing a meeting of the Coalition of the Willing and holding talks with Volodymyr Zelenskyy. The visit comes on Ukraine's Independence Day.",
       "url": "https://www.dw.com/en/burnham-likens-ukraine-fight-to-british-stand-against-nazis/live-78479580?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
@@ -1405,7 +1405,7 @@
       "publisherHome": "https://responsiblestatecraft.org",
       "sourceId": "responsible-statecraft",
       "publishedAt": "2026-08-24T04:05:01.000Z",
-      "image": "https://responsiblestatecraft.org/media-library/us-israel-military.jpg?id=67662455&width=980",
+      "image": "",
       "imageWidth": 0,
       "category": "Security",
       "categoryConfidence": "high",
