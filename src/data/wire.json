@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-24T20:00:26.603Z",
+  "generatedAt": "2026-08-24T20:45:17.749Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "87b34fe3506a",
+      "title": "Why do US elections cost so much money?",
+      "summary": "Why do US elections cost so much money? Submitted by Yasmine El-Sabawi on Wed, 08/12/2026 - 18:39 Outside groups benefit from unregulated and limitless spending to spread whatever message they like A ballot box sits at the Prairie Oak Lodge in Marion, Iowa…",
+      "url": "https://www.middleeasteye.net/news/why-are-us-election-cycles-most-expensive-world",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-24T20:37:04.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "cb9d46fa0256",
       "title": "Hegseth says US not ruling out military force against Iran",
@@ -25,8 +41,8 @@
       "summary": "Scott Bessent says treasury is launching ‘economic onslaught against Iran’s financial connections’ as Tehran vows to retaliate against cooperating countries Sign up for the US Breaking News email Donald Trump has threatened to increase tariffs on Canadian…",
       "url": "https://www.theguardian.com/us-news/live/2026/aug/24/hakeem-jeffries-jared-kushner-democrats-midterm-elections-donald-trump-iran-war-sanctions-latest-news-updates",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
       "publishedAt": "2026-08-24T19:55:12.000Z",
       "image": "https://i.guim.co.uk/img/media/3151c10737f2806cb91ee451302c949fecb34af4/270_0_3598_2878/master/3598.jpg?width=700&quality=85&auto=format&fit=max&s=df95789373f0dec1558b7245e9b09974",
       "imageWidth": 700,
@@ -49,22 +65,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "633659daad78",
-      "title": "Mexico’s president condemns governor’s brief return to office",
-      "summary": "President Sheinbaum criticises Governor Rocha's return amid US drug charges, calling it 'reckless' and 'inappropriate'.",
-      "url": "https://www.aljazeera.com/news/2026/8/24/mexicos-president-condemns-governor-brief-return-to-office?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-24T19:46:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -452,22 +452,6 @@
       "weight": 2
     },
     {
-      "id": "6ffbbbdbb46c",
-      "title": "Egyptian-UAE free zone for oil storage and trading established in New Alamein",
-      "summary": "Egyptian-UAE free zone for oil storage and trading established in New Alamein Submitted by MEE staff on Mon, 08/24/2026 - 13:51 Fujairah Alamein Oil and Gas will operate a 738,000-square-metre zone for storing and trading crude oil and petroleum products on…",
-      "url": "https://www.middleeasteye.net/news/egypt-establishes-uae-linked-oil-company-new-alamein-free-zone",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-24T14:25:52.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "6b1ce36a6093",
       "title": "Stablecoin regulation has outpaced global coordination. The G20 can help.",
       "summary": "Three challenges stand out: recognizing issuers across borders, agreeing on common rules for stablecoin use, and making stablecoins truly fungible across jurisdictions. The post Stablecoin regulation has outpaced global coordination. The G20 can help.…",
@@ -596,6 +580,22 @@
       "weight": 2
     },
     {
+      "id": "51c55f6bcd3e",
+      "title": "US unveils expanded sanctions aimed at Iran's 'economic asphyxiation'",
+      "summary": "The US on Monday announced an expansion of secondary sanctions it hopes will \"sever every economic lifeline\" ​that sustains ‌Iran, Treasury Secretary Scott Bessent said at a press conference. The expanded sanctions target Iran's digital assets, technology,…",
+      "url": "https://www.france24.com/en/middle-east/20260824-us-unveils-fresh-sanctions-to-sever-every-economic-lifeline-sustaining-iran",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-24T13:27:10.000Z",
+      "image": "https://s.france24.com/media/display/552900fe-9ff4-11f1-9dfb-005056bfb2b6/w:1024/p:16x9/348da3527c6d3d2c0b2149d797c9ea9560ee6767.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "2a43bb3f23e3",
       "title": "Command and Politics in the War Between Moscow and Kyiv",
       "summary": "Our intrepid team covers a lot of ground in this episode: the increasing fluidity of the battlefield, drones and air defense, the biting Black Sea campaign, the causes and aftermath of the firing of Ukraine’s popular defense minister, why Ukraine probably…",
@@ -641,6 +641,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "1788a20fe9b1",
+      "title": "Mideast live: Iran predicts ‘another defeat’ for US after Washington's new sanctions",
+      "summary": "Iranian Economy Minister Ali Madanizadeh on Monday warned of \"another defeat\" for the US after Treasury Secretary Scott Bessent announced expanded sanctions against Tehran. Madanizadeh said Iran had a \"two-year plan\" to counter the new sanctions and dismissed…",
+      "url": "https://www.france24.com/en/middle-east/20260824-middle-east-live-iran-warns-of-a-harsh-response-to-anticipated-us-sanctions",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-24T12:50:27.000Z",
+      "image": "https://s.france24.com/media/display/08ac3fe8-9ff4-11f1-80a7-005056bf30b7/w:1024/p:16x9/AP26236447179370.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1317,22 +1333,6 @@
       "weight": 2
     },
     {
-      "id": "f4c36d47d3dd",
-      "title": "Trump says Canada wants 'benefits' of being US state after trade talks collapse",
-      "summary": "Canada's PM said he was \"reluctantly\" announcing retaliatory tariffs and accused the US of starting a trade war.",
-      "url": "https://www.bbc.co.uk/news/articles/cx272np7vgyo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-23T19:11:30.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0b8b/live/0b4b35a0-9eba-11f1-8afa-6d906fcc4949.jpg",
-      "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "8d51d92bc24f",
       "title": "The Guardian view on Andy Burnham’s foreign policy: work in progress | Editorial",
       "summary": "The prime minister has focused on domestic affairs since coming to office. But at a time of global disruption, he will need to define Britain’s place in the world A run of volatility in domestic British politics in recent years has tracked a period of global…",
@@ -1505,22 +1505,6 @@
       "publishedAt": "2026-08-22T22:29:39.000Z",
       "image": "",
       "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "de9106f840b1",
-      "title": "Canada vows ‘dollar for dollar’ response as US puts 50% tariffs on some goods",
-      "summary": "Collapse of trade talks could lead to job losses, but biggest impact on traditional allies is expected to be political The US has imposed 50% tariffs on some goods from Canada, and Mark Carney, the country’s prime minister, has vowed to match them “dollar for…",
-      "url": "https://www.theguardian.com/world/2026/aug/22/canada-tariffs-trump-trade-deal-talks-fail",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-22T14:04:57.000Z",
-      "image": "https://i.guim.co.uk/img/media/6fca08f3a759225a7da5912b393aadcad7c6b4e7/0_0_4724_3780/master/4724.jpg?width=700&quality=85&auto=format&fit=max&s=03920ff6d052f3f77d474d9591414f45",
-      "imageWidth": 700,
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
@@ -1701,23 +1685,6 @@
       "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "d2cec9b6e40a",
-      "title": "Japan's Kubota to boost exports from India, seeks price edge in Europe, US",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/agriculture/japan-s-kubota-to-boost-exports-from-india-seeks-price-edge-in-europe-us",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-22T03:12:08.430Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "f3596bef7ccc",
@@ -2136,22 +2103,6 @@
       "weight": 2
     },
     {
-      "id": "adbcf5c2b531",
-      "title": "Russia imports gas as Ukrainian strikes result in shortages",
-      "summary": "Russia has begun importing fuel as Ukrainian strikes on Russian refineries and depots cause shortages.",
-      "url": "https://www.npr.org/2026/08/21/nx-s1-5939990/russia-imports-gas-as-ukrainian-strikes-result-in-shortages",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-21T08:45:01.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "4f5d67d601c5",
       "title": "Why the US economy is ringing alarm bells",
       "summary": "The US hit a debt milestone this week, but just how worried should we be about the world's largest economy?",
@@ -2325,22 +2276,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "7bad4a198588",
-      "title": "How much could Trump's 'economic D-Day' hurt Iran?",
-      "summary": "Iran has so far proved adept at finding ways around years of already punishing sanctions on its economy.",
-      "url": "https://www.bbc.co.uk/news/articles/cre4gdvlj9ro?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/business",
-      "sourceId": "bbc-business",
-      "publishedAt": "2026-08-20T23:16:45.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ac2c/live/c4afa730-9d4b-11f1-a291-b542ee92de7c.jpg",
-      "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
