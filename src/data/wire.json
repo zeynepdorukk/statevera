@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-24T00:34:59.194Z",
+  "generatedAt": "2026-08-24T02:11:09.185Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "edd10d761af1",
+      "title": "Israeli drone strike kills two in central Gaza",
+      "summary": "Israeli drone strike kills two in central Gaza An Israeli drone strike targeting displaced Palestinians in central Gaza's Deir al-Balah killed two early on Monday, Anadolu Agency reported citing medical sources. The two killed were identified as Mohammed…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-drone-strike-kills-two-central-gaza",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-24T01:37:28.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "6863e84397f0",
       "title": "Yemeni army claims attacks on Houthis",
@@ -356,22 +372,6 @@
       "weight": 2
     },
     {
-      "id": "4a2a1e35d93c",
-      "title": "Canada, US and tit-for-tat tariffs: How will they impact their economies?",
-      "summary": "Both countries will suffer from the trade war with steeper tariffs raising business costs and consumer prices.",
-      "url": "https://www.aljazeera.com/news/2026/8/23/canada-us-and-tit-for-tat-tariffs-how-will-it-impact-their-economies?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-23T15:54:36.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "5142345ed0b4",
       "title": "Zelenskyy asked for more Patriot missiles, former US vice president says",
       "summary": "During a visit to Kyiv, Mike Pence told reporters Ukraine is “winning the war,” but concerns are growing as winter approaches.",
@@ -675,22 +675,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "57ae315ba302",
-      "title": "Iran warns countries against joining US 'economic war'",
-      "summary": "Iran has said nations joining US economic sanctions against it would be considered enemies. Earlier this week, President Trump had announced what he called the \"most crushing economic operation\" against Tehran.",
-      "url": "https://www.dw.com/en/iran-warns-countries-against-joining-us-economic-war/a-78473222?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-23T00:50:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1767,23 +1751,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "76450aefc21a",
-      "title": "Indonesia seeks expanded joint military exercises with China",
-      "summary": "",
-      "url": "https://asia.nikkei.com/politics/defense/indonesia-seeks-expanded-joint-military-exercises-with-china",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-21T05:22:11.877Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "be74360785ae",
