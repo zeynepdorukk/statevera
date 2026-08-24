@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-24T14:10:04.843Z",
+  "generatedAt": "2026-08-24T14:57:03.085Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "e8fb108155e2",
+      "title": "Trump escalates trade war with Canada with threat to raise tariffs on vehicles and steel – live",
+      "summary": "The president says a 50% tariff on Canadian cars, trucks, steel and auto parts will take effect on 1 January 2027 Sign up for the US Breaking News email Donald Trump has threatened to increase tariffs on Canadian cars, trucks, auto parts and steel to 50%…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/24/hakeem-jeffries-jared-kushner-democrats-midterm-elections-donald-trump-iran-war-sanctions-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-24T14:30:15.000Z",
+      "image": "https://i.guim.co.uk/img/media/fc347e46cfadefd67b335055fc512962272990e4/161_0_2769_2215/master/2769.jpg?width=700&quality=85&auto=format&fit=max&s=cafcde90298809682e15725b310913f9",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "6ffbbbdbb46c",
+      "title": "Egyptian-UAE free zone for oil storage and trading established in New Alamein",
+      "summary": "Egyptian-UAE free zone for oil storage and trading established in New Alamein Submitted by MEE staff on Mon, 08/24/2026 - 13:51 Fujairah Alamein Oil and Gas will operate a 738,000-square-metre zone for storing and trading crude oil and petroleum products on…",
+      "url": "https://www.middleeasteye.net/news/egypt-establishes-uae-linked-oil-company-new-alamein-free-zone",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-24T14:25:52.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "6b1ce36a6093",
+      "title": "Stablecoin regulation has outpaced global coordination. The G20 can help.",
+      "summary": "Three challenges stand out: recognizing issuers across borders, agreeing on common rules for stablecoin use, and making stablecoins truly fungible across jurisdictions. The post Stablecoin regulation has outpaced global coordination. The G20 can help.…",
+      "url": "https://www.atlanticcouncil.org/blogs/econographics/stablecoin-regulation-has-outpaced-global-coordination-the-g20-can-help/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-24T14:10:51.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "source",
+      "region": "Global",
+      "weight": 3
+    },
     {
       "id": "515cc1be6f0f",
       "title": "Access to Zambian courts prevented as election petition deadline looms",
@@ -20,6 +68,22 @@
       "weight": 2
     },
     {
+      "id": "e92e4fb7294a",
+      "title": "Albanese seeks to quell datacentre disquiet as climate expert warns ‘we’ve got one shot to get the rules right’",
+      "summary": "Prime minister will use national cabinet meeting to assuage premiers over new AI law as AEMO forecasts seven-fold rise in datacentre power use Get our breaking news email , free app or daily news podcast Anthony Albanese will seek to use Wednesday’s…",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/25/albanese-seeks-to-quell-datacentre-disquiet-as-climate-expert-warns-weve-got-one-shot-to-get-the-rules-right",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-24T14:01:35.000Z",
+      "image": "https://i.guim.co.uk/img/media/3c0d143aecdba181739eb496831beace5e0c9caa/1370_208_4244_3395/master/4244.jpg?width=700&quality=85&auto=format&fit=max&s=057d0837e2bca122f2ded1967cf61c68",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 2
+    },
+    {
       "id": "2ea97794b925",
       "title": "With 'rare' Paris talks, France hopes to cash in on Saudi investment programme",
       "summary": "Saudi's crown prince Mohammed bin Salman is in Paris to meet France's President Emmanuel Macron. The two leaders are to hold talks on a variety of topics, but first and foremost about the situation in the Middle East. For France, this is a chance to benefit…",
@@ -33,22 +97,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "e8fb108155e2",
-      "title": "Trump claims Iran is ‘completely collapsing’ ahead of new sanctions announcement – live",
-      "summary": "It’s a common refrain from the president, but perhaps takes on a new meaning ahead of the fresh sanctions that we’re expecting later today Sign up for the US Breaking News email New Mexico will continue funding gender-affirming care for minors after a federal…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/24/hakeem-jeffries-jared-kushner-democrats-midterm-elections-donald-trump-iran-war-sanctions-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-24T13:50:48.000Z",
-      "image": "https://i.guim.co.uk/img/media/fc347e46cfadefd67b335055fc512962272990e4/161_0_2769_2215/master/2769.jpg?width=700&quality=85&auto=format&fit=max&s=cafcde90298809682e15725b310913f9",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -148,6 +196,22 @@
       "weight": 2
     },
     {
+      "id": "1788a20fe9b1",
+      "title": "Mideast live: Trump claims Iran is ‘completely collapsing’ as US readies new sanctions",
+      "summary": "President Donald Trump on Monday said Iran is \"completely collapsing\" in a message posted on social media just hours before the US was set to announce details of new sanctions against Tehran. Iran’s foreign ministry has warned that Tehran will respond harshly…",
+      "url": "https://www.france24.com/en/middle-east/20260824-middle-east-live-iran-warns-of-a-harsh-response-to-anticipated-us-sanctions",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-24T12:50:27.000Z",
+      "image": "https://s.france24.com/media/display/ac1a90c8-9fc0-11f1-8016-005056bfb2b6/w:1024/p:16x9/AP26236475592468.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "535c4edac339",
       "title": "Chad accuses Sudanese army of targeting convoy in Chadian territory",
       "summary": "Military authorities in Chad have accused Sudan of launching drone strikes against a convoy inside Chadian territory.",
@@ -185,14 +249,14 @@
       "summary": "Key speech to be delivered this week at Jackson Hole said to focus on productivity and demographics in the US. Plus, how do you vaccinate 1,000 little penguins in the wild? Good morning. The new US Federal Reserve chair, Kevin Warsh, faces a critical test…",
       "url": "https://www.theguardian.com/us-news/2026/aug/24/first-thing-new-fed-chair-kevin-warsh-faces-early-test-amid-bond-market-worries",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-24T12:28:35.000Z",
       "image": "https://i.guim.co.uk/img/media/8a52e2628172d7b6407f8757a2519cd195ecc884/704_0_5417_4335/master/5417.jpg?width=700&quality=85&auto=format&fit=max&s=5c947f9aa6244adcedf64a0c5f52ac86",
       "imageWidth": 700,
       "category": "Economy",
       "categoryConfidence": "high",
-      "region": "Global",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -401,22 +465,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "8ef83cbcd2b3",
-      "title": "From Arizona to Wisconsin, election deniers are vying for office nationwide",
-      "summary": "Republicans who deny Joe Biden won the 2020 election are running for governor and secretary of state across the US Election deniers are back on the ballot. In most swing states, at least one major Republican candidate has questioned or outright denied the…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/24/election-deniers-running-for-office",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-24T10:00:32.000Z",
-      "image": "https://i.guim.co.uk/img/media/9f6468dd526fcc8d1a21b3a50598249eaaeac3f1/550_0_5497_4399/master/5497.jpg?width=700&quality=85&auto=format&fit=max&s=7f7ae131fec6112d5acc0b86d7575a28",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -948,22 +996,6 @@
       "weight": 3
     },
     {
-      "id": "b2070e6508dc",
-      "title": "Israeli military advances into a village in Syria's Daraa",
-      "summary": "Israeli military advances into a village in Syria's Daraa Israeli forces equipped with military vehicles have reportedly advanced into the village of Maariya in southern Syria's Daraa countryside, according to the Alikhberiya channel.",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-military-advances-village-syrias-daraa",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-24T03:38:17.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "9f63bc8d7948",
       "title": "Australia's PLS gives first dividend after lithium price rise drives profit",
       "summary": "",
@@ -994,38 +1026,6 @@
       "category": "Economy",
       "categoryConfidence": "medium",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "e1eef0468f5c",
-      "title": "Lobbyists face new fee to stalk Parliament",
-      "summary": "Welcome to Week 2 of Canberra Playbook. If you’ve been forwarded this newsletter, you can sign up free here. ESSENTIALS DRIVING THE DAY CABINET IS IN PERTH TODAY: Everyone’s job is to pretend the WA GST deal is good macroeconomics. Chin up, Jim Chalmers, you…",
-      "url": "https://www.politico.com/newsletters/canberra-playbook?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-23T22:40:15.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "f0cb25ff5ab3",
-      "title": "Syria says US-mediated talks addressed de-escalation, staying out of Israel-Turkey tensions",
-      "summary": "Syria and Israel held US-mediated talks in Jordan on Sunday to defuse the crisis sparked by a strike that Israel said was aimed at preventing a Turkish military deployment. Damascus says it wants to stay out of the tensions between Israel and Turkey.",
-      "url": "https://www.france24.com/en/middle-east/20260823-syria-says-us-mediated-talks-with-israel-addressed-de-escalation",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-23T22:39:10.000Z",
-      "image": "https://s.france24.com/media/display/74922bac-9f43-11f1-84b2-005056a97e36/w:1024/p:16x9/6b1011bf739c925a06be1ab7d95c42d7041c3384.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1122,22 +1122,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "840c11febb58",
-      "title": "Iran: President defends deal with US as best option for peace",
-      "summary": "Iran's president has said the country's economy needs a peace deal to attract investors. The Foreign Ministry said Pakistan's top army official will visit Tehran Monday as Islamabad seeks to mediate a resolution.",
-      "url": "https://www.dw.com/en/iran-president-defends-deal-with-us-as-best-option-for-peace/a-78477486?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-08-23T14:49:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -2358,22 +2342,6 @@
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
-    },
-    {
-      "id": "e2eb055ea8e9",
-      "title": "As pressure mounts on Putin, Russia is escalating against Ukraine’s allies",
-      "summary": "With the Russian army struggling to advance in Ukraine and Ukrainian strikes increasing inside Russia, Putin is escalating his gray zone campaign against Kyiv's European allies in a bid to deprive Ukraine of vital support and rescue his faltering invasion,…",
-      "url": "https://www.atlanticcouncil.org/blogs/ukrainealert/as-pressure-mounts-on-putin-russia-is-escalating-against-ukraines-allies/",
-      "publisher": "Atlantic Council",
-      "publisherHome": "https://www.atlanticcouncil.org",
-      "sourceId": "atlantic-council",
-      "publishedAt": "2026-08-20T20:37:47.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "source",
-      "region": "Eurasia",
-      "weight": 3
     },
     {
       "id": "d3f345001290",
