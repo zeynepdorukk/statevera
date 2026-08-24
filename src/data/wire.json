@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-24T14:57:03.085Z",
+  "generatedAt": "2026-08-24T15:31:51.965Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "2b2eabcd9602",
+      "title": "Is UK's Storm Shadow missile a game changer for Ukraine?",
+      "summary": "Correspondent Joe Inwood breaks down the weapons technology that could make a difference in the Russia-Ukraine war.",
+      "url": "https://www.bbc.co.uk/news/videos/cx2znjly4dno?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world",
+      "sourceId": "bbc-world",
+      "publishedAt": "2026-08-24T15:14:14.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/96a6/live/e622d720-9fc6-11f1-b3e7-331c6d9a8046.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "e8fb108155e2",
       "title": "Trump escalates trade war with Canada with threat to raise tariffs on vehicles and steel – live",
@@ -11,12 +27,28 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-24T14:30:15.000Z",
+      "publishedAt": "2026-08-24T14:49:42.000Z",
       "image": "https://i.guim.co.uk/img/media/fc347e46cfadefd67b335055fc512962272990e4/161_0_2769_2215/master/2769.jpg?width=700&quality=85&auto=format&fit=max&s=cafcde90298809682e15725b310913f9",
       "imageWidth": 700,
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "9fb08e3a4484",
+      "title": "Protests erupt in Tunisia after migrant boat sinks",
+      "summary": "The Tunisian city of Ben Guerdane erupted in protest on Saturday night one day after a boat carrying 15 migrants sank off the country's southeastern coast. Protesters blocked roads and set fire to tyres after the news of the shipwreck was announced.",
+      "url": "http://www.africanews.com/2026/08/24/protests-erupt-in-tunisia-after-migrant-boat-sinks/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-24T14:45:56.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/88/65/85/640x360_cmsv2_ce94f490-b5c6-5c72-972e-eb6ac09cdf09-9886585.jpg?1787575135",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -196,6 +228,22 @@
       "weight": 2
     },
     {
+      "id": "401715c78889",
+      "title": "UK missiles offer may help Ukraine - but they are not what Zelensky needs most",
+      "summary": "UK Prime Minister Andy Burnham is handing over blueprints so Kyiv can build its own long-range missiles.",
+      "url": "https://www.bbc.co.uk/news/articles/cy8zxqn57z3o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/europe",
+      "sourceId": "bbc-europe",
+      "publishedAt": "2026-08-24T12:51:10.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/e5db/live/1c356520-9fbe-11f1-aed2-8d6da8d75094.jpg",
+      "imageWidth": 240,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "1788a20fe9b1",
       "title": "Mideast live: Trump claims Iran is ‘completely collapsing’ as US readies new sanctions",
       "summary": "President Donald Trump on Monday said Iran is \"completely collapsing\" in a message posted on social media just hours before the US was set to announce details of new sanctions against Tehran. Iran’s foreign ministry has warned that Tehran will respond harshly…",
@@ -289,6 +337,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "d372fba00c64",
+      "title": "Security Council LIVE: War, hunger, flooding escalates in Sudan",
+      "summary": "The Security Council is currently hearing top UN officials brief on the latest updates about war-torn Sudan as escalating conflict, drone strikes against civilians, displacement, hunger and flooding affects millions and UN agencies strive to deliver…",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168188",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-24T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/13-08-2026-UNOCHA-Sudan.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -660,22 +724,6 @@
       "weight": 2
     },
     {
-      "id": "faa03352fa65",
-      "title": "Kazakhstan’s newly formed pro-government party wins parliamentary election",
-      "summary": "The victory of Adilet, founded earlier this year, is likely to consolidate the power of President Kassym-Jomart Tokayev.",
-      "url": "https://www.aljazeera.com/news/2026/8/24/kazakhstans-newly-formed-pro-government-party-wins-parliamentary-election?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-24T08:29:54.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "e3a27f17f916",
       "title": "India news: Police used 'excessive force' on CJP protesters",
       "summary": "Amnesty International alleges that police in the capital New Delhi and the state of Bihar used excessive force against youth-led Cockroach protesters. Full details and more in DW's roundup of major headlines in India.",
@@ -865,22 +913,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "b32041892d33",
-      "title": "Former CIA officer describes Aipac's rise to political power",
-      "summary": "Former CIA officer describes Aipac's rise to political power Former CIA officer John Kiriakou and journalist Tucker Carlson sharply discuss the power of the Israel lobby in Washington, including Aipac's controversial rise, Israel’s attack on the USS Liberty…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/former-cia-officer-describes-aipacs-rise-political-power",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-24T05:04:04.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -2965,22 +2997,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "81917205ed2f",
-      "title": "Sudan war: 200,000 newly displaced as fighting and floods intensify",
-      "summary": "Intensifying fighting in Sudan has displaced at least another 200,000 people since late 2025, while destructive seasonal floods are compounding the massive humanitarian emergency there, the UN International Organization for Migration (IOM) said on Wednesday.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168165",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-19T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/12-08-2024-IOM-Sudan.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "source",
-      "region": "Africa",
       "weight": 2
     },
     {
