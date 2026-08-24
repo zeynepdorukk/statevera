@@ -1,8 +1,72 @@
 {
-  "generatedAt": "2026-08-24T21:17:59.150Z",
+  "generatedAt": "2026-08-24T21:50:24.688Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "a977566f4d6a",
+      "title": "US military says it allowed 40 vessels carrying humanitarian aid to pass through Hormuz blockade",
+      "summary": "US military says it allowed 40 vessels carrying humanitarian aid to pass through Hormuz blockade US Central Command (Centcom) said on Monday that the military has redirected 71 commercial vessels, disabled 3 and boarded 2 to \"ensure compliance\" with its naval…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-military-says-it-allowed-40-vessels-carrying-humanitarian-aid-pass",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-24T21:30:55.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "10e7ec8180d4",
+      "title": "Target apologizes for ‘offensive’ Halloween costume after backlash",
+      "summary": "Retailer removes kid’s clown costume after people said it resembled a racist caricature used in minstrel shows Target, the US retail corporation, said it pulled a controversial Halloween costume off its shelves after criticism across social media that it…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/24/target-apology-halloween-costume-backlash",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-24T21:29:28.000Z",
+      "image": "https://i.guim.co.uk/img/media/4922c86d9ab15f39cb1bb15faabd1b4fedf8ae4e/365_0_3294_2636/master/3294.jpg?width=700&quality=85&auto=format&fit=max&s=0c0e3b447a81decc54b7303af12215d1",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "d6ef1bbc956c",
+      "title": "US-Canada trade war escalates as Trump threatens tariff hike on autos after Carney vows to retaliate",
+      "summary": "Mark Carney accused Trump of wanting to \"destroy\" Canada's auto industry, and said he would only resume trade talks if the US comes with the \"right attitude\".",
+      "url": "https://www.bbc.co.uk/news/articles/c93vpd60654o?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/business",
+      "sourceId": "bbc-business",
+      "publishedAt": "2026-08-24T21:20:48.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/59dc/live/1a42fea0-9ff8-11f1-be19-71b839ccdc73.jpg",
+      "imageWidth": 240,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "83379a5219cc",
+      "title": "Trump removes Syria from 'terrorism list'",
+      "summary": "Trump removes Syria from 'terrorism list' Submitted by Yasmine El-Sabawi on Mon, 08/24/2026 - 20:53 The move follows 'serious and worrying' Israeli strike on Syrian military base US President Donald Trump sits at his desk as he hosts Syria's President Ahmed…",
+      "url": "https://www.middleeasteye.net/news/us-formally-removes-syria-terror-blacklist",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-24T21:18:49.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "694db79287ac",
       "title": "Indonesia's $28bn bet on Jakarta and Bali International Financial Centers",
@@ -114,6 +178,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "0cdead1c5f1f",
+      "title": "Uganda Pledges 1,200 Troops as Burundi Eyes Gaza Force",
+      "summary": "Uganda and Burundi have held talks in Israel about contributing troops to a proposed international security force for Gaza, as efforts to build the 20,000-strong mission gather pace. Uganda has approved about 1,200 personnel, while Burundi is still…",
+      "url": "http://www.africanews.com/2026/08/24/uganda-pledges-1200-troops-as-burundi-eyes-gaza-force/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-24T20:31:26.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/88/68/16/640x360_cmsv2_04c50c86-fbc1-52da-a010-7ea1dad949e8-9886816.jpg?1787581119",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -309,19 +389,19 @@
       "weight": 3
     },
     {
-      "id": "7d11bc70c887",
-      "title": "US launches ‘D-day sanctions’ aimed at cutting Iran’s economic lifeline",
-      "summary": "Treasury Secretary Scott Bessent says US sanctions will intensify to choke off Iran's revenues and isolate the country.",
-      "url": "https://www.aljazeera.com/news/2026/8/24/trump-administration-announces-global-economic-war-on-iran?traffic_source=rss",
+      "id": "458b8ce00fdd",
+      "title": "Japan lawmakers visit China seeking to ease tensions over Taiwan",
+      "summary": "A cross-party delegation lands in Beijing as Tokyo tries to defrost its worst China rift in decades.",
+      "url": "https://www.aljazeera.com/news/2026/8/24/japanese-delegation-seeks-to-soothe-strained-ties-with-china?traffic_source=rss",
       "publisher": "Al Jazeera",
       "publisherHome": "https://www.aljazeera.com",
       "sourceId": "aljazeera",
-      "publishedAt": "2026-08-24T17:10:37.000Z",
+      "publishedAt": "2026-08-24T17:16:10.000Z",
       "image": "",
       "imageWidth": 0,
-      "category": "Economy",
+      "category": "Politics",
       "categoryConfidence": "high",
-      "region": "Middle East",
+      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -355,6 +435,22 @@
       "categoryConfidence": "high",
       "region": "Global",
       "weight": 3
+    },
+    {
+      "id": "bf5180298f07",
+      "title": "Russia to seize poorly protected infrastructure amid Ukraine drone attacks",
+      "summary": "Owners could lose control of facilities if regulators find them too slow to repair damage.",
+      "url": "https://www.aljazeera.com/news/2026/8/24/russia-to-seize-poorly-protected-infrastructure-as-ukraine-barrage-persists?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-24T16:59:47.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
     },
     {
       "id": "eae5ac2e5ace",
@@ -453,22 +549,6 @@
       "weight": 2
     },
     {
-      "id": "0cdead1c5f1f",
-      "title": "Uganda Pledges 1,200 Troops as Burundi Eyes Gaza Force",
-      "summary": "Uganda and Burundi have held talks in Israel about contributing troops to a proposed international security force for Gaza, as efforts to build the 20,000-strong mission gather pace. Uganda has approved about 1,200 personnel, while Burundi is still…",
-      "url": "http://www.africanews.com/2026/08/24/uganda-pledges-1200-troops-as-burundi-eyes-gaza-force/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-24T15:53:13.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/88/68/16/640x360_cmsv2_04c50c86-fbc1-52da-a010-7ea1dad949e8-9886816.jpg?1787581119",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "2b2eabcd9602",
       "title": "Is UK's Storm Shadow missile a game changer for Ukraine?",
       "summary": "Correspondent Joe Inwood breaks down the weapons technology that could make a difference in the Russia-Ukraine war.",
@@ -499,22 +579,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "425eea86f3e9",
-      "title": "‘We don’t need Canada’: Trump threatens to double auto tariffs after trade talks collapse",
-      "summary": "US tariffs ​on all Canadian cars and trucks, automotive parts and steel will be increased to 50% starting January 1, 2027, President Donald Trump said Monday, adding that the US does not “need” Canada after the collapse of trade talks. Canadian Prime Minister…",
-      "url": "https://www.france24.com/en/americas/20260824-canada-trump-threatens-double-auto-tariffs-after-trade-talks-collapse",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-24T14:55:13.000Z",
-      "image": "https://s.france24.com/media/display/3d7cb31a-9fc7-11f1-95d5-005056a97e36/w:1024/p:16x9/063-2291195686.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "9fb08e3a4484",
@@ -567,7 +631,7 @@
     {
       "id": "e92e4fb7294a",
       "title": "Albanese seeks to quell datacentre disquiet as climate expert warns ‘we’ve got one shot to get the rules right’",
-      "summary": "Prime minister will use national cabinet meeting to assuage premiers over new AI law as AEMO forecasts seven-fold rise in datacentre power use Get our breaking news email , free app or daily news podcast Anthony Albanese will seek to use Wednesday’s…",
+      "summary": "Prime minister will use national cabinet meeting to assuage premiers over new AI law as Aemo forecasts seven-fold rise in datacentre power use Follow our Australia news live blog for latest updates Get our breaking news email , free app or daily news podcast…",
       "url": "https://www.theguardian.com/australia-news/2026/aug/25/albanese-seeks-to-quell-datacentre-disquiet-as-climate-expert-warns-weve-got-one-shot-to-get-the-rules-right",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -1029,22 +1093,6 @@
       "weight": 2
     },
     {
-      "id": "f51482facd33",
-      "title": "Iran calls France's decision to expel two Iranian diplomats 'illegal'",
-      "summary": "Iran's foreign ministry on Monday said France's decision to expel two of its diplomats was “illegal”. France's move came in retaliation for Tehran's decision not to allow two French diplomats to return to its territory.",
-      "url": "https://www.france24.com/en/middle-east/20260824-iran-calls-france-s-decision-to-expel-two-iranian-diplomats-illegal",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-24T09:44:14.000Z",
-      "image": "https://s.france24.com/media/display/3048d440-8996-11f1-8329-005056a97e36/w:1024/p:16x9/000-96TM9DK.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "bf0282009fae",
       "title": "Pubs and hotels could see business rates reformed after review",
       "summary": "The review of how rates are calculated in England and Wales could lead to reform of the system.",
@@ -1443,22 +1491,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "8d51d92bc24f",
-      "title": "The Guardian view on Andy Burnham’s foreign policy: work in progress | Editorial",
-      "summary": "The prime minister has focused on domestic affairs since coming to office. But at a time of global disruption, he will need to define Britain’s place in the world A run of volatility in domestic British politics in recent years has tracked a period of global…",
-      "url": "https://www.theguardian.com/commentisfree/2026/aug/23/the-guardian-view-on-andy-burnhams-foreign-policy-work-in-progress",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/europe-news",
-      "sourceId": "guardian-europe",
-      "publishedAt": "2026-08-23T17:30:38.000Z",
-      "image": "https://i.guim.co.uk/img/media/c3fe6b1d7534af1de5c47f7af7047ccd31347175/650_0_6498_5199/master/6498.jpg?width=700&quality=85&auto=format&fit=max&s=4f70fdd77d80f1311e9b6f2bb1147a14",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
