@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-23T23:55:12.182Z",
+  "generatedAt": "2026-08-24T00:34:59.194Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "6863e84397f0",
+      "title": "Yemeni army claims attacks on Houthis",
+      "summary": "Yemeni army claims attacks on Houthis The Yemeni army said it launched drone strikes on several Houthi positions, targeting gatherings, movements and barracks. While the army published footage of the alleged strikes, it did not specify where the attacks took…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/yemeni-army-claims-attacks-houthis",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-24T00:26:47.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "f75223848ed1",
+      "title": "Tokayev allies head for landslide victory in Kazakhstan elections",
+      "summary": "Exit polls give Kazakhstan’s pro-Tokayev Adilet party about 70 percent of the vote in the parliamentary elections.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/24/08-24-26-kazakh-elections-sv-mp4?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-24T00:12:21.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "bf0282009fae",
       "title": "Review launched into how pub and hotel business rates calculated",
@@ -340,22 +372,6 @@
       "weight": 2
     },
     {
-      "id": "e5b48043e99b",
-      "title": "Iran’s government signals fuel price hike on eve of new US sanctions",
-      "summary": "Prices for food and other items are soaring, and there is a history of unrest, so any increase is being considered.",
-      "url": "https://www.aljazeera.com/economy/2026/8/23/iran-government-signals-fuel-price-hike-on-eve-of-new-us-sanctions?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-23T15:38:16.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "5142345ed0b4",
       "title": "Zelenskyy asked for more Patriot missiles, former US vice president says",
       "summary": "During a visit to Kyiv, Mike Pence told reporters Ukraine is “winning the war,” but concerns are growing as winter approaches.",
@@ -533,7 +549,7 @@
     },
     {
       "id": "fa2a1e594ada",
-      "title": "Trump laying groundwork to impose national emergency by sowing election distrust",
+      "title": "Trump’s continued distrust in election integrity has experts eyeing his next move",
       "summary": "President’s speech, declassification of documents and heightened claims of noncitizen voting have experts concerned A series of moves by Donald Trump ’s administration to sow doubt in the integrity of US elections has intensified concern among voting experts…",
       "url": "https://www.theguardian.com/us-news/2026/aug/23/trump-sowing-election-distrust",
       "publisher": "The Guardian",
