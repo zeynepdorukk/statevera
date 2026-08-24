@@ -1,8 +1,25 @@
 {
-  "generatedAt": "2026-08-24T23:01:21.678Z",
+  "generatedAt": "2026-08-24T23:32:35.939Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "f76a90b4aff9",
+      "title": "Kazakhstan's Tokayev tightens grip on power after snap election",
+      "summary": "",
+      "url": "https://asia.nikkei.com/politics/kazakhstan-s-tokayev-tightens-grip-on-power-after-snap-election",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-24T23:32:27.358Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "e8fb108155e2",
       "title": "NAACP denounces supreme court decision to allow Trump administration to restrict mail-in voting – live",
@@ -11,7 +28,7 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-24T22:50:55.000Z",
+      "publishedAt": "2026-08-24T23:28:13.000Z",
       "image": "https://i.guim.co.uk/img/media/9422412f1508e4062fb95e1a57f5e519e751f6b7/335_0_3331_2666/master/3331.jpg?width=700&quality=85&auto=format&fit=max&s=70737dd767fbe63ab5dee69dfbf9cfa2",
       "imageWidth": 700,
       "category": "Politics",
@@ -53,7 +70,7 @@
     },
     {
       "id": "f7e549326145",
-      "title": "Six months on, U.S. Navy families who evacauated Bahrain remain in limbo",
+      "title": "Six months on, U.S. Navy families who evacuated Bahrain remain in limbo",
       "summary": "When the U.S.-Iran war began, more than 1,000 dependents of U.S. Navy personnel in Bahrain were ordered to evacuate. After six months in temporary conditions, they want to know what the plan is.",
       "url": "https://www.npr.org/2026/08/24/nx-s1-5943188/six-months-on-u-s-navy-families-who-evacauated-bahrain-remain-in-limbo",
       "publisher": "NPR",
@@ -546,22 +563,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "ad6b3f72d65d",
-      "title": "IRGC says Iran will target ‘US energy chokepoints’ if attacked",
-      "summary": "IRGC says Iran will target ‘US energy chokepoints’ if attacked Hossein Mohebbi, spokesman of Iran’s Islamic Revolutionary Guard Corps (IRGC), warned on Monday of “heavy attacks on US energy chokepoints and vital interests” if Iran’s infrastructure is…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/irgc-says-iran-will-target-us-energy-chokepoints-if-attacked",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-24T16:03:05.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1191,7 +1192,7 @@
     {
       "id": "ae003a148bbd",
       "title": "Germany news: State premier visits VW for crisis talks",
-      "summary": "Lower Saxony's state premier called on Volkswagen shareholders to take action to avert plant closures, while Chancellor Friedrich Merz met party colleagues after a testing summer. DW has more.",
+      "summary": "Lower Saxony's state premier called on Volkswagen shareholders to take action to avert plant closures, while Chancellor Friedrich Merz met party colleagues after a testing summer.",
       "url": "https://www.dw.com/en/germany-news-state-premier-visits-vw-for-crisis-talks/live-78480873?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
@@ -2229,22 +2230,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "4f5d67d601c5",
-      "title": "Why the US economy is ringing alarm bells",
-      "summary": "The US hit a debt milestone this week, but just how worried should we be about the world's largest economy?",
-      "url": "https://www.bbc.co.uk/news/articles/c9d8z72nn02o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/business",
-      "sourceId": "bbc-business",
-      "publishedAt": "2026-08-21T08:38:18.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/30c9/live/70745c80-9d4e-11f1-854c-7d636985156c.jpg",
-      "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
