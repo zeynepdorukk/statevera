@@ -1,8 +1,41 @@
 {
-  "generatedAt": "2026-08-24T02:11:09.185Z",
+  "generatedAt": "2026-08-24T03:14:32.043Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "9f63bc8d7948",
+      "title": "Australia's PLS gives first dividend after lithium price rise drives profit",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/markets/commodities/australia-s-pls-gives-first-dividend-after-lithium-price-rise-drives-profit",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-24T03:14:24.540Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "6c7245bab6c0",
+      "title": "Less than 20 ships transit Strait of Hormuz over weekend",
+      "summary": "Less than 20 ships transit Strait of Hormuz over weekend Fewer than 20 vessels have travelled through the Strait of Hormuz during the weekend, data from Kpler showed. Four vessels crossed the strait on Sunday, with 13 others transiting on Saturday. The full…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/less-20-ships-transit-strait-hormuz-over-weekend",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-24T02:27:04.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "edd10d761af1",
       "title": "Israeli drone strike kills two in central Gaza",
@@ -49,6 +82,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "cf24da5f4299",
+      "title": "Iran war live: US vows ‘economic D-Day’; Tehran threatens Gulf oil exports",
+      "summary": "US Treasury Secretary Scott Bessent says Washington aims to 'sever every economic lifeline' that sustains Iran.",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/8/24/iran-war-live-iranian-assembly-advances-plans-for-hormuz-service-fees?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-24T00:00:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -337,22 +386,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "8a1d3add33cf",
-      "title": "French President Macron to host Saudi Crown Prince MBS in Paris for talks",
-      "summary": "Energy, regional conflicts, and bilateral cooperation to dominate Emmanuel Macron and Mohammed bin Salman's discussions.",
-      "url": "https://www.aljazeera.com/economy/2026/8/23/french-president-macron-to-host-saudi-crown-prince-mbs-in-paris-for-talks?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-23T16:12:55.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Europe",
       "weight": 2
     },
     {
@@ -1269,23 +1302,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "be9eb82d0132",
-      "title": "Japan to invest additional $940m in homegrown chipmaker Rapidus",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/tech/semiconductors/japan-to-invest-additional-940m-in-homegrown-chipmaker-rapidus",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-21T14:50:50.411Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
