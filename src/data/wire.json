@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-24T21:50:24.688Z",
+  "generatedAt": "2026-08-24T22:14:07.452Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "39edcda3c541",
+      "title": "Canada wants a deal, but Washington keeps moving the goalposts",
+      "summary": "As trade negotiations falter and the possibility of tariffs looms, there is better way forward for Washington and Ottawa—if they choose to take it. The post Canada wants a deal, but Washington keeps moving the goalposts appeared first on Atlantic Council .",
+      "url": "https://www.atlanticcouncil.org/dispatches/canada-wants-a-deal-but-washington-keeps-moving-the-goalposts/",
+      "publisher": "Atlantic Council",
+      "publisherHome": "https://www.atlanticcouncil.org",
+      "sourceId": "atlantic-council",
+      "publishedAt": "2026-08-24T22:11:21.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 3
+    },
+    {
+      "id": "127cdcf889e8",
+      "title": "US supreme court rules Trump can proceed with crackdown on mail-in voting",
+      "summary": "Justices’ ruling comes after lower courts had blocked president’s election order ahead of November midterms The US supreme court has sided with Donald Trump in his effort to crack down on mail-in voting, though it remains unclear if his administration can…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/24/supreme-court-trump-mail-in-voting",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-24T21:53:38.000Z",
+      "image": "https://i.guim.co.uk/img/media/2ccc7d2bbf4c6d0f275e0390e3225b48e54e5994/792_0_7920_6336/master/7920.jpg?width=700&quality=85&auto=format&fit=max&s=13c0855685ba92c3f761fc51cac57306",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "a977566f4d6a",
       "title": "US military says it allowed 40 vessels carrying humanitarian aid to pass through Hormuz blockade",
@@ -99,22 +131,6 @@
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "127cdcf889e8",
-      "title": "US supreme court rules Trump can proceed with crackdown on mail-in voting",
-      "summary": "Justices’ ruling comes after lower courts had blocked president’s election order ahead of November midterms Donald Trump’s administration can proceed with a nationwide crackdown on mail-in voting, the US supreme court has ruled, approving its emergency…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/24/supreme-court-trump-mail-in-voting",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-24T21:09:33.000Z",
-      "image": "https://i.guim.co.uk/img/media/2ccc7d2bbf4c6d0f275e0390e3225b48e54e5994/792_0_7920_6336/master/7920.jpg?width=700&quality=85&auto=format&fit=max&s=13c0855685ba92c3f761fc51cac57306",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "37392e5c36f6",
