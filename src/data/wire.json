@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T23:32:35.939Z",
+  "generatedAt": "2026-08-24T23:55:09.681Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -18,22 +18,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "e8fb108155e2",
-      "title": "NAACP denounces supreme court decision to allow Trump administration to restrict mail-in voting – live",
-      "summary": "Order has ‘nothing to do with election integrity but everything to do with maintaining power at all costs’, says Derrick Johnson, NAACP president Sign up for the US Breaking News email Donald Trump has threatened to increase tariffs on Canadian cars, trucks,…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/24/hakeem-jeffries-jared-kushner-democrats-midterm-elections-donald-trump-iran-war-sanctions-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-24T23:28:13.000Z",
-      "image": "https://i.guim.co.uk/img/media/9422412f1508e4062fb95e1a57f5e519e751f6b7/335_0_3331_2666/master/3331.jpg?width=700&quality=85&auto=format&fit=max&s=70737dd767fbe63ab5dee69dfbf9cfa2",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -99,6 +83,22 @@
       "categoryConfidence": "high",
       "region": "Americas",
       "weight": 3
+    },
+    {
+      "id": "127cdcf889e8",
+      "title": "US supreme court rules Trump can proceed with crackdown on mail-in voting",
+      "summary": "Justices’ ruling comes after lower courts had blocked president’s election order ahead of November midterms The US supreme court sided with Donald Trump on Monday in his effort to crack down on mail-in voting, though it remains unclear if his administration…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/24/supreme-court-trump-mail-in-voting",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-24T21:53:38.000Z",
+      "image": "https://i.guim.co.uk/img/media/d50ba7cad020e1b2dd539156cfa1b0b5e337dbca/0_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=ae2f0767ef3b477d34aa5d8b63fd3002",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
     },
     {
       "id": "a977566f4d6a",
@@ -499,22 +499,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "1f51ec2bc6b2",
-      "title": "Iranian and Pakistani top officials meet in Tehran",
-      "summary": "Iranian and Pakistani top officials meet in Tehran Pakistan’s military chief Asim Munir met with Iran’s chief negotiator and parliament speaker Mohammad Bagher Ghalibaf in Tehran on Monday, according to Iran’s Mehr News Agency. The two discussed US violations…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/us-must-adhere-mou-irans-top-negotiator-tells-pakistani-mediator",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-24T16:30:58.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -934,6 +918,22 @@
       "weight": 2
     },
     {
+      "id": "06751862901d",
+      "title": "100 days of Ebola and the race to stop the spread",
+      "summary": "A hundred days after the Bundibugyo Ebola outbreak was declared, the Democratic Republic of the Congo (DRC) is facing an epidemic of an unprecedented scale and efforts must grow to contain the spread in the eastern region and across borders, UN agencies…",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168195",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-24T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/08/18-08-2026-UNOCHA-DR-Congo-ebola-05.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Global",
+      "weight": 2
+    },
+    {
       "id": "33b9a4dc32d2",
       "title": "Gaza: Children still at risk despite drop in acute hunger",
       "summary": "Among tent cities pitched on the rubble of destroyed homes in Gaza, children are, by one measure, finally getting enough to eat. By another, however, many of them may never fully recover, according to a new study by the UN Children’s Fund (UNICEF) released on…",
@@ -952,7 +952,7 @@
     {
       "id": "b05931539afb",
       "title": "Security Council LIVE: Civilian suffering grows in Russia-Ukraine war",
-      "summary": "Spiralling drone and missile attacks on civilians in the ongoing Russia-Ukraine war were in the spotlight on Monday as the Security Council hears the latest reports from UN officials about the situation on the ground. UN News app users can follow our live…",
+      "summary": "As spiralling drone and missile attacks on civilians in the ongoing Russia-Ukraine war continue, top UN officials told the Security Council on Monday that every diplomatic effort must work towards a full, immediate and unconditional ceasefire. UN News app…",
       "url": "https://news.un.org/feed/view/en/story/2026/08/1168191",
       "publisher": "UN News",
       "publisherHome": "https://news.un.org/en",
@@ -961,7 +961,7 @@
       "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/07/21-07-2026-UNICEF-Ukraine-04.jpg/image560x340cropped.jpg",
       "imageWidth": 0,
       "category": "Diplomacy",
-      "categoryConfidence": "source",
+      "categoryConfidence": "medium",
       "region": "Eurasia",
       "weight": 2
     },
@@ -2185,22 +2185,6 @@
       "weight": 2
     },
     {
-      "id": "292490971c6c",
-      "title": "Trump says U.S. will impose 'economic D-Day' against Iran",
-      "summary": "President Trump announced this week that the U.S. will be imposing the \"most crushing economic operation\" against Iran.",
-      "url": "https://www.npr.org/2026/08/21/nx-s1-5939493/trump-says-u-s-will-impose-economic-d-day-against-iran",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-21T10:48:05.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "f713648e4963",
       "title": "Bauhaus Manifesto: Broad alliance promoting artistic freedom",
       "summary": "Weeks before Saxony-Anhalt's state election, representatives from German cultural, crafts, architecture, design and church sectors unite to promote freedom, openness and creativity.",
@@ -2533,22 +2517,6 @@
       "imageWidth": 0,
       "category": "Diplomacy",
       "categoryConfidence": "source",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "2c153704eab9",
-      "title": "As elections near, South Sudan risks new atrocity crimes, warns rights probe",
-      "summary": "The under-reported humanitarian crisis in South Sudan risks deepening with the real possibility of further atrocity crimes unless renewed fighting stops, a UN-backed probe said on Thursday.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168173",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-20T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/06/03-06-2026_UNMISS_South_Sudan_Ezo.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
       "region": "Africa",
       "weight": 2
     },
