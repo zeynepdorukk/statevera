@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-25T04:31:18.091Z",
+  "generatedAt": "2026-08-25T05:15:39.209Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "9614013c0db0",
+      "title": "Turkish envoy applauds US removal of Syria from 'terrorism list'",
+      "summary": "Turkish envoy applauds US removal of Syria from 'terrorism list' Washington's decision to remove Syria from the State Sponsor of Terrorism (SST) blacklist paves the way for a \"brighter future\" for the country, Turkey's ambassador to Damascus said. \"The last…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkish-envoy-applauds-us-removal-syria-terrorism-list",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-25T05:14:03.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "e289a8bcfbb8",
+      "title": "Syrian president thanks nation for getting off US state terror list",
+      "summary": "Syrian president Ahmed al-Sharaa thanks his nation for getting off US state terror list.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/25/syrian-president-thanks-nation-for-getting-off-us-state-terror-list?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-25T04:38:24.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "feaa01acbe74",
+      "title": "France, Saudi Arabia agree on $7bn theme park project near Paris",
+      "summary": "Theme park project is among a raft of deals spanning energy, defence, AI and tourism signed during MBS's visit to Paris.",
+      "url": "https://www.aljazeera.com/news/2026/8/25/france-saudi-arabia-agree-on-7bn-theme-park-project-near-paris?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-25T04:38:20.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
     {
       "id": "6655729cdf12",
       "title": "Iran says it is ready for what US calls 'greatest financial offensive ever'",
@@ -86,7 +134,7 @@
     },
     {
       "id": "d6ef1bbc956c",
-      "title": "US-Canada trade war escalates as Trump threatens tariff hike on autos after Carney vows to retaliate",
+      "title": "US-Canada trade war escalates as Trump threatens tariff hike on vehicles",
       "summary": "Mark Carney accused Trump of wanting to \"destroy\" Canada's auto industry, and said he would only resume trade talks if the US comes with the \"right attitude\".",
       "url": "https://www.bbc.co.uk/news/articles/c93vpd60654o?at_medium=RSS&at_campaign=rss",
       "publisher": "BBC News",
@@ -182,8 +230,8 @@
     },
     {
       "id": "da52d5d84898",
-      "title": "Iran war live: US slaps new sanctions on Iran, warns Tehran trade partners",
-      "summary": "US tells countries to choose between Washington and Tehran, warns Iran's trade partners they will face consequences.",
+      "title": "Iran war live: Pakistan reports progress on restoring US-Iran MoU",
+      "summary": "Washington has slapped new sanctions on Tehran and warned Iran's trade partners they will face consequences.",
       "url": "https://www.aljazeera.com/news/liveblog/2026/8/25/iran-war-live-drat?traffic_source=rss",
       "publisher": "Al Jazeera",
       "publisherHome": "https://www.aljazeera.com",
@@ -192,7 +240,7 @@
       "image": "",
       "imageWidth": 0,
       "category": "Economy",
-      "categoryConfidence": "high",
+      "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 2
     },
@@ -466,22 +514,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "51bcf66ee76d",
-      "title": "Bessent admits sanctions may blow up global economy in apparent slip",
-      "summary": "Bessent admits sanctions may blow up global economy in apparent slip US Treasury Secretary says that American sanctions on Iran could collapse the global economy, in an apparent slip while answering a question from a reporter at a press conference in…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/bessent-admits-sanctions-may-blow-global-economy-apparent-slip",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-24T19:50:28.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -3173,22 +3205,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "dba6fd3171be",
-      "title": "Concerns grow over increased global ties with Taliban in Afghanistan",
-      "summary": "Campaigners fear deeper diplomatic contacts are undermining demands for improvements in human rights The Taliban in Afghanistan have launched a diplomatic effort to end their isolation as major regional and international powers show a readiness to engage more…",
-      "url": "https://www.theguardian.com/world/2026/aug/15/concern-grow-global-ties-taliban-afghanistan-human-rights",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-15T05:00:49.000Z",
-      "image": "https://i.guim.co.uk/img/media/a00bb7fceb915e0108c0489f2a825134df963bfa/233_0_2333_1867/master/2333.jpg?width=700&quality=85&auto=format&fit=max&s=7b0f9de3788161cda364e6876672438d",
-      "imageWidth": 700,
-      "category": "Diplomacy",
-      "categoryConfidence": "medium",
-      "region": "Asia-Pacific",
       "weight": 2
     }
   ]
