@@ -1,8 +1,7 @@
 {
-  "generatedAt": "2026-08-25T11:39:31.428Z",
-  "sourceCount": 25,
+  "generatedAt": "2026-08-25T12:00:14.273Z",
+  "sourceCount": 26,
   "failedSources": [
-    "france24",
     "politico-eu"
   ],
   "items": [
@@ -23,6 +22,22 @@
       "weight": 2
     },
     {
+      "id": "6cd6d9822384",
+      "title": "Government lays out housing plans but Burnham backtracks on social renting pledge – UK politics live",
+      "summary": "£10bn for housing with 60% social renting is at odds with PM’s previous call for programme to be spent entirely on social homes The chancellor, John Healey, has said government investment in a tungsten mine in Devon will help bolster Britain’s defence and…",
+      "url": "https://www.theguardian.com/politics/live/2026/aug/25/housing-plans-andy-burnham-social-renting-pledge-ukraine-reform-tories-rupert-lowe-uk-politics-latest",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-25T11:43:53.000Z",
+      "image": "https://i.guim.co.uk/img/media/bde04cf97a3ddf798e20b45db767cc0d3ecb0133/572_158_4132_3305/master/4132.jpg?width=700&quality=85&auto=format&fit=max&s=06255cc62d98103efccee5f5d92d5871",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 2
+    },
+    {
       "id": "3c7c1d15c5fa",
       "title": "Burnham to take Zelenskyy’s pleas for Patriot missiles to Trump – Europe live",
       "summary": "UK PM to join delegation of leaders lobbying US president to step up supplies Burnham plans trip to New York as Ukraine pleads for US-made missiles Vatican envoy Paul Gallagher met Russian foreign minister Sergei Lavrov in Moscow earlier today, and Reuters…",
@@ -30,7 +45,7 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-25T11:13:46.000Z",
+      "publishedAt": "2026-08-25T11:35:00.000Z",
       "image": "https://i.guim.co.uk/img/media/36c84248610af0ec823feca23e5ca89bdcf2bea9/519_0_5885_4708/master/5885.jpg?width=700&quality=85&auto=format&fit=max&s=e021f6863b491c0bab97b263aadcbcaa",
       "imageWidth": 700,
       "category": "Security",
@@ -71,22 +86,6 @@
       "weight": 3
     },
     {
-      "id": "62bd4787a022",
-      "title": "China warns it will safeguard its interests after US widens sanctions against Iran",
-      "summary": "The US has threatened to isolate nations that continue to do business with Tehran, which sells much of its oil to Beijing.",
-      "url": "https://www.bbc.co.uk/news/articles/clyl8965j5go?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-08-25T10:56:03.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/fc68/live/708dead0-a076-11f1-bf10-9547e884d7b7.jpg",
-      "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "3e6875cb012a",
       "title": "Is AIPAC’s political standing declining in the US?",
       "summary": "The powerful pro-Israeli lobby group is increasingly becoming liability for both the progressive as well as right-wing.",
@@ -100,6 +99,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "7dcda140d4bd",
+      "title": "Haiti: Gang coalition unleashes violent new attack",
+      "summary": "At least 47 people were killed and 22 more injured in an overnight gang raid on a neighbourhood overlooking Haiti's capital of Port-au-Prince, the UN said on Monday, prompting anger over the ​lack of protection from ‌ repeated deadly attacks.",
+      "url": "https://www.france24.com/en/video/20260825-haiti-gang-coalition-unleashes-violent-new-attack",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-25T10:52:58.000Z",
+      "image": "https://s.france24.com/media/display/5e8611d6-a072-11f1-8fb1-005056bfb2b6/w:1024/p:16x9/minihaiti.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -264,6 +279,22 @@
       "weight": 2
     },
     {
+      "id": "92e6e669c669",
+      "title": "Iran threatens retaliation as new US sanctions hit already-struggling economy",
+      "summary": "Iranian officials are maintaining their strong rhetoric against the US, after Washington announced a fresh raft of sanctions against Iran. Tehran has pledged to hit back with its own measures, while the country is already suffering from already high inflation.",
+      "url": "https://www.france24.com/en/iran-threatens-retaliation-as-new-us-sanctions-hit-already-struggling-economy",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-25T09:36:13.000Z",
+      "image": "https://s.france24.com/media/display/08ac3fe8-9ff4-11f1-80a7-005056bf30b7/w:1024/p:16x9/AP26236447179370.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "c866ae5f431c",
       "title": "Kremlin adviser warns UK drone factories could face attacks",
       "summary": "Russia says UK decision to share missile blueprints with Ukraine is evidence of direct military involvement in the war.",
@@ -277,6 +308,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "daf0a17387f2",
+      "title": "DR Congo sees breakthrough as officials and rebels agree to peace talk roadmap",
+      "summary": "In eastern Democratic Republic of Congo, Rwanda-backed M23 rebels are still in control of swathes of territory. After months of stalled peace talks, both sides have agreed to get the ball rolling again. FRANCE 24's Emmet Livingstone, in Kinshasa, has more.",
+      "url": "https://www.france24.com/en/dr-congo-sees-breakthrough-as-officials-and-rebels-agree-to-peace-talk-roadmap",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-25T09:24:14.000Z",
+      "image": "https://s.france24.com/media/display/2aae6484-d53f-11f0-832f-005056a90284/w:1024/p:16x9/AP25338597407134.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Africa",
       "weight": 2
     },
     {
@@ -341,6 +388,38 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "ef2e4272579e",
+      "title": "In Haitin, dozens die in gang coalition attack on a farming community",
+      "summary": "A deadly gang attack on the village of Kenscoff in Haiti has left between 30 and 40 people dead. Located in the southeast of Port-au-Prince, the farming community that was targeted has a strategic position useful to armed groups. Over 3,000 people have died…",
+      "url": "https://www.france24.com/en/in-haitin-dozens-die-in-gang-coalition-attack-on-a-farming-community",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-25T08:47:03.000Z",
+      "image": "https://s.france24.com/media/display/bd2f8394-a026-11f1-a64c-005056a97e36/w:1024/p:16x9/AP26236696380881.jpg",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "ce98ef4a185b",
+      "title": "As Canada prepares to retaliate in the trade war, what pain can it inflict the US?",
+      "summary": "Canada said it will announce on August 25 its response to President Donald Trump's new tariffs, as neighbors that used to be close allies spiral into a trade war. This comes after representatives from both countries failed to come to an agreement that would…",
+      "url": "https://www.france24.com/en/as-canada-prepares-to-retaliate-in-the-trade-war-what-pain-can-it-inflict-the-us",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-25T08:38:31.000Z",
+      "image": "https://s.france24.com/media/display/0dc23db6-9e05-11f1-a007-005056a90284/w:1024/p:16x9/2026-08-17T204741Z-1989117409-RC2E0NAKAY6Z-RTRMADP-3-CANADA-HYDRO.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -474,6 +553,22 @@
       "weight": 3
     },
     {
+      "id": "251338271e9b",
+      "title": "What to know about Trump's Canada tariffs and the escalating trade war",
+      "summary": "Canada plans to respond to US President Donald Trump's new tariffs on Tuesday, as the once close neighbouring allies spiral into a trade war. Ottawa and Washington failed to reach a deal on Friday to avert new 50 percent US tariffs on select Canadian goods…",
+      "url": "https://www.france24.com/en/americas/20260825-what-to-know-about-trump-s-tariffs-on-canadian-goods-as-neigbours-spiral-into-trade-war",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-25T07:21:46.000Z",
+      "image": "https://s.france24.com/media/display/940fbf12-a056-11f1-b782-005056bfb2b6/w:1024/p:16x9/000-C6EU6NV.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
       "id": "c5455b896d9f",
       "title": "Deadly gang attack leaves Haiti’s Kenscoff community reeling",
       "summary": "The latest attack comes as Haiti prepares for general elections scheduled for December 13 — the country's first in more than a decade. Voter registration is underway, but experts have warned that widespread insecurity could make holding credible elections…",
@@ -602,22 +697,6 @@
       "weight": 2
     },
     {
-      "id": "e289a8bcfbb8",
-      "title": "Syrian president thanks nation for getting off US state terror list",
-      "summary": "Syrian president Ahmed al-Sharaa thanks his nation for getting off US state terror list.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/25/syrian-president-thanks-nation-for-getting-off-us-state-terror-list?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T04:38:24.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "43421df92650",
       "title": "UK drone factories may face attacks from 'unknown sources', says former Russian minister",
       "summary": "The comments on BBC Newsnight come after the UK announced it has agreed to hand over blueprints for British-made missile components to Ukraine.",
@@ -709,6 +788,22 @@
       "image": "",
       "imageWidth": 0,
       "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "e3ea0ac51d91",
+      "title": "Middle East live: China to 'firmly safeguard' its interests after US threatens Iran's trade partners",
+      "summary": "A day after Washington announced sweeping new sanctions on Iran and its trading partners, China's foreign ministry said Tuesday that China – which buys some 90 percent of Iranian oil exports – would “firmly safeguard” ‌its own interests. Follow our liveblog…",
+      "url": "https://www.france24.com/en/middle-east/20260825-mideast-live-oil-tanker-struck-by-projectile-in-strait-of-hormuz-off-oman",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-25T03:31:45.000Z",
+      "image": "https://s.france24.com/media/display/bb00e5d4-a05f-11f1-9e34-005056a97e36/w:1024/p:16x9/AP24141245775040.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -825,6 +920,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "fa561d15531c",
+      "title": "How the French language became a sticking point in the US-Canada trade war",
+      "summary": "The US-Canada trade dispute is not only about tariffs but unacceptable \"threats\" from Washington on the status of the French language, Canadian Prime Minister Mark Carney said. Washington reportedly wants concessions on Quebec's rules for appliances and…",
+      "url": "https://www.france24.com/en/americas/20260824-how-the-french-language-contributed-to-the-us-canada-trade-war",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-24T23:07:11.000Z",
+      "image": "https://s.france24.com/media/display/4a698b0c-a01c-11f1-b627-005056bf30b7/w:1024/p:16x9/b5f6cec51eb39e2fe78f6e7ee5e2dd149acd8a8a.jpg",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -1051,6 +1162,22 @@
       "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 3
+    },
+    {
+      "id": "1788a20fe9b1",
+      "title": "🔴 Mideast live: US unveils fresh sanctions to 'sever every economic lifeline' sustaining Iran",
+      "summary": "",
+      "url": "https://www.france24.com/en/middle-east/20260824-middle-east-live-iran-warns-of-a-harsh-response-to-anticipated-us-sanctions",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-24T17:16:05.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
     },
     {
       "id": "93dcb388708b",
@@ -1698,8 +1825,8 @@
       "summary": "Prime minister Christopher Luxon’s party to introduce bill seeking the ban, citing harm to a generation of children New Zealand prime minister Christopher Luxon has said his party will introduce a bill in parliament that ⁠seeks to ban children ⁠under ​16 from…",
       "url": "https://www.theguardian.com/media/2026/aug/24/nz-social-media-ban-children-under-16-fines-meta-tiktok",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
+      "sourceId": "guardian-asia",
       "publishedAt": "2026-08-24T05:22:19.000Z",
       "image": "https://i.guim.co.uk/img/media/760f918512039ba340234c40e1b7a40899e320ba/418_0_4164_3333/master/4164.jpg?width=700&quality=85&auto=format&fit=max&s=8d213c8028c76a5b77085810e3f71154",
       "imageWidth": 700,
