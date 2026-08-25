@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-25T22:45:02.149Z",
+  "generatedAt": "2026-08-25T23:03:42.467Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "c4b813e0cde4",
+      "title": "Australia news live: Greens urge national cabinet to refocus on gendered violence; Finocchiaro says NT can power datacentres with Beetaloo gas",
+      "summary": "Follow updates live Get our breaking news email , free app or daily news podcast Albanese posts tribute to Dolly Parton, remembering time when he intervened to get her tour bus on Australian roads Prime minister Anthony Albanese shared a tribute to the late…",
+      "url": "https://www.theguardian.com/australia-news/live/2026/aug/26/national-cabinet-datacentres-cpi-inflation-data-politics-reactions-anthony-albansese-labor-angus-taylor-coalition-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-25T22:52:37.000Z",
+      "image": "https://i.guim.co.uk/img/media/d835878e859f1a22f58177d93d87b5ed5d13bed0/241_0_6880_5504/master/6880.jpg?width=700&quality=85&auto=format&fit=max&s=1eecd79b9aa532b685bf52ac20e8fd67",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "e3f8ced46784",
+      "title": "Canada announces up to 50% retaliatory tariffs on hundreds of US goods including steel, fish, cheese and paper – live",
+      "summary": "Move by Canada comes after US president spent morning railing against the country, calling it the ‘most difficult’ nation he deals with Canada announces retaliatory tariffs on wide range of US goods Sign up for the US Breaking News email On Truth Social,…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/25/donald-trump-tariffs-canada-midterms-primary-south-carolina-iran-ukraine-voting-rights-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-25T22:52:34.000Z",
+      "image": "https://i.guim.co.uk/img/media/48d735ee2b3222679bddc97b3e2f988db75f0c87/512_0_5132_4105/master/5132.jpg?width=700&quality=85&auto=format&fit=max&s=454d691fb875f73f5e52350f6c6ba07b",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "8a3e8272bf39",
       "title": "Trump says Saudi Arabia must recognise Israel to move forward with nuclear pact",
@@ -17,22 +49,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "c4b813e0cde4",
-      "title": "Australia news live: Greens urges national cabinet to refocus on gendered violence; Finocchiaro says NT ‘has the answers’ on datacentre resources",
-      "summary": "Follow updates live Get our breaking news email , free app or daily news podcast Lia Finocchiaro , the chief minister of the Northern Territory, maintained the region should be able to “decide its energy policy and its energy mix” when it comes to…",
-      "url": "https://www.theguardian.com/australia-news/live/2026/aug/26/national-cabinet-datacentres-cpi-inflation-data-politics-reactions-anthony-albansese-labor-angus-taylor-coalition-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-25T22:30:06.000Z",
-      "image": "https://i.guim.co.uk/img/media/d835878e859f1a22f58177d93d87b5ed5d13bed0/241_0_6880_5504/master/6880.jpg?width=700&quality=85&auto=format&fit=max&s=1eecd79b9aa532b685bf52ac20e8fd67",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -81,22 +97,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "e3f8ced46784",
-      "title": "Canada announces up to 50% retaliatory tariffs on hundreds of US goods including steel, fish, cheese and paper – live",
-      "summary": "Move by Canada comes after US president spent morning railing against the country, calling it the ‘most difficult’ nation he deals with Canada announces retaliatory tariffs on wide range of US goods Sign up for the US Breaking News email On Truth Social,…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/25/donald-trump-tariffs-canada-midterms-primary-south-carolina-iran-ukraine-voting-rights-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-25T21:53:23.000Z",
-      "image": "https://i.guim.co.uk/img/media/48d735ee2b3222679bddc97b3e2f988db75f0c87/512_0_5132_4105/master/5132.jpg?width=700&quality=85&auto=format&fit=max&s=454d691fb875f73f5e52350f6c6ba07b",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -258,22 +258,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "09c59be0a275",
-      "title": "El-Sayed pushes to keep affordability message focus amid scrutiny from both sides",
-      "summary": "Democratic Senate candidate for Michigan distances himself from Hasan Piker and debates Fox News host The Democratic candidate for Senate in the swing state of Michigan has spent the week trying to keep his affordability message front and center as scrutiny…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/25/abdul-el-sayed-criticism-affordability-message",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-25T20:29:12.000Z",
-      "image": "https://i.guim.co.uk/img/media/1b7dfd5ffc5f751dfd85cb5204c68faffb11c75e/539_0_5388_4313/master/5388.jpg?width=700&quality=85&auto=format&fit=max&s=855863034cde721ceda10bdde3debd88",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -551,22 +535,6 @@
       "weight": 2
     },
     {
-      "id": "095b3a718745",
-      "title": "Hakeem Jeffries defends his meeting with Trump envoy Jared Kushner",
-      "summary": "House minority leader is under attack from his own party for ‘affordability crisis’ meeting with president’s son-in-law Democrats incredulous over Hakeem Jeffries and Jared Kushner meeting US politics live – latest updates Hakeem Jeffries , the Democratic…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/25/hakeem-jeffries-defends-jared-kushner-meeting",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-25T18:42:23.000Z",
-      "image": "https://i.guim.co.uk/img/media/722e788536e9157a659d4563924fc80a78179a80/629_0_6289_5034/master/6289.jpg?width=700&quality=85&auto=format&fit=max&s=85820004e7d42340643e40dacef9036e",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "f79681f541e1",
       "title": "Japan wholesale power prices set to surge 40% on LNG costs, IEA forecasts",
       "summary": "",
@@ -614,6 +582,22 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "17e67746e975",
+      "title": "Trump-backed Ken Paxton unveils ‘Texas first’ datacenter plan aimed at ‘negative impact’",
+      "summary": "The Republican Senate candidate announced the plan with a graphic flagged as ‘Made with AI’ US politics live – latest updates Ken Paxton , a Republican candidate for the US Senate in Texas, has unveiled plans to tackle the “negative impact” of datacenters…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/25/ken-paxton-datacenters-plan-texas",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-25T17:54:00.000Z",
+      "image": "https://i.guim.co.uk/img/media/b865b174338adcd0ac5fe272c375badb78eff9f1/719_0_7202_5760/master/7202.jpg?width=700&quality=85&auto=format&fit=max&s=facd43a1dc194395587d1348522e9684",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -1031,22 +1015,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "5963f99ea06f",
-      "title": "New York business group sues Mamdani over city-owned grocery stores plan",
-      "summary": "Multicultural Business Coalition sues New York City mayor, alleging plan for city-run stores will harm smaller grocers A New York City business group sued mayor Zohran Mamdani on Monday over his plan to create five municipally owned grocery stores. The…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/25/zohran-mamdani-lawsuit-city-owned-grocery-stores",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-25T14:48:54.000Z",
-      "image": "https://i.guim.co.uk/img/media/83278a312676f32f4d148248b709919ff628ffb7/1047_413_2813_2250/master/2813.jpg?width=700&quality=85&auto=format&fit=max&s=3d65e5e34cdd36596fe92a1b06b0b5ce",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
     },
     {
       "id": "72f67156fbac",
@@ -3515,6 +3483,38 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "e4ea8d1c5ac4",
+      "title": "Why is Ukraine's ex-defence minister calling for wartime elections?",
+      "summary": "Mykhailo Fedorov has called for elections, without addressing concerns over how they could be held while at war.",
+      "url": "https://www.bbc.co.uk/news/videos/c62eyn5ggnzo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/europe",
+      "sourceId": "bbc-europe",
+      "publishedAt": "2026-08-19T15:38:38.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0cab/live/644e3cd0-9bde-11f1-a291-b542ee92de7c.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "e7f41f59d80f",
+      "title": "French premier orders emergency team to respond to cyberattacks",
+      "summary": "There is urgent need to design, implement a more reactive, stronger operational response to cyberattacks the state is currently facing, Lecornu says",
+      "url": "https://www.aa.com.tr/en/europe/french-premier-orders-emergency-team-to-respond-to-cyberattacks/4031959",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-19T15:05:21.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Europe",
       "weight": 2
     }
   ]
