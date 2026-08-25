@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-25T18:54:54.926Z",
+  "generatedAt": "2026-08-25T19:21:53.054Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "9851feddd961",
+      "title": "Iran foreign minister holds talks with Pakistani, Qatari officials",
+      "summary": "Iran foreign minister holds talks with Pakistani, Qatari officials Iran’s Foreign Minister Abbas Araghchi has held separate phone conversations with Pakistan army chief Asim Munir and Qatari Prime Minister and Minister of Foreign Affairs Mohammed bin…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-foreign-minister-holds-talks-pakistani-qatari-officials",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-25T19:20:01.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "15dac1461f2b",
+      "title": "Kurdish-led forces in Syria dissolve after merging with the army",
+      "summary": "SDF commander campaigns for Kurdish language preservation after decade fighting the Islamic State.",
+      "url": "https://www.aljazeera.com/news/2026/8/25/kurdish-led-forces-in-syria-dissolve-after-merging-with-the-army?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-25T19:13:52.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "029326d4f692",
+      "title": "Israeli protesters block aid trucks from reaching Gaza",
+      "summary": "",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/25/israeli-protesters-block-aid-trucks-from-reaching-gaza?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-25T19:02:18.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "70cd724d2180",
       "title": "Syria’s economy poised for improvement after US sanctions removal",
@@ -103,7 +151,7 @@
     },
     {
       "id": "922257c71f9c",
-      "title": "Kremlin denies planned talks with US envoys amid reports CIA head in Russia",
+      "title": "Kremlin denies US talks amid reports CIA Director Ratcliffe in Russia",
       "summary": "Washington reportedly alerted Ukraine to refrain from strikes until delegation leaves Moscow, US media reports.",
       "url": "https://www.aljazeera.com/news/2026/8/25/kremlin-denies-planned-talks-with-us-envoys-amid-reports-cia-head-in-russia?traffic_source=rss",
       "publisher": "Al Jazeera",
@@ -120,7 +168,7 @@
     {
       "id": "17e67746e975",
       "title": "Trump-backed Ken Paxton unveils ‘Texas first’ datacenter plan aimed at ‘negative impact’",
-      "summary": "The Republican Senate candidate announced the plan with a graphic X flagged as ‘Made with AI’ US politics live – latest updates Ken Paxton , a Republican candidate for the US Senate in Texas, has unveiled plans to tackle the “negative impact” of datacenters…",
+      "summary": "The Republican Senate candidate announced the plan with a graphic flagged as ‘Made with AI’ US politics live – latest updates Ken Paxton , a Republican candidate for the US Senate in Texas, has unveiled plans to tackle the “negative impact” of datacenters…",
       "url": "https://www.theguardian.com/us-news/2026/aug/25/ken-paxton-datacenters-plan-texas",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -742,22 +790,6 @@
       "weight": 2
     },
     {
-      "id": "02d283d00f54",
-      "title": "Trump floats renaming Lake Ontario to Lake America during Canada trade war",
-      "summary": "Lake Ontario borders both the Canadian province of Ontario and the US state of New York.",
-      "url": "https://www.aljazeera.com/news/2026/8/25/trump-floats-renaming-lake-ontario-to-lake-america-during-canada-trade-war?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T14:53:45.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "68216508e395",
       "title": "A Golden Chance to Protect the Pacific’s ‘Blue Corridors’",
       "summary": "If Albanese is serious about a Pacific COP, he must heed the region’s call on oceans.",
@@ -787,22 +819,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "18bb0724a639",
-      "title": "China says will safeguard its own interests as US expands Iran sanctions",
-      "summary": "China has advocated for a ceasefire, insisting US sanctions will not resolve the Middle East conflict.",
-      "url": "https://www.aljazeera.com/economy/2026/8/25/china-says-will-safeguard-its-own-interests-as-us-expands-iran-sanctions?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T14:43:12.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -867,22 +883,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "26cc05249f5d",
-      "title": "Trump’s latest wave of Iran sanctions: Which 60 entities are targeted?",
-      "summary": "Dozens of groups in Iran and other countries face US sanctions over ties to Iranian oil, weapons and cyberoperations.",
-      "url": "https://www.aljazeera.com/features/2026/8/25/trumps-latest-wave-of-iran-sanctions-which-60-entities-are-targeted?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T14:17:06.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1171,6 +1171,38 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "10a73e9e77dc",
+      "title": "One million children in Afghanistan face deadly malnutrition",
+      "summary": "Some 3.7 million children in Afghanistan are suffering from wasting, one of the most dangerous forms of malnutrition, with around one million currently battling the most severe, life-threatening form of the condition.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168202",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-25T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/2026/06/09-06-2026-WFP-Afghanistan.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "3c0cd5cb163e",
+      "title": "As wars spread, the global food system unravels",
+      "summary": "A family with four children abandoned its farm in Somalia after armed groups arrived and demanded payments for the right to continue cultivating the land. They walked roughly 100 kilometers to a displacement camp. One of the children died along the way.",
+      "url": "https://news.un.org/feed/view/en/story/2026/08/1168201",
+      "publisher": "UN News",
+      "publisherHome": "https://news.un.org/en",
+      "sourceId": "un-news",
+      "publishedAt": "2026-08-25T12:00:00.000Z",
+      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Embargoed/09-11-2023-ILO-Palestine-02.jpg/image560x340cropped.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "source",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -2257,8 +2289,8 @@
       "summary": "Test of US rhetoric will rest on whether nations such as India, China and Russia view economic threats as credible Tehran has vowed to retaliate against any country that cooperates with the US attempt to impose fresh sanctions against Iran in what the…",
       "url": "https://www.theguardian.com/world/2026/aug/24/iran-vows-retaliate-countries-cooperate-fresh-us-sanctions",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
       "publishedAt": "2026-08-24T11:53:10.000Z",
       "image": "https://i.guim.co.uk/img/media/1c53731d00240da07c0478d86a442c495226b762/258_0_3392_2713/master/3392.jpg?width=700&quality=85&auto=format&fit=max&s=4d717eefc4dc6225565b48ae766da08f",
       "imageWidth": 700,
@@ -3180,22 +3212,6 @@
       "weight": 2
     },
     {
-      "id": "b4c4952a6d91",
-      "title": "Russian missiles kill 17 more in Ukraine as Guterres calls for ceasefire",
-      "summary": "Russian ballistic missile strikes killed 17 people and injured more than 40 in and around the Ukrainian capital Kyiv on Thursday, local authorities reported.",
-      "url": "https://news.un.org/feed/view/en/story/2026/08/1168181",
-      "publisher": "UN News",
-      "publisherHome": "https://news.un.org/en",
-      "sourceId": "un-news",
-      "publishedAt": "2026-08-20T12:00:00.000Z",
-      "image": "https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Collections/Production%20Library/2026/08/20-08-2026-UNOCHA-Ukraine.jpg/image560x340cropped.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "ac6b33f602a5",
       "title": "North Korea fires 10 missiles day after Trump curtails South Korea joint drills",
       "summary": "Launches, detected by South Korea and Japan, came after US scaled back exercises with South Korea in apparent overture to Kim Jong-un North Korea has launched about 10 short-range ballistic missiles towards the sea, South Korea’s military said, a day after…",
@@ -3290,22 +3306,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "2b9ce7f26c75",
-      "title": "Blizzards, nuclear anxiety and a fragile bond: two sisters in Japan – in pictures",
-      "summary": "Sayuri Ichida and her sister used to be distant – until their mother died. This exhibition traces their close relationship through sun, wind and snow Continue reading...",
-      "url": "https://www.theguardian.com/artanddesign/gallery/2026/aug/20/sayuri-ichida-two-sisters-japan-exhibition",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/asia-pacific",
-      "sourceId": "guardian-asia",
-      "publishedAt": "2026-08-20T06:00:45.000Z",
-      "image": "https://i.guim.co.uk/img/media/f50a9c685236296fc1b72bd87d2aedf72a440a9a/716_852_8536_6831/master/8536.jpg?width=700&quality=85&auto=format&fit=max&s=9e78186a34062274ad938ccd92600f1a",
-      "imageWidth": 700,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "f5d32a994e78",
@@ -3498,6 +3498,22 @@
       "categoryConfidence": "high",
       "region": "Turkey",
       "weight": 2
+    },
+    {
+      "id": "8b9b03a18e38",
+      "title": "Contested Logistics and the “Last Unmanned Mile”",
+      "summary": "In a Pacific war, the U.S. military cannot assume uncontested access to its depots and supply lines for munitions, spare parts, food, water, and energy. Jonathan is joined by David Tuttle (Rune Technologies), Paul Lwin (HavocAI), and Tom Garvey (CACI) to…",
+      "url": "https://warontherocks.com/cogs-of-war/contested-logistics-and-the-last-unmanned-mile/",
+      "publisher": "War on the Rocks",
+      "publisherHome": "https://warontherocks.com",
+      "sourceId": "war-on-the-rocks",
+      "publishedAt": "2026-08-19T08:00:58.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 3
     }
   ]
 }
