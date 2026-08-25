@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-25T18:04:15.552Z",
+  "generatedAt": "2026-08-25T18:54:54.926Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "70cd724d2180",
+      "title": "Syria’s economy poised for improvement after US sanctions removal",
+      "summary": "Removal of US sanctions offers Syria a chance to fully rejoin the global financial system after years of isolation.",
+      "url": "https://www.aljazeera.com/news/2026/8/25/syrias-economy-poised-for-improvement-after-us-sanctions-removal?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-25T18:43:42.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "095b3a718745",
+      "title": "Hakeem Jeffries defends his meeting with Trump envoy Jared Kushner",
+      "summary": "House minority leader is under attack from his own party for ‘affordability crisis’ meeting with president’s son-in-law Democrats incredulous over Hakeem Jeffries and Jared Kushner meeting US politics live – latest updates Hakeem Jeffries , the Democratic…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/25/hakeem-jeffries-defends-jared-kushner-meeting",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-25T18:42:23.000Z",
+      "image": "https://i.guim.co.uk/img/media/722e788536e9157a659d4563924fc80a78179a80/629_0_6289_5034/master/6289.jpg?width=700&quality=85&auto=format&fit=max&s=85820004e7d42340643e40dacef9036e",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "acf715690d08",
+      "title": "Trump faces backlash from Republicans over plan to lift tariffs on beef imports",
+      "summary": "Alarm as Republicans warn that ‘flooding’ stores with 300,000 metric tons of beef imports will hit US farmers Donald Trump is facing growing criticism from within his own party over his decision to temporarily pause US tariffs on foreign beef in a bid to…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/25/trump-republican-backlash-beef-tariff-import",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-25T18:15:17.000Z",
+      "image": "https://i.guim.co.uk/img/media/628e963f9a99e5089f267fea6c145f966f72c407/735_0_5001_4000/master/5001.jpg?width=700&quality=85&auto=format&fit=max&s=54701899ec361fd65fbac42a3a850355",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "f79681f541e1",
       "title": "Japan wholesale power prices set to surge 40% on LNG costs, IEA forecasts",
@@ -38,6 +86,38 @@
       "weight": 2
     },
     {
+      "id": "bdb358a14920",
+      "title": "Grain exports stall as Ukraine steps up attacks on Russia's Black Sea ports",
+      "summary": "Ukrainian drone strikes on Russian infrastructure on the Black Sea are disrupting grain and oil exports from the port of Novorossiysk and other key hubs.",
+      "url": "https://www.dw.com/en/grain-exports-stall-as-ukraine-steps-up-attacks-on-russia-s-black-sea-ports/a-78499629?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-08-25T18:04:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "922257c71f9c",
+      "title": "Kremlin denies planned talks with US envoys amid reports CIA head in Russia",
+      "summary": "Washington reportedly alerted Ukraine to refrain from strikes until delegation leaves Moscow, US media reports.",
+      "url": "https://www.aljazeera.com/news/2026/8/25/kremlin-denies-planned-talks-with-us-envoys-amid-reports-cia-head-in-russia?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-25T18:01:37.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
       "id": "17e67746e975",
       "title": "Trump-backed Ken Paxton unveils ‘Texas first’ datacenter plan aimed at ‘negative impact’",
       "summary": "The Republican Senate candidate announced the plan with a graphic X flagged as ‘Made with AI’ US politics live – latest updates Ken Paxton , a Republican candidate for the US Senate in Texas, has unveiled plans to tackle the “negative impact” of datacenters…",
@@ -51,6 +131,22 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "eb13afe14eb7",
+      "title": "Fatah, Dahlan bloc hold reconciliation talks ahead of Palestinian elections",
+      "summary": "Fatah and Dahlan's Democratic Reform hold talks in Alamein as fears grow over a potential opposition coalition.",
+      "url": "https://www.aljazeera.com/news/2026/8/25/fatah-dahlan-bloc-hold-reconciliation-talks-ahead-of-palestinian-elections?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-25T17:39:22.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -219,14 +315,14 @@
       "summary": "DHS officers posed as concerned citizens, joining Signal groups and taking photos of community meetings Sign up for the Breaking News US newsletter email Newly disclosed records reveal how undercover federal agents posed as concerned community members to spy…",
       "url": "https://www.theguardian.com/us-news/2026/aug/25/ice-signal-chat-minnesota",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-25T16:56:15.000Z",
       "image": "https://i.guim.co.uk/img/media/d84d166d5b4013df917c0dacda9c16b5f3d1e7a2/915_0_4585_3667/master/4585.jpg?width=700&quality=85&auto=format&fit=max&s=659cb93771cf2229ce53b3a919fb4a08",
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
-      "region": "Global",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -295,7 +391,7 @@
     },
     {
       "id": "cb92ec798b9e",
-      "title": "Sanctions or missiles? Why Gulf may not relish Trump’s new Iran approach",
+      "title": "Sanctions or missiles? How Gulf will view Trump’s new Iran approach",
       "summary": "As Washington pressures Tehran, Gulf states weigh sanctions against the risk of escalation.",
       "url": "https://www.aljazeera.com/news/2026/8/25/sanctions-or-missiles-why-gulf-may-not-relish-trumps-new-iran-approach?traffic_source=rss",
       "publisher": "Al Jazeera",
@@ -451,22 +547,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "a19303939c7d",
-      "title": "‘Economic D-day’: how desperate is Trump to end Iran war? — The Latest",
-      "summary": "The White House has threatened sanctions on any country that trades with Iran in another bid to economically isolate the country, as US military efforts falter. Launching what he called Operation Economic Outcast, the US Treasury secretary, Scott Bessent,…",
-      "url": "https://www.theguardian.com/news/audio/2026/aug/25/economic-d-day-how-desperate-trump-end-iran-war-the-latest",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world/middleeast",
-      "sourceId": "guardian-mideast",
-      "publishedAt": "2026-08-25T15:54:17.000Z",
-      "image": "https://i.guim.co.uk/img/media/4790e3f8f59971edab2ebe7a861085bcaf34774f/218_0_2178_1742/master/2178.jpg?width=700&quality=85&auto=format&fit=max&s=3d3436514614b2f9ca7c89b20723abe4",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -646,22 +726,6 @@
       "weight": 2
     },
     {
-      "id": "e3ea0ac51d91",
-      "title": "🔴 Mideast live: Trump says Strait of Hormuz demined, warns of ‘zero tolerance’ for new mines",
-      "summary": "",
-      "url": "https://www.france24.com/en/middle-east/20260825-mideast-live-oil-tanker-struck-by-projectile-in-strait-of-hormuz-off-oman",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-25T15:02:45.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "97dc54809d7a",
       "title": "US and Denmark push for nationwide expansion of UN arms embargo in Sudan",
       "summary": "The United States on Monday urged the United Nations Security Council to expand an arms embargo on the Sudanese region of Darfur to cover all of Sudan, saying the nation's brutal conflict risks regional expansion. The suggestion was supported by Denmark,…",
@@ -824,7 +888,7 @@
     {
       "id": "7616387b1658",
       "title": "UK officials prepare for potential Trump talks as Burnham plans New York trip",
-      "summary": "PM known to be keen to attend UN general assembly after meeting Volodymyr Zelenskyy in Ukraine Europe live – latest updates UK officials are making preparations for a potential meeting between Andy Burnham and Donald Trump after the prime minister said he…",
+      "summary": "PM known to be keen to attend UN general assembly after meeting Volodymyr Zelenskyy in Ukraine UK officials are making preparations for a potential meeting between Andy Burnham and Donald Trump after the prime minister said he hoped to attend next month’s UN…",
       "url": "https://www.theguardian.com/politics/2026/aug/25/andy-burnham-us-new-york-ukraine-patriot-missiles",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -835,22 +899,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "8a6e58b6bc51",
-      "title": "US military transport plane arrives in Moscow in rare occurrence",
-      "summary": "A US military C-17 transport plane has mysteriously landed at Moscow’s Vnukovo Airport from Riga, Latvia",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/25/us-military-transport-plane-arrives-in-moscow-in-rare-occurrence?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T14:16:10.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -899,22 +947,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "3dea4091c5df",
-      "title": "Iranians queue for petrol after US announces new sanctions",
-      "summary": "Iranians queue for petrol after US announces new sanctions Long queues formed at petrol stations across Tehran on Tuesday after the United States announced fresh sanctions targeting Iran, AFP reported. The new measures come as Washington seeks to increase…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iranians-queue-petrol-after-us-announces-new-sanctions",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-25T13:46:41.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1080,7 +1112,7 @@
     {
       "id": "3e090cdaf875",
       "title": "Third drone and suspected military explosives found near Leipzig airport",
-      "summary": "Local media report discovery by German investigators after attempted attack on cargo and military logistics hub Europe live – latest updates German investigators uncovered a third drone and suspected military explosives thought to be connected to an attempted…",
+      "summary": "Local media report discovery by German investigators after attempted attack on cargo and military logistics hub German investigators uncovered a third drone and suspected military explosives thought to be connected to an attempted attack on Leipzig airport,…",
       "url": "https://www.theguardian.com/world/2026/aug/25/germany-drone-suspected-military-explosives-found-near-leipzig-airport",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world/europe-news",
@@ -1286,22 +1318,6 @@
       "weight": 2
     },
     {
-      "id": "bfe08edecf13",
-      "title": "Darline Graham and Ralph Norman head to South Carolina’s Senate runoff",
-      "summary": "Republican nominee to face Democrat Annie Andrews in midterm after rushed campaigns for Lindsey Graham’s seat Reese Boyd, the chair of the Horry county Republican party marveled on Monday afternoon at how little time Senator Darline Graham and Representative…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/25/south-carolina-senate-runoff-election",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-25T10:00:33.000Z",
-      "image": "https://i.guim.co.uk/img/media/368691883e7e830112adc79efd64718fb2f7f911/1170_0_5830_4665/master/5830.jpg?width=700&quality=85&auto=format&fit=max&s=f112803102e1b1221e7a030ffcbcaf4b",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "ce38c264dc2a",
       "title": "Japan to support oil pipelines that bypass Strait of Hormuz",
       "summary": "",
@@ -1353,7 +1369,7 @@
     {
       "id": "460f1591b266",
       "title": "Gold price hits three-month high amid fears over Iran war and Trump economy",
-      "summary": "Bitcoin rises above $80,000 for the first time since May amid uncertainty over US fiscal plans Business live – latest updates Gold prices hit their highest level in more than three months on Tuesday as continued conflict in the Middle East and ongoing…",
+      "summary": "Bitcoin rises above $80,000 for the first time since May amid uncertainty over US fiscal plans Gold prices hit their highest level in more than three months on Tuesday as continued conflict in the Middle East and ongoing political uncertainty fuelled the…",
       "url": "https://www.theguardian.com/business/2026/aug/25/gold-price-high-iran-war-donald-trump-economy-us",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/us-news",
@@ -3481,54 +3497,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Turkey",
-      "weight": 2
-    },
-    {
-      "id": "8b9b03a18e38",
-      "title": "Contested Logistics and the “Last Unmanned Mile”",
-      "summary": "In a Pacific war, the U.S. military cannot assume uncontested access to its depots and supply lines for munitions, spare parts, food, water, and energy. Jonathan is joined by David Tuttle (Rune Technologies), Paul Lwin (HavocAI), and Tom Garvey (CACI) to…",
-      "url": "https://warontherocks.com/cogs-of-war/contested-logistics-and-the-last-unmanned-mile/",
-      "publisher": "War on the Rocks",
-      "publisherHome": "https://warontherocks.com",
-      "sourceId": "war-on-the-rocks",
-      "publishedAt": "2026-08-19T08:00:58.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Global",
-      "weight": 3
-    },
-    {
-      "id": "a3364196db99",
-      "title": "Managed Instability: Why the Wars Against Iran and Ukraine Can Go On and On and On…",
-      "summary": "The Iran war is beginning to resemble the Ukraine war in one important way. Operationally, the wars themselves are still very different — Ukraine is a large-scale ground invasion, while the Iran war is not there just yet. But their political logic after a…",
-      "url": "https://warontherocks.com/managed-instability-why-the-wars-against-iran-and-ukraine-can-go-on-and-on-and-on/",
-      "publisher": "War on the Rocks",
-      "publisherHome": "https://warontherocks.com",
-      "sourceId": "war-on-the-rocks",
-      "publishedAt": "2026-08-19T07:30:50.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "source",
-      "region": "Global",
-      "weight": 3
-    },
-    {
-      "id": "10e9a93eba5c",
-      "title": "Bangladesh seeks stronger energy ties with Qatar amid Strait of Hormuz tensions",
-      "summary": "Foreign minister leads high-level delegation on 2-day visit to Doha as Bangladesh grapples with domestic energy shortages",
-      "url": "https://www.aa.com.tr/en/asia-pacific/bangladesh-seeks-stronger-energy-ties-with-qatar-amid-strait-of-hormuz-tensions/4030884",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-18T16:21:02.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     }
   ]
