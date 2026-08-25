@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T03:56:42.074Z",
+  "generatedAt": "2026-08-25T04:31:18.091Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -49,22 +49,6 @@
       "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "3f39141bda02",
-      "title": "Australia news live: PM dubbed ‘WA’s daddy’ over Blue Poles and GST promises; RBA poised to lift interest rates again if needed",
-      "summary": "West Australian newspaper uses moniker on front page. Follow today’s news live Get our breaking news email , free app or daily news podcast Number of NSW households in urgent need of priority housing hits highest level in over a year The number of NSW…",
-      "url": "https://www.theguardian.com/australia-news/live/2026/aug/25/australia-news-live-sydney-trains-delays-cancellations-albanese-gst-wa-one-nation-coalition-secret-harbour-election-tax-reform-royal-commission-antisemitism-icac-victorian-rail-loop-alan-jones-trial-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-25T03:26:44.000Z",
-      "image": "https://i.guim.co.uk/img/media/2e5489df4203dfaffc935432a6aacc7a870821be/500_0_4821_3857/master/4821.jpg?width=700&quality=85&auto=format&fit=max&s=86b934e4f8340d147af27e73621e0f40",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -668,8 +652,8 @@
       "summary": "As well as pledging military help and diplomatic backing, the prime minister could be useful in dealing with the US Since moving into Downing Street in July, Andy Burnham – a foreign policy neophyte – has expressed strong support for Ukraine. But on Monday he…",
       "url": "https://www.theguardian.com/politics/2026/aug/24/burnham-visit-kyiv-support-for-ukraine",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
+      "publisherHome": "https://www.theguardian.com/world/europe-news",
+      "sourceId": "guardian-europe",
       "publishedAt": "2026-08-24T16:33:22.000Z",
       "image": "https://i.guim.co.uk/img/media/dd6da4bdd6d8ce379491c9a32f8885465ce8c851/355_47_4270_3418/master/4270.jpg?width=700&quality=85&auto=format&fit=max&s=aa7c68674f782bf129ec3da0d7d603d3",
       "imageWidth": 700,
@@ -1717,23 +1701,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "114cffa1db47",
-      "title": "India's 'cockroach' movement exposes cracks in Modi's political machine",
-      "summary": "",
-      "url": "https://asia.nikkei.com/spotlight/comment/india-s-cockroach-movement-exposes-cracks-in-modi-s-political-machine",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-23T04:49:30.168Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
