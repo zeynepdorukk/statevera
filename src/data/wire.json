@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-25T22:14:12.793Z",
+  "generatedAt": "2026-08-25T22:45:02.149Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "8a3e8272bf39",
+      "title": "Trump says Saudi Arabia must recognise Israel to move forward with nuclear pact",
+      "summary": "Trump says Saudi Arabia must recognise Israel to move forward with nuclear pact US President Donald Trump sent an agreement to Congress on the civil nuclear energy deal with Saudi Arabia, maintaining that his position that the pact will only move forward if…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-says-saudi-arabia-must-recognise-israel-move-forward-nuclear-pact",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-25T22:36:07.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "c4b813e0cde4",
+      "title": "Australia news live: Greens urges national cabinet to refocus on gendered violence; Finocchiaro says NT ‘has the answers’ on datacentre resources",
+      "summary": "Follow updates live Get our breaking news email , free app or daily news podcast Lia Finocchiaro , the chief minister of the Northern Territory, maintained the region should be able to “decide its energy policy and its energy mix” when it comes to…",
+      "url": "https://www.theguardian.com/australia-news/live/2026/aug/26/national-cabinet-datacentres-cpi-inflation-data-politics-reactions-anthony-albansese-labor-angus-taylor-coalition-ntwnfb",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-25T22:30:06.000Z",
+      "image": "https://i.guim.co.uk/img/media/d835878e859f1a22f58177d93d87b5ed5d13bed0/241_0_6880_5504/master/6880.jpg?width=700&quality=85&auto=format&fit=max&s=1eecd79b9aa532b685bf52ac20e8fd67",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "70be1d328a23",
+      "title": "Why can’t America agree on what time it is?",
+      "summary": "",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/25/why-cant-america-agree-on-what-time-it-is?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-25T22:05:42.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "b8784d9abc68",
       "title": "Israeli army conducts major blast in south Lebanon town",
@@ -359,6 +407,22 @@
       "weight": 2
     },
     {
+      "id": "dcd1aff95af6",
+      "title": "Iran, Oman discuss temporary shipping lane through Strait of Hormuz",
+      "summary": "Omani FM hopes the two countries will 'soon announce' a joint temporary transit corridor through the Strait of Hormuz.",
+      "url": "https://www.aljazeera.com/news/2026/8/25/iran-oman-discuss-temporary-shipping-lane-through-strait-of-hormuz?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-25T19:47:51.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
       "id": "86e0320cc444",
       "title": "A cultural renaissance is reshaping national identity in wartime Ukraine",
       "summary": "Russia's full-scale invasion of Ukraine is fueling a defiant cultural outpouring that is redefining and strengthening Ukrainian national identity in ways that challenge centuries of Kremlin imperialism, writes Davis Richardson. The post A cultural renaissance…",
@@ -553,38 +617,6 @@
       "weight": 2
     },
     {
-      "id": "922257c71f9c",
-      "title": "Kremlin denies US talks amid reports CIA Director Ratcliffe in Russia",
-      "summary": "Washington reportedly alerted Ukraine to refrain from strikes until delegation leaves Moscow, US media reports.",
-      "url": "https://www.aljazeera.com/news/2026/8/25/kremlin-denies-planned-talks-with-us-envoys-amid-reports-cia-head-in-russia?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T18:01:37.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "eb13afe14eb7",
-      "title": "Fatah, Dahlan bloc hold reconciliation talks ahead of Palestinian elections",
-      "summary": "Fatah and Dahlan's Democratic Reform hold talks in Alamein as fears grow over a potential opposition coalition.",
-      "url": "https://www.aljazeera.com/news/2026/8/25/fatah-dahlan-bloc-hold-reconciliation-talks-ahead-of-palestinian-elections?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T17:39:22.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "0865d4ca46f8",
       "title": "Ending the war and preserving unity is our priority, says Iranian president",
       "summary": "Ending the war and preserving unity is our priority, says Iranian president Iranian President Masoud Pezeshkian said on Tuesday that ending the war is the government's priority and the US-Iran memorandum of understanding (MoU) was not signed out of…",
@@ -726,22 +758,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "867fbc5f32fb",
-      "title": "Oman and Iran propose temporary shipping lane through Strait of Hormuz",
-      "summary": "Oman and Iran propose temporary shipping lane through Strait of Hormuz Oman and Iran have agreed on a proposed framework to resume safe navigation through the Strait of Hormuz that includes establishing a joint temporary shipping lane and a mine-clearing…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/oman-iran-propose-temporary-shipping-lane-through-strait-hormuz",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-25T16:20:07.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -3499,22 +3515,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "e4ea8d1c5ac4",
-      "title": "Why is Ukraine's ex-defence minister calling for wartime elections?",
-      "summary": "Mykhailo Fedorov has called for elections, without addressing concerns over how they could be held while at war.",
-      "url": "https://www.bbc.co.uk/news/videos/c62eyn5ggnzo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/europe",
-      "sourceId": "bbc-europe",
-      "publishedAt": "2026-08-19T15:38:38.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/0cab/live/644e3cd0-9bde-11f1-a291-b542ee92de7c.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     }
   ]
