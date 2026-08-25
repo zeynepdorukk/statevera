@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-25T05:15:39.209Z",
+  "generatedAt": "2026-08-25T05:54:16.937Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "c3642959b5c2",
+      "title": "The UK will help Ukraine make long-range missiles by sharing classified tech information",
+      "summary": "Burnham, who was in Kyiv for Ukraine's Independence Day, said defense firm MBDA will release details on U.K.-made parts for the SCALP missile to Ukraine to help the country assemble the weapons.",
+      "url": "https://www.npr.org/2026/08/25/nx-s1-5944059/the-uk-will-help-ukraine-make-long-range-missiles-by-sharing-classified-tech-information",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-08-25T05:14:03.000Z",
+      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/7017x4680+0+0/resize/7017x4680!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F5a%2Fe6%2Fc008b1ab4557b84820118a7c7bf7%2Fap26236633973837.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "9614013c0db0",
       "title": "Turkish envoy applauds US removal of Syria from 'terrorism list'",
@@ -17,6 +33,22 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "79bef6570255",
+      "title": "Canadians do not seek a trade war – but neither will we be bullied by Donald Trump | Jen Gerson",
+      "summary": "A fundamental rupture in the values that have united North America is not a problem that can be wished away: this is a warning to the western alliance The Canadians are exceedingly angry. I realise this can sometimes be difficult for foreigners to deduce,…",
+      "url": "https://www.theguardian.com/commentisfree/2026/aug/25/canadians-trade-war-bullied-donald-trump-alliance-rupture",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-25T05:00:48.000Z",
+      "image": "https://i.guim.co.uk/img/media/ee0b0e73423609d13ac36fa5f33d1c9a8f09e673/135_0_2500_2000/master/2500.jpg?width=700&quality=85&auto=format&fit=max&s=a09b4dd580bd99459a5f66b1babab0d9",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -86,7 +118,7 @@
     {
       "id": "e3ea0ac51d91",
       "title": "Mideast live: Oil tanker struck by projectile in Strait of Hormuz off Oman",
-      "summary": "An oil tanker was struck by a projectile in the Strait of Hormuz off the coast of Oman, causing damage but no casualties, the the United Kingdom Maritime Trade Operations (UKMTO) said early Tuesday. Follow our liveblog for the latest updates.",
+      "summary": "An oil tanker was struck by a projectile in the Strait of Hormuz off the coast of Oman, causing damage but no casualties, the the United Kingdom Maritime Trade Operations (UKMTO) said early Tuesday. Tehran has imposed an effective blockade of the strait since…",
       "url": "https://www.france24.com/en/middle-east/20260825-mideast-live-oil-tanker-struck-by-projectile-in-strait-of-hormuz-off-oman",
       "publisher": "France 24",
       "publisherHome": "https://www.france24.com/en",
@@ -503,22 +535,6 @@
       "weight": 2
     },
     {
-      "id": "cb9d46fa0256",
-      "title": "Hegseth says US not ruling out military force against Iran",
-      "summary": "Hegseth says US not ruling out military force against Iran US Defense Secretary Pete Hegseth said on Monday that President Donald Trump's administration was not ruling out using further military force against Iran, even as Washington unveiled an \"economic…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/hegseth-says-us-not-ruling-out-military-force-against-iran",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-24T19:58:23.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "824ada4ff073",
       "title": "The Mecca Pact: What Do We Actually Know?",
       "summary": "There are few concrete details available about the joint defense agreement between Pakistan, Saudi Arabia, and Turkiye.",
@@ -916,22 +932,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "51c55f6bcd3e",
-      "title": "US unveils expanded sanctions aimed at Iran's 'economic asphyxiation'",
-      "summary": "The US on Monday announced an expansion of secondary sanctions it hopes will \"sever every economic lifeline\" ​that sustains ‌Iran, Treasury Secretary Scott Bessent said at a press conference. The expanded sanctions target Iran's digital assets, technology,…",
-      "url": "https://www.france24.com/en/middle-east/20260824-us-unveils-fresh-sanctions-to-sever-every-economic-lifeline-sustaining-iran",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-24T13:27:10.000Z",
-      "image": "https://s.france24.com/media/display/552900fe-9ff4-11f1-9dfb-005056bfb2b6/w:1024/p:16x9/348da3527c6d3d2c0b2149d797c9ea9560ee6767.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -2245,22 +2245,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "91d60e0f45a7",
-      "title": "Top Iran official says U.S. focus on economic warfare shows it has failed militarily",
-      "summary": "The Iranian regime has dismissed President Trump's threats to crush Iran economically, saying that years of U.S. sanctions have failed.",
-      "url": "https://www.npr.org/2026/08/21/nx-s1-5940610/iran-us-threat-economic-warfare",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-21T11:42:10.000Z",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fce%2F1d%2Fd4b7c00c49eb8088a4e7decd6ac0%2Fap26232551199754.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
