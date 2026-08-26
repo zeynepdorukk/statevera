@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-26T11:52:50.786Z",
+  "generatedAt": "2026-08-26T12:25:39.216Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "a2bc3b1fdee8",
+      "title": "Trump’s ‘economic D-Day’ tests Iran’s trading ties across the region",
+      "summary": "Trump’s ‘economic D-Day’ tests Iran’s trading ties across the region Submitted by Zahra Ladha on Tue, 08/25/2026 - 09:48 US sanctions deepen Iran’s economic crisis as Tehran threatens retaliation and regional escalation A drone view shows vessels in the…",
+      "url": "https://www.middleeasteye.net/news/trump-economic-d-day-tests-iran-trading-ties-region",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-26T12:23:41.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "34ec419ac794",
+      "title": "Would Wartime Elections Save Democracy or End It?",
+      "summary": "Welcome to The Ukraine Compass, a weekly digest of Ukrainian commentary and analysis from across the political spectrum, only for War on the Rocks members. Each Monday, we bring you a curated selection of articles from Ukrainian media offering insight into…",
+      "url": "https://warontherocks.com/46430/",
+      "publisher": "War on the Rocks",
+      "publisherHome": "https://warontherocks.com",
+      "sourceId": "war-on-the-rocks",
+      "publishedAt": "2026-08-26T12:00:53.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 3
+    },
     {
       "id": "a7b101270110",
       "title": "Zambia after the polls: A test for democracy in Africa",
@@ -325,22 +357,6 @@
       "weight": 2
     },
     {
-      "id": "246416b270b5",
-      "title": "Trump threatens Iran’s partners: How do secondary sanctions work?",
-      "summary": "The US has used threats of secondary sanctions, whereby countries trading with a sanctioned country also face sanctions.",
-      "url": "https://www.aljazeera.com/economy/2026/8/26/trump-threatens-irans-partners-how-do-secondary-sanctions-work?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-26T07:18:07.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "8703a43c1dcf",
       "title": "With no friends left to burn, Trump is running out of diplomatic ammunition | Rafael Behr",
       "summary": "Everyone can see that the Iran war has been a strategic disaster for the US, while a failing president pretends he is winning Now is the twilight of Donald Trump’s supremacy. The US is still the richest and most heavily armed nation on Earth. That status is…",
@@ -483,22 +499,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "25ffeaf260da",
-      "title": "Two Dan Sullivans to appear on Alaska’s US Senate ballot in November’s midterm elections",
-      "summary": "The incumbent senator Dan S Sullivan has condemned ex-school teacher Dan J Sullivan, claiming he is running at the behest of Democrats to confuse supporters Republican senator Dan S Sullivan will be joined on the November ballot in Alaska by a challenger with…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/26/alaska-dan-sullivan-senate",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-26T04:48:55.000Z",
-      "image": "https://i.guim.co.uk/img/media/88e3fc7e92aa3d3c10e538940c2b62cd600844dd/0_0_1500_1200/master/1500.jpg?width=700&quality=85&auto=format&fit=max&s=91211943ed7c0b01b62be7c35c8ef949",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -1027,8 +1027,8 @@
       "summary": "Announcement of tariffs on $20bn worth of US goods follows through on Mark Carney's vow to match US tariffs 'dollar for dollar' Continue reading...",
       "url": "https://www.theguardian.com/world/video/2026/aug/25/canada-tariffs-us-goods-mark-carney",
       "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/business/economics",
-      "sourceId": "guardian-economics",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
       "publishedAt": "2026-08-25T16:39:26.000Z",
       "image": "https://i.guim.co.uk/img/media/6a697afb3cca64dd9d6a07a36783b24b4df59627/317_0_3173_2538/master/3173.jpg?width=700&quality=85&auto=format&fit=max&s=714c73f9548d73edf92be6c6e0f35cac",
       "imageWidth": 700,
@@ -2208,22 +2208,6 @@
       "weight": 3
     },
     {
-      "id": "515cc1be6f0f",
-      "title": "Zambia courts sealed off as election petition deadline looms",
-      "summary": "Preparations for President Hakainde Hichilema's second inauguration appear to be continuing.",
-      "url": "https://www.bbc.co.uk/news/articles/cgrvjn88rxqo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/africa",
-      "sourceId": "bbc-africa",
-      "publishedAt": "2026-08-24T14:02:17.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/ef6d/live/b2d751d0-9fa2-11f1-a83c-33ebef033ca4.jpg",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
       "id": "2a43bb3f23e3",
       "title": "Command and Politics in the War Between Moscow and Kyiv",
       "summary": "Our intrepid team covers a lot of ground in this episode: the increasing fluidity of the battlefield, drones and air defense, the biting Black Sea campaign, the causes and aftermath of the firing of Ukraine’s popular defense minister, why Ukraine probably…",
@@ -3294,22 +3278,6 @@
       "categoryConfidence": "high",
       "region": "Turkey",
       "weight": 2
-    },
-    {
-      "id": "8b9b03a18e38",
-      "title": "Contested Logistics and the “Last Unmanned Mile”",
-      "summary": "In a Pacific war, the U.S. military cannot assume uncontested access to its depots and supply lines for munitions, spare parts, food, water, and energy. Jonathan is joined by David Tuttle (Rune Technologies), Paul Lwin (HavocAI), and Tom Garvey (CACI) to…",
-      "url": "https://warontherocks.com/cogs-of-war/contested-logistics-and-the-last-unmanned-mile/",
-      "publisher": "War on the Rocks",
-      "publisherHome": "https://warontherocks.com",
-      "sourceId": "war-on-the-rocks",
-      "publishedAt": "2026-08-19T08:00:58.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Global",
-      "weight": 3
     },
     {
       "id": "10e9a93eba5c",

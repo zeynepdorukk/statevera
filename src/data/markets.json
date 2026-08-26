@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T11:53:02.000Z",
+  "updatedAt": "2026-08-26T12:25:50.000Z",
   "quotes": [
     {
       "id": "spx",
@@ -36,20 +36,20 @@
       "label": "STOXX",
       "symbol": "^STOXX50E",
       "decimals": 2,
-      "price": 6475.23,
-      "change": 19.599999999999454,
-      "percent": 0.303610956637841,
-      "updatedAt": "2026-08-26T11:38:00.000Z"
+      "price": 6484.17,
+      "change": 28.539999999999964,
+      "percent": 0.44209472971654146,
+      "updatedAt": "2026-08-26T12:10:45.000Z"
     },
     {
       "id": "ftse",
       "label": "FTSE",
       "symbol": "^FTSE",
       "decimals": 2,
-      "price": 10875.04,
-      "change": -11.119999999998981,
-      "percent": -0.10214804853133687,
-      "updatedAt": "2026-08-26T11:38:02.000Z"
+      "price": 10891.08,
+      "change": 4.920000000000073,
+      "percent": 0.04519499988976896,
+      "updatedAt": "2026-08-26T12:10:47.000Z"
     },
     {
       "id": "n225",
@@ -66,10 +66,10 @@
       "label": "BIST100",
       "symbol": "XU100.IS",
       "decimals": 2,
-      "price": 14692.57,
-      "change": 219.14999999999964,
-      "percent": 1.5141549129369536,
-      "updatedAt": "2026-08-26T11:38:01.000Z"
+      "price": 14696.94,
+      "change": 223.52000000000044,
+      "percent": 1.54434819137426,
+      "updatedAt": "2026-08-26T12:10:50.000Z"
     },
     {
       "id": "hsi",
@@ -106,30 +106,30 @@
       "label": "BRENT",
       "symbol": "BZ=F",
       "decimals": 2,
-      "price": 85.37,
-      "change": -1.8999999999999915,
-      "percent": -2.1771513693136146,
-      "updatedAt": "2026-08-26T11:42:56.000Z"
+      "price": 85.38,
+      "change": -1.8900000000000006,
+      "percent": -2.165692677896185,
+      "updatedAt": "2026-08-26T12:14:14.000Z"
     },
     {
       "id": "gold",
       "label": "GOLD",
       "symbol": "GC=F",
       "decimals": 2,
-      "price": 4674.2,
-      "change": -20.300000000000182,
-      "percent": -0.4324209180956477,
-      "updatedAt": "2026-08-26T11:42:55.000Z"
+      "price": 4680.7,
+      "change": -13.800000000000182,
+      "percent": -0.29396101821280607,
+      "updatedAt": "2026-08-26T12:15:49.000Z"
     },
     {
       "id": "wti",
       "label": "WTI",
       "symbol": "CL=F",
       "decimals": 2,
-      "price": 80.37,
-      "change": -1.9899999999999949,
-      "percent": -2.416221466731417,
-      "updatedAt": "2026-08-26T11:43:01.000Z"
+      "price": 80.45,
+      "change": -1.9099999999999966,
+      "percent": -2.3190869354055326,
+      "updatedAt": "2026-08-26T12:15:49.000Z"
     },
     {
       "id": "copper",
@@ -139,37 +139,37 @@
       "price": 6.7925,
       "change": -0.022999999999999687,
       "percent": -0.3374660699875238,
-      "updatedAt": "2026-08-26T11:42:51.000Z"
+      "updatedAt": "2026-08-26T12:15:49.000Z"
     },
     {
       "id": "usdtry",
       "label": "USD/TRY",
       "symbol": "USDTRY=X",
       "decimals": 2,
-      "price": 48.032,
-      "change": -0.04660000000000508,
-      "percent": -0.09692461926929045,
-      "updatedAt": "2026-08-26T11:53:02.000Z"
+      "price": 48.1122,
+      "change": 0.03359999999999985,
+      "percent": 0.06988556239158347,
+      "updatedAt": "2026-08-26T12:25:50.000Z"
     },
     {
       "id": "eurusd",
       "label": "EUR/USD",
       "symbol": "EURUSD=X",
       "decimals": 4,
-      "price": 1.167,
-      "change": -0.0004999999999999449,
-      "percent": -0.042826552462522045,
-      "updatedAt": "2026-08-26T11:52:04.000Z"
+      "price": 1.1675,
+      "change": 0,
+      "percent": 0,
+      "updatedAt": "2026-08-26T12:25:04.000Z"
     },
     {
       "id": "usdjpy",
       "label": "USD/JPY",
       "symbol": "JPY=X",
       "decimals": 2,
-      "price": 159.112,
-      "change": -0.08799999999999386,
-      "percent": -0.05527638190954389,
-      "updatedAt": "2026-08-26T11:53:02.000Z"
+      "price": 158.984,
+      "change": -0.21599999999997976,
+      "percent": -0.1356783919597863,
+      "updatedAt": "2026-08-26T12:25:50.000Z"
     },
     {
       "id": "us10y",
