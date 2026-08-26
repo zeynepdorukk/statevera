@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-08-26T15:57:05.505Z",
+  "generatedAt": "2026-08-26T16:43:16.525Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "f6410decfa46",
+      "title": "Trump claims CIA director’s surprise visit to Russia is ‘semi-routine’ despite mounting speculation – live",
+      "summary": "Trump administration had not formally announced John Ratcliffe’s trip, but various outlets captured the flight tracking data of the US jet and the Kremlin confirmed the meeting Darline Graham wins Republican primary for US Senate Sign up for the US Breaking…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/26/darline-graham-lindsey-south-carolina-gop-post-office-voting-senate-midterms-donald-trump-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-26T16:16:04.000Z",
+      "image": "https://i.guim.co.uk/img/media/e66edc19b728a7261335a6e44effd53ffbc38bcc/264_0_2697_2160/master/2697.jpg?width=700&quality=85&auto=format&fit=max&s=cb30870525df0f31787ad3d220491103",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "e1b452e214b2",
+      "title": "Only sanctions imposed on Israel will work | Letter",
+      "summary": "The UK’s response to flagrant breaches of international law is pathetic, writes Bernie Evans , and sanctions against a few individuals have no effect How long does it take for the penny to drop in Downing Street and the Foreign Office ( Israel’s Ben-Gvir…",
+      "url": "https://www.theguardian.com/world/2026/aug/26/only-sanctions-imposed-on-israel-will-work",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/middleeast",
+      "sourceId": "guardian-mideast",
+      "publishedAt": "2026-08-26T16:06:20.000Z",
+      "image": "https://i.guim.co.uk/img/media/1ee39c9942a39d03cba7f936eaa4c0b3cb302439/750_0_3750_3000/master/3750.jpg?width=700&quality=85&auto=format&fit=max&s=7727173eed7edee07790a08cabf529c5",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "a49b331ef8a9",
+      "title": "French presidential hopeful Attal sees life at Elysée Palace with romantic partner Séjourné",
+      "summary": "Spokespersons for both Séjourné and Attal declined to comment on a potential conflict of interest.",
+      "url": "https://www.politico.eu/article/france-gabriel-attal-stephane-sejourne-relationship-2027-presidential-election/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+      "publisher": "POLITICO Europe",
+      "publisherHome": "https://www.politico.eu",
+      "sourceId": "politico-eu",
+      "publishedAt": "2026-08-26T16:06:17.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
     {
       "id": "e3a28826466a",
       "title": "Iran’s nuclear chief says attacked nuclear sites not secure for IAEA inspection",
@@ -17,22 +65,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "f6410decfa46",
-      "title": "Trump claims CIA director’s surprise visit to Russia is ‘semi-routine’ despite mounting speculation – live",
-      "summary": "Trump administration had not formally announced John Ratcliffe’s trip, but various outlets captured the flight tracking data of the US jet and the Kremlin confirmed the meeting Darline Graham wins Republican primary for US Senate Sign up for the US Breaking…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/26/darline-graham-lindsey-south-carolina-gop-post-office-voting-senate-midterms-donald-trump-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-26T15:31:10.000Z",
-      "image": "https://i.guim.co.uk/img/media/e66edc19b728a7261335a6e44effd53ffbc38bcc/264_0_2697_2160/master/2697.jpg?width=700&quality=85&auto=format&fit=max&s=cb30870525df0f31787ad3d220491103",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -501,22 +533,6 @@
       "weight": 2
     },
     {
-      "id": "4ca742d716cf",
-      "title": "Germany increasingly in the crosshairs of hybrid attacks",
-      "summary": "Chancellor Friedrich Merz said Tuesday that the perpetrators of hybrid attacks against Germany, such as an explosive drone found at an airport, \"will pay for them,\" without naming a target. NATO member Germany – a major supporter of Ukraine in its fight…",
-      "url": "https://www.france24.com/en/video/20260826-germany-increasingly-in-the-crosshairs-of-hybrid-attacks",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-26T10:29:05.000Z",
-      "image": "https://s.france24.com/media/display/3f0d88e4-a12a-11f1-8771-005056a90284/w:1024/p:16x9/EN-20260826-100121-100549-CS.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "d000fd070a43",
       "title": "How Mark Carney’s speeches have become political earthquakes | Ted Widmer",
       "summary": "The quiet-spoken Canadian prime minister has spoken unutterable truths Is it perhaps a sign of the times that Mark Carney , the prime minister of Canada , has become a thrilling orator? A sober banker, he speaks calmly, without many vocal inflections. We…",
@@ -838,23 +854,6 @@
       "categoryConfidence": "medium",
       "region": "Global",
       "weight": 3
-    },
-    {
-      "id": "26ffb05cc3cd",
-      "title": "China denounces 'economic wars' as US starts campaign to cut off Iran",
-      "summary": "",
-      "url": "https://asia.nikkei.com/politics/international-relations/us-china-tensions/china-denounces-economic-wars-as-us-starts-campaign-to-cut-off-iran",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-26T00:57:47.441Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "08dee7554bea",
@@ -2463,22 +2462,6 @@
       "weight": 3
     },
     {
-      "id": "1054512ef7f0",
-      "title": "Centre-left Glucksmann enters French presidential race as left tries to unite",
-      "summary": "French centre-left politician Raphael Glucksmann has announced his candidacy for next year's presidential election, seeking to challenge hard-left leader Jean-Luc Melenchon to lead France's fractured left, as a campaign increasingly dominated by the far right…",
-      "url": "https://www.rfi.fr/en/france/20260824-centre-left-glucksmann-enters-french-presidential-race-as-left-tries-to-unite",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-24T06:18:46.000Z",
-      "image": "https://s.rfi.fr/media/display/f403b9ee-9f22-11f1-8810-005056bfb2b6/w:1024/p:16x9/000-C6C88EV.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "9c870303f441",
       "title": "Airstrikes on Civilians in Rakhine State Will Increase, Say Myanmar Military Defectors",
       "summary": "The military’s intensification of aerial bombing is aimed at defending key townships in the region.",
@@ -2604,22 +2587,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "409f66a54dfd",
-      "title": "DRC and M23 rebels agree on roadmap for peace in eastern Congo",
-      "summary": "The Democratic Republic of Congo government and the M23 rebel group have agreed on a roadmap for peace talks aimed at resolving the protracted conflict in eastern DRC. It marks the latest step in an internationally brokered peace process that has seen the…",
-      "url": "https://www.rfi.fr/en/africa/20260823-drc-and-m23-rebels-agree-on-roadmap-for-peace-in-eastern-congo",
-      "publisher": "RFI",
-      "publisherHome": "https://www.rfi.fr/en",
-      "sourceId": "rfi-world",
-      "publishedAt": "2026-08-23T15:00:52.000Z",
-      "image": "https://s.rfi.fr/media/display/8dd2067c-9ef4-11f1-b3c6-005056bfb2b6/w:1024/p:16x9/AP26177576707008.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Africa",
       "weight": 2
     },
     {
