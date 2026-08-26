@@ -1,8 +1,57 @@
 {
-  "generatedAt": "2026-08-25T23:57:28.025Z",
+  "generatedAt": "2026-08-26T00:57:54.534Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "26ffb05cc3cd",
+      "title": "China denounces 'economic wars' as US starts campaign to cut off Iran",
+      "summary": "",
+      "url": "https://asia.nikkei.com/politics/international-relations/us-china-tensions/china-denounces-economic-wars-as-us-starts-campaign-to-cut-off-iran",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-26T00:57:47.441Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "09c59be0a275",
+      "title": "From Hasan Piker to Jesse Watters, El-Sayed seeks to focus on affordability amid scrutiny from both sides",
+      "summary": "Democratic Senate candidate for Michigan distances himself from Twitch streamer and debates Fox News host The Democratic candidate for Senate in the swing state of Michigan has spent the week trying to keep his affordability message front and center as…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/25/abdul-el-sayed-criticism-affordability-message",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-26T00:42:14.000Z",
+      "image": "https://i.guim.co.uk/img/media/1b7dfd5ffc5f751dfd85cb5204c68faffb11c75e/539_0_5388_4313/master/5388.jpg?width=700&quality=85&auto=format&fit=max&s=855863034cde721ceda10bdde3debd88",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "e3f8ced46784",
+      "title": "Canada announces up to 50% retaliatory tariffs on hundreds of US goods including steel, fish, cheese and paper – live",
+      "summary": "Move by Canada comes after US president spent morning railing against the country, calling it the ‘most difficult’ nation he deals with Canada announces retaliatory tariffs on wide range of US goods Sign up for the US Breaking News email On Truth Social,…",
+      "url": "https://www.theguardian.com/us-news/live/2026/aug/25/donald-trump-tariffs-canada-midterms-primary-south-carolina-iran-ukraine-voting-rights-latest-news-updates",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-08-26T00:30:59.000Z",
+      "image": "https://i.guim.co.uk/img/media/48d735ee2b3222679bddc97b3e2f988db75f0c87/512_0_5132_4105/master/5132.jpg?width=700&quality=85&auto=format&fit=max&s=454d691fb875f73f5e52350f6c6ba07b",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
     {
       "id": "08dee7554bea",
       "title": "‘So hacked off’: as election nears, New Zealanders despair at the main parties – and Opportunity knocks",
@@ -17,22 +66,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "e3f8ced46784",
-      "title": "Canada announces up to 50% retaliatory tariffs on hundreds of US goods including steel, fish, cheese and paper – live",
-      "summary": "Move by Canada comes after US president spent morning railing against the country, calling it the ‘most difficult’ nation he deals with Canada announces retaliatory tariffs on wide range of US goods Sign up for the US Breaking News email On Truth Social,…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/25/donald-trump-tariffs-canada-midterms-primary-south-carolina-iran-ukraine-voting-rights-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-25T23:17:34.000Z",
-      "image": "https://i.guim.co.uk/img/media/48d735ee2b3222679bddc97b3e2f988db75f0c87/512_0_5132_4105/master/5132.jpg?width=700&quality=85&auto=format&fit=max&s=454d691fb875f73f5e52350f6c6ba07b",
-      "imageWidth": 700,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -551,22 +584,6 @@
       "weight": 2
     },
     {
-      "id": "70cd724d2180",
-      "title": "Syria’s economy poised for improvement after US sanctions removal",
-      "summary": "Removal of US sanctions offers Syria a chance to fully rejoin the global financial system after years of isolation.",
-      "url": "https://www.aljazeera.com/news/2026/8/25/syrias-economy-poised-for-improvement-after-us-sanctions-removal?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T18:43:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "f79681f541e1",
       "title": "Japan wholesale power prices set to surge 40% on LNG costs, IEA forecasts",
       "summary": "",
@@ -726,22 +743,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "29a57ef4fc0f",
-      "title": "Netanyahu says Unrwa raid carried out in accordance with law, Ben Gvir says UN agency 'in our hands'",
-      "summary": "Netanyahu says Unrwa raid carried out in accordance with law, Ben Gvir says UN agency 'in our hands' Israeli Prime Minister Benjamin Netanyahu said that the \"evacuation\" of a United Nations Relief and Works Agency for Palestine Refugees (Unrwa) facility in…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/netanyahu-says-unwra-raid-carried-out-accordance-law-ben-gvir-says-unwra",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-25T16:55:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -3515,6 +3516,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "24ce8ee06961",
+      "title": "China, Chile pledge to strengthen cooperation as foreign ministers meet in Beijing",
+      "summary": "- Wang Yi says Beijing ready to work with Chile’s new government to deepen practical cooperation",
+      "url": "https://www.aa.com.tr/en/asia-pacific/china-chile-pledge-to-strengthen-cooperation-as-foreign-ministers-meet-in-beijing/4031957",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-19T15:02:51.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
       "weight": 2
     }
   ]
