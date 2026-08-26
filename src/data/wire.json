@@ -1,8 +1,24 @@
 {
-  "generatedAt": "2026-08-26T02:23:00.982Z",
+  "generatedAt": "2026-08-26T03:29:55.170Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "6ec3ab711c73",
+      "title": "Lindsey Graham's sister wins. The War Party wins. We lose, again.",
+      "summary": "Darline Graham won the Republican primary Tuesday and will likely win a full-term to fill her late brother Lindsey Graham’s U.S. Senate seat in the ruby red state of South Carolina in the upcoming November election. According to the latest tallies Tuesday…",
+      "url": "https://responsiblestatecraft.org/lindsey-graham-sister-wins/",
+      "publisher": "Responsible Statecraft",
+      "publisherHome": "https://responsiblestatecraft.org",
+      "sourceId": "responsible-statecraft",
+      "publishedAt": "2026-08-26T02:48:06.000Z",
+      "image": "https://responsiblestatecraft.org/media-library/darline-graham.jpg?id=67676817&width=980",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 3
+    },
     {
       "id": "318fe325a9a0",
       "title": "Ukraine war briefing: Small batch of Patriots arrives as Zelenskyy pleads for more",
@@ -52,22 +68,6 @@
       "weight": 2
     },
     {
-      "id": "e3f8ced46784",
-      "title": "Trump endorsement helps boost Darline Graham in South Carolina primary to replace her late brother in US Senate – as it happened",
-      "summary": "This live blog is now closed. South Carolina chooses Darline Graham as Republican nominee for US Senate Sign up for the US Breaking News email On Truth Social, however, the president shot down assertions that the US talks with Canada collapsed in part due a…",
-      "url": "https://www.theguardian.com/us-news/live/2026/aug/25/donald-trump-tariffs-canada-midterms-primary-south-carolina-iran-ukraine-voting-rights-latest-news-updates",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-26T01:59:47.000Z",
-      "image": "https://i.guim.co.uk/img/media/520e2f2d26a6fbd0c991abe4e8ec356cb50122b9/570_0_6236_4990/master/6236.jpg?width=700&quality=85&auto=format&fit=max&s=d56f54719ce8c9a0cbeb20b765f04552",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "a0301a3d731e",
       "title": "Australia wanted more US missiles. The Iran war risks making them harder to get.",
       "summary": "Canberra is racing to build its own munitions industry as analysts warn U.S. weapons deliveries to allies could face delays.",
@@ -79,22 +79,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "c4b813e0cde4",
-      "title": "Australia news live: inflation eases less than expected, making rate rise likelier; NT MP Luke Gosling stands aside as envoy",
-      "summary": "Follow updates live Get our breaking news email , free app or daily news podcast Angela Jackson, the commissioner of the Productivity Commission, said the body stands by the interim report into the GST, which found the deal with Western Australia to be a…",
-      "url": "https://www.theguardian.com/australia-news/live/2026/aug/26/national-cabinet-datacentres-cpi-inflation-data-politics-reactions-anthony-albansese-labor-angus-taylor-coalition-ntwnfb",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/world",
-      "sourceId": "guardian-world",
-      "publishedAt": "2026-08-26T01:52:55.000Z",
-      "image": "https://i.guim.co.uk/img/media/5d521bcc799c2e63b28d2fd18aeb1479f18f8e06/98_0_3737_2991/master/3737.jpg?width=700&quality=85&auto=format&fit=max&s=15483d7701fbf00c7d09fe1d1bbbe3f2",
-      "imageWidth": 700,
-      "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
@@ -600,22 +584,6 @@
       "weight": 2
     },
     {
-      "id": "1f1a6d4ce3d9",
-      "title": "India police clash with protesters a month after Gen Z demonstrations",
-      "summary": "Police used water cannons and batons as a few thousand protesters broke through security barricades in Bihar's capital.",
-      "url": "https://www.aljazeera.com/news/2026/8/25/india-police-clash-with-protesters-a-month-after-gen-z-demonstrations?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T19:24:43.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
       "id": "9851feddd961",
       "title": "Iran foreign minister holds talks with Pakistani, Qatari officials",
       "summary": "Iran foreign minister holds talks with Pakistani, Qatari officials Iran’s Foreign Minister Abbas Araghchi has held separate phone conversations with Pakistan army chief Asim Munir and Qatari Prime Minister and Minister of Foreign Affairs Mohammed bin…",
@@ -727,22 +695,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "992916d4a5a9",
-      "title": "The trade war came too soon for Mark Carney’s middle powers alliance",
-      "summary": "The Canadian prime minister called for pro-trade democracies to resist great-power coercion together. Seven months later, he is largely fighting Trump alone.",
-      "url": "https://www.politico.eu/article/trade-war-mark-carney-middle-powers-alliance/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-25T17:12:38.000Z",
-      "image": "https://www.politico.eu/wp-content/uploads/2026/06/19/GettyImages-2266661139-1024x683.jpg",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -1063,22 +1015,6 @@
       "category": "Economy",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "e3ea0ac51d91",
-      "title": "🔴 Mideast live: Trump says Strait of Hormuz demined, warns of ‘zero tolerance’ for new mines",
-      "summary": "",
-      "url": "https://www.france24.com/en/middle-east/20260825-mideast-live-oil-tanker-struck-by-projectile-in-strait-of-hormuz-off-oman",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-25T15:02:45.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     },
     {
@@ -3390,22 +3326,6 @@
       "weight": 2
     },
     {
-      "id": "e43626397f85",
-      "title": "Houthis may meet their match as Yemen slips back into civil war",
-      "summary": "Yemen’s front lines have barely moved since the 2022 truce, but the war around them is changing. Ballistic missiles and drones are striking far beyond established positions, and forces associated with the internationally recognized, Saudi-backed government…",
-      "url": "https://responsiblestatecraft.org/yemen-war/",
-      "publisher": "Responsible Statecraft",
-      "publisherHome": "https://responsiblestatecraft.org",
-      "sourceId": "responsible-statecraft",
-      "publishedAt": "2026-08-20T04:05:01.000Z",
-      "image": "https://responsiblestatecraft.org/media-library/houthi-missle-strikes-in-mokha-yemen.jpg?id=67645116&width=980",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 3
-    },
-    {
       "id": "e335a2f2f6ca",
       "title": "Inside Iran’s Wartime Regime",
       "summary": "Afshon Ostovar, one of the leading experts on Iran and the host of the members-only podcast The Iran Reckoning, is joined by War on the Rocks membership editor Kerry Anderson for a state-of-play conversation on the conflict between the United States and Iran.…",
@@ -3532,6 +3452,70 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 2
+    },
+    {
+      "id": "9a72c004d5e4",
+      "title": "Germany stands by International Criminal Court president as US steps up sanctions",
+      "summary": "Berlin criticizes latest US sanctions against ICC, warns against undermining court's vital work in prosecuting crimes against humanity",
+      "url": "https://www.aa.com.tr/en/europe/germany-stands-by-international-criminal-court-president-as-us-steps-up-sanctions/4031737",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-19T12:25:37.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "ac254bdea18c",
+      "title": "Turkish president, Japanese premier discuss bilateral ties, regional and global issues",
+      "summary": "In phone call, Turkish President Erdogan says negotiations only way to resolve Iran-US conflict, adds Türkiye supports diplomatic efforts for peace",
+      "url": "https://www.aa.com.tr/en/politics/turkish-president-japanese-premier-discuss-bilateral-ties-regional-and-global-issues/4031602",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-19T10:54:17.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Turkey",
+      "weight": 2
+    },
+    {
+      "id": "8b9b03a18e38",
+      "title": "Contested Logistics and the “Last Unmanned Mile”",
+      "summary": "In a Pacific war, the U.S. military cannot assume uncontested access to its depots and supply lines for munitions, spare parts, food, water, and energy. Jonathan is joined by David Tuttle (Rune Technologies), Paul Lwin (HavocAI), and Tom Garvey (CACI) to…",
+      "url": "https://warontherocks.com/cogs-of-war/contested-logistics-and-the-last-unmanned-mile/",
+      "publisher": "War on the Rocks",
+      "publisherHome": "https://warontherocks.com",
+      "sourceId": "war-on-the-rocks",
+      "publishedAt": "2026-08-19T08:00:58.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Global",
+      "weight": 3
+    },
+    {
+      "id": "a3364196db99",
+      "title": "Managed Instability: Why the Wars Against Iran and Ukraine Can Go On and On and On…",
+      "summary": "The Iran war is beginning to resemble the Ukraine war in one important way. Operationally, the wars themselves are still very different — Ukraine is a large-scale ground invasion, while the Iran war is not there just yet. But their political logic after a…",
+      "url": "https://warontherocks.com/managed-instability-why-the-wars-against-iran-and-ukraine-can-go-on-and-on-and-on/",
+      "publisher": "War on the Rocks",
+      "publisherHome": "https://warontherocks.com",
+      "sourceId": "war-on-the-rocks",
+      "publishedAt": "2026-08-19T07:30:50.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "source",
+      "region": "Global",
+      "weight": 3
     }
   ]
 }
