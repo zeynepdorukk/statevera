@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-08-26T12:25:39.216Z",
+  "generatedAt": "2026-08-26T13:31:27.753Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "157d64075477",
+      "title": "Iran-Oman Hormuz agreement not yet finalised: Iranian source",
+      "summary": "Iran-Oman Hormuz agreement not yet finalised: Iranian source Iran and Oman are still finalising an agreement on shares of the Strait of Hormuz and its revenues, Reuters is reporting, citing a senior Iranian source. According to the source, the countries are…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-oman-hormuz-agreement-not-yet-finalised-iranian-source",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-26T13:07:22.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "89bd1f4efd05",
+      "title": "Migrant shopkeepers in Germany close stores to protest AfD’s mass deportation plans",
+      "summary": "Business owners in Magdeburg shut stores ahead of Saxony-Anhalt’s Sept. 6 election, saying racism, deportation rhetoric threaten democratic society",
+      "url": "https://www.aa.com.tr/en/europe/migrant-shopkeepers-in-germany-close-stores-to-protest-afd-s-mass-deportation-plans/4038108",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-26T12:44:52.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
     {
       "id": "a2bc3b1fdee8",
       "title": "Trump’s ‘economic D-Day’ tests Iran’s trading ties across the region",
@@ -15,6 +47,22 @@
       "image": "",
       "imageWidth": 0,
       "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "222eb15abae7",
+      "title": "China's President Xi to hold talks with Egyptian counterpart in Cairo",
+      "summary": "The two are expected to exchange views on bilateral ties and ⁠international ​and regional issues of ​common concern.",
+      "url": "http://www.africanews.com/2026/08/26/chinas-president-xi-to-hold-talks-with-egyptian-counterpart-in-cairo/",
+      "publisher": "Africanews",
+      "publisherHome": "https://www.africanews.com/",
+      "sourceId": "africanews",
+      "publishedAt": "2026-08-26T12:20:29.000Z",
+      "image": "http://images.euronews.com/articles/stories/09/88/94/52/640x360_cmsv2_126a2b5d-3f32-5322-853c-817c570bb17d-9889452.jpg?1787736865",
+      "imageWidth": 0,
+      "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Middle East",
       "weight": 2
@@ -261,22 +309,6 @@
       "weight": 2
     },
     {
-      "id": "389743171d4c",
-      "title": "Abortion rights group endorses Democrat Troy Jackson in critical Maine Senate race",
-      "summary": "Reproductive Freedom for All – one of the country’s oldest pro-choice groups – backs Jackson in his fight against Republican Susan Collins One of the oldest abortion rights groups in the US is endorsing Troy Jackson, the Democratic nominee in Maine’s critical…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/26/abortion-rights-group-endorses-democrat-troy-jackson-in-critical-maine-senate-race",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-26T09:30:39.000Z",
-      "image": "https://i.guim.co.uk/img/media/6e6b61a6cd9fcc54617aa9cd03cadbb01e8c1129/250_0_2501_2000/master/2501.jpg?width=700&quality=85&auto=format&fit=max&s=9173608b9275905e1c6c5182d5515d7c",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
       "id": "f1f5dde9d5e4",
       "title": "Far-right Israeli lawmaker damages Palestinian memorial with sledgehammer",
       "summary": "Zvi Sukkot's actions have drawn widespread condemnation, including from Israeli Prime Minister Benjamin Netanyahu.",
@@ -290,38 +322,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "5e7b333a600a",
-      "title": "US Army Black Hawk helicopter crashes in Colorado",
-      "summary": "A US Army Black Hawk helicopter crashed after an unplanned landing in Colorado.",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/26/us-army-black-hawk-helicopter-crashes-in-colorado?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-26T07:47:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "ece5b3e86cc1",
-      "title": "Trump scores much-needed double primary victory in South Carolina, Oklahoma",
-      "summary": "US President Donald Trump scored two badly needed victories Tuesday as his preferred candidates in South Carolina and Oklahoma won the Republican runoffs. The sweep interrupts a bruising run for Trump, whose endorsed candidates had lost 10 Republican contests…",
-      "url": "https://www.france24.com/en/americas/20260826-trump-scores-much-needed-double-primary-victory-in-south-carolina-oklahoma",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-26T07:41:24.000Z",
-      "image": "https://s.france24.com/media/display/db34251e-a118-11f1-b2b9-005056bf30b7/w:1024/p:16x9/AP26234036426142.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "medium",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -339,22 +339,6 @@
       "categoryConfidence": "medium",
       "region": "Middle East",
       "weight": 3
-    },
-    {
-      "id": "13d7cb81cb8c",
-      "title": "The RSF’s defeat will not end Sudan’s war but merely fragment it",
-      "summary": "Sudanese army's battlefield gains rely on an armed coalition it may struggle to control once the common enemy is gone.",
-      "url": "https://www.aljazeera.com/opinions/2026/8/26/the-rsfs-defeat-will-not-end-sudans-war-but-merely-fragment-it?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-26T07:26:45.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Africa",
-      "weight": 2
     },
     {
       "id": "8703a43c1dcf",
@@ -437,22 +421,6 @@
       "weight": 2
     },
     {
-      "id": "ad662ba03647",
-      "title": "Five commodity vessels transited Hormuz Strait on Tuesday",
-      "summary": "Five commodity vessels transited Hormuz Strait on Tuesday Preliminary shipping data from Kpler showed that only five commodity vessels transited the Strait of Hormuz on Tuesday, with traffic remaining well below the 10-day average of 15. The vessels…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/five-commodity-vessels-transited-hormuz-strait-tuesday",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-26T05:56:17.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "218cec791ca3",
       "title": "Geopolitical risks bring out our strengths: Mitsubishi Corp. chief",
       "summary": "",
@@ -499,6 +467,22 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "25ffeaf260da",
+      "title": "Dan Sullivan v Dan Sullivan: officials confirm challenger will join senator on Alaska midterms ballot",
+      "summary": "The incumbent senator Dan S Sullivan has condemned ex-school teacher Dan J Sullivan, claiming he is running at the behest of Democrats to confuse supporters Dan S Sullivan, the Republican senator, will be joined on the November ballot in Alaska by a…",
+      "url": "https://www.theguardian.com/us-news/2026/aug/26/alaska-dan-sullivan-senate",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-26T04:48:55.000Z",
+      "image": "https://i.guim.co.uk/img/media/88e3fc7e92aa3d3c10e538940c2b62cd600844dd/0_0_1500_1200/master/1500.jpg?width=700&quality=85&auto=format&fit=max&s=91211943ed7c0b01b62be7c35c8ef949",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
       "weight": 2
     },
     {
@@ -645,22 +629,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "a0301a3d731e",
-      "title": "Australia wanted more US missiles. The Iran war risks making them harder to get.",
-      "summary": "Canberra is racing to build its own munitions industry as analysts warn U.S. weapons deliveries to allies could face delays.",
-      "url": "https://www.politico.com/news/2026/08/25/australia-wanted-more-us-missiles-the-iran-war-may-make-them-harder-to-get-01048703?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-26T01:55:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -1936,22 +1904,6 @@
       "weight": 2
     },
     {
-      "id": "f7e549326145",
-      "title": "6 months on, U.S. Navy families who evacuated Bahrain remain in limbo",
-      "summary": "When the U.S.-Iran war began, more than 1,000 dependents of U.S. Navy personnel in Bahrain were ordered to evacuate. After six months in temporary conditions, they want to know what the plan is.",
-      "url": "https://www.npr.org/2026/08/24/nx-s1-5943188/six-months-on-u-s-navy-families-who-evacauated-bahrain-remain-in-limbo",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-08-24T22:22:13.000Z",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3402x2722+0+0/resize/3402x2722!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F09%2F8e%2Fcdcdf55840c58c59f6c67c03f089%2Ffifth-fleet-8-24-26.jpg",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "39edcda3c541",
       "title": "Canada wants a deal, but Washington keeps moving the goalposts",
       "summary": "As trade negotiations falter and the possibility of tariffs looms, there is better way forward for Washington and Ottawa—if they choose to take it. The post Canada wants a deal, but Washington keeps moving the goalposts appeared first on Atlantic Council .",
@@ -2173,22 +2125,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "9fb08e3a4484",
-      "title": "Protests erupt in Tunisia after migrant boat sinks",
-      "summary": "The Tunisian city of Ben Guerdane erupted in protest on Saturday night one day after a boat carrying 15 migrants sank off the country's southeastern coast. Protesters blocked roads and set fire to tyres after the news of the shipwreck was announced.",
-      "url": "http://www.africanews.com/2026/08/24/protests-erupt-in-tunisia-after-migrant-boat-sinks/",
-      "publisher": "Africanews",
-      "publisherHome": "https://www.africanews.com/",
-      "sourceId": "africanews",
-      "publishedAt": "2026-08-24T14:45:56.000Z",
-      "image": "http://images.euronews.com/articles/stories/09/88/65/85/640x360_cmsv2_ce94f490-b5c6-5c72-972e-eb6ac09cdf09-9886585.jpg?1787575135",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Africa",
       "weight": 2
     },
     {
@@ -3309,22 +3245,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "83c586fe264b",
-      "title": "US, Emirati presidents discuss bilateral ties, regional developments",
-      "summary": "Call between leaders comes shortly after CENTCOM commander visits US regional allies",
-      "url": "https://www.aa.com.tr/en/politics/us-emirati-presidents-discuss-bilateral-ties-regional-developments/4030756",
-      "publisher": "Anadolu Agency",
-      "publisherHome": "https://www.aa.com.tr/en",
-      "sourceId": "anadolu-politics",
-      "publishedAt": "2026-08-18T14:27:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Turkey",
       "weight": 2
     }
   ]
