@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T08:08:12.573Z",
+  "generatedAt": "2026-08-26T08:59:09.488Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
@@ -11,12 +11,44 @@
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
       "sourceId": "guardian-world",
-      "publishedAt": "2026-08-26T07:43:42.000Z",
+      "publishedAt": "2026-08-26T08:36:30.000Z",
       "image": "https://i.guim.co.uk/img/media/64037b5c9eb8a685718aec69bbbe9544f71291ab/0_4_5716_4573/master/5716.jpg?width=700&quality=85&auto=format&fit=max&s=a703d40df64a9a4d18f65224f3f36f55",
       "imageWidth": 700,
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "f1f5dde9d5e4",
+      "title": "Far-right Israeli lawmaker damages Palestinian memorial with sledgehammer",
+      "summary": "Zvi Sukkot's actions have drawn widespread condemnation, including from Israeli Prime Minister Benjamin Netanyahu.",
+      "url": "https://www.bbc.co.uk/news/articles/c0lrw8325pzo?at_medium=RSS&at_campaign=rss",
+      "publisher": "BBC News",
+      "publisherHome": "https://www.bbc.com/news/world/middle_east",
+      "sourceId": "bbc-mideast",
+      "publishedAt": "2026-08-26T08:17:45.000Z",
+      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/9048/live/7c17f4d0-a126-11f1-b109-879e35c24276.jpg",
+      "imageWidth": 240,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "5e7b333a600a",
+      "title": "US Army Black Hawk helicopter crashes in Colorado",
+      "summary": "A US Army Black Hawk helicopter crashed after an unplanned landing in Colorado.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/26/us-army-black-hawk-helicopter-crashes-in-colorado?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-26T07:47:42.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Global",
       "weight": 2
     },
     {
@@ -520,38 +552,6 @@
       "weight": 2
     },
     {
-      "id": "a8742d56841b",
-      "title": "UK backs US efforts for diplomatic solution on Iran",
-      "summary": "UK backs US efforts for diplomatic solution on Iran British ⁠Finance ⁠Minister John Healey said on Tuesday that the UK supports US efforts to secure a diplomatic ‌solution on Iran and welcomed steps to increase pressure after the US announced expanded…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/uk-backs-us-efforts-diplomatic-solution-iran",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-25T23:07:37.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
-      "id": "70be1d328a23",
-      "title": "Why can’t America agree on what time it is?",
-      "summary": "",
-      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/25/why-cant-america-agree-on-what-time-it-is?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T22:05:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "6e35c154485f",
       "title": "Oil prices fall for second day as US shifts from Iran strikes to sanctions",
       "summary": "Oil prices fell for a second straight day on Tuesday as traders saw a reduced risk of renewed US military strikes on Iran after Washington instead threatened broader economic sanctions. Treasury Secretary Scott Bessent declared an “economic D-Day” against…",
@@ -647,6 +647,22 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
+    },
+    {
+      "id": "62c7afc06fd3",
+      "title": "Mawlid festivities cancelled in Tigray over drone attacks",
+      "summary": "In tonight's programme: Muslims celebrate Mawlid across Africa but festivities are cancelled in Tigray because of recent drone attacks. But first: the United States on Monday called for beefed-up UN sanctions against the warring parties in Sudan. Finally, in…",
+      "url": "https://www.france24.com/en/mawlid-cancelled-in-tigray",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-08-25T20:45:05.000Z",
+      "image": "https://s.france24.com/media/display/bd29bd42-a125-11f1-8100-005056a97e36/w:1024/p:16x9/capture-6640179446a8e9fafcac743-76578674.jpg",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Africa",
+      "weight": 2
     },
     {
       "id": "b06a2a5139fb",
@@ -777,22 +793,6 @@
       "categoryConfidence": "source",
       "region": "Eurasia",
       "weight": 3
-    },
-    {
-      "id": "dceb64c8d26b",
-      "title": "Australia confronts its missile shortfall",
-      "summary": "If you’ve been forwarded this newsletter, you can sign up free here. ESSENTIALS DRIVING THE DAY NATIONAL CABINET: The meeting takes place in the Commonwealth Offices near Circular Quay. Here’s how the debates are set to go. Unity: Second National Plan to End…",
-      "url": "https://www.politico.com/newsletters/canberra-playbook/2026/08/25/australia-confronts-its-missile-shortfall-01022132?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-      "publisher": "POLITICO Europe",
-      "publisherHome": "https://www.politico.eu",
-      "sourceId": "politico-eu",
-      "publishedAt": "2026-08-25T19:38:26.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "f79681f541e1",
@@ -1242,22 +1242,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "3e510a85674d",
-      "title": "‘Not an isolated incident’: Russian drones stalk Ukraine’s civilians in ‘human safaris’",
-      "summary": "The video of a Ukrainian cyclist being targeted and killed by a short-range drone posted – and later deleted – by the Russian military Friday left viewers outraged and shaken. But it’s not the first time that Russian drone operators have been accused of…",
-      "url": "https://www.france24.com/en/europe/20260825-not-an-isolated-incident-russian-drones-stalk-ukraine-civilians-human-safaris",
-      "publisher": "France 24",
-      "publisherHome": "https://www.france24.com/en",
-      "sourceId": "france24",
-      "publishedAt": "2026-08-25T14:27:23.000Z",
-      "image": "https://s.france24.com/media/display/dbdd5588-9fd0-11f1-8b31-005056a97e36/w:1024/p:16x9/main-81.png",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -3181,22 +3165,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "910d737212cb",
-      "title": "US says sanctions will 'squash' Iran's economy and 'collapse' its regime",
-      "summary": "US Treasury Secretary Scott Bessent says allies will need to decide whether they \"are with us or against us\".",
-      "url": "https://www.bbc.co.uk/news/articles/c87n90eg0p2o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/middle_east",
-      "sourceId": "bbc-mideast",
-      "publishedAt": "2026-08-20T19:52:48.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/f685/live/690551d0-9cc6-11f1-a5cd-a14170183a2c.png",
-      "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
