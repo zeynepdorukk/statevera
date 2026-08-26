@@ -1,8 +1,41 @@
 {
-  "generatedAt": "2026-08-26T05:22:15.426Z",
+  "generatedAt": "2026-08-26T05:56:12.145Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "218cec791ca3",
+      "title": "Geopolitical risks bring out our strengths: Mitsubishi Corp. chief",
+      "summary": "",
+      "url": "https://asia.nikkei.com/editor-s-picks/interview/geopolitical-risks-bring-out-our-strengths-mitsubishi-corp.-chief",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-08-26T05:56:06.975Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Geopolitics",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "f7c0a10119b7",
+      "title": "Iran bets economic pain will pressure Trump in game of ‘chicken’",
+      "summary": "Iran is betting global economic fallout and Republicans worried about the midterms will force Trump's retreat.",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/8/26/iran-bets-economic-pain-will-pressure-trump-in-game-of?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-26T05:20:17.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
     {
       "id": "851b92051c77",
       "title": "Namibia to rebury remains of political prisoners returned by South Africa",
@@ -504,22 +537,6 @@
       "weight": 2
     },
     {
-      "id": "0621445a82b3",
-      "title": "New US sanctions signal Trump desperation on Iran, experts say",
-      "summary": "Economic escalation is unlikely to force the Iranian government to capitulate to US demands, according to experts.",
-      "url": "https://www.aljazeera.com/news/2026/8/25/new-us-sanctions-signal-trump-desperation-on-iran-experts-say?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T20:34:49.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "f6744a457d27",
       "title": "Iran’s deputy foreign minister says Hormuz to remain closed despite temporary Oman deal",
       "summary": "Iran’s deputy foreign minister says Hormuz to remain closed despite temporary Oman deal Iranian Deputy Foreign Minister Kazem Gharibabadi said in a televised interview on Tuesday that the Strait of Hormuz remains closed despite a temporary transit agreement…",
@@ -549,22 +566,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "026f2cdc09c9",
-      "title": "Top Iranian officials mock US 'economic D-Day' on social media",
-      "summary": "Top Iranian officials mock US 'economic D-Day' on social media Several top Iranian officials have taken to social media to mock US Treasury Secretary Scott Bessent's \"economic D-Day\" of sanctions on Iran, including parliamentary speaker and chief negotiator…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/top-iranian-officials-mock-us-economic-d-day-social-media",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-25T20:16:35.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -631,22 +632,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "61e89e740695",
-      "title": "What challenge do ‘cockroach’ protests pose for India’s PM Modi?",
-      "summary": "Youth-led movement plans more demonstrations for next month.",
-      "url": "https://www.aljazeera.com/video/inside-story/2026/8/25/what-challenge-do-cockroach-protests-pose-for-indias-pm-modi?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-08-25T20:08:41.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -1948,23 +1933,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "f76a90b4aff9",
-      "title": "Kazakhstan's Tokayev tightens grip on power after snap election",
-      "summary": "",
-      "url": "https://asia.nikkei.com/politics/kazakhstan-s-tokayev-tightens-grip-on-power-after-snap-election",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-08-24T23:32:27.358Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -3533,6 +3501,38 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "83c586fe264b",
+      "title": "US, Emirati presidents discuss bilateral ties, regional developments",
+      "summary": "Call between leaders comes shortly after CENTCOM commander visits US regional allies",
+      "url": "https://www.aa.com.tr/en/politics/us-emirati-presidents-discuss-bilateral-ties-regional-developments/4030756",
+      "publisher": "Anadolu Agency",
+      "publisherHome": "https://www.aa.com.tr/en",
+      "sourceId": "anadolu-politics",
+      "publishedAt": "2026-08-18T14:27:42.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Turkey",
+      "weight": 2
+    },
+    {
+      "id": "48e3870dc9f7",
+      "title": "Ebola outbreak in Democratic Republic of the Congo now deadliest in country’s history",
+      "summary": "At least 2,325 people have died from the virus, according to official data, with outbreak on track to be biggest in history The Ebola outbreak in the Democratic Republic of the Congo is now the deadliest in the country’s history, with at least 2,325 people…",
+      "url": "https://www.theguardian.com/world/2026/aug/17/ebola-outbreak-drc-democratic-republic-of-congo-deadliest-in-history",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/africa",
+      "sourceId": "guardian-africa",
+      "publishedAt": "2026-08-17T14:07:31.000Z",
+      "image": "https://i.guim.co.uk/img/media/a393063cc2d82e5b3b20c44e22654a645b95ab37/581_0_5000_4000/master/5000.jpg?width=700&quality=85&auto=format&fit=max&s=52f489b37205d33526b1b2794569496d",
+      "imageWidth": 700,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Africa",
       "weight": 2
     }
   ]
