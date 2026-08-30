@@ -1,10 +1,74 @@
 {
-  "generatedAt": "2026-08-29T23:18:19.741Z",
+  "generatedAt": "2026-08-30T01:21:49.335Z",
   "sourceCount": 26,
   "failedSources": [
     "politico-eu"
   ],
   "items": [
+    {
+      "id": "0c5f779f17b4",
+      "title": "Ukraine war briefing: Nuclear plant has lost power and running on generators, UN watchdog says",
+      "summary": "Russian-occupied Zaporizhzhia plant has 10-day diesel supply on site; Kyiv investigates deadly attack on warehouse. What we know on day 1,649 The Zaporizhzhia nuclear power plant in Ukraine has been without off-site power for more than a week and is now…",
+      "url": "https://www.theguardian.com/world/2026/aug/30/ukraine-war-briefing-nuclear-plant-lost-power",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world/europe-news",
+      "sourceId": "guardian-europe",
+      "publishedAt": "2026-08-30T01:07:09.000Z",
+      "image": "https://i.guim.co.uk/img/media/29ca13db6468e57ac9e72bdeca54c3a8072d83ed/388_132_4684_3747/master/4684.jpg?width=700&quality=85&auto=format&fit=max&s=54ce19ef20e7a9bbb876277d48a83ffb",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
+    {
+      "id": "7a76e8d5d828",
+      "title": "Iran parliament speaker says new regional pacts can 'herald a new stage’",
+      "summary": "Iran parliament speaker says new regional pacts can 'herald a new stage’ Iran’s parliament speaker, Mohammad Bagher Ghalibaf, has said that new regional treaties can herald a new stage in which Muslim neighbours rely on their own capacities rather than on…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-parliament-speaker-says-new-regional-pacts-can-herald-new-stage",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-08-30T00:52:59.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "e411267e2f58",
+      "title": "Voting closes in Iceland’s knife-edge EU referendum",
+      "summary": "Iceland's leadership has promised to honour whatever the country's people decide.",
+      "url": "https://www.aljazeera.com/news/2026/8/29/voting-closes-in-icelands-knife-edge-eu-referendum?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-29T23:33:03.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
+      "id": "c6ed760fd94d",
+      "title": "Ukrainian nuclear power plant without external power for over a week",
+      "summary": "This is the 27th time since Russia invaded Ukraine that Zaporizhzhia plant has had to rely on emergency diesel supplies.",
+      "url": "https://www.aljazeera.com/news/2026/8/29/ukrainian-nuclear-power-plant-without-external-power-for-over-a-week?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-08-29T23:25:07.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
+      "weight": 2
+    },
     {
       "id": "13607368a898",
       "title": "Germany news: Merkel tells voters to 'stand up' for democracy",
@@ -439,22 +503,6 @@
       "weight": 2
     },
     {
-      "id": "a83095932099",
-      "title": "Araghchi says US elements use media to influence oil prices",
-      "summary": "Araghchi says US elements use media to influence oil prices Iranian Foreign Minister Abbas Araghchi has accused elements within the Trump administration of using “gullible media” to influence energy prices for personal gain, claiming Iran’s intelligence had…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/araghchi-says-us-elements-use-media-influence-oil-prices",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-29T13:38:28.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "093aa007f69e",
       "title": "Ex-White House teleprompter operator fined $172,000 for Trump speech bets",
       "summary": "Commodity Futures Trading Commission said Gabriel Perez wagered on Kalshi about words president used in speeches A White House teleprompter operator who left his post amid accusations that he used inside knowledge to make bets on Donald Trump ’s speeches on…",
@@ -487,25 +535,9 @@
       "weight": 2
     },
     {
-      "id": "9040baab7e49",
-      "title": "How the military-industrial complex is waging war on the planet",
-      "summary": "How the military-industrial complex is waging war on the planet Submitted by John Rees on Wed, 08/19/2026 - 20:52 Nato's rearmament drive will impose severe environmental costs, including a massive projected increase in carbon emissions Parts of cannons are…",
-      "url": "https://www.middleeasteye.net/opinion/how-military-industrial-complex-waging-war-planet",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-08-29T12:39:44.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "f749791ea33a",
       "title": "Niger's defense ministry says soldiers attempted mutiny",
-      "summary": "Gunfire and explosions were heard across Niamey overnight. The attack posed the latest threat to Niger's military junta, led by Abdourahamane Tchiani, who seized power in a 2023 coup.",
+      "summary": "Dozens of rebeling soldiers were killed or arrested, state media said. The attack posed the latest threat to Niger's military junta, led by Abdourahamane Tchiani, who seized power in a 2023 coup.",
       "url": "https://www.dw.com/en/niger-s-defense-ministry-says-soldiers-attempted-mutiny/a-78554001?maca=en-rss-en-all-1573-rdf",
       "publisher": "Deutsche Welle",
       "publisherHome": "https://www.dw.com/en",
@@ -548,22 +580,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Global",
-      "weight": 2
-    },
-    {
-      "id": "213324c54c77",
-      "title": "Democrats ignored the uncommitted movement for Gaza in 2024. Now, it’s winning elections",
-      "summary": "By linking progressive politics with nominally Arab American issues, organizers are building winning coalitions Abbas Alawieh initially thought the uncommitted movement of 2024 had failed. The insurgent group, which he helped co-found, had gotten more than…",
-      "url": "https://www.theguardian.com/us-news/2026/aug/29/democrats-uncommitted-movement-midterms",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-08-29T11:00:27.000Z",
-      "image": "https://i.guim.co.uk/img/media/aa910baf7ffbd2db7139240fe3144f24c6be5e52/0_0_3365_2692/master/3365.jpg?width=700&quality=85&auto=format&fit=max&s=031e80a042b7791d113188b3729222c1",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1706,6 +1722,22 @@
       "categoryConfidence": "high",
       "region": "Eurasia",
       "weight": 3
+    },
+    {
+      "id": "6c6b1ecb1dd7",
+      "title": "Watch Trump sign executive order renaming Lake Ontario to Lake America - video",
+      "summary": "The US president signed order on Thursday amid growing trade war with Canada after the US enacted tariffs against its northern neighbor Continue reading...",
+      "url": "https://www.theguardian.com/us-news/video/2026/aug/27/trump-lake-america-executive-order",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/us-news",
+      "sourceId": "guardian-us",
+      "publishedAt": "2026-08-27T18:19:59.000Z",
+      "image": "https://i.guim.co.uk/img/media/b8897cf608f2c64bb871eaf4c824653b3cd662fa/780_0_4576_3660/master/4576.jpg?width=700&quality=85&auto=format&fit=max&s=5869de2de7a8828a90d04bfe63a4edd3",
+      "imageWidth": 700,
+      "category": "Economy",
+      "categoryConfidence": "medium",
+      "region": "Americas",
+      "weight": 2
     },
     {
       "id": "e92f67ad7a83",
