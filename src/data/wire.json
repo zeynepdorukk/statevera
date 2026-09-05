@@ -1,11 +1,43 @@
 {
-  "generatedAt": "2026-09-04T23:30:54.105Z",
+  "generatedAt": "2026-09-05T01:22:57.265Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
     {
+      "id": "25402f22ab78",
+      "title": "‘Guilt by association’: why seven international aid workers were killed in Israeli airstrike",
+      "summary": "Exclusive: Guardian investigation reveals targeting of World Central Kitchen convoy was result of widely used military tactic • Death on the road to Rafah: the night the IDF targeted World Central Kitchen aid workers Seven aid workers killed in an airstrike…",
+      "url": "https://www.theguardian.com/world/2026/sep/05/aid-workers-gaza-killed-in-israel-airstrike-investigation",
+      "publisher": "The Guardian",
+      "publisherHome": "https://www.theguardian.com/world",
+      "sourceId": "guardian-world",
+      "publishedAt": "2026-09-05T00:00:20.000Z",
+      "image": "https://i.guim.co.uk/img/media/07dcae18edb859f43f16e9b15b3db1e8ebbaabf5/0_0_4560_3648/master/4560.jpg?width=700&quality=85&auto=format&fit=max&s=c246650553eff5c6468e7cf822a08f67",
+      "imageWidth": 700,
+      "category": "Security",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "7eb1755d648d",
+      "title": "‘Small potatoes’: US President Trump downplays war on Iran",
+      "summary": "Trump tells reporters the US is 'not fighting right now' despite a recent exchange of fire with Iran.",
+      "url": "https://www.aljazeera.com/news/2026/9/4/small-potatoes-us-president-trump-downplays-war-on-iran?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-09-04T23:55:50.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Global",
+      "weight": 2
+    },
+    {
       "id": "a3f03b37c67b",
-      "title": "Mock Republican convention website redirects users to Epstein Files",
+      "title": "Mock Republican convention website tops Google, redirects to Epstein files",
       "summary": "Democratic lawmakers poke fun at prank website, while Republicans slam 'fake news' and redirect users to real one.",
       "url": "https://www.aljazeera.com/news/2026/9/4/mock-republican-convention-website-redirects-users-to-epstein-files?traffic_source=rss",
       "publisher": "Al Jazeera",
@@ -102,8 +134,8 @@
     },
     {
       "id": "29069e0ad6c5",
-      "title": "Democrats demand that DHS comply with inquiry into death of Rohingya refugee abandoned by border agents",
-      "summary": "Lawmakers say agency hasn’t released ‘meaningful’ records concerning death of nearly blind refugee in Buffalo Democratic lawmakers are demanding that the Department of Homeland Security turn over records and fully cooperate with an investigation into the…",
+      "title": "Democrats demand DHS documents in investigation into Rohingya refugee’s death",
+      "summary": "Lawmakers condemn agency for ‘obstructing the pursuit of juice’ over death of nearly blind Nurul Amin Shah Alam Democratic lawmakers are demanding that the Department of Homeland Security turn over records and fully cooperate with an investigation into the…",
       "url": "https://www.theguardian.com/us-news/2026/sep/04/rohingya-refugee-death-dhs-investigation",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -178,6 +210,22 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "04120c415b9b",
+      "title": "Israeli strike kills two in southern Lebanon amid ongoing escalation",
+      "summary": "Israeli attacks against villages and towns in southern Lebanon continue despite truce agreements and diplomacy.",
+      "url": "https://www.aljazeera.com/news/2026/9/4/israeli-strike-kills-two-in-southern-lebanon-amid-ongoing-escalation?traffic_source=rss",
+      "publisher": "Al Jazeera",
+      "publisherHome": "https://www.aljazeera.com",
+      "sourceId": "aljazeera",
+      "publishedAt": "2026-09-04T19:48:25.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
       "weight": 2
     },
     {
@@ -307,22 +355,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "09c3dfcc3c8d",
-      "title": "Yemen’s army says recaptured key territory as clashes with Houthis continue",
-      "summary": "Two days of fighting between government forces and Houthi fighters has left dozens dead on both sides, sources say.",
-      "url": "https://www.aljazeera.com/news/2026/9/4/yemens-army-says-recaptured-key-territory-as-clashes-with-houthis-continue?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-09-04T17:29:20.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1769,22 +1801,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "fe6f41c71588",
-      "title": "Kenyan president orders crackdown on foreigners operating small businesses",
-      "summary": "It comes amid concerns over the growing number of traders from neighbouring countries.",
-      "url": "https://www.bbc.co.uk/news/articles/c9861x5pzgxo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world/africa",
-      "sourceId": "bbc-africa",
-      "publishedAt": "2026-09-03T10:59:14.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/481a/live/7365e240-a782-11f1-a291-b542ee92de7c.png",
-      "imageWidth": 240,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Africa",
       "weight": 2
     },
     {
