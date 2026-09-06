@@ -1,8 +1,57 @@
 {
-  "generatedAt": "2026-09-06T20:55:28.844Z",
+  "generatedAt": "2026-09-06T22:32:17.464Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "593d0c2b1409",
+      "title": "Toyota aims to boost profit outside auto sales 40% by fiscal 2030",
+      "summary": "",
+      "url": "https://asia.nikkei.com/business/automobiles/toyota-aims-to-boost-profit-outside-auto-sales-40-by-fiscal-2030",
+      "publisher": "Nikkei Asia",
+      "publisherHome": "https://asia.nikkei.com",
+      "sourceId": "nikkei-asia",
+      "publishedAt": "2026-09-06T22:32:09.046Z",
+      "dateEstimated": true,
+      "image": "",
+      "imageWidth": 0,
+      "category": "Economy",
+      "categoryConfidence": "high",
+      "region": "Asia-Pacific",
+      "weight": 2
+    },
+    {
+      "id": "e1eef0468f5c",
+      "title": "Labor wants safer feeds for kids. Critics see censorship.",
+      "summary": "Happy sitting week! If you’ve been forwarded this newsletter, you can sign up free here. ESSENTIALS DRIVING THE DAY DIGITAL DUTY OF CARE LEGISLATION COMING The scene is set for a divisive debate about Labor’s digital duty of care legislation this week — will…",
+      "url": "https://www.politico.com/newsletters/canberra-playbook?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+      "publisher": "POLITICO Europe",
+      "publisherHome": "https://www.politico.eu",
+      "sourceId": "politico-eu",
+      "publishedAt": "2026-09-06T21:15:54.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "medium",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "0a65a9c8a8bb",
+      "title": "Saxony-Anhalt: Digesting the AfD's landmark election win",
+      "summary": "With well over 40% for the far-right Alternative for Germany (AfD), Saxony-Anhalt has witnessed a landmark election night. DW's reporters were on the ground.",
+      "url": "https://www.dw.com/en/saxony-anhalt-digesting-the-afd-s-landmark-election-win/a-79103981?maca=en-rss-en-all-1573-rdf",
+      "publisher": "Deutsche Welle",
+      "publisherHome": "https://www.dw.com/en",
+      "sourceId": "dw",
+      "publishedAt": "2026-09-06T21:04:00.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
     {
       "id": "4b22560d8220",
       "title": "Peace talks rich in symbolism but fundamental differences between Russia and Ukraine remain",
@@ -38,7 +87,7 @@
     {
       "id": "0dba5b66677c",
       "title": "The US now has access to more than half Australia’s military bases – could it drag the country unwillingly into war?",
-      "summary": "Exclusive: US-controlled weapons corporations and forces have control or access to more than 100 facilities across the continent, which some analysts describe as a ‘colonisation’ of Australia’s military. Find a map of them here US military interests control…",
+      "summary": "Exclusive: US-controlled weapons corporations and forces have control or access to more than 100 facilities across the continent, which some analysts describe as a ‘colonisation’ of Australia’s military. Find a map of them here US military presence in…",
       "url": "https://www.theguardian.com/australia-news/ng-interactive/2026/sep/07/us-military-bases-in-australia-map-list-spy-satellite-pine-gap",
       "publisher": "The Guardian",
       "publisherHome": "https://www.theguardian.com/world",
@@ -65,22 +114,6 @@
       "category": "Politics",
       "categoryConfidence": "high",
       "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "57a298143ada",
-      "title": "Iran to impose restricted shipping zone near Strait of Hormuz",
-      "summary": "Iran to impose restricted shipping zone near Strait of Hormuz Iran plans to establish a restricted maritime zone near the Strait of Hormuz within days, state media has quoted the country’s top security official as saying. The designated area will stretch from…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/iran-impose-restricted-shipping-zone-near-strait-hormuz",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-09-06T19:39:42.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -260,38 +293,6 @@
       "weight": 2
     },
     {
-      "id": "ce2a564afe2d",
-      "title": "Niger military accuses France of orchestrating failed mutiny: What to know",
-      "summary": "French officials deny involvement, but tensions between the two countries remain high.",
-      "url": "https://www.aljazeera.com/news/2026/9/6/niger-military-accuses-france-of-orchestrating-failed-mutiny-what-to-know?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-09-06T15:42:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "326e1ba88576",
-      "title": "Khalid Abdalla: ‘It’s important for me to be in service of justice’",
-      "summary": "The actor discusses identity, speaking out against Israel’s genocide in Gaza and the experiences that shaped him.",
-      "url": "https://www.aljazeera.com/video/talk-to-al-jazeera/2026/9/6/khalid-abdalla-its-important-for-me-to-be-in-service-of-justice?traffic_source=rss",
-      "publisher": "Al Jazeera",
-      "publisherHome": "https://www.aljazeera.com",
-      "sourceId": "aljazeera",
-      "publishedAt": "2026-09-06T15:19:47.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "b7c6aff4b849",
       "title": "Mike Huckabee criticised for accusing Jewish UK foreign secretary of 'Jew hate'",
       "summary": "Mike Huckabee criticised for accusing Jewish UK foreign secretary of 'Jew hate' Submitted by Imran Mulla on Sun, 09/06/2026 - 13:37 US ambassador to Israel's comments mark latest rhetorical attack on UK over its plans to ban Israeli settlement goods British…",
@@ -341,7 +342,7 @@
     },
     {
       "id": "d6707ba28f81",
-      "title": "Shoebridge criticises Labor response after IDF officer’s ‘reprehensible’ comments on deadly Zomi Frankcom strike",
+      "title": "Greens criticise Labor after former IDF officer’s ‘reprehensible’ comments on Zomi Frankcom strike",
       "summary": "Greens defence spokesman says ‘words are just distractions’ until government takes action ‘Guilt by association’: why seven international aid workers were killed in Israeli airstrike Get our breaking news email , free app or daily news podcast The Greens have…",
       "url": "https://www.theguardian.com/australia-news/2026/sep/07/zomi-frankcom-israel-gaza-idf-world-central-kitchen-ntwnfb",
       "publisher": "The Guardian",
@@ -369,6 +370,22 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "4c52eaf3700d",
+      "title": "Ukraine-Russia talks: What are the US objectives?",
+      "summary": "US envoys Steve Witkoff and Jared Kushner arrived in Kyiv on Sunday in their first official visit to Ukraine as part of a renewed push for peace, more than 4½ years after Russia's full-scale invasion of Ukraine. We discuss this topic with our guest, John E.…",
+      "url": "https://www.france24.com/en/video/20260906-ukraine-russia-talks-what-are-the-us-objectives",
+      "publisher": "France 24",
+      "publisherHome": "https://www.france24.com/en",
+      "sourceId": "france24",
+      "publishedAt": "2026-09-06T14:03:26.000Z",
+      "image": "https://s.france24.com/media/display/ebfe2368-a9f6-11f1-a121-005056bfb2b6/w:1024/p:16x9/EN-20260906-140051-140759-CS.jpg",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Eurasia",
       "weight": 2
     },
     {
@@ -468,22 +485,6 @@
       "weight": 3
     },
     {
-      "id": "f8c2af87b8a2",
-      "title": "Eight foreign ministers condemn Katz and Ben Gvir’s Gaza displacement plan",
-      "summary": "Eight foreign ministers condemn Katz and Ben Gvir’s Gaza displacement plan The foreign ministers of eight countries have condemned statements and plans by Israeli Defence Minister Israel Katz and National Security Minister Itamar Ben Gvir for the mass…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/eight-foreign-ministers-condemn-katz-and-ben-gvirs-gaza-displacement",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-09-06T10:44:38.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "86b9f5a494de",
       "title": "French thriller Jupiter brings nuclear anxiety to red carpets of Venice",
       "summary": "Director Alexandre Smia says film about Russia detonating nuclear warhead – and US refusing to respond – is not unrealistic Russia has detonated a nuclear warhead over the Black Sea to underline its desire to revenge an assassination attempt on the Russian…",
@@ -497,22 +498,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "8dd063cad658",
-      "title": "Iran threatens South Korean assets if Seoul joins Hormuz mission",
-      "summary": "Iran threatens South Korean assets if Seoul joins Hormuz mission Submitted by MEE staff on Sun, 09/06/2026 - 09:33 Warning by Iranian academic Mohammad Marandi comes as Seoul weighs possible military and naval contributions to restore navigation through…",
-      "url": "https://www.middleeasteye.net/news/iran-threatens-south-korean-assets-if-seoul-joins-hormuz-mission",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-09-06T10:31:21.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -983,22 +968,6 @@
       "weight": 2
     },
     {
-      "id": "0472115bd91e",
-      "title": "U.S. envoys in Moscow in new push for peace between Russia and Ukraine",
-      "summary": "U.S. envoys Steve Witkoff and Jared Kushner have arrived in Moscow to revive efforts to end Russia's invasion of Ukraine. Ukrainian President Volodymyr Zelenskyy has called for a halt to air attacks during their visit, but Moscow has not publicly responded.",
-      "url": "https://www.npr.org/2026/09/05/nx-s1-5959114/us-envoys-in-moscow-in-new-push-for-peace",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-09-05T11:08:57.000Z",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/8640x5760+0+0/resize/8640x5760!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F33%2F21%2F3362c250461e89198a44aa02ad4e%2Fap26247433529836.jpg",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Eurasia",
-      "weight": 2
-    },
-    {
       "id": "25402f22ab78",
       "title": "‘Guilt by association’: why seven international aid workers were killed in Israeli airstrike",
       "summary": "Exclusive: Guardian investigation reveals targeting of World Central Kitchen convoy was result of widely used military tactic Death on the road to Rafah: the night the IDF targeted WCK aid workers Seven aid workers killed in an airstrike in Gaza were marked…",
@@ -1076,22 +1045,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "70ee6bd6132b",
-      "title": "Philippines Vice President Sara Duterte posts bail after arrest",
-      "summary": "Philippines Vice President Sara Duterte has posted bail after order issued for her arrest on charges she publicly threatened to arrange assassination of President Ferdinand Marcos Jr. and two others.",
-      "url": "https://www.npr.org/2026/09/05/g-s1-142148/philippines-vice-president-posts-bail",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-09-05T07:21:10.000Z",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/2782x1854+0+0/resize/2782x1854!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fb1%2F0e%2Fd34c8f4a400388e45f23f28b9a88%2Fap26248191236126.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
       "weight": 2
     },
     {
@@ -1236,22 +1189,6 @@
       "image": "",
       "imageWidth": 0,
       "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
-      "id": "67b6ee9b9335",
-      "title": "Germany's civil society alliance takes on the far right",
-      "summary": "Trade unions, churches and human rights activists are worried about the rise of the far-right AfD. How can civil society protect people who are threatened by far-right extremism?",
-      "url": "https://www.dw.com/en/germany-s-civil-society-alliance-takes-on-the-far-right/a-79009105?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-09-04T18:36:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
       "categoryConfidence": "high",
       "region": "Europe",
       "weight": 2
@@ -1739,22 +1676,6 @@
       "weight": 3
     },
     {
-      "id": "2ea57e9d1c20",
-      "title": "Germany: Is Saxony-Anhalt's economy really struggling?",
-      "summary": "Germany's far-right AfD party has long claimed that the eastern state of Saxony-Anhalt has been left behind. Is that really the case? A closer look at the data offers some interesting insights.",
-      "url": "https://www.dw.com/en/germany-is-saxony-anhalt-s-economy-really-struggling/a-78867143?maca=en-rss-en-all-1573-rdf",
-      "publisher": "Deutsche Welle",
-      "publisherHome": "https://www.dw.com/en",
-      "sourceId": "dw",
-      "publishedAt": "2026-09-04T10:59:00.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Europe",
-      "weight": 2
-    },
-    {
       "id": "9e1bb382b38d",
       "title": "In Cambodia, Floating Houses Are Stuck Aground as Climate Change Takes Hold",
       "summary": "Researchers are seeing a change in Cambodian weather patterns as climate change takes hold across the region.",
@@ -1769,23 +1690,6 @@
       "categoryConfidence": "source",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "890b7b8786d6",
-      "title": "Speculation of carry trade reversal as yen strengthens to 155 range",
-      "summary": "",
-      "url": "https://asia.nikkei.com/business/markets/currencies/speculation-of-carry-trade-reversal-as-yen-strengthens-to-155-range",
-      "publisher": "Nikkei Asia",
-      "publisherHome": "https://asia.nikkei.com",
-      "sourceId": "nikkei-asia",
-      "publishedAt": "2026-09-04T09:34:48.761Z",
-      "dateEstimated": true,
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
     },
     {
       "id": "716628b6ca83",
