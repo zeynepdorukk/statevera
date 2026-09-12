@@ -156,10 +156,10 @@
       "label": "EUR/USD",
       "symbol": "EURUSD=X",
       "decimals": 4,
-      "price": 1.1602,
-      "change": -0.001100000000000101,
-      "percent": -0.09472143287695693,
-      "updatedAt": "2026-09-11T21:29:34.000Z"
+      "price": 1.1601,
+      "change": -0.0012000000000000899,
+      "percent": -0.10333247222940584,
+      "updatedAt": "2026-09-11T21:29:58.000Z"
     },
     {
       "id": "usdjpy",
