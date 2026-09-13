@@ -1,8 +1,40 @@
 {
-  "generatedAt": "2026-09-12T22:43:16.655Z",
+  "generatedAt": "2026-09-13T00:22:24.036Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "2f62fa925ec7",
+      "title": "Araghchi, Iraqi foreign minister stress security along shared borders",
+      "summary": "Araghchi, Iraqi foreign minister stress security along shared borders Iran’s foreign minister, Abbas Araghchi, and his Iraqi counterpart, Fuad Hussein, held a telephone conversation to discuss and exchange views on bilateral issues and regional developments,…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/araghchi-iraqi-foreign-minister-stress-security-along-shared-borders",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-09-12T23:39:07.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Diplomacy",
+      "categoryConfidence": "high",
+      "region": "Middle East",
+      "weight": 2
+    },
+    {
+      "id": "204d800bdb45",
+      "title": "Houthis claim attack on Saudi Arabia's Sharurah base",
+      "summary": "Houthis claim attack on Saudi Arabia's Sharurah base Houthis said on Sunday they used drones and missiles to attack a military base in southern Saudi Arabia. The attack at the Sharurah base targeted \"weapons depots and command and control centres that are…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/houthis-claim-attack-saudi-arabias-sharurah-base",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-09-12T23:09:31.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "cde9eea6e24f",
       "title": "Israeli air strike kills Palestinian in southern Gaza",
@@ -294,22 +326,6 @@
       "weight": 2
     },
     {
-      "id": "b7035ead5730",
-      "title": "Iran’s Pezeshkian 'held a meeting and talks' with UAE crown prince in New Delhi",
-      "summary": "Iran’s Pezeshkian 'held a meeting and talks' with UAE crown prince in New Delhi Iran's President Masoud Pezeshkian and the United Arab Emirates' Crown Prince Khaled bin Mohamed bin Zayed met in New Delhi on Saturday on the sidelines of the Brics summit, the…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/irans-pezeshkian-held-meeting-and-talks-uae-crown-prince-new-delhi",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-09-12T14:17:31.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Diplomacy",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "c2d3d6464136",
       "title": "Ukrainians tell of their survival under Russian attack – video",
       "summary": "Residents in cities across Ukraine recount attacks on their homes as Russian bombardment of the country intensifies. Petrol stations in Kyiv were hit by jet-powered drones in a wave of strikes, while residential areas and civilian infrastructure were struck…",
@@ -323,38 +339,6 @@
       "category": "Security",
       "categoryConfidence": "medium",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "2869901a2701",
-      "title": "Where do Muslim youths fit in India's 'Cockroach' protests?",
-      "summary": "Where do Muslim youths fit in India's 'Cockroach' protests? Submitted by Nabiya Khan on Fri, 09/04/2026 - 20:06 The country harbours a political culture where exercising the right to demonstrate is safer for some than for others A CJP supporter waves the…",
-      "url": "https://www.middleeasteye.net/opinion/where-do-muslim-youths-fit-indias-cockroach-protests",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-09-12T13:16:21.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Asia-Pacific",
-      "weight": 2
-    },
-    {
-      "id": "2a4f62e6ba5a",
-      "title": "Calls for Democrats to be shot go unchallenged at Republican convention",
-      "summary": "Crowd member repeatedly said some Democrats ‘should be shot’ during Ted Cruz’s speech, without senator responding On the night Republicans gathered to mourn the killing of Charlie Kirk and warn against the dangers of violent rhetoric, a crowd at the party’s…",
-      "url": "https://www.theguardian.com/us-news/2026/sep/12/democrats-republican-midterm-convention",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-09-12T12:36:55.000Z",
-      "image": "https://i.guim.co.uk/img/media/c3d255de99bd2e379acfcdce14151f76ae2a1d0a/515_0_4720_3776/master/4720.jpg?width=700&quality=85&auto=format&fit=max&s=44b82ed0270a910257a1021149019899",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Americas",
       "weight": 2
     },
     {
@@ -659,22 +643,6 @@
       "imageWidth": 700,
       "category": "Politics",
       "categoryConfidence": "high",
-      "region": "Americas",
-      "weight": 2
-    },
-    {
-      "id": "5ee446865870",
-      "title": "Republican seeking to implicate Abdul El-Sayed over 9/11 voted twice against benefits for first responders",
-      "summary": "Mike Rogers has also helped kill other bills that would have provided healthcare to responders and survivors Mike Rogers, a Michigan Republican US Senate candidate, has sought in recent weeks to create controversy over old tweets his Democratic opponent,…",
-      "url": "https://www.theguardian.com/us-news/2026/sep/10/mike-rogers-911-first-responders-votes-abdul-el-sayed",
-      "publisher": "The Guardian",
-      "publisherHome": "https://www.theguardian.com/us-news",
-      "sourceId": "guardian-us",
-      "publishedAt": "2026-09-11T19:58:03.000Z",
-      "image": "https://i.guim.co.uk/img/media/5ec11200bab416e20428d037af51042464c4714d/653_0_6533_5226/master/6533.jpg?width=700&quality=85&auto=format&fit=max&s=bbf97e0da05350dbd50908d1a1e96a18",
-      "imageWidth": 700,
-      "category": "Politics",
-      "categoryConfidence": "medium",
       "region": "Americas",
       "weight": 2
     },
@@ -2743,22 +2711,6 @@
       "category": "Politics",
       "categoryConfidence": "medium",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "3d81f6fce3fd",
-      "title": "Why wait? Business grads buying firms to install themselves as CEO",
-      "summary": "Impatient to be the boss of an established company they are borrowing money to fund their purchases.",
-      "url": "https://www.bbc.co.uk/news/articles/czxqpqrzq01o?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/business",
-      "sourceId": "bbc-business",
-      "publishedAt": "2026-09-02T23:13:44.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/5f4f/live/a480d880-a520-11f1-960d-bf7772625996.png",
-      "imageWidth": 240,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Global",
       "weight": 2
     }
   ]
