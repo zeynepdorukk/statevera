@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-12T03:35:24.000Z",
+  "updatedAt": "2026-09-13T19:07:04.000Z",
   "quotes": [
     {
       "id": "spx",
@@ -107,8 +107,8 @@
       "symbol": "BZ=F",
       "decimals": 2,
       "price": 104.61,
-      "change": -3.019999999999996,
-      "percent": -2.8059091331413137,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-09-11T20:59:57.000Z"
     },
     {
@@ -117,8 +117,8 @@
       "symbol": "GC=F",
       "decimals": 2,
       "price": 4408.9,
-      "change": 1.5999999999994543,
-      "percent": 0.03630340571323609,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-09-11T20:59:59.000Z"
     },
     {
@@ -127,8 +127,8 @@
       "symbol": "CL=F",
       "decimals": 2,
       "price": 100.05,
-      "change": -2.430000000000007,
-      "percent": -2.371194379391107,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-09-11T20:59:59.000Z"
     },
     {
@@ -137,8 +137,8 @@
       "symbol": "HG=F",
       "decimals": 2,
       "price": 6.548,
-      "change": 0.0004999999999997229,
-      "percent": 0.007636502481859073,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-09-11T20:59:57.000Z"
     },
     {
@@ -146,10 +146,10 @@
       "label": "USD/TRY",
       "symbol": "USDTRY=X",
       "decimals": 2,
-      "price": 48.5546,
-      "change": 0.025300000000001432,
-      "percent": 0.05213345339825927,
-      "updatedAt": "2026-09-12T03:35:24.000Z"
+      "price": 48.1631,
+      "change": -0.3661999999999992,
+      "percent": -0.754595677250649,
+      "updatedAt": "2026-09-13T19:07:04.000Z"
     },
     {
       "id": "eurusd",
