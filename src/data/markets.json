@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-26T07:09:07.000Z",
+  "updatedAt": "2026-09-26T13:52:57.000Z",
   "quotes": [
     {
       "id": "spx",
@@ -156,10 +156,10 @@
       "label": "EUR/USD",
       "symbol": "EURUSD=X",
       "decimals": 4,
-      "price": 1.14,
-      "change": 0.0020000000000000018,
-      "percent": 0.17574692442882267,
-      "updatedAt": "2026-09-26T07:09:07.000Z"
+      "price": 1.1401,
+      "change": 0.0020999999999999908,
+      "percent": 0.18453427065026284,
+      "updatedAt": "2026-09-26T13:52:57.000Z"
     },
     {
       "id": "usdjpy",
