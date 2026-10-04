@@ -1,8 +1,56 @@
 {
-  "generatedAt": "2026-10-03T21:47:33.104Z",
+  "generatedAt": "2026-10-04T00:12:04.377Z",
   "sourceCount": 27,
   "failedSources": [],
   "items": [
+    {
+      "id": "9f52e4173daa",
+      "title": "For some Brazilians, this election is a vote on Trump",
+      "summary": "President Trump says he's been having success winning races in Latin America. As Brazilian voters go to the polls, they're also deciding how much influence Trump should have in their country.",
+      "url": "https://www.npr.org/2026/10/03/nx-s1-5989699/for-some-brazilians-this-election-is-a-vote-on-trump",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-10-03T21:57:36.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Americas",
+      "weight": 2
+    },
+    {
+      "id": "a9dd149a9d80",
+      "title": "France arrests 5,000 people, mostly teens, as school protests spread",
+      "summary": "High school students say their classrooms are overcrowded, teachers are missing and buildings need repairs. The protests have spread to cities across France, and some 5,000 people have been arrested.",
+      "url": "https://www.npr.org/2026/10/03/nx-s1-5989532/france-arrests-5-000-people-mostly-teens-as-school-protests-spread",
+      "publisher": "NPR",
+      "publisherHome": "https://www.npr.org/sections/world",
+      "sourceId": "npr-world",
+      "publishedAt": "2026-10-03T21:57:35.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Politics",
+      "categoryConfidence": "high",
+      "region": "Europe",
+      "weight": 2
+    },
+    {
+      "id": "78f99196be79",
+      "title": "Trump says Iran ‘decimated’",
+      "summary": "Trump says Iran ‘decimated’ US President Donald Trump said Iran has “virtually given up any plans of a nuclear weapon”. Speaking to reporters, Trump said: “We have a decision that I’ll make about Iran. Iran has been decimated, so the only question is, it’ll…",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-says-iran-decimated",
+      "publisher": "Middle East Eye",
+      "publisherHome": "https://www.middleeasteye.net/",
+      "sourceId": "middle-east-eye",
+      "publishedAt": "2026-10-03T21:53:46.000Z",
+      "image": "",
+      "imageWidth": 0,
+      "category": "Security",
+      "categoryConfidence": "medium",
+      "region": "Middle East",
+      "weight": 2
+    },
     {
       "id": "15c7eb268334",
       "title": "Iran’s Pezeshkian says new measures in place amid stricter sanctions",
@@ -404,22 +452,6 @@
       "weight": 2
     },
     {
-      "id": "298be59ce9be",
-      "title": "Yemeni government confirms attacks on 'vital military targets' in Sanaa",
-      "summary": "Yemeni government confirms attacks on 'vital military targets' in Sanaa Yemeni government forces have confirmed attacks on “on legitimate vital military targets” in the Houthi-held capital Sanaa. Military spokesperson Colonel Majid al-Nuzaili said in a…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/yemeni-government-confirms-attacks-vital-military-targets-sanaa",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-10-03T13:03:20.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
-      "weight": 2
-    },
-    {
       "id": "e73b6116f42f",
       "title": "Sandu slams Russia as attack debris hits Moldova in latest airspace violation",
       "summary": "Three missile and two drones entered Moldovan airspace and caused collateral damage in the country, local authorities said.",
@@ -433,38 +465,6 @@
       "category": "Security",
       "categoryConfidence": "high",
       "region": "Eurasia",
-      "weight": 2
-    },
-    {
-      "id": "197eecdc6b0c",
-      "title": "Why the EU's sanctions on Sudan's gold trade are fundamentally flawed",
-      "summary": "Why the EU's sanctions on Sudan's gold trade are fundamentally flawed Submitted by Osama Abuzaid on Wed, 09/23/2026 - 08:41 Sanctioning bullion, while leaving much of the infrastructure facilitating its movement intact, risks treating the symptoms of Sudan's…",
-      "url": "https://www.middleeasteye.net/opinion/why-eu-sanctions-sudan-gold-trade-fundamentally-flawed",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-10-03T12:43:25.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Economy",
-      "categoryConfidence": "high",
-      "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "09d6ddca0bad",
-      "title": "Israeli drone strike on Beit Lahia kills one, wounds others",
-      "summary": "Israeli drone strike on Beit Lahia kills one, wounds others A Palestinian has been killed and several others wounded in an Israeli strike on northern Gaza's Beit Lahia, Wafa news agency reports. According to the report, the drone strike targeted an area near…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-drone-strike-beit-lahia-kills-one-wounds-others",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-10-03T12:27:24.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Security",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -513,22 +513,6 @@
       "category": "Diplomacy",
       "categoryConfidence": "source",
       "region": "Africa",
-      "weight": 2
-    },
-    {
-      "id": "cdb7960cb6e9",
-      "title": "'The entire land is ours': Ben Gvir escalates calls for annexation of occupied West Bank",
-      "summary": "'The entire land is ours': Ben Gvir escalates calls for annexation of occupied West Bank Israeli National Security Minister Itamar Ben Gvir claimed that the entire occupied West Bank “belongs to Israel” and has vowed to dismantle the Palestinian Authority and…",
-      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/entire-land-ours-ben-gvir-escalates-calls-annexation-occupied-west-bank",
-      "publisher": "Middle East Eye",
-      "publisherHome": "https://www.middleeasteye.net/",
-      "sourceId": "middle-east-eye",
-      "publishedAt": "2026-10-03T11:30:58.000Z",
-      "image": "",
-      "imageWidth": 0,
-      "category": "Geopolitics",
-      "categoryConfidence": "high",
-      "region": "Middle East",
       "weight": 2
     },
     {
@@ -1645,22 +1629,6 @@
       "weight": 2
     },
     {
-      "id": "a024a026ef9d",
-      "title": "Pro-democracy activists increasingly vulnerable to authoritarian governments in Southeast Asia",
-      "summary": "Activists across Asia are being hunted down by authoritarian governments even across international borders. Human rights groups have been warning of a \"swap market\" of repression in Southeast Asia.",
-      "url": "https://www.npr.org/2026/10/02/g-s1-146064/pro-democracy-activists-asia-authoritarian-governments",
-      "publisher": "NPR",
-      "publisherHome": "https://www.npr.org/sections/world",
-      "sourceId": "npr-world",
-      "publishedAt": "2026-10-02T09:00:00.000Z",
-      "image": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/4113x2742+0+0/resize/4113x2742!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Ff5%2F91%2F7f20e1174e288e300ce74c8cc11c%2Fgettyimages-2293890144.jpg",
-      "imageWidth": 0,
-      "category": "Politics",
-      "categoryConfidence": "high",
-      "region": "Global",
-      "weight": 2
-    },
-    {
       "id": "6145b5261131",
       "title": "French, Argentinian presidents discuss investment, AI in Paris meeting",
       "summary": "40-minute meeting between Emmanuel Macron and Javier Mileie took place as part of Argentina Week in Paris",
@@ -2204,22 +2172,6 @@
       "categoryConfidence": "high",
       "region": "Asia-Pacific",
       "weight": 3
-    },
-    {
-      "id": "c71415943cda",
-      "title": "Explosions heard in Ethiopia's capital after drone flights banned",
-      "summary": "It comes a week after fighting erupted north of the capital between the army and a new alliance of armed groups.",
-      "url": "https://www.bbc.co.uk/news/articles/c3vgygpqky9zo?at_medium=RSS&at_campaign=rss",
-      "publisher": "BBC News",
-      "publisherHome": "https://www.bbc.com/news/world",
-      "sourceId": "bbc-world",
-      "publishedAt": "2026-10-01T15:05:36.000Z",
-      "image": "https://ichef.bbci.co.uk/ace/standard/240/cpsprodpb/59cc/live/2b8e6ec0-bd89-11f1-a64c-550be9e3c66b.jpg",
-      "imageWidth": 240,
-      "category": "Security",
-      "categoryConfidence": "medium",
-      "region": "Africa",
-      "weight": 2
     },
     {
       "id": "ff78ba5e6325",
