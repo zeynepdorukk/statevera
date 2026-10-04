@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T18:52:20.000Z",
+  "updatedAt": "2026-10-04T22:03:39.000Z",
   "quotes": [
     {
       "id": "spx",
@@ -107,8 +107,8 @@
       "symbol": "BZ=F",
       "decimals": 2,
       "price": 102.25,
-      "change": -0.060000000000002274,
-      "percent": -0.05864529371518158,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-10-02T20:59:52.000Z"
     },
     {
@@ -117,8 +117,8 @@
       "symbol": "GC=F",
       "decimals": 2,
       "price": 4162.3,
-      "change": -40,
-      "percent": -0.9518596958808271,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-10-02T20:59:58.000Z"
     },
     {
@@ -127,8 +127,8 @@
       "symbol": "CL=F",
       "decimals": 2,
       "price": 91.11,
-      "change": -1.7600000000000051,
-      "percent": -1.8951222138473187,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-10-02T21:00:00.000Z"
     },
     {
@@ -137,8 +137,8 @@
       "symbol": "HG=F",
       "decimals": 2,
       "price": 6.549,
-      "change": 0.01100000000000012,
-      "percent": 0.16824717038849984,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-10-02T20:59:56.000Z"
     },
     {
@@ -146,10 +146,10 @@
       "label": "USD/TRY",
       "symbol": "USDTRY=X",
       "decimals": 2,
-      "price": 49.131,
-      "change": 0.05480000000000018,
-      "percent": 0.11166308719909077,
-      "updatedAt": "2026-10-04T18:52:20.000Z"
+      "price": 49.0959,
+      "change": 0.019700000000000273,
+      "percent": 0.04014165725952758,
+      "updatedAt": "2026-10-04T22:03:20.000Z"
     },
     {
       "id": "eurusd",
@@ -159,17 +159,17 @@
       "price": 1.1257,
       "change": 0.0011999999999998678,
       "percent": 0.10671409515338975,
-      "updatedAt": "2026-10-02T21:29:47.000Z"
+      "updatedAt": "2026-10-04T22:02:50.000Z"
     },
     {
       "id": "usdjpy",
       "label": "USD/JPY",
       "symbol": "JPY=X",
       "decimals": 2,
-      "price": 157.83,
-      "change": -0.22399999999998954,
-      "percent": -0.14172371467978637,
-      "updatedAt": "2026-10-04T04:21:36.000Z"
+      "price": 157.909,
+      "change": -0.14500000000001023,
+      "percent": -0.09174079744897962,
+      "updatedAt": "2026-10-04T22:03:39.000Z"
     },
     {
       "id": "us10y",
