@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T04:17:30.000Z",
+  "updatedAt": "2026-10-13T11:59:00.000Z",
   "quotes": [
     {
       "id": "spx",
@@ -9,7 +9,7 @@
       "price": 7807.24,
       "change": -4.300000000000182,
       "percent": -0.055046764146380635,
-      "updatedAt": "2026-10-12T20:35:01.000Z"
+      "updatedAt": "2026-10-12T20:00:00.000Z"
     },
     {
       "id": "ixic",
@@ -36,140 +36,140 @@
       "label": "STOXX",
       "symbol": "^STOXX50E",
       "decimals": 2,
-      "price": 6201.21,
-      "change": 27.840000000000146,
-      "percent": 0.4509692437031985,
-      "updatedAt": "2026-10-12T16:00:00.000Z"
+      "price": 6199.3,
+      "change": -1.9099999999998545,
+      "percent": -0.030800440559178847,
+      "updatedAt": "2026-10-13T11:44:00.000Z"
     },
     {
       "id": "ftse",
       "label": "FTSE",
       "symbol": "^FTSE",
       "decimals": 2,
-      "price": 10656.28,
-      "change": 104.18000000000029,
-      "percent": 0.9872916291543891,
-      "updatedAt": "2026-10-12T15:35:30.000Z"
+      "price": 10727.48,
+      "change": 175.3799999999992,
+      "percent": 1.6620388358715252,
+      "updatedAt": "2026-10-13T11:44:00.000Z"
     },
     {
       "id": "n225",
       "label": "N225",
       "symbol": "^N225",
       "decimals": 2,
-      "price": 67474.06,
-      "change": -1556.8600000000006,
-      "percent": -2.255308201020645,
-      "updatedAt": "2026-10-13T04:02:30.000Z"
+      "price": 67777.52,
+      "change": -1253.3999999999942,
+      "percent": -1.8157080913886041,
+      "updatedAt": "2026-10-13T06:45:03.000Z"
     },
     {
       "id": "bist",
       "label": "BIST100",
       "symbol": "XU100.IS",
       "decimals": 2,
-      "price": 12150.67,
-      "change": -115.32999999999993,
-      "percent": -0.940241317462905,
-      "updatedAt": "2026-10-12T15:10:11.000Z"
+      "price": 12261.46,
+      "change": -4.540000000000873,
+      "percent": -0.037012881134851405,
+      "updatedAt": "2026-10-13T11:44:00.000Z"
     },
     {
       "id": "hsi",
       "label": "HANG SENG",
       "symbol": "^HSI",
       "decimals": 2,
-      "price": 24176.05,
-      "change": -35.25,
-      "percent": -0.14559317343554457,
-      "updatedAt": "2026-10-13T04:02:28.000Z"
+      "price": 24345.22,
+      "change": 133.9200000000019,
+      "percent": 0.5531301499713023,
+      "updatedAt": "2026-10-13T08:08:50.000Z"
     },
     {
       "id": "kospi",
       "label": "KOSPI",
       "symbol": "^KS11",
       "decimals": 2,
-      "price": 5976.71,
-      "change": -407.52999999999975,
-      "percent": -6.38337531170507,
-      "updatedAt": "2026-10-13T03:57:20.000Z"
+      "price": 6035.35,
+      "change": -348.8899999999994,
+      "percent": -5.464863476310406,
+      "updatedAt": "2026-10-13T11:05:40.000Z"
     },
     {
       "id": "shanghai",
       "label": "SHANGHAI",
       "symbol": "000001.SS",
       "decimals": 2,
-      "price": 3787.157,
-      "change": -26.63299999999981,
-      "percent": -0.6983342029844279,
-      "updatedAt": "2026-10-13T03:30:24.000Z"
+      "price": 3800.865,
+      "change": -12.925000000000182,
+      "percent": -0.33890172243359445,
+      "updatedAt": "2026-10-13T07:00:19.000Z"
     },
     {
       "id": "brent",
       "label": "BRENT",
       "symbol": "BZ=F",
       "decimals": 2,
-      "price": 105.33,
-      "change": -1.3200000000000074,
-      "percent": -1.2376933895921305,
-      "updatedAt": "2026-10-13T04:06:07.000Z"
+      "price": 105.1,
+      "change": -1.5500000000000114,
+      "percent": -1.4533520862634892,
+      "updatedAt": "2026-10-13T11:48:42.000Z"
     },
     {
       "id": "gold",
       "label": "GOLD",
       "symbol": "GC=F",
       "decimals": 2,
-      "price": 4213.1,
-      "change": 22.5,
-      "percent": 0.5369159547558822,
-      "updatedAt": "2026-10-13T04:07:27.000Z"
+      "price": 4211.2,
+      "change": 20.599999999999454,
+      "percent": 0.4915763852431502,
+      "updatedAt": "2026-10-13T11:48:53.000Z"
     },
     {
       "id": "wti",
       "label": "WTI",
       "symbol": "CL=F",
       "decimals": 2,
-      "price": 92.51,
-      "change": -1.2299999999999898,
-      "percent": -1.3121399615958926,
-      "updatedAt": "2026-10-13T04:07:22.000Z"
+      "price": 92.42,
+      "change": -1.3199999999999932,
+      "percent": -1.4081502026882795,
+      "updatedAt": "2026-10-13T11:48:55.000Z"
     },
     {
       "id": "copper",
       "label": "COPPER",
       "symbol": "HG=F",
       "decimals": 2,
-      "price": 6.739,
-      "change": -0.008000000000000007,
-      "percent": -0.11857121683711289,
-      "updatedAt": "2026-10-13T04:07:27.000Z"
+      "price": 6.755,
+      "change": 0.008000000000000007,
+      "percent": 0.11857121683711289,
+      "updatedAt": "2026-10-13T11:48:45.000Z"
     },
     {
       "id": "usdtry",
       "label": "USD/TRY",
       "symbol": "USDTRY=X",
       "decimals": 2,
-      "price": 49.3425,
-      "change": -0.016799999999996373,
-      "percent": -0.03403613908624388,
-      "updatedAt": "2026-10-13T04:17:29.000Z"
+      "price": 49.3617,
+      "change": 0.002400000000001512,
+      "percent": 0.004862305583753238,
+      "updatedAt": "2026-10-13T11:59:00.000Z"
     },
     {
       "id": "eurusd",
       "label": "EUR/USD",
       "symbol": "EURUSD=X",
       "decimals": 4,
-      "price": 1.1176,
-      "change": 0.0014999999999998348,
-      "percent": 0.13439655944806334,
-      "updatedAt": "2026-10-13T04:17:28.000Z"
+      "price": 1.1192,
+      "change": 0.0030999999999998806,
+      "percent": 0.2777528895260174,
+      "updatedAt": "2026-10-13T11:58:27.000Z"
     },
     {
       "id": "usdjpy",
       "label": "USD/JPY",
       "symbol": "JPY=X",
       "decimals": 2,
-      "price": 158.284,
-      "change": -0.2909999999999968,
-      "percent": -0.18350938041935794,
-      "updatedAt": "2026-10-13T04:17:30.000Z"
+      "price": 158.154,
+      "change": -0.42099999999999227,
+      "percent": -0.265489516001887,
+      "updatedAt": "2026-10-13T11:58:59.000Z"
     },
     {
       "id": "us10y",
