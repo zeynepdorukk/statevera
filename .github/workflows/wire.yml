@@ -1,7 +1,11 @@
 name: Refresh the wire
 
 # The site is static, so the News feed is a snapshot. This job retakes it every
-# fifteen minutes and commits changes, which in turn triggers the Pages deploy.
+# fifteen minutes and commits changes, then dispatches the Pages deploy.
+#
+# A push made with GITHUB_TOKEN never fires other workflows' `push` triggers, so
+# the commit alone does not redeploy the site. workflow_dispatch is the one event
+# GITHUB_TOKEN is allowed to start, hence the explicit dispatch below.
 
 on:
   schedule:
@@ -10,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: wire
@@ -37,6 +42,7 @@ jobs:
         run: node scripts/check-content.mjs
 
       - name: Commit if anything changed
+        id: commit
         run: |
           if git diff --quiet -- src/data/wire.json src/data/markets.json; then
             echo "No new stories or market changes."
@@ -48,3 +54,10 @@ jobs:
           git add src/data/wire.json src/data/markets.json
           git commit -m "Wire: refresh snapshot (${COUNT} stories)"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Redeploy the site
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
