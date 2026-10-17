@@ -54,3 +54,23 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Once the new pages are live, ping IndexNow (Bing, Yandex, …) with the
+  # Journal URLs this push published, edited or removed. Wire refreshes are
+  # workflow_dispatch runs and are skipped. Never fails the deploy.
+  indexnow:
+    needs: deploy
+    if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Submit changed Journal URLs
+        run: node scripts/indexnow.mjs --submit $(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- src/content/articles)
