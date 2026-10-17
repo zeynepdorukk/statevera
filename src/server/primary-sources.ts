@@ -1,66 +1,80 @@
+// ============================================================
+// PRIMARY-SOURCE SEARCH — the route
+// ------------------------------------------------------------
+// The institutions that matter send no CORS headers, so the
+// browser cannot read them; this fans one query out to every
+// adapter and returns one ranked list.
+//
+// A cold search waits on twelve governments at once, so answers
+// are cached at the edge (shared by every isolate in a location)
+// and served stale while a fresh copy is fetched behind them. A
+// search in which most institutions failed is not cached, so one
+// bad minute upstream is not remembered for ten.
+// ============================================================
+
 import { searchPrimarySources } from "../primary-sources/search";
-import { PRIMARY_SOURCE_TYPES, type PrimarySourceEnv, type PrimarySourceType } from "../primary-sources/types";
+import { PRIMARY_SOURCE_TYPES, type PrimarySourceEnv, type PrimarySourceSearchResponse, type PrimarySourceType } from "../primary-sources/types";
+import type { ApiEnv, WorkerContext } from "./env";
+import { HttpError, clientKey, corsHeaders, finalize, json, newRequestId, type Exchange } from "./http";
+import { enforce } from "./rate-limit";
+import { cachedJson } from "./edge-cache";
 
-const ALLOWED_ORIGINS = new Set([
-  "https://statevera.org",
-  "https://www.statevera.org",
-  "https://zeynepdorukk.github.io",
-  "http://localhost:4321",
-  "http://127.0.0.1:4321",
-]);
+const FRESH_MS = 10 * 60_000;
+const STALE_MS = 60 * 60_000;
 
-const windows = new Map<string, { startedAt: number; count: number }>();
-
-function corsHeaders(request: Request): Headers {
-  const headers = new Headers();
-  const origin = request.headers.get("origin") ?? "";
-  if (ALLOWED_ORIGINS.has(origin)) {
-    headers.set("access-control-allow-origin", origin);
-    headers.set("vary", "Origin");
-  }
-  headers.set("access-control-allow-methods", "GET, OPTIONS");
-  headers.set("access-control-allow-headers", "content-type");
-  return headers;
+export function normalizeQuery(raw: string | null): string {
+  return (raw ?? "").normalize("NFKC").trim().replace(/\s+/g, " ").slice(0, 160);
 }
 
-function response(data: unknown, request: Request, init: ResponseInit = {}): Response {
-  const headers = corsHeaders(request);
-  headers.set("content-type", "application/json; charset=utf-8");
-  headers.set("cache-control", "public, max-age=60, s-maxage=300, stale-while-revalidate=600");
-  for (const [name, value] of Object.entries(init.headers ?? {})) headers.set(name, String(value));
-  return new Response(init.status === 204 ? null : JSON.stringify(data), { ...init, headers });
-}
-
-function requestId(request: Request): string {
-  return request.headers.get("cf-connecting-ip") || request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "anonymous";
-}
-
-function allowed(request: Request): boolean {
-  const id = requestId(request);
-  const now = Date.now();
-  const previous = windows.get(id);
-  if (!previous || now - previous.startedAt > 60_000) {
-    windows.set(id, { startedAt: now, count: 1 });
-    return true;
-  }
-  if (previous.count >= 30) return false;
-  previous.count += 1;
-  return true;
-}
-
-export async function handlePrimarySources(request: Request, env: PrimarySourceEnv): Promise<Response> {
-  if (request.method === "OPTIONS") return response(null, request, { status: 204 });
-  if (request.method !== "GET") return response({ error: "Only GET is supported." }, request, { status: 405 });
-  if (!allowed(request)) return response({ error: "Too many searches. Try again shortly." }, request, { status: 429 });
-
-  const url = new URL(request.url);
-  const query = (url.searchParams.get("q") ?? "").trim().replace(/\s+/g, " ").slice(0, 160);
-  if (query.length < 2) return response({ error: "Enter at least two characters." }, request, { status: 400 });
-
-  const rawType = (url.searchParams.get("type") ?? "All").trim();
-  const type = rawType === "All" || PRIMARY_SOURCE_TYPES.includes(rawType as PrimarySourceType)
-    ? (rawType as PrimarySourceType | "All")
+export function normalizeType(raw: string | null): PrimarySourceType | "All" {
+  const value = (raw ?? "All").trim();
+  return value === "All" || PRIMARY_SOURCE_TYPES.includes(value as PrimarySourceType)
+    ? (value as PrimarySourceType | "All")
     : "All";
-  const result = await searchPrimarySources(query, type, env, request.signal);
-  return response(result, request);
+}
+
+/** Worth remembering only when at least half the institutions answered. */
+const healthy = (result: PrimarySourceSearchResponse): boolean =>
+  result.sources.length === 0 || result.sources.filter((source) => source.ok).length * 2 >= result.sources.length;
+
+export async function primarySources(exchange: Exchange, ctx?: WorkerContext): Promise<Response> {
+  const { request, env, url } = exchange;
+  if (request.method !== "GET") throw new HttpError(405, "method_not_allowed", "Only GET is supported.");
+
+  const query = normalizeQuery(url.searchParams.get("q"));
+  if (query.length < 2) throw new HttpError(400, "query_too_short", "Enter at least two characters.");
+  const type = normalizeType(url.searchParams.get("type"));
+
+  await enforce(env, "search", clientKey(request));
+
+  const { value, state } = await cachedJson(
+    `ps:v1:${type}:${query.toLowerCase()}`,
+    // The client's abort signal is deliberately not passed: a refresh that runs
+    // after the reader has gone still fills the cache for the next one.
+    () => searchPrimarySources(query, type, env),
+    { freshMs: FRESH_MS, staleMs: STALE_MS, ctx, shouldStore: healthy }
+  );
+
+  return json(value, {
+    cache: "public, max-age=60, s-maxage=300, stale-while-revalidate=600",
+    headers: { "x-cache": state },
+  });
+}
+
+/**
+ * Kept for anything that still imports the old standalone handler: it now runs
+ * through the same route, envelope and limits as the rest of the API.
+ */
+export async function handlePrimarySources(request: Request, env: PrimarySourceEnv): Promise<Response> {
+  const url = new URL(request.url);
+  const exchange: Exchange = { request, env: env as ApiEnv, url, route: "primary-sources", id: newRequestId(), startedAt: Date.now() };
+  if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: corsHeaders(exchange) });
+  try {
+    return finalize(exchange, await primarySources(exchange));
+  } catch (error) {
+    if (error instanceof HttpError) {
+      return finalize(exchange, json({ error: error.message, code: error.code }, { status: error.status, headers: error.headers }));
+    }
+    return finalize(exchange, json({ error: (error as Error).message, code: "internal" }, { status: 500 }));
+  }
 }

@@ -47,15 +47,27 @@ const apiDevPlugin = {
   apply: "serve",
   configureServer(server) {
     /** Stands in for the Worker's KV binding, so read counts work while writing. */
-    const viewKeys = new Map();
+    /** @type {Map<string, { value: string, metadata: unknown, expires: number }>} */
+    const kv = new Map();
     const views = {
-      /** @param {string} key @param {string} _value @param {{ metadata?: unknown }} [options] */
-      put: async (key, _value, options) => void viewKeys.set(key, options?.metadata ?? {}),
+      /** @param {string} key @param {string} [type] */
+      get: async (key, type) => {
+        const entry = kv.get(key);
+        if (!entry || (entry.expires && entry.expires < Date.now())) return null;
+        return type === "json" ? JSON.parse(entry.value) : entry.value;
+      },
+      /** @param {string} key @param {string} value @param {{ metadata?: unknown, expirationTtl?: number }} [options] */
+      put: async (key, value, options) =>
+        void kv.set(key, {
+          value,
+          metadata: options?.metadata ?? {},
+          expires: options?.expirationTtl ? Date.now() + options.expirationTtl * 1000 : 0,
+        }),
       /** @param {{ prefix: string }} options */
       list: async ({ prefix }) => ({
-        keys: [...viewKeys]
+        keys: [...kv]
           .filter(([name]) => name.startsWith(prefix))
-          .map(([name, metadata]) => ({ name, metadata })),
+          .map(([name, entry]) => ({ name, metadata: entry.metadata })),
         list_complete: true,
       }),
     };

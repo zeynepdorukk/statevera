@@ -22,3 +22,31 @@ id = "691d4b0743b242b197ba9b78acff41a5"
 #   npx wrangler secret put GOVINFO_API_KEY
 # GITHUB_CLIENT_SECRET is only needed for an OAuth App; a GitHub App's device
 # flow does not use one.
+
+# Per-route rate limits, shared by every isolate in a Cloudflare location.
+# Without these bindings the API falls back to an in-memory window per isolate.
+# Period must be 10 or 60 seconds.
+[[ratelimits]]
+name = "LIMIT_SEARCH"
+namespace_id = "4101"
+simple = { limit = 30, period = 60 }
+
+[[ratelimits]]
+name = "LIMIT_VIEWS"
+namespace_id = "4102"
+simple = { limit = 120, period = 60 }
+
+[[ratelimits]]
+name = "LIMIT_AUTH"
+namespace_id = "4103"
+simple = { limit = 20, period = 60 }
+
+[[ratelimits]]
+name = "LIMIT_ASSISTANT"
+namespace_id = "4104"
+simple = { limit = 60, period = 60 }
+
+# Structured request logs (one JSON line per request) in Workers Logs.
+[observability]
+enabled = true
+head_sampling_rate = 1

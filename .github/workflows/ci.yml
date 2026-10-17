@@ -1,0 +1,43 @@
+name: CI
+
+# Proves a change before it ships: content integrity, types, the API's tests
+# and a full build. The wire bot's snapshot commits are skipped — they touch
+# only data that check-content.mjs already verifies in the wire job.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "src/data/wire.json"
+      - "src/data/markets.json"
+      - "src/content/articles/**"
+      - "public/images/articles/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Content integrity
+        run: npm run check
+      - name: Types
+        run: npm run typecheck
+      - name: Tests
+        run: npm test
+      - name: Build
+        run: npm run build
+      - name: Worker bundles
+        run: npx wrangler deploy --dry-run --outdir .wrangler-dry

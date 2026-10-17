@@ -1,7 +1,9 @@
-// The publication's only server. It exists for the two things a browser is not
-// allowed to do: read institutions that send no CORS headers, and keep a count.
-import { handleApi, type ApiEnv } from "../src/server/api";
+// The publication's only server. It exists for the things a browser is not
+// allowed to do: read institutions that send no CORS headers, keep a count,
+// and hold a key on the writer's behalf.
+import { handleApi } from "../src/server/api";
+import type { ApiEnv, WorkerContext } from "../src/server/env";
 
 export default {
-  fetch: (request: Request, env: ApiEnv): Promise<Response> => handleApi(request, env),
+  fetch: (request: Request, env: ApiEnv, ctx: WorkerContext): Promise<Response> => handleApi(request, env, ctx),
 };
