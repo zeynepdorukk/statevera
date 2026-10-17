@@ -18,7 +18,7 @@
     "verify": "npm run check && npm run typecheck && npm test && npm run build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit -p ."
+    "typecheck": "astro sync && tsc --noEmit -p ."
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.5",
