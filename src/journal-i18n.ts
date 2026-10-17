@@ -72,7 +72,7 @@ export const journalCopy = {
     mostRead: "Most read this week",
     readingProgress: "Reading progress",
     followTitle: "Follow Statevera",
-    followText: "New analysis as it is published, in your feed reader or on LinkedIn.",
+    followText: "Or follow in your feed reader or on LinkedIn:",
     rss: "RSS feed",
   },
   tr: {
@@ -128,7 +128,7 @@ export const journalCopy = {
     mostRead: "Bu hafta en çok okunanlar",
     readingProgress: "Okuma ilerlemesi",
     followTitle: "Statevera'yı takip edin",
-    followText: "Yeni analizler yayımlandığı anda; RSS okuyucunuzda ya da LinkedIn'de.",
+    followText: "Ya da RSS okuyucunuzda veya LinkedIn'de takip edin:",
     rss: "RSS akışı",
   },
 } as const;

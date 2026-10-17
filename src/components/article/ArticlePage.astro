@@ -1,4 +1,5 @@
 ---
+import SubscribeForm from "../SubscribeForm.astro";
 import { render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { site, regionSlugOf } from "../../site";
@@ -179,17 +180,15 @@ const jsonLd = [
           {data.country.length > 0 && ` ${copy.focus(data.country)}`}
         </p>
 
-        <section class="article-follow no-print mt-8 border border-line bg-paper-soft px-5 py-5 sm:flex sm:items-center sm:justify-between sm:gap-6" aria-labelledby="follow-title">
-          <div>
-            <p id="follow-title" class="font-serif text-[1.1rem] font-semibold text-ink">{copy.followTitle}</p>
-            <p class="mt-1 font-sans text-[0.8rem] leading-relaxed text-muted">{copy.followText}</p>
-          </div>
-          <div class="mt-4 flex shrink-0 gap-2 sm:mt-0">
-            <a href={root(localizePath("/rss.xml", language))} class="btn btn-tone">{copy.rss}</a>
+        <section class="article-follow no-print mt-8" aria-label={copy.followTitle}>
+          <SubscribeForm id="article-subscribe" />
+          <p class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 font-sans text-[0.78rem] text-muted">
+            <span>{copy.followText}</span>
+            <a href={root(localizePath("/rss.xml", language))} class="link-tone underline underline-offset-2" data-tone="journal">{copy.rss}</a>
             {site.socialLinks.linkedin && (
-              <a href={site.socialLinks.linkedin} target="_blank" rel="noopener noreferrer me" class="btn btn-ghost">LinkedIn</a>
+              <a href={site.socialLinks.linkedin} target="_blank" rel="noopener noreferrer me" class="link-tone underline underline-offset-2" data-tone="journal">LinkedIn</a>
             )}
-          </div>
+          </p>
         </section>
       </div>
     </article>

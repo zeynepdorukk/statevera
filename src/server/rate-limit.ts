@@ -10,10 +10,10 @@
 import type { ApiEnv, RateLimitBinding } from "./env";
 import { HttpError } from "./http";
 
-export type Bucket = "search" | "views" | "auth" | "assistant";
+export type Bucket = "search" | "views" | "auth" | "assistant" | "subscribe";
 
 interface Policy {
-  binding: keyof Pick<ApiEnv, "LIMIT_SEARCH" | "LIMIT_VIEWS" | "LIMIT_AUTH" | "LIMIT_ASSISTANT">;
+  binding: keyof Pick<ApiEnv, "LIMIT_SEARCH" | "LIMIT_VIEWS" | "LIMIT_AUTH" | "LIMIT_ASSISTANT" | "LIMIT_SUBSCRIBE">;
   /** Requests allowed per window by the in-memory fallback. */
   limit: number;
   windowMs: number;
@@ -26,6 +26,7 @@ export const POLICIES: Record<Bucket, Policy> = {
   views: { binding: "LIMIT_VIEWS", limit: 120, windowMs: 60_000, message: "Too many requests. Try again shortly." },
   auth: { binding: "LIMIT_AUTH", limit: 20, windowMs: 60_000, message: "Too many sign-in attempts. Wait a minute." },
   assistant: { binding: "LIMIT_ASSISTANT", limit: 60, windowMs: 60_000, message: "The assistant is busy. Try again in a moment." },
+  subscribe: { binding: "LIMIT_SUBSCRIBE", limit: 5, windowMs: 60_000, message: "Too many sign-ups from here. Try again in a minute." },
 };
 
 /** Timestamps of recent hits per bucket+key, trimmed as they age out. */

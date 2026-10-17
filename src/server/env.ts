@@ -67,6 +67,7 @@ export interface ApiEnv extends PrimarySourceEnv {
   LIMIT_VIEWS?: RateLimitBinding;
   LIMIT_AUTH?: RateLimitBinding;
   LIMIT_ASSISTANT?: RateLimitBinding;
+  LIMIT_SUBSCRIBE?: RateLimitBinding;
 
   /** The GitHub app behind "Sign in with GitHub". Without it, tokens only. */
   GITHUB_CLIENT_ID?: string;

@@ -949,3 +949,21 @@ mark {
     overscroll-behavior: contain;
   }
 }
+
+/* Email sign-up */
+.subscribe-trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.subscribe-status[data-state="ok"] {
+  color: var(--journal);
+}
+.subscribe-status[data-state="error"] {
+  color: var(--wire);
+}
+.subscribe-form {
+  position: relative;
+}

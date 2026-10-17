@@ -32,6 +32,9 @@ export function memoryKv(): KvStore & { entries: Map<string, { value: string; me
         expires: options?.expirationTtl ? Date.now() + options.expirationTtl * 1000 : 0,
       });
     },
+    async delete(key: string) {
+      entries.delete(key);
+    },
     async list({ prefix, cursor, limit = 2 }) {
       ops.list += 1;
       // A tiny page size, so pagination is exercised.

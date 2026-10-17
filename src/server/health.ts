@@ -21,6 +21,7 @@ export async function health(exchange: Exchange): Promise<Response> {
     time: new Date().toISOString(),
     features: {
       views: Boolean(env.VIEWS),
+      subscriptions: Boolean(env.VIEWS),
       signIn: Boolean(env.GITHUB_CLIENT_ID),
       assistant: Boolean(env.OPENAI_KEY),
       rateLimits: {
@@ -28,6 +29,7 @@ export async function health(exchange: Exchange): Promise<Response> {
         views: Boolean(env.LIMIT_VIEWS),
         auth: Boolean(env.LIMIT_AUTH),
         assistant: Boolean(env.LIMIT_ASSISTANT),
+        subscribe: Boolean(env.LIMIT_SUBSCRIBE),
       },
       sourceKeys: {
         govinfo: Boolean(env.GOVINFO_API_KEY),

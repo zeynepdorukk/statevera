@@ -1,0 +1,165 @@
+---
+// Email sign-up for new Journal analysis. Posts to the desk Worker, which keeps
+// the list for the writer; nothing is sent from here. Works without JavaScript
+// only as far as showing the form: the address is sent by the script below.
+import { site } from "../site";
+import { getLanguage, localizePath } from "../i18n";
+import { root } from "../utils/collection";
+
+interface Props {
+  /** "panel" sits in a bordered box; "inline" fits a sidebar or the footer. */
+  variant?: "panel" | "inline";
+  id?: string;
+}
+
+const { variant = "panel", id = "subscribe" } = Astro.props;
+const language = getLanguage(Astro.currentLocale);
+const endpoint = site.deskUrl ? `${site.deskUrl}/api/subscribe` : "";
+const privacyHref = root(localizePath("/privacy", language));
+const copy = language === "tr"
+  ? {
+      title: "Yeni analizler e-postanıza gelsin",
+      text: "Zeynep Doruk yeni bir yazı yayımladığında kısa bir e-posta. Reklam yok, başka bir şey yok.",
+      label: "E-posta adresiniz",
+      placeholder: "ad@ornek.com",
+      consent: "Statevera'dan yeni yazı e-postaları almayı kabul ediyorum. İstediğim zaman listeden çıkabilirim.",
+      privacy: "Gizlilik bildirimi",
+      submit: "Abone ol",
+      sending: "Gönderiliyor…",
+      done: "Teşekkürler. Bir sonraki yazıda e-postanızda olacak.",
+      bad: "Bu bir e-posta adresi gibi görünmüyor.",
+      needConsent: "Devam etmek için onay kutusunu işaretleyin.",
+      busy: "Çok fazla deneme oldu. Bir dakika sonra tekrar deneyin.",
+      failed: "Şu anda kaydedilemedi. Biraz sonra tekrar deneyin.",
+    }
+  : {
+      title: "Get new analysis by email",
+      text: "A short email when Zeynep Doruk publishes a new piece. No ads, nothing else.",
+      label: "Your email address",
+      placeholder: "name@example.com",
+      consent: "I agree to receive new-article emails from Statevera. I can leave the list at any time.",
+      privacy: "Privacy notice",
+      submit: "Subscribe",
+      sending: "Sending…",
+      done: "Thank you. You will hear from us with the next piece.",
+      bad: "That does not look like an email address.",
+      needConsent: "Tick the box to continue.",
+      busy: "Too many tries. Wait a minute and try again.",
+      failed: "That did not go through. Try again in a little while.",
+    };
+const messages = JSON.stringify({
+  sending: copy.sending,
+  done: copy.done,
+  bad: copy.bad,
+  needConsent: copy.needConsent,
+  busy: copy.busy,
+  failed: copy.failed,
+});
+---
+
+{endpoint && (
+  <form
+    class:list={[
+      "subscribe-form no-print",
+      variant === "panel" ? "border border-line border-t-[3px] border-t-journal bg-paper-soft px-5 py-5" : "",
+    ]}
+    data-subscribe
+    data-tone="journal"
+    data-endpoint={endpoint}
+    data-language={language}
+    data-messages={messages}
+    aria-labelledby={`${id}-title`}
+    method="dialog"
+    novalidate
+  >
+    <p id={`${id}-title`} class:list={[variant === "panel" ? "font-serif text-[1.1rem] font-semibold text-ink" : "kicker-ink"]}>
+      {copy.title}
+    </p>
+    <p class="mt-1.5 font-sans text-[0.8rem] leading-relaxed text-muted">{copy.text}</p>
+    <div class="mt-3.5 flex flex-col gap-2 sm:flex-row">
+      <label for={`${id}-email`} class="sr-only">{copy.label}</label>
+      <input
+        id={`${id}-email`}
+        name="email"
+        type="email"
+        inputmode="email"
+        autocomplete="email"
+        required
+        maxlength="254"
+        placeholder={copy.placeholder}
+        class="subscribe-input min-w-0 flex-1 border border-line bg-paper px-3 py-2 font-sans text-[0.88rem] text-ink placeholder:text-muted focus:border-ink focus:outline-none"
+      />
+      <button type="submit" class="btn btn-tone shrink-0">{copy.submit}</button>
+    </div>
+    <!-- Hidden from people; a bot that fills it is thanked and forgotten. -->
+    <div class="subscribe-trap" aria-hidden="true">
+      <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+    </div>
+    <label class="mt-3 flex items-start gap-2 font-sans text-[0.74rem] leading-relaxed text-ink-soft">
+      <input type="checkbox" name="consent" required class="mt-[0.2rem] shrink-0 accent-[var(--journal)]" />
+      <span>
+        {copy.consent}{" "}
+        <a href={privacyHref} class="link-tone underline underline-offset-2">{copy.privacy}</a>
+      </span>
+    </label>
+    <p class="subscribe-status mt-2 min-h-[1.2em] font-sans text-[0.78rem]" role="status" aria-live="polite" data-status></p>
+  </form>
+)}
+
+<script>
+  document.querySelectorAll<HTMLFormElement>("form[data-subscribe]").forEach((form) => {
+    const status = form.querySelector<HTMLElement>("[data-status]")!;
+    const button = form.querySelector<HTMLButtonElement>("button[type=submit]")!;
+    const messages = JSON.parse(form.dataset.messages ?? "{}") as Record<string, string>;
+    const say = (text: string, state: "" | "ok" | "error" = "") => {
+      status.textContent = text;
+      status.dataset.state = state;
+    };
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const email = String(data.get("email") ?? "").trim();
+      const emailInput = form.querySelector<HTMLInputElement>("input[name=email]")!;
+      if (!emailInput.checkValidity() || !email.includes("@")) {
+        say(messages.bad, "error");
+        emailInput.focus();
+        return;
+      }
+      if (!data.get("consent")) {
+        say(messages.needConsent, "error");
+        form.querySelector<HTMLInputElement>("input[name=consent]")?.focus();
+        return;
+      }
+      button.disabled = true;
+      say(messages.sending);
+      try {
+        const response = await fetch(form.dataset.endpoint!, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            email,
+            consent: true,
+            language: form.dataset.language,
+            page: location.pathname,
+            website: String(data.get("website") ?? ""),
+          }),
+        });
+        if (response.ok) {
+          say(messages.done, "ok");
+          form.reset();
+          return;
+        }
+        const body = (await response.json().catch(() => ({}))) as { code?: string };
+        say(
+          body.code === "bad_email" ? messages.bad : response.status === 429 ? messages.busy : messages.failed,
+          "error"
+        );
+      } catch {
+        say(messages.failed, "error");
+      } finally {
+        button.disabled = false;
+      }
+    });
+  });
+</script>

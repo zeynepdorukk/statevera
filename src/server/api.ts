@@ -14,6 +14,9 @@
 //   POST /api/sign-in/finish    finish it, for the writer only
 //   GET  /api/assistant         is the desk's key usable, and which model
 //   POST /api/assistant         the writing assistant, for the writer only
+//   POST /api/subscribe         a reader joins the mailing list
+//   GET  /api/subscribers       the list, for the writer only
+//   POST /api/subscribers/remove  take one address off, for the writer only
 //   POST /api/vitals            one reader's Core Web Vitals, logged not stored
 //
 // The same handler runs as a Cloudflare Worker in production and
@@ -30,6 +33,7 @@ import { assistantStatus, handleAssistant } from "./assistant";
 import { primarySources } from "./primary-sources";
 import { health } from "./health";
 import { recordVitals } from "./vitals";
+import { listSubscribers, removeSubscriber, subscribe } from "./subscribe";
 
 export type { ApiEnv, ViewMark, ViewStore, KvStore } from "./env";
 
@@ -45,6 +49,9 @@ const ROUTES: Record<string, Partial<Record<string, Handler>>> = {
   "sign-in/finish": { POST: finishDeviceLogin },
   assistant: { GET: assistantStatus, POST: handleAssistant },
   vitals: { POST: recordVitals },
+  subscribe: { POST: subscribe },
+  subscribers: { GET: listSubscribers },
+  "subscribers/remove": { POST: removeSubscriber },
 };
 
 /** "/api/views/" and "/statevera/api/views" both mean "views". */

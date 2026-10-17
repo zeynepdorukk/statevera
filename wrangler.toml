@@ -42,6 +42,11 @@ namespace_id = "4103"
 simple = { limit = 20, period = 60 }
 
 [[ratelimits]]
+name = "LIMIT_SUBSCRIBE"
+namespace_id = "4105"
+simple = { limit = 5, period = 60 }
+
+[[ratelimits]]
 name = "LIMIT_ASSISTANT"
 namespace_id = "4104"
 simple = { limit = 60, period = 60 }

@@ -2512,3 +2512,40 @@ button.ed-card-views[aria-expanded="true"] {
   padding: 0.3rem 0.6rem;
   font-size: 0.68rem;
 }
+
+/* Mailing list panel on the dashboard */
+.ed-mailing {
+  margin-top: 3rem;
+}
+.ed-mailing .ed-stories-head h2 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0;
+}
+.ed-mailing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.ed-mailing-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.ed-mailing-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.ed-mailing-email {
+  flex: 1 1 16rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  overflow-wrap: anywhere;
+}

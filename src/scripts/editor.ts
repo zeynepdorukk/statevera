@@ -4,6 +4,7 @@ import { type AiConfig,
   completeInline, suggestMeta, suggestPhotoQuery } from "../lib/editor/ai";
 import { runEdit, judgePassage, sourceClaim, diffWords, describeChange, EDIT_JOBS,
   type AgentStep, type EditJobId, type PassageContext, type SourceCandidate } from "../lib/editor/agent";
+import { readMailingList, removeFromMailingList, mailingListCsv, type MailingList } from "../lib/editor/desk";
 import { readSession, signIn, signOutRequest, readLibrary, readFile, writeFile, deleteFile,
   beginDeviceLogin, searchPhotos, importPhoto, uploadImage, readViewCounts, readViewDetail,
   type FileEntry, type Photo, type ViewDetail, type ViewShare } from "../lib/editor/desk";
@@ -543,8 +544,20 @@ function storiesView(notice = "") {
              <button type="button" class="ed-btn ed-btn-primary" data-new-empty>Write the first piece</button>
            </div>`
         : `<div class="ed-grid">${state.stories.map(card).join("")}</div>`}
+      <section class="ed-mailing" data-mailing aria-labelledby="ed-mailing-title">
+        <div class="ed-stories-head">
+          <h2 id="ed-mailing-title">Mailing list</h2>
+          <p class="ed-note" data-mailing-note role="status" aria-live="polite">Readers who asked to hear about new pieces.</p>
+        </div>
+        <div class="ed-mailing-actions">
+          <button type="button" class="ed-btn" data-mailing-load>Show the list</button>
+          <button type="button" class="ed-btn" data-mailing-csv hidden>Download CSV</button>
+        </div>
+        <div data-mailing-body></div>
+      </section>
     </div>
   `);
+  wireMailingList(root);
 
   root.querySelectorAll<HTMLButtonElement>("[data-open]").forEach((b) =>
     b.addEventListener("click", () => openStory(b.dataset.open!))
@@ -3607,4 +3620,81 @@ if (session.signedIn) {
   await openStories();
 } else {
   signInView(session.note ?? "");
+}
+
+
+// ============================================================
+// Mailing list (the dashboard's last panel)
+// ============================================================
+
+/** Shows who signed up, offers the CSV, and removes an address on request. */
+function wireMailingList(scope: HTMLElement) {
+  const panel = scope.querySelector<HTMLElement>("[data-mailing]");
+  if (!panel) return;
+  const note = panel.querySelector<HTMLElement>("[data-mailing-note]")!;
+  const body = panel.querySelector<HTMLElement>("[data-mailing-body]")!;
+  const load = panel.querySelector<HTMLButtonElement>("[data-mailing-load]")!;
+  const csv = panel.querySelector<HTMLButtonElement>("[data-mailing-csv]")!;
+  let list: MailingList | null = null;
+  const token = () => readCredentials().github;
+  const dateOf = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+
+  const render = () => {
+    if (!list) return;
+    note.dataset.state = "";
+    note.textContent = list.count === 0
+      ? "Nobody yet. The sign-up box sits under every piece and on the Journal page."
+      : `${list.count} reader${list.count === 1 ? "" : "s"} \u{b7} ${list.byLanguage.en} English \u{b7} ${list.byLanguage.tr} Turkish`;
+    csv.hidden = list.count === 0;
+    const shown = list.subscribers.slice(0, 50);
+    body.innerHTML = shown.length
+      ? `<ul class="ed-mailing-list">${shown.map((s) => `
+          <li><span class="ed-mailing-email">${esc(s.email)}</span>
+            <span class="ed-note">${s.language.toUpperCase()} \u{b7} ${esc(dateOf(s.at))}</span>
+            <button type="button" class="ed-btn ed-btn-quiet ed-btn-sm" data-mailing-remove="${esc(s.email)}">Remove</button></li>`).join("")}
+        </ul>${list.count > shown.length ? `<p class="ed-note">Showing the newest ${shown.length}; the CSV has everyone.</p>` : ""}`
+      : "";
+    body.querySelectorAll<HTMLButtonElement>("[data-mailing-remove]").forEach((button) =>
+      button.addEventListener("click", async () => {
+        const email = button.dataset.mailingRemove!;
+        if (!window.confirm(`Remove ${email} from the mailing list? This cannot be undone.`)) return;
+        button.disabled = true;
+        try {
+          await removeFromMailingList(token(), email);
+          list = await readMailingList(token());
+          render();
+        } catch (error) {
+          button.disabled = false;
+          note.dataset.state = "error";
+          note.textContent = (error as Error).message;
+        }
+      })
+    );
+  };
+
+  load.addEventListener("click", async () => {
+    load.disabled = true;
+    note.dataset.state = "";
+    note.textContent = "Loading\u{2026}";
+    try {
+      list = await readMailingList(token());
+      load.textContent = "Refresh";
+      render();
+    } catch (error) {
+      note.dataset.state = "error";
+      note.textContent = (error as Error).message;
+    } finally {
+      load.disabled = false;
+    }
+  });
+
+  csv.addEventListener("click", () => {
+    if (!list) return;
+    const url = URL.createObjectURL(new Blob([mailingListCsv(list)], { type: "text/csv;charset=utf-8" }));
+    const link = Object.assign(document.createElement("a"), { href: url, download: `statevera-mailing-list-${new Date().toISOString().slice(0, 10)}.csv` });
+    document.body.append(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  });
 }

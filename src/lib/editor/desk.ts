@@ -451,6 +451,46 @@ async function views<T>(query: string): Promise<T> {
   return data;
 }
 
+/** The mailing list, as the writer sees it. */
+export interface MailingList {
+  count: number;
+  byLanguage: { en: number; tr: number };
+  subscribers: { email: string; language: "en" | "tr"; at: string; page?: string }[];
+}
+
+async function listCall<T>(path: string, token: string, body?: unknown): Promise<T> {
+  if (!site.deskUrl) throw new DeskError("No desk service is configured.", 501);
+  const response = await fetch(`${site.deskUrl}${path}`, {
+    method: body === undefined ? "GET" : "POST",
+    headers: { authorization: `Bearer ${token}`, ...(body === undefined ? {} : { "content-type": "application/json" }) },
+    ...(body === undefined ? {} : { body: JSON.stringify(body) }),
+  });
+  const data = (await response.json().catch(() => ({}))) as T & { error?: string };
+  if (!response.ok) {
+    if (response.status === 404) throw new DeskError("The mailing list is not switched on yet: the desk service needs redeploying.", 404);
+    throw new DeskError(data.error ?? "The desk service did not answer.", response.status);
+  }
+  return data;
+}
+
+export const readMailingList = (token: string): Promise<MailingList> => listCall<MailingList>("/api/subscribers", token);
+
+export const removeFromMailingList = (token: string, email: string): Promise<{ ok: boolean; removed: boolean }> =>
+  listCall("/api/subscribers/remove", token, { email });
+
+/** The list as a spreadsheet any newsletter tool imports. */
+export function mailingListCsv(list: MailingList): string {
+  const cell = (raw: string) => {
+    // A leading = + - @ would run as a formula when the file is opened in a spreadsheet.
+    const value = /^[=+\-@]/.test(raw) ? `'${raw}` : raw;
+    return /[",\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value;
+  };
+  return [
+    "email,language,subscribed_at,page",
+    ...list.subscribers.map((s) => [s.email, s.language, s.at, s.page ?? ""].map(cell).join(",")),
+  ].join("\n");
+}
+
 /** One official document, as the primary-source adapters return it. */
 export interface PrimaryHit {
   title: string;
