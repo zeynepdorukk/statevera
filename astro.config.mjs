@@ -4,8 +4,10 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { unified } from "@astrojs/markdown-remark";
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import { generateVariants } from "./scripts/responsive-images.mjs";
 
 // statevera.org serves the site from its root, in production as in development.
 // Kept as a constant because the helpers below still ask where the root is.
@@ -176,6 +178,60 @@ const legacyRedirects = Object.fromEntries(
   Object.entries(legacy).map(([from, to]) => [from, `${BASE}${to}/`])
 );
 
+/**
+ * When each published article last changed, keyed by its canonical address, for
+ * the sitemap's <lastmod>. Read from frontmatter so the sitemap never claims a
+ * page changed just because the site was rebuilt (which happens every 15 min).
+ * Translations are paired by translationKey, so the sitemap can name both
+ * editions even though their slugs differ.
+ *
+ * @returns {{ dates: Map<string, string>, editions: Map<string, { url: string, lang: string }[]> }}
+ */
+function articleIndex() {
+  /** @type {Map<string, string>} */
+  const dates = new Map();
+  /** @type {Map<string, { url: string, lang: string }[]>} */
+  const byKey = new Map();
+  /** @type {Map<string, { url: string, lang: string }[]>} */
+  const editions = new Map();
+  const dir = resolve(process.cwd(), "src/content/articles");
+  if (!existsSync(dir)) return { dates, editions };
+  for (const name of readdirSync(dir).filter((file) => file.endsWith(".mdx"))) {
+    const head = readFileSync(resolve(dir, name), "utf8").split(/^---\s*$/m)[1] ?? "";
+    /** @param {string} key */
+    const field = (key) => head.match(new RegExp(`^${key}:\\s*["']?([^"'\\n]+)`, "m"))?.[1]?.trim() ?? "";
+    if (field("draft") === "true") continue;
+    const stamp = Date.parse(field("updated") || field("date"));
+    if (Number.isNaN(stamp)) continue;
+    const lang = field("language") === "tr" ? "tr" : "en";
+    const url = `https://statevera.org${lang === "tr" ? "/tr" : ""}/articles/${name.replace(/\.mdx$/, "")}/`;
+    dates.set(url, new Date(stamp).toISOString());
+    const key = field("translationKey");
+    if (key) byKey.set(key, [...(byKey.get(key) ?? []), { url, lang }]);
+  }
+  for (const group of byKey.values()) {
+    if (group.length < 2) continue;
+    for (const edition of group) editions.set(edition.url, group);
+  }
+  return { dates, editions };
+}
+const { dates: lastmods, editions } = articleIndex();
+
+/**
+ * Writes WebP width variants and a link-preview cut for every picture the
+ * publication serves itself, after the build, into dist/ only.
+ *
+ * @type {import("astro").AstroIntegration}
+ */
+const responsiveImages = {
+  name: "statevera-responsive-images",
+  hooks: {
+    "astro:build:done": async ({ dir, logger }) => {
+      await generateVariants(fileURLToPath(dir), { log: (/** @type {string} */ line) => logger.info(line) });
+    },
+  },
+};
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://statevera.org",
@@ -194,7 +250,22 @@ export default defineConfig({
   // publication's writing, so they stay out of the index and out of the sitemap.
   integrations: [
     mdx(),
-    sitemap({ filter: (page) => !/\/(404|editor|wire|live)\//.test(page) }),
+    responsiveImages,
+    sitemap({
+      filter: (page) => !/\/(404|editor|wire|live)\//.test(page),
+      // The English and Turkish editions of a section page share a path; the
+      // sitemap says so, which is how Google pairs them without guessing.
+      i18n: { defaultLocale: "en", locales: { en: "en", tr: "tr" } },
+      serialize(item) {
+        const lastmod = lastmods.get(item.url);
+        if (lastmod) {
+          const group = editions.get(item.url);
+          return { ...item, lastmod, priority: 0.8, ...(group ? { links: group } : {}) };
+        }
+        if (item.url === "https://statevera.org/" || item.url === "https://statevera.org/tr/") return { ...item, priority: 1 };
+        return item;
+      },
+    }),
   ],
   vite: {
     plugins: [tailwindcss(), apiDevPlugin],

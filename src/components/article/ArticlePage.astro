@@ -19,6 +19,7 @@ import {
 import { localizePath } from "../../i18n";
 import { byRegion } from "../../data/wire";
 import ArticleHeader from "./ArticleHeader.astro";
+import { responsiveImage } from "../../utils/images";
 import ArticleSources from "./ArticleSources.astro";
 import ArticleShare from "./ArticleShare.astro";
 import RelatedStories from "./RelatedStories.astro";
@@ -52,6 +53,8 @@ const alternates = translations.map((translation) => ({
   path: articleHref(translation),
 }));
 const hrefFor = (path: string) => root(localizePath(path, language));
+const picture = await responsiveImage(data.heroImage);
+const preview = picture.og ?? { src: picture.src, width: picture.width, height: picture.height };
 
 const jsonLd = [
   {
@@ -75,7 +78,10 @@ const jsonLd = [
         url: absoluteUrl("/images/branding/logo-512-v2.png"),
       },
     },
-    image: [absoluteUrl(heroImageOf(data.heroImage))],
+    image: [
+      ...(picture.og ? [absoluteUrl(picture.og.src)] : []),
+      absoluteUrl(heroImageOf(data.heroImage)),
+    ],
     articleSection: data.category,
     keywords: [...data.tags, data.region, ...data.country].join(", "),
     inLanguage: languageMeta.html,
@@ -100,6 +106,10 @@ const jsonLd = [
   description={data.description}
   type="article"
   tone="journal"
+  image={preview.src}
+  imageAlt={data.heroImageAlt}
+  imageWidth={preview.width}
+  imageHeight={preview.height}
   path={href}
   noindex={data.draft}
   jsonLd={jsonLd}

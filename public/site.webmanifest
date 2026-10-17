@@ -1,0 +1,16 @@
+{
+  "name": "STATEVERA",
+  "short_name": "Statevera",
+  "description": "An independent publication about international affairs, power and politics.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1b1e21",
+  "theme_color": "#1b1e21",
+  "lang": "en",
+  "icons": [
+    { "src": "/images/branding/logo-512-v2.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/images/branding/apple-touch-icon-v2.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/images/branding/favicon-v2.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

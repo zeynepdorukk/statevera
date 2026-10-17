@@ -1,6 +1,7 @@
 ---
 import type { Article } from "../utils/collection";
-import { articleHref, formatDate, heroImageOf, readingTime } from "../utils/collection";
+import { articleHref, formatDate, readingTime } from "../utils/collection";
+import { responsiveImage } from "../utils/images";
 import { journalCategoryLabel, journalCopy } from "../journal-i18n";
 
 type Entry = { kind: "article"; entry: Article };
@@ -24,13 +25,16 @@ const minutes = readingTime(item.entry);
 const loading = priority ? "eager" : "lazy";
 const isDraft = data.draft;
 const author = data.author?.trim() || "Zeynep Doruk";
+const picture = await responsiveImage(data.heroImage);
 ---
 
 {variant === "lead" && (
   <article class="group" data-tone="journal">
     <a href={href} tabindex="-1" aria-hidden="true" class="img-zoom mb-4 block border border-line/70">
       <img
-        src={heroImageOf(data.heroImage)}
+        src={picture.src}
+        srcset={picture.srcset}
+        sizes="(min-width: 1024px) 50vw, 100vw"
         alt={data.heroImageAlt}
         width="1200"
         height="750"
@@ -64,7 +68,9 @@ const author = data.author?.trim() || "Zeynep Doruk";
   <article class="group flex flex-col" data-tone="journal">
     <a href={href} tabindex="-1" aria-hidden="true" class="img-zoom mb-3 block border border-line/70">
       <img
-        src={heroImageOf(data.heroImage)}
+        src={picture.src}
+        srcset={picture.srcset}
+        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
         alt=""
         width="800"
         height="500"
@@ -108,7 +114,9 @@ const author = data.author?.trim() || "Zeynep Doruk";
     </div>
     <a href={href} tabindex="-1" aria-hidden="true" class="img-zoom h-[4.2rem] w-[5.6rem] shrink-0 border border-line/70">
       <img
-        src={heroImageOf(data.heroImage)}
+        src={picture.src}
+        srcset={picture.srcset}
+        sizes="112px"
         alt=""
         width="224"
         height="168"

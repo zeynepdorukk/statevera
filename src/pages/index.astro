@@ -1,4 +1,5 @@
 ---
+import { responsiveImage } from "../utils/images";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site, deskList } from "../site";
 import { byCategory, spread, wireItems } from "../data/wire";
@@ -142,13 +143,19 @@ for (const block of deskBlocks) for (const item of block.items) usedIds.add(item
 
 // NEWS — the long tail, everything above is off the table.
 const rest = spread(wireItems.filter((item) => !usedIds.has(item.id)), 12, 2).slice(0, 12);
+const heroPicture = await responsiveImage("/images/previews/briefing-red-sea.jpg");
 ---
 
 <BaseLayout title="" description={copy.heroDescription} path="/">
   <!-- ============ EDITORIAL HERO ============ -->
   <section class="home-hero relative isolate overflow-hidden border-b border-line" aria-labelledby="home-title">
     <img
-      src={root("/images/previews/briefing-red-sea.jpg")}
+      src={heroPicture.src}
+      srcset={heroPicture.srcset}
+      sizes="100vw"
+      width={heroPicture.width}
+      height={heroPicture.height}
+      fetchpriority="high"
       alt={copy.heroAlt}
       class="home-hero-image absolute inset-0 h-full w-full object-cover"
       loading="eager"

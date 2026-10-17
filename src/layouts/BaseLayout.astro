@@ -29,6 +29,10 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  /** Alt text for the link-preview image; the logo's when the default image is used. */
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   type?: "website" | "article";
   tone?: PillarId;
   article?: {
@@ -51,6 +55,9 @@ const {
   title,
   description: descriptionProp,
   image = site.defaultOgImage,
+  imageAlt,
+  imageWidth,
+  imageHeight,
   type = "website",
   tone,
   article,
@@ -113,6 +120,8 @@ const webJsonLd = {
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#1b1e21" />
+    <link rel="manifest" href={root("/site.webmanifest")} />
     <link rel="canonical" href={url.toString()} />
     {effectiveAlternates.map((alternate) => (
       <link
@@ -154,7 +163,14 @@ const webJsonLd = {
     <meta property="og:url" content={url.toString()} />
     <meta property="og:image" content={absoluteImage} />
     <meta property="og:image:secure_url" content={absoluteImage} />
-    <meta property="og:image:alt" content={globalCopy.logoAlt} />
+    <meta property="og:image:alt" content={imageAlt ?? globalCopy.logoAlt} />
+    {!isDefaultImage && imageWidth && imageHeight && (
+      <>
+        <meta property="og:image:type" content={/\.png$/i.test(image) ? "image/png" : /\.webp$/i.test(image) ? "image/webp" : "image/jpeg"} />
+        <meta property="og:image:width" content={String(imageWidth)} />
+        <meta property="og:image:height" content={String(imageHeight)} />
+      </>
+    )}
     {isDefaultImage && (
       <>
         <meta property="og:image:type" content="image/png" />
@@ -173,7 +189,7 @@ const webJsonLd = {
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={absoluteImage} />
-    <meta name="twitter:image:alt" content={globalCopy.logoAlt} />
+    <meta name="twitter:image:alt" content={imageAlt ?? globalCopy.logoAlt} />
 
     {article && (
       <>
