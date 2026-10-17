@@ -83,6 +83,15 @@ export interface ApiEnv extends PrimarySourceEnv {
   /** Which model that key should use. Left unset, the desk finds one it can reach. */
   OPENAI_MODEL?: string;
 
+  /** Switches email on: confirmation, unsubscribe links, new-piece announcements (Resend). */
+  RESEND_API_KEY?: string;
+  /** Signs confirm/unsubscribe links. Falls back to RESEND_API_KEY. */
+  MAIL_SECRET?: string;
+  /** Sender, e.g. "Statevera <journal@statevera.org>"; the domain must be verified in Resend. */
+  MAIL_FROM?: string;
+  /** This Worker's public origin, used to build the links in emails. */
+  PUBLIC_API_URL?: string;
+
   /** Extra browser origins allowed to call the API, comma separated. */
   EXTRA_ORIGINS?: string;
   /** Stamped by the deploy workflow so /api/health can say what is running. */

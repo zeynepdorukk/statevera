@@ -27,6 +27,7 @@ const copy = language === "tr"
       submit: "Abone ol",
       sending: "Gönderiliyor…",
       done: "Teşekkürler. Bir sonraki yazıda e-postanızda olacak.",
+      check: "Neredeyse tamam: gelen kutunuza bir onay e-postası gönderdik. Bağlantıya tıklayınca abone olursunuz.",
       bad: "Bu bir e-posta adresi gibi görünmüyor.",
       needConsent: "Devam etmek için onay kutusunu işaretleyin.",
       busy: "Çok fazla deneme oldu. Bir dakika sonra tekrar deneyin.",
@@ -42,6 +43,7 @@ const copy = language === "tr"
       submit: "Subscribe",
       sending: "Sending…",
       done: "Thank you. You will hear from us with the next piece.",
+      check: "Almost there: we sent a confirmation email. Click the link in it to finish subscribing.",
       bad: "That does not look like an email address.",
       needConsent: "Tick the box to continue.",
       busy: "Too many tries. Wait a minute and try again.",
@@ -50,6 +52,7 @@ const copy = language === "tr"
 const messages = JSON.stringify({
   sending: copy.sending,
   done: copy.done,
+  check: copy.check,
   bad: copy.bad,
   needConsent: copy.needConsent,
   busy: copy.busy,
@@ -146,7 +149,8 @@ const messages = JSON.stringify({
           }),
         });
         if (response.ok) {
-          say(messages.done, "ok");
+          const result = (await response.json().catch(() => ({}))) as { confirm?: boolean };
+          say(result.confirm ? messages.check : messages.done, "ok");
           form.reset();
           return;
         }

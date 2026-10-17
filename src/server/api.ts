@@ -15,6 +15,8 @@
 //   GET  /api/assistant         is the desk's key usable, and which model
 //   POST /api/assistant         the writing assistant, for the writer only
 //   POST /api/subscribe         a reader joins the mailing list
+//   GET  /api/subscribe/confirm the double opt-in link
+//   GET|POST /api/unsubscribe   the signed link in every email
 //   GET  /api/subscribers       the list, for the writer only
 //   POST /api/subscribers/remove  take one address off, for the writer only
 //   POST /api/vitals            one reader's Core Web Vitals, logged not stored
@@ -33,7 +35,7 @@ import { assistantStatus, handleAssistant } from "./assistant";
 import { primarySources } from "./primary-sources";
 import { health } from "./health";
 import { recordVitals } from "./vitals";
-import { listSubscribers, removeSubscriber, subscribe } from "./subscribe";
+import { confirm, listSubscribers, removeSubscriber, subscribe, unsubscribe } from "./subscribe";
 
 export type { ApiEnv, ViewMark, ViewStore, KvStore } from "./env";
 
@@ -50,6 +52,8 @@ const ROUTES: Record<string, Partial<Record<string, Handler>>> = {
   assistant: { GET: assistantStatus, POST: handleAssistant },
   vitals: { POST: recordVitals },
   subscribe: { POST: subscribe },
+  "subscribe/confirm": { GET: confirm },
+  unsubscribe: { GET: unsubscribe, POST: unsubscribe },
   subscribers: { GET: listSubscribers },
   "subscribers/remove": { POST: removeSubscriber },
 };

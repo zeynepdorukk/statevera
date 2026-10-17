@@ -22,6 +22,7 @@ export async function health(exchange: Exchange): Promise<Response> {
     features: {
       views: Boolean(env.VIEWS),
       subscriptions: Boolean(env.VIEWS),
+      mail: Boolean(env.RESEND_API_KEY),
       signIn: Boolean(env.GITHUB_CLIENT_ID),
       assistant: Boolean(env.OPENAI_KEY),
       rateLimits: {

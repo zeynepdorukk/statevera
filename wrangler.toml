@@ -10,12 +10,21 @@ compatibility_date = "2026-08-01"
 GITHUB_CLIENT_ID = "Iv23liciTh2wuL12SR1q"
 # Who may sign in. The publication's account by default; add others with commas.
 DESK_LOGINS = "zeynepdorukk"
+MAIL_FROM = "Statevera <journal@statevera.org>"
+PUBLIC_API_URL = "https://statevera-desk.onatozmen44.workers.dev"
 
 # Read counts. One key per device per article; the country, referring host and
 # date ride along as KV metadata, so a breakdown costs no extra reads.
 [[kv_namespaces]]
 binding = "VIEWS"
 id = "691d4b0743b242b197ba9b78acff41a5"
+
+# Email (src/server/mail.ts). Off until the secret is set:
+#   npx wrangler secret put RESEND_API_KEY
+# statevera.org must be verified in Resend for MAIL_FROM to send.
+# The cron reads /search-index.json and mails each new Journal piece once.
+[triggers]
+crons = ["*/30 * * * *"]
 
 # GOVINFO_API_KEY, CONGRESS_API_KEY and OSCE_SEARCH_API_KEY are optional: each
 # adapter falls back to a public key. Add them with
