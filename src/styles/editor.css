@@ -2485,3 +2485,30 @@ button.ed-card-views[aria-expanded="true"] {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+/* Pre-flight advice in the Publish drawer: quiet, never blocking. */
+.ed-preflight {
+  margin-bottom: 0.9rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--journal);
+  padding: 0.7rem 0.85rem;
+  background: var(--journal-wash);
+}
+
+.ed-preflight ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+.ed-preflight .ed-btn-sm {
+  margin-top: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.68rem;
+}

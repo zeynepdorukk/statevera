@@ -1375,6 +1375,7 @@ function compose(args: ComposeArgs) {
         </div>` : ""}
       </div>
       <div class="ed-drawer-foot">
+        <div class="ed-preflight" data-preflight hidden></div>
         <p class="ed-note" data-publish-note role="status" aria-live="polite"></p>
         <div class="ed-publish-actions">
           <button type="button" class="ed-btn" data-save-draft>Save draft</button>
@@ -3253,7 +3254,56 @@ function compose(args: ComposeArgs) {
   // Publish drawer
   // ==========================================================
 
+  // ---------- pre-flight ----------
+  // Advice, never a block: things that make a finished piece read worse in search
+  // results or to a screen reader, each with the fix one click away where it can be.
+  const preflightEl = el<HTMLElement>("[data-preflight]");
+  const significant = (node: ChildNode) => !(node.nodeType === Node.TEXT_NODE && !(node.textContent ?? "").trim());
+  const isLargeSpan = (node: Element) =>
+    node.tagName === "SPAN" && (node.classList.contains("sv-size-large") || node.classList.contains("sv-size-xlarge"));
+  const isBold = (node: Element) => node.tagName === "STRONG" || node.tagName === "B";
+  /** Paragraphs that are nothing but bold, large text: headings in all but name. */
+  const lookalikeHeadings = (): HTMLElement[] =>
+    [...bodyEl.querySelectorAll<HTMLElement>(":scope > p")].filter((paragraph) => {
+      const kids = [...paragraph.childNodes].filter(significant);
+      if (kids.length !== 1 || kids[0].nodeType !== Node.ELEMENT_NODE) return false;
+      const outer = kids[0] as Element;
+      const inner = [...outer.childNodes].filter(significant);
+      if (inner.length !== 1 || inner[0].nodeType !== Node.ELEMENT_NODE) return false;
+      const innerEl = inner[0] as Element;
+      const text = (paragraph.textContent ?? "").trim();
+      return Boolean(text) && text.length <= 160 && ((isBold(outer) && isLargeSpan(innerEl)) || (isLargeSpan(outer) && isBold(innerEl)));
+    });
+
+  const renderPreflight = () => {
+    const advice: string[] = [];
+    const fakes = lookalikeHeadings();
+    if (fakes.length) {
+      const one = fakes.length === 1;
+      advice.push(
+        `<li><span>${fakes.length} line${one ? " looks" : "s look"} like ${one ? "a heading" : "headings"} (bold, large) but ${one ? "is" : "are"} written as ${one ? "a paragraph" : "paragraphs"}. Real headings give the piece its contents list and help search and screen readers.</span> <button type="button" class="ed-btn ed-btn-sm" data-fix-headings>Make ${one ? "it a heading" : "them headings"}</button></li>`
+      );
+    }
+    const headline = (titleEl.textContent ?? "").trim();
+    if (headline.length > 110) advice.push(`<li>The headline is ${headline.length} characters; search results cut it at about 60 to 70.</li>`);
+    const standfirst = (standEl.textContent ?? "").trim();
+    if (standfirst.length > 200) advice.push(`<li>The standfirst is ${standfirst.length} characters; search results and link previews show about 155.</li>`);
+    else if (standfirst && standfirst.length < 60) advice.push(`<li>The standfirst is short (${standfirst.length} characters). It doubles as the search snippet, so a full sentence of 100 to 155 reads best.</li>`);
+    preflightEl.hidden = advice.length === 0;
+    preflightEl.innerHTML = advice.length ? `<p class="ed-legend">Before you publish</p><ul>${advice.join("")}</ul>` : "";
+    preflightEl.querySelector<HTMLButtonElement>("[data-fix-headings]")?.addEventListener("click", () => {
+      for (const paragraph of lookalikeHeadings()) {
+        const heading = document.createElement("h2");
+        heading.textContent = (paragraph.textContent ?? "").replace(/\s+/g, " ").trim();
+        paragraph.replaceWith(heading);
+      }
+      touched();
+      renderPreflight();
+    });
+  };
+
   const openDrawer = () => {
+    renderPreflight();
     drawer.classList.add("is-open");
     scrim.classList.add("is-open");
   };

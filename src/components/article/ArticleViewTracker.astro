@@ -12,6 +12,20 @@ const { slug, endpoint } = Astro.props;
 <script>
   const marker = document.querySelector<HTMLElement>("[data-article-view]");
 
+  // Where the reader came from: the referring page when the browser says, else the
+  // share link's own utm_source (WhatsApp, Telegram and mail send no referrer).
+  const params = new URLSearchParams(location.search);
+  const source = (params.get("utm_source") ?? "").toLowerCase().replace(/[^a-z0-9.-]/g, "").slice(0, 40);
+  const referrer = () => document.referrer || (source ? `https://${source}/` : "");
+
+  // Keep shared addresses clean: once read, the tracking parameters leave the bar
+  // (the canonical link already tells search engines the clean address).
+  if ([...params.keys()].some((key) => key.startsWith("utm_"))) {
+    for (const key of [...params.keys()]) if (key.startsWith("utm_")) params.delete(key);
+    const query = params.toString();
+    history.replaceState(history.state, "", `${location.pathname}${query ? `?${query}` : ""}${location.hash}`);
+  }
+
   if (marker) {
     const slug = marker.dataset.slug ?? "";
     const endpoint = marker.dataset.endpoint ?? "";
@@ -33,7 +47,7 @@ const { slug, endpoint } = Astro.props;
           headers: { "content-type": "application/json" },
           // Only the server can see the country; only the page can see where
           // the reader came from. It keeps the host and drops the rest.
-          body: JSON.stringify({ slug, deviceId, referrer: document.referrer }),
+          body: JSON.stringify({ slug, deviceId, referrer: referrer() }),
         })
           .then((response) => {
             if (response.ok) localStorage.setItem(sentKey, "1");

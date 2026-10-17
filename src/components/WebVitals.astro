@@ -1,0 +1,81 @@
+---
+// Real-user Core Web Vitals, sampled. LCP, CLS, INP, FCP and TTFB are read with
+// the browser's own PerformanceObserver (no library) and sent once, as the page
+// is hidden, to the desk Worker, which logs them without storing anything.
+// One reader in five is measured, so the counts stay a sample, not a census.
+import { site } from "../site";
+
+const endpoint = site.deskUrl ? `${site.deskUrl}/api/vitals` : "";
+---
+
+{endpoint && import.meta.env.PROD && (
+  <span hidden data-web-vitals data-endpoint={endpoint}></span>
+)}
+
+<script>
+  const marker = document.querySelector<HTMLElement>("[data-web-vitals]");
+  const SAMPLE = 0.2;
+
+  if (marker && Math.random() < SAMPLE && "PerformanceObserver" in window && "sendBeacon" in navigator) {
+    const endpoint = marker.dataset.endpoint ?? "";
+    const metrics: Record<string, number> = {};
+    const observe = (type: string, onEntry: (entry: any) => void, extra: Record<string, unknown> = {}) => {
+      try {
+        new PerformanceObserver((list) => list.getEntries().forEach(onEntry)).observe({ type, buffered: true, ...extra });
+      } catch {
+        // Not every browser knows every entry type.
+      }
+    };
+
+    const nav = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
+    if (nav) metrics.ttfb = nav.responseStart;
+
+    observe("paint", (entry) => {
+      if (entry.name === "first-contentful-paint") metrics.fcp = entry.startTime;
+    });
+    observe("largest-contentful-paint", (entry) => {
+      metrics.lcp = entry.startTime;
+    });
+
+    // CLS: the largest burst of shifts (session window of ≤5 s, gaps ≤1 s).
+    let windowValue = 0;
+    let windowStart = 0;
+    let lastShift = 0;
+    observe("layout-shift", (entry) => {
+      if (entry.hadRecentInput) return;
+      if (entry.startTime - lastShift > 1000 || entry.startTime - windowStart > 5000) {
+        windowValue = 0;
+        windowStart = entry.startTime;
+      }
+      windowValue += entry.value;
+      lastShift = entry.startTime;
+      metrics.cls = Math.max(metrics.cls ?? 0, windowValue);
+    });
+
+    // INP, approximated: the slowest interaction's full duration.
+    observe(
+      "event",
+      (entry) => {
+        if (entry.interactionId) metrics.inp = Math.max(metrics.inp ?? 0, entry.duration);
+      },
+      { durationThreshold: 40 }
+    );
+
+    let sent = false;
+    const send = () => {
+      if (sent || Object.keys(metrics).length === 0) return;
+      sent = true;
+      const body = JSON.stringify({
+        path: location.pathname,
+        device: matchMedia("(max-width: 767px)").matches ? "mobile" : "desktop",
+        metrics,
+      });
+      // text/plain keeps the beacon a simple request: no preflight.
+      navigator.sendBeacon(endpoint, new Blob([body], { type: "text/plain" }));
+    };
+    addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") send();
+    });
+    addEventListener("pagehide", send);
+  }
+</script>

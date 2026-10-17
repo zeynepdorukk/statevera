@@ -938,3 +938,14 @@ mark {
 .article-body :is(h2, h3)[id] {
   scroll-margin-top: 7.5rem;
 }
+
+@media (max-width: 767px) {
+  html.menu-open {
+    overflow: hidden;
+  }
+  html.menu-open #mobile-menu {
+    max-height: calc(100dvh - 4rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+}

@@ -1,0 +1,54 @@
+---
+// "Updated 9 min ago · 26 newsrooms": the News pages are rebuilt every 15
+// minutes, so readers should be able to see how fresh the list is. The build
+// writes the timestamp; the browser keeps the "ago" honest after that.
+import { wireGeneratedAt, wireSourceCount } from "../data/wire";
+import { getLanguage } from "../i18n";
+
+const language = getLanguage(Astro.currentLocale);
+const copy = language === "tr"
+  ? { updated: "Güncellendi", sources: (n: number) => `${n} haber kaynağı` }
+  : { updated: "Updated", sources: (n: number) => `${n} newsrooms` };
+const stamp = wireGeneratedAt.toISOString();
+const absolute = new Intl.DateTimeFormat(language === "tr" ? "tr-TR" : "en-GB", {
+  day: "numeric",
+  month: "short",
+  hour: "2-digit",
+  minute: "2-digit",
+  timeZone: "UTC",
+  timeZoneName: "short",
+}).format(wireGeneratedAt);
+---
+
+<p class="wire-freshness meta flex items-center gap-2" data-tone="wire">
+  <span class="live-dot inline-block" aria-hidden="true"></span>
+  <span>
+    {copy.updated}{" "}<time datetime={stamp} data-relative-time data-lang={language} title={absolute}>{absolute}</time>
+  </span>
+  {wireSourceCount > 0 && (
+    <>
+      <span aria-hidden="true">·</span>
+      <span>{copy.sources(wireSourceCount)}</span>
+    </>
+  )}
+</p>
+
+<script>
+  const format = (time: HTMLTimeElement) => {
+    const then = Date.parse(time.dateTime);
+    if (Number.isNaN(then)) return;
+    const minutes = Math.round((Date.now() - then) / 60000);
+    const rtf = new Intl.RelativeTimeFormat(time.dataset.lang === "tr" ? "tr" : "en", { numeric: "auto" });
+    time.textContent =
+      minutes < 1
+        ? rtf.format(0, "minute")
+        : minutes < 60
+          ? rtf.format(-minutes, "minute")
+          : minutes < 48 * 60
+            ? rtf.format(-Math.round(minutes / 60), "hour")
+            : rtf.format(-Math.round(minutes / 1440), "day");
+  };
+  const times = [...document.querySelectorAll<HTMLTimeElement>("time[data-relative-time]")];
+  times.forEach(format);
+  if (times.length) setInterval(() => times.forEach(format), 60_000);
+</script>

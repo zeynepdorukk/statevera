@@ -47,6 +47,8 @@ export interface WireSnapshot {
 const snapshot = raw as WireSnapshot;
 
 export const wireGeneratedAt = new Date(snapshot.generatedAt);
+/** How many newsrooms answered on the last run (failures are already left out). */
+export const wireSourceCount: number = snapshot.sourceCount;
 
 /**
  * Newest first. Third-party links are rendered as hrefs on the same origin as the

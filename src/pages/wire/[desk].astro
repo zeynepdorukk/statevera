@@ -2,6 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { desks, deskList, type DeskSlug } from "../../site";
 import { byCategory, canLead, splitFeatures } from "../../data/wire";
+import WireFreshness from "../../components/WireFreshness.astro";
 import { getByCategory, root } from "../../utils/collection";
 import WireCard from "../../components/WireCard.astro";
 import JournalCard from "../../components/JournalCard.astro";
@@ -63,13 +64,16 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
   <div class="shell pt-0" data-tone="wire">
     <h1 class="sr-only">{localizedDesk.name} — {localizedDesk.tagline}</h1>
     <div class="news-toolbar">
-      <nav aria-label={copy.otherDesks} class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
+      <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-line py-3">
+      <nav aria-label={copy.otherDesks} class="flex flex-wrap gap-x-1 gap-y-1">
         <a href={hrefFor("/wire")} class="desk-pill">{copy.all}</a>
         <span class="desk-pill is-on">{localizedDesk.name}</span>
         {otherDesks.map((other) => (
           <a href={hrefFor(`/wire/${other.slug}`)} class="desk-pill">{deskText(other.slug, language).name}</a>
         ))}
       </nav>
+        <WireFreshness />
+      </div>
       <MarketTicker />
     </div>
 

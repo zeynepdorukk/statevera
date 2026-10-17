@@ -6,6 +6,7 @@ import { root } from "../utils/collection";
 import WireCard from "../components/WireCard.astro";
 import SectionHead from "../components/SectionHead.astro";
 import MarketTicker from "../components/MarketTicker.astro";
+import WireFreshness from "../components/WireFreshness.astro";
 import { deskText, getLanguage, localizePath } from "../i18n";
 
 const language = getLanguage(Astro.currentLocale);
@@ -57,7 +58,8 @@ const deskCounts = deskList
     <h1 class="sr-only">{copy.heading}</h1>
     <!-- Desk filter -->
     <div class="news-toolbar">
-      <nav aria-label={copy.desks} class="flex flex-wrap gap-x-1 gap-y-1 border-b border-line py-3">
+      <div class="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-line py-3">
+      <nav aria-label={copy.desks} class="flex flex-wrap gap-x-1 gap-y-1">
         <span class="desk-pill is-on">{copy.all}</span>
         {deskCounts.map(({ desk }) => (
           <a href={hrefFor(`/wire/${desk.slug}`)} class="desk-pill">
@@ -65,6 +67,8 @@ const deskCounts = deskList
           </a>
         ))}
       </nav>
+        <WireFreshness />
+      </div>
       <MarketTicker />
     </div>
 

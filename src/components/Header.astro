@@ -202,9 +202,24 @@ const readerNav = nav.primary.filter((item) => !isEditorLogin(item.url));
 <script>
   const toggle = document.querySelector<HTMLButtonElement>("[data-menu-toggle]");
   const menu = document.getElementById("mobile-menu");
-  toggle?.addEventListener("click", () => {
-    const open = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!open));
-    if (menu) menu.hidden = open;
+  const setOpen = (open: boolean, returnFocus = false) => {
+    if (!toggle || !menu) return;
+    toggle.setAttribute("aria-expanded", String(open));
+    menu.hidden = !open;
+    // A long menu over a scrolled page: keep the page still while it is open.
+    document.documentElement.classList.toggle("menu-open", open);
+    if (!open && returnFocus) toggle.focus();
+  };
+  toggle?.addEventListener("click", () => setOpen(toggle.getAttribute("aria-expanded") !== "true"));
+  // Escape closes the menu and hands focus back to the button that opened it;
+  // following a link inside it, or growing past the mobile breakpoint, closes it too.
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && toggle?.getAttribute("aria-expanded") === "true") setOpen(false, true);
+  });
+  menu?.addEventListener("click", (event) => {
+    if ((event.target as HTMLElement).closest("a")) setOpen(false);
+  });
+  matchMedia("(min-width: 768px)").addEventListener("change", (event) => {
+    if (event.matches) setOpen(false);
   });
 </script>

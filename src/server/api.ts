@@ -14,6 +14,7 @@
 //   POST /api/sign-in/finish    finish it, for the writer only
 //   GET  /api/assistant         is the desk's key usable, and which model
 //   POST /api/assistant         the writing assistant, for the writer only
+//   POST /api/vitals            one reader's Core Web Vitals, logged not stored
 //
 // The same handler runs as a Cloudflare Worker in production and
 // behind the Astro dev server locally. Every answer goes through
@@ -28,6 +29,7 @@ import { finishDeviceLogin, startDeviceLogin } from "./auth";
 import { assistantStatus, handleAssistant } from "./assistant";
 import { primarySources } from "./primary-sources";
 import { health } from "./health";
+import { recordVitals } from "./vitals";
 
 export type { ApiEnv, ViewMark, ViewStore, KvStore } from "./env";
 
@@ -42,6 +44,7 @@ const ROUTES: Record<string, Partial<Record<string, Handler>>> = {
   "sign-in": { POST: startDeviceLogin },
   "sign-in/finish": { POST: finishDeviceLogin },
   assistant: { GET: assistantStatus, POST: handleAssistant },
+  vitals: { POST: recordVitals },
 };
 
 /** "/api/views/" and "/statevera/api/views" both mean "views". */
