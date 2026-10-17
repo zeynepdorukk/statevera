@@ -1,7 +1,8 @@
 import rss from "@astrojs/rss";
 import type { APIRoute } from "astro";
+import { feedImageTag } from "../utils/feed";
 import { site } from "../site";
-import { getArticlesByLanguage, absoluteUrl, articleHref, heroImageOf } from "../utils/collection";
+import { getArticlesByLanguage, absoluteUrl, articleHref } from "../utils/collection";
 
 /**
  * Every URL here is written out in full. `context.site` is the bare origin,
@@ -14,8 +15,7 @@ const absolute = (path: string) => `${site.siteUrl}${path}`;
 export const GET: APIRoute = async () => {
   const articles = await getArticlesByLanguage("en");
 
-  const items = articles
-    .map((a) => ({
+  const items = (await Promise.all(articles.map(async (a) => ({
       title: a.data.title,
       description: a.data.description,
       pubDate: a.data.date,
@@ -24,9 +24,9 @@ export const GET: APIRoute = async () => {
       categories: [...a.data.tags, a.data.region, a.data.category],
       customData: [
         `<dc:creator><![CDATA[${a.data.author}]]></dc:creator>`,
-        `<media:content url="${absoluteUrl(heroImageOf(a.data.heroImage))}" medium="image"/>`,
+        await feedImageTag(a.data.heroImage, a.data.heroImageAlt),
       ].join(""),
-    }))
+    }))))
     .sort((a, b) => b.pubDate.getTime() - a.pubDate.getTime());
 
   return rss({

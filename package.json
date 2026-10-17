@@ -15,7 +15,8 @@
     "api:dev": "wrangler dev",
     "api:deploy": "wrangler deploy",
     "check": "node scripts/check-content.mjs",
-    "verify": "npm run check && npm run typecheck && npm test && npm run build",
+    "verify": "npm run check && npm run typecheck && npm test && npm run build && npm run links",
+    "links": "node scripts/check-links.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "astro sync && tsc --noEmit -p ."

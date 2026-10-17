@@ -114,6 +114,11 @@ const webJsonLd = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Reader pages carry small inline scripts, so they get a narrow policy: no
+        plugins, no <base> hijacking, and any stray http:// picture is upgraded. */}
+    {import.meta.env.PROD && (
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; object-src 'none'; base-uri 'self'" />
+    )}
     <link rel="preload" as="font" type="font/woff2" href={newsreader400} crossorigin />
     <link rel="preload" as="font" type="font/woff2" href={newsreader600} crossorigin />
     <link rel="preload" as="font" type="font/woff2" href={newsreader700} crossorigin />

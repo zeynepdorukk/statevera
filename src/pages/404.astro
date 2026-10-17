@@ -6,7 +6,7 @@ import { getLatestArticles, root } from "../utils/collection";
 import WireCard from "../components/WireCard.astro";
 import JournalCard from "../components/JournalCard.astro";
 import SectionHead from "../components/SectionHead.astro";
-import { getLanguage, localizePath } from "../i18n";
+import { getLanguage, localizePath, siteText } from "../i18n";
 
 const language = getLanguage(Astro.currentLocale);
 const hrefFor = (path: string) => root(localizePath(path, language));
@@ -59,6 +59,13 @@ const journal = await getLatestArticles(3, language);
     <p class="mt-4 max-w-2xl font-serif text-[1.14rem] leading-relaxed text-ink-soft">
       {copy.detail}
     </p>
+    <button type="button" data-open-search class="btn btn-tone mt-6">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </svg>
+      {siteText[language].searchStatevera}
+    </button>
 
     <div class="mt-8 grid gap-px border border-line-strong bg-line-strong sm:grid-cols-3">
       {pillarList.map((pillar) => (

@@ -30,5 +30,5 @@ export const liveChannels: LiveChannel[] = [
   },
 ];
 
-export const liveEmbedUrl = (channelId: string): string =>
-  `https://www.youtube-nocookie.com/embed/live_stream?channel=${channelId}&autoplay=0&rel=0&modestbranding=1`;
+export const liveEmbedUrl = (channelId: string, autoplay = false): string =>
+  `https://www.youtube-nocookie.com/embed/live_stream?channel=${channelId}&autoplay=${autoplay ? 1 : 0}&rel=0&modestbranding=1`;

@@ -1,12 +1,13 @@
 import rss from "@astrojs/rss";
 import type { APIRoute } from "astro";
+import { feedImageTag } from "../../utils/feed";
 import { site } from "../../site";
-import { getArticlesByLanguage, absoluteUrl, articleHref, heroImageOf } from "../../utils/collection";
+import { getArticlesByLanguage, absoluteUrl, articleHref } from "../../utils/collection";
 import { journalCategoryLabel, journalRegionLabel } from "../../journal-i18n";
 
 export const GET: APIRoute = async () => {
   const articles = await getArticlesByLanguage("tr");
-  const items = articles.map((article) => ({
+  const items = await Promise.all(articles.map(async (article) => ({
     title: article.data.title,
     description: article.data.description,
     pubDate: article.data.date,
@@ -19,9 +20,9 @@ export const GET: APIRoute = async () => {
     ],
     customData: [
       `<dc:creator><![CDATA[${article.data.author}]]></dc:creator>`,
-      `<media:content url="${absoluteUrl(heroImageOf(article.data.heroImage))}" medium="image"/>`,
+      await feedImageTag(article.data.heroImage, article.data.heroImageAlt),
     ].join(""),
-  }));
+  })));
 
   return rss({
     title: `${site.publicationName} — Türkçe Journal`,

@@ -17,6 +17,35 @@ interface Props {
 }
 
 const { title } = Astro.props;
+
+// The desk keeps the writer's GitHub token (and optional OpenAI key) in this
+// browser's storage, so this page gets the strictest policy the site can carry:
+// no inline or third-party script at all, and network access only to the
+// services the desk actually calls. A stray <script> pasted into a draft, or
+// any injected markup, cannot run here or send the keys anywhere by fetch.
+// Production only: the dev server injects its own inline client.
+const connect = [
+  "'self'",
+  site.siteUrl,
+  site.deskUrl,
+  "https://api.github.com",
+  "https://api.openai.com",
+  "https://en.wikipedia.org",
+  "https://commons.wikimedia.org",
+  "https://upload.wikimedia.org",
+].filter(Boolean);
+const csp = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self'",
+  `connect-src ${[...new Set(connect)].join(" ")}`,
+  "frame-src 'none'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+].join("; ");
 ---
 
 <!doctype html>
@@ -24,6 +53,8 @@ const { title } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={csp} />}
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="preload" as="font" type="font/woff2" href={newsreader400} crossorigin />
     <link rel="preload" as="font" type="font/woff2" href={newsreader600} crossorigin />
     <link rel="preload" as="font" type="font/woff2" href={newsreader700} crossorigin />

@@ -20,6 +20,8 @@ const copy = language === "tr"
       liveChannels: "Canlı kanallar",
       allNews: "Tüm haberler",
       fallback: "Canlı kanal",
+      watch: "Canlı izle",
+      consent: "Oynatıcı YouTube'dan yüklenir.",
     }
   : {
       description: "Watch international news channels and follow the latest Statevera News headlines.",
@@ -32,6 +34,8 @@ const copy = language === "tr"
       liveChannels: "Live channels",
       allNews: "All news",
       fallback: "Live channel",
+      watch: "Watch live",
+      consent: "The player loads from YouTube.",
     };
 const selectedChannel = liveChannels[0];
 const stories = spread(wireItems, 4, 1);
@@ -44,16 +48,36 @@ const stories = spread(wireItems, 4, 1);
   noindex
   hideTicker
 >
-  <div class="live-page shell pt-0" data-tone="wire" data-live-fallback={copy.fallback} data-live-stream-label={copy.stream}>
+  <div class="live-page shell pt-0" data-tone="wire" data-live-fallback={copy.fallback} data-live-stream-label={copy.stream} data-live-watch={copy.watch}>
     <h1 class="sr-only">{copy.heading}</h1>
     <div class="live-grid">
       <section class="live-player-column" aria-label={copy.player}>
         <div class="live-player-frame">
+          {/* A facade until the reader asks for video: the YouTube player is ~1 MB of
+              script and a dozen third-party requests, and most visitors come for the
+              headlines beside it. Choosing a channel or pressing play loads it. */}
+          <button type="button" class="live-facade" data-live-facade>
+            <img
+              data-live-facade-logo
+              src={root(selectedChannel.logo)}
+              alt=""
+              width="160"
+              height="54"
+              class="live-facade-logo"
+            />
+            <span class="live-facade-play" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            </span>
+            <span class="live-facade-label">
+              <span data-live-facade-name>{copy.watch} · {selectedChannel.name}</span>
+              <span class="live-facade-note">{copy.consent}</span>
+            </span>
+          </button>
           <iframe
             data-live-player
-            src={liveEmbedUrl(selectedChannel.channelId)}
+            hidden
+            data-src={liveEmbedUrl(selectedChannel.channelId, true)}
             title={`${selectedChannel.name} ${copy.stream}`}
-            loading="eager"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
@@ -85,7 +109,7 @@ const stories = spread(wireItems, 4, 1);
               type="button"
               class:list={["live-channel-tab", index === 0 && "is-selected"]}
               data-channel-id={channel.id}
-              data-embed-url={liveEmbedUrl(channel.channelId)}
+              data-embed-url={liveEmbedUrl(channel.channelId, true)}
               data-channel-name={channel.name}
               data-channel-logo={root(channel.logo)}
               role="tab"
@@ -115,26 +139,60 @@ const stories = spread(wireItems, 4, 1);
 
 <script>
   const player = document.querySelector<HTMLIFrameElement>("[data-live-player]");
+  const facade = document.querySelector<HTMLButtonElement>("[data-live-facade]");
+  const facadeLogo = document.querySelector<HTMLImageElement>("[data-live-facade-logo]");
+  const facadeName = document.querySelector<HTMLElement>("[data-live-facade-name]");
   const liveRoot = document.querySelector<HTMLElement>("[data-live-fallback]");
   const fallback = liveRoot?.dataset.liveFallback ?? "Live channel";
   const streamLabel = liveRoot?.dataset.liveStreamLabel ?? "live stream";
+  const watchLabel = liveRoot?.dataset.liveWatch ?? "Watch live";
   const title = document.querySelector<HTMLElement>("[data-live-channel-title]");
   const logo = document.querySelector<HTMLImageElement>("[data-live-channel-logo]");
   const tabs = [...document.querySelectorAll<HTMLButtonElement>("[data-channel-id]")];
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const embedUrl = tab.dataset.embedUrl;
-      if (!embedUrl || !player) return;
-      tabs.forEach((item) => {
-        const selected = item === tab;
-        item.classList.toggle("is-selected", selected);
-        item.setAttribute("aria-selected", String(selected));
-      });
-      player.title = `${tab.dataset.channelName ?? fallback} ${streamLabel}`;
-      player.src = embedUrl;
-      if (title) title.textContent = tab.dataset.channelName ?? fallback;
-      if (logo && tab.dataset.channelLogo) logo.src = tab.dataset.channelLogo;
+  const play = (url: string | undefined) => {
+    if (!player || !url) return;
+    player.src = url;
+    player.hidden = false;
+    facade?.remove();
+  };
+
+  facade?.addEventListener("click", () => play(player?.dataset.src));
+
+  const select = (tab: HTMLButtonElement, focus = false) => {
+    tabs.forEach((item) => {
+      const selected = item === tab;
+      item.classList.toggle("is-selected", selected);
+      item.setAttribute("aria-selected", String(selected));
+      item.tabIndex = selected ? 0 : -1;
+    });
+    if (focus) tab.focus();
+    const name = tab.dataset.channelName ?? fallback;
+    if (player) {
+      player.title = `${name} ${streamLabel}`;
+      player.dataset.src = tab.dataset.embedUrl ?? "";
+    }
+    if (title) title.textContent = name;
+    if (logo && tab.dataset.channelLogo) logo.src = tab.dataset.channelLogo;
+    // Switching channel is asking for video; before that, only the facade updates.
+    if (player && !player.hidden) play(tab.dataset.embedUrl);
+    else {
+      if (facadeLogo && tab.dataset.channelLogo) facadeLogo.src = tab.dataset.channelLogo;
+      if (facadeName) facadeName.textContent = `${watchLabel} · ${name}`;
+    }
+  };
+
+  tabs.forEach((tab, index) => {
+    tab.tabIndex = tab.classList.contains("is-selected") ? 0 : -1;
+    tab.addEventListener("click", () => select(tab));
+    // Tabs move with the arrow keys, as the ARIA tab pattern expects.
+    tab.addEventListener("keydown", (event) => {
+      const step = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : event.key === "ArrowLeft" || event.key === "ArrowUp" ? -1 : 0;
+      if (event.key === "Home") return (event.preventDefault(), select(tabs[0], true));
+      if (event.key === "End") return (event.preventDefault(), select(tabs[tabs.length - 1], true));
+      if (!step) return;
+      event.preventDefault();
+      select(tabs[(index + step + tabs.length) % tabs.length], true);
     });
   });
 </script>
@@ -212,6 +270,63 @@ const stories = spread(wireItems, 4, 1);
     background: #000;
     border: 1px solid var(--line);
     border-radius: 6px;
+  }
+
+  .live-facade {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    align-content: center;
+    gap: 1.1rem;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(222, 116, 119, 0.18), transparent 60%),
+      #0b0d0e;
+  }
+
+  .live-facade-logo {
+    max-height: 3.2rem;
+    width: auto;
+    opacity: 0.9;
+  }
+
+  .live-facade-play {
+    display: grid;
+    width: 4.2rem;
+    height: 4.2rem;
+    place-items: center;
+    border-radius: 999px;
+    background: var(--wire);
+    color: var(--paper);
+    transition: transform 0.15s ease;
+  }
+
+  .live-facade:hover .live-facade-play,
+  .live-facade:focus-visible .live-facade-play {
+    transform: scale(1.06);
+  }
+
+  .live-facade-label {
+    display: grid;
+    gap: 0.3rem;
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .live-facade-note {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: rgba(255, 255, 255, 0.6);
   }
 
   .live-player-frame iframe {

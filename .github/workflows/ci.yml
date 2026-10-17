@@ -39,5 +39,7 @@ jobs:
         run: npm test
       - name: Build
         run: npm run build
+      - name: Internal links
+        run: npm run links
       - name: Worker bundles
         run: npx wrangler deploy --dry-run --outdir .wrangler-dry

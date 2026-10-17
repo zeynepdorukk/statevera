@@ -2476,3 +2476,12 @@ button.ed-card-views[aria-expanded="true"] {
     padding-left: 2rem;
   }
 }
+
+/* Links inside running help text are underlined, so they are not told apart by
+   colour alone (WCAG 1.4.1). */
+.ed-gate p a,
+.ed-warn a,
+.ed-hint a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

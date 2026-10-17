@@ -23,6 +23,13 @@ const copy = language === "tr"
       founder: "Kurucu ve editör",
       combined: "Statevera; Journal, Dünya Haberleri, Birincil Kaynaklar ve GLORISK aracılığıyla neler olduğunu, bunun ne anlama geldiğini ve temel verilerin ne söylediğini bir araya getirir.",
       rss: "RSS akışı",
+      standardsKicker: "Yayın ilkeleri",
+      standardsTitle: "Nasıl çalışıyoruz",
+      standards: [
+        ["Kaynaklar", "Haberler bölümündeki her başlık özgün yayıncıya açılır; Statevera yalnızca başlık, kısa özet ve atıf gösterir. Journal yazıları dayandıkları kaynakları yazının sonunda listeler ve mümkün olduğunda resmî belgelere bağlanır."],
+        ["Düzeltmeler", "Bir hata görürseniz e-postayla bildirin. Düzeltilen yazılar güncelleme tarihini taşır."],
+        ["İletişim", "Soru, öneri ve düzeltmeler için:"],
+      ],
       disclaimer: "Haber başlıkları ve özetleri özgün yayıncılarına bağlanır. Journal ve GLORISK, Statevera'nın özgün projeleridir.",
     }
   : {
@@ -40,6 +47,13 @@ const copy = language === "tr"
       founder: "Founder & editor",
       combined: "Through The Journal, World News, Primary Sources and GLORISK, Statevera brings together what is happening, what it means and what the underlying data shows.",
       rss: "RSS feed",
+      standardsKicker: "Editorial standards",
+      standardsTitle: "How Statevera works",
+      standards: [
+        ["Sourcing", "Every headline in News opens at its original publisher; Statevera shows only the headline, a short summary and attribution. Journal pieces list the sources they rely on at the end and link to official documents wherever they can."],
+        ["Corrections", "If you spot an error, email it in. Corrected pieces carry their update date."],
+        ["Contact", "Questions, tips and corrections:"],
+      ],
       disclaimer: "News headlines and summaries link to their original publishers. The Journal and GLORISK are original Statevera projects.",
     };
 const profiles = [site.socialLinks.x, site.socialLinks.linkedin].filter(Boolean);
@@ -134,7 +148,8 @@ const jsonLd = [organisation, author];
       </div>
     </section>
 
-    <section class="border-b border-line py-10 md:py-12" aria-label={copy.founderSection}>
+    <div class="grid gap-x-12 border-b border-line lg:grid-cols-[minmax(0,3fr)_minmax(16rem,2fr)]">
+    <section class="py-10 md:py-12" aria-label={copy.founderSection}>
       <div class="max-w-4xl">
         <p class="kicker-ink">{copy.founder}</p>
         <h2 class="t-headline mt-1.5">{site.authorName}</h2>
@@ -154,6 +169,28 @@ const jsonLd = [organisation, author];
         </div>
       </div>
     </section>
+
+    <section id="standards" class="border-t border-line py-10 md:py-12 lg:border-l lg:border-t-0 lg:pl-10" aria-labelledby="standards-title">
+      <p class="kicker-ink">{copy.standardsKicker}</p>
+      <h2 id="standards-title" class="t-headline-sm mt-1.5">{copy.standardsTitle}</h2>
+      <dl class="mt-5 space-y-5">
+        {copy.standards.map(([term, text], index) => (
+          <div class="border-t border-line pt-4">
+            <dt class="font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink">{term}</dt>
+            <dd class="mt-1.5 font-serif text-[0.98rem] leading-relaxed text-ink-soft">
+              {text}
+              {index === copy.standards.length - 1 && site.socialLinks.email && (
+                <>
+                  {" "}
+                  <a href={`mailto:${site.socialLinks.email}`} class="link-tone break-all">{site.socialLinks.email}</a>
+                </>
+              )}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+    </div>
 
     <p class="meta py-5">
       {copy.disclaimer}
