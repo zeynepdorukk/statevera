@@ -229,10 +229,13 @@ export const unitedNations: PrimarySourceAdapter = {
     const direct = symbol ? [directResult(symbol)] : [];
     try {
       return [...direct, ...(await searchOds(query, signal))].slice(0, 12);
-    } catch {
+    } catch (error) {
       // A direct document symbol remains useful even if the ODS search service
-      // is temporarily unavailable or its anti-abuse layer changes.
-      return direct;
+      // is temporarily unavailable or its anti-abuse layer changes. With no
+      // symbol there is nothing to show, and the failure has to be reported
+      // as one: an empty "ok" would tell the reader the UN has no record.
+      if (direct.length) return direct;
+      throw error;
     }
   },
 };

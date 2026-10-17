@@ -123,12 +123,14 @@ export async function fetchJson<T>(url: string, init: RequestInit = {}): Promise
 
 export function documentTypeOf(text: string, fallback: PrimarySourceType = "Documents"): PrimarySourceType {
   const value = text.toLowerCase();
-  if (/\b(?:sanction|sanctions|restrictive measure|asset freeze)\b/.test(value)) return "Sanctions";
-  if (/\b(?:treaty|agreement|convention|protocol)\b/.test(value)) return "Treaties";
-  if (/\b(?:speech|speeches|remarks|address|addresses|keynote|transcript)\b/.test(value)) return "Speeches";
-  if (/\b(?:statement|statements|declaration|press release|communiqué|communique)\b/.test(value)) return "Statements";
-  if (/\b(?:legislation|bill|act|regulation|directive|law|rule|proposed rule)\b/.test(value)) return "Legislation";
-  if (/\b(?:statistics|statistical|dataset|data release|official data)\b/.test(value)) return "Official Data";
+  // Plurals matter: "restrictive measures" and "agreements" are how these
+  // documents are actually titled, and a trailing \b on the singular misses them.
+  if (/\b(?:sanctions?|restrictive measures?|asset freezes?)\b/.test(value)) return "Sanctions";
+  if (/\b(?:treat(?:y|ies)|agreements?|conventions?|protocols?)\b/.test(value)) return "Treaties";
+  if (/\b(?:speech(?:es)?|remarks|address(?:es)?|keynotes?|transcripts?)\b/.test(value)) return "Speeches";
+  if (/\b(?:statements?|declarations?|press releases?|communiqués?|communiques?)(?=\W|$)/.test(value)) return "Statements";
+  if (/\b(?:legislation|bills?|acts?|regulations?|directives?|laws?|rules?|proposed rules?)\b/.test(value)) return "Legislation";
+  if (/\b(?:statistics|statistical|datasets?|data releases?|official data)\b/.test(value)) return "Official Data";
   return fallback;
 }
 

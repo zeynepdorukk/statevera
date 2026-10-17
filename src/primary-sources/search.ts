@@ -79,24 +79,42 @@ export async function searchPrimarySources(
   if (cached && cached.expiresAt > Date.now()) return cached.response;
 
   const settled = await Promise.all(SOURCE_ADAPTERS.map(async (adapter) => {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), ADAPTER_TIMEOUT_MS);
-    const onAbort = () => controller.abort();
-    signal?.addEventListener("abort", onAbort, { once: true });
+    const started = Date.now();
+    const attempt = async (): Promise<PrimarySourceResult[]> => {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), ADAPTER_TIMEOUT_MS);
+      const onAbort = () => controller.abort();
+      signal?.addEventListener("abort", onAbort, { once: true });
+      try {
+        return await adapter.search({ query: normalized, env, signal: controller.signal });
+      } finally {
+        clearTimeout(timeout);
+        signal?.removeEventListener("abort", onAbort);
+      }
+    };
     try {
-      const results = await adapter.search({ query: normalized, env, signal: controller.signal });
+      let results: PrimarySourceResult[];
+      try {
+        results = await attempt();
+      } catch (error) {
+        // One quick retry for a transient upstream hiccup (5xx, reset), never for
+        // a timeout: a slow institution stays slow and the reader is waiting.
+        const message = (error as Error)?.message ?? "";
+        const transient = /returned 5\d\d|ECONNRESET|socket|network/i.test(message);
+        if (!transient || signal?.aborted || Date.now() - started > ADAPTER_TIMEOUT_MS / 2) throw error;
+        results = await attempt();
+      }
+      const valid = results.filter((result) => result && result.title && result.url);
       return {
-        status: { id: adapter.id, institution: adapter.institution, count: results.length, ok: true } satisfies PrimarySourceStatus,
-        results,
+        status: { id: adapter.id, institution: adapter.institution, count: valid.length, ok: true, ms: Date.now() - started } satisfies PrimarySourceStatus,
+        results: valid,
       };
-    } catch {
+    } catch (error) {
+      const name = (error as Error)?.name === "AbortError" ? "timed out" : ((error as Error)?.message ?? "failed").slice(0, 120);
       return {
-        status: { id: adapter.id, institution: adapter.institution, count: 0, ok: false } satisfies PrimarySourceStatus,
+        status: { id: adapter.id, institution: adapter.institution, count: 0, ok: false, ms: Date.now() - started, error: name } satisfies PrimarySourceStatus,
         results: [] as PrimarySourceResult[],
       };
-    } finally {
-      clearTimeout(timeout);
-      signal?.removeEventListener("abort", onAbort);
     }
   }));
 
@@ -105,7 +123,10 @@ export async function searchPrimarySources(
     results: rank(dedupe(settled.flatMap((item) => item.results).filter((result) => matchesType(result, type))), normalized),
     sources: settled.map((item) => item.status),
   };
-  CACHE.set(key, { expiresAt: Date.now() + CACHE_TTL, response });
+  // A search where most institutions failed is not worth remembering.
+  if (response.sources.filter((source) => source.ok).length * 2 >= response.sources.length) {
+    CACHE.set(key, { expiresAt: Date.now() + CACHE_TTL, response });
+  }
   if (CACHE.size > 80) {
     const first = CACHE.keys().next().value;
     if (first) CACHE.delete(first);

@@ -49,6 +49,10 @@ export interface PrimarySourceStatus {
   institution: string;
   count: number;
   ok: boolean;
+  /** How long the institution took to answer, or to be given up on. */
+  ms?: number;
+  /** Why it failed, in a few words, when it did. */
+  error?: string;
 }
 
 export interface PrimarySourceSearchResponse {
