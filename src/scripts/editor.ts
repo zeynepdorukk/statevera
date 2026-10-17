@@ -343,7 +343,7 @@ async function openStories(notice = "") {
     const repositoryArticles = await Promise.all(
       library.articles
         .filter((f) => /\.mdx?$/.test(f.name))
-        .map(async (file) => {
+        .map(async (file): Promise<FileEntry> => {
           if (typeof file.draft === "boolean") return file;
           try {
             const raw = await readFile(file.path);
@@ -354,7 +354,7 @@ async function openStories(notice = "") {
               title: parsed.title,
               description: parsed.description,
               date: parsed.date,
-              language: parsed.language === "tr" ? "tr" : "en",
+              language: (parsed.language === "tr" ? "tr" : "en") as FileEntry["language"],
               category: parsed.category,
               region: parsed.region,
               heroImage: parsed.heroImage,
