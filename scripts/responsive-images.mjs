@@ -17,7 +17,7 @@ import { existsSync, readdirSync, statSync } from "node:fs";
 import { join, parse } from "node:path";
 
 /** Widths a reader's browser may choose between. */
-export const WIDTHS = [480, 960, 1600];
+export const WIDTHS = [480, 720, 960, 1600];
 /** Folders under public/ whose pictures get variants. */
 export const FOLDERS = ["images/articles", "images/previews"];
 export const OG = { width: 1200, height: 630 };
@@ -39,7 +39,7 @@ export const widthsFor = (sourceWidth) => WIDTHS.filter((width) => width < sourc
  * @param {string} distDir
  * @param {{ quality?: number, log?: (line: string) => void }} [options]
  */
-export async function generateVariants(distDir, { quality = 74, log = (_line) => {} } = {}) {
+export async function generateVariants(distDir, { quality = 70, log = (_line) => {} } = {}) {
   const { default: sharp } = await import("sharp");
   let made = 0;
   let saved = 0;
@@ -60,7 +60,7 @@ export async function generateVariants(distDir, { quality = 74, log = (_line) =>
       for (const width of widthsFor(meta.width ?? 0)) {
         const out = join(dir, `${base}-w${width}.webp`);
         if (existsSync(out)) continue;
-        const info = await sharp(file).rotate().resize({ width, withoutEnlargement: true }).webp({ quality }).toFile(out);
+        const info = await sharp(file).rotate().resize({ width, withoutEnlargement: true }).webp({ quality, effort: 5, smartSubsample: true }).toFile(out);
         made += 1;
         if (width === WIDTHS[WIDTHS.length - 1] || width === widthsFor(meta.width ?? 0).at(-1)) {
           saved += Math.max(0, sourceBytes - info.size);

@@ -13,15 +13,12 @@
    ============================================================ */
 
 @import "tailwindcss";
-@import "@fontsource/newsreader/400.css";
-@import "@fontsource/newsreader/500.css";
-@import "@fontsource/newsreader/600.css";
-@import "@fontsource/newsreader/700.css";
+/* One variable file per family covers every weight the site uses (400-700),
+   so a reader downloads two fonts instead of eight. Italic stays a single
+   static 400 face: it only sets pull quotes and titles of works. */
+@import "@fontsource-variable/newsreader/wght.css";
+@import "@fontsource-variable/inter/wght.css";
 @import "@fontsource/newsreader/400-italic.css";
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource/inter/600.css";
-@import "@fontsource/inter/700.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -96,13 +93,13 @@
   --color-wire: var(--wire);
   --color-journal: var(--journal);
   --color-accent: var(--accent);
-  --font-serif: "Newsreader", "Source Serif 4", Georgia, "Times New Roman", serif;
-  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-serif: "Newsreader Variable", "Newsreader", "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 @theme {
-  --font-serif: "Newsreader", "Source Serif 4", Georgia, "Times New Roman", serif;
-  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-serif: "Newsreader Variable", "Newsreader", "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 /* ---------- Base ---------- */

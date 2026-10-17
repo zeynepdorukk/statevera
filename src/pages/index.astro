@@ -235,7 +235,7 @@ const heroPicture = await responsiveImage("/images/previews/briefing-red-sea.jpg
       ) : (
         <div class="mt-9 grid gap-x-8 gap-y-9 border-t border-line pt-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,5fr)]">
           {featured && (
-            <JournalCard item={{ kind: "article", entry: featured }} variant="lead" priority headingLevel="h3" />
+            <JournalCard item={{ kind: "article", entry: featured }} variant="lead" headingLevel="h3" />
           )}
 
           {/* One column of ruled entries: it reads as a contents list and stays
