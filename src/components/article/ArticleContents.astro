@@ -1,0 +1,118 @@
+---
+// The sections of a long piece, as a contents list that follows the reader.
+// Rendered twice by ArticlePage: open in the side rail on wide screens, and as a
+// collapsed disclosure above the text on narrow ones. Both mark the section in
+// view so the reader always knows where they are in a 14-minute read.
+import type { ContentsEntry } from "../../utils/contents";
+
+interface Props {
+  entries: ContentsEntry[];
+  label: string;
+  layout?: "rail" | "inline";
+}
+
+const { entries, label, layout = "rail" } = Astro.props;
+---
+
+{entries.length > 0 && (
+  layout === "rail" ? (
+    <nav class="article-contents" aria-label={label} data-article-contents>
+      <p class="kicker-ink mb-3">{label}</p>
+      <ol class="space-y-0.5 border-l border-line">
+        {entries.map((entry) => (
+          <li>
+            <a href={`#${entry.slug}`} data-contents-link={entry.slug} class="contents-link">
+              {entry.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  ) : (
+    <details class="article-contents-inline mb-8 border-y border-line" data-article-contents>
+      <summary class="flex cursor-pointer items-center justify-between py-3 font-sans text-[0.7rem] font-bold tracking-[0.12em] uppercase text-ink-soft">
+        <span>{label}</span>
+        <span class="text-muted" aria-hidden="true">{entries.length}</span>
+      </summary>
+      <ol class="space-y-0.5 border-l border-line pb-4">
+        {entries.map((entry) => (
+          <li>
+            <a href={`#${entry.slug}`} data-contents-link={entry.slug} class="contents-link">
+              {entry.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </details>
+  )
+)}
+
+<style>
+  .contents-link {
+    display: block;
+    margin-left: -1px;
+    border-left: 2px solid transparent;
+    padding: 0.32rem 0 0.32rem 0.85rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--muted);
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .contents-link:hover {
+    color: var(--ink);
+  }
+
+  .contents-link[aria-current="location"] {
+    border-left-color: var(--tone);
+    color: var(--ink);
+  }
+
+  .article-contents-inline summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
+
+<script>
+  // One observer for both copies of the list: the heading nearest the top of the
+  // viewport is the current section.
+  const links = [...document.querySelectorAll<HTMLAnchorElement>("[data-contents-link]")];
+  const slugs = [...new Set(links.map((link) => link.dataset.contentsLink ?? ""))].filter(Boolean);
+  const headings = slugs
+    .map((slug) => document.getElementById(slug))
+    .filter((heading): heading is HTMLElement => Boolean(heading));
+
+  if (headings.length > 0 && "IntersectionObserver" in window) {
+    const visible = new Set<string>();
+    const mark = (slug: string) => {
+      for (const link of links) {
+        if (link.dataset.contentsLink === slug) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      }
+    };
+    const observer = new IntersectionObserver(
+      (records) => {
+        for (const record of records) {
+          if (record.isIntersecting) visible.add(record.target.id);
+          else visible.delete(record.target.id);
+        }
+        // The first heading in reading order that is on screen; when none is,
+        // the last one scrolled past.
+        const onScreen = headings.find((heading) => visible.has(heading.id));
+        if (onScreen) return mark(onScreen.id);
+        const passed = headings.filter((heading) => heading.getBoundingClientRect().top < 0).pop();
+        if (passed) mark(passed.id);
+      },
+      { rootMargin: "-96px 0px -55% 0px" }
+    );
+    for (const heading of headings) observer.observe(heading);
+  }
+
+  // Following a link from the collapsed list closes it, so the text is not hidden behind it.
+  for (const details of document.querySelectorAll<HTMLDetailsElement>("details[data-article-contents]")) {
+    details.addEventListener("click", (event) => {
+      if ((event.target as HTMLElement).closest("a")) details.open = false;
+    });
+  }
+</script>

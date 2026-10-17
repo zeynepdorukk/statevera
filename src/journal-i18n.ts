@@ -64,6 +64,13 @@ export const journalCopy = {
     source: "Source",
     photoDate: "Photo date",
     licence: "Licence",
+    photo: "Photo",
+    contents: "In this article",
+    mostRead: "Most read this week",
+    readingProgress: "Reading progress",
+    followTitle: "Follow Statevera",
+    followText: "New analysis as it is published, in your feed reader or on LinkedIn.",
+    rss: "RSS feed",
   },
   tr: {
     title: "Journal",
@@ -110,6 +117,13 @@ export const journalCopy = {
     source: "Kaynak",
     photoDate: "Fotoğraf tarihi",
     licence: "Lisans",
+    photo: "Fotoğraf",
+    contents: "Bu yazıda",
+    mostRead: "Bu hafta en çok okunanlar",
+    readingProgress: "Okuma ilerlemesi",
+    followTitle: "Statevera'yı takip edin",
+    followText: "Yeni analizler yayımlandığı anda; RSS okuyucunuzda ya da LinkedIn'de.",
+    rss: "RSS akışı",
   },
 } as const;
 

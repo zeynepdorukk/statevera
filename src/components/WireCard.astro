@@ -3,6 +3,7 @@ import type { WireItem } from "../data/wire";
 import { wireDate, relativeTime, canLead } from "../data/wire";
 import { deskSlugOf, regionSlugOf, regions } from "../site";
 import { root } from "../utils/collection";
+import { remoteImage, remoteSrcset } from "../utils/remote-images";
 import { deskText, getLanguage, localizePath, regionText } from "../i18n";
 
 interface Props {
@@ -46,6 +47,14 @@ const regionLabel = regionKnown ? regionText(regionSlug as keyof typeof regions,
 const publisherNotice = language === "tr" ? "yayıncının sitesinde açılır" : "opens at the publisher";
 const hrefFor = (path: string) => root(localizePath(path, language));
 const loading = priority ? "eager" : "lazy";
+// Each slot asks the publisher's CDN for a picture its own size (see remote-images.ts).
+const picture = (cssWidth: number) => ({
+  src: remoteImage(item.image, cssWidth),
+  srcset: remoteSrcset(item.image, cssWidth) || undefined,
+});
+const leadPicture = picture(800);
+const featurePicture = picture(420);
+const thumbPicture = picture(112);
 ---
 
 {variant === "lead" && (
@@ -54,10 +63,12 @@ const loading = priority ? "eager" : "lazy";
       <div class="hero-overlay img-zoom relative block border border-line/70">
         {item.image ? (
           <img
-            src={item.image}
+            src={leadPicture.src}
+            srcset={leadPicture.srcset}
             alt=""
             width="1200"
             height="750"
+            data-remote-image
             loading={loading}
             fetchpriority={priority ? "high" : undefined}
             decoding="async"
@@ -104,13 +115,15 @@ const loading = priority ? "eager" : "lazy";
         rel="noopener noreferrer nofollow"
         tabindex="-1"
         aria-hidden="true"
-        class="img-zoom mb-3 block border border-line/70"
+        class="img-zoom mb-3 block border border-line/70" data-remote-frame
       >
         <img
-          src={item.image}
+          src={featurePicture.src}
+          srcset={featurePicture.srcset}
           alt=""
           width="800"
           height="500"
+          data-remote-image
           loading={loading}
           fetchpriority={priority ? "high" : undefined}
           decoding="async"
@@ -165,13 +178,15 @@ const loading = priority ? "eager" : "lazy";
         rel="noopener noreferrer nofollow"
         tabindex="-1"
         aria-hidden="true"
-        class="img-zoom h-[4.2rem] w-[5.6rem] shrink-0 border border-line/70"
+        class="img-zoom h-[4.2rem] w-[5.6rem] shrink-0 border border-line/70" data-remote-frame
       >
         <img
-          src={item.image}
+          src={thumbPicture.src}
+          srcset={thumbPicture.srcset}
           alt=""
           width="224"
           height="168"
+          data-remote-image
           loading={loading}
           fetchpriority={priority ? "high" : undefined}
           decoding="async"

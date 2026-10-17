@@ -1,0 +1,105 @@
+---
+// "Most read this week", ranked by the desk's own read counts.
+// Every candidate is rendered into the page (so the list costs one small JSON
+// request, never a template), hidden until the counts arrive. With no counter,
+// no network, or fewer than two pieces that anyone has read yet, it stays hidden:
+// an empty "most read" list is worse than none.
+import { site } from "../../site";
+import { articleHref, getArticlesByLanguage, slugOf, type Article } from "../../utils/collection";
+import { journalCopy } from "../../journal-i18n";
+import type { ArticleLanguage } from "../../utils/collection";
+
+interface Props {
+  language: ArticleLanguage;
+  /** The piece being read is never recommended to itself. */
+  exclude?: Article;
+  limit?: number;
+}
+
+const { language, exclude, limit = 4 } = Astro.props;
+const copy = journalCopy[language];
+const candidates = (await getArticlesByLanguage(language))
+  .filter((entry) => !entry.data.draft && entry.id !== exclude?.id)
+  .slice(0, 40);
+const endpoint = site.deskUrl ? `${site.deskUrl}/api/views/popular` : "";
+---
+
+{endpoint && candidates.length >= 2 && (
+  <section class="most-read" hidden data-most-read data-endpoint={endpoint} data-limit={limit} aria-labelledby="most-read-title" data-tone="journal">
+    <p id="most-read-title" class="kicker mb-3">{copy.mostRead}</p>
+    <ol class="most-read-list">
+      {candidates.map((entry) => (
+        <li hidden data-most-read-item={slugOf(entry)}>
+          <span class="most-read-rank" aria-hidden="true"></span>
+          <a href={articleHref(entry)} class="editorial-link font-serif text-[1rem] font-semibold leading-snug text-ink">
+            {entry.data.title}
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}
+
+<style>
+  .most-read-list {
+    counter-reset: rank;
+  }
+
+  .most-read-list li {
+    display: grid;
+    grid-template-columns: 1.6rem minmax(0, 1fr);
+    gap: 0.5rem;
+    align-items: baseline;
+    border-top: 1px solid var(--line);
+    padding: 0.7rem 0;
+  }
+
+  .most-read-list li[hidden] {
+    display: none;
+  }
+
+  .most-read-rank::before {
+    counter-increment: rank;
+    content: counter(rank);
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--tone);
+  }
+</style>
+
+<script>
+  for (const section of document.querySelectorAll<HTMLElement>("[data-most-read]")) {
+    const endpoint = section.dataset.endpoint ?? "";
+    const limit = Number(section.dataset.limit ?? 4) || 4;
+    const list = section.querySelector("ol");
+    const items = new Map(
+      [...section.querySelectorAll<HTMLElement>("[data-most-read-item]")].map((item) => [item.dataset.mostReadItem ?? "", item])
+    );
+    if (!endpoint || !list || items.size < 2) continue;
+
+    const url = new URL(endpoint);
+    url.searchParams.set("slugs", [...items.keys()].join(","));
+    url.searchParams.set("limit", String(limit));
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 6000);
+    fetch(url, { signal: controller.signal, mode: "cors" })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((body: { items?: { slug: string; count: number }[] } | null) => {
+        const ranked = (body?.items ?? []).filter((entry) => entry.count > 0 && items.has(entry.slug));
+        if (ranked.length < 2) return;
+        for (const entry of ranked) {
+          const item = items.get(entry.slug)!;
+          item.hidden = false;
+          list.append(item);
+        }
+        section.hidden = false;
+      })
+      .catch(() => {
+        // The list is a nicety; a blocked or slow counter leaves the page as it was.
+      })
+      .finally(() => clearTimeout(timer));
+  }
+</script>

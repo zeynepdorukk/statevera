@@ -94,9 +94,13 @@ const webJsonLd = {
   url: site.siteUrl,
   inLanguage: languageMeta.html,
   publisher: {
-    "@type": "Organization",
+    "@type": "NewsMediaOrganization",
+    "@id": `${site.siteUrl}/#organization`,
     name: site.publicationName,
+    url: `${site.siteUrl}/`,
     foundingDate: site.founded,
+    founder: { "@type": "Person", name: site.authorName, "@id": `${absoluteUrl("/about/")}#author` },
+    ...(site.socialLinks.x ? { sameAs: [site.socialLinks.x] } : {}),
     logo: {
       "@type": "ImageObject",
       url: absoluteUrl("/images/branding/logo-512-v2.png"),
@@ -201,6 +205,22 @@ const webJsonLd = {
       </>
     )}
 
+    {/* Publisher pictures sometimes vanish (an expired CDN link, a hotlink rule).
+        A thumbnail that fails takes its frame with it instead of leaving a grey box;
+        a lead keeps its frame so the overlaid headline still has a background. */}
+    <script is:inline>
+      document.addEventListener(
+        "error",
+        function (event) {
+          var img = event.target;
+          if (!img || img.tagName !== "IMG" || !img.hasAttribute("data-remote-image")) return;
+          var frame = img.closest("[data-remote-frame]");
+          if (frame) frame.remove();
+          else img.style.visibility = "hidden";
+        },
+        true
+      );
+    </script>
     <script
       is:inline
       set:html={JSON.stringify([webJsonLd, ...jsonLd])}

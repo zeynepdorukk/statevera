@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { desks, deskList, type DeskSlug } from "../../site";
-import { byCategory, canLead } from "../../data/wire";
+import { byCategory, canLead, splitFeatures } from "../../data/wire";
 import { getByCategory, root } from "../../utils/collection";
 import WireCard from "../../components/WireCard.astro";
 import JournalCard from "../../components/JournalCard.astro";
@@ -46,6 +46,7 @@ const lead = items[leadIndex];
 const rest = items.filter((_, index) => index !== leadIndex);
 const railNews = rest.slice(0, 6);
 const mainNews = rest.slice(6);
+const deskStream = splitFeatures(mainNews, { max: 6, columns: 2 });
 const journalOnDesk = await getByCategory(desk.name, 3, language);
 const hasSidebar = railNews.length > 0 || journalOnDesk.length > 0;
 
@@ -87,10 +88,23 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
         <div>
           {lead && <WireCard item={lead} variant="lead" priority headingLevel="h2" />}
           {mainNews.length > 0 && (
-            <div class="category-stream mt-8 border-t border-line pt-7">
-              {mainNews.map((item, i) => (
-                <WireCard item={item} variant={item.image && i < 9 ? "feature" : "compact"} showDek={i < 9} />
-              ))}
+            <div class="mt-8 border-t border-line pt-7">
+              {deskStream.features.length > 0 && (
+                <div class="grid gap-x-7 gap-y-8 sm:grid-cols-2">
+                  {deskStream.features.map((item) => (
+                    <WireCard item={item} variant="feature" />
+                  ))}
+                </div>
+              )}
+              {deskStream.rest.length > 0 && (
+                <div class:list={["grid gap-x-7 sm:grid-cols-2", deskStream.features.length > 0 && "mt-8 border-t border-line"]}>
+                  {deskStream.rest.map((item) => (
+                    <div class="border-b border-line py-4">
+                      <WireCard item={item} variant="compact" />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -145,27 +159,5 @@ const otherDesks = deskList.filter((d) => d.slug !== deskSlug);
     color: var(--ink);
     border-color: var(--line-strong);
     background: var(--paper-soft);
-  }
-
-  .category-stream {
-    columns: 1;
-    column-gap: 1.75rem;
-  }
-
-  :global(.category-stream > article) {
-    break-inside: avoid;
-    margin-bottom: 2rem;
-  }
-
-  @media (min-width: 640px) {
-    .category-stream {
-      columns: 2;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .category-stream {
-      columns: 3;
-    }
   }
 </style>

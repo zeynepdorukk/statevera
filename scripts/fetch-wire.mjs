@@ -480,11 +480,16 @@ const withImage = items.filter((i) => i.image);
 console.log(`\nverifying ${withImage.length} images...`);
 
 const verify = async (item) => {
+  // The site is https-only, so an http picture would be blocked as mixed content.
+  // Check (and keep) the https address; the CDNs in the feed list all serve one.
+  if (item.image.startsWith("http://")) item.image = `https://${item.image.slice("http://".length)}`;
   try {
     const res = await fetch(item.image, {
       signal: AbortSignal.timeout(12000),
       headers: { "User-Agent": "Mozilla/5.0 (compatible; StateveraWire/1.0)" },
     });
+    // Only the headers matter; do not download a 6000px original to learn that it exists.
+    await res.body?.cancel().catch(() => {});
     const type = res.headers.get("content-type") ?? "";
     const length = Number(res.headers.get("content-length") ?? 0);
     if (!res.ok || !type.startsWith("image/") || (length && length < 2000)) {

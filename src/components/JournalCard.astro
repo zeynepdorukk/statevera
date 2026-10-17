@@ -8,7 +8,8 @@ type Entry = { kind: "article"; entry: Article };
 
 interface Props {
   item: Entry;
-  variant?: "lead" | "feature" | "compact" | "text";
+  /** row — headline, dek and byline beside a picture; for ruled lists of pieces. */
+  variant?: "lead" | "feature" | "compact" | "text" | "row";
   showDek?: boolean;
   priority?: boolean;
   headingLevel?: "h2" | "h3";
@@ -145,5 +146,40 @@ const picture = await responsiveImage(data.heroImage);
       <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" }, data.language)}</time>
       <span aria-hidden="true"> &middot; </span>{copy.minutesShort(minutes)}
     </p>
+  </article>
+)}
+
+{variant === "row" && (
+  <article class="group grid grid-cols-[minmax(0,1fr)_6.5rem] gap-4 sm:grid-cols-[minmax(0,1fr)_9rem]" data-tone="journal">
+    <div class="min-w-0">
+      <p class="kicker">{kicker}</p>
+      <Heading class="t-headline-sm mt-1">
+        <a href={href} class="editorial-link">{data.title}</a>
+      </Heading>
+      {showDek && (
+        <p class="mt-1.5 line-clamp-2 font-serif text-[0.95rem] leading-relaxed text-ink-soft">
+          {data.description}
+        </p>
+      )}
+      <p class="meta mt-2">
+        <span class="meta-strong">{copy.by(author)}</span>
+        <span aria-hidden="true"> &middot; </span>
+        <time datetime={data.date.toISOString()}>{formatDate(data.date, { month: "short" }, data.language)}</time>
+        <span aria-hidden="true"> &middot; </span>{copy.minutesShort(minutes)}
+      </p>
+    </div>
+    <a href={href} tabindex="-1" aria-hidden="true" class="img-zoom block self-start border border-line/70">
+      <img
+        src={picture.src}
+        srcset={picture.srcset}
+        sizes="(min-width: 640px) 144px, 104px"
+        alt=""
+        width="288"
+        height="216"
+        loading={loading}
+        decoding="async"
+        class="img-frame aspect-[4/3] h-auto w-full"
+      />
+    </a>
   </article>
 )}

@@ -29,11 +29,11 @@ const rows = (Object.entries(regions) as [RegionSlug, (typeof regions)[RegionSlu
 );
 
 const busiest = activeRegions().find((entry) => entry.region !== "Global") ?? activeRegions()[0];
-const initialSlug = rows.some((row) => row.slug === "global")
-  ? "global"
-  : busiest
-    ? regionSlugOf(busiest.region)
-    : rows[0]?.slug ?? "europe";
+// Open on the busiest place on the map. "Global" has no shape to light up, so
+// starting there showed a dark map with nothing selected.
+const initialSlug = busiest && busiest.region !== "Global"
+  ? regionSlugOf(busiest.region)
+  : rows.find((row) => row.slug !== "global" && row.wire.length > 0)?.slug ?? rows[0]?.slug ?? "europe";
 ---
 
 <BaseLayout

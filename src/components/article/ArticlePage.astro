@@ -24,6 +24,10 @@ import ArticleSources from "./ArticleSources.astro";
 import ArticleShare from "./ArticleShare.astro";
 import RelatedStories from "./RelatedStories.astro";
 import ArticleViewTracker from "./ArticleViewTracker.astro";
+import ArticleContents from "./ArticleContents.astro";
+import ReadingProgress from "./ReadingProgress.astro";
+import MostRead from "./MostRead.astro";
+import { contentsOf } from "../../utils/contents";
 import WireCard from "../WireCard.astro";
 import SectionHead from "../SectionHead.astro";
 import KeyTakeaways from "../mdx/KeyTakeaways.astro";
@@ -36,7 +40,7 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const { Content } = await render(article);
+const { Content, headings } = await render(article);
 const { data } = article;
 const language = data.language;
 const copy = journalCopy[language];
@@ -53,6 +57,7 @@ const alternates = translations.map((translation) => ({
   path: articleHref(translation),
 }));
 const hrefFor = (path: string) => root(localizePath(path, language));
+const contents = contentsOf(headings);
 const picture = await responsiveImage(data.heroImage);
 const preview = picture.og ?? { src: picture.src, width: picture.width, height: picture.height };
 
@@ -69,10 +74,18 @@ const jsonLd = [
       "@id": `${absoluteUrl("/about/")}#author`,
       name: data.author,
       url: absoluteUrl("/about/"),
+      ...(data.author === site.authorName
+        ? {
+            jobTitle: site.authorRole,
+            sameAs: [site.socialLinks.linkedin].filter(Boolean),
+          }
+        : {}),
     },
     publisher: {
-      "@type": "Organization",
+      "@type": "NewsMediaOrganization",
+      "@id": `${site.siteUrl}/#organization`,
       name: site.publicationName,
+      url: `${site.siteUrl}/`,
       logo: {
         "@type": "ImageObject",
         url: absoluteUrl("/images/branding/logo-512-v2.png"),
@@ -123,6 +136,7 @@ const jsonLd = [
     section: data.category,
   }}
 >
+  <ReadingProgress />
   <ArticleHeader article={article} />
 
   <div class="shell flex max-w-[1400px] gap-10" data-tone="journal">
@@ -134,6 +148,9 @@ const jsonLd = [
 
     <article class="min-w-0 flex-1 py-8 md:py-10">
       <div class="mx-auto max-w-[720px]">
+        <div class="lg:hidden no-print">
+          <ArticleContents entries={contents} label={copy.contents} layout="inline" />
+        </div>
         <div class="article-body">
           <Content components={{ KeyTakeaways, WhyItMatters, TheBigPicture, AnalysisSection }} />
         </div>
@@ -161,11 +178,24 @@ const jsonLd = [
           {copy.deskSuffix}
           {data.country.length > 0 && ` ${copy.focus(data.country)}`}
         </p>
+
+        <section class="article-follow no-print mt-8 border border-line bg-paper-soft px-5 py-5 sm:flex sm:items-center sm:justify-between sm:gap-6" aria-labelledby="follow-title">
+          <div>
+            <p id="follow-title" class="font-serif text-[1.1rem] font-semibold text-ink">{copy.followTitle}</p>
+            <p class="mt-1 font-sans text-[0.8rem] leading-relaxed text-muted">{copy.followText}</p>
+          </div>
+          <div class="mt-4 flex shrink-0 gap-2 sm:mt-0">
+            <a href={root(localizePath("/rss.xml", language))} class="btn btn-tone">{copy.rss}</a>
+            {site.socialLinks.linkedin && (
+              <a href={site.socialLinks.linkedin} target="_blank" rel="noopener noreferrer me" class="btn btn-ghost">LinkedIn</a>
+            )}
+          </div>
+        </section>
       </div>
     </article>
 
     <aside class="hidden w-72 shrink-0 pt-10 lg:block no-print" aria-label={copy.relatedReporting}>
-      <div class="sticky top-32 border-l border-line pl-8" data-tone="wire">
+      <div class="border-l border-line pl-8" data-tone="wire">
         <SectionHead
           title={copy.regionWire(regionLabel)}
           tone="wire"
@@ -184,7 +214,16 @@ const jsonLd = [
         <p class="mt-5 border-t border-line pt-3">
           <a href={hrefFor("/wire")} class="kicker-ink hover:text-tone">{copy.seeAllNews}</a>
         </p>
+        <div class="mt-9">
+          <MostRead language={language} exclude={article} />
+        </div>
       </div>
+      {/* The contents list follows the reader once the context above has scrolled away. */}
+      {contents.length > 0 && (
+        <div class="sticky top-32 mt-9 max-h-[calc(100vh-10rem)] overflow-y-auto border-l border-line pl-8" data-tone="journal">
+          <ArticleContents entries={contents} label={copy.contents} />
+        </div>
+      )}
     </aside>
   </div>
 

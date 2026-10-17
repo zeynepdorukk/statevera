@@ -48,8 +48,17 @@ const snapshot = raw as WireSnapshot;
 
 export const wireGeneratedAt = new Date(snapshot.generatedAt);
 
-/** Newest first. */
-export const wireItems: WireItem[] = [...snapshot.items].sort(
+/**
+ * Newest first. Third-party links are rendered as hrefs on the same origin as the
+ * desk, which keeps its keys in localStorage; a non-web scheme in a feed must
+ * never become a clickable link, so the snapshot is checked again here even
+ * though the fetcher already filters it.
+ */
+const isWebUrl = (value: string): boolean => /^https?:\/\//i.test(value);
+export const wireItems: WireItem[] = snapshot.items
+  .filter((item) => isWebUrl(item.url))
+  .map((item) => (item.image && !isWebUrl(item.image) ? { ...item, image: "", imageWidth: 0 } : item))
+  .sort(
   (a, b) => Date.parse(b.publishedAt) - Date.parse(a.publishedAt)
 );
 
@@ -150,4 +159,21 @@ export function relativeTime(date: Date, now: Date = new Date(), language: "en" 
   const days = Math.floor(hours / 24);
   if (language === "tr") return days === 1 ? "dün" : `${days} gün önce`;
   return days === 1 ? "yesterday" : `${days}d ago`;
+}
+
+/**
+ * Splits a stream into a picture row and a text list. Mixing tall picture cards
+ * with short text cards in one grid leaves ragged holes beside every picture, so
+ * the pictures are taken out first, in whole rows of `columns`, and everything
+ * else keeps its order as text. Nothing is dropped: every item lands in one half.
+ */
+export function splitFeatures(
+  items: WireItem[],
+  { max = 9, columns = 3, window = 24 }: { max?: number; columns?: number; window?: number } = {}
+): { features: WireItem[]; rest: WireItem[] } {
+  const candidates = items.slice(0, window).filter(canLead);
+  const whole = Math.min(max, candidates.length - (candidates.length % columns));
+  const features = candidates.slice(0, Math.max(whole, 0));
+  const taken = new Set(features.map((item) => item.id));
+  return { features, rest: items.filter((item) => !taken.has(item.id)) };
 }

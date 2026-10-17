@@ -884,7 +884,9 @@ a:hover > .outbound::after,
 .btn-tone {
   background: var(--tone);
   border-color: var(--tone);
-  color: #fff;
+  /* Every tone is a light colour on this dark theme (red #de7477, gold #ddbc55,
+     paper #e9e5da), so white text sat at 1.2–3:1. The page colour clears 6:1 on all three. */
+  color: var(--paper);
 }
 
 .btn-ghost {
@@ -930,4 +932,9 @@ mark {
     background: #fff;
     color: #000;
   }
+}
+
+/* Section links from the contents list land below the sticky header, not under it. */
+.article-body :is(h2, h3)[id] {
+  scroll-margin-top: 7.5rem;
 }

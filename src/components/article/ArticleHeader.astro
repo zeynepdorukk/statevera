@@ -28,6 +28,26 @@ const imageSource = data.imageSource?.trim() ?? "";
 const imageDate = data.imageDate?.trim() ?? "";
 const imageLicense = data.imageLicense?.trim() ?? "";
 const sourceUrl = /^https?:\/\//i.test(imageSource) ? imageSource : "";
+// A raw address is unreadable in a caption; the publisher's host says the same thing.
+const sourceLabel = (() => {
+  if (!sourceUrl) return imageSource;
+  try {
+    return new URL(sourceUrl).hostname.replace(/^www\./, "");
+  } catch {
+    return imageSource;
+  }
+})();
+const photoDate = (() => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(imageDate)) return imageDate;
+  const parsed = new Date(`${imageDate}T12:00:00Z`);
+  return Number.isNaN(parsed.getTime()) ? imageDate : formatDate(parsed, {}, data.language);
+})();
+// Caption first, then one quiet line of attribution: who, where, when, terms.
+const creditParts = [
+  credit ? `${credit.label}. ${credit.credit}, ${credit.license}` : explicitCredit ? `${copy.photo}: ${explicitCredit}` : "",
+  photoDate,
+  imageLicense,
+].filter(Boolean);
 const minutes = readingTime(article);
 const deskSlug = deskSlugOf(data.category);
 const regionSlug = regionSlugOf(data.region);
@@ -106,17 +126,27 @@ const picture = await responsiveImage(data.heroImage);
       style={data.imageFocus ? `object-position: ${data.imageFocus}` : undefined}
     />
     {(credit || explicitCredit || imageCaption || imageSource || imageDate || imageLicense) && (
-      <figcaption class="mt-1.5 border-b border-line pb-2.5 font-sans text-[0.73rem] text-muted">
+      <figcaption class="mt-2 border-b border-line pb-3 font-sans text-[0.75rem] leading-relaxed text-muted">
         {imageCaption && <span class="block text-ink-soft">{imageCaption}</span>}
-        {credit && <span class="block">{credit.label}. {credit.credit}, {credit.license}.</span>}
-        {!credit && explicitCredit && <span class="block">{copy.credit}: {explicitCredit}</span>}
-        {imageSource && (
-          <span class="block">
-            {copy.source}: {sourceUrl ? <a href={sourceUrl} target="_blank" rel="noreferrer" class="break-all">{imageSource}</a> : imageSource}
+        {(creditParts.length > 0 || imageSource) && (
+          <span class:list={["block text-[0.7rem]", imageCaption && "mt-1"]}>
+            {creditParts.map((part, index) => (
+              <>{index > 0 && <span aria-hidden="true"> · </span>}<span>{part}</span></>
+            ))}
+            {imageSource && (
+              <>
+                {creditParts.length > 0 && <span aria-hidden="true"> · </span>}
+                {sourceUrl ? (
+                  <a href={sourceUrl} target="_blank" rel="noopener noreferrer nofollow" class="underline decoration-line-strong underline-offset-2 hover:text-ink">
+                    {copy.source}: {sourceLabel}<span class="sr-only"> ({sourceUrl})</span>
+                  </a>
+                ) : (
+                  <span>{copy.source}: {sourceLabel}</span>
+                )}
+              </>
+            )}
           </span>
         )}
-        {imageDate && <span class="block">{copy.photoDate}: {imageDate}</span>}
-        {imageLicense && <span class="block">{copy.licence}: {imageLicense}</span>}
       </figcaption>
     )}
   </figure>

@@ -1,0 +1,59 @@
+---
+// A hairline under the header that fills as the reader moves through the text
+// (the article body only: not the header, not the related stories below it).
+---
+
+<div class="reading-progress no-print" aria-hidden="true" data-reading-progress>
+  <span data-reading-progress-bar></span>
+</div>
+
+<style>
+  .reading-progress {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 60;
+    height: 3px;
+    pointer-events: none;
+    background: transparent;
+  }
+
+  .reading-progress span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform-origin: 0 50%;
+    transform: scaleX(var(--progress, 0));
+    background: var(--journal);
+    transition: transform 0.08s linear;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reading-progress span {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const bar = document.querySelector<HTMLElement>("[data-reading-progress-bar]");
+  const body = document.querySelector<HTMLElement>(".article-body");
+
+  if (bar && body) {
+    let queued = false;
+    const update = () => {
+      queued = false;
+      const rect = body.getBoundingClientRect();
+      const span = rect.height - window.innerHeight * 0.6;
+      const read = span > 0 ? (-rect.top + window.innerHeight * 0.25) / span : 1;
+      bar.style.setProperty("--progress", String(Math.min(Math.max(read, 0), 1)));
+    };
+    const schedule = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(update);
+    };
+    addEventListener("scroll", schedule, { passive: true });
+    addEventListener("resize", schedule, { passive: true });
+    update();
+  }
+</script>

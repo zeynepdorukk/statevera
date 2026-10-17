@@ -102,9 +102,6 @@ const borderPath = path(countryBorders);
               data-country
               data-region={regionSlug}
               data-country-name={country.properties?.name ?? id}
-              tabindex={regionSlug ? 0 : undefined}
-              role={regionSlug ? "button" : undefined}
-              aria-label={regionSlug ? `${country.properties?.name ?? copy.country}, ${regionBySlug[regionSlug]?.region.short ?? copy.region}` : undefined}
             ></path>
           );
         })}

@@ -143,6 +143,62 @@ function rehypeBaseImages() {
   };
 }
 
+/**
+ * The desk has no heading control yet, so section titles reach the MDX as a
+ * paragraph holding nothing but bold, large text:
+ *   **<span class="sv-size-large">Turkey produces a great deal</span>**
+ * Readers see a heading; search engines, screen readers and the contents list
+ * saw a paragraph. This promotes exactly that shape (one bold run of large or
+ * extra-large text and nothing else) to an <h2>, so Astro gives it an id and the
+ * article its outline. The MDX source is untouched.
+ *
+ * @returns {(tree: any) => void}
+ */
+function rehypeDeskSectionHeadings() {
+  // MDX hands inline HTML over as JSX nodes (`name`, `attributes`), Markdown as
+  // hast elements (`tagName`, `properties`); both shapes are read the same way.
+  const tag = (/** @type {any} */ node) => node.tagName ?? node.name ?? "";
+  const classes = (/** @type {any} */ node) => {
+    const fromProps = node.properties?.className;
+    const fromAttr = (node.attributes ?? []).find((/** @type {any} */ a) => a.name === "class" || a.name === "className")?.value;
+    const raw = fromProps ?? fromAttr ?? [];
+    return Array.isArray(raw) ? raw.map(String) : String(raw).split(/\s+/);
+  };
+  const text = (/** @type {any} */ node) =>
+    node.type === "text" ? node.value : (node.children ?? []).map(text).join("");
+  const isLarge = (/** @type {any} */ node) =>
+    tag(node) === "span" && classes(node).some((c) => c === "sv-size-large" || c === "sv-size-xlarge");
+  const isBold = (/** @type {any} */ node) => tag(node) === "strong" || tag(node) === "b";
+  const meaningful = (/** @type {any[]} */ children) =>
+    children.filter((child) => !(child.type === "text" && !child.value.trim()));
+  /** strong > span.large, or span.large > strong, with nothing else around it. */
+  const headingText = (/** @type {any} */ p) => {
+    const [only, ...others] = meaningful(p.children ?? []);
+    if (!only || others.length) return "";
+    const [inner, ...rest] = meaningful(only.children ?? []);
+    if (!inner || rest.length) return "";
+    const ok = (isBold(only) && isLarge(inner)) || (isLarge(only) && isBold(inner));
+    return ok ? text(only).replace(/\s+/g, " ").trim() : "";
+  };
+  return (tree) => {
+    const walk = (/** @type {any} */ node) => {
+      for (const child of node.children ?? []) {
+        if (child.type === "element" && child.tagName === "p") {
+          const title = headingText(child);
+          if (title && title.length <= 160) {
+            child.tagName = "h2";
+            child.properties = { className: ["desk-section-heading"] };
+            child.children = [{ type: "text", value: title }];
+            continue;
+          }
+        }
+        walk(child);
+      }
+    };
+    walk(tree);
+  };
+}
+
 // The site was reorganised around three pillars; these keep the addresses that
 // were published under the old structure working. Astro prefixes the base path
 // onto redirect sources but not onto targets, so the targets carry it here.
@@ -245,11 +301,12 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false, fallbackType: "rewrite" },
   },
   redirects: legacyRedirects,
-  markdown: { processor: unified({ rehypePlugins: [rehypeBaseImages] }) },
+  markdown: { processor: unified({ rehypePlugins: [rehypeBaseImages, rehypeDeskSectionHeadings] }) },
   // The wire and the live page carry other newsrooms' headlines, not this
   // publication's writing, so they stay out of the index and out of the sitemap.
   integrations: [
-    mdx(),
+    // Listed again here so the promotion runs before MDX collects heading ids.
+    mdx({ rehypePlugins: [rehypeDeskSectionHeadings] }),
     responsiveImages,
     sitemap({
       filter: (page) => !/\/(404|editor|wire|live)\//.test(page),
