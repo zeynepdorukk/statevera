@@ -10,6 +10,9 @@ const copy = language === "tr"
   ? { updated: "Güncellendi", sources: (n: number) => `${n} haber kaynağı` }
   : { updated: "Updated", sources: (n: number) => `${n} newsrooms` };
 const stamp = wireGeneratedAt.toISOString();
+// The dot pulses only while the snapshot is actually fresh; on an old build it
+// would claim a live feed the site cannot deliver.
+const stale = Date.now() - wireGeneratedAt.getTime() > 24 * 3_600_000;
 const absolute = new Intl.DateTimeFormat(language === "tr" ? "tr-TR" : "en-GB", {
   day: "numeric",
   month: "short",
@@ -20,7 +23,7 @@ const absolute = new Intl.DateTimeFormat(language === "tr" ? "tr-TR" : "en-GB", 
 }).format(wireGeneratedAt);
 ---
 
-<p class="wire-freshness meta flex items-center gap-2" data-tone="wire">
+<p class:list={["wire-freshness meta flex items-center gap-2", stale && "is-stale"]} data-tone="wire">
   <span class="live-dot inline-block" aria-hidden="true"></span>
   <span>
     {copy.updated}{" "}<time datetime={stamp} data-relative-time data-lang={language} title={absolute}>{absolute}</time>
@@ -52,3 +55,11 @@ const absolute = new Intl.DateTimeFormat(language === "tr" ? "tr-TR" : "en-GB", 
   times.forEach(format);
   if (times.length) setInterval(() => times.forEach(format), 60_000);
 </script>
+
+<style>
+  .wire-freshness.is-stale .live-dot {
+    animation: none;
+    background: var(--muted);
+    box-shadow: none;
+  }
+</style>

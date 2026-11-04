@@ -136,7 +136,7 @@ const readerNav = nav.primary.filter((item) => !isEditorLogin(item.url));
               )}
             </a>
             {item.subs && (
-              <div class="invisible absolute left-1/2 top-full z-50 w-max min-w-[200px] -translate-x-1/2 border border-line border-t-[3px] border-t-ink bg-paper opacity-0 shadow-[0_18px_44px_-18px_rgba(0,0,0,0.4)] transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div class="invisible absolute left-1/2 top-full z-50 w-max min-w-[200px] -translate-x-1/2 border border-line border-t-[3px] border-t-ink bg-paper opacity-0 shadow-[0_18px_44px_-18px_rgba(0,0,0,0.4)] transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                 <ul class="py-1.5">
                   {item.subs.map((sub, index) => (
                     <li>

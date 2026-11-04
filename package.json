@@ -12,6 +12,7 @@
     "astro": "astro",
     "wire": "node scripts/fetch-wire.mjs",
     "wire:dry": "node scripts/fetch-wire.mjs --dry",
+    "markets": "node scripts/fetch-markets.mjs",
     "api:dev": "wrangler dev",
     "api:deploy": "wrangler deploy",
     "check": "node scripts/check-content.mjs",

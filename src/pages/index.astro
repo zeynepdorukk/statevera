@@ -51,6 +51,7 @@ const copy = language === "tr"
       sourceIntro: "İkinci el başlıklar yerine hükümetlerin ve uluslararası kurumların resmî belgelerinde doğrudan arama yapın.",
       sourceDetail: "Tek anahtar kelime, on iki kaynak kurum ve yayımlanmış kayda doğrudan bağlantı. Açıklama, mevzuat, antlaşma, yaptırım, konuşma veya resmî veri türüne göre filtreleyin.",
       keyword: "Anahtar kelimeyle ara",
+      sourceSearchLabel: "Tek anahtar kelime · on iki kurum",
       searchSources: "Birincil Kaynaklarda Ara",
       worldNews: "Dünya Haberleri",
       wireTagline: "Dünyadan gelişmeler, ulaştığı anda",
@@ -100,6 +101,7 @@ const copy = language === "tr"
       sourceIntro: "Search official documents directly from governments and international institutions — not second-hand headlines.",
       sourceDetail: "One keyword, twelve source institutions, and a direct link to the record that was actually issued. Filter by statements, legislation, treaties, sanctions, speeches or official data.",
       keyword: "Search by keyword",
+      sourceSearchLabel: "One keyword · twelve institutions",
       searchSources: "Search Primary Sources",
       worldNews: "World News",
       wireTagline: "World reporting, as it lands",
@@ -310,7 +312,7 @@ const heroPicture = await responsiveImage("/images/previews/briefing-red-sea.jpg
         </p>
       </div>
       <div class="border-t border-line pt-5 md:border-l md:border-t-0 md:pl-7 md:pt-0">
-        <p class="kicker">{copy.keyword}</p>
+        <p class="kicker">{copy.sourceSearchLabel}</p>
         <a href={hrefFor("/sources")} class="btn btn-tone mt-4">{copy.searchSources} <span aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
@@ -399,6 +401,19 @@ const heroPicture = await responsiveImage("/images/previews/briefing-red-sea.jpg
 
   .home-journal-launch {
     background: rgba(221, 188, 85, 0.07);
+  }
+
+  /* The lead picture is the moment. The rail beside it stays quiet, so three
+     bright thumbnails do not compete with it; the colour returns on hover. */
+  .home-journal-list :global(.img-zoom .img-frame) {
+    filter: saturate(0.5) brightness(0.86) contrast(1.04);
+    opacity: 0.9;
+    transition: filter 180ms ease, opacity 180ms ease;
+  }
+
+  .home-journal-list :global(.img-zoom:hover .img-frame) {
+    filter: saturate(0.85) brightness(1) contrast(1.02);
+    opacity: 1;
   }
 
   .home-research-grid > div {

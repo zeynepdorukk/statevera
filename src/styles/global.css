@@ -269,6 +269,11 @@ body {
   white-space: nowrap;
 }
 
+/* A timestamp keeps the accent only while the story is recent. */
+.stamp.is-stale {
+  color: var(--muted);
+}
+
 /* Publisher attribution chip */
 .source-chip {
   font-family: var(--font-sans);

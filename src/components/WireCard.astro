@@ -39,6 +39,10 @@ const variant =
 const language = getLanguage(Astro.currentLocale);
 const stamp = wireDate(item);
 const ago = relativeTime(stamp, new Date(), language);
+// Red is the wire's urgency signal. A two-week-old item in red teaches readers
+// to ignore the colour, so only recent stories keep it.
+const ageHours = (Date.now() - stamp.getTime()) / 3_600_000;
+const fresh = ageHours >= 0 && ageHours <= 36;
 const deskSlug = deskSlugOf(item.category);
 const regionSlug = regionSlugOf(item.region);
 const regionKnown = regionSlug in regions;
@@ -80,7 +84,7 @@ const thumbPicture = picture(112);
         )}
         <div class="absolute inset-x-0 bottom-0 z-10 p-4 text-white sm:p-6 lg:p-7">
           <p class="mb-2 flex items-center gap-2 font-sans text-[0.66rem] font-bold tracking-[0.15em] uppercase">
-            <span class="live-dot inline-block" aria-hidden="true"></span>
+            {fresh && <span class="live-dot inline-block" aria-hidden="true"></span>}
             <span class="text-white/95">{categoryLabel}</span>
             <span class="text-white/45" aria-hidden="true">/</span>
             <span class="text-white/70">{regionLabel}</span>
@@ -201,7 +205,7 @@ const thumbPicture = picture(112);
 {variant === "text" && (
   <article class="group" data-tone="wire">
     <div class="flex items-baseline gap-2.5">
-      <time class="stamp shrink-0" datetime={stamp.toISOString()}>{ago}</time>
+      <time class:list={["stamp shrink-0", !fresh && "is-stale"]} datetime={stamp.toISOString()}>{ago}</time>
       <div class="min-w-0">
         <Heading class="t-headline-xs">
           <a href={item.url} target="_blank" rel="noopener noreferrer nofollow" class="editorial-link">
