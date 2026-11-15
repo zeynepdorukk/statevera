@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T17:54:38.000Z",
+  "updatedAt": "2026-11-15T22:13:00.000Z",
   "quotes": [
     {
       "id": "spx",
@@ -107,8 +107,8 @@
       "symbol": "BZ=F",
       "decimals": 2,
       "price": 95.84,
-      "change": 0.020000000000010232,
-      "percent": 0.02087246921311859,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-11-13T21:59:30.000Z"
     },
     {
@@ -117,8 +117,8 @@
       "symbol": "GC=F",
       "decimals": 2,
       "price": 3886.3,
-      "change": 1,
-      "percent": 0.025738038246724833,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-11-13T21:59:59.000Z"
     },
     {
@@ -127,8 +127,8 @@
       "symbol": "CL=F",
       "decimals": 2,
       "price": 88.56,
-      "change": -0.1799999999999926,
-      "percent": -0.20283975659228376,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-11-13T22:00:00.000Z"
     },
     {
@@ -136,9 +136,9 @@
       "label": "COPPER",
       "symbol": "HG=F",
       "decimals": 2,
-      "price": 6.09,
-      "change": -0.10599999999999987,
-      "percent": -1.7107811491284681,
+      "price": 6.0905,
+      "change": 0,
+      "percent": 0,
       "updatedAt": "2026-11-13T21:59:59.000Z"
     },
     {
@@ -146,30 +146,30 @@
       "label": "USD/TRY",
       "symbol": "USDTRY=X",
       "decimals": 2,
-      "price": 50.3455,
-      "change": 0.06320000000000192,
-      "percent": 0.12569035227108133,
-      "updatedAt": "2026-11-15T17:54:38.000Z"
+      "price": 50.3648,
+      "change": 0.08250000000000313,
+      "percent": 0.16407364022728302,
+      "updatedAt": "2026-11-15T22:13:00.000Z"
     },
     {
       "id": "eurusd",
       "label": "EUR/USD",
       "symbol": "EURUSD=X",
       "decimals": 4,
-      "price": 1.1028,
-      "change": -0.0031000000000001027,
-      "percent": -0.28031467582965025,
-      "updatedAt": "2026-11-13T22:29:46.000Z"
+      "price": 1.1033,
+      "change": -0.0026000000000001577,
+      "percent": -0.23510263134100348,
+      "updatedAt": "2026-11-15T22:12:48.000Z"
     },
     {
       "id": "usdjpy",
       "label": "USD/JPY",
       "symbol": "JPY=X",
       "decimals": 2,
-      "price": 159.686,
-      "change": -0.1560000000000059,
-      "percent": -0.09759637642172014,
-      "updatedAt": "2026-11-13T21:59:45.000Z"
+      "price": 159.543,
+      "change": -0.2990000000000066,
+      "percent": -0.1870597214749606,
+      "updatedAt": "2026-11-15T22:13:00.000Z"
     },
     {
       "id": "us10y",
